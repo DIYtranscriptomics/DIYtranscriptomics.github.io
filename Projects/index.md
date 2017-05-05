@@ -89,7 +89,7 @@ Daniela Gomez Atria	|	Allman	|	_TBD_
 
 Student	|	Lab |	Topic	|
 :------:|:---------:|-----------:
-Dan Beiting	|	Beiting	|	Role of TLX in macrophage phenotype and function ([Figure](http://transcriptomicsworkshop.github.io/lectures/Figure.pdf), [summary report](http://transcriptomicsworkshop.github.io/R_scripts/Supplementary_code.pdf), [Web app](https://hostmicrobe.shinyapps.io/RNAseqWeb-app))
+Dan Beiting	|	Beiting	|	Role of TLX in macrophage phenotype and function ([Figure](http://DIYtranscriptomics.github.io/lectures/Figure.pdf), [summary report](http://DIYtranscriptomics.github.io/R_scripts/Supplementary_code.pdf), [Web app](https://hostmicrobe.shinyapps.io/RNAseqWeb-app))
 Arindam Basu	|	Atchison	|	Role of YY1 in B cell fate
 Corbett Berry	|	Freedman 	|	Role of CRAC channels in T cell biology
 Gautami Das	|	Aguire	|	Genetic basis for retinal cone dysfunction in the dog
@@ -101,5 +101,5 @@ Fernanda Novais	|	Scott |	Healing vs. non-healing L. braziliensis skin lesions
 Naomi Philip	|	Brodsky |	Regulation of TLR signaling by Casp8
 Sarah Sneed	|	Povelones |	Mosquito transcriptional response to hormone
 Raghavi Sudharsan	|	Beltran |	Biomarkers of canine retinal degeneration
-Camille Syrett  |	Anguera | 	LincRNA regulation of HSC gene expression ([Figure](http://transcriptomicsworkshop.github.io/studentProjects/camille_fig.pdf), [summary report](http://transcriptomicsworkshop.github.io/studentProjects/camille.html))
+Camille Syrett  |	Anguera | 	LincRNA regulation of HSC gene expression ([Figure](http://DIYtranscriptomics.github.io/studentProjects/camille_fig.pdf), [summary report](http://DIYtranscriptomics.github.io/studentProjects/camille.html))
 Brain Gaudette	|	Allman	|	central vs peripheral plasma cell programs	

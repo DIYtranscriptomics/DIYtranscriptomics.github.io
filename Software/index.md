@@ -12,7 +12,7 @@ Everyone is expected to bring their own internet-enabled laptop equiped with eit
 * Download and install the graphical user interface for R, called [RStudio](http://www.rstudio.com/products/rstudio/download/)
 * Download a powerfull text editor. I use [Sublime](http://www.sublimetext.com/) (Mac and PC)
 * If you have a Mac, download the latest version of [XCode developer tools](https://developer.apple.com/xcode/)  
-* Here are [instructions for installing Kallisto](http://transcriptomicsworkshop.github.io/Software/files/KallistoInstall.pdf) on a mac.  This is the program we'll use for mapping reads to transcripts. *We will install this program together in class*
+* Here are [instructions for installing Kallisto](http://DIYtranscriptomics.github.io/Software/files/KallistoInstall.pdf) on a mac.  This is the program we'll use for mapping reads to transcripts. *We will install this program together in class*
 * If you have a PC, you're in luck, the most recent version of Kallisto (v0.43.0) also comes with a Windows executable, available [here](https://pachterlab.github.io/kallisto/download)
 
 
