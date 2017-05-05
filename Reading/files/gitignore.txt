@@ -1,0 +1,23 @@
+# History files
+.Rhistory
+.Rapp.history
+*.Rproj
+.gitignore
+
+# Example code in package build process
+*-Ex.R
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+#specific data files
+.Rproj.user
+*.cel
+*.fastq
+*.fasta
+*.fa
+*.gz

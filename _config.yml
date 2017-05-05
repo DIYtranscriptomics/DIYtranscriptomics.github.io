@@ -1,0 +1,40 @@
+# Site wide configuration
+
+title:            Home
+locale:           en_US
+url:
+
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+
+# Site owner
+owner:
+  name: Daniel Beiting
+  avatar: headshot.jpg
+  bio: "My research lies at the intersection of immunology, genomics and pathogen biology"
+  email: danielbeiting@gmail.com
+  disqus-shortname:
+  twitter: hostmicrobe
+  github: hostmicrobe
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]

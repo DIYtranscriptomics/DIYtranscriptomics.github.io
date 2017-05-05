@@ -1,0 +1,4 @@
+Select treatment groups from drop-down menu to change plot on the right.
+Mouse over dots to learn gene symbol.
+Search for genes of interest using the search box below.
+Select column header to sort table.

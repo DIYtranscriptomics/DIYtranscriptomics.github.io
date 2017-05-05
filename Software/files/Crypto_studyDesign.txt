@@ -1,0 +1,10 @@
+sample	treatment	path	
+control_rep1	control	/Users/danielbeiting/Desktop/Crypto/control_rep1	
+control_rep2	control	/Users/danielbeiting/Desktop/Crypto/control_rep2	
+control_rep3	control	/Users/danielbeiting/Desktop/Crypto/control_rep3	
+wt_rep1	wt_crypto	/Users/danielbeiting/Desktop/Crypto/wt_rep1	
+wt_rep2	wt_crypto	/Users/danielbeiting/Desktop/Crypto/wt_rep2	
+wt_rep3	wt_crypto	/Users/danielbeiting/Desktop/Crypto/wt_rep3	
+transgenic_rep1	trans_crypto	/Users/danielbeiting/Desktop/Crypto/transgenic_rep1	
+transgenic_rep2	trans_crypto	/Users/danielbeiting/Desktop/Crypto/transgenic_rep2	
+transgenic_rep3	trans_crypto	/Users/danielbeiting/Desktop/Crypto/transgenic_rep3	

@@ -1,0 +1,22 @@
+# Site navigation links
+
+- title: Syllabus
+  url: /syllabus/
+
+- title: Software
+  url: /Software/
+
+- title: Data
+  url: /Data/
+
+- title: Code
+  url: /Code/
+
+- title: Reading
+  url: /Reading/
+
+- title: Student Projects
+  url: /Projects/
+
+- title: Help!
+  url: /Help/
