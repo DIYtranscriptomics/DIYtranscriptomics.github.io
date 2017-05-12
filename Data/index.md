@@ -45,3 +45,19 @@ The challenge: Your PI has just sent you a frantic email requesting a figure for
 ** Solution: [see this script](http://DIYtranscriptomics.github.io/Data/files/hackdash3_solution.R)
 
 
+## HackDash #4
+The challenge: Download [this data](https://drive.google.com/file/d/0B-uUeUVY3YYUdTZ2bTJCZ3VyNWs/view?usp=sharing) from basic experiment in which T cells were left unstimulated or stimulated with anti-CD3/28 in duplicate. You would like to import these files into R and use your newfound Transcriptomics skills to answer the following questions.  The teams that accumulates the most points wins the challenge.
+
+1.	What is the gene name of the 1015th row of the output of tximport? (2 points)
+2.	What are the total number of counts for each sample within Txi_gene$counts (4 points)
+3.	Create a dendrogram and include an image here. Describe how your samples are clustering. (4 points)
+4.	Complete a PCA and include an image here. What do PC1 and PC2 correspond to? (5 points)
+5.	How many genes are differentially expressed (FDR < 0.05, abs LFC > 1) when you compare unstimulated and stimulated T cells? (5 points)
+6.	Create a heatmap of all differentially expressed genes. (5 points)
+
+Use the provided .gct and .cls files to run GSEA in order to answer the following questions.
+
+7.	Within the 'Hallmarks' collection, what is the most highly enriched pathway in phenotype “stimulated”? (5 points)
+8.	How many Hallmark genes sets are significantly enriched in the stimulated group relative to unstimulated (FDR < 0.05) (2 points)
+9.	Within Hallmarks, what is the most enriched pathway in phenotype “unstimulated”? Is it a significant enrichment? (5 points)
+10.	How many Hallmark genes sets are significantly enriched in the unstimulated group relative to stimulated (FDR < 0.05) (2 points)
