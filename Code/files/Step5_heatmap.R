@@ -36,6 +36,10 @@ heatmap.2(diffGenes, Rowv=as.dendrogram(hr), Colv=NA,
           density.info="none", trace="none", RowSideColors=mycolhc, 
           cexRow=1, cexCol=1, margins=c(8,20)) 
 
+# you can annotate samples with any metadata available in your study design file
+color.map <- function(factorial) { if (factorial=="whatever1") "#FF0000" else if (factorial=="whatever2") "#33A12B" else "#0000FF"}
+color.map <- unlist(lapply(factorial, color.map))
+
 # edit heatmap to simplify----
 #notice that the heatmap includes ALL the columns from your dataset
 #to simplify, average biological replicates

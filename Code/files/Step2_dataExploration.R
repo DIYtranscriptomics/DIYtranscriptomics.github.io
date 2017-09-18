@@ -9,6 +9,7 @@ head(myTPM)
 # Load packages -----
 library(ggplot2)
 library(reshape2)
+library(trelliscopejs)
 
 # set-up study design ----
 targets <- read.table("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
@@ -53,7 +54,7 @@ head(melted)
 ggplot(melted) +
   geom_bar(aes(x=Var1, y=value, fill=groups), stat="identity") +
   facet_wrap(~Var2)
-
+  #facet_trelliscope(~Var2)
 # explore other plotting options on your own ----
 # T-sne, NMDS, reactive graphs, 3D interactives, etc
 library(scatterD3) #makes nice interactive 2D plots using the D3 engine
