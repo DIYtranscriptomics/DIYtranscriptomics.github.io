@@ -11,7 +11,7 @@ comments: true
 
 ## Getting help from the TA
 
-[Corbett Berry](corbettberry@gmail.com) and [Camille Syrett](camille.syrett@gmail.com) are the Teaching Assistants for the course and are available for one-on-one or small group meetings by request.
+Corbett Berry (corbettberry@gmail.com) and Camille Syrett (camille.syrett@gmail.com) are the Teaching Assistants for the course and are available for one-on-one or small group meetings by request.
 
 -----------------------------
 
