@@ -93,6 +93,8 @@ myTPM.filter <- as.matrix(myTPM.filter)
 #you may (or may not) want to cluster your selected genes
 hr <- hclust(as.dist(1-cor(t(myTPM.filter), method="pearson")), method="complete") #cluster rows by pearson correlation
 hc <- hclust(as.dist(1-cor(myTPM.filter, method="spearman")), method="average") #cluster columns by spearman correlation
+#note: we use Spearman, instead of pearson, for cluster samples because it gives equal weight to highly vs lowly expressed transcripts or genes
+
 #make heatmap
 heatmap.2(myTPM.filter, Rowv=NA, Colv=NA, 
           col=myheatcol, scale="row", density.info="none", 
