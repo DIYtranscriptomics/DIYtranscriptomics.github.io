@@ -10,11 +10,9 @@ Everyone is expected to bring their own internet-enabled laptop equiped with eit
 ## Part I
 * Download and install the current version of the [R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) for your operating system
 * Download and install the graphical user interface for R, called [RStudio](http://www.rstudio.com/products/rstudio/download/)
-* Download a powerfull text editor. I use [Sublime](http://www.sublimetext.com/) (Mac and PC)
+* Download a powerfull text editor. I use [Sublime](http://www.sublimetext.com/) and [Atom](https://atom.io/)
 * If you have a Mac, download the latest version of [XCode developer tools](https://developer.apple.com/xcode/)  
-* Here are [instructions for installing Kallisto](http://DIYtranscriptomics.github.io/Software/files/KallistoInstall.pdf) on a mac.  This is the program we'll use for mapping reads to transcripts. *We will install this program together in class*
-* If you have a PC, you're in luck, the most recent version of Kallisto (v0.43.0) also comes with a Windows executable, available [here](https://pachterlab.github.io/kallisto/download)
-
+* Here are [instructions for installing Kallisto](https://chmi-sops.github.io/mydoc_kallisto.html),the program we'll use for mapping reads to transcripts. *We will install this program together in class*
 
 ## Part II
 * Download the comprehensive typesetting program, [XeLaTex](http://www.texts.io/support/0001/) and the universal document text converter, [Pandoc](http://www.texts.io/support/0003/)
