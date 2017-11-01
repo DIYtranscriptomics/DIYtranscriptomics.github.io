@@ -70,8 +70,6 @@ _more general info about ultra lightweight methods for transcript quantification
 
 * _Revisiting global Gene Expression Analysis_ [Cell, Oct 2012](http://DIYtranscriptomics.github.io/Reading/files/Revisiting global gene express.pdf). A great example of the perils of normalizing to total read depth.
 
-* another great blog post from Harold Pimentel on [between-sample normalization](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/)
-
 * the [original manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) describing the Trimmed Mean of M values (TMM) method for normalizing between samples.
 
 -----------------------------
