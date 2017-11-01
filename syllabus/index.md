@@ -34,7 +34,7 @@ comments: false
 <img src="images/kallisto.png" style="border:none;" />
 </div>
 
-**Oct 18th *and* 25th** - I know what you're thinking: "please stop talking already!"  Wish granted.  In this class we'll finally get down to the business of installing and using [Kallisto](https://pachterlab.github.io/kallisto/about), a new program for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop.  While reads are being mapped, we'll discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.  Lecture slides available [here](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments).
+**Oct 18th** - I know what you're thinking: "please stop talking already!"  Wish granted.  In this class we'll finally get down to the business of installing and using [Kallisto](https://pachterlab.github.io/kallisto/about), a new program for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop.  While reads are being mapped, we'll discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.  Lecture slides available [here](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments).
 
 <div style="clear:both"></div>
 
@@ -44,7 +44,7 @@ comments: false
 <img src="images/readpile.png" style="border:none;" />
 </div>
 
-**November 1st *and* 8th** - Now that we've aligned our reads, it's a good time to discuss the units we need to use to measure gene expression.  We'll talk about the differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss how these units have to be handled *between* samples (a.k.a. normalization).  To conclude this class, we'll read our Kallisto data into the R environment.  Lecture slides available [here](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits).  
+**October 25th** - Now that we've aligned our reads, it's a good time to discuss the units we need to use to measure gene expression.  We'll talk about the differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss how these units have to be handled *between* samples (a.k.a. normalization).  To conclude this class, we'll read our Kallisto data into the R environment.  Lecture slides available [here](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits).  
 
 <div style="clear:both"></div>
 
@@ -54,7 +54,7 @@ comments: false
 <img src="images/PCA.png" style="border:none;" />
 </div>
 
-**November 15th** - Although we're all here to find key genes and transcripts involved in our favorite biological process, it's critical to first take a gene agnostic approach to explore the structure of our entire dataset.  To do this we'll use Principle Component Analysis (PCA) to reduce the dimensionality of our data and try to identify the variables (sex, age, treatment, etc) that have the strongest influence over the transcriptional landscape in your study. We'll discuss common mis-steps and sources of variance in transcriptional data sets.  You'll also be introduced to the popular graphing package [ggplot2](http://ggplot2.org/), to graph the results of your PCA analysis. Lecture slides available [here](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
+**November 1st** - Although we're all here to find key genes and transcripts involved in our favorite biological process, it's critical to first take a gene agnostic approach to explore the structure of our entire dataset.  To do this we'll use Principle Component Analysis (PCA) to reduce the dimensionality of our data and try to identify the variables (sex, age, treatment, etc) that have the strongest influence over the transcriptional landscape in your study. We'll discuss common mis-steps and sources of variance in transcriptional data sets.  You'll also be introduced to the popular graphing package [ggplot2](http://ggplot2.org/), to graph the results of your PCA analysis. Lecture slides available [here](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
 
 <div style="clear:both"></div>
 

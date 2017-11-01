@@ -70,6 +70,10 @@ _more general info about ultra lightweight methods for transcript quantification
 
 * _Revisiting global Gene Expression Analysis_ [Cell, Oct 2012](http://DIYtranscriptomics.github.io/Reading/files/Revisiting global gene express.pdf). A great example of the perils of normalizing to total read depth.
 
+* another great blog post from Harold Pimentel on [between-sample normalization](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/)
+
+* the [original manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) describing the Trimmed Mean of M values (TMM) method for normalizing between samples.
+
 -----------------------------
 
 ## Starting your analysis script
@@ -85,9 +89,11 @@ _more general info about ultra lightweight methods for transcript quantification
 
 * Take a look at some of the various ways to graph your data and the underlying R code in this [catalog of R graphs](http://shiny.stat.ubc.ca/r-graph-catalog/)
 
-* I mentioned various unsupervised methods for dimensional reduction of your data (PCA, MDS, T-SNE).  In particular, T-SNE has become popular in representing single-cell RNAseq data, but it is also one of the more complex visualization methods to understand.  Although we didn't discuss this in class, I wanted to include a link to a [great blog post describing T-SNE](http://distill.pub/2016/misread-tsne/), as well as [the original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  Please familiarize yourself with these if you plan on using this visualziation method.
-
 * If you end up using R to make a lot of graphs, you will find the [R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994) to be an important reference. It's available free to UPenn folks as an Ebook.
+
+* Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the [RColorBrewer package](http://colorbrewer2.org).  These palettes can be viewed in [this cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf).  Unfortunately, these standard palettes often don't cut it, and you'll need custom palettes. For this, I love using [Sip](https://sipapp.io/) to pick, organize and access color palettes.  
+
+* I mentioned various unsupervised methods for dimensional reduction of your data (PCA, MDS, T-SNE).  In particular, T-SNE has become popular in representing single-cell RNAseq data, but it is also one of the more complex visualization methods to understand.  Although we didn't discuss this in class, I wanted to include a link to a [great blog post describing T-SNE](http://distill.pub/2016/misread-tsne/), as well as [the original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  Please familiarize yourself with these if you plan on using this visualziation method.
 
 * Hadley Wickham (author of Dplyr, Reshape2 and ggplot2 packages) has a nice pre-print paper on the key aspects of making ['Tidy Data'](http://vita.had.co.nz/papers/tidy-data.pdf)
 
@@ -98,8 +104,6 @@ _more general info about ultra lightweight methods for transcript quantification
 -----------------------------
 
 ## Differential Gene Expression
-
-* another great blog post from Harold Pimentel on [between-sample normalization](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/)
 
 * _voom: precision weights unlock linear model analysis tools for RNA-seq read counts_ [Genome Biology, Feb, 2014](http://DIYtranscriptomics.github.io/Reading/files/voom.pdf). Describes one of the approaches for normalizing RNAseq data that we'll use in class.
 
@@ -116,14 +120,6 @@ _more general info about ultra lightweight methods for transcript quantification
 * The [Limma user's guide](http://www.bioconductor.org/packages/release/bioc/vignettes/limma/inst/doc/usersguide.pdf)
 
 * The [EdgeR user's guide](https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf).  See section 3.4 and 3.5 for details about how to modify your model.matrix function for a 'blocking' design.
-
------------------------------
-
-## Creating figures
-
-* you know how I feel about Venn diagrams, so if you're interested in exploring interactions between many groups of genes, have a look at [this Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/upSet_plot.pdf), the accompanying R package, [UpSetR](https://cran.r-project.org/web/packages/UpSetR/README.html), as well as the [UpSet website](http://caleydo.org/tools/upset/).  Note, there's a shiny app for this as well!
-
-* Here's [my Datagraph template](https://drive.google.com/drive/folders/0B-uUeUVY3YYUc2dIcE9KNDN4NzA?usp=sharing) for making bubble diagrams to show functional enrichment results.
 
 -----------------------------
 
@@ -144,6 +140,10 @@ _more general info about ultra lightweight methods for transcript quantification
 * A handy link if you're looking for [mouse and human specific gene signature databases](http://bioinf.wehi.edu.au/software/MSigDB/)
 
 * If you need examples of properly formatted files for carrying out GSEA, you can check out the [GSEA file formats page](http://www.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats).
+
+* you know how I feel about Venn diagrams, so if you're interested in exploring interactions between many groups of genes, have a look at [this Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/upSet_plot.pdf), the accompanying R package, [UpSetR](https://cran.r-project.org/web/packages/UpSetR/README.html), as well as the [UpSet website](http://caleydo.org/tools/upset/).  Note, there's a shiny app for this as well!
+
+* Here's [my Datagraph template](https://drive.google.com/drive/folders/0B-uUeUVY3YYUc2dIcE9KNDN4NzA?usp=sharing) for making bubble diagrams to show functional enrichment results.
 
 -----------------------------
 
