@@ -6,6 +6,7 @@ title: Student Projects
 Each student will be analyzing either their own data, or data that I will provide (and will demo in class) and will complete a final project consisting of a publication quality _figure_, a project _summary report_ written in Rmarkdown, and a _web app_ built using Shiny that allows easy, web-based querying of your data.
 
 ## Fall 2017
+
 Student	|	Lab |	Topic	|
 :------:|:---------:|-----------:
 Dan Beiting	|	Beiting	|	Transcriptional response of intestinal epithelium to *Cryptosporidium* infection
