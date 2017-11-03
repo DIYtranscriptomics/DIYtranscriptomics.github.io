@@ -5,6 +5,36 @@ title: Student Projects
 
 Each student will be analyzing either their own data, or data that I will provide (and will demo in class) and will complete a final project consisting of a publication quality _figure_, a project _summary report_ written in Rmarkdown, and a _web app_ built using Shiny that allows easy, web-based querying of your data.
 
+## Fall 2017
+Student	|	Lab |	Topic	|
+:------:|:---------:|-----------:
+Dan Beiting	|	Beiting	|	Transcriptional response of intestinal epithelium to *Cryptosporidium* infection
+Tatyana Appelbaum	|	Aguirre	|	Canine RD (retina)
+Leonardo Murgiano	|	Aguirre	|	Generation of a pipeline for retina data 
+Loic Dragin	|	Alvarez	|	Control of immune properties of microglia by hedgehog signaling 
+Pavan Vedula	|	Kashina	|	Mouse RNA-Seq data
+Junling Wang	|	Kashina	|	tRNA Sequencing in mouse
+Regina Turner	|	Turner	|	Equine testicular aging
+Makoto Kurachi	|	Wherry	|	TF in CD8+ T cell differentiation
+Jennifer Wu	|	Wherry	|	In vitro T cell exhaustion
+Suchita Hodawadekar	|	Atchison	|	RNA-Seq of YY1 from mouse B cells
+Sarmistha Banerjee	|	Atchison	|	RNA-Seq of T cell differentiation
+Satabdi Nandi	|	Atchison	|	RNA-Seq in B cells under different activation conditions
+Yue Zhang	|	Atchison	|	RNA-Seq in B cells under different activation conditions
+Yifeng Wang	|	Su	|	Human RNA-Seq data
+Elise English	|	Striepen	|	Crypto sexual development
+Alexis Gibson	|	Striepen	|	Host response to Cryptosporidium
+Adam Sateriale	|	Striepen	|	stage specific gene expression in Cryptosporidium
+Isabel Sierra	|	Anguera	|	X-inactivation in neutrophils from a lupus mouse model
+Anne Fosnocht	|	NA (first year)	|	RNA-Seq of NAc in rodents
+Sabina Hlavaty	|	Garden	|	Canine MDSC transcriptomic characterization 
+Stephen Cole	|	Rankin	|	UTI transcriptome
+Xinyuan Li	|	Chen	|	MDSC and cancer
+Liz Kiernan	|	Nathanson	|	RNA-Seq from melanoma of different backgrounds
+Jason Kennerdell	|	Bonini	|	Drosophila Brain Aging
+Frances Taschuk	|	Cherry	|	Host response to DCV infection in Drosophila 
+
+
 ## Spring 2017
 
 Student	|	Lab |	Topic	|
