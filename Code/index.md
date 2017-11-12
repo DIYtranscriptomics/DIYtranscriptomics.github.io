@@ -1,6 +1,8 @@
 ---
 layout: page
 title: R scripts
+image:
+  feature: Rscript.png
 ---
 
 The lectures will be paired with R scripts which will 'step' through the process of analyzing transcriptional profiling data from RNAseq experiments
