@@ -2,6 +2,8 @@
 layout: page
 title: Data
 comments: false
+image:
+  feature: MGCscreen2.jpg
 ---
 
 <p class="message">
