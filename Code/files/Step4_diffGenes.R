@@ -10,12 +10,32 @@ library(limma) #powerful package for differential gene expression using linear m
 library(edgeR)
 library(sleuth)
 
-# Normalize and fit the linear model to your data -----
+# OPTION 1: DE analysis using Sleuth ----
+# Make sure to do the following first:
+# 1. make sure your studyDesign file has the correct path to each Kallisto output folder
+# 2. change your design matrix to set an intercept
+# 3. if you used Salmon or Sailfish, instead of Kallisto, for read mapping, you can still use Sleuth, but you'll need the Wasabi R package
+targets <- read.table("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
+design <- model.matrix(~groups)
+
+# Now you're ready to construct a sleuth object
+mySleuth <- sleuth_prep(targets, 
+                        ~ treatment, 
+                        target_mapping = Tx,
+                        read_bootstrap_tpm=TRUE, 
+                        extra_bootstrap_summary=TRUE) 
+
+design <- model.matrix(~groups)
+
+# fit a linear model to the data
+so <- sleuth_fit(mySleuth, design)
+# use a wald test (WT) to identify genes that are differentially expressed
+so.WT_crypto <- sleuth_wt(so, which_beta = "groupswt_crypto")
+sleuth_live(so.WT_crypto)
+
+# OPTION 2: DE analysis using Limma/VOOM (alternatively, EdgeR or DESeq2) -----
 # first create a DGEList object from your original count data using the DGEList function from EdgeR
-myTPM_raw <- Txi_gene$abundance
-myTPM_filt <- myTPM_raw[rowSums(Txi_gene$counts)>=10,]
-counts_filt <- Txi_gene$counts[rowSums(Txi_gene$counts)>=10,]
-myDGEList <- DGEList(counts_filt)
+DGEList.filtered.norm
 
 #set up your design matrix
 groups 
@@ -24,33 +44,24 @@ design <- model.matrix(~0 + groups)
 colnames(design) <- levels(groups)
 
 #normalize your data using the mean-variance relationship using the VOOM function from Limma
-normData <- voom(myDGEList, design, plot = TRUE)
+v.DEGList.filtered.norm <- voom(DGEList.filtered.norm, design, plot = TRUE)
 # fit a linear model to your data
-fit <- lmFit(normData, design)
+fit <- lmFit(v.DEGList.filtered.norm, design)
 
-# OPTIONAL: paired design and correcting for known batch effects ----
-# if you need a paired analysis (a.k.a.'blocking' design)
-# design <- model.matrix(~block+treatment) #this is just an example. 'block' and 'treatment' would need to be objects in your environment
-# if your exploratory analysis showed a batch effect
-library(sva)
-batch <- targets$batch
-normData.batchCorrected <- ComBat(normData, batch, design)
-#now use this batch corrected data moving forward
-
-# set up a contrast matrix based on the pairwise comparisons of interest ----
+# Contrast matrix ----
 #how do cells respond to infection with Crypto?
 contrast.matrix <- makeContrasts(WT_crypto_infection = wt_crypto - control,
                                  trans_crypto_infection = trans_crypto - control,
                                  levels=design)
 
-# extract the linear model fit for the contrast matrix that you just defined above -----
+# extract the linear model fit -----
 fits <- contrasts.fit(fit, contrast.matrix)
 #get bayesian stats for your linear model fit
 ebFit <- eBayes(fits)
 #stats <- write.fit(ebFit)
 
-# use topTable function to see the differentially expressed genes -----
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=20000, sort.by="logFC")
+# TopTable to view DEGs -----
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=20, sort.by="logFC")
 head(myTopHits)
 # Volcano Plots ----------
 # Make a basic volcano plot
@@ -85,7 +96,7 @@ datatable(myTopHits,
           options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
   formatRound(columns=c(1:6), digits=3)
 
-# use decideTests to pull out the DEGs and make Venn Diagram ----
+# decideTests to pull out the DEGs and make Venn Diagram ----
 results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=1)
 
 # take a look at what the results of decideTests looks like
@@ -94,26 +105,22 @@ summary(results)
 vennDiagram(results, include="down")
 
 # retrieve expression data for your DEGs ----
-head(normData$E)
-colnames(normData$E) <- labels
-diffGenes <- normData$E[results[,1] !=0 | results[,2] !=0,]
+head(v.DEGList.filtered.norm$E)
+colnames(v.DEGList.filtered.norm$E) <- labels
+diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | v.DEGList.filtered.norm[,2] !=0,]
 head(diffGenes)
 dim(diffGenes)
 #write your DEGs to a file
 write.csv(diffGenes,"DiffGenes.csv")
 write.table(diffGenes,"DiffGenes.txt", sep = "\t")
 
-# OPTIONAL: Import Kallisto transcript counts into R using Sleuth ----
-# Make sure to do the following first:
-# 1. download and load the sleuth package
-# 2. make sure your studyDesign file has the correct path to each Kallisto output folder
-# 3. change your design matrix to set an intercept
-# Now you're ready to construct a sleuth object
-mySleuth <- sleuth_prep(targets, design, target_mapping = Tx) 
-# fit a linear model to the data
-so <- sleuth_fit(mySleuth, design)
-# take a look at your models
-models(so)
-# use a wald test (WT) to identify genes that are differentially expressed
-so.WT_crypto <- sleuth_wt(so, which_beta = "wt_crypto")
-sleuth_live(so.WT_crypto)
+# OPTIONAL: paired design and correcting for known batch effects ----
+# if you need a paired analysis (a.k.a.'blocking' design)
+# design <- model.matrix(~block+treatment) #this is just an example. 'block' and 'treatment' would need to be objects in your environment
+# if your exploratory analysis showed a batch effect
+library(sva)
+batch <- targets$batch
+normData.batchCorrected <- ComBat(normData, batch, design)
+#now use this batch corrected data moving forward
+
+

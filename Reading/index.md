@@ -105,7 +105,9 @@ _more general info about ultra lightweight methods for transcript quantification
 
 ## Differential Gene Expression
 
-* _voom: precision weights unlock linear model analysis tools for RNA-seq read counts_ [Genome Biology, Feb, 2014](http://DIYtranscriptomics.github.io/Reading/files/voom.pdf). Describes one of the approaches for normalizing RNAseq data that we'll use in class.
+* _Differential analysis of RNA-seq incorporating quantification uncertainty_ [Nature Methods, June, 2017](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf)
+
+* _voom: precision weights unlock linear model analysis tools for RNA-seq read counts_ [Genome Biology, Feb, 2014](http://DIYtranscriptomics.github.io/Reading/files/voom.pdf). Describes one of the approaches for adjusting RNAseq count data based on the mean-variance relationship.
 
 * _RNA-Seq workflow: gene-level exploratory analysis and differential expression_ [F1000, Oct 2015](http://f1000research.com/articles/4-1070/v1)
 
