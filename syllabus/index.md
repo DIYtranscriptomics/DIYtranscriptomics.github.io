@@ -86,7 +86,7 @@ comments: false
 <img src="images/table.png" style="border:none;" />
 </div>
 
-**December 6th** - The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  We'll use the program [Sleuth](http://pachterlab.github.io/sleuth/) which like Kallisto is also a product of [Lior Pachter's lab](https://math.berkeley.edu/~lpachter/).  Because Sleuth is relatively new to the game, we'll also use the popular and venerable [Limma](http://www.bioconductor.org/packages/release/bioc/html/limma.html) package in R.  This gives us a chance to compare and contrast these two methods for identifying DETs.  We'll also have a chance to talk about special cases when your analyses should include a paired design or correct for batch effects.  Lecture slides available [here](https://www.icloud.com/keynote/0VyReRgeztJikCcl6AU9ZtIig#Lecture6%5FDGEAnalysis)
+**December 6th** - The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  We'll use the program [Sleuth](http://pachterlab.github.io/sleuth/) which like Kallisto is also a product of [Lior Pachter's lab](https://math.berkeley.edu/~lpachter/).  Because Sleuth is relatively new to the game, we'll also use the popular and venerable [Limma](http://www.bioconductor.org/packages/release/bioc/html/limma.html) package in R.  This gives us a chance to compare and contrast these two methods for identifying DETs.  We'll also have a chance to talk about special cases when your analyses should include a paired design or correct for batch effects. 
 
 <div style="clear:both"></div>
 
@@ -96,7 +96,7 @@ comments: false
 <img src="images/heatmap.jpg" style="border:none;" />
 </div>
 
-**December 13th** - How do you move from spreadsheet to informative data visualization? Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across  treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use hierarchical clustering and heatmap visualization to interrogate DETs to reveal modules of co-regulated transcripts.
+**December 13th** - How do you move from spreadsheet to informative data visualization? Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use hierarchical clustering and heatmap visualization to interrogate DETs to reveal modules of co-regulated transcripts.
 
 <div style="clear:both"></div>
 
@@ -158,7 +158,7 @@ comments: false
 <img src="images/shiny.png" style="border:none;" />
 </div>
 
-**February 7th *and* 14th** - Even if your analysis pipeline is transparent and reproducible, that doesn't mean the data is _accessible_ to your fellow labmates and colleagues.  To address this issue, you'll learn to use [ggvis](http://ggvis.rstudio.com/), [shiny](http://www.shinyapps.io/), and [shinyapps](http://www.shinyapps.io/) to design a user-friendly web interface that allows collaborators -- no matter where they may be -- to quickly view reactive graphs and tables populated with your data. Lecture slides available [here](https://www.icloud.com/keynote/0gbQABLqg3YzrSnuHHUHyFVWg#Lecture13%5FShiny)
+**February 7th** - Even if your analysis pipeline is transparent and reproducible, that doesn't mean the data is _accessible_ to your fellow labmates and colleagues.  To address this issue, you'll learn to use [ggvis](http://ggvis.rstudio.com/), [shiny](http://www.shinyapps.io/), and [shinyapps](http://www.shinyapps.io/) to design a user-friendly web interface that allows collaborators -- no matter where they may be -- to quickly view reactive graphs and tables populated with your data. Lecture slides available [here](https://www.icloud.com/keynote/0gbQABLqg3YzrSnuHHUHyFVWg#Lecture13%5FShiny)
 
 <div style="clear:both"></div>
 
@@ -168,7 +168,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**February 21st** - During this in-clas exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
+**February 14th** - During this in-clas exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
 
 <div style="clear:both"></div>
 

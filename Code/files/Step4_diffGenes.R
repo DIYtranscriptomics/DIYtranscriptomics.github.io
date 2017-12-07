@@ -10,6 +10,7 @@ library(limma) #powerful package for differential gene expression using linear m
 library(edgeR)
 library(sleuth)
 
+
 # OPTION 1: DE analysis using Sleuth ----
 # Make sure to do the following first:
 # 1. make sure your studyDesign file has the correct path to each Kallisto output folder
@@ -25,8 +26,6 @@ mySleuth <- sleuth_prep(targets,
                         read_bootstrap_tpm=TRUE, 
                         extra_bootstrap_summary=TRUE) 
 
-design <- model.matrix(~groups)
-
 # fit a linear model to the data
 so <- sleuth_fit(mySleuth, design)
 # use a wald test (WT) to identify genes that are differentially expressed
@@ -36,6 +35,7 @@ sleuth_live(so.WT_crypto)
 # OPTION 2: DE analysis using Limma/VOOM (alternatively, EdgeR or DESeq2) -----
 # first create a DGEList object from your original count data using the DGEList function from EdgeR
 DGEList.filtered.norm
+
 
 #set up your design matrix
 groups 
@@ -61,12 +61,12 @@ ebFit <- eBayes(fits)
 #stats <- write.fit(ebFit)
 
 # TopTable to view DEGs -----
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=20, sort.by="logFC")
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=2000, sort.by="logFC")
 head(myTopHits)
 # Volcano Plots ----------
 # Make a basic volcano plot
 with(myTopHits, plot(logFC, -log10(adj.P.Val), pch=20, main="Volcano plot"))
-with(subset(myTopHits, adj.P.Val<.05 & abs(logFC)>0.59), points(logFC, -log10(adj.P.Val), pch=20, col="red"))
+with(subset(myTopHits, adj.P.Val<.05 & abs(logFC)>1), points(logFC, -log10(adj.P.Val), pch=20, col="red"))
 
 # make an interactive volcano plot 
 #first, move rownames into the dataframe
@@ -100,14 +100,14 @@ datatable(myTopHits,
 results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=1)
 
 # take a look at what the results of decideTests looks like
-head(results)
+tail(results)
 summary(results)
-vennDiagram(results, include="down")
+vennDiagram(results, include="up")
 
 # retrieve expression data for your DEGs ----
 head(v.DEGList.filtered.norm$E)
-colnames(v.DEGList.filtered.norm$E) <- labels
-diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | v.DEGList.filtered.norm[,2] !=0,]
+colnames(v.DEGList.filtered.norm$E) <- sampleLabels
+diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
 head(diffGenes)
 dim(diffGenes)
 #write your DEGs to a file
