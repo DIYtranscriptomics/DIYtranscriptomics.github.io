@@ -112,7 +112,7 @@ head(diffGenes)
 dim(diffGenes)
 #write your DEGs to a file
 write.csv(diffGenes,"DiffGenes.csv")
-write.table(diffGenes,"DiffGenes.txt", sep = "\t")
+write.table(diffGenes,"DiffGenes.txt", quote = FALSE, sep = "\t")
 
 # OPTIONAL: paired design and correcting for known batch effects ----
 # if you need a paired analysis (a.k.a.'blocking' design)

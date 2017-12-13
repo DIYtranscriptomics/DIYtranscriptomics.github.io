@@ -1,24 +1,29 @@
-# Introduction to this script -----------
+# introduction to this script -----------
 #this script creates heatmaps from your differentially expressed genes or transcripts
 
-# Load packages -----
+# load packages -----
 library(gplots) 
 library(RColorBrewer)
 library(limma)
 
-# Choose your color pallette ----
+# choose color pallette ----
 #Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]).
 myheatcol <- greenred(75)
 # a color-blind friendly pallete
 myheatcol <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 
-# generate a heatmap of DEGs ----
+# cluster DEGs ----
 #begin by clustering the genes (rows) in each set of differentially expressed genes
 hr <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
+# hierarchical clustering is a type of unsupervised clustering. Related methods include K-means, SOM, etc 
+# unsupervised methods are blind to sample/group identity
+# in contrast, supervised methods 'train' on a set of labeled data.  
+# supervised clustering methods include random forest, and artificial neural networks
 
 #now cluster your samples (columns)
 #we may not acutally use this clustering result, but it's good to have just in case
 hc <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete") #cluster columns by spearman correlation
+#note: we use Spearman, instead of Pearson, for clustering samples because it gives equal weight to highly vs lowly expressed transcripts or genes
 
 # Cut the resulting tree and create color vector for clusters.  
 #Vary the cut height to give more or fewer clusters, or you the 'k' argument to force n number of clusters
@@ -29,18 +34,26 @@ mycl <- cutree(hr, k=2)
 mycolhc <- rainbow(length(unique(mycl)), start=0.1, end=0.9) 
 mycolhc <- mycolhc[as.vector(mycl)] 
 
+# produce heatmap of DEGs ----
 #plot the hclust results as a heatmap
-# first, a heatmap of genes regulated by LPS in a WT background
 heatmap.2(diffGenes, Rowv=as.dendrogram(hr), Colv=NA, 
-          col=myheatcol, scale="row", labRow=NA,
+          col=myheatcol, scale='row', labRow=NA,
           density.info="none", trace="none", RowSideColors=mycolhc, 
           cexRow=1, cexCol=1, margins=c(8,20)) 
+#what do the colors represent in this heatmap?
+#what happens when you change scale=NULL
 
 # you can annotate samples with any metadata available in your study design file
-color.map <- function(factorial) { if (factorial=="whatever1") "#FF0000" else if (factorial=="whatever2") "#33A12B" else "#0000FF"}
-color.map <- unlist(lapply(factorial, color.map))
+color.map <- function(groups) { if (groups=="control") "#FF0000" else if (groups=="trans_crypto") "#33A12B" else "#0000FF"}
+color.map <- unlist(lapply(groups, color.map))
 
-# edit heatmap to simplify----
+heatmap.2(diffGenes, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc),
+          col=myheatcol, scale="row", labRow=NA,
+          density.info="none", trace="none", 
+          RowSideColors=mycolhc, ColSideColors = color.map,
+          cexRow=1, cexCol=1, margins=c(8,20)) 
+
+# simplify heatmap ----
 #notice that the heatmap includes ALL the columns from your dataset
 #to simplify, average biological replicates
 #then rerun the heatmap the script above using diffData.AVG as input instead of diffData
@@ -54,7 +67,7 @@ diffGenes.AVG <- avearrays(diffGenes)
 #diffGenes.subset <- diffGenes[,c(1,4,7)]
 ##now repeat heatmap only on these selected columns
 
-# pull out clusters of co-regulated genes ----
+# view clusters of co-regulated genes ----
 # view your color assignments for the different clusters
 names(mycolhc) <- names(mycl) 
 barplot(rep(10, max(mycl)),
@@ -93,7 +106,6 @@ myTPM.filter <- as.matrix(myTPM.filter)
 #you may (or may not) want to cluster your selected genes
 hr <- hclust(as.dist(1-cor(t(myTPM.filter), method="pearson")), method="complete") #cluster rows by pearson correlation
 hc <- hclust(as.dist(1-cor(myTPM.filter, method="spearman")), method="average") #cluster columns by spearman correlation
-#note: we use Spearman, instead of pearson, for cluster samples because it gives equal weight to highly vs lowly expressed transcripts or genes
 
 #make heatmap
 heatmap.2(myTPM.filter, Rowv=NA, Colv=NA, 
