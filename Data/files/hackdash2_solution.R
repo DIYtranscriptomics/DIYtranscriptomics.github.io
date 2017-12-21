@@ -1,10 +1,11 @@
 my.df <- read.delim("data.unfiltered.txt", sep="\t", stringsAsFactors = FALSE, header=TRUE)
 head(my.df)
-dim(my.df)
+dim(my.df) #dim of table are 14313 rows by 149 cols
 class(my.df)
 
 #load dplyr for doing most of the heavy lifting in this hackdash
 library(dplyr)
+colnames(my.df)
 
 #I know there are 4 main 'verbs' in dplyr
 #1. select - picks columns
@@ -43,7 +44,7 @@ dim(my.df.subset.mod)
 
 # filter the rows to leave only genes with 2fold or greater induction at 24hr
 my.df.subset.FC.select <- filter(my.df.subset.mod, LogFC_24hr.vs.ctrl >= 2)
-dim(my.df.subset.FC.select)
+dim(my.df.subset.FC.select) #195 genes have a LogFC >= 2 
 
 # using this filtered dataframe, select just the AVG, LogFC columns, and annotation columns
 my.df.subset.FC.select2 <- select(my.df.subset.FC.select, contains("AVG"), contains("LogFC"), description, transcript_id)
@@ -57,4 +58,4 @@ datatable(my.df.subset.FC.select2,
           extensions = c('KeyTable', "FixedHeader"), 
           caption = 'I win the hackdash!',
           options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
-  formatRound(columns=c(1:6), digits=3)
+  formatRound(columns=c(1:7), digits=3)
