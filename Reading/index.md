@@ -129,6 +129,8 @@ _more general info about ultra lightweight methods for transcript quantification
 
 * [The what, where, how and why of gene ontology -- a primer for bioinformaticians.](http://DIYtranscriptomics.github.io/Reading/files/GO.pdf)  Briefings in Bioinformatics, Feb 2011
 
+* [A nice blog post](httP;//mengnote.blogspot.com/2012/12/calculate-correct-hypergeometric-p.html) describing the hypergeometric test and Fisher's exact test that are at the core of many functional enrichment approaches.
+
 * The [original 2003 Nat. Methods paper describing Gene Set Enrichment Analysis (GSEA)](http://DIYtranscriptomics.github.io/Reading/files/Mootha2003_GSEA.pdf), and the [2005 PNAS paper](http://mootha.med.harvard.edu/PubPDFs/Subramanian2005.pdf) that formally detailed its usage.
 
 * Not a fan of using the Broad Inst. GSEA program?  You can carry out self-contained and competitive GSEA in R using [ROAST](http://DIYtranscriptomics.github.io/Reading/files/ROAST.pdf) and [CAMERA](http://DIYtranscriptomics.github.io/Reading/files/CAMERA.pdf), respectively.
