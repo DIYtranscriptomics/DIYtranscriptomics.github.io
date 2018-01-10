@@ -7,78 +7,97 @@
 #these gene sets can be 'custom' made based on your specific interests,
 #or they can be downloaded from gene signature databases such as MSigDB or GeneSignatureDB
 
-#generally speaking, there are two approaches for gene set testing. 
-#1) Self-contained GSEA: tests whether genes in a signature are differentially expressed, in an absolute sense, without regard to any other genes in your data
-#2) Competitive GSEA: tests whether genes in a signature are enriched when taking into consideration the rest of your data
-#below is some code for both approaches
-
 # Load packages ----
 library(GSEABase)
 library(GSVA)
 library(Biobase)
 library(limma)
+library(ggplot2)
+library(dplyr)
 
 # OPTIONAL: convert symbols to upper case 'human' ----
 # make sure to have gene symbols in all caps (coerced to human)
 # if working with mouse data, use the 'toupper' function to conver to uppercase (i.e. human genes)
 # of course, if you're working with human RNAseq data, you won't need to do this bit
-upperSymbols <- as.data.frame(toupper(rownames(normData$E))) #tolower to convert symbols to mouse
+upperSymbols <- as.data.frame(toupper(rownames(v.DEGList.filtered.norm$E))) #tolower to convert symbols to mouse
 head(upperSymbols)
 upperSymbols <- as.matrix(upperSymbols)
-rownames(normData$E) <- upperSymbols
-head(normData$E)
+rownames(v.DEGList.filtered.norm$E) <- upperSymbols
+head(v.DEGList.filtered.norm$E)
 #sometimes there's a row with no symbol identifier...if so, go ahead an remove this
-normData$E <- normData$E[-1,]
+v.DEGList.filtered.norm$E <- v.DEGList.filtered.norm$E[-1,]
 
 # OPTIONAL: check for and remove any duplicate rows ---- 
-dups <- base::duplicated(rownames(normData$E))
-unique(rownames(normData$E)[duplicated(rownames(normData$E))])
-collapsed.matrix <- normData$E[!duplicated(rownames(normData$E)), ]
+dups <- base::duplicated(rownames(v.DEGList.filtered.norm$E))
+unique(rownames(v.DEGList.filtered.norm$E)[duplicated(rownames(v.DEGList.filtered.norm$E))])
+collapsed.matrix <- v.DEGList.filtered.norm$E[!duplicated(rownames(v.DEGList.filtered.norm$E)), ]
 
 # load MSigDB signatures -----
 #You'll need to download the .GMT files to your computer directly from from the MSigDB website (I choose the gene symbol files).  
 #These can be found at:  http://www.broadinstitute.org/gsea/msigdb/collections.jsp
 #place these files in a folder on your computer
-#the first part of this script points to these files, so be sure to change these lines to match the directory on your computer.
+#the first part of this script loads these files from your computer, so be sure to change these lines to match the directory on your computer.
 # NOTE: all MSigDB files are HUMAN genes, so you may not want to query a mouse dataset against them
 # if you're working with mouse array data, use MSigDB files that have been mapped to human/mouse orthologs. These can be found at:
 # http://bioinf.wehi.edu.au/software/MSigDB/
 # NOTE: in addition to the gene sets above, 
 # you can also load custom sets (as .gmt files) downloaded from MSigDB search results (i.e. all sets with 'Treg' in the description)
+# alternatively, you can produce you own custom gene sets (more on this below)
 
 #MSigDB set C2 contains pathways and chemical/genetic perturbations
-broadSet.C2.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.all.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.CGP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cgp.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CGP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cgp.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
 # smaller subsets of C2
-broadSet.C2.KEGG <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.kegg.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.Biocarta <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.biocarta.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.Reactome <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.reactome.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.KEGG <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.kegg.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.Biocarta <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.biocarta.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.Reactome <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.reactome.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
 #set C3 contains lists of targets for of TFs and MIRs
-broadSet.C3.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.all.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C3.TFT <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.tft.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C3.MIR <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.mir.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.TFT <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.tft.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.MIR <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.mir.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
 #set C5 contains sets of genes associated with different GO terms
-broadSet.C5.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.all.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C5.BP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.bp.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C5.MF <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.mf.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.BP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.bp.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.MF <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.mf.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
 #MsigDB set C7 contains list of genes associated with immunological signatures
-broadSet.C7 <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c7.all.v5.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C7 <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c7.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
 
-# self-contained GSEA using ROAST----
-# first let's creat a few signatures to test in our enrichment analysis
+# competitive GSEA using CAMERA----
+# first let's create a few signatures to test in our enrichment analysis
 mySig <- toupper(rownames(myTopHits))
-mySig2 <- c("AAK1", "AADAT", "AAGAB", "AADACL4", "AADACP1", "AAMDC", "AASS", "ABAT", "AASDH")
+mySig2 <- sample((rownames(v.DEGList.filtered.norm$E)), size = 100, replace = FALSE)
 collection <- list(real = mySig, fake = mySig2)
-# now test for enrichment using ROAST
-GSEAres <- mroast(normData, collection, design, contrast.matrix[,1], nrot=99) 
-GSEAres
-
-# run GSEA using GSVA package----
-#be aware that if you choose a large MsigDB file here, this step may take a while
-#first, convert your geneSetCollections into lists using the 'geneIds' function
+# now test for enrichment using CAMERA
+GSEAres <- camera(v.DEGList.filtered.norm, collection, design, contrast.matrix[,1]) 
+head(GSEAres)
+# now repeat with an actual gene set collection
+#first, convert your geneSetCollections into lists using the 'geneIds' function from the GSEABase package
 broadSet.C7 <- geneIds(broadSet.C7)
-GSVA.res.c7 <- gsva(normData$E, #your data
+GSEAres <- camera(v.DEGList.filtered.norm, broadSet.C7, design, contrast.matrix[,1]) 
+head(GSEAres)
+
+# graph GSEA results as bubble chart ----
+#MP <-read.table(file="Process", header=T, sep="\t")
+#begin by adding a column to your GSEA result that indicates the group
+GSEAres.2 <- mutate(GSEAres,
+                    signature = rownames(GSEAres),
+                    group = "WT_crypto")
+head(GSEAres.2)
+#now take the top n signatures, the are already ranked by FDR
+GSEAres.2 <- GSEAres.2[1:10,]
+#If you have multiple GSEA results from different pairwise comparisons, use a simple row bind (rbind) to join together
+GSEAres.2$signature<- as.character(GSEAres.2$signature)
+#Then turn it back into an ordered factor
+GSEAres.2$signature <- factor(GSEAres.2$signature, levels=unique(GSEAres.2$signature))
+ggplot(GSEAres.2, aes(x=group, y=signature)) + 
+  geom_point(aes(size=NGenes,color=FDR)) +
+  scale_color_gradient(low="#0091ff", high="#f0650e") +
+  theme_bw()
+
+# GSEA using GSVA package----
+#be aware that if you choose a large MsigDB file here, this step may take a while
+GSVA.res.c7 <- gsva(v.DEGList.filtered.norm$E, #your data
                     broadSet.C7, # your gene set collection
                     min.sz=5, max.sz=500, #criteria for filtering gene sets
                     verbose=FALSE,
@@ -138,7 +157,7 @@ write.table(diffSets.C7, "diffSets_C7.xls", sep="\t", quote=FALSE)
 
 # OPTIONAL: Calculate the % overlap between gene sets ----
 library(lattice)
-SigOverlap <- computeGeneSetsOverlap(broadSet.C7, rownames(normData$E))
+SigOverlap <- computeGeneSetsOverlap(broadSet.C7, rownames(v.DEGList.filtered.norm$E))
 rgb.palette <- colorRampPalette(c("blue", "red", "yellow"), space = "rgb")
 levelplot(SigOverlap, main="geneset correlation matrix", xlab="", ylab="", col.regions=rgb.palette(1000), cuts=100, cexRow=0.5, cexCol=1, margins=c(10,10))
 
@@ -161,3 +180,4 @@ setNames.REACTOME <- rownames(diffSets.REACTOME)
 #or you can import your own edited list containing a subset of enriched pathways
 diffSets.custom <- as.matrix(read.delim("diffSets_C2_custom.txt", header=TRUE, row.names=1))
 setNames.custom <- rownames(diffSets.custom)
+
