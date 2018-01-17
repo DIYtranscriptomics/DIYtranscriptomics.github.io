@@ -127,18 +127,7 @@ comments: false
 <img src="images/GSEA.jpg" style="border:none;" />
 </div>
 
-**January 10th** - We'll spend the next two classes learning the principles and practice of using [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  In the first class we'll use the GSEA program from the Broad Institute to carry out out analysis.  In the second class we'll run GSEA through R.
-
-<div style="clear:both"></div>
-
-
-## Making your analysis transparent and reproducible
-
-<div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
-<img src="images/notebook.jpg" style="border:none;" />
-</div>
-
-**January 17th** - At this point, you are in a situation many bioinformatics folks find themselves in: you have a folder that contains some raw data, an analysis script, and outputs that include graphs, tables and other images.  Unfortunately, this trail of digital breadcrumbs is hard for anyone to follow (even your future self!).  In order to make your analysis pipeline transparent and reproducible, in the next two classes you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap all these elements together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Lecture slides available [here](https://www.icloud.com/keynote/0jx8AmcQUTZvZjBB4h65gVR9A#Lecture12%5FRmarkdown)
+**January 10th and 17th** - We'll spend the next two classes learning the principles and practice of using [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  In the first class we'll use the GSEA program from the Broad Institute to carry out out analysis.  In the second class we'll run GSEA through R.
 
 <div style="clear:both"></div>
 
@@ -152,13 +141,23 @@ comments: false
 
 <div style="clear:both"></div>
 
+## Making your analysis transparent and reproducible
+
+<div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
+<img src="images/notebook.jpg" style="border:none;" />
+</div>
+
+**January 31st and Feb 7th** - At this point, you are in a situation many bioinformatics folks find themselves in: you have a folder that contains some raw data, an analysis script, and outputs that include graphs, tables and other images.  Unfortunately, this trail of digital breadcrumbs is hard for anyone to follow (even your future self!).  In order to make your analysis pipeline transparent and reproducible, in the next two classes you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap all these elements together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Lecture slides available [here](https://www.icloud.com/keynote/0jx8AmcQUTZvZjBB4h65gVR9A#Lecture12%5FRmarkdown)
+
+<div style="clear:both"></div>
+
 ## Deploying your data to the web
 
 <div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
 <img src="images/shiny.png" style="border:none;" />
 </div>
 
-**February 7th** - Even if your analysis pipeline is transparent and reproducible, that doesn't mean the data is _accessible_ to your fellow labmates and colleagues.  To address this issue, you'll learn to use [ggvis](http://ggvis.rstudio.com/), [shiny](http://www.shinyapps.io/), and [shinyapps](http://www.shinyapps.io/) to design a user-friendly web interface that allows collaborators -- no matter where they may be -- to quickly view reactive graphs and tables populated with your data. Lecture slides available [here](https://www.icloud.com/keynote/0gbQABLqg3YzrSnuHHUHyFVWg#Lecture13%5FShiny)
+**February 14th** - Even if your analysis pipeline is transparent and reproducible, that doesn't mean the data is _accessible_ to your fellow labmates and colleagues.  To address this issue, you'll learn to use [ggvis](http://ggvis.rstudio.com/), [shiny](http://www.shinyapps.io/), and [shinyapps](http://www.shinyapps.io/) to design a user-friendly web interface that allows collaborators -- no matter where they may be -- to quickly view reactive graphs and tables populated with your data. Lecture slides available [here](https://www.icloud.com/keynote/0gbQABLqg3YzrSnuHHUHyFVWg#Lecture13%5FShiny)
 
 <div style="clear:both"></div>
 
