@@ -151,16 +151,6 @@ comments: false
 
 <div style="clear:both"></div>
 
-## Deploying your data to the web
-
-<div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
-<img src="images/shiny.png" style="border:none;" />
-</div>
-
-**February 14th** - Even if your analysis pipeline is transparent and reproducible, that doesn't mean the data is _accessible_ to your fellow labmates and colleagues.  To address this issue, you'll learn to use [ggvis](http://ggvis.rstudio.com/), [shiny](http://www.shinyapps.io/), and [shinyapps](http://www.shinyapps.io/) to design a user-friendly web interface that allows collaborators -- no matter where they may be -- to quickly view reactive graphs and tables populated with your data. Lecture slides available [here](https://www.icloud.com/keynote/0gbQABLqg3YzrSnuHHUHyFVWg#Lecture13%5FShiny)
-
-<div style="clear:both"></div>
-
 ## Final exam
 
 <div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
