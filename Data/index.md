@@ -32,3 +32,22 @@ The challenge: A colleague has asked for your help to mine data produced from a 
 * Send me your html table by email, and tell me how many genes met the FC cutoff above.
 
 ** Solution: [see this script](http://DIYtranscriptomics.github.io/Data/files/hackdash2_solution.R)
+
+## HackDash #3
+[Download the mapped data and study design](https://drive.google.com/drive/folders/1hak0eKSzDmZ52rjzh__Rgg8s-gk2MQou?usp=sharing) from a basic experiment in which T cells were left unstimulated or stimulated with anti-CD3/28 in duplicate. You would like to import these files into R and use your Transcriptomics skills to answer the following questions.
+
+1.	What is the gene name of the 1015th row of the output of tximport? (2 points)
+2.	What are the total number of counts for each sample within Txi_gene$counts (4 points)
+3.	Create a dendrogram and include an image here. Describe how your samples are clustering. (4 points)
+4.	Complete a PCA and include an image here. What do PC1 and PC2 correspond to? (5 points)
+5.	How many genes are differentially expressed (FDR < 0.05, abs LogFC > 1) when you compare unstimulated and stimulated T cells? (5 points)
+6.	Create a heatmap of all differentially expressed genes. (5 points)
+
+
+[Download the .gct and .cls files](https://drive.google.com/drive/folders/1gPEwoh0GP64eycgF4_oD7bl9MHRUxV2q?usp=sharing) to run GSEA in order to answer the following questions.
+
+7.	Using the 'Hallmarks collection' from MSigDB and your data, identify the pathway most highly enriched in simulated cells (5 points).
+8.	How many genes sets from the Hallmark collection are significantly enriched in the stimulated group relative to unstimulated (FDR < 0.05) (2 points)
+9.	Within Hallmarks, what is the most enriched pathway in phenotype "unstimulated"? Is it a significant enrichment? (5 points)
+10.	How many Hallmark genes sets are significantly enriched in the unstimulated group relative to stimulated (FDR < 0.05) (2 points)
+
