@@ -1,0 +1,177 @@
+---
+title: "<center> Title of your study <center>"
+author: "<center> Author list <center><br>"
+date: "<center> _January, 2018_ <center>"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    number_sections: true
+  html_notebook:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    number_sections: true
+  pdf_document:
+    fig_caption: yes
+    toc: yes
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+# Abstract
+This document contains all the code used to analyze the unpublished data from the ....  
+
+# R packages
+**These are the R/bioconductor packages used for this analysis:**
+```{r packages, message=FALSE, warning=FALSE, results='hide'}
+library(dplyr)
+library(reshape2)
+library(tibble)
+library(ggplot2)
+library(ggvis)
+library(GSEABase)
+library(GSVA)
+library(reshape2)
+library(readr)
+library(Biostrings)
+library(tximport)
+library(ensembldb)
+library(EnsDb.Mmusculus.v79)
+library(DT)
+library(limma)
+library(edgeR)
+library(gplots) 
+library(RColorBrewer)
+library(scatterD3)
+library(STRINGdb)
+library(patchwork)
+```
+
+**This dynamic html summary report was compiled in Rmarkdown using the following packages:**
+```{r packages.continued, results='hide', message=FALSE, warning=FALSE}
+library(rmarkdown)
+library(knitr) 
+```
+
+# Data generation
+## read mapping with Kallisto
+```{r read mapping, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+# paste you code for aligning reads here
+```
+
+## read mapping summary
+```{r mapping stats, message=FALSE, warning=FALSE}
+# create a graph of your read mapping stats if you want
+```
+
+
+## annotation with Ensembl
+```{r annotation, message=FALSE, warning=FALSE, eval=FALSE}
+# all the code for anootating transcripts (Biomart or Ensembl package)
+```
+
+## importing data into R
+```{r data import, message=FALSE, warning=FALSE, eval=FALSE}
+# importing data into R using Tximport package
+```
+
+# Preprocessing and normalization
+## study design
+```{r design, message=FALSE, warning=FALSE}
+#read in your study design file from local directory
+```
+
+## raw data
+```{r raw, message=FALSE, warning=FALSE}
+#read in your Txi_gene object and graph raw data
+```
+
+## filtered data
+```{r filtering, message=FALSE, warning=FALSE}
+#filter out lowly expressed genes or transcripts and regraph
+```
+
+## normalized data
+```{r normalize, message=FALSE, warning=FALSE}
+#normalize data using 'calcNormFactors' function, then regraph
+```
+
+# Exploratory data analysis
+## Principal component analysis (PCA)
+```{r PCA, message=FALSE, warning=FALSE}
+#carry out PCA of filtered normalized data and graph
+```
+
+
+# Differential gene analysis
+## set up model matrix
+```{r model, message=FALSE, warning=FALSE}
+#set-up your experimental design using the model.matrix
+```
+
+## mean-variance and linear model
+```{r linear model, message=FALSE, warning=FALSE}
+#use Limma VOOM to model mean-vairance trend
+```
+
+## set up contrasts
+```{r contrasts, message=FALSE, warning=FALSE}
+#fit linear model to deata and set-up contrast matrix with pairwise comparisons of interest
+```
+
+## Bayesan stats
+```{r Bayes, message=FALSE, warning=FALSE}
+#extract bayesian stats for linear model fit
+```
+
+## Top 10 DEGS
+```{r topTable, message=FALSE, warning=FALSE}
+#display top N genes for a single pairwise comparison 
+#insert additional code chuncks for additional pairwise comparisons
+```
+
+## Volcano plot - infected vs double neg
+```{r volcano1, message=FALSE, warning=FALSE}
+#make volcano plot of pairwise comparison of interest
+#insert additional code chuncks for additional pairwise comparisons=
+```
+
+## Venn
+```{r Venn, message=FALSE, warning=FALSE}
+#run 'decideTests' function and plot results as Venn diagram
+```
+
+## DEGs
+```{r DEGs, message=FALSE, warning=FALSE}
+#extract DEGs and create data frame with group averages and logFCs.  Display as table
+```
+
+# Visualizing DEGs
+## heatmap of all DEGs 
+```{r heatmap, message=FALSE, warning=FALSE}
+#heatmap of all DEGs
+#create additional heatmaps for co-expressed modules or a priori list of genes
+```
+
+# Functional enrichment analysis
+## Summary of GO enrichment analysis of DEGs
+```{r GO bubble, message=FALSE, warning=FALSE}
+# Read in text file with results of GO enrichment carried out on DAVID or other websites
+```
+
+## GSEA with CAMERA
+```{r GSEA, message=FALSE, warning=FALSE, eval= FALSE, echo=FALSE}
+# carry out GSEA
+```
+
+# Session Info
+**Session Info:**
+```{r sessionInfo, results='asis', message=FALSE, warning=FALSE, echo=FALSE}
+sessionInfo()
+```
+

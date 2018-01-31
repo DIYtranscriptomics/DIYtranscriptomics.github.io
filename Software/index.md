@@ -16,8 +16,6 @@ Everyone is expected to bring their own internet-enabled laptop equiped with eit
 * Here are my [instructions for installing Kallisto](https://chmi-sops.github.io/mydoc_kallisto.html),the program we'll use for mapping reads to transcripts. *We will install this program together in class*
 
 ## Part II
-* Download the comprehensive typesetting program, [XeLaTex](http://www.texts.io/support/0001/) and the universal document text converter, [Pandoc](http://www.texts.io/support/0003/)
 * Download the Java-based program for running [GSEA](http://www.broadinstitute.org/gsea/index.jsp). This requires that you sign-up for a free account. You may also need to update to the latest version of [Java](https://www.java.com/en/) for this application to run properly. 
 * Download the network analysis platform, [Cytoscape](http://www.cytoscape.org/)
-* Sign-up for a free account on [Shinyapps.io](http://www.shinyapps.io/) and follow [these instructions](http://shiny.rstudio.com/articles/shinyapps.html) to set-up and link to your account.
 * If you have a PC, you will need to download [RTools](https://cran.r-project.org/bin/windows/Rtools/)
