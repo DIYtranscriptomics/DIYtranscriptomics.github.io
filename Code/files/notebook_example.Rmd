@@ -1,0 +1,534 @@
+---
+title: "<center> In vivo transcriptional of injected and infected macrophages <center>"
+author: "<center> Fall 2018 transcriptomics class <center><br>"
+date: "<center> _January, 2018_ <center>"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    number_sections: true
+  html_notebook:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    number_sections: true
+  pdf_document:
+    fig_caption: yes
+    toc: yes
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+# Abstract
+This document contains all the code used to analyze the unpublished data from the ....  
+
+# R packages
+**These are the R/bioconductor packages used for this analysis:**
+```{r packages, message=FALSE, warning=FALSE, results='hide'}
+library(dplyr)
+library(reshape2)
+library(tibble)
+library(ggplot2)
+library(ggvis)
+library(GSEABase)
+library(GSVA)
+library(reshape2)
+library(readr)
+library(Biostrings)
+library(tximport)
+library(ensembldb)
+library(EnsDb.Mmusculus.v79)
+library(DT)
+library(limma)
+library(edgeR)
+library(gplots) 
+library(RColorBrewer)
+library(scatterD3)
+library(STRINGdb)
+library(patchwork)
+```
+
+**This dynamic html summary report was compiled in Rmarkdown using the following packages:**
+```{r packages.continued, results='hide', message=FALSE, warning=FALSE}
+library(rmarkdown)
+library(knitr) 
+```
+
+# Data generation
+## read mapping with Kallisto
+```{r read mapping, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+
+#mapping to mouse transcriptome
+kallisto quant -i myMouseIndex -o DP_rep1 -b 60 -t 16 --single -l 275 -s 30 1_S1_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o DP_rep2 -b 60 -t 16 --single -l 275 -s 30 4_S8_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o DP_rep3 -b 60 -t 16 --single -l 275 -s 30 7_S7_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o DP_rep4 -b 60 -t 16 --single -l 275 -s 30 10_S6_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o DN_rep1 -b 60 -t 16 --single -l 275 -s 30 2_S12_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o DN_rep2 -b 60 -t 16 --single -l 275 -s 30 5_S5_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o DN_rep3 -b 60 -t 16 --single -l 275 -s 30 8_S10_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o DN_rep4 -b 60 -t 16 --single -l 275 -s 30 11_S3_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o ZsG_rep1 -b 60 -t 16 --single -l 275 -s 30 3_S9_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o ZsG_rep2 -b 60 -t 16 --single -l 275 -s 30 6_S11_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o ZsG_rep3 -b 60 -t 16 --single -l 275 -s 30 9_S4_R1_001_combined.fastq.gz
+kallisto quant -i myMouseIndex -o ZsG_rep4 -b 60 -t 16 --single -l 275 -s 30 12_S2_R1_001_combined.fastq.gz
+
+#now mapping to T. gondii transcriptome
+kallisto quant -i TgME49index -o Tg_DP_rep1 -b 60 -t 16 --single -l 275 -s 30 1_S1_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_DP_rep2 -b 60 -t 16 --single -l 275 -s 30 4_S8_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_DP_rep3 -b 60 -t 16 --single -l 275 -s 30 7_S7_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_DP_rep4 -b 60 -t 16 --single -l 275 -s 30 10_S6_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_DN_rep1 -b 60 -t 16 --single -l 275 -s 30 2_S12_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_DN_rep2 -b 60 -t 16 --single -l 275 -s 30 5_S5_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_DN_rep3 -b 60 -t 16 --single -l 275 -s 30 8_S10_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_DN_rep4 -b 60 -t 16 --single -l 275 -s 30 11_S3_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_ZsG_rep1 -b 60 -t 16 --single -l 275 -s 30 3_S9_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_ZsG_rep2 -b 60 -t 16 --single -l 275 -s 30 6_S11_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_ZsG_rep3 -b 60 -t 16 --single -l 275 -s 30 9_S4_R1_001_combined.fastq.gz
+kallisto quant -i TgME49index -o Tg_ZsG_rep4 -b 60 -t 16 --single -l 275 -s 30 12_S2_R1_001_combined.fastq.gz
+```
+
+## read mapping summary
+```{r mapping stats, message=FALSE, warning=FALSE}
+mapStats <- read.table("mappingStats.txt", row.names=NULL, header = T, as.is = T)
+mapStats.melt <- melt(mapStats)
+colnames(mapStats.melt) <- c("sample", "cell_population", "reference", "reads_mapped")
+p1 <- ggplot(mapStats.melt, aes(x=reference, y=reads_mapped)) +
+  geom_violin(trim = TRUE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw() +
+  labs(title = "total reads mapped")
+
+mapStats.melt.subset <- dplyr::filter(mapStats.melt, reference=="Toxo_ref")
+
+p2 <- ggplot(mapStats.melt.subset, aes(x=cell_population, y=reads_mapped, group=cell_population)) +
+  geom_violin(trim = TRUE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw() +
+  labs(title = "reads mapping to T. gondii")
+
+p1 + p2
+```
+
+
+## annotation with Ensembl
+```{r annotation, message=FALSE, warning=FALSE, eval=FALSE}
+#use the 'transcripts' function from the EnsemblDB package to get annotation info
+Tx <- transcripts(EnsDb.Mmusculus.v79, 
+                  columns=c(listColumns(EnsDb.Mmusculus.v79,
+                                        "tx"), "gene_name"))
+
+Tx <- as.data.frame(Tx)
+
+#need to change first column name to 'target_id'
+Tx <- dplyr::rename(Tx, target_id = tx_id)
+row.names(Tx) <- NULL
+head(Tx)
+
+#transcript ID needs to be the first column in the dataframe
+Tx <- Tx[,c(6,12)]
+```
+
+## importing data into R
+```{r data import, message=FALSE, warning=FALSE, eval=FALSE}
+targets <- read.table("Invivo_CEPCre_Ai6_Day1_StudyDesign.txt", row.names=NULL, header = T, as.is = T)
+files <- file.path(targets$sample, "abundance.h5")
+# now check to make sure this path is correct by seeing if the files exist
+all(file.exists(files))
+
+Txi_gene <- tximport(files, 
+                     type = "kallisto", 
+                     tx2gene = Tx, 
+                     txOut = FALSE, 
+                     countsFromAbundance = "lengthScaledTPM")
+save(Txi_gene, file = "Txi_gene")
+```
+
+# Preprocessing and normalization
+## study design
+```{r design, message=FALSE, warning=FALSE}
+targets <- read.table("Invivo_CEPCre_Ai6_Day1_StudyDesign.txt", row.names=NULL, header = T, as.is = T)
+groups <- targets$description
+groups <- factor(groups)
+sampleLabels <- targets$sample
+targets
+```
+
+## raw data
+```{r raw, message=FALSE, warning=FALSE}
+load("Txi_gene")
+DGEList <- DGEList(Txi_gene$counts)
+# use the 'cpm' function from EdgeR to get counts per million
+cpm <- cpm(DGEList) 
+log2.cpm <- cpm(DGEList, log=TRUE)
+log2.cpm.df <- as.data.frame(log2.cpm)
+colnames(log2.cpm.df) <- sampleLabels
+log2.cpm.df <- melt(log2.cpm.df)
+colnames(log2.cpm.df) <- c("sample", "expression")
+ggplot(log2.cpm.df, aes(x=sample, y=expression, fill=sample)) +
+  geom_violin(trim = TRUE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw()
+```
+
+## filtered data
+```{r filtering, message=FALSE, warning=FALSE}
+#first, take a look at how many genes or transcripts have no read counts at all
+# now set some cut-off to get rid of genes/transcripts with low counts
+keepers <- rowSums(cpm>1)>=12
+DGEList.filtered <- DGEList[keepers,]
+dim(DGEList.filtered)
+
+log2.cpm.filtered <- cpm(DGEList.filtered, log=TRUE)
+log2.cpm.filtered.df <- as.data.frame(log2.cpm.filtered)
+colnames(log2.cpm.filtered.df) <- sampleLabels
+log2.cpm.filtered.df <- melt(log2.cpm.filtered.df)
+colnames(log2.cpm.filtered.df) <- c("sample", "expression")
+ggplot(log2.cpm.filtered.df, aes(x=sample, y=expression, fill=sample)) +
+  geom_violin(trim = TRUE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw()
+```
+
+## normalized data
+```{r normalize, message=FALSE, warning=FALSE}
+DGEList.filtered.norm <- calcNormFactors(DGEList.filtered, method = "TMM")
+# use the 'cpm' function from EdgeR to get counts per million from you 
+log2.cpm.filtered.norm <- cpm(DGEList.filtered.norm, log=TRUE)
+write.table(log2.cpm.filtered.norm,"norm_filtered.txt", quote = FALSE, sep = "\t")
+
+log2.cpm.filtered.norm.df <- as.data.frame(log2.cpm.filtered.norm)
+colnames(log2.cpm.filtered.norm.df) <- sampleLabels
+log2.cpm.filtered.norm.df <- melt(log2.cpm.filtered.norm.df)
+colnames(log2.cpm.filtered.norm.df) <- c("sample", "expression")
+ggplot(log2.cpm.filtered.norm.df, aes(x=sample, y=expression, fill=sample)) +
+  geom_violin(trim = TRUE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw()
+
+```
+
+# Exploratory data analysis
+## Principal component analysis (PCA)
+```{r PCA, message=FALSE, warning=FALSE}
+pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
+pc.var<-pca.res$sdev^2 #sdev^2 gives you the eigenvalues
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+
+pca.res.df <- as.data.frame(pca.res$x)
+pca.res.df <- cbind(pca.res.df, groups)
+scatterD3(pca.res.df, x = PC1, y = PC2,
+          col_var = groups,
+          ellipses = TRUE,
+          lasso = TRUE,
+          xlab = paste("PC1 -",pc.per[1],"%"), 
+          ylab = paste("PC2 -",pc.per[2],"%"),
+          col_lab = "group")
+```
+
+
+# Differential gene analysis
+## set up model matrix
+```{r model, message=FALSE, warning=FALSE}
+#groups <- relevel(groups, "control") #may need to use 'relevel' function
+design <- model.matrix(~0 + groups)
+colnames(design) <- levels(groups)
+```
+
+## mean-variance and linear model
+```{r linear model, message=FALSE, warning=FALSE}
+v.DEGList.filtered.norm <- voom(DGEList.filtered.norm, design, plot = TRUE)
+# fit a linear model to your data
+```
+
+## set up contrasts
+```{r contrasts, message=FALSE, warning=FALSE}
+fit <- lmFit(v.DEGList.filtered.norm, design)
+contrast.matrix <- makeContrasts(infection = double_pos - double_neg,
+                                 injection = ZsG_pos - double_neg,
+                                 inf.vs.inj = double_pos - ZsG_pos,
+                                 levels=design)
+```
+
+## Bayesan stats
+```{r Bayes, message=FALSE, warning=FALSE}
+fits <- contrasts.fit(fit, contrast.matrix)
+#get bayesian stats for your linear model fit
+ebFit <- eBayes(fits)
+#stats <- write.fit(ebFit)
+```
+
+## Top 10 DEGS
+```{r topTable, message=FALSE, warning=FALSE}
+myTopHits <- topTable(ebFit, adjust ="BH", coef=2, number=10, sort.by="logFC")
+datatable(myTopHits, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          caption = 'Table 1: DEGs for injected vs double negative',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:6), digits=3)
+```
+
+## Volcano plot - infected vs double neg
+```{r volcano1, message=FALSE, warning=FALSE}
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=12000, sort.by="logFC")
+#first, move rownames into the dataframe
+myTopHits <- rownames_to_column(myTopHits, "geneID")
+myTopHits <- mutate(myTopHits, log10Pval = -log10(adj.P.Val), 
+                    adj.P.Val = round(adj.P.Val, 2),
+                    logFC = round(logFC, 2),
+                    geneID = geneID)
+tooltip <- paste("<b>","Symbol: ", myTopHits$geneID, "</b><br>",
+                 "<b>","LogFC: ","</b>", myTopHits$logFC, "<br>",
+                 "<b>","FDR: ","</b>", myTopHits$adj.P.Val, "<br>")
+scatterD3(myTopHits, x = logFC, y = log10Pval,
+          lasso = TRUE,
+          xlab = "logFC", 
+          ylab = "-log10(adj.P.val)",
+          tooltip_text = tooltip, hover_size = 3)
+```
+
+## Volcano plot - injected vs double neg
+```{r volcano2, message=FALSE, warning=FALSE}
+myTopHits <- topTable(ebFit, adjust ="BH", coef=2, number=12000, sort.by="logFC")
+#first, move rownames into the dataframe
+myTopHits <- rownames_to_column(myTopHits, "geneID")
+myTopHits <- mutate(myTopHits, log10Pval = -log10(adj.P.Val), 
+                    adj.P.Val = round(adj.P.Val, 2),
+                    logFC = round(logFC, 2),
+                    geneID = geneID)
+tooltip <- paste("<b>","Symbol: ", myTopHits$geneID, "</b><br>",
+                 "<b>","LogFC: ","</b>", myTopHits$logFC, "<br>",
+                 "<b>","FDR: ","</b>", myTopHits$adj.P.Val, "<br>")
+scatterD3(myTopHits, x = logFC, y = log10Pval,
+          lasso = TRUE,
+          xlab = "logFC", 
+          ylab = "-log10(adj.P.val)",
+          tooltip_text = tooltip, hover_size = 3)
+```
+
+## Volcano plot - injected vs infected
+```{r volcano3, message=FALSE, warning=FALSE}
+myTopHits <- topTable(ebFit, adjust ="BH", coef=3, number=12000, sort.by="logFC")
+#first, move rownames into the dataframe
+myTopHits <- rownames_to_column(myTopHits, "geneID")
+myTopHits <- mutate(myTopHits, log10Pval = -log10(adj.P.Val), 
+                    adj.P.Val = round(adj.P.Val, 2),
+                    logFC = round(logFC, 2),
+                    geneID = geneID)
+tooltip <- paste("<b>","Symbol: ", myTopHits$geneID, "</b><br>",
+                 "<b>","LogFC: ","</b>", myTopHits$logFC, "<br>",
+                 "<b>","FDR: ","</b>", myTopHits$adj.P.Val, "<br>")
+scatterD3(myTopHits, x = logFC, y = log10Pval,
+          lasso = TRUE,
+          xlab = "logFC", 
+          ylab = "-log10(adj.P.val)",
+          tooltip_text = tooltip, hover_size = 3)
+```
+
+
+
+
+## Venn
+```{r Venn, message=FALSE, warning=FALSE}
+colnames(v.DEGList.filtered.norm$E) <- sampleLabels
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.05, lfc=1)
+vennDiagram(results, include="up")
+```
+
+## DEGs
+```{r DEGs, message=FALSE, warning=FALSE}
+diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0 | results[,3] !=0,]
+diffGenes <- diffGenes[-1,]
+mydata.df <- as.data.frame(diffGenes)
+mydata.df <- mutate(mydata.df,
+                    geneSymbol = row.names(mydata.df),
+                    doubleNeg.AVG = (DN_rep1 + DN_rep2 + DN_rep3 + DN_rep4)/4, 
+                    doublePos.AVG = (DP_rep1 + DP_rep2 + DP_rep3 + DP_rep4)/4,
+                    injected.AVG = (ZsG_rep1 + ZsG_rep2 + ZsG_rep3 + ZsG_rep4)/4,
+                    LogFC.DPvsDN = (doublePos.AVG - doubleNeg.AVG),
+                    LogFC.ZsGvsDN = (injected.AVG - doubleNeg.AVG),
+                    LogFC.ZsGvsDP = (injected.AVG - doublePos.AVG))
+mydata.df <- mydata.df[,-1:-12]
+datatable(mydata.df, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(2:7), digits=2)
+```
+
+# Visualizing DEGs
+## heatmap of all **`r length((diffGenes)[,1])`** DEGs 
+```{r heatmap, message=FALSE, warning=FALSE}
+#color pallette
+myheatcol <- colorRampPalette(colors=c("yellow","white","blue"))(100)
+
+#begin by clustering the genes (rows) in each set of differentially expressed genes
+hr <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") 
+
+#now cluster samples (columns)
+#we may not acutally use this clustering result, but it's good to have just in case
+hc <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete") 
+
+# Cut the resulting tree and create color vector for clusters.  
+mycl <- cutree(hr, k=4)
+
+#now assign a color to each cluster (makes it easy to identify and manipulate)
+mycolhc <- rainbow(length(unique(mycl)), start=0.1, end=0.9) 
+mycolhc <- mycolhc[as.vector(mycl)] 
+names(mycolhc) <- names(mycl) 
+#barplot(rep(10, max(mycl)),
+        #col=unique(mycolhc[hr$labels[hr$order]]), 
+        #horiz=T, names=unique(mycl[hr$order]))
+
+#plot the hclust results as a heatmap
+# first, a heatmap of genes regulated by LPS in a WT background
+diffGenes <- diffGenes[,c(2,5,8,11,1,4,7,10,3,6,9,12)]
+heatmap.2(diffGenes, Rowv=as.dendrogram(hr), Colv=NA, 
+          col=myheatcol, scale="row", labRow=NA,
+          density.info="none", trace="none", RowSideColors=mycolhc, 
+          cexRow=1, cexCol=1, margins=c(8,22))
+```
+
+## heatmap of genes repressed by infection
+```{r cluster down all, message=FALSE, warning=FALSE}
+# view your color assignments for the different clusters
+names(mycolhc) <- names(mycl) 
+
+#choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
+clid2 <- c(1,2)
+ysub2 <- diffGenes[names(mycl[mycl%in%clid2]),] 
+hrsub <- hclust(as.dist(1-cor(t(ysub2), method="pearson")), method="complete") 
+clusterIDs <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterIDs <- as.vector(t(clusterIDs))
+
+#find subcluster
+mycl.sub <- cutree(hrsub, k=2)
+mycolhc.sub <- rainbow(length(unique(mycl.sub)), start=0.1, end=0.9) 
+mycolhc.sub <- mycolhc.sub[as.vector(mycl.sub)] 
+names(mycolhc.sub) <- names(mycl.sub) 
+
+#capture the genes and data from this cluster
+clusterSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterSymbols <- as.vector(t(clusterSymbols))
+clusterData.up <- diffGenes[clusterSymbols,]
+write.table(clusterData.up,"Cluster_RepressedByInfection_all.txt", sep="\t", quote=FALSE)
+write.table(clusterSymbols,"Symbols_RepressedByInfection_all.txt", sep="\t", quote=FALSE)
+
+# Create heatmap for chosen sub-cluster.
+heatmap.2(ysub2, Rowv=as.dendrogram(hrsub), Colv=NA, col=myheatcol, scale="row", 
+          density.info="none", trace="none", margins=c(8,20), RowSideColors=mycolhc.sub) 
+```
+
+## heatmap of genes repressed by infection
+```{r cluster down subset, message=FALSE, warning=FALSE}
+# view your color assignments for the different clusters
+names(mycolhc) <- names(mycl) 
+
+#choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
+clid2 <- c(2)
+ysub2 <- diffGenes[names(mycl[mycl%in%clid2]),] 
+hrsub <- hclust(as.dist(1-cor(t(ysub2), method="pearson")), method="complete") 
+clusterIDs <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterIDs <- as.vector(t(clusterIDs))
+
+#find subcluster
+mycl.sub <- cutree(hrsub, k=2)
+mycolhc.sub <- rainbow(length(unique(mycl.sub)), start=0.1, end=0.9) 
+mycolhc.sub <- mycolhc.sub[as.vector(mycl.sub)] 
+names(mycolhc.sub) <- names(mycl.sub) 
+
+#capture the genes and data from this cluster
+clusterSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterSymbols <- as.vector(t(clusterSymbols))
+clusterData.up <- diffGenes[clusterSymbols,]
+write.table(clusterData.up,"Cluster_RepressedByInfection_subset.txt", sep="\t", quote=FALSE)
+#write.table(clusterSymbols,"Symbols_RepressedByInfection_subset.txt", sep="\t", quote=FALSE)
+
+# Create heatmap for chosen sub-cluster.
+heatmap.2(ysub2, Rowv=as.dendrogram(hrsub), Colv=NA, col=myheatcol, scale="row", 
+          density.info="none", trace="none", margins=c(8,20), RowSideColors=mycolhc.sub) 
+```
+
+## heatmap of subcluster induced only by injection
+```{r cluster injection, message=FALSE, warning=FALSE}
+# view your color assignments for the different clusters
+names(mycolhc.sub) <- names(mycl.sub) 
+
+#choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
+clid.sub <- c(2)
+ysub.sub <- ysub2[names(mycl.sub[mycl.sub%in%clid.sub]),] 
+hrsub <- hclust(as.dist(1-cor(t(ysub.sub), method="pearson")), method="complete") 
+clusterIDs <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterIDs <- as.vector(t(clusterIDs))
+
+# Create heatmap for chosen sub-cluster.
+heatmap.2(ysub.sub, Rowv=as.dendrogram(hrsub), Colv=NA, col=myheatcol, scale="row", 
+          density.info="none", trace="none", margins=c(8,20)) 
+```
+
+## heatmap of genes induced by infection
+```{r cluster induced, message=FALSE, warning=FALSE}
+# view your color assignments for the different clusters
+names(mycolhc) <- names(mycl) 
+
+#choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
+clid3 <- c(3)
+ysub3 <- diffGenes[names(mycl[mycl%in%clid3]),]
+hrsub <- hclust(as.dist(1-cor(t(ysub3), method="pearson")), method="complete") 
+clusterIDs <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterIDs <- as.vector(t(clusterIDs))
+
+#capture the genes and data from this cluster
+clusterSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterSymbols <- as.vector(t(clusterSymbols))
+clusterData.up <- diffGenes[clusterSymbols,]
+write.table(clusterData.up,"Cluster_Induced.txt", sep="\t", quote=FALSE)
+write.table(clusterSymbols,"Symbols_InducedByInfection.txt", sep="\t", quote=FALSE)
+
+# Create heatmap for chosen sub-cluster.
+heatmap.2(ysub3, Rowv=as.dendrogram(hrsub), Colv=NA, col=myheatcol, scale="row", 
+          density.info="none", trace="none",margins=c(8,20)) 
+```
+
+# Functional enrichment analysis
+## Summary of GO enrichment analysis of DEGs
+```{r GO bubble, message=FALSE, warning=FALSE}
+# Functional enrichment analysis
+## Summary of GO enrichment analysis of DEGs
+GOterms <-read.table(file="GO_summary.txt", header=T, sep="\t")
+
+#Then turn it back into an ordered factor
+GOterms$Term_simple <- factor(GOterms$Term_simple, levels=unique(GOterms$Term_simple))
+library(ggplot2)
+ggplot(GOterms, aes(x=clusterType, y=Term_simple)) + 
+  geom_point(aes(size=Count, color=FDR)) +
+  scale_color_gradient(low="#0073B3", high="red") +
+  theme_bw()
+```
+
+## GSEA with CAMERA
+```{r GSEA, message=FALSE, warning=FALSE, eval= FALSE, echo=FALSE}
+broadSet.C2.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+#first, convert your geneSetCollections into lists using the 'geneIds' function from the GSEABase package
+broadSet.C2.CP <- geneIds(broadSet.C2.CP)
+broadSet.C2.ALL <- geneIds(broadSet.C2.ALL)
+
+
+GSEAres <- camera(v.DEGList.filtered.norm, broadSet.C2.ALL, design, contrast.matrix[,2]) 
+datatable(GSEAres, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          caption = 'Gene set enrichment',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:6), digits=3)
+
+```
+
+# Session Info
+**Session Info:**
+```{r sessionInfo, results='asis', message=FALSE, warning=FALSE, echo=FALSE}
+sessionInfo()
+```
+
