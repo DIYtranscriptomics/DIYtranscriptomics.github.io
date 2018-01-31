@@ -1,6 +1,6 @@
 ---
-title: "<center> Title of your study <center>"
-author: "<center> Author list <center><br>"
+title: "<center> In vivo transcriptional of injected and infected macrophages <center>"
+author: "<center> Fall 2018 transcriptomics class <center><br>"
 date: "<center> _January, 2018_ <center>"
 output:
   html_document:
