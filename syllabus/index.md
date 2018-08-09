@@ -127,7 +127,7 @@ comments: false
 <img src="images/GSEA.jpg" style="border:none;" />
 </div>
 
-**January 10th and 17th** - We'll spend the next two classes learning the principles and practice of using [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  In the first class we'll use the GSEA program from the Broad Institute to carry out out analysis.  In the second class we'll run GSEA through R.
+**Nov 14th and 21st** - We'll spend the next two classes learning the principles and practice of using [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  In the first class we'll use the GSEA program from the Broad Institute to carry out out analysis.  In the second class we'll run GSEA through R.
 
 <div style="clear:both"></div>
 
@@ -137,7 +137,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**January 24th** - In this third and final Hackdash, expect your most challening problem!  
+**Nov 28th** - In this third and final Hackdash, expect your most challening problem!  
 
 <div style="clear:both"></div>
 
@@ -147,7 +147,7 @@ comments: false
 <img src="images/notebook.jpg" style="border:none;" />
 </div>
 
-**January 31st and Feb 7th** - At this point, you are in a situation many bioinformatics folks find themselves in: you have a folder that contains some raw data, an analysis script, and outputs that include graphs, tables and other images.  Unfortunately, this trail of digital breadcrumbs is hard for anyone to follow (even your future self!).  In order to make your analysis pipeline transparent and reproducible, in the next two classes you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap all these elements together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Lecture slides available [here](https://www.icloud.com/keynote/0jx8AmcQUTZvZjBB4h65gVR9A#Lecture12%5FRmarkdown)
+**Dec 5th and 12th** - At this point, you are in a situation many bioinformatics folks find themselves in: you have a folder that contains some raw data, an analysis script, and outputs that include graphs, tables and other images.  Unfortunately, this trail of digital breadcrumbs is hard for anyone to follow (even your future self!).  In order to make your analysis pipeline transparent and reproducible, in the next two classes you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap all these elements together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Lecture slides available [here](https://www.icloud.com/keynote/0jx8AmcQUTZvZjBB4h65gVR9A#Lecture12%5FRmarkdown)
 
 <div style="clear:both"></div>
 
@@ -157,7 +157,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**February 14th** - During this in-clas exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
+**Dec 19th** - During this in-clas exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
 
 <div style="clear:both"></div>
 
