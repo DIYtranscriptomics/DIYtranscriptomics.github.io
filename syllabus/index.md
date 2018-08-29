@@ -24,7 +24,7 @@ comments: false
 <img src="images/tools.jpg" style="border:none;" />
 </div>
 
-**Sept 5th** — __This class will meet at 4-6pm in Hill 301__.  In the first half of this lecture we'll discuss the open-source, cross-platform software that will be used throughout the course, and each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.  In preparation for this class, you'll need to download and install the [R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) for your operating system, the graphical user interface for R, called [RStudio](http://www.rstudio.com/products/rstudio/download/), and the powerfull text editor [Sublime](http://www.sublimetext.com/).  Don't know what any of these things are?  Not to worry, we'll delve into these tools the next time we meet.  Lecture slides available [here](http://bit.ly/1ToDM3R).
+**Sept 5th** — __This class will meet in Hill 301__.  In the first half of this lecture we'll discuss the open-source, cross-platform software that will be used throughout the course, and each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.  In preparation for this class, you'll need to download and install the [R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) for your operating system, the graphical user interface for R, called [RStudio](http://www.rstudio.com/products/rstudio/download/), and the powerfull text editor [Sublime](http://www.sublimetext.com/).  Don't know what any of these things are?  Not to worry, we'll delve into these tools the next time we meet.  Lecture slides available [here](http://bit.ly/1ToDM3R).
 
 <div style="clear:both"></div>
 
