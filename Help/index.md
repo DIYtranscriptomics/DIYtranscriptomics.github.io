@@ -11,13 +11,12 @@ comments: true
 
 ## Getting help from the TA
 
-Corbett Berry (corbettberry@gmail.com) and Camille Syrett (camille.syrett@gmail.com) are the Teaching Assistants for the course and are available for one-on-one or small group meetings by request.
+Camila Amorim and Elise English are the Teaching Assistants for the course.  Please don't hesitate to reach out to them via the course [Slack page](https://join.slack.com/t/diytranscriptomics/shared_invite/enQtNDE1MTI2MzY2MDY5LWMxOWI2YWE5YmVjM2ZkMjM1ZjYxNTdkOWRkM2ZlNGI0OTYzMWQ2NDRmMjRjMTBhNTVkZjdjZTBkODI0ODFlNmY)
 
 -----------------------------
 
 ## Finding help online 
-
-* **[Course message board](https://groups.google.com/forum/#!forum/transcriptomics)** - Post your questions and comments to start a discussion.  
+ 
 * **[Bioconductor's help site](http://www.bioconductor.org/help/)** - full of great tutorials, links to videos, and  message board for more more complicated questions. 
 * **Bioinformatics questions** - bioinformatics questions not pertaining to a specific R package are best addressed on [Biostars](https://www.biostars.org/)
 * **Programming questions** - try [StackOverflow](http://stackoverflow.com/)
@@ -39,11 +38,11 @@ Corbett Berry (corbettberry@gmail.com) and Camille Syrett (camille.syrett@gmail.
 
 Below are a few examples of some of the great local resources. 
 
+* **[Use R! group at UPenn](https://pennusergroup.wordpress.com)** - A groups of Penn staff, students and researchers who get together to improve their R knowledge and skills.  The group, which is open to R users of all levels, meets weekly on Wednesdays, 11am-noon, in the Weigle Informations Commons (WIC) seminar room of the Van Pelt-Dietrich Library Center.
+
+* **[Weekly 'Code Review'](https://groups.google.com/forum/?hl=en#!forum/bushmancode)** - Led by Kyle Bittinger, a Computational Biologist and faculty at CHOP.  Each week one person presents some programming code they are working on for their research.  Attendees get a chance to hear how code was put together to achieve a goal, while the presenter gets feedback, collective troubleshooting, etc.  Less experienced programmers will have a chance to learn about design options when programming.  Group meets one Wednesdays @ 9am in Johnson 207.  Contact Kyle by email at <kylebittinger@gmail.com> to be added to the mailing list.
+
 * **[Python Bootcamp](https://piazza.com/class/i9oc9auinef333?cid=41)** - learn Python programming for bioinformatics in a casual and friendly environment with the guidance of Sarah Middleton, UPenn Grad Student in [Junhyong Kim's lab](http://kim.bio.upenn.edu/), with assistance from several student TAs.  Course usually meets from June 2nd-26th, from 9am-12pm.
-
-* **[R Learning Group at Penn Libraries](https://pricelab.sas.upenn.edu/r-learning-group-penn-libraries)** - Beginning January 4th, an informal R learning group for members of the Penn community meets every Wednesday from 1-2pm in Van Pelt 124
-
-* **[Weekly 'Code Review'](https://groups.google.com/forum/?hl=en#!forum/bushmancode)** - Led by Kyle Bittinger, a Computational Biologist from [Rick Bushman's lab](http://www.bushmanlab.org/).  Each week one person presents some programming code they are working on for their research.  Attendees get a chance to hear how code was put together to achieve a goal, while the presenter gets feedback, collective troubleshooting, etc.  Less experienced programmers will have a chance to learn about design options when programming.  Group meets one Wednesdays at 9am in Johnson 207.  Contact Kyle by email at <kylebittinger@gmail.com> to be added to the mailing list.
 
 * **[Cytomic Data Analysis Workshop](http://pathbio.med.upenn.edu/gs/cytomics/)** - Led by Wade Rogers, the Director of Computational Biology and Research Informatics for the Path BioResource at the Perelman School of Medicine.  Given the pervasive nature of flow cytometry in all aspects of biomedical research, the mutiparameter nature of flow experiments, and the increasing abundance of clinical metadata, it only makes sense to leverage the power of R for analyzing the rich datasets produced by flow cytometry.  Wade is an expert user of R/bioconductor for flow analysis, and has been very active in tool development in this area, including the development of a ['fingerprinting'](https://www.bioconductor.org/packages/release/bioc/vignettes/flowFP/inst/doc/flowFP_HowTo.pdf) method for analysing flow data.  Contact Wade by email at <rogersw@mail.med.upenn.edu> for more information on the workshop.
 
@@ -63,7 +62,7 @@ Below are a few examples of some of the great local resources.
 
 * **[Coursera's specialization in Systems Biology](https://www.coursera.org/specialization/systemsbiology/6?utm_medium=courseDescripTop)** - Yet another specialization offered through Coursera, this time in partnership with the Icahn School of Medicine at Mount Sinai and Coursera, this 5 course 'degree' covers the basics of network analysis and integrating diverse data types.
 
-* **[HarvardX's course of Biomedical Data Science](http://genomicsclass.github.io/book/pages/classes.html)** - and excellent and free online course taught by the talented [Rafael Irizarry](http://rafalab.dfci.harvard.edu/)
+* **[HarvardX's course of Biomedical Data Science](rafalab.github.io/pages/harvardx.html)** - and excellent and free online course taught by the talented [Rafael Irizarry](http://rafalab.dfci.harvard.edu/)
 
 * **[Datacamp tutorials](https://www.datacamp.com)** - learn R through your web browser.  Several free courses, and additional subscription-based access to other courses.
 
