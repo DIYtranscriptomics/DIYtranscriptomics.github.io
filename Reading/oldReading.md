@@ -1,3 +1,13 @@
+## Ebooks on general R/bioconductor
+
+* **[The Art of R programming by Norman Matloff](http://DIYtranscriptomics.github.io/Reading/files/The Art of R Programming.pdf)**
+* **[R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994)**
+* **[Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools](http://hdl.library.upenn.edu/1017.12/1448673)**
+* **[R for Data Science](http://r4ds.had.co.nz/)**, by Hadley Wickham
+* **Stay tuned for more titles available through the PennVet Library**
+
+
+
 ## Version control with Git
 
 _You'll need the following three items for our in-class Git exercise:_
