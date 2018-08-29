@@ -14,7 +14,7 @@ comments: false
 <img src="images/nextseq.jpg" style="border:none;" />
 </div>
 
-**Aug 29th** — After some introductions and a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning (and budgeting!) for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, mRNAseq, total transcriptome, ribo-depletion, scRNAseq, and fastq will pratically roll off your tongue.  Lecture slides available [here](https://www.icloud.com/keynote/0sBpheSjnnkSIjKEHDpzd6kmw#Lecture01%5FRNAseqIntro).
+**Aug 29th** — After some introductions and a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning and budgeting for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, mRNAseq, total transcriptome, ribo-depletion, scRNAseq, and fastq will pratically roll off your tongue.  Lecture slides available [here](https://www.icloud.com/keynote/0sBpheSjnnkSIjKEHDpzd6kmw#Lecture01%5FRNAseqIntro).
 
 <div style="clear:both"></div>
 
@@ -54,7 +54,7 @@ comments: false
 <img src="images/PCA.png" style="border:none;" />
 </div>
 
-**Sept 26th *and* Oct 3rd** — __The Sept 26th class will meet in Hill 301__. Although we're all here to find key genes and transcripts involved in our favorite biological process, it's critical to first take a gene agnostic approach to explore the structure of our entire dataset.  To do this we'll use Principle Component Analysis (PCA) to reduce the dimensionality of our data and try to identify the variables (sex, age, treatment, etc) that have the strongest influence over the transcriptional landscape in your study. We'll discuss common mis-steps and sources of variance in transcriptional data sets.  You'll also be introduced to the popular graphing package [ggplot2](http://ggplot2.org/), to graph the results of your PCA analysis. Lecture slides available [here](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
+**Sept 26th** — __This class will meet in Hill 301__. Although we're all here to find key genes and transcripts involved in our favorite biological process, it's critical to first take a gene agnostic approach to explore the structure of our entire dataset.  To do this we'll use Principle Component Analysis (PCA) to reduce the dimensionality of our data and try to identify the variables (sex, age, treatment, etc) that have the strongest influence over the transcriptional landscape in your study. We'll discuss common mis-steps and sources of variance in transcriptional data sets.  You'll also be introduced to the popular graphing package [ggplot2](http://ggplot2.org/), to graph the results of your PCA analysis. Lecture slides available [here](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
 
 <div style="clear:both"></div>
 
@@ -65,7 +65,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**Oct 10th** — You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  You'll be emailed a problem at the start of class and each group will have two hours to come up with a solution using the tools and skills you've acquired in the course thus far. This is just in the spirit of learning and having fun.  No grades will be given, but the first team to email me the correct solution wins a prize.  Good luck!
+**Oct 3rd** — You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  You'll be emailed a problem at the start of class and each group will have two hours to come up with a solution using the tools and skills you've acquired in the course thus far. This is just in the spirit of learning and having fun.  No grades will be given, but the first team to post the correct answer on Slack will win a prize.  Good luck!
 
 <div style="clear:both"></div>
 
@@ -76,7 +76,7 @@ comments: false
 <img src="images/dplyr.png" style="border:none;" />
 </div>
 
-**Oct 17th** — While Excel might be great for small spreadsheets, it fails miserably at managing large datasets.  In this workshop we'll use Hadley Wickham's [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package to take control over our dataframes, allowing us to change, sort, filter and arrange large data sets quickly and easily using simple commands in R.  
+**Oct 10th** — While Excel might be great for small spreadsheets, it fails miserably at managing large datasets.  In this workshop we'll use Hadley Wickham's [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package to take control over our dataframes, allowing us to change, sort, filter and arrange large data sets quickly and easily using simple commands in R.  
 
 <div style="clear:both"></div>
 
@@ -86,7 +86,7 @@ comments: false
 <img src="images/table.png" style="border:none;" />
 </div>
 
-**Oct 24th** — The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  We'll use the program [Sleuth](http://pachterlab.github.io/sleuth/) which like Kallisto is also a product of [Lior Pachter's lab](https://math.berkeley.edu/~lpachter/).  Because Sleuth is relatively new to the game, we'll also use the popular and venerable [Limma](http://www.bioconductor.org/packages/release/bioc/html/limma.html) package in R.  This gives us a chance to compare and contrast these two methods for identifying DETs.  We'll also have a chance to talk about special cases when your analyses should include a paired design or correct for batch effects. 
+**Oct 17th** — The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  We'll use the program [Sleuth](http://pachterlab.github.io/sleuth/) which like Kallisto is also a product of [Lior Pachter's lab](https://math.berkeley.edu/~lpachter/).  Because Sleuth is relatively new to the game, we'll also use the popular and venerable [Limma](http://www.bioconductor.org/packages/release/bioc/html/limma.html) package in R.  This gives us a chance to compare and contrast these two methods for identifying DETs.  We'll also have a chance to talk about special cases when your analyses should include a paired design or correct for batch effects. 
 
 <div style="clear:both"></div>
 
@@ -96,7 +96,7 @@ comments: false
 <img src="images/heatmap.jpg" style="border:none;" />
 </div>
 
-**Thursday, Nov 1st** — __This class will meet in Hill 301.  Also note the change in day!__. How do you move from spreadsheet to informative data visualization? Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use hierarchical clustering and heatmap visualization to interrogate DETs to reveal modules of co-regulated transcripts.
+**Oct 24th** — How do you move from spreadsheet to informative data visualization? Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use hierarchical clustering and heatmap visualization to interrogate DETs to reveal modules of co-regulated transcripts.
 
 <div style="clear:both"></div>
 
@@ -106,7 +106,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**Nov 7th** — Rules and teams will be the same as in the first Hackdash, but the problem will be different.
+**Thursday, Nov 1st** — __This class will meet in Hill 301.  Also note the change in day!__.** — Rules and teams will be the same as in the first Hackdash, but the problem will be different.
 
 <div style="clear:both"></div>
 
@@ -117,7 +117,7 @@ comments: false
 <img src="images/GO.png" style="border:none;" />
 </div>
 
-**Nov 14th** - __Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  Toward this end, you will learn how to carry out functional enichment analyses using [Gene Ontology](http://geneontology.org/), a structured vocabulary that describes the biological processes and molecular functions carried out by a gene.  You'll also see some different options for how to represent your analyses in papers.  Lecture slides available [here](https://www.icloud.com/keynote/0Naa63iYXqX4nTRUq2PF0Rfpg#Lecture11%5FFunctionalEnrichment).   
+**Nov 7th** — Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  Toward this end, you will learn how to carry out functional enichment analyses using [Gene Ontology](http://geneontology.org/), a structured vocabulary that describes the biological processes and molecular functions carried out by a gene.  You'll also see some different options for how to represent your analyses in papers.  Lecture slides available [here](https://www.icloud.com/keynote/0Naa63iYXqX4nTRUq2PF0Rfpg#Lecture11%5FFunctionalEnrichment).   
 
 <div style="clear:both"></div>
 
@@ -127,7 +127,7 @@ comments: false
 <img src="images/GSEA.jpg" style="border:none;" />
 </div>
 
-**Nov 21st and 28th** - We'll spend the next two classes learning the principles and practice of using [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  In the first class we'll use the GSEA program from the Broad Institute to carry out out analysis.  In the second class we'll run GSEA through R.
+**Nov 14th and 21st** — We'll spend the next two classes learning the principles and practice of using [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  In the first class we'll use the GSEA program from the Broad Institute to carry out out analysis.  In the second class we'll run GSEA through R.
 
 <div style="clear:both"></div>
 
@@ -137,7 +137,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**Nov 28th** - In this third and final Hackdash, expect your most challening problem!  
+**Nov 28th** — In this third and final Hackdash, expect your most challening problem!  
 
 <div style="clear:both"></div>
 
@@ -147,7 +147,7 @@ comments: false
 <img src="images/notebook.jpg" style="border:none;" />
 </div>
 
-**Dec 5th and 12th** - At this point, you are in a situation many bioinformatics folks find themselves in: you have a folder that contains some raw data, an analysis script, and outputs that include graphs, tables and other images.  Unfortunately, this trail of digital breadcrumbs is hard for anyone to follow (even your future self!).  In order to make your analysis pipeline transparent and reproducible, in the next two classes you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap all these elements together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Lecture slides available [here](https://www.icloud.com/keynote/0jx8AmcQUTZvZjBB4h65gVR9A#Lecture12%5FRmarkdown)
+**Dec 5th and 12th** — At this point, you are in a situation many bioinformatics folks find themselves in: you have a folder that contains some raw data, an analysis script, and outputs that include graphs, tables and other images.  Unfortunately, this trail of digital breadcrumbs is hard for anyone to follow (even your future self!).  In order to make your analysis pipeline transparent and reproducible, in the next two classes you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap all these elements together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Lecture slides available [here](https://www.icloud.com/keynote/0jx8AmcQUTZvZjBB4h65gVR9A#Lecture12%5FRmarkdown)
 
 <div style="clear:both"></div>
 
@@ -157,7 +157,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**Dec 19th** - During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
+**Dec 19th** — During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
 
 <div style="clear:both"></div>
 
