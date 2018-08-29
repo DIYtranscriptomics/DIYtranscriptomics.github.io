@@ -10,7 +10,7 @@ Everyone is expected to bring their own internet-enabled laptop equiped with eit
 ## Part I
 * Download and install the current version of the [R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) for your operating system
 * Download and install the graphical user interface for R, called [RStudio](http://www.rstudio.com/products/rstudio/download/)
-* Download a powerfull text editor. I use [Sublime](http://www.sublimetext.com/) and [Atom](https://atom.io/)
+* Download a 'code aware' text editor. I use [Sublime](http://www.sublimetext.com/), but also find Microsoft's [Visual Studio Code](https://code.visualstudio.com/) an excellent choice for working with scripts outside of RStudio.
 * If you have a Mac, download the latest version of [XCode developer tools](https://developer.apple.com/xcode/)  
 * If you have a PC, download [Cygwin](https://www.cygwin.com/) to give your system many linux-like capabilities
 * Here are my [instructions for installing Kallisto](https://chmi-sops.github.io/mydoc_kallisto.html),the program we'll use for mapping reads to transcripts. *We will install this program together in class*
