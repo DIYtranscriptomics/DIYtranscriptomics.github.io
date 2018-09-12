@@ -9,7 +9,7 @@ library(readr) #general use package from Hadley Wickham for reading in tables
 library(Biostrings) #we'll use this to edit our reference fasta file
 library(tximport) #package for getting Kallisto results into R
 library(ensembldb) ##used together with your organism-specific database package to get annotation info
-library(EnsDb.Hsapiens.v79) #replace with your organism-specific database package
+library(EnsDb.Hsapiens.v86) #replace with your organism-specific database package
 
 # OPTIONAL: modify reference transcriptome .fasta file ----
 # depending on your reference transcriptome, we may need to edit the fasta file
@@ -35,13 +35,13 @@ system("./readMapping.sh")
 # Get annotations ----
 # If we want to know what kinds of data are retriveable, 
 # use EnsemblDB package functions to look at the tables of the annotation database
-listTables(EnsDb.Hsapiens.v79)
+listTables(EnsDb.Hsapiens.v86)
 # now take a look at the columns of the "tx" table within the database
-listColumns(EnsDb.Hsapiens.v79, "tx")
+listColumns(EnsDb.Hsapiens.v86, "tx")
 
 #use the 'transcripts' function from the EnsemblDB package to get annotation info
-Tx <- transcripts(EnsDb.Hsapiens.v79, 
-                  columns=c(listColumns(EnsDb.Hsapiens.v79,
+Tx <- transcripts(EnsDb.Hsapiens.v86, 
+                  columns=c(listColumns(EnsDb.Hsapiens.v86,
                                         "tx"), "gene_name"))
 
 Tx <- as.data.frame(Tx)
