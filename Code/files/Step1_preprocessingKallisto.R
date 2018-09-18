@@ -23,15 +23,6 @@ Hs.trans@ranges@NAMES #access one of these slots
 names(Hs.trans) <- gsub("(\\.).*", "", names(Hs.trans))
 writeXStringSet(Hs.trans, "Hs.trans.shortnames.fasta")
 
-# align reads using Kallisto ----
-# this is a unix based program, so we'll access it using the 'system' function
-# note: this will only work if you have installed Kallisto on your computer
-system("kallisto")
-system("ls -l")
-system("chmod u+x ./readMapping.sh")
-system("./readMapping.sh")
-
-
 # Get annotations ----
 # If we want to know what kinds of data are retriveable, 
 # use EnsemblDB package functions to look at the tables of the annotation database
