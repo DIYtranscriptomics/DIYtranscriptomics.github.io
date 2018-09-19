@@ -49,7 +49,8 @@ targets <- mutate(targets, path)
 # differential expression analysis using Sleuth ----
 # Now you're ready to construct a sleuth object
 mySleuth <- sleuth_prep(targets,  
-                        #target_mapping = Tx,
+                        #target_mapping = Tx, #uncomment this line if you want to map transcripts IDs to gene symbols
+                        #aggregation_column = 'gene_name', #uncomment this line if you want to collapse your data to gene level
                         read_bootstrap_tpm=TRUE,
                         extra_bootstrap_summary=TRUE) 
 
