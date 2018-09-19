@@ -21,7 +21,8 @@ DGEList.filtered.norm
 #set up your design matrix
 groups 
 #groups <- relevel(groups, "control") #may need to use 'relevel' function
-#design <- model.matrix(~groups)
+targets <- read.table("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
+design <- model.matrix(~groups)
 design <- model.matrix(~0 + groups)
 colnames(design) <- levels(groups)
 
