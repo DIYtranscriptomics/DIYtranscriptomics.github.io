@@ -11,26 +11,7 @@ library(edgeR)
 library(sleuth)
 
 
-# OPTION 1: DE analysis using Sleuth ----
-# Make sure to do the following first:
-# 1. make sure your studyDesign file has the correct path to each Kallisto output folder
-# 2. change your design matrix to set an intercept
-# 3. if you used Salmon or Sailfish, instead of Kallisto, for read mapping, you can still use Sleuth, but you'll need the Wasabi R package
-targets <- read.table("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
-design <- model.matrix(~groups)
 
-# Now you're ready to construct a sleuth object
-mySleuth <- sleuth_prep(targets, 
-                        ~ treatment, 
-                        target_mapping = Tx,
-                        read_bootstrap_tpm=TRUE, 
-                        extra_bootstrap_summary=TRUE) 
-
-# fit a linear model to the data
-so <- sleuth_fit(mySleuth, design)
-# use a wald test (WT) to identify genes that are differentially expressed
-so.WT_crypto <- sleuth_wt(so, which_beta = "groupswt_crypto")
-sleuth_live(so.WT_crypto)
 
 # OPTION 2: DE analysis using Limma/VOOM (alternatively, EdgeR or DESeq2) -----
 # first create a DGEList object from your original count data using the DGEList function from EdgeR
@@ -40,6 +21,7 @@ DGEList.filtered.norm
 #set up your design matrix
 groups 
 #groups <- relevel(groups, "control") #may need to use 'relevel' function
+#design <- model.matrix(~groups)
 design <- model.matrix(~0 + groups)
 colnames(design) <- levels(groups)
 

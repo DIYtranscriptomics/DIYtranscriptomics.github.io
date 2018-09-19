@@ -29,7 +29,9 @@ There are no required readings for the course, but I've provided links to Ebooks
 
 _papers, blogs posts and videos on Kallisto_
 
-* the [April 2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
+* the [2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
+
+* the [2017 Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) from Lior Pachter's lab describing Sleuth
 
 * [Harold Pimentel's talk on alignment](https://www.youtube.com/watch?v=b4tVokh6Law)
 
