@@ -4,20 +4,20 @@
 # recall that your abundance data are TPM, while the counts are read counts mapping to each gene or transcript
 
 # Load packages -----
-library(ggplot2)
+library(tidyverse) 
+library(RColorBrewer) # provides access to color palettes for graphics
 library(reshape2)
-library(trelliscopejs)
+library(trelliscopejs) # must be downloaded from github
 library(genefilter)
-library(limma)
-library(edgeR)
+library(limma) # the main package we'll use for differential expression in R
+library(edgeR) # also for differential expression, but we only use for the DGEList object
 library(Biobase)
 
-# Read in your study design ----
-targets <- read.table("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
-groups <- targets$treatment
+# Identify variables of interest in study design file ----
+targets
+groups <- targets$treatment2
 groups <- factor(groups)
 sampleLabels <- targets$sample
-#what would you do if there more variables than just treatment in your experiment?
 
 # Examine your data up to this point ----
 myTPM <- Txi_gene$abundance
@@ -27,11 +27,21 @@ myCounts <- Txi_gene$counts
 
 # Take a look at the heteroskedasticity of the data ----
 # first, calculate row means and standard deviations for each transcript or gene and add these to your data frame
-myTPM.stats <- transform(myTPM, SD=rowSds(myTPM), AVG=rowMeans(myTPM), MED=rowMedians(myTPM))
-myCounts.stats <- transform(myCounts, SD=rowSds(myCounts), AVG=rowMeans(myCounts), MED=rowMedians(myCounts))
+myTPM.stats <- transform(myTPM, 
+                         SD=rowSds(myTPM), 
+                         AVG=rowMeans(myTPM),
+                         MED=rowMedians(myTPM)
+                         )
 
-head(counts.stats)
-ggplot(TPM.stats, aes(x=SD, y=MED)) +
+myCounts.stats <- transform(myCounts, 
+                            SD=rowSds(myCounts), 
+                            AVG=rowMeans(myCounts), 
+                            MED=rowMedians(myCounts)
+                            )
+
+head(myTPM.stats)
+#produce a scatter plot of the transformed data
+ggplot(myTPM.stats, aes(x=SD, y=MED)) +
   geom_point(shape=1) +
   geom_point(size=4)
 # how might you expect that counts and TPM compare if used as input for PCA analysis?
@@ -44,14 +54,14 @@ cpm <- cpm(DGEList)
 log2.cpm <- cpm(DGEList, log=TRUE)
 
 # Take a look at the distribution of the Log2 CPM
-library(RColorBrewer)
 nsamples <- ncol(log2.cpm)
 myColors <- brewer.pal(nsamples, "Paired")
 boxplot(log2.cpm, las=2, cex=1, col = myColors, names = sampleLabels, main="non-normalized log2 cpm")
 #what do you see as some potential issues here?
+
 # Filter your data ----
 #first, take a look at how many genes or transcripts have no read counts at all
-table(rowSums(DGEList.norm$counts==0)==9)
+table(rowSums(DGEList$counts==0)==9)
 # now set some cut-off to get rid of genes/transcripts with low counts
 keepers <- rowSums(cpm>1)>=3
 DGEList.filtered <- DGEList[keepers,]
@@ -102,7 +112,7 @@ pc.per
 data.frame <- as.data.frame(pca.res$x)
 ggplot(data.frame, aes(x=PC1, y=PC2, color=groups)) +
   geom_point(size=5) +
-  theme(legend.position="right")
+  theme(legend.position="right") 
 
 # Create a PCA 'small multiples' chart ----
 # this is another way to view PCA to understand impact of each variable on each pricipal component
@@ -112,8 +122,9 @@ head(melted)
 ggplot(melted) +
   geom_bar(aes(x=Var1, y=value, fill=groups), stat="identity") +
   facet_wrap(~Var2)
-#facet_trelliscope(~Var2)
-# Explore other plotting options on your own ----
+  #facet_trelliscope(~Var2) #add this trelliscope layer to the ggplot to have some fun
+
+# OPTIONAL: Explore other plotting options on your own ----
 # T-sne, NMDS, reactive graphs, 3D interactives, etc
 library(scatterD3) #makes nice interactive 2D plots using the D3 engine
 library(rgl)
