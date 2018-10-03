@@ -104,6 +104,7 @@ ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
 
 # Normalize your data ----
 DGEList.filtered.norm <- calcNormFactors(DGEList.filtered, method = "TMM")
+# take a look at this new DGEList object...how has it changed?
 
 # use the 'cpm' function from EdgeR to get counts per million from your normalized data
 log2.cpm.filtered.norm <- cpm(DGEList.filtered.norm, log=TRUE)
