@@ -42,25 +42,25 @@ myCounts.stats <- transform(myCounts,
 
 head(myCPM.stats)
 #produce a scatter plot of the transformed data
-ggplot(myCPM.stats, aes(x=SD, y=MED)) +
+ggplot(myCounts.stats, aes(x=SD, y=MED)) +
   geom_point(shape=1, size=4)
 # Experiment with point shape and size
 # experiment with geom_hex
 # how would these graphs change if you log2 converted the data?
 
 # Make a DGElist from your counts ----
-DGEList <- DGEList(Txi_gene$counts)
+myDGEList <- DGEList(Txi_gene$counts)
 # take a look at the DGEList object 
-DGEList
+myDGEList
 #DEGList objects are a good R data file to consider saving to you working directory
-save(DGEList, file = "myDGEList")
+save(myDGEList, file = "myDGEList")
 #Saved DGEList objects can be easily shared and loaded into an R environment
 load(file = "myDGEList")
 
 # use the 'cpm' function from EdgeR to get counts per million
-cpm <- cpm(DGEList) 
+cpm <- cpm(myDGEList) 
 colSums(cpm)
-log2.cpm <- cpm(DGEList, log=TRUE)
+log2.cpm <- cpm(myDGEList, log=TRUE)
 
 # Take a look at the distribution of the Log2 CPM
 nsamples <- ncol(log2.cpm)
@@ -77,7 +77,7 @@ Log2.cpm.df.melt <- as.tibble(log2.cpm.df.melt)
 Log2.cpm.df.melt
 
 ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
-  geom_violin(trim = TRUE, show.legend = TRUE) +
+  geom_violin(trim = FALSE, show.legend = TRUE) +
   stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
   theme_bw()
 # what do you think of the distribution of this data?
@@ -140,7 +140,7 @@ pc.per<-round(pc.var/sum(pc.var)*100, 1)
 pc.per
 
 # Visualize your PCA result ------------------
-#lets first plot any two PCs against each other
+#lets first plot any two PCs aslgainst each other
 #We know how much each sample contributes to each PC (loadings), so let's plot
 pca.res.df <- as.tibble(pca.res$x)
 ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups2)) +
