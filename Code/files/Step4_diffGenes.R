@@ -6,35 +6,35 @@
 #Instead, you will ONLY rely on fold changes, and can use the dplyr 'verbs' we discussed in the last class to identify genes based soley on fold changes
 
 # Load packages -----
+library(tidyverse)
 library(limma) #powerful package for differential gene expression using linear modeling
-library(edgeR)
-library(sleuth)
+library(edgeR) #another great package for differential gene expression analysis
+library(scatterD3) #creates interactive plots using ggplot commands
+library(DT) #creates interactive datatables
+library(sva) #includes many functions for handling sources of variance (e.g. batch effects)
 
+# Set up you design matrix ----
+# remember how we read in our study design and capture our treatment variable (from Step 1 script)
+targets <- read_tsv("Crypto_studyDesign.txt")
+targets
+groups1 <- targets$treatment
+groups2 <- targets$treatment2
+groups1 <- factor(groups1)
+groups2 <- factor(groups2)
+#groups <- relevel(groups, "uninfected") #may need to use 'relevel' function
+design <- model.matrix(~0 + groups1)
+colnames(design) <- levels(groups1)
 
-
-
-# OPTION 2: DE analysis using Limma/VOOM (alternatively, EdgeR or DESeq2) -----
-# first create a DGEList object from your original count data using the DGEList function from EdgeR
-DGEList.filtered.norm
-
-
-#set up your design matrix
-groups 
-#groups <- relevel(groups, "control") #may need to use 'relevel' function
-targets <- read.table("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
-design <- model.matrix(~groups)
-design <- model.matrix(~0 + groups)
-colnames(design) <- levels(groups)
-
-#normalize your data using the mean-variance relationship using the VOOM function from Limma
+# Model mean-variance trend and fit linear model to data ----
+# Use VOOM function from Limma package to model the mean-variance relationship
 v.DEGList.filtered.norm <- voom(DGEList.filtered.norm, design, plot = TRUE)
 # fit a linear model to your data
 fit <- lmFit(v.DEGList.filtered.norm, design)
 
 # Contrast matrix ----
 #how do cells respond to infection with Crypto?
-contrast.matrix <- makeContrasts(WT_crypto_infection = wt_crypto - control,
-                                 trans_crypto_infection = trans_crypto - control,
+contrast.matrix <- makeContrasts(infection_with_WT = crypto.wt - uninfected,
+                                 infection_with_Mut = crypto.mut - uninfected,
                                  levels=design)
 
 # extract the linear model fit -----
@@ -44,35 +44,52 @@ ebFit <- eBayes(fits)
 #stats <- write.fit(ebFit)
 
 # TopTable to view DEGs -----
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=2000, sort.by="logFC")
-head(myTopHits)
-# Volcano Plots ----------
-# Make a basic volcano plot
-with(myTopHits, plot(logFC, -log10(adj.P.Val), pch=20, main="Volcano plot"))
-with(subset(myTopHits, adj.P.Val<.05 & abs(logFC)>1), points(logFC, -log10(adj.P.Val), pch=20, col="red"))
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=20000, sort.by="logFC")
+myTopHits
+
+# Volcano Plots ----
+# first, move rownames into the dataframe
+myTopHits <- rownames_to_column(myTopHits, "geneID")
+myTopHits
+
+# now plot
+ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC)) +
+  geom_point(size=3) +
+  theme_linedraw() +
+  theme(legend.position="right", axis.title = element_text(size = 19), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), legend.text = element_text(size = 15),
+        #axis.title.x=element_blank(),
+        axis.text.x = element_text(size=14, colour = "black"),
+        axis.text.y = element_text(size=14, colour = "black")) +
+  ylim(-0.5,15) +
+  geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +
+  geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", size=1) +
+  geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", size=1)
+#annotate("rect", xmin = 1, xmax = 12, ymin = -log10(0.01), ymax = 14, alpha=.2, fill="#BE684D") +
+#annotate("rect", xmin = -1, xmax = -12, ymin = -log10(0.01), ymax = 14, alpha=.2, fill="#2C467A")
+
 
 # make an interactive volcano plot 
-#first, move rownames into the dataframe
-library(tibble)
-myTopHits <- rownames_to_column(myTopHits, "geneID")
-head(myTopHits)
+myTopHits <- mutate(myTopHits, 
+                    log10Pval = -log10(adj.P.Val), 
+                    adj.P.Val = round(adj.P.Val, 2),
+                    logFC = round(logFC, 2),
+                    geneID = geneID)
 
-#set-up your tool tip
-tooltip <- function(data, ...) {
-  paste0("<b>","Symbol: ", data$geneID, "</b><br>",
-         "LogFC: ", data$logFC, "<br>",
-         "FDR: ", data$adj.P.Val)
-}
+tooltip1 <- paste("<b>","Symbol: ", myTopHits$geneID, "</b><br>",
+                  "<b>","LogFC: ","</b>", myTopHits$logFC, "<br>",
+                  "<b>","FDR: ","</b>", myTopHits$adj.P.Val, "<br>")
 
+scatterD3(myTopHits, x = logFC, y = log10Pval,
+          lasso = TRUE,
+          xlab = "logFC", 
+          ylab = "-log10(adj.P.val)",
+          colors = "red",
+          point_opacity = 0.7,
+          caption = list(title = "Volcano plot - infected vs. naive"),
+          tooltip_text = tooltip1, hover_size = 3)
 
-#plot the interactive graphic
-library(ggvis)
-myTopHits %>% 
-  ggvis(x= ~logFC, y= ~-log10(adj.P.Val), key := ~geneID) %>% 
-  add_tooltip(tooltip)
-
-#make some beautiful tables to display your DEGs
-library(DT)
+# create interactive tables to display your DEGs ----
 datatable(myTopHits, 
           extensions = c('KeyTable', "FixedHeader"), 
           caption = 'Table 1: DEGs for infected (wt Crypto) vs control',
@@ -83,27 +100,31 @@ datatable(myTopHits,
 results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=1)
 
 # take a look at what the results of decideTests looks like
-tail(results)
+head(results)
 summary(results)
-vennDiagram(results, include="up")
+vennDiagram(results, include="both")
 
 # retrieve expression data for your DEGs ----
 head(v.DEGList.filtered.norm$E)
 colnames(v.DEGList.filtered.norm$E) <- sampleLabels
+
 diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
 head(diffGenes)
 dim(diffGenes)
-#write your DEGs to a file
-write.csv(diffGenes,"DiffGenes.csv")
-write.table(diffGenes,"DiffGenes.txt", quote = FALSE, sep = "\t")
+#convert your DEGs to a dataframe using tibble
+diffGenes.df <- as_tibble(diffGenes, rownames = "geneSymbol")
 
-# OPTIONAL: paired design and correcting for known batch effects ----
+#write your DEGs to a file
+write_csv(diffGenes.df,"DiffGenes.csv")
+
+# OPTIONAL: other study designs ----
+
 # if you need a paired analysis (a.k.a.'blocking' design)
-# design <- model.matrix(~block+treatment) #this is just an example. 'block' and 'treatment' would need to be objects in your environment
+design <- model.matrix(~block + treatment) #this is just an example. 'block' and 'treatment' would need to be objects in your environment
+
 # if your exploratory analysis showed a batch effect
 library(sva)
 batch <- targets$batch
 normData.batchCorrected <- ComBat(normData, batch, design)
-#now use this batch corrected data moving forward
 
 
