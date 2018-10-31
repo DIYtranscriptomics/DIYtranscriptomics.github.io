@@ -2,19 +2,22 @@
 #this script creates heatmaps from your differentially expressed genes or transcripts
 
 # load packages -----
+library(tidyverse)
 library(gplots) 
 library(RColorBrewer)
 library(limma)
+library(heatmaply) #for making interactive heatmaps using plotly
+library(d3heatmap) #for making interactive heatmaps using D3
 
 # choose color pallette ----
 #Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]).
-myheatcol <- greenred(75)
+myheatcolors <- greenred(75)
 # a color-blind friendly pallete
-myheatcol <- colorRampPalette(colors=c("yellow","white","blue"))(100)
+myheatcolors <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 
 # cluster DEGs ----
 #begin by clustering the genes (rows) in each set of differentially expressed genes
-hr <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
+clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
 # hierarchical clustering is a type of unsupervised clustering. Related methods include K-means, SOM, etc 
 # unsupervised methods are blind to sample/group identity
 # in contrast, supervised methods 'train' on a set of labeled data.  
@@ -22,29 +25,50 @@ hr <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") 
 
 #now cluster your samples (columns)
 #we may not acutally use this clustering result, but it's good to have just in case
-hc <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete") #cluster columns by spearman correlation
+clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete") #cluster columns by spearman correlation
 #note: we use Spearman, instead of Pearson, for clustering samples because it gives equal weight to highly vs lowly expressed transcripts or genes
 
 # Cut the resulting tree and create color vector for clusters.  
 #Vary the cut height to give more or fewer clusters, or you the 'k' argument to force n number of clusters
 #we'll look at these clusters in more detail later
-mycl <- cutree(hr, k=2)
+clust.assign <- cutree(clustRows, k=2)
 
 #now assign a color to each cluster (makes it easy to identify and manipulate)
-mycolhc <- rainbow(length(unique(mycl)), start=0.1, end=0.9) 
-mycolhc <- mycolhc[as.vector(mycl)] 
+module.color <- rainbow(length(unique(clust.assign)), start=0.1, end=0.9) 
+module.color <- module.color[as.vector(clust.assign)] 
 
-# produce heatmap of DEGs ----
+# produce a static heatmap of DEGs ----
 #plot the hclust results as a heatmap
-heatmap.2(diffGenes, Rowv=as.dendrogram(hr), Colv=NA, 
-          col=myheatcol, scale='row', labRow=NA,
-          density.info="none", trace="none", RowSideColors=mycolhc, 
+heatmap.2(diffGenes, 
+          Rowv=as.dendrogram(clustRows), 
+          Colv=NA,
+          RowSideColors=module.color,
+          col=myheatcolors, scale='row', labRow=NA,
+          density.info="none", trace="none",  
           cexRow=1, cexCol=1, margins=c(8,20)) 
+
 #what do the colors represent in this heatmap?
 #what happens when you change scale=NULL
 
+# make your heatmap interactive! ----
+#first, we'll make an interactive heatmap using plotly (https://plot.ly/)
+heatmaply(diffGenes,
+          colors = myheatcolors,
+          Rowv=as.dendrogram(clustRows),
+          RowSideColors=module.color,
+          showticklabels=c(FALSE,FALSE),
+          scale='row')
+
+# now let's try using D3 to create an html widget version of our heatmap
+d3heatmap(diffGenes,
+          colors = myheatcolors,
+          Rowv=as.dendrogram(clustRows),
+          row_side_colors = module.color,
+          scale='row')
+
+
 # you can annotate samples with any metadata available in your study design file
-color.map <- function(groups) { if (groups=="control") "#FF0000" else if (groups=="trans_crypto") "#33A12B" else "#0000FF"}
+color.map <- function(groups) { if (groups=="uninfected") "#FF0000" else if (groups=="infected") "#33A12B" else "#0000FF"}
 color.map <- unlist(lapply(groups, color.map))
 
 heatmap.2(diffGenes, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc),
@@ -69,34 +93,39 @@ diffGenes.AVG <- avearrays(diffGenes)
 
 # view clusters of co-regulated genes ----
 # view your color assignments for the different clusters
-names(mycolhc) <- names(mycl) 
-barplot(rep(10, max(mycl)),
-        col=unique(mycolhc[hr$labels[hr$order]]), 
-        horiz=T, names=unique(mycl[hr$order]))
+names(module.color) <- names(clust.assign) 
+barplot(rep(10, max(clust.assign)),
+        col=unique(module.color[clustRows$labels[clustRows$order]]), 
+        horiz=T, names=unique(clust.assign[clustRows$order]))
 
 #choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
 #first cluster to pick are the genes in KO cells that lose LPS-inducibility
-clid <- c(2)
-ysub <- diffGenes[names(mycl[mycl%in%clid]),] 
-hrsub <- hclust(as.dist(1-cor(t(ysub), method="pearson")), method="complete") 
+clust.pick <- 2 #use c function to grab more than one cluster from the heatmap.  e.g., c(1,2)
+mycluster <- diffGenes[names(clust.assign[clust.assign%in%clust.pick]),] 
+hrsub <- hclust(as.dist(1-cor(t(mycluster), method="pearson")), method="complete") 
 clusterIDs <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
-clusterIDs <- as.vector(t(clusterIDs))
+clusterIDs <- as.vector(t(clust.assign))
 
 # Create heatmap for chosen sub-cluster.
-heatmap.2(ysub, Rowv=as.dendrogram(hrsub), Colv=NA, col=myheatcol, scale="row", 
+heatmap.2(mycluster, 
+          Rowv=as.dendrogram(hrsub), 
+          Colv=NA, 
+          col=myheatcol, scale="row", 
           density.info="none", trace="none", 
-          RowSideColors=mycolhc[mycl%in%clid], margins=c(8,20)) 
+          RowSideColors=mycolhc[clust.assign%in%clust.pick], margins=c(8,20)) 
 
 # print out clusters for downstream analysis ----
 #prints out genes in the order you see them in the cluster
 clusterSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
 clusterSymbols <- as.vector(t(clusterSymbols))
 clusterData <- diffGenes[clusterSymbols,]
-write.table(clusterData,"Cluster1.xls", sep="\t", quote=FALSE)
+clusterData.df <- as_tibble(clusterData, rownames = "geneSymbol")
+write_csv(clusterData,"Cluster1.csv")
 
 # OPTIONAL: make heatmap from an a priori list of genes ----
 #read in a text file containing the genes (with expression data) you want to include in the heatmap
-mySelected <- read.delim("mySelectedGenes.txt", sep="\t", stringsAsFactors = FALSE, header=TRUE, row.names=1)
+mySelected <- read_tsv("mySelectedGenes.txt")
+
 mySelected.matrix <- as.matrix(mySelected)
 #alternatively, you can go straight from a dataframe filtered by dplyr
 myTPM.filter
