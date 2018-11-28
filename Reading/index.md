@@ -145,7 +145,7 @@ _more general info about ultra lightweight methods for transcript quantification
 
 * you know how I feel about Venn diagrams, so if you're interested in exploring interactions between many groups of genes, have a look at [this Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/upSet_plot.pdf), the accompanying R package, [UpSetR](https://cran.r-project.org/web/packages/UpSetR/README.html), as well as the [UpSet website](http://caleydo.org/tools/upset/).  Note, there's a shiny app for this as well!
 
-* Here's [my Datagraph template](https://drive.google.com/drive/folders/1J1Fvw-73BjXYnStvAv7XIkK3FqI6dsMe?usp=sharing) for making bubble diagrams to show functional enrichment results.
+* Here's my Datagraph templates for making [enrichment bubble plot](https://drive.google.com/drive/folders/1J1Fvw-73BjXYnStvAv7XIkK3FqI6dsMe?usp=sharing) and [GSEA enrichment plots](https://drive.google.com/drive/folders/1uzP1EvJ1c5qCMZI_SwVa7Lz8qUa1OubM?usp=sharing)
 
 -----------------------------
 
