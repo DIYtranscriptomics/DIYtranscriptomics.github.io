@@ -7,37 +7,29 @@
 #these gene sets can be 'custom' made based on your specific interests,
 #or they can be downloaded from gene signature databases such as MSigDB or GeneSignatureDB
 
-# Comments on new RStudio
-# 1. terminal
-# 2. use View() for detailed looks at objects in your environment
-# 3. dark theme
-# 4. cntrl r for searching all previous commands
-# 5. execute code directly from documentation in the help window
-# Cytoscape test
-# download gene set collections from MsigDB
-
 # Load packages ----
 library(GSEABase)
 library(GSVA)
 library(Biobase)
 library(limma)
-library(ggplot2)
-library(dplyr)
+library(tidyverse)
+library(heatmaply)
 
 # OPTIONAL: convert symbols to upper case 'human' ----
 # make sure to have gene symbols in all caps (coerced to human)
 # if working with mouse data, use the 'toupper' function to conver to uppercase (i.e. human genes)
 # of course, if you're working with human RNAseq data, you won't need to do this
-upperSymbols <- as.data.frame(toupper(rownames(v.DEGList.filtered.norm$E))) #tolower to convert symbols to mouse
+upperSymbols <- toupper(rownames(v.DEGList.filtered.norm$E)) #tolower to convert symbols to mouse
 head(upperSymbols)
 upperSymbols <- as.matrix(upperSymbols)
 rownames(v.DEGList.filtered.norm$E) <- upperSymbols
 head(v.DEGList.filtered.norm$E)
-#sometimes there's a row with no symbol identifier...if so, go ahead an remove this
-v.DEGList.filtered.norm$E <- v.DEGList.filtered.norm$E[-1,]
+#sometimes there's a row with no symbol identifier...if so, go ahead an remove this by uncommenting out the following line of code
+#v.DEGList.filtered.norm$E <- v.DEGList.filtered.norm$E[-1,]
 
 # OPTIONAL: check for and remove any duplicate rows ---- 
 dups <- base::duplicated(rownames(v.DEGList.filtered.norm$E))
+all(dups)
 unique(rownames(v.DEGList.filtered.norm$E)[duplicated(rownames(v.DEGList.filtered.norm$E))])
 collapsed.matrix <- v.DEGList.filtered.norm$E[!duplicated(rownames(v.DEGList.filtered.norm$E)), ]
 
@@ -54,23 +46,23 @@ collapsed.matrix <- v.DEGList.filtered.norm$E[!duplicated(rownames(v.DEGList.fil
 # alternatively, you can produce you own custom gene sets (more on this below)
 
 #MSigDB set C2 contains pathways and chemical/genetic perturbations
-broadSet.C2.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.CGP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cgp.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CGP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cgp.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
 # smaller subsets of C2
-broadSet.C2.KEGG <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.kegg.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.Biocarta <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.biocarta.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.Reactome <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.reactome.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.KEGG <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.kegg.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.Biocarta <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.biocarta.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.Reactome <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.reactome.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
 #set C3 contains lists of targets for of TFs and MIRs
-broadSet.C3.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C3.TFT <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.tft.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C3.MIR <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.mir.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.TFT <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.tft.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.MIR <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.mir.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
 #set C5 contains sets of genes associated with different GO terms
-broadSet.C5.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C5.BP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.bp.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C5.MF <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.mf.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.BP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.bp.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.MF <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.mf.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
 #MsigDB set C7 contains list of genes associated with immunological signatures
-broadSet.C7 <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c7.all.v6.1.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C7 <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c7.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
 
 # competitive GSEA using CAMERA----
 # first let's create a few signatures to test in our enrichment analysis
@@ -78,35 +70,34 @@ mySig <- toupper(rownames(myTopHits))
 mySig2 <- sample((rownames(v.DEGList.filtered.norm$E)), size = 100, replace = FALSE)
 collection <- list(real = mySig, fake = mySig2)
 # now test for enrichment using CAMERA
-GSEAres <- camera(v.DEGList.filtered.norm, collection, design, contrast.matrix[,1]) 
+GSEAres <- camera(v.DEGList.filtered.norm$E, collection, design, contrast.matrix[,1]) 
+GSEAres <- as.tibble(GSEAres, rownames = "setName")
 head(GSEAres)
 # now repeat with an actual gene set collection
-#first, convert your geneSetCollections into lists using the 'geneIds' function from the GSEABase package
 broadSet.C2.CP <- geneIds(broadSet.C2.CP)
-GSEAres <- camera(v.DEGList.filtered.norm, broadSet.C2.CP, design, contrast.matrix[,1]) 
+GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1]) 
+GSEAres <- as.tibble(GSEAres, rownames = "setName")
 head(GSEAres)
 
 # graph GSEA results as bubble chart ----
-#MP <-read.table(file="Process", header=T, sep="\t")
 #begin by adding a column to your GSEA result that indicates the group
 GSEAres.2 <- mutate(GSEAres,
-                    signature = rownames(GSEAres),
                     group = "WT_crypto")
 head(GSEAres.2)
 #now take the top n signatures, the are already ranked by FDR
 GSEAres.2 <- GSEAres.2[1:10,]
 #If you have multiple GSEA results from different pairwise comparisons, use a simple row bind (rbind) to join together
-GSEAres.2$signature<- as.character(GSEAres.2$signature)
+GSEAres.2$setName<- as.character(GSEAres.2$setName)
 #Then turn it back into an ordered factor
-GSEAres.2$signature <- factor(GSEAres.2$signature, levels=unique(GSEAres.2$signature))
-ggplot(GSEAres.2, aes(x=group, y=signature)) + 
-  geom_point(aes(size=NGenes,color=FDR)) +
-  scale_color_gradient(low="#0091ff", high="#f0650e") +
+GSEAres.2$setName <- factor(GSEAres.2$setName, levels=unique(GSEAres.2$setName))
+ggplot(GSEAres.2, aes(x=group, y=setName)) + 
+  geom_point(aes(size=NGenes,color=Direction)) +
+  #scale_color_gradient(low="#0091ff", high="#f0650e") +
   theme_bw()
 
 # GSEA using GSVA package----
 # the GSVA package offers a different way of approaching functional enrichment analysis.  A few comments about the approach:
-#  In contrast to most GSE methods, GSVA performs a change in coordinate systems,
+# In contrast to most GSE methods, GSVA performs a change in coordinate systems,
 # transforming the data from a gene by sample matrix to a gene set by sample matrix. 
 # this allows for the evaluation of pathway enrichment for each sample.
 # the method is both non-parametric and unsupervised
@@ -121,10 +112,7 @@ GSVA.res.C2CP <- gsva(v.DEGList.filtered.norm$E, #your data
                     min.sz=5, max.sz=500, #criteria for filtering gene sets
                     verbose=FALSE,
                     mx.diff=FALSE,
-                    rnaseq=TRUE,
                     method="gsva") #options for method are "gsva", ssgsea', "zscore" or "plage"
-#extract the enrichment scores from this result
-GSVA.res.C2CP <- GSVA.res.C2CP$es.obs
 
 # Apply linear model to GSVA result ----
 # now using Limma to find significantly enriched gene sets in the same way you did to find diffGenes
@@ -150,52 +138,33 @@ head(diffSets.C2CP)
 dim(diffSets.C2CP)
 
 # make a heatmap of differentially enriched gene sets ----
-hr.C7 <- hclust(as.dist(1-cor(t(diffSets.C2CP), method="pearson")), method="complete") #cluster rows by pearson correlation
-hc.C7 <- hclust(as.dist(1-cor(diffSets.C2CP, method="spearman")), method="complete") #cluster columns by spearman correlation
+hr.C2CP <- hclust(as.dist(1-cor(t(diffSets.C2CP), method="pearson")), method="complete") #cluster rows by pearson correlation
+hc.C2CP <- hclust(as.dist(1-cor(diffSets.C2CP, method="spearman")), method="complete") #cluster columns by spearman correlation
 
 # Cut the resulting tree and create color vector for clusters.  Vary the cut height to give more or fewer clusters, or you the 'k' argument to force n number of clusters
 library(RColorBrewer)
-mycl.C7 <- cutree(hr.C7, k=2)
-mycolhc.C7 <- rainbow(length(unique(mycl.C7)), start=0.1, end=0.9) 
-mycolhc.C7 <- mycolhc.C7[as.vector(mycl.C7)] 
+mycl.C2CP <- cutree(hr.C2CP, k=2)
+mycolhc.C2CP <- rainbow(length(unique(mycl.C2CP)), start=0.1, end=0.9) 
+mycolhc.C2CP <- mycolhc.C2CP[as.vector(mycl.C2CP)] 
 
 #load the gplots package for plotting the heatmap
 library(gplots) 
 #assign your favorite heatmap color scheme. Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]). Type demo.col(20) to see more color schemes.
-myheatcol <- greenred(75)
+myheatcol <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 #plot the hclust results as a heatmap
 heatmap.2(diffSets.C2CP, 
-          Rowv=as.dendrogram(hr.C7), Colv=as.dendrogram(hc.C7), 
+          Rowv=as.dendrogram(hr.C2CP), Colv=as.dendrogram(hc.C2CP), 
           col=myheatcol, scale="row",
           density.info="none", trace="none", 
           cexRow=0.9, cexCol=1, margins=c(10,25)) # Creates heatmap for entire data set where the obtained clusters are indicated in the color bar.
 
-#print your enrichment results to an excel spreadsheet
-write.table(diffSets.C7, "diffSets_C7.xls", sep="\t", quote=FALSE)
-
-# OPTIONAL: Calculate the % overlap between gene sets ----
-library(lattice)
-SigOverlap <- computeGeneSetsOverlap(broadSet.C7, rownames(v.DEGList.filtered.norm$E))
-rgb.palette <- colorRampPalette(c("blue", "red", "yellow"), space = "rgb")
-levelplot(SigOverlap, main="geneset correlation matrix", xlab="", ylab="", col.regions=rgb.palette(1000), cuts=100, cexRow=0.5, cexCol=1, margins=c(10,10))
-
-# OPTIONAL: make custom gene set collections----
-#depending on how many genesets are enriched, you may want to filter your enrichement results
-#here, I filter the C2 enrichment results to get only KEGG, BIOCARTA, REACTOME
-#easiest way to do this is to just open the enrichment results and manually look at what rows correspond to the different subsets of interest
-diffSets.KEGG <- diffSets.B6[1:8,]
-setNames.KEGG <- rownames(diffSets.KEGG)
-
-diffSets.BIOCARTA <- diffSets.B6[9:29,]
-setNames.BIOCARTA <- rownames(diffSets.BIOCARTA)
-
-diffSets.PID <- diffSets.B6[34:36,]
-setNames.PID <- rownames(diffSets.PID)
-
-diffSets.REACTOME <- diffSets.B6[37:66,]
-setNames.REACTOME <- rownames(diffSets.REACTOME)
-
-#or you can import your own edited list containing a subset of enriched pathways
-diffSets.custom <- as.matrix(read.delim("diffSets_C2_custom.txt", header=TRUE, row.names=1))
-setNames.custom <- rownames(diffSets.custom)
+#just as we did for genes, we can also make an interactive heatmap for pathways
+heatmaply(diffSets.C2CP,
+          colors = myheatcol,
+          Rowv=as.dendrogram(hr.C2CP),
+          RowSideColors=mycolhc.C2CP,
+          ylab = NA,
+          #showticklabels=c(FALSE,FALSE),
+          scale='row')
+# you can edit what is shown in this heatmap, just as you did for your gene level heatmap earlier in the course
 
