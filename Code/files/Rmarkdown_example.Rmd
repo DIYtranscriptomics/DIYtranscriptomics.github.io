@@ -1,0 +1,414 @@
+---
+title: "<center> Supplementary Code for _the best class ever!_ <center>"
+author: "<center> Daniel Beiting, Camila Amorim and Elise English <center><br>"
+date: "<center> _April, 2017_ <center>"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    number_sections: true
+  html_notebook:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    number_sections: true
+  pdf_document:
+    fig_caption: yes
+    toc: yes
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \lhead{Supplementary code - my awesome class}
+- \chead{}
+- \rhead{}
+- \lfoot{Beiting et al.}
+- \cfoot{}
+- \rfoot{\thepage}
+- \renewcommand{\headrulewidth}{0.4pt}
+- \renewcommand{\footrulewidth}{0.4pt}
+---
+
+# Abstract
+This document contains all the code used to analyze the unpublished data from the ....  
+
+# R packages
+**These are the R/bioconductor packages used for this analysis:**
+```{r packages, message=FALSE, warning=FALSE, results='hide'}
+library(tidyverse)
+library(reshape2)
+library(ggvis)
+library(GSEABase)
+library(GSVA)
+library(Biostrings)
+library(tximport)
+library(ensembldb)
+library(EnsDb.Hsapiens.v86)
+library(DT)
+library(limma)
+library(edgeR)
+library(gplots) 
+library(RColorBrewer)
+library(scatterD3)
+library(d3heatmap)
+```
+
+**This dynamic html summary report was compiled in Rmarkdown using the following packages:**
+```{r packages.continued, results='hide', message=FALSE, warning=FALSE}
+library(rmarkdown)
+library(knitr) 
+```
+
+# Data generation
+## read mapping with Kallisto
+```{r read mapping, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+
+# now align all samples for the study, but use 30 bootstraps to model technical variance for each sample
+# note that we're also including the '&>' at the end of each line
+# this takes the information that would've been printed to our terminal, and outputs this in a log file in our project folder
+kallisto quant -i myHumanIndex -o uninf_rep1 -t 4 -b 30 --single -l 250 -s 30 Control1_mergedLanes_mergedRuns.fastq.gz &> uninf_rep1.log
+
+kallisto quant -i myHumanIndex -o uninf_rep2 -t 4 -b 30 --single -l 250 -s 30 Control2_mergedLanes_mergedRuns.fastq.gz &> uninf_rep2.log
+
+kallisto quant -i myHumanIndex -o uninf_rep3 -t 4 -b 30 --single -l 250 -s 30 Control3_mergedLanes_mergedRuns.fastq.gz &> uninf_rep3.log
+
+kallisto quant -i myHumanIndex -o crypto.wt_rep1 -t 4 -b 30 --single -l 250 -s 30 WT1_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep1.log
+
+kallisto quant -i myHumanIndex -o crypto.wt_rep2 -t 4 -b 30 --single -l 250 -s 30 WT2_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep2.log
+
+kallisto quant -i myHumanIndex -o crypto.wt_rep3 -t 4 -b 30 --single -l 250 -s 30 WT3_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep3.log
+
+kallisto quant -i myHumanIndex -o crypto.mut_rep1 -t 4 -b 30 --single -l 250 -s 30 Trans1_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep1.log
+
+kallisto quant -i myHumanIndex -o crypto.mut_rep2 -t 4 -b 30 --single -l 250 -s 30 Trans2_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep2.log
+
+kallisto quant -i myHumanIndex -o crypto.mut_rep3 -t 4 -b 30 --single -l 250 -s 30 Trans3_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep3.log
+
+```
+
+## annotation with Ensembl
+```{r annotation, message=FALSE, warning=FALSE, eval=FALSE}
+#use the 'transcripts' function from the EnsemblDB package to get annotation info
+Tx <- transcripts(EnsDb.Hsapiens.v86, 
+                  columns=c(listColumns(EnsDb.Hsapiens.v86,
+                                        "tx"), "gene_name"))
+
+Tx <- as.tibble(Tx)
+
+#need to change first column name to 'target_id'
+Tx <- dplyr::rename(Tx, target_id = tx_id)
+#transcript ID needs to be the first column in the dataframe
+Tx <- dplyr::select(Tx, target_id, gene_name)
+
+```
+
+## importing data into R
+```{r data import, message=FALSE, warning=FALSE, eval=FALSE}
+load("myDGEList")
+targets <- read_tsv("Crypto_studyDesign.txt")
+path <- file.path(targets$sample, "abundance.h5")
+targets <- mutate(targets, path)
+
+Txi_gene <- tximport(path, 
+                     type = "kallisto", 
+                     tx2gene = Tx, 
+                     txOut = FALSE, 
+                     countsFromAbundance = "lengthScaledTPM")
+save(Txi_gene, file = "Txi_gene")
+```
+
+# Preprocessing and normalization
+## study design
+```{r design, message=FALSE, warning=FALSE}
+load("Txi_gene")
+myDGEList <- DGEList(Txi_gene$counts)
+targets <- read_tsv("Crypto_studyDesign.txt")
+groups1 <- targets$treatment
+groups2 <- targets$treatment2
+groups1 <- factor(groups1)
+groups2 <- factor(groups2)
+sampleLabels <- targets$sample
+```
+
+## raw data
+```{r raw, message=FALSE, warning=FALSE}
+# use the 'cpm' function from EdgeR to get counts per million
+log2.cpm <- cpm(myDGEList, log=TRUE)
+
+# Take a look at the distribution of the Log2 CPM
+nsamples <- ncol(log2.cpm)
+myColors <- brewer.pal(nsamples, "Paired")
+
+# 'coerce' your data matrix to a dataframe so that you can use tidyverse tools on it
+log2.cpm.df <- as.tibble(log2.cpm, rownames = "geneSymbol")
+# add your sample names to this dataframe (we lost these when we read our data in with tximport)
+#colnames(log2.cpm.df) <- sampleLabels
+# use the reshape2 package to 'melt' your dataframe (from wide to tall)
+log2.cpm.df.melt <- melt(log2.cpm.df)
+Log2.cpm.df.melt <- as.tibble(log2.cpm.df.melt)
+
+ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw() +
+  labs(title = "before filtering")
+```
+
+```{r raw data in a table, message=FALSE, warning=FALSE}
+datatable(log2.cpm.df,
+          extensions = c('KeyTable', "FixedHeader"),
+          caption = 'raw expression data (unfiltered, non-normalized) ',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:10), digits=3)
+```
+
+## filtered data
+```{r filtering, message=FALSE, warning=FALSE}
+#first, take a look at how many genes or transcripts have no read counts at all
+# now set some cut-off to get rid of genes/transcripts with low counts
+keepers <- rowSums(myDGEList$counts)>=3
+DGEList.filtered <- myDGEList[keepers,]
+
+log2.cpm.filtered <- cpm(DGEList.filtered, log=TRUE)
+log2.cpm.filtered.df <- as.tibble(log2.cpm.filtered) 
+colnames(log2.cpm.filtered.df) <- sampleLabels
+log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
+log2.cpm.filtered.df.melt <- as.tibble(log2.cpm.filtered.df.melt)
+
+ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = TRUE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw() +
+  labs(title = "after filtering")
+```
+
+## Normalized data
+```{r normalize, message=FALSE, warning=FALSE}
+DGEList.filtered.norm <- calcNormFactors(DGEList.filtered, method = "TMM")
+# take a look at this new DGEList object...how has it changed?
+
+# use the 'cpm' function from EdgeR to get counts per million from your normalized data
+log2.cpm.filtered.norm <- cpm(DGEList.filtered.norm, log=TRUE)
+
+log2.cpm.filtered.norm.df <- as.tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
+
+#colnames(log2.cpm.filtered.norm.df) <- sampleLabels
+log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
+log2.cpm.filtered.norm.df.melt <- as.tibble(log2.cpm.filtered.norm.df.melt)
+
+ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = TRUE, show.legend = TRUE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
+  theme_bw() +
+  labs(title = "after normalization")
+
+```
+
+```{r normalized data in a table, message=FALSE, warning=FALSE}
+datatable(log2.cpm.filtered.norm.df,
+          extensions = c('KeyTable', "FixedHeader"),
+          caption = 'normalized and filtered expression data',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:10), digits=3)
+```
+
+# Exploratory data analysis
+## Principal component analysis (PCA)
+```{r PCA, message=FALSE, warning=FALSE}
+pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
+#look at pca.res in environment
+x <- pca.res$rotation #$rotation shows you how much each gene influenced each PC (called 'scores')
+pc.var<-pca.res$sdev^2 #sdev^2 gives you the eigenvalues
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+
+# Visualize your PCA result ------------------
+#lets first plot any two PCs aslgainst each other
+#We know how much each sample contributes to each PC (loadings), so let's plot
+pca.res.df <- as.tibble(pca.res$x)
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups1)) +
+  geom_point(size=5) +
+  theme(legend.position="right")
+
+melted <- cbind(groups1, melt(pca.res$x[,1:4]))
+#look at your 'melted' data
+ggplot(melted) +
+  geom_bar(aes(x=Var1, y=value, fill=groups1), stat="identity") +
+  facet_wrap(~Var2) +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+
+# Differential gene analysis
+## set up model matrix
+```{r model, message=FALSE, warning=FALSE}
+design <- model.matrix(~0 + groups1)
+colnames(design) <- levels(groups1)
+```
+
+## mean-variance and linear model
+```{r linear model, message=FALSE, warning=FALSE}
+v.DEGList.filtered.norm <- voom(DGEList.filtered.norm, design, plot = TRUE)
+```
+
+## set up contrasts
+```{r contrasts, message=FALSE, warning=FALSE}
+# fit a linear model to your data
+fit <- lmFit(v.DEGList.filtered.norm, design)
+
+# Contrast matrix ----
+#how do cells respond to infection with Crypto?
+contrast.matrix <- makeContrasts(infection_with_WT = crypto.wt - uninfected,
+                                 infection_with_Mut = crypto.mut - uninfected,
+                                 levels=design)
+```
+
+## Bayesan stats
+```{r Bayes, message=FALSE, warning=FALSE}
+fits <- contrasts.fit(fit, contrast.matrix)
+#get bayesian stats for your linear model fit
+ebFit <- eBayes(fits)
+#stats <- write.fit(ebFit)
+```
+
+
+## Top 10 DEGS
+```{r topTable, message=FALSE, warning=FALSE}
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=10, sort.by="logFC")
+datatable(myTopHits, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          caption = 'my cool table)',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:6), digits=3)
+```
+
+## Volcano plot - crypto infected vs naive HCT-8 cells
+```{r volcano1, message=FALSE, warning=FALSE}
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=12000, sort.by="logFC")
+#first, move rownames into the dataframe
+myTopHits <- rownames_to_column(myTopHits, "geneID")
+myTopHits <- mutate(myTopHits, log10Pval = -log10(adj.P.Val), 
+                    adj.P.Val = round(adj.P.Val, 2),
+                    logFC = round(logFC, 2),
+                    geneID = geneID)
+tooltip <- paste("<b>","Symbol: ", myTopHits$geneID, "</b><br>",
+                 "<b>","LogFC: ","</b>", myTopHits$logFC, "<br>",
+                 "<b>","FDR: ","</b>", myTopHits$adj.P.Val, "<br>")
+scatterD3(myTopHits, x = logFC, y = log10Pval,
+          lasso = TRUE,
+          xlab = "logFC", 
+          ylab = "-log10(adj.P.val)",
+          tooltip_text = tooltip, hover_size = 3)
+```
+
+## Venn
+```{r Venn, message=FALSE, warning=FALSE}
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=2)
+vennDiagram(results, include="both")
+```
+
+## DEGs
+```{r DEGs, message=FALSE, warning=FALSE}
+diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
+mydata.df <- as.tibble(diffGenes, rownames = "geneSymbol")
+
+datatable(mydata.df,
+          extensions = c('KeyTable', "FixedHeader"),
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(2:10), digits=2)
+```
+
+# Visualizing DEGs
+## heatmap of all **`r length((diffGenes)[,1])`** DEGs
+```{r heatmap, message=FALSE, warning=FALSE}
+#color pallette
+myheatcolors <- colorRampPalette(colors=c("yellow","white","blue"))(100)
+
+#begin by clustering the genes (rows) in each set of differentially expressed genes
+clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
+
+#now cluster samples (columns)
+#we may not acutally use this clustering result, but it's good to have just in case
+clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete") #cluster columns by spearman correlation
+
+# Cut the resulting tree and create color vector for clusters.
+clust.assign <- cutree(clustRows, k=2)
+
+#now assign a color to each cluster (makes it easy to identify and manipulate)
+module.color <- rainbow(length(unique(clust.assign)), start=0.1, end=0.9)
+module.color <- module.color[as.vector(clust.assign)]
+
+#plot the hclust results as a heatmap
+# first, a heatmap of genes regulated by LPS in a WT background
+d3heatmap(diffGenes,
+          colors = myheatcolors,
+          Rowv=as.dendrogram(clustRows),
+          row_side_colors = module.color,
+          labCol = sampleLabels,
+          scale='row', k_row = 2)
+```
+
+## heatmap of genes induced by infection
+```{r cluster down all, message=FALSE, warning=FALSE}
+# view your color assignments for the different clusters
+names(module.color) <- names(clust.assign)
+#choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
+clust.pick <- 2 #use c function to grab more than one cluster from the heatmap.  e.g., c(1,2)
+mycluster <- diffGenes[names(clust.assign[clust.assign%in%clust.pick]),]
+hrsub <- hclust(as.dist(1-cor(t(mycluster), method="pearson")), method="complete")
+clusterIDs <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterIDs <- as.vector(t(clust.assign))
+# Create heatmap for chosen sub-cluster.
+d3heatmap(mycluster,
+          colors = myheatcolors,
+          Rowv=as.dendrogram(hrsub),
+          row_side_colors = module.color,
+          labCol = sampleLabels,
+          scale='row', k_row = 3)
+```
+
+## heatmap of genes repressed by infection
+```{r cluster down subset, message=FALSE, warning=FALSE}
+# view your color assignments for the different clusters
+names(module.color) <- names(clust.assign)
+#choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
+clust.pick <- 1 #use c function to grab more than one cluster from the heatmap.  e.g., c(1,2)
+mycluster <- diffGenes[names(clust.assign[clust.assign%in%clust.pick]),]
+hrsub <- hclust(as.dist(1-cor(t(mycluster), method="pearson")), method="complete")
+clusterIDs <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
+clusterIDs <- as.vector(t(clust.assign))
+# Create heatmap for chosen sub-cluster.
+d3heatmap(mycluster,
+          colors = myheatcolors,
+          Rowv=as.dendrogram(hrsub),
+          row_side_colors = module.color,
+          labCol = sampleLabels,
+          scale='row', k_row = 2)
+```
+
+# Functional enrichment analysis
+## GSEA with CAMERA
+```{r GSEA, message=FALSE, warning=FALSE}
+broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+
+#first, convert your geneSetCollections into lists using the 'geneIds' function from the GSEABase package
+broadSet.C2.CP <- geneIds(broadSet.C2.CP)
+GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1])
+GSEAres <- as.tibble(GSEAres, rownames = "setName")
+datatable(GSEAres,
+          extensions = c('KeyTable', "FixedHeader"),
+          caption = 'Gene set enrichment',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:6), digits=3)
+
+```
+
+
+# Session Info
+**Session Info:**
+```{r sessionInfo, results='asis', message=FALSE, warning=FALSE, echo=FALSE}
+sessionInfo()
+```
+
