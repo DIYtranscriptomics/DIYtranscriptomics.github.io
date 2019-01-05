@@ -13,6 +13,7 @@ library(ensembldb) # used together with our organism-specific database package (
 library(EnsDb.Hsapiens.v86) # organism-specific database package
 library(sleuth) #for rapid and simple differential gene expression analysis
 library(beepr)
+
 # OPTIONAL: modify reference transcriptome .fasta file ----
 # depending on your reference transcriptome, we may need to edit the fasta file (but this would only need to be done once)
 # Transcript identifiers should NOT have a version number appended to the ID
@@ -48,15 +49,15 @@ targets <- mutate(targets, path)
 # 2. if you used Salmon instead of Kallisto for read mapping, you can still use Sleuth but you'll need the Wasabi R package
 
 # Now you're ready to construct a sleuth object
-mySleuth <- sleuth_prep(targets, 
-                        #target_mapping = Tx, #uncomment this line if you want to map transcripts IDs to gene symbols
-                        #aggregation_column = 'gene_name', #uncomment this line if you want to collapse your data to gene level
+mySleuth.genes <- sleuth_prep(targets, 
+                        target_mapping = Tx, #uncomment this line if you want to map transcripts IDs to gene symbols
+                        aggregation_column = 'gene_name', #uncomment this line if you want to collapse your data to gene level
                         read_bootstrap_tpm=TRUE,
                         extra_bootstrap_summary=TRUE) 
 beep(sound = 1, expr = NULL)
 
 # fit a linear model to the full data
-mySleuth <- sleuth_fit(mySleuth, ~treatment2, 'full')
+mySleuth.genes <- sleuth_fit(mySleuth.genes, ~treatment2, 'full')
 # What this has accomplished is to “smooth” the raw kallisto abundance estimates for each sample 
 # using a linear model with a parameter that represents the experimental condition (naive vs infected)
 
@@ -125,19 +126,24 @@ head(Tx)
 
 # Import Kallisto transcript counts into R using Tximport ----
 # copy the abundance files to the working directory and rename so that each sample has a unique name
-Txi_gene <- tximport(path, 
+Txi_trans <- tximport(path, 
                      type = "kallisto", 
                      tx2gene = Tx, 
-                     txOut = FALSE, #How does the result change if this =FALSE vs =TRUE?
+                     txOut = TRUE, #How does the result change if this =FALSE vs =TRUE?
                      countsFromAbundance = "lengthScaledTPM")
 
 #take a look at the object you just created
-head(Txi_gene$counts) # these are you counts after adjusting for transcript length
+head(Txi_trans$counts) # these are you counts after adjusting for transcript length
 head(Txi_gene$abundance) # these are your transcript per million (TPM) values
+
+#if you exported transcript level data and want to append your gene symbols to the data frame
+Txi_trans <- as.tibble(Txi_trans$counts, rownames = "target_id")
+Txi_trans <- left_join(Txi_counts, Tx)
 
 # QUIZ----
 #1. what should the columns of Txi_gene$abundance sum to, what about Txi_gene$counts?
 #2. how would you quickly find out the answer to #1 in R?
+
 # Reduced code for Step 1----
 targets <- read_tsv("Crypto_studyDesign.txt")
 path <- file.path(targets$sample, "abundance.h5")

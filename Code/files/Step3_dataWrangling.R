@@ -9,6 +9,8 @@ library(ggplot2) #graphing package that employs a 'grammar of graphics' approach
 library(reshape2) #data manipulation package
 library(dplyr) #data manipulation package
 library(ggvis) #for making interactive (dynamic) graphs in R, also follows the grammar of graphics philosophy
+library(DT)
+library(scatterD3)
 
 # Data -------
 # for this part of the class you'll use your normalized and filtered data in log2 cpm
@@ -19,6 +21,7 @@ head(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm) <- sampleLabels
 # Now we need to convert our datamatrix to a dataframe, while preserving the rownames as a new column in this dataframe
 mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
+write_tsv(mydata.df, "normData.txt") # Note: this is the data you would use as input .gct file for GSEA analysis
 
 # use dplyr 'mutate' function to add new columns based on existing data -------
 mydata.df <- mutate(mydata.df,
@@ -60,7 +63,6 @@ mydata.grep <- mydata.df %>%
 mydata.grep
 
 # make an interactive table ----
-library(DT)
 datatable(mydata.df, 
           extensions = c('KeyTable', "FixedHeader"), 
           caption = 'my cool table)',
@@ -73,13 +75,20 @@ ggplot(mydata.df, aes(x=uninfected.AVG, y=crypto.wt.AVG)) +
   geom_point(size=1)
 
 # make an interactive scatter plot ----
-tooltip <- function(data, ...) {
-  paste0("<b>","Symbol: ", data$geneSymbol, "</b><br>",
-         "untreated.AVG: ", data$uninfected.AVG, "<br>",
-         "wt_crypto.AVG: ", data$crypto.wt.AVG)
-}
+tooltip <- paste0("<b>","Symbol: ", mydata.df$geneSymbol, "</b><br>",
+                  "<b>","untreated.AVG: ", "<b>", mydata.df$uninfected.AVG,
+                  "<b>", "wt_crypto.AVG: ", "<b>", mydata.df$crypto.wt.AVG)
 
 #plot the interactive graphic
+scatterD3(mydata.df, x = uninfected.AVG, y = crypto.wt.AVG,
+          lasso = TRUE,
+          xlab = "uninfected.AVG", 
+          ylab = "crypto.wt.AVG",
+          colors = "red",
+          point_opacity = 0.7,
+          caption = list(title = "impact of infection"),
+          tooltip_text = tooltip, hover_size = 3)
+
 mydata.df %>% 
   ggvis(x= ~uninfected.AVG, y= ~crypto.wt.AVG, 
         key := ~geneSymbol,

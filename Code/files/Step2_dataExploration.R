@@ -25,6 +25,7 @@ myCPM <- Txi_gene$abundance
 myCounts <- Txi_gene$counts
 # let's quickly graph both matrices to see what we're dealing with
 
+
 # Take a look at the heteroskedasticity of the data ----
 # first, calculate row means and standard deviations for each transcript or gene 
 # and add these to your data matrix
@@ -42,7 +43,7 @@ myCounts.stats <- transform(myCounts,
 
 head(myCPM.stats)
 #produce a scatter plot of the transformed data
-ggplot(myCounts.stats, aes(x=SD, y=MED)) +
+ggplot(myCPM.stats, aes(x=SD, y=MED)) +
   geom_point(shape=1, size=4)
 # Experiment with point shape and size
 # experiment with geom_hex
@@ -109,7 +110,8 @@ DGEList.filtered.norm <- calcNormFactors(DGEList.filtered, method = "TMM")
 # use the 'cpm' function from EdgeR to get counts per million from your normalized data
 log2.cpm.filtered.norm <- cpm(DGEList.filtered.norm, log=TRUE)
 
-log2.cpm.filtered.norm.df <- as.tibble(log2.cpm.filtered.norm) 
+log2.cpm.filtered.norm.df <- as.tibble(log2.cpm.filtered.norm)
+
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 log2.cpm.filtered.norm.df.melt <- as.tibble(log2.cpm.filtered.norm.df.melt)
@@ -123,7 +125,7 @@ ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) 
 # Hierarchical clustering ---------------
 #hierarchical clustering can only work on a data matrix, not a data frame
 #try using filtered and unfiltered data...how does this change the results
-distance <- dist(t(log2.cpm.filtered.norm), method="maximum") #other dist methods are "maximum", "manhattan", "canberra", "binary" or "minkowski"
+distance <- dist(t(log2.cpm.filtered.norm), method="manhattan") #other dist methods are "maximum", "manhattan", "canberra", "binary" or "minkowski"
 clusters <- hclust(distance, method = "complete") #other methods are ward.D, ward.D2, single, complete, average
 plot(clusters, labels=sampleLabels)
 
@@ -132,7 +134,7 @@ pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
 #look at pca.res in environment
 ls(pca.res)
 summary(pca.res) # Prints variance summary for all principal components.
-pca.res$rotation #$rotation shows you how much each gene influenced each PC (called 'scores')
+x <- pca.res$rotation #$rotation shows you how much each gene influenced each PC (called 'scores')
 pca.res$x #$x shows you how much each sample influenced each PC (called 'loadings')
 #note that these loadings have a magnitude and a direction (this is the basis for making a PCA plot)
 pc.var<-pca.res$sdev^2 #sdev^2 gives you the eigenvalues
@@ -143,7 +145,7 @@ pc.per
 #lets first plot any two PCs aslgainst each other
 #We know how much each sample contributes to each PC (loadings), so let's plot
 pca.res.df <- as.tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups2)) +
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups1)) +
   geom_point(size=5) +
   theme(legend.position="right") 
 #what other variables could you 'paint' onto this PCA plot
@@ -151,10 +153,11 @@ ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups2)) +
 
 # Create a PCA 'small multiples' chart ----
 # this is another way to view PCA laodings to understand impact of each sample on each pricipal component
-melted <- cbind(groups2, melt(pca.res$x[,1:4]))
+melted <- cbind(groups1, melt(pca.res$x[,1:4]))
 head(melted)
 #look at your 'melted' data
 ggplot(melted) +
-  geom_bar(aes(x=Var1, y=value, fill=groups2), stat="identity") +
-  facet_wrap(~Var2)
+  geom_bar(aes(x=Var1, y=value, fill=groups1), stat="identity") +
+  facet_wrap(~Var2) +
+  theme(axis.text.x = element_text(angle = 90))
   #facet_trelliscope(~Var2) #add this trelliscope layer to the ggplot to have some fun

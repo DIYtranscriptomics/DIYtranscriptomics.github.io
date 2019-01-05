@@ -11,9 +11,9 @@ library(d3heatmap) #for making interactive heatmaps using D3
 
 # choose color pallette ----
 #Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]).
-myheatcolors <- greenred(75)
+myheatcolors1 <- greenred(75)
 # a color-blind friendly pallete
-myheatcolors <- colorRampPalette(colors=c("yellow","white","blue"))(100)
+myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 
 # cluster DEGs ----
 #begin by clustering the genes (rows) in each set of differentially expressed genes
@@ -43,7 +43,7 @@ heatmap.2(diffGenes,
           Rowv=as.dendrogram(clustRows), 
           Colv=NA,
           RowSideColors=module.color,
-          col=myheatcolors, scale='row', labRow=NA,
+          col=myheatcolors2, scale='row', labRow=NA,
           density.info="none", trace="none",  
           cexRow=1, cexCol=1, margins=c(8,20)) 
 
@@ -53,10 +53,10 @@ heatmap.2(diffGenes,
 # make your heatmap interactive! ----
 #first, we'll make an interactive heatmap using plotly (https://plot.ly/)
 heatmaply(diffGenes,
-          colors = myheatcolors,
+          colors = myheatcolors2,
           Rowv=as.dendrogram(clustRows),
           RowSideColors=module.color,
-          showticklabels=c(FALSE,FALSE),
+          #showticklabels=c(FALSE,FALSE),
           scale='row')
 
 # now let's try using D3 to create an html widget version of our heatmap
@@ -71,10 +71,10 @@ d3heatmap(diffGenes,
 color.map <- function(groups) { if (groups=="uninfected") "#FF0000" else if (groups=="infected") "#33A12B" else "#0000FF"}
 color.map <- unlist(lapply(groups, color.map))
 
-heatmap.2(diffGenes, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc),
-          col=myheatcol, scale="row", labRow=NA,
+heatmap.2(diffGenes, Rowv=as.dendrogram(clustRows), Colv=NA,
+          col=myheatcolors, scale="row", labRow=NA,
           density.info="none", trace="none", 
-          RowSideColors=mycolhc, ColSideColors = color.map,
+          RowSideColors=module.color, ColSideColors = color.map,
           cexRow=1, cexCol=1, margins=c(8,20)) 
 
 # simplify heatmap ----
@@ -99,7 +99,6 @@ barplot(rep(10, max(clust.assign)),
         horiz=T, names=unique(clust.assign[clustRows$order]))
 
 #choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
-#first cluster to pick are the genes in KO cells that lose LPS-inducibility
 clust.pick <- 2 #use c function to grab more than one cluster from the heatmap.  e.g., c(1,2)
 mycluster <- diffGenes[names(clust.assign[clust.assign%in%clust.pick]),] 
 hrsub <- hclust(as.dist(1-cor(t(mycluster), method="pearson")), method="complete") 
@@ -110,9 +109,9 @@ clusterIDs <- as.vector(t(clust.assign))
 heatmap.2(mycluster, 
           Rowv=as.dendrogram(hrsub), 
           Colv=NA, 
-          col=myheatcol, scale="row", 
+          col=myheatcolors2, scale="row", 
           density.info="none", trace="none", 
-          RowSideColors=mycolhc[clust.assign%in%clust.pick], margins=c(8,20)) 
+          RowSideColors=module.color[clust.assign%in%clust.pick], margins=c(8,20)) 
 
 # print out clusters for downstream analysis ----
 #prints out genes in the order you see them in the cluster
@@ -120,7 +119,7 @@ clusterSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
 clusterSymbols <- as.vector(t(clusterSymbols))
 clusterData <- diffGenes[clusterSymbols,]
 clusterData.df <- as_tibble(clusterData, rownames = "geneSymbol")
-write_csv(clusterData,"Cluster1.csv")
+write_csv(clusterData.df,"Cluster_downRegulated.csv")
 
 # OPTIONAL: make heatmap from an a priori list of genes ----
 #read in a text file containing the genes (with expression data) you want to include in the heatmap

@@ -1,9 +1,9 @@
 # Introduction to this script -----------
 #the goal of this script is to identify differentially expressed genes (DEGs) or transcripts (DETs)
-#you should already know what pairwise comparisons are most important to you
-#whether you look for differential expression at the gene or transcript level depends on how you read the Kallisto output into R using TxImport
+#you should already know which pairwise comparisons are most important to you
+#whether you look for differential expression at the gene or transcript level depends on how you read the Kallisto output into R using TxImport back in Step 1
 #if you have no biological replicates, you will NOT be able to leverage statistical tools for differential expression analysis
-#Instead, you will ONLY rely on fold changes, and can use the dplyr 'verbs' we discussed in the last class to identify genes based soley on fold changes
+#Instead, you will ONLY rely on fold changes, and can use the dplyr 'verbs' we discussed in Step 3 to identify genes based on fold change only
 
 # Load packages -----
 library(tidyverse)
@@ -13,7 +13,7 @@ library(scatterD3) #creates interactive plots using ggplot commands
 library(DT) #creates interactive datatables
 library(sva) #includes many functions for handling sources of variance (e.g. batch effects)
 
-# Set up you design matrix ----
+# Set up your design matrix ----
 # remember how we read in our study design and capture our treatment variable (from Step 1 script)
 targets <- read_tsv("Crypto_studyDesign.txt")
 targets
@@ -21,7 +21,7 @@ groups1 <- targets$treatment
 groups2 <- targets$treatment2
 groups1 <- factor(groups1)
 groups2 <- factor(groups2)
-#groups <- relevel(groups, "uninfected") #may need to use 'relevel' function
+groups1 <- relevel(groups1, "uninfected") #may need to use 'relevel' function
 design <- model.matrix(~0 + groups1)
 colnames(design) <- levels(groups1)
 
@@ -44,7 +44,7 @@ ebFit <- eBayes(fits)
 #stats <- write.fit(ebFit)
 
 # TopTable to view DEGs -----
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=20000, sort.by="logFC")
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=10, sort.by="logFC")
 myTopHits
 
 # Volcano Plots ----
@@ -84,7 +84,7 @@ scatterD3(myTopHits, x = logFC, y = log10Pval,
           lasso = TRUE,
           xlab = "logFC", 
           ylab = "-log10(adj.P.val)",
-          colors = "red",
+          colors = "#C9B3D6",
           point_opacity = 0.7,
           caption = list(title = "Volcano plot - infected vs. naive"),
           tooltip_text = tooltip1, hover_size = 3)
@@ -97,10 +97,10 @@ datatable(myTopHits,
   formatRound(columns=c(1:6), digits=3)
 
 # decideTests to pull out the DEGs and make Venn Diagram ----
-results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=1)
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=2)
 
 # take a look at what the results of decideTests looks like
-head(results)
+tail(results)
 summary(results)
 vennDiagram(results, include="both")
 
@@ -115,7 +115,7 @@ dim(diffGenes)
 diffGenes.df <- as_tibble(diffGenes, rownames = "geneSymbol")
 
 #write your DEGs to a file
-write_csv(diffGenes.df,"DiffGenes.csv")
+write_tsv(diffGenes.df,"DiffGenesTEST.txt") #NOTE: this .txt file can be directly used for input into Clust (https://github.com/BaselAbujamous/clust)
 
 # OPTIONAL: other study designs ----
 

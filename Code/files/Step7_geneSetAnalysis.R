@@ -14,6 +14,7 @@ library(Biobase)
 library(limma)
 library(tidyverse)
 library(heatmaply)
+library(gplots)
 
 # OPTIONAL: convert symbols to upper case 'human' ----
 # make sure to have gene symbols in all caps (coerced to human)
@@ -156,7 +157,7 @@ heatmap.2(diffSets.C2CP,
           Rowv=as.dendrogram(hr.C2CP), Colv=as.dendrogram(hc.C2CP), 
           col=myheatcol, scale="row",
           density.info="none", trace="none", 
-          cexRow=0.9, cexCol=1, margins=c(10,25)) # Creates heatmap for entire data set where the obtained clusters are indicated in the color bar.
+          cexRow=0.9, cexCol=1, margins=c(10,14)) # Creates heatmap for entire data set where the obtained clusters are indicated in the color bar.
 
 #just as we did for genes, we can also make an interactive heatmap for pathways
 heatmaply(diffSets.C2CP,
