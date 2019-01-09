@@ -77,10 +77,10 @@ comments: false
 ## Accessing public data
 
 <div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
-<img src="images/hookworm.jpg" style="border:none;" />
+<img src="images/lincs.jpg" style="border:none;" />
 </div>
 
-**March 6th** — Most journals require authors to deposit raw gene expression data to NIH repositories such as GEO and SRA, providing an opportunity to be a compare and contrast ones own data with studies in public domain, effectively carrying out _in silico_ experiments with publicly available data.  However, accessing this data _en masse_ for broad queries and analyses has been a significant challenge for investigators.  In this class, we'll discuss [LINCS](http://www.lincsproject.org/) and [ARCH4S](https://amp.pharm.mssm.edu/archs4/), two different large-scale efforts to produce accessbile gene expression data from a vast array of samples. We'll use R/bioconductor to quickly access LINCS and ARCH4S, providing gene expression data and metadata for almost 2 million samples!
+**March 6th** — Most journals require authors to deposit raw gene expression data to NIH repositories such as GEO and SRA, providing an opportunity to compare and contrast one's own data with data from published studies, effectively carrying out _in silico_ experiments with publicly available data.  However, accessing this data _en masse_ for broad queries and analyses has been a significant challenge for investigators.  In this class, we'll discuss [LINCS](http://www.lincsproject.org/) and [ARCH4S](https://amp.pharm.mssm.edu/archs4/), two different large-scale efforts to produce accessbile gene expression data from a vast array of samples. We'll use R/bioconductor to quickly access LINCS and ARCH4S, providing gene expression data and metadata for almost 2 million samples!
 
 <div style="clear:both"></div>
 
