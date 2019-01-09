@@ -8,6 +8,9 @@ comments: false
 
 {% include _toc.html %}
 
+The course instructor is Daniel Beiting, Assistant Professor of Pathobiology.  Teaching Assistants are Camila Amorim, PhD and Alex Berry, PhD.  Class meets weekly from 3-5pm at PennVet.
+
+
 ## Introduction to RNAseq technology and data
 
 <div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
@@ -89,13 +92,13 @@ comments: false
 
 <div style="clear:both"></div>
 
-## Visualizing and dissecting DETs
+## Module identification
 
 <div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
 <img src="images/heatmap.jpg" style="border:none;" />
 </div>
 
-**March 20th** — How do you move from spreadsheet to informative data visualization? Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use hierarchical clustering and heatmap visualization to interrogate DETs to reveal modules of co-regulated transcripts.
+**March 20th** — How do you move from spreadsheet to informative data visualization? Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.
 
 <div style="clear:both"></div>
 

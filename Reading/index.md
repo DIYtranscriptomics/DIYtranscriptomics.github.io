@@ -78,7 +78,7 @@ _more general info about ultra lightweight methods for transcript quantification
 
 * Read the [vignette for the Tximport package](https://bioconductor.org/packages/devel/bioc/vignettes/tximport/inst/doc/tximport.html) that we'll use to read the Kallisto mapping results into R.
 
-*  *[Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](http://f1000research.com/articles/4-1521/v2)* F1000Research, Dec 2015. This paper describes the Tximport package and it's application for handling transcript-level expression measurments from lightweight aligners (Salmon, Sailfish, Kallisto)
+*  *[Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](http://f1000research.com/articles/4-1521/v2)* F1000Research, Dec 2015. This paper describes the Tximport package and its application for handling transcript-level expression measurments from lightweight aligners (Salmon, Sailfish, Kallisto)
 
 
 -----------------------------
@@ -98,6 +98,14 @@ _more general info about ultra lightweight methods for transcript quantification
 * This [dplyr](http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) cheatsheet is useful resource to have on hand
 
 * Although I love working with graphs in R, sometimes I just can figure out how to produce the final graphic exactly the way I want it.  So, I also really like the program [DataGraph](http://www.visualdatatools.com/DataGraph/).  Incredibly powerful graphing program, and very inexpensive!
+
+-----------------------------
+
+## Accessing public data
+
+* _Massive mining of publicly available RNA-seq data from human and mouse_ [Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides web and R/bioconductor access to public RNAseq datasets from human and mouse, prealigned with Kallisto.
+
+* _A Next Generation Connectivity Map: L1000 Platform and the First 1,000,000 Profiles_ [Cell, Nov, 2017](https://doi.org/10.1016/j.cell.2017.10.049).  Describes the development and use of a low-cost, reduced representation gene profiling method, termed L1000, applied to 1.3 million samples spanning many difference cell types, stimuli and timepoints. 
 
 -----------------------------
 
@@ -145,7 +153,7 @@ _more general info about ultra lightweight methods for transcript quantification
 
 * you know how I feel about Venn diagrams, so if you're interested in exploring interactions between many groups of genes, have a look at [this Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/upSet_plot.pdf), the accompanying R package, [UpSetR](https://cran.r-project.org/web/packages/UpSetR/README.html), as well as the [UpSet website](http://caleydo.org/tools/upset/).  Note, there's a shiny app for this as well!
 
-* Here's my Datagraph templates for making [enrichment bubble plot](https://drive.google.com/drive/folders/1J1Fvw-73BjXYnStvAv7XIkK3FqI6dsMe?usp=sharing) and [GSEA enrichment plots](https://drive.google.com/drive/folders/1uzP1EvJ1c5qCMZI_SwVa7Lz8qUa1OubM?usp=sharing)
+* Here's my Datagraph templates for making [enrichment bubble plots](https://drive.google.com/drive/folders/1J1Fvw-73BjXYnStvAv7XIkK3FqI6dsMe?usp=sharing) and [GSEA enrichment plots](https://drive.google.com/drive/folders/1uzP1EvJ1c5qCMZI_SwVa7Lz8qUa1OubM?usp=sharing)
 
 -----------------------------
 
@@ -156,9 +164,3 @@ _more general info about ultra lightweight methods for transcript quantification
 * As with Git and dplyr, you can keep this [RMarkdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) handy for quick reference
 
 * For an example of how markdown/knitr can be used with publications, checkout [this Supplementary code](http://DIYtranscriptomics.github.io/Reading/files/supplementaryCode.pdf) in a recent [Nature Immunology paper](http://DIYtranscriptomics.github.io/Reading/files/singleCellTranscriptome.pdf) or our recent [PLOS Pathogens paper](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) 
-
------------------------------
-
-## Deploying your data to the web
-
------------------------------
