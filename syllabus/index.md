@@ -8,10 +8,10 @@ comments: false
 
 {% include _toc.html %}
 
-* Lead instructor - Daniel Beiting, Assistant Professor of Pathobiology at PennVet. 
-* Teaching Assistants - Camila Amorim, PhD and Alex Berry, PhD.  
-* Time - Class meets weekly from 3-5pm at PennVet (see below for exceptions)
-* Location - Class meets in the main lecture halls on the 1st floor of PennVet Hill Pavilion (rooms 130 or 131)
+* __Lead instructor__ - Daniel Beiting, Assistant Professor of Pathobiology at PennVet. 
+* __Teaching Assistants__ - Camila Amorim, PhD and Alex Berry, PhD.  
+* __Time__ - Class meets weekly from 3-5pm at PennVet (see below for exceptions)
+* __Location__ - Class meets in the main lecture halls on the 1st floor of PennVet Hill Pavilion (rooms 130 or 131)
 
 
 ## Introduction to RNAseq technology and data
