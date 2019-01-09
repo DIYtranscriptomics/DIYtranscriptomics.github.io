@@ -8,7 +8,10 @@ comments: false
 
 {% include _toc.html %}
 
-The course instructor is Daniel Beiting, Assistant Professor of Pathobiology.  Teaching Assistants are Camila Amorim, PhD and Alex Berry, PhD.  Class meets weekly from 3-5pm at PennVet.
+* Lead instructor - Daniel Beiting, Assistant Professor of Pathobiology at PennVet. 
+* Teaching Assistants - Camila Amorim, PhD and Alex Berry, PhD.  
+* Time - Class meets weekly from 3-5pm at PennVet (see below for exceptions)
+* Location - Class meets in the main lecture halls on the 1st floor of PennVet Hill Pavilion (rooms 130 or 131)
 
 
 ## Introduction to RNAseq technology and data
@@ -71,13 +74,13 @@ The course instructor is Daniel Beiting, Assistant Professor of Pathobiology.  T
 
 <div style="clear:both"></div>
 
-## How to become a 'research parasite'
+## Accessing public data
 
 <div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
 <img src="images/hookworm.jpg" style="border:none;" />
 </div>
 
-**March 6th** — Most journals require authors to deposit raw gene expression data to NIH repositories such as GEO and SRA, providing an opportunity to be a ["research parasite"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5710834/) and carry out _in silico_ experiments with publicly available data.  However, accessing this data _en masse_ for broad queries and analyses has been a significant challenge for investigators.  In this class, we'll discuss [LINCS](http://www.lincsproject.org/) and [ARCH4S](https://amp.pharm.mssm.edu/archs4/), two different large-scale efforts to produce accessbile gene expression data from a vast array of samples. We'll use R/bioconductor to quickly access LINCS and ARCH4S, providing gene expression data and metadata for almost 2 million samples!
+**March 6th** — Most journals require authors to deposit raw gene expression data to NIH repositories such as GEO and SRA, providing an opportunity to be a compare and contrast ones own data with studies in public domain, effectively carrying out _in silico_ experiments with publicly available data.  However, accessing this data _en masse_ for broad queries and analyses has been a significant challenge for investigators.  In this class, we'll discuss [LINCS](http://www.lincsproject.org/) and [ARCH4S](https://amp.pharm.mssm.edu/archs4/), two different large-scale efforts to produce accessbile gene expression data from a vast array of samples. We'll use R/bioconductor to quickly access LINCS and ARCH4S, providing gene expression data and metadata for almost 2 million samples!
 
 <div style="clear:both"></div>
 

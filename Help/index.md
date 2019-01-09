@@ -11,7 +11,7 @@ comments: true
 
 ## Getting help from the TA
 
-Camila Amorim and Elise English are the Teaching Assistants for the course.  Please don't hesitate to reach out to them via the course [Slack page](https://join.slack.com/t/diytranscriptomics/shared_invite/enQtNDE1MTI2MzY2MDY5LWMxOWI2YWE5YmVjM2ZkMjM1ZjYxNTdkOWRkM2ZlNGI0OTYzMWQ2NDRmMjRjMTBhNTVkZjdjZTBkODI0ODFlNmY)
+Camila Amorim and Alex Berry are Teaching Assistants for the course.  Please don't hesitate to reach out to them via the course [Slack page](https://join.slack.com/t/diytranscriptomics/shared_invite/enQtNDE1MTI2MzY2MDY5LWMxOWI2YWE5YmVjM2ZkMjM1ZjYxNTdkOWRkM2ZlNGI0OTYzMWQ2NDRmMjRjMTBhNTVkZjdjZTBkODI0ODFlNmY)
 
 -----------------------------
 
