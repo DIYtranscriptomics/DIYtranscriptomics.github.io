@@ -36,7 +36,7 @@ comments: false
 <img src="images/tools.jpg" style="border:none;" />
 </div>
 
-**Jan 30th** — In the first half of this lecture we'll discuss the open-source, cross-platform software that will be used throughout the course, and each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.  In preparation for this class, you'll need to download and install the [R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) for your operating system, the graphical user interface for R, called [RStudio](http://www.rstudio.com/products/rstudio/download/), and the powerfull text editor [Sublime](http://www.sublimetext.com/).  Don't know what any of these things are?  Not to worry, we'll delve into these tools the next time we meet. 
+**Jan 30th** — In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software and environment that will be used throughout the course, and each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
 
 * __[Lecture slides](http://bit.ly/1ToDM3R)__
 * __TA help session__ - none 
@@ -110,7 +110,7 @@ comments: false
 <img src="images/lincs.jpg" style="border:none;" />
 </div>
 
-**March 7th** — *Thursday class!* - Most journals require authors to deposit raw gene expression data to NIH repositories such as GEO and SRA, providing an opportunity to compare and contrast one's own data with data from published studies, effectively carrying out _in silico_ experiments with publicly available data.  However, accessing this data _en masse_ for broad queries and analyses has been a significant challenge for investigators.  In this class, we'll discuss [LINCS](http://www.lincsproject.org/) and [ARCH4S](https://amp.pharm.mssm.edu/archs4/), two different large-scale efforts to produce accessbile gene expression data from a vast array of samples. We'll use R/bioconductor to quickly access LINCS and ARCH4S, providing gene expression data and metadata for almost 2 million samples!
+**March 7th** — *Thursday class!* - Today we'll discuss [LINCS](http://www.lincsproject.org/) and [ARCH4S](https://amp.pharm.mssm.edu/archs4/), two different large-scale efforts to make gene expression data from a vast array of samples easily accesslible. We'll use R/bioconductor to  query LINCS and ARCH4S, providing an opportunity to integrate your own data with gene expression data for almost 2 million samples! 
 
 * __[Lecture slides]()__
 * __TA help__ - Hill rm 234 (library); 2-3pm 
@@ -140,7 +140,7 @@ comments: false
 <img src="images/heatmap.jpg" style="border:none;" />
 </div>
 
-**March 20th** — How do you move from spreadsheet to informative data visualization? Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.
+**March 20th** — Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.
 
 * __TA help__ - Hill rm 234 (library); 2-3pm 
 * __Class__ - Hill rm 130; 3-5PM
@@ -154,7 +154,7 @@ comments: false
 <img src="images/stopwatch.jpg" style="border:none;" />
 </div>
 
-**March 27th** — You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  Class will begin with with a post to Slack that details a gene expression problem.  Each group will have two hours to come up with a solution using the tools and skills you've acquired in the course thus far. This is just in the spirit of learning and having fun.  No grades will be given, but the first team to post the correct answer on Slack will win a prize.  Good luck!
+**March 27th** — You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!
 
 * __TA help__ - Hill rm 234 (library); 2-3pm 
 * __Class__ - Hill rm 130; 3-5PM
@@ -169,7 +169,7 @@ comments: false
 <img src="images/GO.png" style="border:none;" />
 </div>
 
-**April 3rd** — Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  Toward this end, you will learn how to carry out functional enichment analyses using [Gene Ontology](http://geneontology.org/), a structured vocabulary that describes the biological processes and molecular functions carried out by a gene.  You'll also see some different options for how to represent your analyses in papers.
+**April 3rd** — Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  Toward this end, you will learn how to carry out functional enichment analyses using [Gene Ontology](http://geneontology.org/).  You'll also see some different options for how to present your functional enrichment results.
 
 * __[Lecture slides](https://www.icloud.com/keynote/0Naa63iYXqX4nTRUq2PF0Rfpg#Lecture11%5FFunctionalEnrichment)__
 * __TA help__ - Hill rm 234 (library); 2-3pm 
@@ -184,7 +184,7 @@ comments: false
 <img src="images/GSEA.jpg" style="border:none;" />
 </div>
 
-**April 10th** — We'll spend the next two classes learning the principles and practice of using [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  In the first class we'll use the GSEA program from the Broad Institute to carry out out analysis.  In the second class we'll run GSEA through R.
+**April 10th** — We'll use [GSEA](http://www.broadinstitute.org/gsea/index.jsp) in conjunction with large collections of gene signatures available through the Broad Institute's [Molecular Signatures Database](http://www.broadinstitute.org/gsea/msigdb/index.jsp) to discover pathways involved in your biological system.  We'll explore both web-based and R/bioconductor strategies for carrying out GSEA.
 
 * __TA help__ - Hill rm 234 (library); 2-3pm 
 * __Class__ - Hill rm 130; 3-5PM
@@ -212,7 +212,7 @@ comments: false
 <img src="images/notebook.jpg" style="border:none;" />
 </div>
 
-**April 24th** — At this point, you are in a situation many bioinformatics folks find themselves in: you have a folder that contains some raw data, an analysis script, and outputs that include graphs, tables and other images.  Unfortunately, this trail of digital breadcrumbs is hard for anyone to follow (even your future self!).  In order to make your analysis pipeline transparent and reproducible, in the next two classes you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap all these elements together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
+**April 24th** — In order to make your analysis pipeline transparent and reproducible, in this class you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
 
 * __[Lecture slides](https://www.icloud.com/keynote/0jx8AmcQUTZvZjBB4h65gVR9A#Lecture12%5FRmarkdown)__
 * __TA help__ - Hill rm 234 (library); 2-3pm 
