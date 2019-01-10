@@ -22,9 +22,9 @@ comments: false
 
 **Jan 23rd** — After some introductions and a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning and budgeting for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, mRNAseq, total transcriptome, ribo-depletion, scRNAseq, and fastq will pratically roll off your tongue.  Lecture slides available [here](https://www.icloud.com/keynote/0sBpheSjnnkSIjKEHDpzd6kmw#Lecture01%5FRNAseqIntro).
 
-* __TA help session__ - none
-* __Class__ - Hill rm 130; 1-3PM
-* __Homework__ – none
+__TA help session__ - none
+__Class__ - Hill rm 130; 1-3PM
+__Homework__ – none
 
 <div style="clear:both"></div>
   
