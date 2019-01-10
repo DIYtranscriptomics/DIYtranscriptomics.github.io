@@ -24,6 +24,9 @@ comments: false
 
 <div style="clear:both"></div>
 
+* __Lead instructor__ - Daniel Beiting, Assistant Professor of Pathobiology at PennVet. 
+* __Teaching Assistants__ - Camila Amorim, PhD and Alex Berry, PhD.  
+
 ## Setting up your software environment
 
 <div style="height: 160px; width: 160px; float: left; padding-right: 20px;">
