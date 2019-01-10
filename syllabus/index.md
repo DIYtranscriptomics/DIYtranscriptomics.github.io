@@ -20,7 +20,7 @@ comments: false
 <img src="images/nextseq.jpg" style="border:none;" />
 </div>
 
-**Jan 23rd** — After some introductions and a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning and budgeting for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, mRNAseq, total transcriptome, ribo-depletion, scRNAseq, and fastq will pratically roll off your tongue.
+**Jan 23rd** — After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, ribo-depletion, scRNAseq, and fastq will pratically roll off your tongue.
 
 * __[Lecture slides](https://www.icloud.com/keynote/0sBpheSjnnkSIjKEHDpzd6kmw#Lecture01%5FRNAseqIntro)__
 * __TA help session__ - none
@@ -51,7 +51,7 @@ comments: false
 <img src="images/kallisto.png" style="border:none;" />
 </div>
 
-**Feb 6th** — I know what you're thinking: "please stop talking already!"  Wish granted.  In this class we'll finally get down to the business of installing and using [Kallisto](https://pachterlab.github.io/kallisto/about), a new program for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop.  While reads are being mapped, we'll discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods. 
+**Feb 6th** — In this class we'll finally get down to the business of using [Kallisto](https://pachterlab.github.io/kallisto/about), software for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods. 
 
 * __[Lecture slides](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments)__
 * __TA help__ - Hill rm 234 (library); 2-3pm 
@@ -66,7 +66,7 @@ comments: false
 <img src="images/readpile.png" style="border:none;" />
 </div>
 
-**Feb 13th** — Now that we've aligned our reads, it's a good time to discuss the units we need to use to measure gene expression.  We'll talk about the differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss how these units have to be handled *between* samples (a.k.a. normalization).  To conclude this class, we'll read our Kallisto data into the R environment.
+**Feb 13th** — Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment.
 
 * __[Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)__
 * __TA help__ - Hill rm 234 (library); 3-4pm 
@@ -81,7 +81,7 @@ comments: false
 <img src="images/PCA.png" style="border:none;" />
 </div>
 
-**Feb 20th** — Although we're all here to find key genes and transcripts involved in our favorite biological process, it's critical to first take a gene agnostic approach to explore the structure of our entire dataset.  To do this we'll use Principle Component Analysis (PCA) to reduce the dimensionality of our data and try to identify the variables (sex, age, treatment, etc) that have the strongest influence over the transcriptional landscape in your study. We'll discuss common mis-steps and sources of variance in transcriptional data sets.  You'll also be introduced to the popular graphing package [ggplot2](http://ggplot2.org/), to graph the results of your PCA analysis.
+**Feb 20th** — In this class we'll use Principle Component Analysis (PCA) to explore how variables such as sex, age, treatment, etc., that influence our data. We'll discuss common mis-steps and sources of variance in transcriptional data sets.  You'll also be introduced to the popular graphing package [ggplot2](http://ggplot2.org/), to graph the results of your PCA analysis.
 
 * __[Lecture slides](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)__
 * __TA help__ - Hill rm 234 (library); 3-4pm 
@@ -96,7 +96,7 @@ comments: false
 <img src="images/dplyr.png" style="border:none;" />
 </div>
 
-**Feb 27th** — While Excel might be great for small spreadsheets, it fails miserably at managing large datasets.  In this workshop we'll use Hadley Wickham's [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package along with other tools from his [tidyverse](https://www.tidyverse.org/) of packages to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.
+**Feb 27th** — In this class we'll use Hadley Wickham's [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package along with other tools from his [tidyverse](https://www.tidyverse.org/) of packages to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.
 
 * __TA help__ - Hill rm 234 (library); 2-3pm 
 * __Class__ - Hill rm 130; 3-5PM
