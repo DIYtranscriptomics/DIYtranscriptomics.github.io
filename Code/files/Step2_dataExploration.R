@@ -68,13 +68,13 @@ nsamples <- ncol(log2.cpm)
 myColors <- brewer.pal(nsamples, "Paired")
 
 # 'coerce' your data matrix to a dataframe so that you can use tidyverse tools on it
-log2.cpm.df <- as.tibble(log2.cpm)
+log2.cpm.df <- as_tibble(log2.cpm)
 log2.cpm.df
 # add your sample names to this dataframe (we lost these when we read our data in with tximport)
 colnames(log2.cpm.df) <- sampleLabels
 # use the reshape2 package to 'melt' your dataframe (from wide to tall)
 log2.cpm.df.melt <- melt(log2.cpm.df)
-Log2.cpm.df.melt <- as.tibble(log2.cpm.df.melt)
+Log2.cpm.df.melt <- as_tibble(log2.cpm.df.melt)
 Log2.cpm.df.melt
 
 ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
@@ -93,10 +93,10 @@ DGEList.filtered <- DGEList[keepers,]
 dim(DGEList.filtered)
 
 log2.cpm.filtered <- cpm(DGEList.filtered, log=TRUE)
-log2.cpm.filtered.df <- as.tibble(log2.cpm.filtered) 
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
 colnames(log2.cpm.filtered.df) <- sampleLabels
 log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
-log2.cpm.filtered.df.melt <- as.tibble(log2.cpm.filtered.df.melt)
+log2.cpm.filtered.df.melt <- as_tibble(log2.cpm.filtered.df.melt)
 
 ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = TRUE, show.legend = TRUE) +
@@ -110,11 +110,11 @@ DGEList.filtered.norm <- calcNormFactors(DGEList.filtered, method = "TMM")
 # use the 'cpm' function from EdgeR to get counts per million from your normalized data
 log2.cpm.filtered.norm <- cpm(DGEList.filtered.norm, log=TRUE)
 
-log2.cpm.filtered.norm.df <- as.tibble(log2.cpm.filtered.norm)
+log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
-log2.cpm.filtered.norm.df.melt <- as.tibble(log2.cpm.filtered.norm.df.melt)
+log2.cpm.filtered.norm.df.melt <- as_tibble(log2.cpm.filtered.norm.df.melt)
 
 ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = TRUE, show.legend = TRUE) +
@@ -144,7 +144,7 @@ pc.per
 # Visualize your PCA result ------------------
 #lets first plot any two PCs aslgainst each other
 #We know how much each sample contributes to each PC (loadings), so let's plot
-pca.res.df <- as.tibble(pca.res$x)
+pca.res.df <- as_tibble(pca.res$x)
 ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups1)) +
   geom_point(size=5) +
   theme(legend.position="right") 

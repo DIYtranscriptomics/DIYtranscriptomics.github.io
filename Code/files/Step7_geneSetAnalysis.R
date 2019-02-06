@@ -72,12 +72,12 @@ mySig2 <- sample((rownames(v.DEGList.filtered.norm$E)), size = 100, replace = FA
 collection <- list(real = mySig, fake = mySig2)
 # now test for enrichment using CAMERA
 GSEAres <- camera(v.DEGList.filtered.norm$E, collection, design, contrast.matrix[,1]) 
-GSEAres <- as.tibble(GSEAres, rownames = "setName")
+GSEAres <- as_tibble(GSEAres, rownames = "setName")
 head(GSEAres)
 # now repeat with an actual gene set collection
 broadSet.C2.CP <- geneIds(broadSet.C2.CP)
 GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1]) 
-GSEAres <- as.tibble(GSEAres, rownames = "setName")
+GSEAres <- as_tibble(GSEAres, rownames = "setName")
 head(GSEAres)
 
 # graph GSEA results as bubble chart ----

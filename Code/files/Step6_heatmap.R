@@ -118,7 +118,7 @@ heatmap.2(mycluster,
 clusterSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
 clusterSymbols <- as.vector(t(clusterSymbols))
 clusterData <- diffGenes[clusterSymbols,]
-clusterData.df <- as_tibble(clusterData, rownames = "geneSymbol")
+clusterData.df <- as_as_tibble(clusterData, rownames = "geneSymbol")
 write_csv(clusterData.df,"Cluster_downRegulated.csv")
 
 # OPTIONAL: make heatmap from an a priori list of genes ----

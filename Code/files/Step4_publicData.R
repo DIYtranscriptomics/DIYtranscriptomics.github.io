@@ -63,7 +63,7 @@ slob.phase2 <- Slinky(key, L1K.phase2.gctx, L1K.phase2.info)
 # since phase 1 contains so much data, it can be hard to parse these files locally on your laptop
 # instead, we'll query the Clue.io API
 # First, explore the Phase 1 data based on metadata in the info.txt file
-phase1meta.df <- as.tibble(metadata(slob.phase1))
+phase1meta.df <- as_tibble(metadata(slob.phase1))
 glimpse(phase1meta.df)
 
 #take a look at the data grouped by perturbagen
@@ -93,7 +93,7 @@ phase1.DGE <- asDGEList(phase1)
 # Query L1000 Phase 2 data directly from local files ----
 # this approach should be used for the Phase 2 data, which is not yet on Clue.io
 # begin by exploring Phase 2 based on metadata in the info.txt file
-phase2meta.df <- as.tibble(metadata(slob.phase2))
+phase2meta.df <- as_tibble(metadata(slob.phase2))
 glimpse(phase2meta.df)
 
 #take a look at the data grouped by perturbagen

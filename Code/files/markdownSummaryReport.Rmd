@@ -57,7 +57,7 @@ library(knitr)
 ```{r hierarchical clustering, message=FALSE, warning=FALSE}
 load("Txi_gene")
 myTPM <- Txi_gene$abundance
-targets <- read.table("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
+targets <- read_tsv("Crypto_studyDesign.txt", row.names=NULL, header = T, as.is = T)
 groups <- targets$treatment
 groups <- factor(groups)
 rep <- factor(targets$rep)

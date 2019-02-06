@@ -111,8 +111,8 @@ colnames(v.DEGList.filtered.norm$E) <- sampleLabels
 diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
 head(diffGenes)
 dim(diffGenes)
-#convert your DEGs to a dataframe using tibble
-diffGenes.df <- as_tibble(diffGenes, rownames = "geneSymbol")
+#convert your DEGs to a dataframe using as_tibble
+diffGenes.df <- as_as_tibble(diffGenes, rownames = "geneSymbol")
 
 #write your DEGs to a file
 write_tsv(diffGenes.df,"DiffGenesTEST.txt") #NOTE: this .txt file can be directly used for input into Clust (https://github.com/BaselAbujamous/clust)

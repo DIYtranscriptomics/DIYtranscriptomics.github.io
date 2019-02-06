@@ -87,8 +87,8 @@ Tx <- transcripts(EnsDb.Hsapiens.v86,
                   columns=c(listColumns(EnsDb.Hsapiens.v86,
                                         "tx"), "gene_name"))
 
-# use the tibble package (another part of the tidyverse) to convert the annotation info into a dataframe
-Tx <- as.tibble(Tx)
+# use the as_tibble package (another part of the tidyverse) to convert the annotation info into a dataframe
+Tx <- as_tibble(Tx)
 head(Tx)
 
 # need to rename the 'Tx_id' column name to 'target_id'
@@ -121,7 +121,7 @@ Tx <- getBM(attributes=c('ensembl_transcript_id_version',
                                      'external_gene_name'),
                         mart = canFam)
 
-Tx <- as.tibble(Tx)
+Tx <- as_tibble(Tx)
 head(Tx)
 
 # Import Kallisto transcript counts into R using Tximport ----
@@ -137,34 +137,21 @@ head(Txi_trans$counts) # these are you counts after adjusting for transcript len
 head(Txi_gene$abundance) # these are your transcript per million (TPM) values
 
 #if you exported transcript level data and want to append your gene symbols to the data frame
-Txi_trans <- as.tibble(Txi_trans$counts, rownames = "target_id")
+Txi_trans <- as_tibble(Txi_trans$counts, rownames = "target_id")
 Txi_trans <- left_join(Txi_counts, Tx)
 
 # QUIZ----
 #1. what should the columns of Txi_gene$abundance sum to, what about Txi_gene$counts?
 #2. how would you quickly find out the answer to #1 in R?
 
-# Reduced code for Step 1----
+# The essentials ----
 targets <- read_tsv("Crypto_studyDesign.txt")
 path <- file.path(targets$sample, "abundance.h5")
 targets <- mutate(targets, path)
 Tx <- transcripts(EnsDb.Hsapiens.v86, 
                   columns=c(listColumns(EnsDb.Hsapiens.v86,
                                         "tx"), "gene_name"))
-Tx <- as.tibble(Tx)
+Tx <- as_tibble(Tx)
 Tx <- dplyr::rename(Tx, target_id = tx_id)
 Tx <- dplyr::select(Tx, target_id, gene_name)
-mySleuth <- sleuth_prep(targets, 
-                        target_mapping = Tx,
-                        #aggregation_column = 'gene_name', #uncomment this line if you want to collapse your data to gene level
-                        read_bootstrap_tpm=TRUE,
-                        extra_bootstrap_summary=TRUE) 
-mySleuth <- sleuth_fit(mySleuth, ~treatment2, 'full')
-mySleuth <- sleuth_fit(mySleuth, ~1, 'reduced')
-mySleuth <- sleuth_lrt(mySleuth, 'reduced', 'full')
-Txi_gene <- tximport(path, 
-                     type = "kallisto", 
-                     tx2gene = Tx, 
-                     txOut = FALSE, 
-                     countsFromAbundance = "lengthScaledTPM")
 

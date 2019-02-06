@@ -20,7 +20,7 @@ head(log2.cpm.filtered.norm)
 #give your data some more informative column names
 colnames(log2.cpm.filtered.norm) <- sampleLabels
 # Now we need to convert our datamatrix to a dataframe, while preserving the rownames as a new column in this dataframe
-mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
+mydata.df <- as_as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
 write_tsv(mydata.df, "normData.txt") # Note: this is the data you would use as input .gct file for GSEA analysis
 
 # use dplyr 'mutate' function to add new columns based on existing data -------
