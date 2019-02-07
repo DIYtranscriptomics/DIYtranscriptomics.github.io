@@ -37,7 +37,7 @@ comments: true
 -----------------------------
 
 
-## Take advantage of your local UPenn and Philly environment
+## Take advantage of your local UPenn and Philly community
 
 Below are a few examples of some of the great local resources. 
 
@@ -45,9 +45,9 @@ Below are a few examples of some of the great local resources.
 
 * **[Weekly 'Code Review'](https://groups.google.com/forum/?hl=en#!forum/bushmancode)** - Led by Kyle Bittinger, a Computational Biologist and faculty at CHOP.  Each week one person presents some programming code they are working on for their research.  Attendees get a chance to hear how code was put together to achieve a goal, while the presenter gets feedback, collective troubleshooting, etc.  Less experienced programmers will have a chance to learn about design options when programming.  Group meets one Wednesdays @ 9am in Johnson 207.  Contact Kyle by email at <kylebittinger@gmail.com> to be added to the mailing list.
 
-* **[Python Bootcamp](https://piazza.com/class/i9oc9auinef333?cid=41)** - learn Python programming for bioinformatics in a casual and friendly environment with the guidance of Sarah Middleton, UPenn Grad Student in [Junhyong Kim's lab](http://kim.bio.upenn.edu/), with assistance from several student TAs.  Course usually meets from June 2nd-26th, from 9am-12pm.
-
 * **[Cytomic Data Analysis Workshop](http://pathbio.med.upenn.edu/gs/cytomics/)** - Led by Wade Rogers, the Director of Computational Biology and Research Informatics for the Path BioResource at the Perelman School of Medicine.  Given the pervasive nature of flow cytometry in all aspects of biomedical research, the mutiparameter nature of flow experiments, and the increasing abundance of clinical metadata, it only makes sense to leverage the power of R for analyzing the rich datasets produced by flow cytometry.  Wade is an expert user of R/bioconductor for flow analysis, and has been very active in tool development in this area, including the development of a ['fingerprinting'](https://www.bioconductor.org/packages/release/bioc/vignettes/flowFP/inst/doc/flowFP_HowTo.pdf) method for analysing flow data.  Contact Wade by email at <rogersw@mail.med.upenn.edu> for more information on the workshop.
+
+* **[R-Ladies Philly](http://rladiesphilly.org/)** is part of a world-wide organization to promote gender diversity in the R community.  R-Ladies Philly is a free, community-driven group that is open to all levels of R users. While the group name does have ‘Ladies’ in the title, they welcome all individuals who share their values.  Monthly meetings are skills-focused, with encouragement of interdisciplinary statistical and coding methods.
 
 * **[Girl Develop It](https://www.girldevelopit.com/chapters/philadelphia)** - Philadelphia has a local chapter of GDI that hosts speakers, workshops and social events aimed at bringing together and empowering women to learn web and software development in a judgment-free environment.  
 
