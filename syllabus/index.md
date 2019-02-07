@@ -41,7 +41,7 @@ comments: false
 * __[Lecture slides](http://bit.ly/1ToDM3R)__
 * __TA help session__ - none 
 * __Class__ - Hill rm 131; 3-5PM
-* __Homework__ – none
+* __Homework__ – [DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r)
 
 <div style="clear:both"></div>
 
@@ -56,7 +56,7 @@ comments: false
 * __[Lecture slides](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments)__
 * __TA help__ - Hill rm 234 (library); 2-3pm 
 * __Class__ - Hill rm 130; 3-5PM
-* __Homework__ – TBD
+* __Homework__ – [DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r)
 
 <div style="clear:both"></div>
 
@@ -69,8 +69,8 @@ comments: false
 **Feb 13th** — Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment.
 
 * __[Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)__
-* __TA help__ - Hill rm 234 (library); 3-4pm 
-* __Class__ - Hill rm 131; 1-3PM
+* __TA help__ - Hill rm 234 (library); 2-3pm 
+* __Class__ - Hill rm 131; 3-5PM
 * __Homework__ – TBD
 
 <div style="clear:both"></div>

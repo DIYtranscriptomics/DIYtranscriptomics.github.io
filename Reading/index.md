@@ -15,6 +15,8 @@ There are no required readings for the course, but I've provided links to Ebooks
 
 * **[R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994)** is an essential reference book for plotting data in R.
 
+* **[RStudio Cheatsheets](http://DIYtranscriptomics.github.io/Reading/files/Cheatsheets_2019.pdf)** are great 1-2pg summaries of the essential R/RStudio functions.  Print these out and keep them handy when you're working in RStudio.
+
 -----------------------------
 
 ## Introduction to RNAseq data and technology

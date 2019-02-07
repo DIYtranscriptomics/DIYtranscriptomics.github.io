@@ -11,8 +11,7 @@ The lectures will be paired with R scripts which will 'step' through the process
 
 |	Script Name	|	Comments	|
 |---------|:-----------:|
-[readMapping.sh](http://DIYtranscriptomics.github.io/Code/files/readMapping.sh) 	|	Shell script for 'walk away' mapping of reads with Kallisto
-[Step1_preprocessingKallisto.R](http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R) 	|	Packages: [tximport](http://bioconductor.org/packages/release/bioc/html/tximport.html), [Biostrings](https://bioconductor.org/packages/release/bioc/html/Biostrings.html), [ensembldb](https://bioconductor.org/packages/release/bioc/html/ensembldb.html), [readr](https://cran.r-project.org/web/packages/readr/README.html), [organism-specific database](https://www.bioconductor.org/packages/release/BiocViews.html#___AnnotationData), [Sleuth](https://github.com/pachterlab/sleuth)
+[Step1_preprocessingKallisto.R](http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R) 	|	Packages: [tximport](http://bioconductor.org/packages/release/bioc/html/tximport.html), [tidyverse](https://www.tidyverse.org/), [Sleuth](https://github.com/pachterlab/sleuth), [Biomart](https://bioconductor.org/packages/release/bioc/html/biomaRt.html)
 [Step2_dataExploration.R](http://DIYtranscriptomics.github.io/Code/files/Step2_dataExploration.R) 	|	Packages: [ggplot2](http://ggplot2.org/), [reshape2](http://had.co.nz/reshape/)
 [Step3_dataWrangling.R](http://DIYtranscriptomics.github.io/Code/files/Step3_dataWrangling.R) 	|	Packages: [ggplot2](http://ggplot2.org/), [reshape2](http://had.co.nz/reshape/), [dplyr](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html), [ggvis](http://ggvis.rstudio.com/), [scatterD3](https://github.com/juba/scatterD3)
 [Step4_publicData](http://DIYtranscriptomics.github.io/Code/files/Step4_publicData.R) 	|	Packages: [rhdf5](http://bioconductor.org/packages/release/bioc/html/rhdf5.html), [slinky](https://github.com/VanAndelInstitute/slinky)
