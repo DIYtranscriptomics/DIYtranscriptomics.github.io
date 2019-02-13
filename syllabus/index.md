@@ -71,7 +71,7 @@ comments: false
 * __[Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)__
 * __TA help__ - Hill rm 234 (library); 2-3pm 
 * __Class__ - Hill rm 131; 3-5PM
-* __Homework__ – TBD
+* __Homework__ – [DataCamp Intro to Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse)
 
 <div style="clear:both"></div>
 
@@ -86,7 +86,7 @@ comments: false
 * __[Lecture slides](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)__
 * __TA help__ - Hill rm 234 (library); 3-4pm 
 * __Class__ - Hill rm 130; 1-3PM
-* __Homework__ – TBD
+* __Homework__ – [DataCamp Intro to Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse)
 
 <div style="clear:both"></div>
 
@@ -100,7 +100,7 @@ comments: false
 
 * __TA help__ - Hill rm 234 (library); 2-3pm 
 * __Class__ - Hill rm 130; 3-5PM
-* __Homework__ – TBD
+* __Homework__ – [DataCamp Intro to Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse)
 
 <div style="clear:both"></div>
 
