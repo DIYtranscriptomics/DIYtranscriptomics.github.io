@@ -11,11 +11,13 @@ There are no required readings for the course, but I've provided links to Ebooks
 -----------------------------
 
 ## Ebooks on general R/bioconductor
-* **[R for Data Science](http://r4ds.had.co.nz/)**, by Hadley Wickham, is really a wonderful (and free!) online book.
+* **[R for Data Science](http://r4ds.had.co.nz/)**, by Hadley Wickham, is really a wonderful (and free!) online book.  If you decide to read this, which I hihgly recommend, then be sure to complement with the **[R4DS companion solutions manual](https://jrnold.github.io/r4ds-exercise-solutions/).** 
 
 * **[R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994)** is an essential reference book for plotting data in R.
 
 * **[RStudio Cheatsheets](http://DIYtranscriptomics.github.io/Reading/files/Cheatsheets_2019.pdf)** are great 1-2pg summaries of the essential R/RStudio functions.  Print these out and keep them handy when you're working in RStudio.
+
+* **[Modern Statistics for Modern Biology](http://web.stanford.edu/class/bios221/book/)** - A new book that just came out written two of the leaders in biostats, and it looks to be an excellent R-based guide to the topic, with many great coding examples.
 
 -----------------------------
 
