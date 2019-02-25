@@ -10,7 +10,6 @@ featured_image: '/images/tidyDNA.jpg'
 
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
 
-[Recorded lecture](https://upenn.box.com/s/pjfjhfrbvweiof91s3j57plbqkqhha36)
 
 ## Overview
 
