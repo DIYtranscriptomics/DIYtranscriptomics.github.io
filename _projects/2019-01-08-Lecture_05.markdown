@@ -6,7 +6,12 @@ description: Now that we've aligned our reads, it's time to read our data into R
 featured_image: '/images/first_step.jpg'
 ---
 
+No lecture slides for this class.  We spent the entire time working on Step 1 script.
+
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+
+[Recorded lecture](https://upenn.box.com/s/pjfjhfrbvweiof91s3j57plbqkqhha36)
+
 
 ## Overview
 
