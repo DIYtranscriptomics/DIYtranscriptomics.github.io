@@ -2,26 +2,26 @@
 title: 'Wrangling gene expression data'
 subtitle: 'Lecture 6 • 2019.02.27 • Hill 130 • 3-5pm'
 date: 2019-01-07 00:00:00
-description: We'll use the Tidyverse tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data quickly and easily. 
+description: After filtering and normalizing our data in R, we'll use the Tidyverse tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data quickly and easily. 
 featured_image: '/images/tidyDNA.jpg'
 ---
 
-[Lecture slides](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
+No lecture slides for this class.  We'll spend the entire time working on Step 2 script.
 
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
 
 
 ## Overview
 
-In this class we'll use Hadley Wickham's [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package along with other tools from his [tidyverse](https://www.tidyverse.org/) of packages to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.
+We'll begin this class by filtering and normalzing our data, using the ggplot2 package visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package along with other tools from his [tidyverse](https://www.tidyverse.org/) of packages to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.
 
 ## Goals
 
 * Start/finish step 2 script
 * Begin to explore our data in R using ggplot2
-* Produce interactive graphic with plotly
-* Discuss basics of reshape package
-* Talk about color palettes in R
+* Produce interactive graphics using the plotly package
+* Discuss basics of reshape2 package
+* Talk briefly about color palettes in R
 * Filter data to remove lowly expressed genes
 * Normalize data
 

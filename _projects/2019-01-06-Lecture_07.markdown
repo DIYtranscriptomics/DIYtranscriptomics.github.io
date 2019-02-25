@@ -6,11 +6,13 @@ description: We'll use Principle Component Analysis (PCA) to explore variables s
 featured_image: '/images/dataExplore.jpg'
 ---
 
+[Lecture slides](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
+
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
 
 ## Overview
 
-In this class we’ll use Principle Component Analysis (PCA) to explore how variables such as sex, age, treatment, etc., that influence our data. We’ll discuss common mis-steps and sources of variance in transcriptional data sets. You’ll also be introduced to the popular graphing package ggplot2, to graph the results of your PCA analysis.
+In this class we’ll use multivariate statisical methods, including Principal Component Analysis (PCA), to explore how experimenal covariates (e.g., sex, age, treatment) contribute to the overall structure of our data.  We’ll discuss common mis-steps and sources of variance in transcriptional data sets.  You’ll also continue to build your plotting skills by using ggplot2 to graph the results of PCA analyses.
 
 ## Goals
 
