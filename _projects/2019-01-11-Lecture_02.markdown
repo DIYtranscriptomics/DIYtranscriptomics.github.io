@@ -30,5 +30,5 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 [Cygwin](https://www.cygwin.com/) - For PC folks...to give your system more linux-like capabilities
 
-[instructions for installing Kallisto](https://chmi-sops.github.io/mydoc_kallisto.html),the program we'll use for mapping reads to transcripts. *We will install this program together in class*
+[Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto are available on my lab's SOP site [here](https://chmi-sops.github.io/mydoc_kallisto.html).  *We will install this program together in class*
 

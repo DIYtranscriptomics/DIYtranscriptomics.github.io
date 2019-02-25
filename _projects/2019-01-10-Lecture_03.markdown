@@ -25,23 +25,23 @@ In this class we'll finally get down to the business of using [Kallisto](https:/
 
 ## Reading
 
-_papers, blogs posts and videos on Kallisto_
+### papers, blogs posts and videos on Kallisto
 
-The [2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
+[2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
 
-The [2017 Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) from Lior Pachter's lab describing Sleuth
+[2017 Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) from Lior Pachter's lab describing Sleuth
 
 [Harold Pimentel's talk on alignment](https://www.youtube.com/watch?v=b4tVokh6Law)
 
 [Lior Pachter's blog post on Kallisto](https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/)
 
-A great [blog post](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) that explains the principle of 'pseudoalignments' that Kallisto uses to map reads to transcripts
+[A great blog post](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) that explains the principle of 'pseudoalignments' that Kallisto uses to map reads to transcripts
 
 Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the alignment?  You can read more about what this is [here](http://DIYtranscriptomics.github.io/Reading/files/EM.pdf)
 
-Follow [Kallisto discussions/questions](https://groups.google.com/forum/#!forum/kallisto-sleuth-users) and [Kallisto announcements](https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements) on Google groups
+[Kallisto discussions/questions](https://groups.google.com/forum/#!forum/kallisto-sleuth-users) and [Kallisto announcements](https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements) are available on Google groups
 
-_more general info about ultra lightweight methods for transcript quantification_
+### more general info about ultra lightweight methods for transcript quantification
 
 [This 2014 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf) described Sailfish, which implimented the first lightweight method for quantifying transcript expression.
 
