@@ -1,43 +1,54 @@
-# Google Analytics
-google_analytics: UA-131287370-1
+site: Personal Jekyll Theme
 
-# Site wide configuration
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /blog/:slug
+  projects:
+    output: true
+    permalink: /project/:slug
 
-title:            Home
-locale:           en_US
-url:
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
-
-# Jekyll configuration
-
-permalink:   /:categories/:title/
-markdown:    kramdown
-highlighter: pygments
-sass:
-  sass_dir: _sass
-  style: compressed
-gems:
-  - jekyll-sitemap
+markdown: kramdown
 
 kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
+  input: GFM
+  syntax_highlighter: rouge
+  
+sass:
+  style: compressed
 
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
 
-# Site owner
-owner:
-  name: Daniel Beiting
-  avatar: headshot.jpg
-  bio: "My research lies at the intersection of immunology, genomics and pathogen biology"
-  email: beiting@upenn.edu
-  disqus-shortname:
-  twitter: hostmicrobe
-  github: hostmicrobe
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+paginate: 6
+paginate_path: "/blog/page:num/"
+  

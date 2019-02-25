@@ -1,0 +1,35 @@
+---
+title: 'Understanding RNAseq count data'
+subtitle: 'Lecture 4 • 2019.02.13 • Hill 131'
+date: 2019-01-09 00:00:00
+description: Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment.  
+featured_image: '/images/abacus.jpg'
+---
+
+[Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)
+
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+
+## Overview
+
+Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  
+
+## Goals
+
+* Review steps from last class (using Kallisto).
+* Discuss output from Kallisto and units of measurement for RNAseq and ‘normalization’
+* Open and discuss our first script, including installation of packages
+
+## Code
+
+[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R)
+
+## Reading
+
+[What the FPKM?](https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/) - Blog post by Harold Pimentel discussing within sample normalization and the meaning of RNAseq expression units
+
+[Between sample normalization in RNAseq](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/) - another great blog post from Harold Pimentel on between-sample normalization.
+
+[Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, Dec 2012](http://DIYtranscriptomics.github.io/Reading/files/wagnerTPM.pdf)
+
+[original TMM normalization manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).

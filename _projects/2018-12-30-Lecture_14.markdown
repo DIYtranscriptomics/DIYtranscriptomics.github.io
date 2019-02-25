@@ -1,0 +1,34 @@
+---
+title: 'Making your analysis transparent and reproducible'
+subtitle: 'Lecture 14 • 2019.04.24 • Hill 130'
+date: 2018-12-30 00:00:00
+description: In order to make your analysis pipeline transparent and reproducible, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
+featured_image: '/images/breadcrumbs2.jpg'
+---
+
+## Overview
+
+In order to make your analysis pipeline transparent and reproducible, in this class you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
+
+## Goals
+
+* understand how to construct a basic R markdown document
+* transform our course code into an Rmarkdown report
+* make an interactive Rmarkdown flexdashboard to display your data
+
+## Code
+
+[The essentials]() - brings togther 'the essential' code chunks from our previous scripts.
+
+[Rmarkdown_example.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_example.Rmd)
+
+[Txi_gene](http://DIYtranscriptomics.github.io/Code/files/Txi_gene)
+
+[myDGEList](http://DIYtranscriptomics.github.io/Code/files/myDGEList)
+
+
+## Reading
+
+[Blog post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
+
+* For an example of how markdown/knitr can be used with publications, checkout [this Supplementary code](http://DIYtranscriptomics.github.io/Reading/files/supplementaryCode.pdf) in a recent [Nature Immunology paper](http://DIYtranscriptomics.github.io/Reading/files/singleCellTranscriptome.pdf) or our recent [PLOS Pathogens paper](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) 

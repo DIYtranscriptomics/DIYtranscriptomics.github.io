@@ -1,8 +1,0 @@
-name: RNAseqWeb-app
-account: hostmicrobe
-server: shinyapps.io
-bundleId: 228790
-url: https://hostmicrobe.shinyapps.io/RNAseqWeb-app
-when: 1438200419.412
-asMultiple: FALSE
-asStatic: FALSE

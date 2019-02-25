@@ -1,0 +1,34 @@
+---
+title: 'Setting up your software environment'
+subtitle: 'Lecture 2 • 2019.01.30 • Hill 131'
+date: 2019-01-11 00:00:00
+description: In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software and environment that will be used throughout the course, and each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
+featured_image: '/images/rstudio.png'
+---
+
+[Lecture slides](http://bit.ly/1ToDM3R)
+
+[Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class on Feb 13th. 
+
+## Overview
+
+In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software and environment that will be used throughout the course, and each student will set-up their own laptop to be a powerful,stand-alone bioinformatics workstation. 
+
+## Software
+
+**Download and install the following software before class (except Kallisto)**
+
+[R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) - The only programming language we'll work with in class.
+
+[RStudio](http://www.rstudio.com/products/rstudio/download/) - a development environment for the R programming language.
+
+[Sublime text editor](http://www.sublimetext.com/) - a simple but powerful text editor that is 'code aware'
+
+[Visual Studio Code](https://code.visualstudio.com/) - an alternative to Sublime and anexcellent choice for working with scripts outside of RStudio.
+
+[XCode developer tools](https://developer.apple.com/xcode/) - For mac folks
+
+[Cygwin](https://www.cygwin.com/) - For PC folks...to give your system more linux-like capabilities
+
+[instructions for installing Kallisto](https://chmi-sops.github.io/mydoc_kallisto.html),the program we'll use for mapping reads to transcripts. *We will install this program together in class*
+

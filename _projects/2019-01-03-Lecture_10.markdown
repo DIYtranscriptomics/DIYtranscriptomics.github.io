@@ -1,0 +1,36 @@
+---
+title: 'Differential gene expression'
+subtitle: 'Lecture 10 • 2019.03.27 • Hill 131'
+date: 2019-01-03 00:00:00
+description: We'll use robust statiscal approaches to identify transcripts that are differentially expressed.
+featured_image: '/images/apples.jpg'
+---
+
+## Overview
+
+The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  Earlier in the course, we used [Sleuth](http://pachterlab.github.io/sleuth/) to get a quick view of differential transcript expression.  In this class, we'll dig into differential expression more deeply using the popular and venerable [Limma](http://www.bioconductor.org/packages/release/bioc/html/limma.html) package in R.  This gives us a chance to compare and contrast these two methods for identifying genes/transcripts of interest.  We'll also have a chance to talk about special cases when your analyses should include a paired design or correct for batch effects. 
+
+## Goals
+
+* Use the limma package to identify differentially expressed genes
+* Produce static and interactive volcano plots
+
+## Code
+
+[Step 5 script](http://DIYtranscriptomics.github.io/Code/files/Step5_diffGenes.R)
+
+## Reading
+
+[VOOM: precision weights unlock linear model analysis tools for RNA-seq read counts. Genome Biology, Feb, 2014](http://DIYtranscriptomics.github.io/Reading/files/voom.pdf) - Describes one of the approaches for adjusting RNAseq count data based on the mean-variance relationship.
+
+[RNA-Seq workflow: gene-level exploratory analysis and differential expression. F1000, Oct 2015](http://f1000research.com/articles/4-1070/v1)
+
+[Harold Pimentel's talk on differential expression with RNAseq](https://www.youtube.com/watch?v=BRWj6re9iGc)
+
+[how to set-up a design matrix](http://genomicsclass.github.io/book/pages/expressing_design_formula.html)
+
+[Count-based differential expression analysis of RNA sequencing data using R and Bioconductor. Nature Protocols, Aug 22, 2013](http://DIYtranscriptomics.github.io/Reading/files/nprot.2013.099.pdf) -  This is great overview of the edgeR and DESeq packages, their use, and explains how each one approaches differential gene expression.
+
+[Limma user's guide](http://www.bioconductor.org/packages/release/bioc/vignettes/limma/inst/doc/usersguide.pdf)
+
+[EdgeR user's guide](https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf).  See section 3.4 and 3.5 for details about how to modify your model.matrix function for a 'blocking' design.

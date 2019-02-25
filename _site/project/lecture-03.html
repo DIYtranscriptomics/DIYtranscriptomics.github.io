@@ -1,0 +1,293 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	DIY.transcriptomics
+
+	Personal Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your blog or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Page Info -->
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<title>Ultra-fast read mapping with Kallisto – DIY.transcriptomics</title>
+	<meta name="description" content="In this class we'll use Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome.">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Ultra-fast read mapping with Kallisto – DIY.transcriptomics">
+	<meta name="twitter:description" content="In this class we'll use Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome.">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/bear.jpg">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Ultra-fast read mapping with Kallisto – DIY.transcriptomics" />
+	<meta property="og:description" content="In this class we'll use Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome." />
+	<meta property="og:image" content="http://localhost:4000/images/bear.jpg" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="http://localhost:4000" data-page-url="/project/lecture-03">
+
+
+	<header class="header">
+
+	<div class="wrap">
+
+		
+		<a href="/" class="header__title">
+			DIY.transcriptomics
+		</a>
+		
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link">Syllabus</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/data" class="menu__list__item__link">Data</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/scripts" class="menu__list__item__link">Scripts</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/help" class="menu__list__item__link">Help</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Ultra-fast read mapping with Kallisto – DIY.transcriptomics">
+
+			<section class="hero hero--single">
+
+	<div class="hero__image" style="background-image: url(/images/bear.jpg)">
+		<div class="hero__overlay"></div>
+	</div>
+
+	<div class="wrap">
+
+		<h1>Ultra-fast read mapping with Kallisto</h1>
+		<p>Lecture 3 • 2019.02.06 • Hill 130</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<article class="single-post">
+
+			<p><a href="https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments">Lecture slides</a></p>
+
+<p><a href="https://www.datacamp.com/courses/free-introduction-to-r">Homework: DataCamp Intro to R course (~2hrs)</a> - due before the start of class on Feb 13th.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>In this class we’ll finally get down to the business of using <a href="https://pachterlab.github.io/kallisto/about">Kallisto</a>, software for memory-efficient mapping of your raw reads to a reference transcriptome.  You’ll carry out this mapping in class, right on your laptop, while we discuss what’s happening ‘under the hood’ with Kallisto and how this compares to more traditional alignment methods.</p>
+
+<h2 id="goals">Goals</h2>
+
+<ul>
+  <li>Start a project directory that we’ll use for the rest of the course, and discuss project management and organization</li>
+  <li>Download a reference transcriptome file (talk a bit about what is and is not in a reference file)</li>
+  <li>Build an index from this reference file so that read mapping can be carried out more efficiently</li>
+  <li>Map our raw reads to the index, and talk a bit about what’s happening under the hood</li>
+</ul>
+
+<h2 id="reading">Reading</h2>
+
+<p><em>papers, blogs posts and videos on Kallisto</em></p>
+
+<p>The <a href="http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf">2016 Nature Biotech paper</a> from Lior Pachter’s lab describing Kallisto</p>
+
+<p>The <a href="http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf">2017 Nature Methods paper</a> from Lior Pachter’s lab describing Sleuth</p>
+
+<p><a href="https://www.youtube.com/watch?v=b4tVokh6Law">Harold Pimentel’s talk on alignment</a></p>
+
+<p><a href="https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/">Lior Pachter’s blog post on Kallisto</a></p>
+
+<p>A great <a href="http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html">blog post</a> that explains the principle of ‘pseudoalignments’ that Kallisto uses to map reads to transcripts</p>
+
+<p>Did you notice that Kallisto is using ‘Expectation Maximization (EM)’ during the alignment?  You can read more about what this is <a href="http://DIYtranscriptomics.github.io/Reading/files/EM.pdf">here</a></p>
+
+<p>Follow <a href="https://groups.google.com/forum/#!forum/kallisto-sleuth-users">Kallisto discussions/questions</a> and <a href="https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements">Kallisto announcements</a> on Google groups</p>
+
+<p><em>more general info about ultra lightweight methods for transcript quantification</em></p>
+
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf">This 2014 Nature Biotech paper</a> described Sailfish, which implimented the first lightweight method for quantifying transcript expression.</p>
+
+<p>Rob Patro, the first author of the Sailfish paper, wrote a nice blog post called <a href="http://robpatro.com/blog/?p=248">Not quite alignments</a>, comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.</p>
+
+<p>Read more about <a href="http://biorxiv.org/content/early/2015/10/03/021592">Salmon</a>, the newest lightweight aligment tool out from Rob Patro and Carl Kinsford.  <a href="https://combine-lab.github.io/salmon/">Check out the website too</a>.</p>
+
+<p>Don’t understand what a de Bruijn graph is? Find out more in the <a href="http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf">this primer from Nature Biotechnology</a></p>
+
+<p><a href="http://theleadingstrand.cshl.edu/Course/Keynote/2013/INFO/135">Lior Pachter’s talk at Cold Spring Harbor</a></p>
+
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/gregGrant_aligners_natMeth.pdf">Greg Grant’s recent paper comparing different aligners</a>.  This should be a helpful guide in choosing alignment software outside of what we used in class.</p>
+
+
+		</article>
+
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<div class="wrap">
+
+		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+
+		<div class="footer__copyright">
+			<span>© 2019 DIY.transcriptomics</span>
+			<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
+		</div>
+
+		<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+
+	</div>
+
+</footer>
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/personal-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+
+</body>
+
+</html>

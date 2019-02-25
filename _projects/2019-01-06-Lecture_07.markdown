@@ -1,0 +1,39 @@
+---
+title: 'Multivariate analysis'
+subtitle: 'Lecture 7 • 2019.03.06 • Hill 130'
+date: 2019-01-06 00:00:00
+description: We'll use Principle Component Analysis (PCA) to explore variables such as sex, age, treatment, etc., and how they influence our data. We’ll also discuss common missteps and sources of variance in transcriptome data sets.
+featured_image: '/images/dataExplore.jpg'
+---
+
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+
+## Overview
+
+In this class we’ll use Principle Component Analysis (PCA) to explore how variables such as sex, age, treatment, etc., that influence our data. We’ll discuss common mis-steps and sources of variance in transcriptional data sets. You’ll also be introduced to the popular graphing package ggplot2, to graph the results of your PCA analysis.
+
+## Goals
+
+* Start/finish step 3 script
+* Discuss basics of multivariate statistical analysis
+* Carry out hierarchical clustering of samples
+* Discuss and perform principal component analyses (PCA)
+* Produce 'small multiples' plot
+* Use standard dplyr 'verbs' to quickly query our data
+* Learn to produce interactive tables with DT package
+
+## Code
+
+[Step 3 script](http://DIYtranscriptomics.github.io/Code/files/Step3_dataWrangling.R)
+
+
+
+## Reading
+
+I mentioned various unsupervised methods for dimensional reduction of your data (PCA, MDS, T-SNE).  In particular, T-SNE has become popular in representing single-cell RNAseq data, but it is also one of the more complex visualization methods to understand.  Although we didn't discuss this in class, I wanted to include a link to a [great blog post describing T-SNE](http://distill.pub/2016/misread-tsne/), as well as [the original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  Please familiarize yourself with these if you plan on using this visualziation method.
+
+[catalog of R graphs](http://shiny.stat.ubc.ca/r-graph-catalog/) - Take a look at some of the various ways to graph your data and the underlying R code in this
+
+[R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994) - If you end up using R to make a lot of graphs, you will find the to be an important reference. It's available free to UPenn folks as an Ebook.
+
+Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the [RColorBrewer package](http://colorbrewer2.org).  These palettes can be viewed in [this cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf).  Unfortunately, these standard palettes often don't cut it, and you'll need custom palettes. For this, I love using [Sip](https://sipapp.io/) to pick, organize and access color palettes.  

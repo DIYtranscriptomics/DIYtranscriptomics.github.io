@@ -1,0 +1,26 @@
+---
+title: 'Module identification'
+subtitle: 'Lecture 11 • 2019.04.03 • Hill 130'
+date: 2019-01-02 00:00:00
+description: Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis.
+featured_image: '/images/bird_flock.jpg'
+---
+
+## Overview
+
+Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.
+
+## Goals
+
+* Learn how to produce static and interactive heatmaps
+* Learn to use correlation methods and the gplots package to identify co-expression modules
+
+## Code
+
+[Step 6 script](http://DIYtranscriptomics.github.io/Code/files/Step6_heatmap.R)
+
+
+## Reading
+
+[Clust: automatic extraction of optimal co-expressed gene clusters from gene expression data. Genome Biology, 2018](https://doi.org/10.1186/s13059-018-1536-8).
+

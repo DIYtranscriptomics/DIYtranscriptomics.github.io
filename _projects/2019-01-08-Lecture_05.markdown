@@ -1,0 +1,33 @@
+---
+title: 'Starting your R workflow'
+subtitle: 'Lecture 5 • 2019.02.20 • Hill 131'
+date: 2019-01-08 00:00:00
+description: Now that we've aligned our reads, it's time to read our data into R.  We'll discuss units for measuring gene expression (RPKM, FPKM, and TPM), how these units relate to basic properties of your experiment, and how normalize within and between samples.  
+featured_image: '/images/first_step.jpg'
+---
+
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+
+## Overview
+
+Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment.
+
+## Goals
+
+* Review basic elements of our scripts
+* View Kallisto results using Sleuth
+* Read our transcript abundance measurements into the R environment using TxImport
+
+## Code
+
+[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R)
+
+## Reading
+
+[Differential analysis of RNA-seq incorporating quantification uncertainty. Nature Methods, June, 2017](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) - Original paper describing Sleuth
+
+[Lior Pachter's blog post on Sleuth](https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/)
+
+[vignette for the Tximport package](https://bioconductor.org/packages/devel/bioc/vignettes/tximport/inst/doc/tximport.html) - the R package we'll use to read the Kallisto mapping results into R.
+
+[Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](http://f1000research.com/articles/4-1521/v2)* F1000Research, Dec 2015. This paper describes the Tximport package and its application for handling transcript-level expression measurments from lightweight aligners (Salmon, Sailfish, Kallisto)

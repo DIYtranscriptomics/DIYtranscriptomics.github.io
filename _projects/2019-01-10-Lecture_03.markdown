@@ -1,0 +1,56 @@
+---
+title: 'Ultra-fast read mapping with Kallisto'
+subtitle: 'Lecture 3 • 2019.02.06 • Hill 130'
+date: 2019-01-10 00:00:00
+description: In this class we'll use Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome.  
+featured_image: '/images/bear.jpg'
+---
+
+[Lecture slides](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments)
+
+[Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class on Feb 13th. 
+
+
+## Overview
+
+In this class we'll finally get down to the business of using [Kallisto](https://pachterlab.github.io/kallisto/about), software for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.
+
+## Goals
+
+* Start a project directory that we’ll use for the rest of the course, and discuss project management and organization
+* Download a reference transcriptome file (talk a bit about what is and is not in a reference file)
+* Build an index from this reference file so that read mapping can be carried out more efficiently
+* Map our raw reads to the index, and talk a bit about what’s happening under the hood
+
+
+## Reading
+
+_papers, blogs posts and videos on Kallisto_
+
+The [2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
+
+The [2017 Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) from Lior Pachter's lab describing Sleuth
+
+[Harold Pimentel's talk on alignment](https://www.youtube.com/watch?v=b4tVokh6Law)
+
+[Lior Pachter's blog post on Kallisto](https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/)
+
+A great [blog post](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) that explains the principle of 'pseudoalignments' that Kallisto uses to map reads to transcripts
+
+Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the alignment?  You can read more about what this is [here](http://DIYtranscriptomics.github.io/Reading/files/EM.pdf)
+
+Follow [Kallisto discussions/questions](https://groups.google.com/forum/#!forum/kallisto-sleuth-users) and [Kallisto announcements](https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements) on Google groups
+
+_more general info about ultra lightweight methods for transcript quantification_
+
+[This 2014 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf) described Sailfish, which implimented the first lightweight method for quantifying transcript expression.
+
+Rob Patro, the first author of the Sailfish paper, wrote a nice blog post called [Not quite alignments](http://robpatro.com/blog/?p=248), comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.
+
+Read more about [Salmon](http://biorxiv.org/content/early/2015/10/03/021592), the newest lightweight aligment tool out from Rob Patro and Carl Kinsford.  [Check out the website too](https://combine-lab.github.io/salmon/).
+
+Don't understand what a de Bruijn graph is? Find out more in the [this primer from Nature Biotechnology](http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf)
+
+[Lior Pachter's talk at Cold Spring Harbor](http://theleadingstrand.cshl.edu/Course/Keynote/2013/INFO/135)
+
+[Greg Grant's recent paper comparing different aligners](http://DIYtranscriptomics.github.io/Reading/files/gregGrant_aligners_natMeth.pdf).  This should be a helpful guide in choosing alignment software outside of what we used in class.
