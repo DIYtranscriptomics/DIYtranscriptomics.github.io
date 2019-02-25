@@ -23,6 +23,47 @@ colnames(log2.cpm.filtered.norm) <- sampleLabels
 mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
 write_tsv(mydata.df, "normData.txt") # Note: this is the data you would use as input .gct file for GSEA analysis
 
+# Hierarchical clustering ---------------
+#hierarchical clustering can only work on a data matrix, not a data frame
+#try using filtered and unfiltered data...how does this change the results
+distance <- dist(t(log2.cpm.filtered.norm), method="manhattan") #other dist methods are "maximum", "manhattan", "canberra", "binary" or "minkowski"
+clusters <- hclust(distance, method = "complete") #other methods are ward.D, ward.D2, single, complete, average
+plot(clusters, labels=sampleLabels)
+
+# Pricipal component analysis (PCA) -------------
+pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
+#look at pca.res in environment
+ls(pca.res)
+summary(pca.res) # Prints variance summary for all principal components.
+x <- pca.res$rotation #$rotation shows you how much each gene influenced each PC (called 'scores')
+pca.res$x #$x shows you how much each sample influenced each PC (called 'loadings')
+#note that these loadings have a magnitude and a direction (this is the basis for making a PCA plot)
+pc.var<-pca.res$sdev^2 #sdev^2 gives you the eigenvalues
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+pc.per
+
+# Visualize your PCA result ------------------
+#lets first plot any two PCs aslgainst each other
+#We know how much each sample contributes to each PC (loadings), so let's plot
+pca.res.df <- as_tibble(pca.res$x)
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups1)) +
+  geom_point(size=5) +
+  theme(legend.position="right") 
+#what other variables could you 'paint' onto this PCA plot
+#how would this PCA look if you used raw counts (myCounts) instead of log2 CPM?
+
+# Create a PCA 'small multiples' chart ----
+# this is another way to view PCA laodings to understand impact of each sample on each pricipal component
+melted <- cbind(groups1, melt(pca.res$x[,1:4]))
+head(melted)
+#look at your 'melted' data
+ggplot(melted) +
+  geom_bar(aes(x=Var1, y=value, fill=groups1), stat="identity") +
+  facet_wrap(~Var2) +
+  theme(axis.text.x = element_text(angle = 90))
+#facet_trelliscope(~Var2) #add this trelliscope layer to the ggplot to have some fun
+
+
 # use dplyr 'mutate' function to add new columns based on existing data -------
 mydata.df <- mutate(mydata.df,
                    uninfected.AVG = (uninf_rep1 + uninf_rep2 + uninf_rep1)/3, 
@@ -136,3 +177,15 @@ datatable(mydata.df,
           caption = 'my cool table)',
           options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
   formatRound(columns=c(1:6), digits=3)
+
+pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
+x <- pca.res$rotation 
+pc.var<-pca.res$sdev^2
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+
+pca.res.df <- as_tibble(pca.res$x)
+p3 <- ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups1)) +
+  geom_point(size=5) +
+  theme(legend.position="right") 
+ggplotly(p3)
+
