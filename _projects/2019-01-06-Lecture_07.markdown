@@ -1,6 +1,6 @@
 ---
 title: 'Multivariate analysis'
-subtitle: 'Lecture 7 • 2019.03.06 • Hill 130'
+subtitle: 'Lecture 7 • 2019.03.06 • Hill 130 • 3-5pm'
 date: 2019-01-06 00:00:00
 description: We'll use Principle Component Analysis (PCA) to explore variables such as sex, age, treatment, etc., and how they influence our data. We’ll also discuss common missteps and sources of variance in transcriptome data sets.
 featured_image: '/images/dataExplore.jpg'

@@ -1,6 +1,6 @@
 ---
 title: 'Hackdash I'
-subtitle: 'Lecture 8 • 2019.03.13 • Hill 130'
+subtitle: 'Lecture 8 • 2019.03.13 • Hill 130 • 3-5pm'
 date: 2019-01-05 00:00:00
 description: You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!
 featured_image: '/images/timepiece.jpg'

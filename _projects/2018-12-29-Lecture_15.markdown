@@ -1,6 +1,6 @@
 ---
 title: 'Final exam'
-subtitle: 'Lecture 15 • 2019.05.01 • Hill 130'
+subtitle: 'Lecture 15 • 2019.05.01 • Hill 130 • 3-5pm'
 date: 2018-12-29 00:00:00
 description: During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A (and we'll eat pizza!). 
 featured_image: '/images/pizza.jpg'

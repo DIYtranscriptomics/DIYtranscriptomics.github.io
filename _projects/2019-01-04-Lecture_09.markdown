@@ -1,6 +1,6 @@
 ---
 title: 'Accessing public data'
-subtitle: 'Lecture 9 • 2019.03.20 • Hill 130'
+subtitle: 'Lecture 9 • 2019.03.20 • Hill 130 • 3-5pm'
 date: 2019-01-04 00:00:00
 description: In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.
 featured_image: '/images/DataDeluge.jpg'

@@ -1,6 +1,6 @@
 ---
 title: 'Differential gene expression'
-subtitle: 'Lecture 10 • 2019.03.27 • Hill 131'
+subtitle: 'Lecture 10 • 2019.03.27 • Hill 131 • 3-5pm'
 date: 2019-01-03 00:00:00
 description: The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  In this class, we'll dig into differential expression using the popular and venerable Limma package in R.  
 featured_image: '/images/apples.jpg'

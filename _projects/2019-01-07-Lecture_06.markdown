@@ -1,6 +1,6 @@
 ---
 title: 'Wrangling gene expression data'
-subtitle: 'Lecture 6 • 2019.02.27 • Hill 130'
+subtitle: 'Lecture 6 • 2019.02.27 • Hill 130 • 3-5pm'
 date: 2019-01-07 00:00:00
 description: We'll use the Tidyverse tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data quickly and easily. 
 featured_image: '/images/tidyDNA.jpg'
