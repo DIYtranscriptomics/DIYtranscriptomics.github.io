@@ -6,7 +6,6 @@ description: In order to make your analysis pipeline transparent and reproducibl
 featured_image: '/images/breadcrumbs2.jpg'
 ---
 
-<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 
 
 ## Overview

@@ -6,6 +6,9 @@ description: During this in-class exam, I'll test your knowledge using a fun but
 featured_image: '/images/pizza.jpg'
 ---
 
+<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
+
+
 ## Overview
 
 During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
