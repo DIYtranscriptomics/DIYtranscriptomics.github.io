@@ -25,8 +25,8 @@ After a brief overview of the course, we'll spend the opening lecture talking ab
 
 Check out the Univ. of Orgeon's [RNA-seqlopedia](http://rnaseq.uoregon.edu/), an online resource for understanding the entire RNAseq workflow
 
-[Illumina's SBS technology]() - this is the video I showed in class.  It's a nice visual for how SBS works.
+Illumina's SBS technology - Below is the video I showed in class.  It's a nice visual for how SBS works.
 
-<iframe src="https://www.youtube.com/watch?v=HMyCqWhwB8E" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/fCd6B5HRaZ8" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 
