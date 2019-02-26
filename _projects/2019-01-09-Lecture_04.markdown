@@ -6,6 +6,8 @@ description: Now that we've aligned our reads, it's time to discuss units for me
 featured_image: '/images/abacus.jpg'
 ---
 
+<div style="text-align: right"> test </div>
+
 [Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)
 
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
