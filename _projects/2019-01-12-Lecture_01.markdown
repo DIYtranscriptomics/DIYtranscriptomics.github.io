@@ -21,9 +21,11 @@ After a brief overview of the course, we'll spend the opening lecture talking ab
 
 ## Reading
 
-[file formats associated with transcriptomics](http://binf.snipcademy.com/lessons/sequence-file-formats).
+[File formats produced by sequencing](http://binf.snipcademy.com/lessons/sequence-file-formats).
 
-Check out the Univ. of Orgeon's [RNA-seqlopedia](http://rnaseq.uoregon.edu/), an online resource for understanding the entire RNAseq workflow
+[RNA-seqlopedia](http://rnaseq.uoregon.edu/) - Created by the Univ. of Orgeon, this is a great resource for understanding the entire RNAseq workflow.
+
+## Videos 
 
 Illumina's SBS technology - Below is the video I showed in class.  It's a nice visual for how SBS works.
 
