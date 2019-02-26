@@ -37,5 +37,6 @@ Now that we've aligned our reads, it's time to discuss units for measuring gene 
 
 ## Videos
 
-<iframe src="https://player.vimeo.com/video/319976694" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/319976694">2019.02.21_Lecture5_Step1</a> from <a href="https://vimeo.com/user68652301">Daniel Beiting</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+**Recorded lecture** 
+
+<iframe src="https://player.vimeo.com/video/319976694" width="640" height="360" frameborder="0" allowfullscreen></iframe>
