@@ -1,13 +1,14 @@
 # Introduction to this script ----
-# now that you've read your transcript-level or gene-level data into R, you're ready to begin exploring the structure of the data
-# goal of this script is to using multivariate statisical approaches to explore the structure of your data
+# now that you've read your transcript-level or gene-level data into R, you're ready to begin working with your data
 # recall that your abundance data are TPM, while the counts are read counts mapping to each gene or transcript
+# Our goals in this script are to filter and normalize data
+# This script also introduces us ggplot2 for plotting, which let's us appreciate how filtering and normalization impact our data.
 
 # Load packages -----
 library(tidyverse) 
-library(paletteer) # provides access to color palettes for graphics, see https://github.com/EmilHvitfeldt/r-color-palettes for the full list of color palettes
+library(hrbrthemes) # Install with 'devtools::install_github("hrbrmstr/hrbrthemes")'. I really like this package for setting a clean theme for my ggplot2 graphs.
+library(RColorBrewer) # provides access to color palettes for graphics
 library(reshape2) # for reshaping dataframes
-library(trelliscopejs) # must be downloaded from github
 library(genefilter) #as the package name suggests, it's for filtering genes
 library(edgeR) # also for differential expression, but we only use for the DGEList object
 library(matrixStats) # let's us easily calculate stats on any matrix rows or columns
@@ -37,21 +38,16 @@ myCPM.stats <- transform(myCPM,
                          MED=rowMedians(myCPM)
                          )
 
-myCounts.stats <- transform(myCounts, 
-                            SD=rowSds(myCounts), 
-                            AVG=rowMeans(myCounts), 
-                            MED=rowMedians(myCounts)
-                            )
 
 head(myCPM.stats)
 #produce a scatter plot of the transformed data
 ggplot(myCPM.stats, aes(x=SD, y=MED)) +
-  geom_point(shape=1, size=4)
+  geom_point(shape=16, size=2)
 # Experiment with point shape and size
 # experiment with geom_hex
 # how would these graphs change if you log2 converted the data?
 
-# Make a DGElist from your counts ----
+# Make a DGElist from your counts, and plot ----
 myDGEList <- DGEList(Txi_gene$counts)
 # take a look at the DGEList object 
 myDGEList
@@ -80,37 +76,49 @@ Log2.cpm.df.melt <- as_tibble(log2.cpm.df.melt)
 Log2.cpm.df.melt
 
 ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
-  geom_violin(trim = FALSE, show.legend = TRUE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
-  theme_bw()
-# what do you think of the distribution of this data?
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="unfiltered, non-normalized",
+       caption=paste0("produced on ", Sys.time()))
+  #coord_flip() + #then change stat_summary shape to 124 to get vertical line
+  #theme_ipsum_rc() #this is my current fav theme, from the hrbrthemes package
+  #theme_ft_rc() #another cool theme from the hrbrthemes package, but won't work until you've downloaded some additional fonts for your OS
+
+  # what do you think of the distribution of this data?
 
 # Filter your data ----
 #first, take a look at how many genes or transcripts have no read counts at all
-table(rowSums(DGEList$counts==0)==9)
+table(rowSums(myDGEList$counts==0)==9)
 
 # now set some cut-off to get rid of genes/transcripts with low counts
 keepers <- rowSums(cpm>1)>=3
-DGEList.filtered <- DGEList[keepers,]
-dim(DGEList.filtered)
+myDGEList.filtered <- myDGEList[keepers,]
+dim(myDGEList.filtered)
 
-log2.cpm.filtered <- cpm(DGEList.filtered, log=TRUE)
+log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
 log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
 colnames(log2.cpm.filtered.df) <- sampleLabels
 log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
 log2.cpm.filtered.df.melt <- as_tibble(log2.cpm.filtered.df.melt)
 
 ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
-  geom_violin(trim = TRUE, show.legend = TRUE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
-  theme_bw()
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, non-normalized",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() +
+  theme_ipsum_rc() 
 
 # Normalize your data ----
-DGEList.filtered.norm <- calcNormFactors(DGEList.filtered, method = "TMM")
+myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
 # take a look at this new DGEList object...how has it changed?
 
 # use the 'cpm' function from EdgeR to get counts per million from your normalized data
-log2.cpm.filtered.norm <- cpm(DGEList.filtered.norm, log=TRUE)
+log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
 
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 
@@ -119,18 +127,22 @@ log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 log2.cpm.filtered.norm.df.melt <- as_tibble(log2.cpm.filtered.norm.df.melt)
 
 ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
-  geom_violin(trim = TRUE, show.legend = TRUE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black") +
-  theme_bw()
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, TMM normalized",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() +
+  theme_ipsum_rc() 
 
 
 # the essentials ----
-library(paletteer) 
+library(RColorBrewer) 
 library(reshape2) 
 library(genefilter)
 library(edgeR) 
 library(matrixStats)
-library(gridExtra)
 groups2 <- targets$treatment2
 groups2 <- factor(groups2)
 sampleLabels <- targets$sample
@@ -145,30 +157,45 @@ colnames(log2.cpm.df) <- sampleLabels
 log2.cpm.df.melt <- melt(log2.cpm.df)
 Log2.cpm.df.melt <- as_tibble(log2.cpm.df.melt)
 
-p1 <- ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black", show.legend = FALSE) +
-  labs(y="log2 expression", x = "sample") +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="unfiltered, non-normalized",
+       caption=paste0("produced on ", Sys.time())) +
   coord_flip() +
-  theme_bw()
+  theme_ipsum_rc() 
 
 keepers <- rowSums(cpm>1)>=3 #user defined
-DGEList.filtered <- DGEList[keepers,]
-DGEList.filtered.norm <- calcNormFactors(DGEList.filtered, method = "TMM")
-log2.cpm.filtered.norm <- cpm(DGEList.filtered.norm, log=TRUE)
+myDGEList.filtered <- myDGEList[keepers,]
+myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
+log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 log2.cpm.filtered.norm.df.melt <- as_tibble(log2.cpm.filtered.norm.df.melt)
 
-p2 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
-  geom_violin(trim = TRUE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 10, color = "black", show.legend = FALSE) +
-  labs(y="log2 expression", x = "sample") +
+ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, non-normalized",
+       caption=paste0("produced on ", Sys.time())) +
   coord_flip() +
-  theme_bw()
+  theme_ipsum_rc() 
 
-grid.arrange(p1, p2, nrow = 1)
+ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, TMM normalized",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() +
+  theme_ipsum_rc() 
+
 
 
 
