@@ -29,6 +29,10 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 [Step 2 script](http://DIYtranscriptomics.github.io/Code/files/Step2_dataExploration.R)
 
+## Software
+
+[Sip] - I discussed this simple but excellent color picking software in class. The program costs about $10, but provides a convenient and powerful way to assemble color palettes for use in R.
+
 ## Reading
 
 Hadley Wickham (author of Dplyr, Reshape2 and ggplot2 packages) has a nice pre-print paper on the key aspects of making ['Tidy Data'](http://vita.had.co.nz/papers/tidy-data.pdf)
