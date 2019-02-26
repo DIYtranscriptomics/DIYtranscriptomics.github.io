@@ -10,8 +10,6 @@ No lecture slides for this class.  We'll spend the entire time working on Step 1
 
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
 
-[Recorded lecture](https://drive.google.com/open?id=1sUd03nRLbDj6wBxF-DB2VP7B2MI9_RUA)
-
 
 ## Overview
 
@@ -36,3 +34,8 @@ Now that we've aligned our reads, it's time to discuss units for measuring gene 
 [vignette for the Tximport package](https://bioconductor.org/packages/devel/bioc/vignettes/tximport/inst/doc/tximport.html) - the R package we'll use to read the Kallisto mapping results into R.
 
 [Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](http://f1000research.com/articles/4-1521/v2)* F1000Research, Dec 2015. This paper describes the Tximport package and its application for handling transcript-level expression measurments from lightweight aligners (Salmon, Sailfish, Kallisto)
+
+## Videos
+
+<iframe src="https://player.vimeo.com/video/319976694" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/319976694">2019.02.21_Lecture5_Step1</a> from <a href="https://vimeo.com/user68652301">Daniel Beiting</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
