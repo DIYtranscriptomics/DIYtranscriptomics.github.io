@@ -33,4 +33,11 @@ In order to make your analysis pipeline transparent and reproducible, in this cl
 
 [Blog post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
 
-* For an example of how markdown/knitr can be used with publications, checkout [this Supplementary code](http://DIYtranscriptomics.github.io/Reading/files/supplementaryCode.pdf) in a recent [Nature Immunology paper](http://DIYtranscriptomics.github.io/Reading/files/singleCellTranscriptome.pdf) or our recent [PLOS Pathogens paper](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) 
+
+### Other examples of Rmarkdown in action
+
+[Supplementary code file](http://DIYtranscriptomics.github.io/Reading/files/supplementaryCode.pdf) from a recent [Nature Immunology paper](http://DIYtranscriptomics.github.io/Reading/files/singleCellTranscriptome.pdf) 
+
+[My lab's supp. code file](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) from a PLOS Pathogens paper 
+
+[make your own CV in markdown](https://github.com/dpbisme/CV_rmarkdown) - uses the [Vitae](https://github.com/ropenscilabs/vitae) package in R. 

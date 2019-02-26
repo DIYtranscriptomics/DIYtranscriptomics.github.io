@@ -21,8 +21,7 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 * Start/finish step 2 script
 * Begin to explore our data in R using ggplot2
-* Produce interactive graphics using the plotly package
-* Discuss basics of reshape2 package
+* Discuss basics of Tidy data and the reshape2 package
 * Talk briefly about color palettes in R
 * Filter data to remove lowly expressed genes
 * Normalize data

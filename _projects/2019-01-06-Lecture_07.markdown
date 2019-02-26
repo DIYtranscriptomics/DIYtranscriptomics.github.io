@@ -8,7 +8,7 @@ featured_image: '/images/dataExplore.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class today!
 
 ## Overview
 
@@ -22,7 +22,8 @@ In this class we’ll use multivariate statisical methods, including Principal C
 * Discuss and perform principal component analyses (PCA)
 * Produce 'small multiples' plot
 * Use standard dplyr 'verbs' to quickly query our data
-* Learn to produce interactive tables with DT package
+* Produce interactive graphics using the plotly package
+* Produce interactive tables with DT package
 
 ## Code
 
