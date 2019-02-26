@@ -2,7 +2,7 @@
 title: 'Ultra-fast read mapping with Kallisto'
 subtitle: 'Lecture 3 • 2019.02.06 • Hill 130 • 3-5pm'
 date: 2019-01-10 00:00:00
-description: In this class you'll be introduced to Kallisto, software for memory-efficient mapping of  raw reads to a reference transcriptome. You'll be introduced to using command line software and will learn about automation and reproducibility through shell scripts. 
+description: In this class we'll finally get down to the business of using Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening under the hood.  In the process, you'll learn the basics of using command line software and how to use shell scripts for automation and reproducibility.
 featured_image: '/images/bear.jpg'
 ---
 
