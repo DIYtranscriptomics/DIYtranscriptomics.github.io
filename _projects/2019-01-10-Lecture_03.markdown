@@ -35,7 +35,7 @@ In this class we'll finally get down to the business of using [Kallisto](https:/
 
 [Lior Pachter's blog post on Kallisto](https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/)
 
-[A great blog post](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) that explains the principle of 'pseudoalignments' that Kallisto uses to map reads to transcripts
+[blog post on pseudoalignments](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) - helps understand how Kallisto maps reads to transcripts
 
 Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the alignment?  You can read more about what this is [here](http://DIYtranscriptomics.github.io/Reading/files/EM.pdf)
 
@@ -43,22 +43,22 @@ Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the
 
 ### more general info about ultra lightweight methods for transcript quantification
 
-[This 2014 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf) described Sailfish, which implimented the first lightweight method for quantifying transcript expression.
+[2014 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf) - describes Sailfish, which implimented the first lightweight method for quantifying transcript expression.
 
-Rob Patro, the first author of the Sailfish paper, wrote a nice blog post called [Not quite alignments](http://robpatro.com/blog/?p=248), comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.
+[Not quite alignments](http://robpatro.com/blog/?p=248) - Rob Patro, the first author of the Sailfish paper, wrote a nice blog post comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.
 
-Read more about [Salmon](http://biorxiv.org/content/early/2015/10/03/021592), the newest lightweight aligment tool out from Rob Patro and Carl Kinsford.  [Check out the website too](https://combine-lab.github.io/salmon/).
+[2018 Nature Methods paper describing Salmon](https://www.nature.com/articles/nmeth.4197) - A lightweight aligment tool from Rob Patro and Carl Kinsford.   [Check out the website too](https://combine-lab.github.io/salmon/).
 
-Don't understand what a de Bruijn graph is? Find out more in the [this primer from Nature Biotechnology](http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf)
-
-[Lior Pachter's talk at Cold Spring Harbor](http://theleadingstrand.cshl.edu/Course/Keynote/2013/INFO/135)
+[2011 Nature Biotechnology ](http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf) - Great primer to better understand what de Bruijn graph is.
 
 [Greg Grant's recent paper comparing different aligners](http://DIYtranscriptomics.github.io/Reading/files/gregGrant_aligners_natMeth.pdf).  This should be a helpful guide in choosing alignment software outside of what we used in class.
 
 ## Videos
 
 **Harold Pimentel's talk on alignment (20 min)**
+
 <iframe src="https://www.youtube.com/embed/b4tVokh6Law" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 **Lior Pachter's talk at CSHL (45 min)**
+
 <iframe src="https://www.youtube.com/embed/5NiFibnbE8o" width="640" height="360" frameborder="0" allowfullscreen></iframe>
