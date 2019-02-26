@@ -2,7 +2,7 @@
 title: 'Starting your R workflow'
 subtitle: 'Lecture 5 • 2019.02.20 • Hill 131 • 3-5pm'
 date: 2019-01-08 00:00:00
-description: Now that we've aligned our reads, it's time to get our data into R.  We'll take this opportunity to discuss the basics of working in R, including accessing packages, the basic structure of a script, and finding help documentation. With our data in R, we'll talk about study design and use Sleuth for differentially transcript analysis.  
+description: Now that we've aligned our reads, it's time to get our data into R.  We'll take this opportunity to discuss the basics of working in R, including how to access packages and help documentation, as well as understanding the basic structure of a script. With our data in R, we'll talk about study design and use Sleuth for differentially transcript analysis.  
 featured_image: '/images/first_step.jpg'
 ---
 
