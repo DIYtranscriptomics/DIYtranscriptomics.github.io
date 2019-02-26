@@ -6,6 +6,8 @@ description: You may have heard of a Hackathon before - an event that typically 
 featured_image: '/images/timepiece.jpg'
 ---
 
+<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
+
 ## Overview
 
 You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!

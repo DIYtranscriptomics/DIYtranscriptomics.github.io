@@ -6,6 +6,8 @@ description: After filtering and normalizing our data in R, we'll use the Tidyve
 featured_image: '/images/tidyDNA.jpg'
 ---
 
+<div style="text-align: right"> Image credit: Daniel Horowitz for NPR </div>
+
 No lecture slides for this class.  We'll spend the entire time working on Step 2 script.
 
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.

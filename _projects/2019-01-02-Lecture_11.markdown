@@ -6,6 +6,8 @@ description: Coordinately expressed genes, or modules, often contain a more cohe
 featured_image: '/images/bird_flock.jpg'
 ---
 
+<div style="text-align: right"> Image credit: Adelaide Tyrol </div>
+
 ## Overview
 
 Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.

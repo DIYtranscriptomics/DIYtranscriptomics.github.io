@@ -6,7 +6,7 @@ description: Now that we've aligned our reads, it's time to discuss units for me
 featured_image: '/images/abacus.jpg'
 ---
 
-<div style="text-align: right"> test </div>
+<div style="text-align: right"> Image credit: 'Abacus' ca. 1946: textile, Paul Rand </div>
 
 [Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)
 

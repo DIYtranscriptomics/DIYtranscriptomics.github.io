@@ -6,6 +6,8 @@ description: In this second and final Hackdash, expect your most challening prob
 featured_image: '/images/timepiece.jpg'
 ---
 
+<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
+
 ## Overview
 
 In this second and final Hackdash, expect your most challening problem – one that will incorporate both differential gene expression analysis and downstream functional enrichment analysis.

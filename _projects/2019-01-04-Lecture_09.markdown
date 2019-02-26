@@ -6,6 +6,9 @@ description: In this class we’ll discuss how you can use R/Bioconductor to tap
 featured_image: '/images/DataDeluge.jpg'
 ---
 
+<div style="text-align: right"> Image credit: Brett Ryder, The Economist </div>
+
+
 ## Overview
 
 In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.

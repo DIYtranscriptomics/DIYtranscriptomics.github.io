@@ -6,6 +6,8 @@ description: In this class we'll use Kallisto for memory-efficient mapping of yo
 featured_image: '/images/bear.jpg'
 ---
 
+<div style="text-align: right"> Image credit: Lior Pachter </div>
+
 [Lecture slides](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments)
 
 [Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class on Feb 13th. 
