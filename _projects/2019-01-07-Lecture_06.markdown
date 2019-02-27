@@ -28,7 +28,7 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 ## Code
 
-[Step 2 script](http://DIYtranscriptomics.github.io/Code/files/Step2_dataExploration.R)
+[Step 2 script](http://DIYtranscriptomics.github.io/Code/files/Step2_dataWrangling.R)
 
 ## Software
 
