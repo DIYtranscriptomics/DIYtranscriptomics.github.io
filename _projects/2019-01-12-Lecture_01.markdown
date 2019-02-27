@@ -12,18 +12,23 @@ featured_image: '/images/illumina_flowcell.jpg'
 
 After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, ribo-depletion, scRNAseq, and fastq will pratically roll off your tongue.
 
+---
+
 ## Goals
 
 * Familiarity with Illumina's 'Sequencing by Synthesis' (SBS) technology
 * Basics of setting up a sequencing experiment (read length vs depth, PE vs SE, etc.)
 * Understand data output from HTS
 
+---
 
 ## Reading
 
 [File formats produced by sequencing](http://binf.snipcademy.com/lessons/sequence-file-formats).
 
 [RNA-seqlopedia](http://rnaseq.uoregon.edu/) - Created by the Univ. of Orgeon, this is a great resource for understanding the entire RNAseq workflow.
+
+---
 
 ## Videos 
 

@@ -27,7 +27,7 @@ In this class we'll finally get down to the business of using [Kallisto](https:/
 
 ## Reading
 
-### papers, blogs posts and videos on Kallisto
+### papers and blogs posts on Kallisto
 
 [2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
 
@@ -41,7 +41,7 @@ Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the
 
 [Kallisto discussions/questions](https://groups.google.com/forum/#!forum/kallisto-sleuth-users) and [Kallisto announcements](https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements) are available on Google groups
 
-### more general info about ultra lightweight methods for transcript quantification
+### General info about ultra lightweight methods for transcript quantification
 
 [2014 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf) - describes Sailfish, which implimented the first lightweight method for quantifying transcript expression.
 
