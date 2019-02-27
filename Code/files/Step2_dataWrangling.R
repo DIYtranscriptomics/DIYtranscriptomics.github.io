@@ -42,7 +42,7 @@ myCPM.stats <- transform(myCPM,
 head(myCPM.stats)
 #produce a scatter plot of the transformed data
 ggplot(myCPM.stats, aes(x=SD, y=MED)) +
-  geom_point(shape=16, size=2)
+  geom_point(shape=8, size=2)
 # Experiment with point shape and size
 # experiment with geom_hex
 # how would these graphs change if you log2 converted the data?
@@ -77,14 +77,14 @@ Log2.cpm.df.melt
 
 ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 8, color = "black", show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="unfiltered, non-normalized",
-       caption=paste0("produced on ", Sys.time()))
-  #coord_flip() + #then change stat_summary shape to 124 to get vertical line
-  #theme_ipsum_rc() #this is my current fav theme, from the hrbrthemes package
-  #theme_ft_rc() #another cool theme from the hrbrthemes package, but won't work until you've downloaded some additional fonts for your OS
+       caption=paste0("produced on ", Sys.time())) #using the Sys.time function from base R to print date/time on graph
+  #coord_flip() + #then change stat_summary shape to 124 to get vertical line 
+  #theme_ipsum_rc() #this is my current fav theme, from the hrbrthemes package. Uses Ariel Narrow, a ideal typographic font for graphics, because it is condensed, has solid default kerning pairs and geometric numbers
+  #theme_modern_rc() #another cool theme from the hrbrthemes package, but won't work until you've downloaded some additional fonts for your OS
 
   # what do you think of the distribution of this data?
 

@@ -10,7 +10,7 @@ library(tidyverse) # provides access to Hadley Wickham's collection of R package
 library(tximport) # package for getting Kallisto results into R
 library(biomaRt) # for annotation
 library(sleuth) #for rapid and simple differential gene expression analysis
-library(beepr)
+library(beepr) #just for fun
 
 # read in your study design ----
 #there are LOTS of ways to read data into R, but the readr package (from tidyverse) is one of the simplest
@@ -61,13 +61,6 @@ mySleuth.genes <- sleuth_prep(targets,
                               #aggregation_column = 'gene_name', #uncomment this line if you want to collapse your data to gene level
                               read_bootstrap_tpm=TRUE,
                               extra_bootstrap_summary=TRUE) 
-beep(sound = 1, expr = NULL)
-beep(sound = 2, expr = NULL)
-beep(sound = 3, expr = NULL)
-beep(sound = 4, expr = NULL)
-beep(sound = 5, expr = NULL)
-beep(sound = 6, expr = NULL)
-beep(sound = 7, expr = NULL)
 beep(sound = 8, expr = NULL)
 
 # fit a linear model to the full data
