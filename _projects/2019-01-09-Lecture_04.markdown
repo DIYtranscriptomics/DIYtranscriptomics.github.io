@@ -31,8 +31,6 @@ featured_image: '/images/abacus.jpg'
 
 [What the FPKM?](https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/) - Blog post by Harold Pimentel discussing within sample normalization and the meaning of RNAseq expression units
 
-[Between sample normalization in RNAseq](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/) - another great blog post from Harold Pimentel on between-sample normalization.
-
 [Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, Dec 2012](http://DIYtranscriptomics.github.io/Reading/files/wagnerTPM.pdf)
 
-[original TMM normalization manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).
+[Between sample normalization in RNAseq](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/) - another great blog post from Harold Pimentel on between-sample normalization.
