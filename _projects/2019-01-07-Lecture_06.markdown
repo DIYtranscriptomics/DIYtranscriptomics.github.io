@@ -2,7 +2,7 @@
 title: 'Wrangling gene expression data'
 subtitle: 'Lecture 6 • 2019.02.27 • Hill 130 • 3-5pm'
 date: 2019-01-07 00:00:00
-description: After filtering and normalizing our data in R, we'll use the Tidyverse tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data quickly and easily. 
+description: After filtering and normalizing our data in R, we'll apply the 'grammar of graphics' and the principles of 'tidy data' to plot, change, sort, filter, arrange and summarize expression data quickly and easily. 
 featured_image: '/images/tidyDNA.jpg'
 ---
 
@@ -15,7 +15,7 @@ No lecture slides for this class.  We'll spend the entire time working on Step 2
 
 ## Overview
 
-We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package along with other tools from his [tidyverse](https://www.tidyverse.org/) of tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.
+We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package along with other tools from his [tidyverse](https://www.tidyverse.org/) of R packages to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.
 
 ## Goals
 

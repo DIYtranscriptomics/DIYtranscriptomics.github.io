@@ -2,7 +2,7 @@
 title: 'Functional enrichment analysis'
 subtitle: 'Lecture 12 • 2019.04.10 • Hill 130 • 3-5pm'
 date: 2019-01-01 00:00:00
-description: Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  Toward this end, you will learn how to carry out functional enichment analyses using [Gene Ontology].  You'll also see some different options for how to present your functional enrichment results.
+description: Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  To address this question, in this class you'll learn how to carry out functional enichment analyses using Gene Ontology and Gene Set Enrichment methods.  You'll also explore different options for how to present your functional enrichment results.
 featured_image: '/images/connections.png'
 ---
 
@@ -11,7 +11,7 @@ featured_image: '/images/connections.png'
 
 ## Overview
 
-Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  Toward this end, you will learn how to carry out functional enichment analyses using [Gene Ontology](http://geneontology.org/).  You'll also see some different options for how to present your functional enrichment results.
+Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  Toward this end, you will learn how to carry out functional enichment analyses using [Gene Ontology](http://geneontology.org/) and [Gene Set Enrichment Analysis (GSEA)](http://software.broadinstitute.org/gsea/index.jsp).  You'll also explore  different options for how to present your functional enrichment results graphically.
 
 ## Goals
 

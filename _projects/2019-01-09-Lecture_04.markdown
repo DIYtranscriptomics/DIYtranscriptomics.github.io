@@ -2,7 +2,7 @@
 title: 'Understanding RNAseq count data'
 subtitle: 'Lecture 4 • 2019.02.13 • Hill 131 • 3-5pm'
 date: 2019-01-09 00:00:00
-description: Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization within and between samples.  To conclude this class, we'll read our Kallisto data into the R environment.  
+description: Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script.  
 featured_image: '/images/abacus.jpg'
 ---
 
@@ -14,13 +14,14 @@ featured_image: '/images/abacus.jpg'
 
 ## Overview
 
- Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization within and between samples.  To conclude this class, we'll read our Kallisto data into the R environment.  
+ Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script.   
 
 ## Goals
 
 * Review steps from last class (using Kallisto).
 * Discuss output from Kallisto and units of measurement for RNAseq and ‘normalization’
 * Open and discuss our first script, including installation of packages
+* Begin to discuss annotations (time permitting)
 
 ## Code
 

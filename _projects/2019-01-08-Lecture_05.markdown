@@ -2,7 +2,7 @@
 title: 'Starting your R workflow'
 subtitle: 'Lecture 5 • 2019.02.20 • Hill 131 • 3-5pm'
 date: 2019-01-08 00:00:00
-description: Now that we've aligned our reads, it's time to get our data into R.  We'll take this opportunity to discuss the basics of working in R, including how to access packages and help documentation, as well as understanding the basic structure of a script. With our data in R, we'll talk about study design and use Sleuth for differentially transcript analysis.  
+description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of a script. We'll then access annotation data and read our Kallisto results into R.  Our class concludes with discussing study design and using Sleuth for differentially transcript expression analysis.  
 featured_image: '/images/first_step.jpg'
 ---
 
@@ -13,13 +13,14 @@ No lecture slides for this class.  We'll spend the entire time working on Step 1
 
 ## Overview
 
-Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment.
+We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of a script. We'll then access annotation data before reading our Kallisto results into R.  Our class concludes with discussing study design and using Sleuth for differentially transcript expression analysis.
 
 ## Goals
 
 * Review basic elements of our scripts
+* Access annotation data using the Biomart package
 * View Kallisto results using Sleuth
-* Read our transcript abundance measurements into the R environment using TxImport
+* Read Kallisto transcript abundance measurements into the R environment using TxImport
 
 ## Code
 
