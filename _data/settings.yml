@@ -18,6 +18,8 @@ menu_settings:
       url: '/scripts'
     - title: 'Help'
       url: '/help'
+    - title: 'Register'
+      url: '/register'
 
 footer_settings:
   footer_tagline: A course on using open-source tools to analyze RNAseq data.
