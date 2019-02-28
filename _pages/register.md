@@ -1,6 +1,6 @@
 ---
-title: Registration
-subtitle: Sign-up now!
+title: Sign-up now!
+subtitle: Pre-register to take DIYtranscriptomics at PennVet.
 description: Pre-register to take DIYtranscriptomics at PennVet.
 ---
 
@@ -9,7 +9,7 @@ If you're interested in taking the course, please complete the google form below
 **Note** - this course is not for credit. Enrollment is voluntary.  If you are a graduate student, you can inquire with your graduate group to request credit for the course as an independent study.
 
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdKb786tEiFUqZH9bnUFHlieWK3fcofend4326cWYfyOKQYGg/viewform?embedded=true" width="640" height="2512" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdKb786tEiFUqZH9bnUFHlieWK3fcofend4326cWYfyOKQYGg/viewform?embedded=true" width="800" height="2512" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 
 
