@@ -42,9 +42,3 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 [original TMM normalization manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).
 
-
-## Video
-
-**Recorded lecture** 
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdKb786tEiFUqZH9bnUFHlieWK3fcofend4326cWYfyOKQYGg/viewform?embedded=true" width="640" height="2512" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
