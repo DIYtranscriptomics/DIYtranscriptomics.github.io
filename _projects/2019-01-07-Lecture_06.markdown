@@ -47,4 +47,4 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 **Recorded lecture** 
 
-<iframe src="https://upenn.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=0f58c604-4ba6-4590-8424-aa020003a1f9&v=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdKb786tEiFUqZH9bnUFHlieWK3fcofend4326cWYfyOKQYGg/viewform?embedded=true" width="640" height="2512" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
