@@ -8,7 +8,7 @@ featured_image: '/images/tidyDNA.jpg'
 
 <div style="text-align: right"> Image credit: Daniel Horowitz for NPR </div>
 
-No lecture slides for this class.  We'll spend the entire time working on Step 2 script.
+[Lecture slides](https://www.icloud.com/keynote/0wOhMvs1a4AZp-v4OMau1j67A#lecture05%5Frefslides) -  Although the entire class was spent working on the Step 2 script, there briefly referenced a few slides, which I've included here.
 
 [Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
 
@@ -43,3 +43,8 @@ We'll begin this class by filtering and normalzing our data, all while using the
 [original TMM normalization manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).
 
 
+## Video
+
+**Recorded lecture** 
+
+<iframe src="https://upenn.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=0f58c604-4ba6-4590-8424-aa020003a1f9&v=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
