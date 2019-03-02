@@ -27,11 +27,15 @@ In this class we’ll use multivariate statisical methods, including Principal C
 
 ## Code
 
-[Step 3 script](http://DIYtranscriptomics.github.io/Code/files/Step3_dataWrangling.R)
+[Step 3 script](http://DIYtranscriptomics.github.io/Code/files/Step3_multivariate.R)
 
 
 
 ## Reading
 
-I mentioned various unsupervised methods for dimensional reduction of your data (PCA, MDS, T-SNE).  In particular, T-SNE has become popular in representing single-cell RNAseq data, but it is also one of the more complex visualization methods to understand.  Although we didn't discuss this in class, I wanted to include a link to a [great blog post describing T-SNE](http://distill.pub/2016/misread-tsne/), as well as [the original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  Please familiarize yourself with these if you plan on using this visualziation method.
+[Blog post describing T-SNE](http://distill.pub/2016/misread-tsne/) - I mentioned various unsupervised methods for dimensional reduction of your data (PCA, MDS, T-SNE).  In particular, T-SNE has become popular in representing single-cell RNAseq data and flow cytometry data, but it is also one of the more complex visualization methods to understand. 
+
+[Original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  
+
+[UMAP](https://www.nature.com/articles/nbt.4314) - A new algorithm, called uniform manifold approximation and projection (UMAP) has been recently published and is gaining popularity in single cell RNAseq and flow cytometry analysis.  UMAP is proposed to preserve as much of the local and more of the global data structure than t-SNE, with a shorter run time.
  
