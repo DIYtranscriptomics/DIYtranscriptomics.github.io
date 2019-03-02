@@ -22,7 +22,7 @@ menu_settings:
       url: '/register'
 
 footer_settings:
-  footer_tagline: A course on using open-source tools to analyze RNAseq data.
+  footer_tagline: Teaching students how to use open-source tools to analyze RNAseq data since 2015.
 
 hero_settings:
   overlay_opacity: 0.8
