@@ -6,10 +6,10 @@
 
 # Load packages -----
 library(tidyverse) 
-library(hrbrthemes) # Install with 'devtools::install_github("hrbrmstr/hrbrthemes")'. I really like this package for setting a clean theme for my ggplot2 graphs.
+library(hrbrthemes) # I really like this package for setting a clean theme for my ggplot2 graphs.
 library(RColorBrewer) # provides access to color palettes for graphics
 library(reshape2) # for reshaping dataframes
-library(genefilter) #as the package name suggests, it's for filtering genes
+library(genefilter) # as the package name suggests, it's for filtering genes
 library(edgeR) # also for differential expression, but we only use for the DGEList object
 library(matrixStats) # let's us easily calculate stats on any matrix rows or columns
 
@@ -42,7 +42,7 @@ myCPM.stats <- transform(myCPM,
 head(myCPM.stats)
 #produce a scatter plot of the transformed data
 ggplot(myCPM.stats, aes(x=SD, y=MED)) +
-  geom_point(shape=8, size=2)
+  geom_point(shape=16, size=2)
 # Experiment with point shape and size
 # experiment with geom_hex
 # how would these graphs change if you log2 converted the data?
@@ -72,19 +72,18 @@ log2.cpm.df
 colnames(log2.cpm.df) <- sampleLabels
 # use the reshape2 package to 'melt' your dataframe (from wide to tall)
 log2.cpm.df.melt <- melt(log2.cpm.df)
-Log2.cpm.df.melt <- as_tibble(log2.cpm.df.melt)
 Log2.cpm.df.melt
 
 ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 95, size = 8, color = "black", show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="unfiltered, non-normalized",
-       caption=paste0("produced on ", Sys.time())) #using the Sys.time function from base R to print date/time on graph
-  #coord_flip() + #then change stat_summary shape to 124 to get vertical line 
+       caption=paste0("produced on ", Sys.time())) + #using the Sys.time function from base R to print date/time on graph
+  coord_flip() + #then change stat_summary shape to 124 to get vertical line 
   #theme_ipsum_rc() #this is my current fav theme, from the hrbrthemes package. Uses Ariel Narrow, a ideal typographic font for graphics, because it is condensed, has solid default kerning pairs and geometric numbers
-  #theme_modern_rc() #another cool theme from the hrbrthemes package, but won't work until you've downloaded some additional fonts for your OS
+  theme_modern_rc() #another cool theme from the hrbrthemes package, but won't work until you've downloaded some additional fonts for your OS
 
   # what do you think of the distribution of this data?
 
@@ -101,7 +100,6 @@ log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
 log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
 colnames(log2.cpm.filtered.df) <- sampleLabels
 log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
-log2.cpm.filtered.df.melt <- as_tibble(log2.cpm.filtered.df.melt)
 
 ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
@@ -111,7 +109,7 @@ ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
        subtitle="filtered, non-normalized",
        caption=paste0("produced on ", Sys.time())) +
   coord_flip() +
-  theme_ipsum_rc() 
+  theme_modern_rc() 
 
 # Normalize your data ----
 myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
@@ -119,12 +117,9 @@ myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
 
 # use the 'cpm' function from EdgeR to get counts per million from your normalized data
 log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
-
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
-
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
-log2.cpm.filtered.norm.df.melt <- as_tibble(log2.cpm.filtered.norm.df.melt)
 
 ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
@@ -134,7 +129,7 @@ ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) 
        subtitle="filtered, TMM normalized",
        caption=paste0("produced on ", Sys.time())) +
   coord_flip() +
-  theme_ipsum_rc() 
+  theme_modern_rc() 
 
 
 # the essentials ----
@@ -155,7 +150,6 @@ myColors <- brewer.pal(nsamples, "Paired")
 log2.cpm.df <- as_tibble(log2.cpm)
 colnames(log2.cpm.df) <- sampleLabels
 log2.cpm.df.melt <- melt(log2.cpm.df)
-Log2.cpm.df.melt <- as_tibble(log2.cpm.df.melt)
 
 ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
@@ -174,7 +168,6 @@ log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
-log2.cpm.filtered.norm.df.melt <- as_tibble(log2.cpm.filtered.norm.df.melt)
 
 ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +

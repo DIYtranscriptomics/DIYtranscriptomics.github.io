@@ -1,17 +1,30 @@
 ---
-title: 'Hackdash I'
+title: 'Accessing public data'
 subtitle: 'Lecture 8 • 2019.03.13 • Hill 130 • 3-5pm'
 date: 2019-01-05 00:00:00
-description: You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!
-featured_image: '/images/timepiece.jpg'
+description: In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.
+featured_image: '/images/DataDeluge.jpg'
 ---
 
-<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
+<div style="text-align: right"> Image credit: Brett Ryder, The Economist </div>
+
 
 ## Overview
 
-You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!
+In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.  
 
-## Question
+## Goals
 
-The hackdash question will be posted at the start of class.
+* Learn about ```fasterq_dump```
+* Explore ARCHS4 database programatically 
+* Discuss and explore LINCS L1000 database
+
+## Code
+
+[Step 4 script](http://DIYtranscriptomics.github.io/Code/files/Step4_publicData.R)
+
+## Reading
+
+[Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides web and R/bioconductor access to public RNAseq datasets from human and mouse,prealigned with Kallisto.
+
+[A Next Generation Connectivity Map: L1000 Platform and the First 1,000,000 Profiles. Cell, Nov, 2017](https://doi.org/10.1016/j.cell.2017.10.049).  Describes the development and use of a low-cost, reduced representation gene profiling method, termed L1000, applied to 1.3 million samples spanning many difference cell types, stimuli and timepoints. 
