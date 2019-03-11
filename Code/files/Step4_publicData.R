@@ -5,120 +5,119 @@
 
 # Load packages ------
 library(tidyverse)
+library(reshape2)
 library(rhdf5)
 library(edgeR)
-library(slinky) #for interacting with LINCS data
-library(csaw) #for CHIP-Seq analysis, but we'll use for handling SummarizedExperiment object
 
 # load ARCHS4 database -----
 # you should have already downloaded the most recent versions of mouse and human RNAseq data from ARCHS4 in hdf5 format
-# you should watch this video from the ARCHS4 website to better understand this format: https://www.youtube.com/watch?v=TjkWSBQuKoE
 # begin by setting the path to your archs4 data files
 archs4.human <- "~/Dropbox/publicData/human_matrix.h5"
 archs4.mouse <- "~/Dropbox/publicData/mouse_matrix.h5"
+# use the h5 list (h5ls) function from the rhdf5 package to look at the contents of these databases
+# but first, remember our Kallisto outputs were hdf5 files, so let's look at one of these first.
+h5ls("../readMapping/uninf_rep1/abundance.h5")
+h5ls(archs4.human)
+h5ls(archs4.mouse)
 
 # 133,776 samples from human
-samples.human <- h5read(archs4.human, "meta/Sample_geo_accession")
+all.samples.human <- h5read(archs4.human, name="meta/Sample_geo_accession")
+
 # 170,010 samples from mouse
-samples.mouse <- h5read(archs4.mouse, "meta/Sample_geo_accession")
+all.samples.mouse <- h5read(archs4.mouse, name="meta/Sample_geo_accession")
 
 # query ARCHS4 database ----
 # choose your samples based on GEO or SRA ID
-samp <- c("GSM1224927","GSM1066120","GSM1224923","GSM1224929","GSM1224924","GSM1066118","GSM1066119","GSM1224925","GSM1224930","GSM1872071","GSM2282084","GSM1872064","GSM1872067","GSM1704845")
-sample_locations <- which(samples.human %in% samp)
-# Identify columns to be extracted from ARCHS4 database
-tissue <- h5read(archs4.human, "meta/Sample_source_name_ch1")
-genes <- h5read(archs4.human, "meta/genes")
+mySamples <- c("GSM2310941", # WT_unstim_rep1
+               "GSM2310942", # WT_unstim_rep2
+               "GSM2310943", # Ripk3_unstim_rep1
+               "GSM2310944", # Ripk3_unstim_rep2
+               "GSM2310945", # Ripk3Casp8_unstim_rep1
+               "GSM2310946", # Ripk3Casp8_unstim_rep2
+               "GSM2310947", # WT_LPS.6hr_rep1
+               "GSM2310948", # WT_LPS.6hr_rep2
+               "GSM2310949", # Ripk3_LPS.6hr_rep1
+               "GSM2310950", # Ripk3_LPS.6hr_rep2
+               "GSM2310951", # Ripk3Casp8_LPS.6hr_rep1
+               "GSM2310952") # Ripk3Casp8_LPS.6hr_rep2
 
-# extract expression data from ARCHS4 ----
-expression <- h5read(archs4.human, "data/expression", index=list(1:length(genes), sample_locations))
+# Identify columns to be extracted from ARCHS4 database
+my.sample.locations <- which(all.samples.mouse %in% mySamples)
+# extract gene symbols from the metadata
+genes <- h5read(archs4.mouse, "meta/genes")
+
+# Extract expression data from ARCHS4 ----
+expression <- h5read(archs4.mouse, "data/expression", index=list(1:length(genes), my.sample.locations))
 H5close()
 rownames(expression) <- genes
-colnames(expression) <- samples.human[sample_locations]
-colSums(expression)
-archs4.dge <- DGEList(expression)
-archs4.log2.cpm <- cpm(archs4.dge, log=TRUE)
-colnames(archs4.log2.cpm) <- colnames(expression)
-write_tsv(archs4.log2.cpm, "expression.txt")
+colnames(expression) <- all.samples.mouse[my.sample.locations]
+colSums(expression) #this shows the sequencing depth for each of the samples you've extracted
+archs4.dgelist <- DGEList(expression)
+archs4.cpm <- cpm(archs4.dgelist)
 
+# Filter and normalize extracted data ----
+table(rowSums(archs4.dgelist$counts==0)==9)
+keepers <- rowSums(archs4.cpm>1)>=2
+archs4.dgelist.filtered <- archs4.dgelist[keepers,]
+dim(archs4.dgelist.filtered)
+archs4.dgelist.filtered.norm <- calcNormFactors(archs4.dgelist.filtered, method = "TMM")
 
-# Load LINCS L1000 database ----
-# LINCS Phase 1 data is in GEO series GSE92742 and includes data for 1,319,138 samples
-# LINCS Phase 2 data is in GEO series GSE70138 and includes data for 354,123 samples
-# for each sample, the expression of 978 'landmark' genes was measured using luminex beads, which are then used to computationaly infer the expression of an additional 11,350 genes
-# LINCS data is stored in a GCTx file, which is a format based on HDF5, which you can learn more about here (https://www.biorxiv.org/content/early/2017/11/30/227041)
-# you can download and query these GCTx files, or query the main warehouse for LINCS data, called Clue.io
+archs4.filtered.norm.log2.cpm <- cpm(archs4.dgelist.filtered, log=TRUE)
+colnames(archs4.filtered.norm.log2.cpm) <- names
 
-#begin by setting the path to our files for the L1000 phase 2 data (available at https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70138)
-key <- "44fa56ffbe35ee04fc291c73505058e2" #this is a user specific key that you'll need to generate for yourself by creating a free account on Clue.io
-L1K.phase1.gctx <- "~/Dropbox/publicData/GSE92742_Broad_LINCS_Level3_INF_mlr12k_n1319138x12328.gctx"
-L1K.phase1.info <- "~/Dropbox/publicData/GSE92742_Broad_LINCS_inst_info.txt"
-L1K.phase2.gctx <- "~/Dropbox/publicData/GSE70138_Broad_LINCS_Level3_INF_mlr12k_n345976x12328_2017-03-06.gctx"
-L1K.phase2.info <- "~/Dropbox/publicData/GSE70138_Broad_LINCS_inst_info_2017-03-06.txt"
-#now you're ready to create the slinky object that stores all the data from the files above
-slob.phase1 <- Slinky(key, L1K.phase1.gctx, L1K.phase1.info)
-slob.phase2 <- Slinky(key, L1K.phase2.gctx, L1K.phase2.info)
+# Extract sample metadata from ARCHS4 to create a study design file ----
+# extract the sample source
+Sample_source_name_ch1 <- h5read(archs4.mouse, "meta/Sample_source_name_ch1")
+# extract sample title
+Sample_title <- h5read(archs4.mouse, name="meta/Sample_title")
+# extract sample characteristics
+Sample_characteristics<- h5read(archs4.mouse, name="meta/Sample_characteristics_ch1")
 
-# Query L1000 Phase 1 data by accessing clue.io ----
-# since phase 1 contains so much data, it can be hard to parse these files locally on your laptop
-# instead, we'll query the Clue.io API
-# First, explore the Phase 1 data based on metadata in the info.txt file
-phase1meta.df <- as_tibble(metadata(slob.phase1))
-glimpse(phase1meta.df)
+# let's try putting this all together in a study design file
+studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
+                   Sample_source = Sample_source_name_ch1[my.sample.locations],
+                   Sample_characteristics = Sample_characteristics[my.sample.locations])
 
-#take a look at the data grouped by perturbagen
-purturbagen.phase1 <- phase1meta.df %>%
-  group_by(pert_iname) %>%
-  summarize(n())
+#based on what we extracted from ARCHS4 above, lets customize and clean-up this study design file
+studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
+                   genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
+                   treatment = c("unstim", "unstim", "unstim", "unstim", "unstim", "unstim", "LPS", "LPS", "LPS", "LPS", "LPS", "LPS"))
 
-#take a look at the data grouped by cell line
-cellLine.phase1 <- phase1meta.df %>%
-  group_by(cell_id) %>%
-  summarize(n())
+# Pricipal component analysis (PCA) -------------
+pca.res <- prcomp(t(archs4.filtered.norm.log2.cpm), scale.=F, retx=T)
+#look at pca.res in environment
+ls(pca.res)
+summary(pca.res) # Prints variance summary for all principal components.
+x <- pca.res$rotation #$rotation shows you how much each gene influenced each PC (called 'scores')
+pca.res$x #$x shows you how much each sample influenced each PC (called 'loadings')
+#note that these loadings have a magnitude and a direction (this is the basis for making a PCA plot)
+pc.var<-pca.res$sdev^2 #sdev^2 gives you the eigenvalues
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+pc.per
 
-#take a look at the data grouped by timepoint
-timepoint.phase1 <- phase1meta.df %>%
-  group_by(pert_time) %>%
-  summarize(n())
+# Visualize your PCA result ------------------
+#lets first plot any two PCs aslgainst each other
+#We know how much each sample contributes to each PC (loadings), so let's plot
+pca.res.df <- as_tibble(pca.res$x)
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$treatment)) +
+  geom_point(size=4) +
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  labs(title="PCA plot",
+       caption=paste0("produced on ", Sys.time())) +
+  theme_ipsum_rc()
 
-#use the 'loadL1K' function from Slinky to create an summarizedExperiment object directly from the Clue.io query
-phase1 <- loadL1K(slob.phase1, where_clause = list(pert_type = "trt_cp", 
-                                                   pert_iname = "quinpirole", 
-                                                   cell_id = "A375", 
-                                                   is_gold = TRUE), inferred = FALSE)
+# now try painting other variables from your study design file onto this PCA.
+# can you determine the relationship between PC2 and your metadata?
 
-#convert the summarizedExperiment into a DGEList object using the 'asDGEList' function from the csaw package
-phase1.DGE <- asDGEList(phase1)
-
-# Query L1000 Phase 2 data directly from local files ----
-# this approach should be used for the Phase 2 data, which is not yet on Clue.io
-# begin by exploring Phase 2 based on metadata in the info.txt file
-phase2meta.df <- as_tibble(metadata(slob.phase2))
-glimpse(phase2meta.df)
-
-#take a look at the data grouped by perturbagen
-purturbagen.phase2 <- phase2meta.df %>%
-  group_by(pert_iname) %>%
-  summarize(n())
-
-#take a look at the data grouped by cell line
-cellLine.phase2 <- phase2meta.df %>%
-  group_by(cell_id) %>%
-  summarize(n())
-
-#take a look at the data grouped by timepoint
-timepoint.phase2 <- phase2meta.df %>%
-  group_by(pert_time) %>%
-  summarize(n())
-
-# Identify samples of interest based on metadata file
-col.ids <- which(metadata(slob.phase2)$pert_type == "trt_cp" & 
-                  metadata(slob.phase2)$pert_iname == "aminoguanidine" & 
-                  metadata(slob.phase2)$cell_id == "A375")
-
-#retrieve data for these samples from the .gctx file
-L1k.data <- readGCTX(slob.phase2[, col.ids])
-L1k.dge <- DGEList(L1k.data)
-L1k.log2.cpm <- cpm(L1k.dge)
-
-
+# now create a small multiple PCA plot
+melted <- cbind(factor(studyDesign$treatment), melt(pca.res$x[,1:4]))
+head(melted) #look at your 'melted' data
+colnames(melted) <- c('group', 'treatment', 'PC', 'loadings')
+ggplot(melted) +
+  geom_bar(aes(x=treatment, y=loadings, fill=group), stat="identity") +
+  facet_wrap(~PC) +
+  labs(title="PCA 'small multiples' plot",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() +
+  theme_ipsum_rc()

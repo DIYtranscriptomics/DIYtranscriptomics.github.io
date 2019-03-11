@@ -33,7 +33,7 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 
 [Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides web and R/bioconductor access to public RNAseq datasets from human and mouse,prealigned with Kallisto.
 
-[Activity of Uncleaved Caspase-8 Controls Anti-bacterial Immune Defense and TLR-Induced Cytokine Production Independent of Cell Death, Ocg, 2016](https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005910).  This paper contains the data we'll retrieve from a public gene expression repository.  The data is available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86922)
+[Activity of Uncleaved Caspase-8 Controls Anti-bacterial Immune Defense and TLR-Induced Cytokine Production Independent of Cell Death, Oct, 2016](https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005910).  This paper contains the data we'll retrieve from a public gene expression repository.  The data is available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86922)
 
 
 ## Video
