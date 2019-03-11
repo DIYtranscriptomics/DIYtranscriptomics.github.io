@@ -2,7 +2,7 @@
 title: 'Accessing public data'
 subtitle: 'Lecture 8 • 2019.03.13 • Hill 130 • 3-5pm'
 date: 2019-01-05 00:00:00
-description: In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.
+description: In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO).
 featured_image: '/images/DataDeluge.jpg'
 ---
 
@@ -11,20 +11,34 @@ featured_image: '/images/DataDeluge.jpg'
 
 ## Overview
 
-In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.  
+In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO). 
 
 ## Goals
 
 * Learn about ```fasterq_dump```
+* Learn about HDF5 file format
 * Explore ARCHS4 database programatically 
-* Discuss and explore LINCS L1000 database
 
 ## Code
 
 [Step 4 script](http://DIYtranscriptomics.github.io/Code/files/Step4_publicData.R)
 
+## Downloads
+
+[ARCHS4 data in HDF5 format](https://amp.pharm.mssm.edu/archs4/download.html) - Download the *human_matrix.h5 v6* and the *mouse_matrix.h5 v6*.  These HDF5 files contain RNAseq data already aligned using Kallisto for 133,776 and 170,010 samples, respectively.  Note that each of these files will take about 4Gb of space on your hard-drive. 
+
+
+
 ## Reading
 
 [Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides web and R/bioconductor access to public RNAseq datasets from human and mouse,prealigned with Kallisto.
 
-[A Next Generation Connectivity Map: L1000 Platform and the First 1,000,000 Profiles. Cell, Nov, 2017](https://doi.org/10.1016/j.cell.2017.10.049).  Describes the development and use of a low-cost, reduced representation gene profiling method, termed L1000, applied to 1.3 million samples spanning many difference cell types, stimuli and timepoints. 
+[Activity of Uncleaved Caspase-8 Controls Anti-bacterial Immune Defense and TLR-Induced Cytokine Production Independent of Cell Death, Ocg, 2016](https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005910).  This paper contains the data we'll retrieve from a public gene expression repository.  The data is available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86922)
+
+
+## Video
+
+**ARCHS4 video describing how HDF5 files were created from gene expression data (13 min)**
+
+<iframe src="https://www.youtube.com/watch?v=TjkWSBQuKoE" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
