@@ -40,5 +40,6 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 
 **ARCHS4 video describing how HDF5 files were created from gene expression data (13 min)**
 
-<iframe src="https://www.youtube.com/watch?v=TjkWSBQuKoE" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/TjkWSBQuKoE" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
 
