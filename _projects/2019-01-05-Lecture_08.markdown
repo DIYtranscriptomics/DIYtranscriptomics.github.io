@@ -8,6 +8,8 @@ featured_image: '/images/DataDeluge.jpg'
 
 <div style="text-align: right"> Image credit: Brett Ryder, The Economist </div>
 
+[Lecture slides](https://www.icloud.com/keynote/0eFM_9DUG9UmIULnEPYqgr5Jg#Lecture_06%5FPublicData)
+
 
 ## Overview
 
@@ -28,10 +30,11 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 [ARCHS4 data in HDF5 format](https://amp.pharm.mssm.edu/archs4/download.html) - Download the *human_matrix.h5 v6* and the *mouse_matrix.h5 v6*.  These HDF5 files contain RNAseq data already aligned using Kallisto for 133,776 and 170,010 samples, respectively.  Note that each of these files will take about 4Gb of space on your hard-drive. 
 
 
-
 ## Reading
 
-[Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides web and R/bioconductor access to public RNAseq datasets from human and mouse,prealigned with Kallisto.
+[Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides convenient access to public RNAseq datasets, already prealigned with Kallisto.  You can access data either through the [ARCHS4 website](https://amp.pharm.mssm.edu/archs4/) or using the [ARCHS4 R package](https://github.com/denalitherapeutics/archs4).
+
+[Digital Expression Explorer 2: a repository of 4.5 trillion uniformly processed RNA-seq reads and counting](https://zenodo.org/record/1561840#.XIlI0hNKjOQ) - similar to ARCHS4, the DEE2 project leverages Kallisto and GEO/SRA to make hundreds of thousands of samples readily available to you, either through [their website](http://dee2.io/), or through R using the [DEE2 package](https://github.com/markziemann/dee2/blob/master/AccessDEEfromR.md)
 
 [Activity of Uncleaved Caspase-8 Controls Anti-bacterial Immune Defense and TLR-Induced Cytokine Production Independent of Cell Death, Oct, 2016](https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005910).  This paper contains the data we'll retrieve from a public gene expression repository.  The data is available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86922)
 
