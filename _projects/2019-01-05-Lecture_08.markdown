@@ -10,6 +10,8 @@ featured_image: '/images/DataDeluge.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0eFM_9DUG9UmIULnEPYqgr5Jg#Lecture_06%5FPublicData)
 
+[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due April 3rd
+
 
 ## Overview
 
@@ -32,7 +34,7 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 
 ## Reading
 
-[Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides convenient access to public RNAseq datasets, already prealigned with Kallisto.  You can access data either through the [ARCHS4 website](https://amp.pharm.mssm.edu/archs4/) or using the [ARCHS4 R package](https://github.com/denalitherapeutics/archs4).
+[Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018](https://www.nature.com/articles/s41467-018-03751-6).  Describes the ARCHS4 resource from Avi Ma'ayan's lab that provides convenient access to public RNAseq datasets, already prealigned with Kallisto.  You can access data either through the [ARCHS4 website](https://amp.pharm.mssm.edu/archs4/) or using the [rhdf5 package](https://www.bioconductor.org/packages/devel/bioc/vignettes/rhdf5/inst/doc/rhdf5.html).
 
 [Digital Expression Explorer 2: a repository of 4.5 trillion uniformly processed RNA-seq reads and counting](https://zenodo.org/record/1561840#.XIlI0hNKjOQ) - similar to ARCHS4, the DEE2 project leverages Kallisto and GEO/SRA to make hundreds of thousands of samples readily available to you, either through [their website](http://dee2.io/), or through R using the [DEE2 package](https://github.com/markziemann/dee2/blob/master/AccessDEEfromR.md)
 

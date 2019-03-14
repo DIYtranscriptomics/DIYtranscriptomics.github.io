@@ -8,6 +8,7 @@ library(tidyverse)
 library(reshape2)
 library(rhdf5)
 library(edgeR)
+library(hrbrthemes)
 
 # load ARCHS4 database -----
 # you should have already downloaded the most recent versions of mouse and human RNAseq data from ARCHS4 in hdf5 format
@@ -54,16 +55,16 @@ colnames(expression) <- all.samples.mouse[my.sample.locations]
 colSums(expression) #this shows the sequencing depth for each of the samples you've extracted
 archs4.dgelist <- DGEList(expression)
 archs4.cpm <- cpm(archs4.dgelist)
+colSums(archs4.cpm)
 
 # Filter and normalize extracted data ----
-table(rowSums(archs4.dgelist$counts==0)==9)
+table(rowSums(archs4.dgelist$counts==0)==12)
 keepers <- rowSums(archs4.cpm>1)>=2
 archs4.dgelist.filtered <- archs4.dgelist[keepers,]
 dim(archs4.dgelist.filtered)
 archs4.dgelist.filtered.norm <- calcNormFactors(archs4.dgelist.filtered, method = "TMM")
 
-archs4.filtered.norm.log2.cpm <- cpm(archs4.dgelist.filtered, log=TRUE)
-colnames(archs4.filtered.norm.log2.cpm) <- names
+archs4.filtered.norm.log2.cpm <- cpm(archs4.dgelist.filtered.norm, log=TRUE)
 
 # Extract sample metadata from ARCHS4 to create a study design file ----
 # extract the sample source
@@ -96,10 +97,10 @@ pc.per<-round(pc.var/sum(pc.var)*100, 1)
 pc.per
 
 # Visualize your PCA result ------------------
-#lets first plot any two PCs aslgainst each other
+#lets first plot any two PCs against each other
 #We know how much each sample contributes to each PC (loadings), so let's plot
 pca.res.df <- as_tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$treatment)) +
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$genotype)) +
   geom_point(size=4) +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
@@ -109,9 +110,10 @@ ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$treatment)) +
 
 # now try painting other variables from your study design file onto this PCA.
 # can you determine the relationship between PC2 and your metadata?
+# can we map one variable to point color and another to point shape?
 
 # now create a small multiple PCA plot
-melted <- cbind(factor(studyDesign$treatment), melt(pca.res$x[,1:4]))
+melted <- cbind(factor(studyDesign$genotype), melt(pca.res$x[,1:4]))
 head(melted) #look at your 'melted' data
 colnames(melted) <- c('group', 'treatment', 'PC', 'loadings')
 ggplot(melted) +
