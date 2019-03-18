@@ -8,10 +8,14 @@ featured_image: '/images/timepiece.jpg'
 
 <div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
 
-## Overview
+## The worm challenge
 
-You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!
+A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, *Schistosoma mansoni*.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following *in vivo* treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced.  To begin this challenge, you'll need to [Download the processed data](http://DIYtranscriptomics.github.io/Data/files/Schisto_Log2CPM.unfiltered.txt) and the [study design](http://DIYtranscriptomics.github.io/Data/files/Schisto_studyDesign.txt) and read both files into a clean R project.
 
-## Question
+The worm challenge requires that you use the tools you've learned in class for exploring multivariate data and wrangling dataframes.  **Note:** you do not need to filter, normalize, or preprocess the data in any way.  The data is represented at Log2 CPM.  
 
-The hackdash question will be posted at the start of class.
+The first team to submit the most complete answer (via the #hackdash channel on Slack) to the following two questions will win the challenge. 
+
+1. Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support you answer.
+
+2. Using dplyr 'verbs', identify the top 10 parasite genes induced by praziquantel treatment in female LE strain worms at the 24hr timepoint compared to control worms? The top 10 genes should be selected and ordered by *average* Log fold change for the groups of replicates.  Please include a table to support your answer.
