@@ -20,6 +20,6 @@ The first team to submit the most complete answer (via the #hackdash channel on 
 
 Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support you answer.
 
-## Question #1
+## Question #2
 
 Using dplyr 'verbs', identify the top 10 parasite genes induced by praziquantel treatment in female LE strain worms at the 24hr timepoint compared to control worms? The top 10 genes should be selected and ordered by *average* Log fold change for the groups of replicates.  Please include a table to support your answer.
