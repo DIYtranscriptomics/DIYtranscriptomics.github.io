@@ -1,7 +1,6 @@
 library(tidyverse)
 library(gt)
 library(hrbrthemes)
-library(reshape2)
 
 # read in data and study design ----
 data <- read_tsv("Schisto_Log2CPM.unfiltered.txt")
@@ -31,19 +30,19 @@ ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$parasiteSex)) +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
+       subtitle="PC1 reflects parasite sex",
        caption=paste0("produced on ", Sys.time())) +
   theme_ipsum_rc()
 
-# small multiples...not necessary, but useful for exploring such a large dataset
-melted <- cbind(factor(studyDesign$parasiteStrain), melt(pca.res$x[,1:4]))
-head(melted) #look at your 'melted' data
-colnames(melted) <- c('sex', 'name', 'PC', 'loadings')
-ggplot(melted) +
-  geom_bar(aes(x=name, y=loadings, fill=sex), stat="identity") +
-  facet_wrap(~PC) +
-  labs(title="PCA 'small multiples' plot",
+#now recolor according to another variables and PCs
+pca.res.df <- as_tibble(pca.res$x)
+ggplot(pca.res.df, aes(x=PC3, y=PC4, color=studyDesign$parasiteStrain)) +
+  geom_point(size=3) +
+  xlab(paste0("PC3 (",pc.per[3],"%",")")) + 
+  ylab(paste0("PC4 (",pc.per[4],"%",")")) +
+  labs(title="PCA plot",
+       subtitle="PC3/4 separate samples based on parasite strain",
        caption=paste0("produced on ", Sys.time())) +
-  coord_flip() +
   theme_ipsum_rc()
 
 # dplyr to ID top 10 genes ----

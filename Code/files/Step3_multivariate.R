@@ -30,7 +30,7 @@ write_tsv(mydata.df, "normData.txt") # Note: this is the data you would use as i
 # Hierarchical clustering ---------------
 #hierarchical clustering can only work on a data matrix, not a data frame
 #try using filtered and unfiltered data...how does this change the results
-distance <- dist(t(log2.cpm.filtered.norm), method="manhattan") #other dist methods are "maximum", "manhattan", "canberra", "binary" or "minkowski"
+distance <- dist(t(log2.cpm.filtered.norm), method="maximum") #other dist methods are "maximum", "manhattan", "canberra", "binary" or "minkowski"
 clusters <- hclust(distance, method = "complete") #other methods are ward.D, ward.D2, single, complete, average
 plot(clusters, labels=sampleLabels)
 
@@ -50,10 +50,10 @@ pc.per
 #lets first plot any two PCs aslgainst each other
 #We know how much each sample contributes to each PC (loadings), so let's plot
 pca.res.df <- as_tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
+ggplot(pca.res.df, aes(x=PC1, y=PC3, color=targets$treatment)) +
   geom_point(size=4) +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
-  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  ylab(paste0("PC3 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
   theme_ipsum_rc()
@@ -163,7 +163,6 @@ library(reshape2)
 library(DT)
 library(gt)
 library(plotly)
-library(hrbrthemes)
 
 mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
 colnames(mydata.df) <- c("geneSymbol", sampleLabels)

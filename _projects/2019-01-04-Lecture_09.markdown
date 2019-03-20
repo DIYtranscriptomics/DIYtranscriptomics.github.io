@@ -27,3 +27,7 @@ Using dplyr 'verbs', identify the top 10 parasite genes induced by praziquantel 
 ### Bonus
 
 Anything interesting stand out to you about the top genes on your list (requires a literature search)?  
+
+## Solution
+
+[Schisto_hackdash_solution.R](http://DIYtranscriptomics.github.io/Data/files/Schisto_hackdash_solution.R)
