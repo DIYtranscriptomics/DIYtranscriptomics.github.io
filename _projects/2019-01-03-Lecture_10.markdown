@@ -6,6 +6,8 @@ description: The ultimate goal of most transcriptional profiling experiments is 
 featured_image: '/images/apples.jpg'
 ---
 
+![](/images/schisto.png)
+
 ## Overview
 
 The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  Earlier in the course, we used [Sleuth](http://pachterlab.github.io/sleuth/) to get a quick view of differential transcript expression.  In this class, we'll dig into differential expression more deeply using the popular and venerable [Limma](http://www.bioconductor.org/packages/release/bioc/html/limma.html) package in R.  This gives us a chance to compare and contrast these two methods for identifying genes/transcripts of interest.  We'll also have a chance to talk about special cases when your analyses should include a paired design or correct for batch effects. 
