@@ -6,7 +6,9 @@ description: You may have heard of a Hackathon before - an event that typically 
 featured_image: '/images/timepiece.jpg'
 ---
 
-<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
+<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez (above) </div>
+<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
+
 
 ![](/images/schisto.png)
 
