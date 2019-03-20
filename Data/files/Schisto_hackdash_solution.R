@@ -3,6 +3,7 @@ library(gt)
 library(hrbrthemes)
 
 # read in data and study design ----
+#if the file is in the same directory as our analysis script, then no path is necessary
 data <- read_tsv("Schisto_Log2CPM.unfiltered.txt")
 
 #our data is in the form of a dataframe, but we need a data matrix for PCA

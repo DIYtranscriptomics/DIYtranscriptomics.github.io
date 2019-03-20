@@ -8,6 +8,8 @@ featured_image: '/images/timepiece.jpg'
 
 <div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
 
+![](/images/schisto.png)
+
 ## The worm challenge
 
 A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, *Schistosoma mansoni*.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following *in vivo* treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced.  To begin this challenge, you'll need to [Download the processed data](http://DIYtranscriptomics.github.io/Data/files/Schisto_Log2CPM.unfiltered.txt) and the [study design](http://DIYtranscriptomics.github.io/Data/files/Schisto_studyDesign.txt) and read both files into a clean R project.
