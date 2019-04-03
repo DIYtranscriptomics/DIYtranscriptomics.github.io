@@ -19,7 +19,7 @@ Lists of differentially expressed transcripts often include different patterns o
 
 ## Code
 
-[Step 6 script](http://DIYtranscriptomics.github.io/Code/files/Step6_heatmap.R)
+[Step 6 script](http://DIYtranscriptomics.github.io/Code/files/Step6_modules.R)
 
 
 ## Reading
