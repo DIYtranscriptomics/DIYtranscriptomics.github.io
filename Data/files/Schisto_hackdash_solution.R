@@ -26,7 +26,7 @@ pc.per<-round(pc.var/sum(pc.var)*100, 1)
 #lets first plot any two PCs against each other
 #We know how much each sample contributes to each PC (loadings), so let's plot
 pca.res.df <- as_tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$parasiteSex)) +
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$parasite_drugSensitivity_praziquantel)) +
   geom_point(size=3) +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
