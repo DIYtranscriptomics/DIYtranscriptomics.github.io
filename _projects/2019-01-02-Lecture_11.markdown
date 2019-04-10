@@ -8,6 +8,8 @@ featured_image: '/images/bird_flock.jpg'
 
 <div style="text-align: right"> Image credit: Adelaide Tyrol </div>
 
+[Homework: Reporting with Rmarkdown (~4hrs)](https://www.datacamp.com/courses/reporting-with-r-markdown) - due April 24th
+
 ## Overview
 
 Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.

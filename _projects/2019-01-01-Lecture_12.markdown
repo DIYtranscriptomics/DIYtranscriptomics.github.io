@@ -8,6 +8,10 @@ featured_image: '/images/connections.png'
 
 <div style="text-align: right"> Image credit: 'Connections' by Marsha Glickman </div>
 
+[Lecture slides](https://www.icloud.com/keynote/0Naa63iYXqX4nTRUq2PF0Rfpg#Lecture11%5FFunctionalEnrichment)
+
+[Homework: Reporting with Rmarkdown (~4hrs)](https://www.datacamp.com/courses/reporting-with-r-markdown) - due April 24th
+
 
 ## Overview
 
@@ -22,7 +26,7 @@ Now that you've identified differentially expressed genes, what do they mean and
 
 ## Code
 
-[Step 7 script](http://DIYtranscriptomics.github.io/Code/files/Step7_geneSetAnalysis.R)
+[Step 7 script](http://DIYtranscriptomics.github.io/Code/files/Step7_functionalEnrichment.R)
 
 ## Reading
 
