@@ -8,10 +8,28 @@ featured_image: '/images/timepiece.jpg'
 
 <div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
 
-## Overview
+![](/images/leish.png)
 
-In this second and final Hackdash, expect your most challening problem – one that will incorporate both differential gene expression analysis and downstream functional enrichment analysis.
+## The Leishmania challenge
 
-## Question
+You have just finished a detailed analysis of the human transcriptome in the skin of patients affected by cutaneous leishmaniasis.  After submitting your paper, a reviewer asked that you also examine differential expression of noncoding RNAs (ncRNAs) from the same data, and include this new analysis as a supplementary figure for the paper.  
 
-The hackdash question will be posted at the start of class.
+We have aligned the data to the Ensembl ncRNA reference for you.  If you're interested, you can view the QC results for the raw fastq files and the Kallisto alignments in this **[multiQC report](http://DIYtranscriptomics.github.io/Data/files/multiqc_Leish_ncRNA_hackdash.html)**
+
+To succeed at the Leishmania challenge, you will need to download the following:
+
+* **[Data](http://DIYtranscriptomics.github.io/Data/files/Leish_ncRNA_hackdash.zip)** - this zip file includes kallisto alignments for 10 skin biopsies, 5 from *L. braziliensis* patients and 5 from healthy controls, as well as a study design file.
+
+Using the scripts we've covered in class, read these data into the R environment and begin a detailed analysis.  The team that submits the best supplementary figure (as judged by the TAs)that incorporates data mining/visualization strategies from the course will be declared the winner!
+
+## Tips
+
+* Begin by briefly sketching out what your figure might look like, and use your design to guide  selection of code needed to construct the necessary panels
+* use the 'essentials' code chunks at the end of each script to avoid unnecessary code
+* Build your figure as you go, so that you are ready to submit something when the 2hrs is up.
+* Don't worry about making interactive figures or tables, since this is for a journal article.
+* Don't worry about carrying out function enrichment analysis (GO or GSEA).  
+
+## Solution
+
+Stay tuned!
