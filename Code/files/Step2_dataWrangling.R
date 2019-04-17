@@ -63,6 +63,12 @@ log2.cpm <- cpm(myDGEList, log=TRUE)
 
 # Take a look at the distribution of the Log2 CPM
 nsamples <- ncol(log2.cpm)
+# this is our first time using colors in R
+# take a look at the color palettes available to you through RColorBrewer
+display.brewer.all()
+# you can also view only palettes that are colorblind friendly
+display.brewer.all(colorblindFriendly = TRUE)
+# now select colors from a single palette
 myColors <- brewer.pal(nsamples, "Paired")
 
 # 'coerce' your data matrix to a dataframe so that you can use tidyverse tools on it
@@ -138,6 +144,8 @@ library(reshape2)
 library(genefilter)
 library(edgeR) 
 library(matrixStats)
+library(hrbrthemes)
+
 groups2 <- targets$treatment2
 groups2 <- factor(groups2)
 sampleLabels <- targets$sample
@@ -151,7 +159,7 @@ log2.cpm.df <- as_tibble(log2.cpm)
 colnames(log2.cpm.df) <- sampleLabels
 log2.cpm.df.melt <- melt(log2.cpm.df)
 
-ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
   stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
@@ -161,6 +169,8 @@ ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   coord_flip() +
   theme_ipsum_rc() 
 
+table(rowSums(myDGEList$counts==0)==9)
+cpm <- cpm(myDGEList)
 keepers <- rowSums(cpm>1)>=3 #user defined
 myDGEList.filtered <- myDGEList[keepers,]
 myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
@@ -168,16 +178,6 @@ log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
-
-ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
-  geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
-  labs(y="log2 expression", x = "sample",
-       title="Log2 Counts per Million (CPM)",
-       subtitle="filtered, non-normalized",
-       caption=paste0("produced on ", Sys.time())) +
-  coord_flip() +
-  theme_ipsum_rc() 
 
 ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +

@@ -13,6 +13,9 @@ library(d3heatmap) #for making interactive heatmaps using D3
 # choose color pallette ----
 #Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]).
 myheatcolors1 <- greenred(75)
+display.brewer.all()
+display.brewer.all(colorblindFriendly = TRUE)
+
 
 # a color-blind friendly pallete
 myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
@@ -98,7 +101,7 @@ barplot(rep(10, max(module.assign)),
         horiz=T, names=unique(module.assign[clustRows$order]))
 
 #choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
-module.pick <- 2 #use 'c()' to grab more than one cluster from the heatmap.  e.g., c(1,2)
+module.pick <- 1 #use 'c()' to grab more than one cluster from the heatmap.  e.g., c(1,2)
 myModule <- diffGenes[names(module.assign[module.assign%in%module.pick]),] 
 hrsub <- hclust(as.dist(1-cor(t(myModule), method="pearson")), method="complete") 
 
@@ -116,7 +119,7 @@ moduleSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
 moduleSymbols <- as.vector(t(moduleSymbols))
 moduleData <- diffGenes[moduleSymbols,]
 moduleData.df <- as_tibble(moduleData, rownames = "geneSymbol")
-write_csv(moduleData.df,"module_downRegulated.csv")
+write_csv(moduleData.df,"module_upRegulated.csv")
 
 # OPTIONAL: make heatmap from an a priori list of genes ----
 #read in a text file containing the genes (with expression data) you want to include in the heatmap

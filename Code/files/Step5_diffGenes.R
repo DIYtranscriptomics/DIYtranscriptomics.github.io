@@ -15,6 +15,7 @@ library(hrbrthemes)
 library(plotly)
 
 # Set up your design matrix ----
+groups1 <- relevel(groups1, "uninfected")
 design <- model.matrix(~0 + groups1)
 colnames(design) <- levels(groups1)
 
@@ -37,30 +38,31 @@ ebFit <- eBayes(fits)
 #stats <- write.fit(ebFit)
 
 # TopTable to view DEGs -----
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC")
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=100, sort.by="logFC")
 
 # convert to a tibble
 myTopHits <- as_tibble(myTopHits, rownames = "geneSymbol")
-
+gt(myTopHits)
 
 # Volcano Plots ----
 # in topTable function above, set 'number=40000' to capture all genes
 
 # now plot
-ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) +
+p <- ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) +
   geom_point(size=2) +
   ylim(-0.5,12) +
   geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +
   geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", size=1) +
   geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", size=1) +
   #annotate("rect", xmin = 1, xmax = 12, ymin = -log10(0.01), ymax = 14, alpha=.2, fill="#BE684D") +
-  #annotate("rect", xmin = -1, xmax = -12, ymin = -log10(0.01), ymax = 14, alpha=.2, fill="#2C467A")
+  #annotate("rect", xmin = -1, xmax = -12, ymin = -log10(0.01), ymax = 14, alpha=.2, fill="#2C467A") +
   labs(title="Volcano plot",
        subtitle = "C. parvum infected vs. naive (HCT-8 cells)",
        caption=paste0("produced on ", Sys.time())) +
   theme_ipsum_rc()
 
 # how would you make the volcano plot above interactive?
+ggplotly(p)
 
 # decideTests to pull out the DEGs and make Venn Diagram ----
 results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=2)
