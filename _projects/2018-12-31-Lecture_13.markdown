@@ -18,7 +18,7 @@ We have aligned the data to the Ensembl ncRNA reference for you.  If you're inte
 
 To succeed at the Leishmania challenge, you will need to download the following:
 
-* **[Data](http://DIYtranscriptomics.github.io/Data/files/Leish_ncRNA_hackdash.zip)** - this zip file includes kallisto alignments for 10 skin biopsies, 5 from *L. braziliensis* patients and 5 from healthy controls, as well as a study design file.
+**[Data](http://DIYtranscriptomics.github.io/Data/files/Leish_ncRNA_hackdash.zip)** - this zip file includes kallisto alignments for 10 skin biopsies, 5 from *L. braziliensis* patients and 5 from healthy controls, as well as a study design file.
 
 Using the scripts we've covered in class, read these data into the R environment and begin a detailed analysis.  The team that submits the best supplementary figure (as judged by the TAs)that incorporates data mining/visualization strategies from the course will be declared the winner!
 
@@ -28,7 +28,7 @@ Using the scripts we've covered in class, read these data into the R environment
 * use the 'essentials' code chunks at the end of each script to avoid unnecessary code
 * Build your figure as you go, so that you are ready to submit something when the 2hrs is up.
 * Don't worry about making interactive figures or tables, since this is for a journal article.
-* Don't worry about carrying out function enrichment analysis (GO or GSEA).  
+* Don't worry about carrying out functional enrichment analysis (GO or GSEA).  
 
 ## Solution
 
