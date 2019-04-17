@@ -24,7 +24,7 @@ We'll begin this class by reviewing how to access R packages and help documentat
 
 ## Code
 
-[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R)
+[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_Sleuth_TxImport.R)
 
 ## Reading
 

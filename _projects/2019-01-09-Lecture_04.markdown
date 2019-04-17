@@ -25,7 +25,7 @@ featured_image: '/images/abacus.jpg'
 
 ## Code
 
-[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R)
+[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_Sleuth_TxImport.R)
 
 ## Reading
 
