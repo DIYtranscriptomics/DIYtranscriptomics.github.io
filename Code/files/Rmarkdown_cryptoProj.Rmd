@@ -1,0 +1,291 @@
+---
+title: "<center> The transcriptional response of intestinal epithelium (HCT-8) to infection with the protozoan parasite, _Cryptosporidium parvum_ <center>"
+author: "<center> Spring 2019 DIYtranscriptomics class <center><br>"
+date: "<center> _April, 2019_ <center>"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    number_sections: true
+  pdf_document:
+    fig_caption: yes
+    toc: yes
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+# Abstract
+This document contains all the code used to analyze the unpublished data from the ....  
+
+# R packages
+**These are the R/bioconductor packages used for this analysis:**
+```{r packages, message=FALSE, warning=FALSE, results='hide'}
+library(tidyverse)
+library(tximport)
+library(biomaRt)
+library(RColorBrewer) 
+library(reshape2) 
+library(genefilter)
+library(edgeR) 
+library(matrixStats)
+library(hrbrthemes)
+library(gplots) 
+library(limma)
+library(heatmaply)
+library(d3heatmap)
+library(DT)
+library(gt)
+library(plotly)
+```
+
+**This dynamic html summary report was compiled in Rmarkdown using the following packages:**
+```{r packages.continued, results='hide', message=FALSE, warning=FALSE}
+library(rmarkdown)
+library(knitr) 
+```
+
+# Data generation
+## read mapping with Kallisto
+```{bash read mapping, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+# paste you code for aligning reads here
+
+fastqc *.fastq.gz -t 24
+
+# first, we want to build an index from our reference fasta file 
+# I get my reference mammalian transcriptome files from here: https://useast.ensembl.org/info/data/ftp/index.html
+kallisto index -i Homo_sapiens.GRCh38.cdna.all.index Homo_sapiens.GRCh38.cdna.all.fa
+
+# now align all samples for the study, but use 30 bootstraps to model technical variance for each sample
+# note that we're also including the '&>' at the end of each line
+# this takes the information that would've been printed to our terminal, and outputs this in a log file in our project folder
+kallisto quant -i myHumanIndex -o uninf_rep1 -t 4 -b 30 --single -l 250 -s 30 Control1_mergedLanes_mergedRuns.fastq.gz &> uninf_rep1.log
+
+kallisto quant -i myHumanIndex -o uninf_rep2 -t 4 -b 30 --single -l 250 -s 30 Control2_mergedLanes_mergedRuns.fastq.gz &> uninf_rep2.log
+
+kallisto quant -i myHumanIndex -o uninf_rep3 -t 4 -b 30 --single -l 250 -s 30 Control3_mergedLanes_mergedRuns.fastq.gz &> uninf_rep3.log
+
+kallisto quant -i myHumanIndex -o crypto.wt_rep1 -t 4 -b 30 --single -l 250 -s 30 WT1_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep1.log
+
+kallisto quant -i myHumanIndex -o crypto.wt_rep2 -t 4 -b 30 --single -l 250 -s 30 WT2_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep2.log
+
+kallisto quant -i myHumanIndex -o crypto.wt_rep3 -t 4 -b 30 --single -l 250 -s 30 WT3_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep3.log
+
+kallisto quant -i myHumanIndex -o crypto.mut_rep1 -t 4 -b 30 --single -l 250 -s 30 Trans1_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep1.log
+
+kallisto quant -i myHumanIndex -o crypto.mut_rep2 -t 4 -b 30 --single -l 250 -s 30 Trans2_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep2.log
+
+kallisto quant -i myHumanIndex -o crypto.mut_rep3 -t 4 -b 30 --single -l 250 -s 30 Trans3_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep3.log
+```
+
+## read mapping summary
+```{r mapping stats, message=FALSE, warning=FALSE}
+# create a graph of your read mapping stats if you want
+```
+
+## importing data into R
+```{r data import, message=FALSE, warning=FALSE}
+# importing data into R using Tximport package
+targets <- read_tsv("../../studyDesign.txt")# read in your study design
+path <- file.path("../readMapping", targets$sample, "abundance.h5") # set file paths to your mapped data
+targets <- mutate(targets, path) # add paths to your study design (only necessary for Sleuth)
+Hs.anno <- useMart(biomart="ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl") # select 'mart' from biomaRt for annotations
+Tx <- getBM(attributes=c('ensembl_transcript_id_version', # get gene symbols for each transcript ID
+                         'external_gene_name'),
+            mart = Hs.anno)
+Tx <- as_tibble(Tx) # convert this annotation mapping file to a tibble (the tidyverse version of a dataframe)
+Txi_gene <- tximport(path, #reading kallisto data into R
+                     type = "kallisto", 
+                     tx2gene = Tx, 
+                     txOut = FALSE, 
+                     countsFromAbundance = "lengthScaledTPM")
+myCPM <- as_tibble(Txi_gene$abundance, rownames = "geneSymbol") # these are you counts after adjusting for transcript length
+myCounts <- as_tibble(Txi_gene$counts, rownames = "geneSymbol") # these are your transcript per million (TPM) values, or counts per million (CPM) if you collapsed data to gene level
+```
+
+# Preprocessing and normalization
+## study design
+```{r design, message=FALSE, warning=FALSE}
+#read in your study design file from local directory
+groups1 <- targets$treatment
+groups1 <- factor(groups1)
+sampleLabels <- targets$sample
+myDGEList <- DGEList(Txi_gene$counts)
+save(myDGEList, file = "myDGEList")
+load(file = "myDGEList")
+log2.cpm <- cpm(myDGEList, log=TRUE)
+nsamples <- ncol(log2.cpm)
+myColors <- brewer.pal(nsamples, "Paired")
+log2.cpm.df <- as_tibble(log2.cpm)
+colnames(log2.cpm.df) <- sampleLabels
+log2.cpm.df.melt <- melt(log2.cpm.df)
+```
+
+## raw data
+```{r raw, message=FALSE, warning=FALSE}
+#read in your Txi_gene object and graph raw data
+ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="unfiltered, non-normalized",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() +
+  theme_ipsum_rc() 
+```
+
+## filtered normalized data
+```{r filtering, message=FALSE, warning=FALSE}
+#filter out lowly expressed genes or transcripts and regraph
+table(rowSums(myDGEList$counts==0)==9)
+cpm <- cpm(myDGEList)
+keepers <- rowSums(cpm>1)>=3 #user defined
+myDGEList.filtered <- myDGEList[keepers,]
+myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
+log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
+log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
+colnames(log2.cpm.filtered.norm.df) <- sampleLabels
+log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
+
+ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, TMM normalized",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() +
+  theme_ipsum_rc() 
+```
+
+# Exploratory data analysis
+## Principal component analysis (PCA)
+```{r PCA, message=FALSE, warning=FALSE}
+#carry out PCA of filtered normalized data and graph
+pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
+pc.var<-pca.res$sdev^2
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+
+pca.res.df <- as_tibble(pca.res$x)
+ggplotly(ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups1)) +
+           geom_point(size=5) +
+           theme(legend.position="right"))
+```
+
+
+# Differential gene analysis
+## set up model matrix
+```{r model, message=FALSE, warning=FALSE}
+#set-up your experimental design using the model.matrix
+design <- model.matrix(~0 + groups1)
+colnames(design) <- levels(groups1)
+```
+
+## mean-variance and linear model
+```{r linear model, message=FALSE, warning=FALSE}
+#use Limma VOOM to model mean-vairance trend
+v.DEGList.filtered.norm <- voom(myDGEList.filtered.norm, design, plot = FALSE)
+```
+
+## set up contrasts
+```{r contrasts, message=FALSE, warning=FALSE}
+#fit linear model to deata and set-up contrast matrix with pairwise comparisons of interest
+contrast.matrix <- makeContrasts(infection_with_WT = crypto.wt - uninfected,
+                                 infection_with_Mut = crypto.mut - uninfected,
+                                 levels=design)
+```
+
+## linear model and Bayesan stats
+```{r Bayes, message=FALSE, warning=FALSE}
+#extract bayesian stats for linear model fit
+fit <- lmFit(v.DEGList.filtered.norm, design)
+fits <- contrasts.fit(fit, contrast.matrix)
+ebFit <- eBayes(fits)
+```
+
+## Top 10 DEGS
+```{r topTable, message=FALSE, warning=FALSE}
+#display top N genes for a single pairwise comparison 
+#insert additional code chuncks for additional pairwise comparisons
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=10, sort.by="logFC")
+myTopHits <- as_tibble(myTopHits, rownames = "geneSymbol")
+```
+
+## Volcano plot - infected vs double neg
+```{r volcano1, message=FALSE, warning=FALSE}
+#make volcano plot of pairwise comparison of interest
+#insert additional code chuncks for additional pairwise comparisons
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC")
+myTopHits <- as_tibble(myTopHits, rownames = "geneSymbol")
+ggplotly(ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) +
+           geom_point(size=2) +
+           ylim(-0.5,12) +
+           geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +
+           geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", size=1) +
+           geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", size=1) +
+           labs(title="Volcano plot",
+                subtitle = "C. parvum infected vs. naive (HCT-8 cells)",
+                caption=paste0("produced on ", Sys.time())) +
+           theme_ipsum_rc())
+```
+
+## Venn
+```{r Venn, message=FALSE, warning=FALSE}
+#run 'decideTests' function and plot results as Venn diagram
+```
+
+## DEGs
+```{r DEGs, message=FALSE, warning=FALSE}
+#extract DEGs and create data frame with group averages and logFCs.  Display as table
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=2)
+colnames(v.DEGList.filtered.norm$E) <- sampleLabels
+diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
+diffGenes.df <- as_tibble(diffGenes, rownames = "geneSymbol")
+mydata.sort <- diffGenes.df %>%
+  dplyr::arrange(desc(LogFC.crypto.wt_vs_uninfected)) %>% 
+  dplyr::select(geneSymbol, LogFC.crypto.wt_vs_uninfected)
+datatable(diffGenes.df, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          caption = 'Table 1: DEGs for infected (wt Crypto) vs control',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:6), digits=3)
+```
+
+# Visualizing DEGs
+## heatmap of all DEGs 
+```{r heatmap, message=FALSE, warning=FALSE}
+#heatmap of all DEGs
+#create additional heatmaps for co-expressed modules or a priori list of genes
+myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
+clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
+clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete")
+module.assign <- cutree(clustRows, k=2)
+module.color <- rainbow(length(unique(module.assign)), start=0.1, end=0.9) 
+module.color <- module.color[as.vector(module.assign)] 
+d3heatmap(diffGenes,
+          colors = myheatcolors2,
+          Rowv=as.dendrogram(clustRows),
+          row_side_colors = module.color,
+          scale='row')
+```
+
+# Functional enrichment analysis
+## Summary of GO enrichment analysis of DEGs
+```{r GO bubble, message=FALSE, warning=FALSE}
+# Read in text file with results of GO enrichment carried out on DAVID or other websites
+```
+
+## GSEA with CAMERA
+```{r GSEA, message=FALSE, warning=FALSE, eval= FALSE, echo=FALSE}
+# carry out GSEA
+```
+
+# Session Info
+**Session Info:**
+```{r sessionInfo, results='asis', message=FALSE, warning=FALSE, echo=FALSE}
+sessionInfo()
+```
+

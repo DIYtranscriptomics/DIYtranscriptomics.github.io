@@ -1,17 +1,10 @@
 ---
-title: "<center> In vivo transcriptional of injected and infected macrophages <center>"
-author: "<center> Fall 2018 transcriptomics class <center><br>"
-date: "<center> _January, 2018_ <center>"
+title: "<center> Your title here <center><br>"
+date: "<center> _Month, day, year_ <center>"
 output:
   html_document:
     df_print: paged
     toc: yes
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
-    number_sections: true
-  html_notebook:
-    toc: true
     toc_float:
       collapsed: false
       smooth_scroll: false
@@ -21,8 +14,6 @@ output:
     toc: yes
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
 # Abstract
 This document contains all the code used to analyze the unpublished data from the ....  
 
@@ -31,7 +22,7 @@ This document contains all the code used to analyze the unpublished data from th
 ```{r packages, message=FALSE, warning=FALSE, results='hide'}
 library(dplyr)
 library(reshape2)
-library(as_tibble)
+library(tibble)
 library(ggplot2)
 library(ggvis)
 library(GSEABase)
@@ -69,12 +60,6 @@ library(knitr)
 # create a graph of your read mapping stats if you want
 ```
 
-
-## annotation with Ensembl
-```{r annotation, message=FALSE, warning=FALSE, eval=FALSE}
-# all the code for anootating transcripts (Biomart or Ensembl package)
-```
-
 ## importing data into R
 ```{r data import, message=FALSE, warning=FALSE, eval=FALSE}
 # importing data into R using Tximport package
@@ -91,14 +76,9 @@ library(knitr)
 #read in your Txi_gene object and graph raw data
 ```
 
-## filtered data
+## filtered and normalized data
 ```{r filtering, message=FALSE, warning=FALSE}
-#filter out lowly expressed genes or transcripts and regraph
-```
-
-## normalized data
-```{r normalize, message=FALSE, warning=FALSE}
-#normalize data using 'calcNormFactors' function, then regraph
+#filter out lowly expressed genes and normalize with calcnormfactors
 ```
 
 # Exploratory data analysis
@@ -124,18 +104,18 @@ library(knitr)
 #fit linear model to deata and set-up contrast matrix with pairwise comparisons of interest
 ```
 
-## Bayesan stats
+## linear model and Bayesian stats
 ```{r Bayes, message=FALSE, warning=FALSE}
 #extract bayesian stats for linear model fit
 ```
 
-## Top 10 DEGS
+## Top n DEGS
 ```{r topTable, message=FALSE, warning=FALSE}
 #display top N genes for a single pairwise comparison 
 #insert additional code chuncks for additional pairwise comparisons
 ```
 
-## Volcano plot - infected vs double neg
+## Volcano plot
 ```{r volcano1, message=FALSE, warning=FALSE}
 #make volcano plot of pairwise comparison of interest
 #insert additional code chuncks for additional pairwise comparisons=
@@ -146,7 +126,7 @@ library(knitr)
 #run 'decideTests' function and plot results as Venn diagram
 ```
 
-## DEGs
+## DEG table
 ```{r DEGs, message=FALSE, warning=FALSE}
 #extract DEGs and create data frame with group averages and logFCs.  Display as table
 ```
@@ -164,7 +144,7 @@ library(knitr)
 # Read in text file with results of GO enrichment carried out on DAVID or other websites
 ```
 
-## GSEA with CAMERA
+## GSEA
 ```{r GSEA, message=FALSE, warning=FALSE, eval= FALSE, echo=FALSE}
 # carry out GSEA
 ```

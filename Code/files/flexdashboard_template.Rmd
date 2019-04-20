@@ -1,0 +1,95 @@
+---
+title: "Your project title"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    social: menu
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(tximport)
+library(biomaRt)
+library(RColorBrewer) 
+library(reshape2) 
+library(genefilter)
+library(edgeR) 
+library(matrixStats)
+library(hrbrthemes)
+library(gplots) 
+library(limma)
+library(heatmaply)
+library(d3heatmap)
+library(DT)
+library(gt)
+library(plotly)
+knitr::opts_chunk$set(message = FALSE)
+```
+
+Overview {data-orientation=rows}
+===================================== 
+
+Row {data-height=400}
+------------------------------------------------------------------------------
+
+### Signal distribution: raw data
+
+```{r raw data}
+# all the code for importing data into R, and creating plot of raw data
+```
+
+### Signal distribution: filtered and normalized data
+
+```{r normalized data}
+# code for filtering and normalizing
+```
+
+### PCA plot
+
+```{r PCA, error=TRUE}
+# code for PCA plot
+```
+
+Row {data-height=400}
+------------------------------------------------------------------------------
+
+### Filtered and normalized counts per million (CPM)
+
+```{r}
+# use dplyr and DT to make interactive table of dataset after filtering and normalizing
+```
+
+DEGs {data-orientation=columns}
+===================================== 
+
+Column {.tabset data-width=500}
+------------------------------------------------------------------------------
+
+### Volcano plot
+
+```{r volcano plot}
+#include code for you model.matrix, voom, contrast matrix, linear model, topTable and volcano plot
+```
+
+
+### DEG table
+
+```{r DEG table}
+#same as above with the volcano plot, but this time include decideTests and a DT table of the results
+```
+
+Column {data-width=500}
+------------------------------------------------------------------------------
+
+### heatmap
+
+```{r heatmap}
+#heatmap of all DEGs
+```
+
+About {data-orientation=rows}
+===================================== 
+
+Row {data-height=1000}
+------------------------------------------------------------------------------

@@ -14,19 +14,20 @@ In order to make your analysis pipeline transparent and reproducible, in this cl
 
 ## Goals
 
-* understand how to construct a basic R markdown document
-* transform our course code into an Rmarkdown report
-* make an interactive Rmarkdown flexdashboard to display your data
+* learn the basics of Rmarkdown and dynamic documents
+* learn how to construct a basic R markdown document
+* use the 'essential' code chunks from the course to populate an Rmarkdown report
+* make a flexdashboard the incorporates graphics and code
 
 ## Code
 
-[The essentials]() - brings togther 'the essential' code chunks from our previous scripts.
+[Rmarkdown_template.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_template.Rmd) - a skeletal template that you can fill out with the code 'essentials' that we covered in class.
 
-[Rmarkdown_example.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_example.Rmd)
+[Rmarkdown_cryptoProj.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_cryptoProj.Rmd) - same template as above, but already filled in with essentials
 
-[Txi_gene](http://DIYtranscriptomics.github.io/Code/files/Txi_gene)
+[flexdashboard_template.Rmd](http://DIYtranscriptomics.github.io/Code/files/flexdashboard_template.Rmd) - a different style of Rmarkdown that puts the focus on creating a dashboard of graphics.  Particularly powerful when combined with the interactive graphs we produced during the course.
 
-[myDGEList](http://DIYtranscriptomics.github.io/Code/files/myDGEList)
+[flexdashboard_cryptoProj.Rmd](http://DIYtranscriptomics.github.io/Code/files/flexdashboard_cryptoProj.Rmd) - a dashboard that incorporates plots for the crypto project
 
 
 ## Reading
