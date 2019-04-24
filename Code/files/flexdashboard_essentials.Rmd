@@ -27,7 +27,7 @@ library(plotly)
 knitr::opts_chunk$set(message = FALSE)
 ```
 
-Overview {data-orientation=rows}
+Overview {data-icon="fa-signal"}
 ===================================== 
 
 Row {data-height=400}
@@ -35,7 +35,7 @@ Row {data-height=400}
 
 ### Signal distribution: raw data
 
-```{r}
+```{r raw data}
 # importing data into R using Tximport package
 targets <- read_tsv("../../studyDesign.txt")# read in your study design
 path <- file.path("../readMapping", targets$sample, "abundance.h5") # set file paths to your mapped data
@@ -77,7 +77,7 @@ ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
 
 ### Signal distribution: filtered and normalized data
 
-```{r}
+```{r processed data}
 cpm <- cpm(myDGEList)
 keepers <- rowSums(cpm>1)>=3 #user defined
 myDGEList.filtered <- myDGEList[keepers,]
@@ -100,7 +100,7 @@ ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) 
 
 ### PCA plot
 
-```{r, error=TRUE}
+```{r PCA}
 pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
 pc.var<-pca.res$sdev^2
 pc.per<-round(pc.var/sum(pc.var)*100, 1)
@@ -120,7 +120,7 @@ Row {data-height=400}
 
 ### Filtered and normalized counts per million (CPM)
 
-```{r}
+```{r filtered and normalized data}
 mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
 colnames(mydata.df) <- c("geneSymbol", sampleLabels)
 #user defined
@@ -143,7 +143,7 @@ datatable(mydata.df,
   formatRound(columns=c(1:6), digits=2)
 ```
 
-DEGs {data-orientation=columns}
+DEGs {data-orientation=columns data-icon="fa-random"}
 ===================================== 
 
 Column {.tabset data-width=500}
@@ -151,7 +151,7 @@ Column {.tabset data-width=500}
 
 ### Volcano plot
 
-```{r}
+```{r volcano plot}
 design <- model.matrix(~0 + groups1)
 colnames(design) <- levels(groups1)
 v.DEGList.filtered.norm <- voom(myDGEList.filtered.norm, design, plot = FALSE)
@@ -175,7 +175,7 @@ ggplotly(ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbo
 
 ### DEG table
 
-```{r}
+```{r DEG table}
 design <- model.matrix(~0 + groups1)
 colnames(design) <- levels(groups1)
 v.DEGList.filtered.norm <- voom(myDGEList.filtered.norm, design, plot = FALSE)
@@ -217,7 +217,7 @@ Column {data-width=500}
 
 ### heatmap
 
-```{r}
+```{r heatmap}
 #heatmap of all DEGs
 #create additional heatmaps for co-expressed modules or a priori list of genes
 myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
@@ -235,7 +235,7 @@ d3heatmap(diffGenes,
           )
 ```
 
-About {data-orientation=rows}
+About {data-orientation=rows data-icon="fa-comment-alt"}
 ===================================== 
 
 Row {data-height=1000}

@@ -23,12 +23,9 @@ In order to make your analysis pipeline transparent and reproducible, in this cl
 
 [Rmarkdown_template.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_template.Rmd) - a skeletal template that you can fill out with the code 'essentials' that we covered in class.
 
-[Rmarkdown_cryptoProj.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_cryptoProj.Rmd) - same template as above, but already filled in with essentials
+[Rmarkdown_essentials.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_essentials.Rmd) - same template as above, but already filled in with essentials
 
-[flexdashboard_template.Rmd](http://DIYtranscriptomics.github.io/Code/files/flexdashboard_template.Rmd) - a different style of Rmarkdown that puts the focus on creating a dashboard of graphics.  Particularly powerful when combined with the interactive graphs we produced during the course.
-
-[flexdashboard_cryptoProj.Rmd](http://DIYtranscriptomics.github.io/Code/files/flexdashboard_cryptoProj.Rmd) - a dashboard that incorporates plots for the crypto project
-
+[flexdashboard_essentials.Rmd](http://DIYtranscriptomics.github.io/Code/files/flexdashboard_essentials.Rmd) - a different style of Rmarkdown that puts the focus on creating a dashboard of graphics.  Particularly powerful when combined with the interactive graphs we produced during the course.
 
 ## Reading
 
