@@ -271,7 +271,12 @@ d3heatmap(diffGenes,
 
 ## Conclusions
 
-Type your conclusions and interpretations here!
+Describe the results in your own words.  Some things to think about:
+
+* What are the key takeaways from the analysis?
+* What types of analyses would you want to do next?
+* Based on your analysis, what wet-lab experiments would you pursue?
+* How could you expand on or otherwise enhance this Rmarkdown report?
 
 ## Session info
 

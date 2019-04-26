@@ -169,7 +169,6 @@ ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   coord_flip() +
   theme_ipsum_rc() 
 
-table(rowSums(myDGEList$counts==0)==9)
 cpm <- cpm(myDGEList)
 keepers <- rowSums(cpm>1)>=3 #user defined
 myDGEList.filtered <- myDGEList[keepers,]

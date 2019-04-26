@@ -3,7 +3,6 @@ title: "DIYtranscriptomics"
 output: 
   flexdashboard::flex_dashboard:
     orientation: rows
-    social: menu
     source_code: embed
 ---
 
@@ -146,7 +145,7 @@ datatable(mydata.df,
 DEGs {data-orientation=columns data-icon="fa-random"}
 ===================================== 
 
-Column {.tabset data-width=500}
+Column {data-width=500}
 ------------------------------------------------------------------------------
 
 ### Volcano plot
@@ -173,9 +172,14 @@ ggplotly(ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbo
 ```
 
 
-### DEG table
+Column {.tabset data-width=500}
+------------------------------------------------------------------------------
 
-```{r DEG table}
+### heatmap
+
+```{r heatmap}
+#heatmap of all DEGs
+#create additional heatmaps for co-expressed modules or a priori list of genes
 design <- model.matrix(~0 + groups1)
 colnames(design) <- levels(groups1)
 v.DEGList.filtered.norm <- voom(myDGEList.filtered.norm, design, plot = FALSE)
@@ -190,6 +194,25 @@ ebFit <- eBayes(fits)
 results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=2)
 colnames(v.DEGList.filtered.norm$E) <- sampleLabels
 diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
+
+myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
+clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
+clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete")
+module.assign <- cutree(clustRows, k=2)
+module.color <- rainbow(length(unique(module.assign)), start=0.1, end=0.9) 
+module.color <- module.color[as.vector(module.assign)] 
+d3heatmap(diffGenes,
+          colors = myheatcolors2,
+          Rowv=as.dendrogram(clustRows),
+          row_side_colors = module.color,
+          dendrogram = "none",
+          scale='row'
+          )
+```
+
+### DEG table
+
+```{r DEG table}
 diffGenes.df <- as_tibble(diffGenes, rownames = "geneSymbol")
 
 diffGenes.df <- mutate(diffGenes.df,
@@ -212,31 +235,16 @@ datatable(diffGenes.sort,
 
 ```
 
-Column {data-width=500}
-------------------------------------------------------------------------------
-
-### heatmap
-
-```{r heatmap}
-#heatmap of all DEGs
-#create additional heatmaps for co-expressed modules or a priori list of genes
-myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
-clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
-clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete")
-module.assign <- cutree(clustRows, k=2)
-module.color <- rainbow(length(unique(module.assign)), start=0.1, end=0.9) 
-module.color <- module.color[as.vector(module.assign)] 
-d3heatmap(diffGenes,
-          colors = myheatcolors2,
-          Rowv=as.dendrogram(clustRows),
-          row_side_colors = module.color,
-          dendrogram = "none",
-          scale='row'
-          )
-```
-
 About {data-orientation=rows data-icon="fa-comment-alt"}
 ===================================== 
 
 Row {data-height=1000}
 ------------------------------------------------------------------------------
+
+Use this page to describe the results in your own words.  Some things to think about:
+
+* What are the key takeaways from the analysis?
+* What types of analyses would you want to do next?
+* Based on your analysis, what wet-lab experiments would you pursue?
+* How could you expand on or otherwise enhance this data dashboard?
+
