@@ -32,4 +32,5 @@ Using the scripts we've covered in class, read these data into the R environment
 
 ## Solution
 
-Stay tuned!
+[Leish_ncRNA_hackdash_solution.R](http://DIYtranscriptomics.github.io/Data/files/Leish_ncRNA_hackdash_solution.R)
+
