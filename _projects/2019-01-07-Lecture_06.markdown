@@ -1,6 +1,6 @@
 ---
 title: 'Wrangling gene expression data'
-subtitle: 'Lecture 6 • 2019.02.27 • Hill 130 • 3-5pm'
+subtitle: 'Lecture 6 • 2019.10.02 • Hill 130 • 3-5pm'
 date: 2019-01-07 00:00:00
 description: After filtering and normalizing our data in R, we'll apply the 'grammar of graphics' and the principles of 'tidy data' to plot, change, sort, filter, arrange and summarize expression data quickly and easily. 
 featured_image: '/images/tidyDNA.jpg'

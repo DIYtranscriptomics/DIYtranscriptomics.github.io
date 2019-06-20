@@ -1,6 +1,6 @@
 ---
 title: 'Hackdash II'
-subtitle: 'Lecture 13 • 2019.04.17 • Hill 130 • 3-5pm'
+subtitle: 'Lecture 13 • 2019.11.20 • Hill 130 • 3-5pm'
 date: 2018-12-31 00:00:00
 description: In this second and final Hackdash, expect your most challening problem – one that will incorporate both differential gene expression analysis and downstream functional enrichment analysis.
 featured_image: '/images/timepiece.jpg'

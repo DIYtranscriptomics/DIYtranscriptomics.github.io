@@ -1,6 +1,6 @@
 ---
 title: 'Starting your R workflow'
-subtitle: 'Lecture 5 • 2019.02.20 • Hill 131 • 3-5pm'
+subtitle: 'Lecture 5 • 2019.09.25 • Hill 131 • 3-5pm'
 date: 2019-01-08 00:00:00
 description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of a script. We'll then access annotation data and read our Kallisto results into R.  Our class concludes with discussing study design and using Sleuth for differentially transcript expression analysis.  
 featured_image: '/images/first_step.jpg'
