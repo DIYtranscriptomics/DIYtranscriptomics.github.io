@@ -1,5 +1,5 @@
 ---
-title: About the CAMB.714
+title: About CAMB.714
 subtitle: A brief description of the course structure and philosophy.
 description: A brief description of the course structure and philosophy.
 featured_image: /images/pennvet.jpg
