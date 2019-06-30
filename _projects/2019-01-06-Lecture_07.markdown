@@ -2,7 +2,7 @@
 title: 'Multivariate analysis'
 subtitle: 'Lecture 7 • 2019.10.09 • Hill 130 • 3-5pm'
 date: 2019-01-06 00:00:00
-description: In this class we’ll use multivariate statisical methods, including Principal Component Analysis (PCA), to explore how experimenal covariates contribute to variance in our data.  We’ll discuss common missteps and sources of variance in transcriptional data sets.  You’ll also continue to build your plotting skills by using ggplot2 to graph the results of PCA analyses.
+description: In this class we’ll use multivariate statisical methods, including Principal Component Analysis (PCA), to explore how experimenal covariates contribute to variance in our data.  We’ll discuss common missteps and how to identify sources of bias in transcriptional data sets.  You’ll also continue to build your plotting skills by using ggplot2 to graph the results of PCA analyses.
 featured_image: '/images/dataExplore.jpg'
 ---
 

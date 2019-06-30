@@ -1,5 +1,5 @@
 ---
-title: About the course
+title: About the CAMB.714
 subtitle: A brief description of the course structure and philosophy.
 description: A brief description of the course structure and philosophy.
 featured_image: /images/pennvet.jpg
@@ -7,7 +7,7 @@ featured_image: /images/pennvet.jpg
 
 ## Mission 
 
-As access to high throughput technology increases, the bottle-neck in biomedical research has shifted from generating data, to analyzing and integrating diverse data types.  Addressing these needs requires that students and postdocs equip themselves with powerful tools for data mining and interrogation.  This course focuses specifically on studying global gene expression (transcriptomics) through the use of the R programming environment and the bioconductor suite of bioinformatics packages -- a versatile and robust collection tools for statistics and graphics.  During this semester-long course, students work with real datasets and carry out all aspects of data analysis on their laptop.
+As access to high-throughput sequencing technology increases, the bottleneck in biomedical research has shifted from generating data, to analyzing and integrating diverse data types.  Addressing these needs requires that students and postdocs equip themselves with a toolkit for data mining and interrogation. This course focuses specifically on studying global gene expression (transcriptomics) through the use of the R programming environment and the Bioconductor suite of software packages – a versatile and robust collection of tools for bioinformatics, statistics, and plotting.  During this semester-long course, students participate in a mix of lectures and guided code review, all while working with real datasets directly on their laptop.  Students will learn to analyze RNAseq data using a lightweight and reusable set of modular scripts that leverage open-source software.  In addition, students will learn best practices in data science for working in R/Bioconductor, including creating interactive data visualizations, making their analyses transparent and reproducible, and identifying experimental bias in large datasets. 
 
 ## Instructors
 
@@ -25,6 +25,10 @@ Class meets every Wednesday from 3-5pm in the large lecture halls on the first f
 * Learn the basics of ‘data science’
 * Learn how to report your analysis and results in a transparent and reproducible way
 
-## Target audience 
+## Who can take the course? 
 
-This course is ideal for biomedical graduate students and postdocs who have little or no experience in bioinformatics. 
+This is a gradate level course offered through the Cell And Molecular Biology (CAMB) graduate group at the University of Pennsylvania.  Space permitting, the course is open to students outside of CAMB. If you are not a graduate student at UPenn you can still access the course slides, code, videos and reading material on the site.  This course is ideal for biomedical graduate students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNAseq data to the course.
+
+## How will I be graded in this course?
+
+All students taking the course for credit will be assigned a grade.  Grades will be determined based on performance on two in-class hack-a-thons (called hackdashes) and completion of homework assignments.
