@@ -1,6 +1,6 @@
 ---
 title: 'Making your analysis transparent and reproducible'
-subtitle: 'Lecture 14 • 2019.11.27 • Hill 130 • 3-5pm'
+subtitle: 'Lecture 14 • 2019.11.27 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2018-12-30 00:00:00
 description: In order to make your analysis pipeline transparent and reproducible, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
 featured_image: '/images/breadcrumbs2.jpg'

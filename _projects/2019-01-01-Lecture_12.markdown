@@ -1,6 +1,6 @@
 ---
 title: 'Functional enrichment analysis'
-subtitle: 'Lecture 12 • 2019.11.13 • Hill 130 • 3-5pm'
+subtitle: 'Lecture 12 • 2019.11.13 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2019-01-01 00:00:00
 description: Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  To address this question, in this class you'll learn how to carry out functional enichment analyses using Gene Ontology and Gene Set Enrichment methods.  You'll also explore different options for how to present your functional enrichment results.
 featured_image: '/images/connections.png'
