@@ -1,0 +1,18 @@
+---
+title: 'Final exam'
+subtitle: 'Lecture 16 • 2019.12.18 • Levin 111 (SAIL classroom) • 3-5pm'
+date: 2018-12-29 00:00:00
+description: During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A (and we'll eat pizza!). 
+featured_image: '/images/pizza.jpg'
+---
+
+<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
+
+
+## Overview
+
+During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
+
+## Goals
+
+* To eat pizza and have fun

@@ -1,18 +1,43 @@
 ---
-title: 'Final exam'
-subtitle: 'Lecture 15 • 2019.12.04 • Levin 111 (SAIL classroom) • 3-5pm'
-date: 2018-12-29 00:00:00
-description: During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A (and we'll eat pizza!). 
-featured_image: '/images/pizza.jpg'
+title: 'Making your analysis transparent and reproducible'
+subtitle: 'Lecture 15 • 2019.12.11 • Levin 111 (SAIL classroom) • 3-5pm'
+date: 2018-12-30 00:00:00
+description: In order to make your analysis pipeline transparent and reproducible, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
+featured_image: '/images/breadcrumbs2.jpg'
 ---
 
-<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 
 
 ## Overview
 
-During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
+In order to make your analysis pipeline transparent and reproducible, in this class you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
 
 ## Goals
 
-* To eat pizza and have fun
+* learn the basics of Rmarkdown and dynamic documents
+* learn how to construct a basic R markdown document
+* use the 'essential' code chunks from the course to populate an Rmarkdown report
+* make a flexdashboard the incorporates graphics and code
+
+## Code
+
+[Rmarkdown_template.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_template.Rmd) - a skeletal template that you can fill out with the code 'essentials' that we covered in class.
+
+[Rmarkdown_essentials.Rmd](http://DIYtranscriptomics.github.io/Code/files/Rmarkdown_essentials.Rmd) - same template as above, but already filled in with essentials
+
+[flexdashboard_essentials.Rmd](http://DIYtranscriptomics.github.io/Code/files/flexdashboard_essentials.Rmd) - a different style of Rmarkdown that puts the focus on creating a dashboard of graphics.  Particularly powerful when combined with the interactive graphs we produced during the course.
+
+## Reading
+
+[Blog post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
+
+
+### Other examples of markdown in action
+
+[Supplementary code file](http://DIYtranscriptomics.github.io/Reading/files/supplementaryCode.pdf) from a recent [Nature Immunology paper](http://DIYtranscriptomics.github.io/Reading/files/singleCellTranscriptome.pdf) 
+
+[Supplementary code file](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) from my lab's recent transcriptome paper. 
+
+[Make your own CV in markdown](https://github.com/dpbisme/CV_rmarkdown) - uses the [Vitae](https://github.com/ropenscilabs/vitae) and [Scholar](https://cran.r-project.org/web/packages/scholar/vignettes/scholar.html) packages in R. 
+
+[This course website](https://github.com/DIYtranscriptomics/DIYtranscriptomics.github.io) - Each page on the course website is just a simple markdown document. 
