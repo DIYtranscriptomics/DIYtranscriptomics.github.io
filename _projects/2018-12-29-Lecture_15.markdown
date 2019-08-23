@@ -6,8 +6,6 @@ description: In order to make your analysis pipeline transparent and reproducibl
 featured_image: '/images/breadcrumbs2.jpg'
 ---
 
-
-
 ## Overview
 
 In order to make your analysis pipeline transparent and reproducible, in this class you'll use [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/) to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
