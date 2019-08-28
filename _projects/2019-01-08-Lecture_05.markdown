@@ -2,7 +2,7 @@
 title: 'Starting your R workflow'
 subtitle: 'Lecture 5 • 2019.09.25 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2019-01-08 00:00:00
-description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of a script. We'll then access annotation data and read our Kallisto results into R.  Our class concludes with discussing study design and using Sleuth for differentially transcript expression analysis.  
+description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.     
 featured_image: '/images/first_step.jpg'
 ---
 
@@ -13,13 +13,13 @@ No lecture slides for this class.  We'll spend the entire time working on Step 1
 
 ## Overview
 
-We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of a script. We'll then access annotation data before reading our Kallisto results into R.  Our class concludes with discussing study design and using Sleuth for differentially transcript expression analysis.
+We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.  
 
 ## Goals
 
-* Review basic elements of our scripts
-* Access annotation data using the Biomart package
-* View Kallisto results using Sleuth
+* Review basic elements of an R script
+* Understand the importance of a study design file
+* Learn how to access R packages, and their help documentation
 * Read Kallisto transcript abundance measurements into the R environment using TxImport
 
 ## Code

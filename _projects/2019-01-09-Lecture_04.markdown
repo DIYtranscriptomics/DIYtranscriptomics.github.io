@@ -21,7 +21,7 @@ featured_image: '/images/abacus.jpg'
 * Review steps from last class (using Kallisto).
 * Discuss output from Kallisto and units of measurement for RNAseq and ‘normalization’
 * Open and discuss our first script, including installation of packages
-* Begin to discuss annotations (time permitting)
+* Discuss the difference between a project and a script in R/RStudio.
 
 ## Code
 

@@ -19,7 +19,7 @@ In this class we'll finally get down to the business of using [Kallisto](https:/
 
 ## Goals
 
-* Start a project directory that we’ll use for the rest of the course, and discuss project management and organization
+* Start a project directory that we’ll use for the rest of the course.
 * Download a reference transcriptome file (talk a bit about what is and is not in a reference file)
 * Build an index from this reference file so that read mapping can be carried out more efficiently
 * Map our raw reads to the index, and talk a bit about what’s happening under the hood

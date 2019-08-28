@@ -2,11 +2,11 @@
 title: 'Pre-course preparation'
 subtitle: 'review prior to course start'
 date: 2019-01-13 00:00:00
-description: Although there are no formal prerequisties for the course, and no official course text book, here you'll find some introductory reading material and tips on how to best prepare in advance so you get the most from the course material. 
+description: Although there are no formal prerequisties for the course and no official course text book, there are a few important housekeeping things you'll need to take care of before the first class. 
 featured_image: '/images/blankcanvas.jpg'
 ---
 
-Although there are no formal prerequisties for the course, and no official course text book, there are some important materials listed below that you will need to complete before the first class meets. 
+Although there are no formal prerequisties for the course and no official course text book, there are a few important housekeeping things you'll need to take care of before the first class.
 
 ## Please complete before the first class
 
@@ -21,7 +21,7 @@ Although there are no formal prerequisties for the course, and no official cours
 
 The course website is meant to be the go-to place for all content related to the course, including lecture slides, recordings, reading material, code and more.  Below are some additional resources that I will refer to throughout class.
 
-[Protcols website](https://chmi-sops.github.io/) - This is where my lab posts all protocols/SOPs for RNAseq library preparation, as well as bioinformatics workflows.  
+[Protocols website](https://chmi-sops.github.io/) - This is where my lab posts all protocols/SOPs for RNAseq library preparation, as well as bioinformatics workflows.
 
 
 
