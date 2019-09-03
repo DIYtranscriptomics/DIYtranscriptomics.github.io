@@ -8,7 +8,7 @@ featured_image: '/images/rstudio.png'
 
 [Lecture slides](http://bit.ly/1ToDM3R)
 
-[Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class on Feb 13th. 
+[Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class on Sept 18th. 
 
 ## Overview
 
@@ -30,9 +30,9 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 [Visual Studio Code](https://code.visualstudio.com/) - an alternative to Sublime and an excellent choice for working with scripts outside of RStudio.
 
-[XCode developer tools](https://developer.apple.com/xcode/) - For mac folks
+[XCode developer tools](https://developer.apple.com/xcode/) - *Only download if running on Mac OS on your laptop.*
 
-[Cygwin](https://www.cygwin.com/) - For PC folks...to give your system more linux-like capabilities
+[Cygwin](https://www.cygwin.com/) - *Only download if running a Windows OS on your laptop.*  Cygwin will give your system more linux-like capabilities
 
 [Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto are available on my lab's SOP site [here](https://chmi-sops.github.io/mydoc_kallisto.html).  *We will install this program together in class*
 
