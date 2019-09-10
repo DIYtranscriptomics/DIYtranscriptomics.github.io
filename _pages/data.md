@@ -14,7 +14,7 @@ You'll get the most from this class if you B.Y.O.D. -- Bring your own data.  Not
 
 The featured dataset for this iteration of the course comes courtesy of [Boris Striepen's lab](http://www.striepenlab.org/) and is unpublished, so please be respectful of this. 
 
-[raw data](https://www.dropbox.com/sh/df58trgab010s55/AAAQ86KkKPzuqvGG-YoeISNEa?dl=0) which consists of 9 fastq files.  You will need about 30Gb of storage space on your harddrive to accomodate these file.  *please do not uncompress these files (leave them as .gz files)*
+[raw data](https://www.dropbox.com/sh/df58trgab010s55/AAAQ86KkKPzuqvGG-YoeISNEa?dl=0) which consists of 11 files.  We'll review the 'what' and 'why' behind these files to start the class.  You will need about 30Gb of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*
 
 [prealigned data](https://drive.google.com/file/d/1KDbXsGT0EGW9qiVihesWvspYiYxSwW76/view?usp=sharing) - In the event that you have any problems installing or using Kallisto to map this raw data, I've already mapped this data to produce transcript-level abundance data, which you can download and start working with immediately.  These files are available as a single compressed file.  Unzipping this file will reveal 9 folders (each containing the Kallisto output from mapping each of the 9 fastq files above), along with 9 log files (one for each sample that was mapped).  You may notice that each folder contains several files.  Please leave these in place.  During the course, we will discuss what these files actually mean.
 
