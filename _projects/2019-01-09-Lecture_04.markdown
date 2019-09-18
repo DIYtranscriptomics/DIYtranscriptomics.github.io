@@ -10,7 +10,7 @@ featured_image: '/images/abacus.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on Oct 2nd.
 
 ## Overview
 
@@ -21,11 +21,10 @@ featured_image: '/images/abacus.jpg'
 * Review steps from last class (using Kallisto).
 * Discuss output from Kallisto and units of measurement for RNAseq and ‘normalization’
 * Open and discuss our first script, including installation of packages
-* Discuss the difference between a project and a script in R/RStudio.
 
 ## Code
 
-[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_Sleuth_TxImport.R)
+[Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R)
 
 ## Reading
 
