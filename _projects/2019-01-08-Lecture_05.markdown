@@ -8,7 +8,7 @@ featured_image: '/images/first_step.jpg'
 
 No lecture slides for this class.  We'll spend the entire time working on Step 1 script.
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on Oct 2nd.
 
 
 ## Overview
@@ -35,9 +35,3 @@ We'll begin this class by reviewing how to access R packages and help documentat
 [vignette for the Tximport package](https://bioconductor.org/packages/devel/bioc/vignettes/tximport/inst/doc/tximport.html) - the R package we'll use to read the Kallisto mapping results into R.
 
 [Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](http://f1000research.com/articles/4-1521/v2)* F1000Research, Dec 2015. This paper describes the Tximport package and its application for handling transcript-level expression measurments from lightweight aligners (Salmon, Sailfish, Kallisto)
-
-## Videos
-
-**Recorded lecture** 
-
-<iframe src="https://player.vimeo.com/video/319976694" width="640" height="360" frameborder="0" allowfullscreen></iframe>

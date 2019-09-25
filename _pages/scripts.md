@@ -9,7 +9,7 @@ featured_image: /images/code2.png
 
 |	Script Name	|	Packages	|
 |---------|:-----------:|
-[Step1_Sleuth_TxImport.R](http://DIYtranscriptomics.github.io/Code/files/Step1_Sleuth_TxImport.R) 	|	[tximport](http://bioconductor.org/packages/release/bioc/html/tximport.html), [tidyverse](https://www.tidyverse.org/), [Sleuth](https://github.com/pachterlab/sleuth), [Biomart](https://bioconductor.org/packages/release/bioc/html/biomaRt.html)
+[Step1_TxImport.R](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R) 	|	[tximport](http://bioconductor.org/packages/release/bioc/html/tximport.html), [tidyverse](https://www.tidyverse.org/), [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html)
 [Step2_dataWrangling.R](http://DIYtranscriptomics.github.io/Code/files/Step2_dataWrangling.R) 	|	[ggplot2](http://ggplot2.org/), [reshape2](http://had.co.nz/reshape/), [rcolorbrewer](http://colorbrewer2.org), [genefilter](https://bioconductor.org/packages/release/bioc/html/genefilter.html), [matrixstats](https://github.com/HenrikBengtsson/matrixStats)
 [Step3_multivariate.R](http://DIYtranscriptomics.github.io/Code/files/Step3_multivariate.R) 	|	[ggplot2](http://ggplot2.org/), [reshape2](http://had.co.nz/reshape/), [dplyr](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html), [ggvis](http://ggvis.rstudio.com/), [scatterD3](https://github.com/juba/scatterD3)
 [Step4_publicData.R](http://DIYtranscriptomics.github.io/Code/files/Step4_publicData.R) 	|	[rhdf5](http://bioconductor.org/packages/release/bioc/html/rhdf5.html)
