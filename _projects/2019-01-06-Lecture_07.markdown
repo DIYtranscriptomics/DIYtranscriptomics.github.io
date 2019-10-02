@@ -8,7 +8,7 @@ featured_image: '/images/dataExplore.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class today!
+[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due before the start of class on Oct 16th.
 
 ## Overview
 

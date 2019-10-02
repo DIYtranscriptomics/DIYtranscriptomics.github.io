@@ -5,7 +5,8 @@
 # 3rd - This script introduces us to basic tools for annotation
 # Note that this script is organized into 'chunks' of code, and the final chunk (called 'the essentials') is a minimal representation of this script.
 
-# load packages ----
+# load packages----
+library(rhdf5) #provides functions for handling hdf5 file formats (kallisto outputs bootstraps in this format)
 library(tidyverse) # provides access to Hadley Wickham's collection of R packages for data science, which we will use throughout the course
 library(tximport) # package for getting Kallisto results into R
 library(ensembldb) #helps deal with ensembl
@@ -35,6 +36,11 @@ Tx <- dplyr::rename(Tx, target_id = tx_id)
 Tx <- dplyr::select(Tx, "target_id", "gene_name")
 
 # OPTIONAL: get annotations using BiomaRt----
+# The annotatio method described in the code chunk above works great if an organism-specific data base package exists for your organisms of interest
+# however, this is only the case for human, mouse and rat....
+# so, this optional code chunk shows one way you can get annotation data for other target organisms
+# in this example, we're retieve 1:1 mappings between transcript identifiers and gene symbols for the domesticated dog (Canis familiaris)
+
 listMarts() #default host is ensembl.org, and most current release of mammalian genomes
 #listMarts(host="parasite.wormbase.org") #access to parasite worm genomes
 #listMarts(host="protists.ensembl.org") #access to protozoan genomes
@@ -44,16 +50,16 @@ myMart <- useMart(biomart="ENSEMBL_MART_ENSEMBL")
 #take a look at all available datasets within the selected mart
 available.datasets <- listDatasets(myMart)
 #now grab the ensembl annotations for human
-Hs.anno <- useMart(biomart="ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl")
-Hs.filters <- listFilters(Hs.anno)
+dog.anno <- useMart(biomart="ENSEMBL_MART_ENSEMBL", dataset = "cfamiliaris_gene_ensembl")
+dog.filters <- listFilters(dog.anno)
 
-Tx <- getBM(attributes=c('ensembl_transcript_id_version',
+Tx.dog <- getBM(attributes=c('ensembl_transcript_id_version',
                          'external_gene_name'),
-            mart = Hs.anno)
+            mart = dog.anno)
 
-Tx <- as_tibble(Tx)
+Tx.dog <- as_tibble(Tx.dog)
 #we need to rename the two columns we just retreived from biomart
-Tx <- dplyr::rename(Tx, target_id = ensembl_transcript_id_version, 
+Tx.dog <- dplyr::rename(Tx.dog, target_id = ensembl_transcript_id_version, 
                     gene_name = external_gene_name)
 
 
@@ -62,18 +68,16 @@ Tx <- dplyr::rename(Tx, target_id = ensembl_transcript_id_version,
 Txi_gene <- tximport(path, 
                      type = "kallisto", 
                      tx2gene = Tx, 
-                     txOut = TRUE, #How does the result change if this =FALSE vs =TRUE?
+                     txOut = FALSE, #How does the result change if this =FALSE vs =TRUE?
                      countsFromAbundance = "lengthScaledTPM",
                      ignoreTxVersion = TRUE)
-beep(sound = 5)
+beep(sound = 6)
 
 #take a look at the type of object you just created
 class(Txi_gene)
 names(Txi_gene)
 
 # if you want to write your counts or TPM to a file on your harddrive
-write_tsv(myTPM, "myTPM.txt")
-
 # if you exported transcript level data and want to append your gene symbols to the data frame
 # Txi_trans <- as_tibble(Txi_trans$counts, rownames = "target_id")
 # Txi_trans <- left_join(Txi_trans, Tx)

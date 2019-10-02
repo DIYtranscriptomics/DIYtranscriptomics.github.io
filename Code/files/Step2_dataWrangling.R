@@ -2,53 +2,50 @@
 # now that you've read your transcript-level or gene-level data into R, you're ready to begin working with your data
 # recall that your abundance data are TPM, while the counts are read counts mapping to each gene or transcript
 # Our goals in this script are to filter and normalize data
-# This script also introduces us ggplot2 for plotting, which let's us appreciate how filtering and normalization impact our data.
+# This script also introduces us to ggplot2 for plotting, which we'll use to visually depict the impact of filtering and normalization on our data.
 
 # Load packages -----
-library(tidyverse) 
-library(hrbrthemes) # I really like this package for setting a clean theme for my ggplot2 graphs.
+library(tidyverse) # already know this from Step 1 script
 library(RColorBrewer) # provides access to color palettes for graphics
-library(reshape2) # for reshaping dataframes
+library(reshape2) # for reshaping dataframes so they play nice with plotting functions
 library(genefilter) # as the package name suggests, it's for filtering genes
-library(edgeR) # also for differential expression, but we only use for the DGEList object
-library(matrixStats) # let's us easily calculate stats on any matrix rows or columns
+library(edgeR) # well known package for differential expression analysis, but we only use for the DGEList object and for normalization methods
+library(matrixStats) # let's us easily calculate stats on rows or columns of a data matrix
+library(cowplot) # allows you to combine multiple plots in one figure
 
 # Identify variables of interest in study design file ----
 targets
 groups1 <- targets$treatment
 groups2 <- targets$treatment2
-groups1 <- factor(groups1)
-groups2 <- factor(groups2)
+treatment <- factor(groups2)
 sampleLabels <- targets$sample
 
 # Examine your data up to this point ----
-myCPM <- Txi_gene$abundance
+myTPM <- Txi_gene$abundance
 myCounts <- Txi_gene$counts
-# let's quickly graph both matrices to see what we're dealing with
-
-colSums(myCPM)
+colSums(myTPM)
 colSums(myCounts)
 
-# Take a look at the heteroskedasticity of the data ----
-# first, calculate row means and standard deviations for each transcript or gene 
-# and add these to your data matrix
-myCPM.stats <- transform(myCPM, 
-                         SD=rowSds(myCPM), 
-                         AVG=rowMeans(myCPM),
-                         MED=rowMedians(myCPM)
+# Look at your data ----
+# 1st, calculate summary stats for each transcript or gene, and add these to your data matrix
+# then use the base R function 'transform' to modify the data matrix (equivalent of Excel's '=')
+myTPM.stats <- transform(myTPM, 
+                         SD=rowSds(myTPM), 
+                         AVG=rowMeans(myTPM),
+                         MED=rowMedians(myTPM)
                          )
 
-
-head(myCPM.stats)
+#look at what you created
+head(myTPM.stats)
 #produce a scatter plot of the transformed data
-ggplot(myCPM.stats, aes(x=SD, y=MED)) +
+ggplot(myTPM.stats, aes(x=SD, y=MED)) +
   geom_point(shape=16, size=2)
 # Experiment with point shape and size
-# experiment with geom_hex
+# experiment with other plot types (e.g. 'geom_hex' instead of 'geom_point')
 # how would these graphs change if you log2 converted the data?
 
 # Make a DGElist from your counts, and plot ----
-myDGEList <- DGEList(Txi_gene$counts)
+myDGEList <- DGEList(myCounts)
 # take a look at the DGEList object 
 myDGEList
 #DEGList objects are a good R data file to consider saving to you working directory
@@ -78,27 +75,37 @@ log2.cpm.df
 colnames(log2.cpm.df) <- sampleLabels
 # use the reshape2 package to 'melt' your dataframe (from wide to tall)
 log2.cpm.df.melt <- melt(log2.cpm.df)
-Log2.cpm.df.melt
+log2.cpm.df.melt <- as_tibble(log2.cpm.df.melt)
 
-ggplot(Log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="unfiltered, non-normalized",
        caption=paste0("produced on ", Sys.time())) + #using the Sys.time function from base R to print date/time on graph
-  coord_flip() + #then change stat_summary shape to 124 to get vertical line 
-  #theme_ipsum_rc() #this is my current fav theme, from the hrbrthemes package. Uses Ariel Narrow, a ideal typographic font for graphics, because it is condensed, has solid default kerning pairs and geometric numbers
-  theme_modern_rc() #another cool theme from the hrbrthemes package, but won't work until you've downloaded some additional fonts for your OS
-
+  coord_flip()
   # what do you think of the distribution of this data?
 
 # Filter your data ----
 #first, take a look at how many genes or transcripts have no read counts at all
 table(rowSums(myDGEList$counts==0)==9)
+# breaking down the line above is a little tricky.  Let's try:
+# 1st - 'myDGEList$counts==0' returns a new 'logical matrix' where each observation (gene) is evaluated (TRUE/FALSE) for each variable (sample) as to whether it has zero counts
+# 2nd - passing this logical matrix to 'rowsums' allows you to sum the total number of times an observation was 'TRUE' across all samples
+# 3rd - adding the '==9' is a simple way of asking how many of the rowsums equaled 9. In other words, how many genes had 0 counts (TRUE) for all samples
+# 4th - passing all this to the 'table' function just provides a handy way to summarize the large logical produced in the previous step
 
 # now set some cut-off to get rid of genes/transcripts with low counts
+# again using rowSums to tally up the 'TRUE' results of a simple evaluation
+# how many genes had more than 1CPM (TRUE) in at least 3 samples
 keepers <- rowSums(cpm>1)>=3
+# now use base R's simple subsetting method to filter your DGEList based on the logical produced above
 myDGEList.filtered <- myDGEList[keepers,]
 dim(myDGEList.filtered)
 
@@ -106,16 +113,22 @@ log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
 log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
 colnames(log2.cpm.filtered.df) <- sampleLabels
 log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
+log2.cpm.filtered.df.melt <- as_tibble(log2.cpm.filtered.df.melt) 
+
 
 ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="filtered, non-normalized",
        caption=paste0("produced on ", Sys.time())) +
-  coord_flip() +
-  theme_modern_rc() 
+  coord_flip()
 
 # Normalize your data ----
 myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
@@ -126,17 +139,26 @@ log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
+log2.cpm.filtered.norm.df.melt <- as_tibble(log2.cpm.filtered.norm.df.melt)
 
 ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="filtered, TMM normalized",
        caption=paste0("produced on ", Sys.time())) +
-  coord_flip() +
-  theme_modern_rc() 
+  coord_flip()
 
+# what if we wanted to put all three violin plots together?
+# go back and assign each plot to a variable (rather than printing to the plots viewer)
+# we'll use the 'plot_grid' function from the cowplot package to put these together in a figure
+plot_grid(p1, p2, p3, nrow=1, labels = c('A', 'B', 'C'), label_size = 12)
 
 # the essentials ----
 library(RColorBrewer) 
@@ -144,14 +166,13 @@ library(reshape2)
 library(genefilter)
 library(edgeR) 
 library(matrixStats)
-library(hrbrthemes)
+library(cowplot)
 
 groups2 <- targets$treatment2
-groups2 <- factor(groups2)
+treatment <- factor(groups2)
 sampleLabels <- targets$sample
 myDGEList <- DGEList(Txi_gene$counts)
 save(myDGEList, file = "myDGEList")
-load(file = "myDGEList")
 log2.cpm <- cpm(myDGEList, log=TRUE)
 nsamples <- ncol(log2.cpm)
 myColors <- brewer.pal(nsamples, "Paired")
@@ -159,35 +180,62 @@ log2.cpm.df <- as_tibble(log2.cpm)
 colnames(log2.cpm.df) <- sampleLabels
 log2.cpm.df.melt <- melt(log2.cpm.df)
 
-ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+p1 <- ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="unfiltered, non-normalized",
        caption=paste0("produced on ", Sys.time())) +
-  coord_flip() +
-  theme_ipsum_rc() 
+  coord_flip()
 
 cpm <- cpm(myDGEList)
 keepers <- rowSums(cpm>1)>=3 #user defined
 myDGEList.filtered <- myDGEList[keepers,]
+log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
+colnames(log2.cpm.filtered.df) <- sampleLabels
+log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
+log2.cpm.filtered.df.melt <- as_tibble(log2.cpm.filtered.df.melt) 
+
+p2 <- ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, non-normalized",
+       caption=paste0("produced on ", Sys.time())) + 
+  coord_flip()
+
 myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
 log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 
-ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="filtered, TMM normalized",
        caption=paste0("produced on ", Sys.time())) +
-  coord_flip() +
-  theme_ipsum_rc() 
+  coord_flip()
 
-
-
+plot_grid(p1, p2, p3, nrow=1, labels = c('A', 'B', 'C'), label_size = 12)
 

@@ -10,7 +10,7 @@ featured_image: '/images/tidyDNA.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0wOhMvs1a4AZp-v4OMau1j67A#lecture05%5Frefslides) -  Although the entire class was spent working on the Step 2 script, I briefly referenced a few slides, which I've included here.
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on March 6th.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class today (Oct 2nd).
 
 
 ## Overview
