@@ -35,7 +35,7 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 [Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf) - Hadley Wickham (author of Tidyverse packages and Chief Scientist at RStudio) describes the philosophy of tidy data in this paper. 
 
-[Grammar of graphics](https://vita.had.co.nz/papers/ggplot2-wires.pdf) - Another paper by Hadley Wickham.  This one explains the rationale behind ggplot2.
+[Grammar of graphics](http://DIYtranscriptomics.github.io/Reading/files/layered-grammar.pdf) - Another paper by Hadley Wickham.  This one explains the rationale behind ggplot2.
 
 [original TMM normalization manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).
 
