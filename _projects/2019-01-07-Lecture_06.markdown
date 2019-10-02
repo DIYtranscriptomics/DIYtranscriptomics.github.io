@@ -30,9 +30,6 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 [Step 2 script](http://DIYtranscriptomics.github.io/Code/files/Step2_dataWrangling.R)
 
-## Software
-
-[Sip](https://sipapp.io/) - I discussed this simple but excellent color picking software in class. The program costs about $10, but provides a convenient and powerful way to assemble color palettes for use in R.
 
 ## Reading
 
@@ -46,4 +43,3 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 [R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994) - If you end up using R to make a lot of graphs, you will find the to be an important reference. It's available free to UPenn folks as an Ebook.
 
-Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the [RColorBrewer package](http://colorbrewer2.org).  These palettes can be viewed in [this cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf).  Unfortunately, these standard palettes often don't cut it, and you'll need custom palettes. For this, I love using [Sip](https://sipapp.io/) to pick, organize and access color palettes. 
