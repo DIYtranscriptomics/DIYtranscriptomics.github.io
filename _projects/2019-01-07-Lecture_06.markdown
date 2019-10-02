@@ -2,7 +2,7 @@
 title: 'Wrangling gene expression data'
 subtitle: 'Lecture 6 • 2019.10.02 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2019-01-07 00:00:00
-description: After filtering and normalizing our data in R, we'll apply the 'grammar of graphics' and the principles of 'tidy data' to plot, change, sort, filter, arrange and summarize expression data quickly and easily. 
+description: We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the dplyr package, expanding your understanding of tools within the Tidyverse.  
 featured_image: '/images/tidyDNA.jpg'
 ---
 
@@ -10,12 +10,12 @@ featured_image: '/images/tidyDNA.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0wOhMvs1a4AZp-v4OMau1j67A#lecture05%5Frefslides) -  Although the entire class was spent working on the Step 2 script, I briefly referenced a few slides, which I've included here.
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class today (Oct 2nd).
+[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due before the start of class on Oct 16th.
 
 
 ## Overview
 
-We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package along with other tools from his [tidyverse](https://www.tidyverse.org/) of R packages to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.
+We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package, expanding your understanding of tools within the [tidyverse](https://www.tidyverse.org/). 
 
 ## Goals
 

@@ -1,8 +1,8 @@
 ---
-title: 'Multivariate analysis'
+title: 'Data exploration'
 subtitle: 'Lecture 7 • 2019.10.09 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2019-01-06 00:00:00
-description: In this class we’ll use multivariate statisical methods, including Principal Component Analysis (PCA), to explore how experimenal covariates contribute to variance in our data.  We’ll discuss common missteps and how to identify sources of bias in transcriptional data sets.  You’ll also continue to build your plotting skills by using ggplot2 to graph the results of PCA analyses.
+description: In this class you'll learn about a variety of approaches exploring your data.  You'll use multivariate statistical approaches such as Principal Component Analysis (PCA) to understand sources of variance in our data, while continuing to build your plotting skills by using ggplot2 to graph the results of PCA analyses. You'll also learn how to use the dplyr package to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.  We’ll discuss common missteps and how to identify sources of bias in transcriptional data sets.  
 featured_image: '/images/dataExplore.jpg'
 ---
 
@@ -12,7 +12,7 @@ featured_image: '/images/dataExplore.jpg'
 
 ## Overview
 
-In this class we’ll use multivariate statisical methods, including Principal Component Analysis (PCA), to explore how experimenal covariates (e.g., sex, age, treatment) contribute to the overall structure of our data.  We’ll discuss common missteps and sources of variance in transcriptional data sets.  You’ll also continue to build your plotting skills by using ggplot2 to graph the results of PCA analyses.
+In this class you'll learn about a variety of approaches exploring your data.  You'll use multivariate statistical approaches such as Principal Component Analysis (PCA) to understand sources of variance in our data, while continuing to build your plotting skills by using ggplot2 to graph the results of PCA analyses. You'll also learn how to use the dplyr package to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.  We’ll discuss common missteps and how to identify sources of bias in transcriptional data sets.
 
 ## Goals
 

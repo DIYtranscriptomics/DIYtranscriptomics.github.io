@@ -26,7 +26,7 @@ myCounts <- Txi_gene$counts
 colSums(myTPM)
 colSums(myCounts)
 
-# Look at your data ----
+# Generate summary stats for your data ----
 # 1st, calculate summary stats for each transcript or gene, and add these to your data matrix
 # then use the base R function 'transform' to modify the data matrix (equivalent of Excel's '=')
 myTPM.stats <- transform(myTPM, 
