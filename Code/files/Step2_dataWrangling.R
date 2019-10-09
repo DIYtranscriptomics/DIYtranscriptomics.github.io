@@ -5,7 +5,7 @@
 # This script also introduces us to ggplot2 for plotting, which we'll use to visually depict the impact of filtering and normalization on our data.
 
 # Load packages -----
-library(tidyverse) # already know this from Step 1 script
+library(tidyverse) # already know about this from Step 1 script
 library(RColorBrewer) # provides access to color palettes for graphics
 library(reshape2) # for reshaping dataframes so they play nice with plotting functions
 library(genefilter) # as the package name suggests, it's for filtering genes
@@ -13,18 +13,15 @@ library(edgeR) # well known package for differential expression analysis, but we
 library(matrixStats) # let's us easily calculate stats on rows or columns of a data matrix
 library(cowplot) # allows you to combine multiple plots in one figure
 
-# Identify variables of interest in study design file ----
-targets
-groups1 <- targets$treatment
-groups2 <- targets$treatment2
-treatment <- factor(groups2)
-sampleLabels <- targets$sample
-
 # Examine your data up to this point ----
 myTPM <- Txi_gene$abundance
 myCounts <- Txi_gene$counts
 colSums(myTPM)
 colSums(myCounts)
+
+# capture sample labels from the study design file that you worked with and saved as 'targets' in step 1
+targets
+sampleLabels <- targets$sample
 
 # Generate summary stats for your data ----
 # 1st, calculate summary stats for each transcript or gene, and add these to your data matrix
@@ -39,10 +36,10 @@ myTPM.stats <- transform(myTPM,
 head(myTPM.stats)
 #produce a scatter plot of the transformed data
 ggplot(myTPM.stats, aes(x=SD, y=MED)) +
-  geom_point(shape=16, size=2)
+  geom_hex(shape=16, size=2)
 # Experiment with point shape and size
-# experiment with other plot types (e.g. 'geom_hex' instead of 'geom_point')
-# how would these graphs change if you log2 converted the data?
+# Experiment with other plot types (e.g. 'geom_hex' instead of 'geom_point')
+# How would these graphs change if you log2 converted the data?
 
 # Make a DGElist from your counts, and plot ----
 myDGEList <- DGEList(myCounts)
@@ -158,7 +155,7 @@ ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) 
 # what if we wanted to put all three violin plots together?
 # go back and assign each plot to a variable (rather than printing to the plots viewer)
 # we'll use the 'plot_grid' function from the cowplot package to put these together in a figure
-plot_grid(p1, p2, p3, nrow=1, labels = c('A', 'B', 'C'), label_size = 12)
+plot_grid(p1, p2, p3, labels = c('A', 'B', 'C'), label_size = 12)
 
 # the essentials ----
 library(RColorBrewer) 
@@ -168,11 +165,8 @@ library(edgeR)
 library(matrixStats)
 library(cowplot)
 
-groups2 <- targets$treatment2
-treatment <- factor(groups2)
 sampleLabels <- targets$sample
 myDGEList <- DGEList(Txi_gene$counts)
-save(myDGEList, file = "myDGEList")
 log2.cpm <- cpm(myDGEList, log=TRUE)
 nsamples <- ncol(log2.cpm)
 myColors <- brewer.pal(nsamples, "Paired")
@@ -223,7 +217,7 @@ log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 
-p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+p4 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
   stat_summary(fun.y = "median", 
                geom = "point", 

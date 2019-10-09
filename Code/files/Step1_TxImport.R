@@ -36,7 +36,7 @@ Tx <- dplyr::rename(Tx, target_id = tx_id)
 Tx <- dplyr::select(Tx, "target_id", "gene_name")
 
 # OPTIONAL: get annotations using BiomaRt----
-# The annotatio method described in the code chunk above works great if an organism-specific data base package exists for your organisms of interest
+# The annotation method described in the code chunk above works great if an organism-specific data base package exists for your organisms of interest
 # however, this is only the case for human, mouse and rat....
 # so, this optional code chunk shows one way you can get annotation data for other target organisms
 # in this example, we're retieve 1:1 mappings between transcript identifiers and gene symbols for the domesticated dog (Canis familiaris)
