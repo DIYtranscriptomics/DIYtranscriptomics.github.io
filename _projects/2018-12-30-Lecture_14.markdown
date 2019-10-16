@@ -3,7 +3,7 @@ title: 'Creating compelling figures from RNAseq data'
 subtitle: 'Lecture 14 • 2019.12.04 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2018-12-30 00:00:00
 description: Distilling genomic data to create clear and compelling figures is a major challenge, but is essential for publication and grants.  In this lecture you'll learn about the basic building blocks of an gene expression figure and how the plots you've produced thus far form the basis for telling a story with your data.  You'll also learn about best practices for graphic design and typography for making figures that are not only clear, but also look great.
-featured_image: '/images/panels.jpg'
+featured_image: '/images/capsule.jpg'
 ---
 
 

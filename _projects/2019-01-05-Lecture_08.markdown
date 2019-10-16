@@ -10,7 +10,7 @@ featured_image: '/images/DataDeluge.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0eFM_9DUG9UmIULnEPYqgr5Jg#Lecture_06%5FPublicData)
 
-[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due before the start of class today (Oct 16th).
+[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of class today!
 
 
 ## Overview
@@ -29,7 +29,7 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 
 ## Downloads
 
-[ARCHS4 data in HDF5 format](https://amp.pharm.mssm.edu/archs4/download.html) - Download the *human_matrix.h5 v6* and the *mouse_matrix.h5 v6*.  These HDF5 files contain RNAseq data already aligned using Kallisto for 133,776 and 170,010 samples, respectively.  Note that each of these files will take about 4Gb of space on your hard-drive. 
+[ARCHS4 data in HDF5 format](https://amp.pharm.mssm.edu/archs4/download.html) - Download the *human_matrix.h5 v7* and the *mouse_matrix.h5 v7*.  These HDF5 files contain RNAseq data already aligned using Kallisto for 209,395 and 170,010 samples, respectively.  Note that each of these files will take about 5Gb of space on your hard-drive. 
 
 
 ## Reading
