@@ -32,7 +32,7 @@ skim(mydata.df)
 #hierarchical clustering can only work on a data matrix, not a data frame
 #try using filtered and unfiltered data...how does this change the result?
 #try other distance methods (e.g. switch from 'maximum' to 'euclidean')...how does this change the result?
-distance <- dist(t(log2.cpm.filtered.norm), method="maximum") #other distance methods are "euclidean", maximum", "manhattan", "canberra", "binary" or "minkowski"
+distance <- dist(t(log2.cpm.filtered.norm), method="euclidean") #other distance methods are "euclidean", maximum", "manhattan", "canberra", "binary" or "minkowski"
 clusters <- hclust(distance, method = "average") #other agglomeration methods are "ward.D", "ward.D2", "single", "complete", "average", "mcquitty", "median", or "centroid"
 plot(clusters, labels=sampleLabels)
 
@@ -41,7 +41,7 @@ pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
 #look at pca.res in environment
 ls(pca.res)
 summary(pca.res) # Prints variance summary for all principal components.
-x <- pca.res$rotation #$rotation shows you how much each gene influenced each PC (called 'scores')
+pca.res$rotation #$rotation shows you how much each gene influenced each PC (called 'scores')
 pca.res$x #$x shows you how much each sample influenced each PC (called 'loadings')
 #note that these loadings have a magnitude and a direction (this is the basis for making a PCA plot)
 pc.var<-pca.res$sdev^2 #sdev^2 gives you the eigenvalues
@@ -55,7 +55,7 @@ pca.res.df <- as_tibble(pca.res$x)
 ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
   geom_point(size=4) +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
-  ylab(paste0("PC3 (",pc.per[2],"%",")")) +
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
   theme_bw()
@@ -69,8 +69,8 @@ ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
 melted <- cbind(groups1, melt(pca.res$x[,1:4]))
 head(melted) #look at your 'melted' data
 colnames(melted) <- c('group', 'treatment', 'PC', 'loadings')
-ggplot(melted) +
-  geom_bar(aes(x=treatment, y=loadings, fill=group), stat="identity") +
+ggplot(melted, aes(x=treatment, y=loadings, fill=group)) +
+  geom_bar(stat="identity") +
   facet_wrap(~PC) +
   labs(title="PCA 'small multiples' plot",
        caption=paste0("produced on ", Sys.time())) +
@@ -84,7 +84,7 @@ mydata.df <- mutate(mydata.df,
                    crypto.mut.AVG = (crypto.mut_rep1 + crypto.mut_rep2 + crypto.mut_rep3)/3,
                    #now make columns comparing each of the averages above that you're interested in
                    LogFC.crypto.wt_vs_uninfected = (crypto.wt.AVG - uninfected.AVG),
-                   LogFC.crypto.mut_vs_uninfected = (crypto.mut.AVG - uninfected.AVG)) %>%
+                   LogFC.crypto.mut_vs_uninfected = (crypto.mut.AVG - uninfected.AVG)) %>% #note that this is the first time you've seen the 'pipe' operator
   mutate_if(is.numeric, round, 2)
 
 #now look at this modified data table
@@ -94,7 +94,7 @@ mydata.df
 # first, we'll use dplyr "arrange" function to sort rows based on the values in a column of interest
 # then we'll display 'select' only the columns we're interested in seeing
 mydata.sort <- mydata.df %>%
-  dplyr::arrange(desc(LogFC.crypto.wt_vs_uninfected)) %>% #note that this is the first time you've seen the 'pipe' operator
+  dplyr::arrange(desc(LogFC.crypto.wt_vs_uninfected)) %>% 
   dplyr::select(geneSymbol, LogFC.crypto.wt_vs_uninfected)
 
 # Use dplyr "filter" and "select" functions to pick out genes of interest  ----
@@ -185,18 +185,16 @@ datatable(mydata.df,
                          pageLength = 10, 
                          lengthMenu = c("10", "25", "50", "100")))
 
-distance <- dist(t(log2.cpm.filtered.norm), method="maximum") #other distance methods are "euclidean", maximum", "manhattan", "canberra", "binary" or "minkowski"
-clusters <- hclust(distance, method = "average") #other agglomeration methods are "ward.D", "ward.D2", "single", "complete", "average", "mcquitty", "median", or "centroid"
-plot(clusters, labels=sampleLabels)
+groups2 <- targets$treatment2
+treatment <- factor(groups2)
 
 pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
-x <- pca.res$rotation 
 pc.var<-pca.res$sdev^2
 pc.per<-round(pc.var/sum(pc.var)*100, 1)
 
 pca.res.df <- as_tibble(pca.res$x)
 
-pca.plot <- ggplot(pca.res.df, aes(x=PC1, y=PC2, color=groups1)) +
+pca.plot <- ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
   geom_point(size=5) +
   theme(legend.position="right") 
 ggplotly(pca.plot)

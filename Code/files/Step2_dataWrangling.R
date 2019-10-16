@@ -6,7 +6,6 @@
 
 # Load packages -----
 library(tidyverse) # already know about this from Step 1 script
-library(RColorBrewer) # provides access to color palettes for graphics
 library(reshape2) # for reshaping dataframes so they play nice with plotting functions
 library(genefilter) # as the package name suggests, it's for filtering genes
 library(edgeR) # well known package for differential expression analysis, but we only use for the DGEList object and for normalization methods
@@ -29,8 +28,7 @@ sampleLabels <- targets$sample
 myTPM.stats <- transform(myTPM, 
                          SD=rowSds(myTPM), 
                          AVG=rowMeans(myTPM),
-                         MED=rowMedians(myTPM)
-                         )
+                         MED=rowMedians(myTPM))
 
 #look at what you created
 head(myTPM.stats)
@@ -54,16 +52,6 @@ load(file = "myDGEList")
 cpm <- cpm(myDGEList) 
 colSums(cpm)
 log2.cpm <- cpm(myDGEList, log=TRUE)
-
-# Take a look at the distribution of the Log2 CPM
-nsamples <- ncol(log2.cpm)
-# this is our first time using colors in R
-# take a look at the color palettes available to you through RColorBrewer
-display.brewer.all()
-# you can also view only palettes that are colorblind friendly
-display.brewer.all(colorblindFriendly = TRUE)
-# now select colors from a single palette
-myColors <- brewer.pal(nsamples, "Paired")
 
 # 'coerce' your data matrix to a dataframe so that you can use tidyverse tools on it
 log2.cpm.df <- as_tibble(log2.cpm)
@@ -158,7 +146,6 @@ ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) 
 plot_grid(p1, p2, p3, labels = c('A', 'B', 'C'), label_size = 12)
 
 # the essentials ----
-library(RColorBrewer) 
 library(reshape2) 
 library(genefilter)
 library(edgeR) 
@@ -168,8 +155,7 @@ library(cowplot)
 sampleLabels <- targets$sample
 myDGEList <- DGEList(Txi_gene$counts)
 log2.cpm <- cpm(myDGEList, log=TRUE)
-nsamples <- ncol(log2.cpm)
-myColors <- brewer.pal(nsamples, "Paired")
+
 log2.cpm.df <- as_tibble(log2.cpm)
 colnames(log2.cpm.df) <- sampleLabels
 log2.cpm.df.melt <- melt(log2.cpm.df)
@@ -217,7 +203,7 @@ log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
 colnames(log2.cpm.filtered.norm.df) <- sampleLabels
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 
-p4 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
   stat_summary(fun.y = "median", 
                geom = "point", 
