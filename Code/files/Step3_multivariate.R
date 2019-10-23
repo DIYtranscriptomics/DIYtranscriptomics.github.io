@@ -79,7 +79,7 @@ ggplot(melted, aes(x=treatment, y=loadings, fill=group)) +
 
 # Use dplyr 'mutate' function to add new columns based on existing data -------
 mydata.df <- mutate(mydata.df,
-                   uninfected.AVG = (uninf_rep1 + uninf_rep2 + uninf_rep1)/3, 
+                   uninfected.AVG = (uninf_rep1 + uninf_rep2 + uninf_rep3)/3, 
                    crypto.wt.AVG = (crypto.wt_rep1 + crypto.wt_rep2 + crypto.wt_rep3)/3,
                    crypto.mut.AVG = (crypto.mut_rep1 + crypto.mut_rep2 + crypto.mut_rep3)/3,
                    #now make columns comparing each of the averages above that you're interested in
@@ -149,8 +149,7 @@ myplot <- ggplot(mydata.df, aes(x=uninfected.AVG, y=crypto.wt.AVG)) +
 ggplotly(myplot)
 
 #let's customize this graphic by adding a more informative tooltip
-myplot <- ggplot(mydata.df, aes(x=uninfected.AVG, y=crypto.wt.AVG,
-                                text = paste("Symbol:", geneSymbol))) +
+ggplot(mydata.df, aes(x=uninfected.AVG, y=crypto.wt.AVG, text = paste("Symbol:", geneSymbol))) +
   geom_point(shape=16) +
   geom_point(size=1) +
   ggtitle("Infected vs. naive") +
@@ -185,16 +184,19 @@ datatable(mydata.df,
                          pageLength = 10, 
                          lengthMenu = c("10", "25", "50", "100")))
 
-groups2 <- targets$treatment2
-treatment <- factor(groups2)
+treatment <- factor(targets$treatment)
 
 pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
 pc.var<-pca.res$sdev^2
 pc.per<-round(pc.var/sum(pc.var)*100, 1)
 
 pca.res.df <- as_tibble(pca.res$x)
-
 pca.plot <- ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
-  geom_point(size=5) +
-  theme(legend.position="right") 
+  geom_point(size=4) +
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  labs(title="PCA plot",
+       caption=paste0("produced on ", Sys.time())) +
+  theme_bw()
+
 ggplotly(pca.plot)

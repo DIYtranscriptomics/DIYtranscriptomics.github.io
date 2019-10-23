@@ -47,7 +47,8 @@ my.sample.locations <- which(all.samples.mouse %in% mySamples)
 genes <- h5read(archs4.mouse, "meta/genes")
 
 # Extract expression data from ARCHS4 ----
-expression <- h5read(archs4.mouse, "data/expression", index=list(1:length(genes), my.sample.locations))
+expression <- h5read(archs4.mouse, "data/expression", 
+                     index=list(1:length(genes), my.sample.locations))
 H5close()
 rownames(expression) <- genes
 colnames(expression) <- all.samples.mouse[my.sample.locations]
@@ -121,3 +122,58 @@ ggplot(melted) +
   labs(title="PCA 'small multiples' plot",
        caption=paste0("produced on ", Sys.time())) +
   coord_flip()
+
+# the essentials ----
+library(tidyverse)
+library(reshape2)
+library(rhdf5)
+library(edgeR)
+
+archs4.mouse <- "~/Dropbox/publicData/mouse_matrix.v7.h5"
+all.samples.mouse <- h5read(archs4.mouse, name="meta/Sample_geo_accession")
+mySamples <- c("GSM2310941", # WT_unstim_rep1
+               "GSM2310942", # WT_unstim_rep2
+               "GSM2310943", # Ripk3_unstim_rep1
+               "GSM2310944", # Ripk3_unstim_rep2
+               "GSM2310945", # Ripk3Casp8_unstim_rep1
+               "GSM2310946", # Ripk3Casp8_unstim_rep2
+               "GSM2310947", # WT_LPS.6hr_rep1
+               "GSM2310948", # WT_LPS.6hr_rep2
+               "GSM2310949", # Ripk3_LPS.6hr_rep1
+               "GSM2310950", # Ripk3_LPS.6hr_rep2
+               "GSM2310951", # Ripk3Casp8_LPS.6hr_rep1
+               "GSM2310952") # Ripk3Casp8_LPS.6hr_rep2
+
+my.sample.locations <- which(all.samples.mouse %in% mySamples)
+genes <- h5read(archs4.mouse, "meta/genes")
+expression <- h5read(archs4.mouse, "data/expression", 
+                     index=list(1:length(genes), my.sample.locations))
+
+rownames(expression) <- genes
+colnames(expression) <- all.samples.mouse[my.sample.locations]
+archs4.dgelist <- DGEList(expression)
+archs4.cpm <- cpm(archs4.dgelist)
+
+keepers <- rowSums(archs4.cpm>1)>=2
+archs4.dgelist.filtered <- archs4.dgelist[keepers,]
+archs4.dgelist.filtered.norm <- calcNormFactors(archs4.dgelist.filtered, method = "TMM")
+archs4.filtered.norm.log2.cpm <- cpm(archs4.dgelist.filtered.norm, log=TRUE)
+
+Sample_source_name_ch1 <- h5read(archs4.mouse, "meta/Sample_source_name_ch1")
+Sample_title <- h5read(archs4.mouse, name="meta/Sample_title")
+Sample_characteristics<- h5read(archs4.mouse, name="meta/Sample_characteristics_ch1")
+
+studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
+                      genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
+                      treatment = c("unstim", "unstim", "unstim", "unstim", "unstim", "unstim", "LPS", "LPS", "LPS", "LPS", "LPS", "LPS"))
+
+pca.res <- prcomp(t(archs4.filtered.norm.log2.cpm), scale.=F, retx=T)
+pca.res.df <- as_tibble(pca.res$x)
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$genotype, shape=studyDesign$treatment)) +
+  geom_point(size=6) +
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  labs(title="PCA plot",
+       caption=paste0("produced on ", Sys.time())) +
+  theme_bw()
+

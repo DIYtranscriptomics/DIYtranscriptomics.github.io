@@ -54,13 +54,12 @@ colSums(cpm)
 log2.cpm <- cpm(myDGEList, log=TRUE)
 
 # 'coerce' your data matrix to a dataframe so that you can use tidyverse tools on it
-log2.cpm.df <- as_tibble(log2.cpm)
+log2.cpm.df <- as_tibble(log2.cpm, rownames = "geneID")
 log2.cpm.df
 # add your sample names to this dataframe (we lost these when we read our data in with tximport)
-colnames(log2.cpm.df) <- sampleLabels
+colnames(log2.cpm.df) <- c("geneID", sampleLabels)
 # use the reshape2 package to 'melt' your dataframe (from wide to tall)
 log2.cpm.df.melt <- melt(log2.cpm.df)
-log2.cpm.df.melt <- as_tibble(log2.cpm.df.melt)
 
 ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
@@ -73,9 +72,10 @@ ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="unfiltered, non-normalized",
-       caption=paste0("produced on ", Sys.time())) + #using the Sys.time function from base R to print date/time on graph
-  coord_flip()
-  # what do you think of the distribution of this data?
+       caption=paste0("produced on ", Sys.time())) #using the Sys.time function from base R to print date/time on graph
+  
+# what do you think of the distribution of this data?
+# Try using coord_flip() at the end of the ggplot code
 
 # Filter your data ----
 #first, take a look at how many genes or transcripts have no read counts at all
@@ -95,11 +95,9 @@ myDGEList.filtered <- myDGEList[keepers,]
 dim(myDGEList.filtered)
 
 log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
-log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
-colnames(log2.cpm.filtered.df) <- sampleLabels
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID")
+colnames(log2.cpm.filtered.df) <- c("geneID", sampleLabels)
 log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
-log2.cpm.filtered.df.melt <- as_tibble(log2.cpm.filtered.df.melt) 
-
 
 ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
@@ -112,8 +110,7 @@ ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="filtered, non-normalized",
-       caption=paste0("produced on ", Sys.time())) +
-  coord_flip()
+       caption=paste0("produced on ", Sys.time()))
 
 # Normalize your data ----
 myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
@@ -121,10 +118,9 @@ myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
 
 # use the 'cpm' function from EdgeR to get counts per million from your normalized data
 log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
-log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
-colnames(log2.cpm.filtered.norm.df) <- sampleLabels
+log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneID")
+colnames(log2.cpm.filtered.norm.df) <- c("geneID", sampleLabels)
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
-log2.cpm.filtered.norm.df.melt <- as_tibble(log2.cpm.filtered.norm.df.melt)
 
 ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
@@ -137,8 +133,7 @@ ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) 
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="filtered, TMM normalized",
-       caption=paste0("produced on ", Sys.time())) +
-  coord_flip()
+       caption=paste0("produced on ", Sys.time()))
 
 # what if we wanted to put all three violin plots together?
 # go back and assign each plot to a variable (rather than printing to the plots viewer)
@@ -150,14 +145,13 @@ library(reshape2)
 library(genefilter)
 library(edgeR) 
 library(matrixStats)
-library(cowplot)
 
 sampleLabels <- targets$sample
 myDGEList <- DGEList(Txi_gene$counts)
 log2.cpm <- cpm(myDGEList, log=TRUE)
 
-log2.cpm.df <- as_tibble(log2.cpm)
-colnames(log2.cpm.df) <- sampleLabels
+log2.cpm.df <- as_tibble(log2.cpm, rownames = "geneID")
+colnames(log2.cpm.df) <- c("geneID", sampleLabels)
 log2.cpm.df.melt <- melt(log2.cpm.df)
 
 p1 <- ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
@@ -171,17 +165,16 @@ p1 <- ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="unfiltered, non-normalized",
-       caption=paste0("produced on ", Sys.time())) +
-  coord_flip()
+       caption=paste0("produced on ", Sys.time()))
 
 cpm <- cpm(myDGEList)
 keepers <- rowSums(cpm>1)>=3 #user defined
 myDGEList.filtered <- myDGEList[keepers,]
+
 log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
-log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
-colnames(log2.cpm.filtered.df) <- sampleLabels
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID") 
+colnames(log2.cpm.filtered.df) <- c("geneID", sampleLabels)
 log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
-log2.cpm.filtered.df.melt <- as_tibble(log2.cpm.filtered.df.melt) 
 
 p2 <- ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
@@ -194,13 +187,12 @@ p2 <- ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable))
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="filtered, non-normalized",
-       caption=paste0("produced on ", Sys.time())) + 
-  coord_flip()
+       caption=paste0("produced on ", Sys.time()))
 
 myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
 log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
-log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
-colnames(log2.cpm.filtered.norm.df) <- sampleLabels
+log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneID")
+colnames(log2.cpm.filtered.norm.df) <- c("geneID", sampleLabels)
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 
 p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
@@ -214,8 +206,5 @@ p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=varia
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
        subtitle="filtered, TMM normalized",
-       caption=paste0("produced on ", Sys.time())) +
-  coord_flip()
-
-plot_grid(p1, p2, p3, nrow=1, labels = c('A', 'B', 'C'), label_size = 12)
+       caption=paste0("produced on ", Sys.time()))
 
