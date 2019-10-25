@@ -19,7 +19,13 @@ A colleague has asked for your help to mine data produced from a very large RNAs
 
 To succeed at the worm challenge, you will need to use the tools you've learned in class for filtering, normalizing, multivariate analysis with PCA, and data wrangling with dplyr.
 
-The first team to submit the most complete answer (via private message on Slack) to the following two questions will win the challenge. 
+The first team to submit the most complete answer (via private message on Slack) to the following three questions will win the challenge. 
+
+### Tips
+
+* download a fresh copy of the step 1, 2 and 3 scripts from the course website [here](http://diytranscriptomics.com/scripts)
+* use *only* the 'essential' code chunks from these scripts to complete the challenge.
+* *don't* try to annotate the data, just import at the transcript level
 
 ### Question #1
 
@@ -32,7 +38,7 @@ Tips:
 
 ### Question #2
 
-Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support your answer.
+Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support your answer?
 
 Tips:
 
@@ -46,10 +52,6 @@ Using dplyr 'verbs', identify the top 10 parasite genes induced by praziquantel 
 
 Anything interesting stand out to you about the top genes on your list (requires a literature search)?  
 
-## Tips
-
-* use the 'essential' code chunks from steps 1-3 to complete this challenge.
-* *don't* annotate the data, just import at the transcript level
 
 ## Solution
 Will be posted after class
