@@ -21,7 +21,7 @@ To succeed at the worm challenge, you will need to use the tools you've learned 
 
 The first team to submit the most complete answer (via private message on Slack) to the following three questions will win the challenge. 
 
-### Tips
+### Before you start
 
 * download a fresh copy of the step 1, 2 and 3 scripts from the course website [here](http://diytranscriptomics.com/scripts)
 * use *only* the 'essential' code chunks from these scripts to complete the challenge.
@@ -31,7 +31,7 @@ The first team to submit the most complete answer (via private message on Slack)
 
 Use plots to show the impact of filtering and normalization on the data.  
 
-Tips:
+#### Tips
 
 * Do not use 'coord_flip' in your ggplot code, as the number of samples is so large that horizontal display is preferred
 * Don't use cowplot to patch together your different ggplots into one figure.  Again, the number of samples in this particular study makes this too cramped.
@@ -40,7 +40,7 @@ Tips:
 
 Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support your answer?
 
-Tips:
+#### Tips:
 
 * take advantage of setting the ggplot 'aes' to map size and shape to different variables from your study design file
 
