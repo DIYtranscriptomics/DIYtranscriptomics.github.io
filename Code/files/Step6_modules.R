@@ -24,13 +24,15 @@ myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 # data----
 # you can make a heatmap out of any datamatrix
 # we'll use our 'diffgenes' datamatrix that was produced at the end of the last class in the Step 5 script
-# as a reminder, this was produced as follows
+# as a reminder, this was produced in the step 5 script in the last class as follows
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.05, lfc=1)
+colnames(v.DEGList.filtered.norm$E) <- sampleLabels
 diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
+dim(diffGenes)
 
 # cluster DEGs ----
 #begin by clustering the genes (rows) in each set of differentially expressed genes
 clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
-
 # hierarchical clustering is a type of unsupervised clustering. Related methods include K-means, SOM, etc 
 # unsupervised methods are blind to sample/group identity
 # in contrast, supervised methods 'train' on a set of labeled data.  
@@ -81,9 +83,9 @@ d3heatmap(diffGenes,
 
 # OPTIONAL: simplify heatmap ----
 #notice that the heatmap includes ALL the columns from your dataset
-#to simplify, average biological replicates
-#then rerun the heatmap the script above using diffData.AVG as input instead of diffData
-colnames(diffGenes) <- groups2
+#a useful way to simplify heatmaps, especially when there are many conditions, is to average your biological replicates and display only one column per condition
+#rerun the heatmap script above using diffData.AVG as input instead of diffData
+colnames(diffGenes) <- targets$treatment
 
 #now an old function from the limma package to average your replicates 
 diffGenes.AVG <- avearrays(diffGenes)
@@ -91,7 +93,7 @@ diffGenes.AVG <- avearrays(diffGenes)
 ##alternatively, decide exactly which columns you want to show, and modify the heatmap accordingly
 #this is how it would look using base R
 #diffGenes.subset <- diffGenes[,c(1,4,7)]
-##now repeat heatmap only on these selected columns
+##now repeat heatmap using only these selected columns
 
 # view modules of co-regulated genes ----
 # view your color assignments for the different clusters
@@ -101,7 +103,7 @@ barplot(rep(10, max(module.assign)),
         horiz=T, names=unique(module.assign[clustRows$order]))
 
 #choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
-module.pick <- 1 #use 'c()' to grab more than one cluster from the heatmap.  e.g., c(1,2)
+module.pick <- 2 #use 'c()' to grab more than one cluster from the heatmap.  e.g., c(1,2)
 myModule <- diffGenes[names(module.assign[module.assign%in%module.pick]),] 
 hrsub <- hclust(as.dist(1-cor(t(myModule), method="pearson")), method="complete") 
 
@@ -109,6 +111,7 @@ hrsub <- hclust(as.dist(1-cor(t(myModule), method="pearson")), method="complete"
 heatmap.2(myModule, 
           Rowv=as.dendrogram(hrsub), 
           Colv=NA, 
+          labRow = NA,
           col=myheatcolors2, scale="row", 
           density.info="none", trace="none", 
           RowSideColors=module.color[module.assign%in%module.pick], margins=c(8,20)) 
@@ -141,20 +144,18 @@ heatmap.2(mySelectedGenes.matrix,
 
 
 # the essentials ----
-library(tidyverse)
 library(gplots) #the heatmap2 function in this package is a primary tool for making heatmaps
 library(RColorBrewer) #need colors to make heatmaps
-library(limma) #we only use limma in this script for the 'avearrays' function
 library(heatmaply) #for making interactive heatmaps using plotly
-library(d3heatmap) #for making interactive heatmaps using D3
 myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
 clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete")
 module.assign <- cutree(clustRows, k=2)
 module.color <- rainbow(length(unique(module.assign)), start=0.1, end=0.9) 
 module.color <- module.color[as.vector(module.assign)] 
-d3heatmap(diffGenes,
+heatmaply(diffGenes,
           colors = myheatcolors2,
           Rowv=as.dendrogram(clustRows),
-          row_side_colors = module.color,
+          RowSideColors=module.color,
+          #showticklabels=c(FALSE,FALSE),
           scale='row')

@@ -8,7 +8,6 @@ featured_image: '/images/bird_flock.jpg'
 
 <div style="text-align: right"> Image credit: Adelaide Tyrol </div>
 
-[Homework: Reporting with Rmarkdown (~4hrs)](https://www.datacamp.com/courses/reporting-with-r-markdown) - due April 24th
 
 ## Overview
 
@@ -25,6 +24,8 @@ Lists of differentially expressed transcripts often include different patterns o
 
 
 ## Reading
+
+If you want to try a clustering method outside of R, check out the Clust program.
 
 [Clust: automatic extraction of optimal co-expressed gene clusters from gene expression data. Genome Biology, 2018](https://doi.org/10.1186/s13059-018-1536-8).
 
