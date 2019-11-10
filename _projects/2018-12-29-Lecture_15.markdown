@@ -2,7 +2,7 @@
 title: 'Making your analysis portable and reproducible with Docker'
 subtitle: 'Lecture 15 • 2019.12.11 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2018-12-29 00:00:00
-description: Running a bioinformatics workflow – whether using R, python or other languages – requires more than just code.  In order to reproduce an analysis, you must have the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This significantly impedes reproducibility, even for researchers with an understanding of bioinformatics.  To address this challenge, you'll learn how to 'containerize' all your data,scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button. 
+description: Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button. 
 featured_image: '/images/capsule.jpg'
 ---
 
@@ -10,7 +10,7 @@ featured_image: '/images/capsule.jpg'
 
 ## Overview
 
-Running a bioinformatics workflow – whether using R, python or other languages – requires more than just code.  In order to reproduce an analysis, you must have the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This significantly impedes reproducibility, even for researchers with an understanding of bioinformatics.  To address this challenge, you'll learn how to 'containerize' all your data,scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button. 
+Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button.  
 
 ## Goals
 
