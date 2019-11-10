@@ -2,7 +2,7 @@
 title: 'Making your analysis portable and reproducible with Docker'
 subtitle: 'Lecture 15 • 2019.12.11 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2018-12-29 00:00:00
-description: Distilling genomic data to create clear and compelling figures is a major challenge, but is essential for publication and grants.  In this lecture you'll learn about the basic building blocks of an gene expression figure and how the plots you've produced thus far form the basis for telling a story with your data.  You'll also learn about best practices for graphic design and typography for making figures that are not only clear, but also look great.
+description: Running a bioinformatics workflow – whether using R, python or other languages – requires more than just code.  In order to reproduce an analysis, you must have the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This significantly impedes reproducibility, even for researchers with an understanding of bioinformatics.  To address this challenge, you'll learn how to 'containerize' all your data,scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button. 
 featured_image: '/images/capsule.jpg'
 ---
 
@@ -10,29 +10,18 @@ featured_image: '/images/capsule.jpg'
 
 ## Overview
 
-Distilling genomic data to create clear and compelling figures is a major challenge, but is essential for publication and grants.  In this lecture you'll learn about the basic building blocks of an gene expression figure and how the plots you've produced thus far form the basis for telling a story with your data.  You'll also learn about best practices for graphic design and typography for making figures that are not only clear, but also look great.
+Running a bioinformatics workflow – whether using R, python or other languages – requires more than just code.  In order to reproduce an analysis, you must have the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This significantly impedes reproducibility, even for researchers with an understanding of bioinformatics.  To address this challenge, you'll learn how to 'containerize' all your data,scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button. 
 
 ## Goals
 
-* learn the basic building blocks of an RNAseq figure
-* Assemble a figure from plots you've generated
-* Discuss design properties in R, including color, typography and ggplot themes
-* How to construct figures in R
-
-## Software
-
-[Sip](https://sipapp.io/) - I discussed this simple but excellent color picking software in class. The program costs about $10, but provides a convenient and powerful way to assemble color palettes for use in R.
-
+* Learn the basics of Docker and containerized software
+* Create a simple Docker file
+* Create your own CodeOcean account
+* Interact with the CodeOcean capsule for the course
 
 ## Code
 
 ## Reading
-
-[Colors in R]() 
-
-Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the [RColorBrewer package](http://colorbrewer2.org).  These palettes can be viewed in [this cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf).  Unfortunately, these standard palettes often don't cut it, and you'll need custom palettes. For this, I love using [Sip](https://sipapp.io/) to pick, organize and access color palettes. 
-
-### Examples of RNAseq figures
 
 
 

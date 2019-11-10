@@ -25,7 +25,10 @@ Lists of differentially expressed transcripts often include different patterns o
 
 ## Reading
 
-If you want to try a clustering method outside of R, check out the Clust program.
+If you want to try a clustering method outside of R, check out the Clust program: [Clust: automatic extraction of optimal co-expressed gene clusters from gene expression data. Genome Biology, 2018](https://doi.org/10.1186/s13059-018-1536-8).
 
-[Clust: automatic extraction of optimal co-expressed gene clusters from gene expression data. Genome Biology, 2018](https://doi.org/10.1186/s13059-018-1536-8).
+**Colors in R** - Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the [RColorBrewer package](http://colorbrewer2.org).  These palettes can be viewed in [this cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf).  Unfortunately, these standard palettes often don't cut it, and you'll need custom palettes. For this, I love using [Sip](https://sipapp.io/) to pick, organize and access color palettes.
 
+## Lecture video
+
+<iframe src="https://player.vimeo.com/video/372122535" width="640" height="370" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
