@@ -5,32 +5,38 @@
 #3) your contrast matrix that lays out the pairwise comparison you're interested in
 #4) Gene sets that you'd like to test for enrichment in your array data
 #these gene sets can be 'custom' made based on your specific interests,
-#or they can be downloaded from gene signature databases such as MSigDB or GeneSignatureDB
+#or they can be downloaded from gene signature databases such as MSigDB or GeneSigDB
 
 # Load packages ----
-library(GSEABase)
-library(GSVA)
-library(Biobase)
-library(limma)
 library(tidyverse)
-library(heatmaply)
+library(GSEABase) #functions and methods for Gene Set Enrichment Analysis
+library(Biobase) #base functions for bioconductor; required by GSEABase
+library(GSVA) #Gene Set Variation Analysis, a non-parametric and unsupervised method for estimating variation of gene set enrichment across samples.
+library(gprofiler2) #tools for accessing the GO enrichment results using g:Profiler web resources
+library(limma)
+library(RColorBrewer)
 library(gplots)
+library(heatmaply)
+
+# Carry out GO enrichment using g:Profiler ----
+# use topTable result to pick the top genes for carrying out a Gene Ontology (GO) enrichment analysis
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=50, sort.by="logFC")
+gost.res <- gost(myTopHits$geneSymbol, organism = "hsapiens")
+gostplot(gost.res)
 
 # OPTIONAL: convert symbols to upper case 'human' ----
 # make sure to have gene symbols in all caps (coerced to human)
 # if working with mouse data, use the 'toupper' function to conver to uppercase (i.e. human genes)
 # of course, if you're working with human RNAseq data, you won't need to do this
 upperSymbols <- toupper(rownames(v.DEGList.filtered.norm$E)) #tolower to convert symbols to mouse
-head(upperSymbols)
-upperSymbols <- as.matrix(upperSymbols)
 rownames(v.DEGList.filtered.norm$E) <- upperSymbols
 head(v.DEGList.filtered.norm$E)
 #sometimes there's a row with no symbol identifier...if so, go ahead an remove this by uncommenting out the following line of code
 #v.DEGList.filtered.norm$E <- v.DEGList.filtered.norm$E[-1,]
 
 # OPTIONAL: check for and remove any duplicate rows ---- 
-dups <- base::duplicated(rownames(v.DEGList.filtered.norm$E))
-all(dups)
+dups <- duplicated(rownames(v.DEGList.filtered.norm$E))
+any(dups)
 unique(rownames(v.DEGList.filtered.norm$E)[duplicated(rownames(v.DEGList.filtered.norm$E))])
 collapsed.matrix <- v.DEGList.filtered.norm$E[!duplicated(rownames(v.DEGList.filtered.norm$E)), ]
 
@@ -47,52 +53,51 @@ collapsed.matrix <- v.DEGList.filtered.norm$E[!duplicated(rownames(v.DEGList.fil
 # alternatively, you can produce you own custom gene sets (more on this below)
 
 #MSigDB set C2 contains pathways and chemical/genetic perturbations
-broadSet.C2.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.CGP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cgp.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.all.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CGP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cgp.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
 # smaller subsets of C2
-broadSet.C2.KEGG <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.kegg.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.Biocarta <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.biocarta.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.Reactome <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.reactome.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.KEGG <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.kegg.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.Biocarta <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.biocarta.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.Reactome <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.reactome.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.PID <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.PID.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
 #set C3 contains lists of targets for of TFs and MIRs
-broadSet.C3.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C3.TFT <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.tft.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C3.MIR <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.mir.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.all.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.TFT <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.tft.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C3.MIR <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c3.mir.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
 #set C5 contains sets of genes associated with different GO terms
-broadSet.C5.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C5.BP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.bp.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C5.MF <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.mf.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.ALL <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.all.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.BP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.bp.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C5.MF <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c5.mf.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
 #MsigDB set C7 contains list of genes associated with immunological signatures
-broadSet.C7 <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c7.all.v6.2.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C7 <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c7.all.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
 
 # competitive GSEA using CAMERA----
 # first let's create a few signatures to test in our enrichment analysis
 mySig <- toupper(rownames(myTopHits))
-mySig2 <- sample((rownames(v.DEGList.filtered.norm$E)), size = 100, replace = FALSE)
+mySig2 <- sample((rownames(v.DEGList.filtered.norm$E)), size = 50, replace = FALSE)
 collection <- list(real = mySig, fake = mySig2)
 # now test for enrichment using CAMERA
 GSEAres <- camera(v.DEGList.filtered.norm$E, collection, design, contrast.matrix[,1]) 
 GSEAres <- as_tibble(GSEAres, rownames = "setName")
-head(GSEAres)
+GSEAres
+
 # now repeat with an actual gene set collection
 broadSet.C2.CP <- geneIds(broadSet.C2.CP)
 GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1]) 
 GSEAres <- as_tibble(GSEAres, rownames = "setName")
-head(GSEAres)
+GSEAres
 
 # graph GSEA results as bubble chart ----
 #begin by adding a column to your GSEA result that indicates the group
 GSEAres.2 <- mutate(GSEAres,
                     group = "WT_crypto")
-head(GSEAres.2)
+
 #now take the top n signatures, the are already ranked by FDR
 GSEAres.2 <- GSEAres.2[1:10,]
 #If you have multiple GSEA results from different pairwise comparisons, use a simple row bind (rbind) to join together
-GSEAres.2$setName<- as.character(GSEAres.2$setName)
-#Then turn it back into an ordered factor
-GSEAres.2$setName <- factor(GSEAres.2$setName, levels=unique(GSEAres.2$setName))
 ggplot(GSEAres.2, aes(x=group, y=setName)) + 
-  geom_point(aes(size=NGenes,color=Direction)) +
+  geom_point(aes(size=NGenes, color=Direction)) +
   #scale_color_gradient(low="#0091ff", high="#f0650e") +
   theme_bw()
 
@@ -103,17 +108,16 @@ ggplot(GSEAres.2, aes(x=group, y=setName)) +
 # this allows for the evaluation of pathway enrichment for each sample.
 # the method is both non-parametric and unsupervised
 # bypasses the conventional approach of explicitly modeling phenotypes within enrichment scoring algorithms. 
-# focus is therefore placed on the RELATIVE enrichment of pathways across the sample space rather than the absolute enrichment with respect to a phenotype. The value of this approach is that it permits the use of
+# focus is therefore placed on the RELATIVE enrichment of pathways across the sample space rather than the absolute enrichment with respect to a phenotype. 
 # however, with data with a moderate to small sample size (< 30), other GSE methods that explicitly include the phenotype in their model are more likely to provide greater statistical power to detect functional enrichment.
 
 # Let's get started
 # be aware that if you choose a large MsigDB file here, this step may take a while
 GSVA.res.C2CP <- gsva(v.DEGList.filtered.norm$E, #your data
-                    broadSet.C2.CP, # your gene set collection
-                    min.sz=5, max.sz=500, #criteria for filtering gene sets
-                    verbose=FALSE,
-                    mx.diff=FALSE,
-                    method="gsva") #options for method are "gsva", ssgsea', "zscore" or "plage"
+                      min.sz=5, max.sz=500, #criteria for filtering gene sets
+                      verbose=FALSE,
+                      mx.diff=FALSE,
+                      method="gsva") #options for method are "gsva", ssgsea', "zscore" or "plage"
 
 # Apply linear model to GSVA result ----
 # now using Limma to find significantly enriched gene sets in the same way you did to find diffGenes
@@ -133,7 +137,7 @@ myEset.C2CP <- new("ExpressionSet", exprs = GSVA.res.C2CP)
 head(res.C2CP)
 
 # pull out the gene sets that are differentially enriched between groups ----
-diffSets.C2CP <- myEset.C2CP[res.C2CP[,1] !=0 | res.C2CP[,2] !=0]
+diffSets.C2CP <- myEset.C2CP[res.C2CP[,1] !=0 | res.C2CP[,2] !=0 | res.C2CP[,3] !=0]
 diffSets.C2CP <- exprs(diffSets.C2CP)
 head(diffSets.C2CP)
 dim(diffSets.C2CP)
@@ -143,13 +147,10 @@ hr.C2CP <- hclust(as.dist(1-cor(t(diffSets.C2CP), method="pearson")), method="co
 hc.C2CP <- hclust(as.dist(1-cor(diffSets.C2CP, method="spearman")), method="complete") #cluster columns by spearman correlation
 
 # Cut the resulting tree and create color vector for clusters.  Vary the cut height to give more or fewer clusters, or you the 'k' argument to force n number of clusters
-library(RColorBrewer)
 mycl.C2CP <- cutree(hr.C2CP, k=2)
 mycolhc.C2CP <- rainbow(length(unique(mycl.C2CP)), start=0.1, end=0.9) 
 mycolhc.C2CP <- mycolhc.C2CP[as.vector(mycl.C2CP)] 
 
-#load the gplots package for plotting the heatmap
-library(gplots) 
 #assign your favorite heatmap color scheme. Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]). Type demo.col(20) to see more color schemes.
 myheatcol <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 #plot the hclust results as a heatmap

@@ -10,8 +10,6 @@ featured_image: '/images/connections.png'
 
 [Lecture slides](https://www.icloud.com/keynote/0Naa63iYXqX4nTRUq2PF0Rfpg#Lecture11%5FFunctionalEnrichment)
 
-[Homework: Reporting with Rmarkdown (~4hrs)](https://www.datacamp.com/courses/reporting-with-r-markdown) - due April 24th
-
 
 ## Overview
 
