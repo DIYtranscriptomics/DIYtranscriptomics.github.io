@@ -19,7 +19,7 @@ You have just finished a detailed analysis of the human transcriptome using skin
 * We've already used Kallisto to map reads to both the human mRNA reference transcriptome, then carried out second read mapping using the separate ncRNA reference file.  You can download the kallisto outputs **[here](https://drive.google.com/file/d/1MKIL9GxQr-FUQdjIBLWj8u_fsVr9gWpn/view?usp=sharing)** - this zip file includes both sets of read mapping results, as well as a study design file. 
 * You will need to combine your data from these two read mappings into a single R object that you can use for all your analyses.
 * The term 'gene' is used below to refer to both ncRNAs and mRNAs. 
-* Download a fresh copy of each 'step' script from the course website [here](http://diytranscriptomics.com/scripts). The only script you won't need for this challenge is step 6 (public data).
+* Download a fresh copy of each 'step' script from the course website [here](http://diytranscriptomics.com/scripts). The only script you won't need for this challenge is step 4 (public data).
 * use only the 'essential' code chunks from these scripts to complete the challenge.
 
 ### Question 1
