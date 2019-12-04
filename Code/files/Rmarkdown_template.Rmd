@@ -75,7 +75,22 @@ After read mapping with Kallisto, [TxImport](https://bioconductor.org/packages/r
 
 ```{r step 1 - TxImport}
 # copy and paste in the essential code from the step 1 script
-
+library(tidyverse) # provides access to Hadley Wickham's collection of R packages for data science, which we will use throughout the course
+library(tximport) # package for getting Kallisto results into R
+library(ensembldb) #helps deal with ensembl
+library(EnsDb.Hsapiens.v86) #replace with your organism-specific database package
+targets <- read_tsv("studyDesign.txt")# read in your study design
+path <- file.path(targets$sample, "abundance.h5") # set file paths to your mapped data
+Tx <- transcripts(EnsDb.Hsapiens.v86, columns=c("tx_id", "gene_name"))
+Tx <- as_tibble(Tx)
+Tx <- dplyr::rename(Tx, target_id = tx_id)
+Tx <- dplyr::select(Tx, "target_id", "gene_name")
+Txi_gene <- tximport(path, 
+                     type = "kallisto", 
+                     tx2gene = Tx, 
+                     txOut = FALSE, #determines whether your data represented at transcript or gene level
+                     countsFromAbundance = "lengthScaledTPM",
+                     ignoreTxVersion = TRUE)
 ```
 
 ***
@@ -86,7 +101,74 @@ After read mapping with Kallisto, [TxImport](https://bioconductor.org/packages/r
 
 ```{r step2 - dataWrangling}
 # copy and paste in the essential code from the step 2 script
+library(reshape2) 
+library(genefilter)
+library(edgeR) 
+library(matrixStats)
 
+sampleLabels <- targets$sample
+myDGEList <- DGEList(Txi_gene$counts)
+log2.cpm <- cpm(myDGEList, log=TRUE)
+
+log2.cpm.df <- as_tibble(log2.cpm, rownames = "geneID")
+colnames(log2.cpm.df) <- c("geneID", sampleLabels)
+log2.cpm.df.melt <- melt(log2.cpm.df)
+
+p1 <- ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="unfiltered, non-normalized",
+       caption=paste0("produced on ", Sys.time()))
+
+cpm <- cpm(myDGEList)
+keepers <- rowSums(cpm>1)>=3 #user defined
+myDGEList.filtered <- myDGEList[keepers,]
+
+log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID") 
+colnames(log2.cpm.filtered.df) <- c("geneID", sampleLabels)
+log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
+
+p2 <- ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, non-normalized",
+       caption=paste0("produced on ", Sys.time()))
+
+myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
+log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
+log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneID")
+colnames(log2.cpm.filtered.norm.df) <- c("geneID", sampleLabels)
+log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
+
+p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, TMM normalized",
+       caption=paste0("produced on ", Sys.time()))
+
+plot_grid(p1, p2, p3, labels = c('A', 'B', 'C'), label_size = 12)
 ```
 
 Filtering was carried out to remove lowly expressed genes. Genes with less than 1 count per million (CPM) in at least 3 or more samples filtered out.  This reduced the number of genes from `r nrow(myDGEList)` to `r nrow(myDGEList.filtered)`.  
@@ -98,6 +180,32 @@ Filtering was carried out to remove lowly expressed genes. Genes with less than 
 The table shown below includes expression data for `r nrow(myDGEList.filtered)` genes. You can sort and search the data directly from the table.
 
 ```{r step 3 - multivariate part 1 (data table)}
+library(tidyverse)
+library(reshape2)
+library(DT)
+library(gt)
+library(plotly)
+
+mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
+colnames(mydata.df) <- c("geneSymbol", sampleLabels)
+
+mydata.df <- mutate(mydata.df,
+                    uninfected.AVG = (uninf_rep1 + uninf_rep2 + uninf_rep1)/3, 
+                    crypto.wt.AVG = (crypto.wt_rep1 + crypto.wt_rep2 + crypto.wt_rep3)/3,
+                    crypto.mut.AVG = (crypto.mut_rep1 + crypto.mut_rep2 + crypto.mut_rep3)/3,
+                    #now make columns comparing each of the averages above that you're interested in
+                    LogFC.crypto.wt_vs_uninfected = (crypto.wt.AVG - uninfected.AVG),
+                    LogFC.crypto.mut_vs_uninfected = (crypto.mut.AVG - uninfected.AVG)) %>%
+  mutate_if(is.numeric, round, 2)
+
+datatable(mydata.df, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          caption = 'Table 1: Filtered and normalized data',
+          options = list(keys = TRUE, 
+                         searchHighlight = TRUE, 
+                         pageLength = 10, 
+                         lengthMenu = c("10", "25", "50", "100")))
+
 
 ```
 
@@ -106,7 +214,22 @@ The table shown below includes expression data for `r nrow(myDGEList.filtered)` 
 ## PCA plot
 
 ```{r step 3 - multivariate part 2 (PCA plot)}
+treatment <- factor(targets$treatment)
 
+pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
+pc.var<-pca.res$sdev^2
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+
+pca.res.df <- as_tibble(pca.res$x)
+pca.plot <- ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
+  geom_point(size=4) +
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  labs(title="PCA plot",
+       caption=paste0("produced on ", Sys.time())) +
+  theme_bw()
+
+ggplotly(pca.plot)
 
 ```
 
