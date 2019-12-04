@@ -178,7 +178,7 @@ mydata.df <- mutate(mydata.df,
 
 datatable(mydata.df, 
           extensions = c('KeyTable', "FixedHeader"), 
-          caption = 'my cool table)',
+          caption = 'Table 1: Filtered and normalized data',
           options = list(keys = TRUE, 
                          searchHighlight = TRUE, 
                          pageLength = 10, 

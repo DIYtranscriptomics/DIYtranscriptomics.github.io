@@ -56,7 +56,7 @@ module.color <- module.color[as.vector(module.assign)]
 #plot the hclust results as a heatmap
 heatmap.2(diffGenes, 
           Rowv=as.dendrogram(clustRows), 
-          Colv=NA,
+          Colv=as.dendrogram(clustColumns),
           RowSideColors=module.color,
           col=myheatcolors2, scale='row', labRow=NA,
           density.info="none", trace="none",  
@@ -103,8 +103,8 @@ barplot(rep(10, max(module.assign)),
         horiz=T, names=unique(module.assign[clustRows$order]))
 
 #choose a cluster(s) of interest by selecting the corresponding number based on the previous graph
-module.pick <- 2 #use 'c()' to grab more than one cluster from the heatmap.  e.g., c(1,2)
-myModule <- diffGenes[names(module.assign[module.assign%in%module.pick]),] 
+module.pick <- 1 #use 'c()' to grab more than one cluster from the heatmap.  e.g., c(1,2)
+myModule <- diffGenes[names(module.assign[module.assign %in% module.pick]),] 
 hrsub <- hclust(as.dist(1-cor(t(myModule), method="pearson")), method="complete") 
 
 # Create heatmap for chosen sub-cluster.
@@ -122,7 +122,7 @@ moduleSymbols <- data.frame(Labels=rev(hrsub$labels[hrsub$order]))
 moduleSymbols <- as.vector(t(moduleSymbols))
 moduleData <- diffGenes[moduleSymbols,]
 moduleData.df <- as_tibble(moduleData, rownames = "geneSymbol")
-write_csv(moduleData.df,"module_upRegulated.csv")
+write_tsv(moduleData.df,"module_upRegulated.tsv")
 
 # OPTIONAL: make heatmap from an a priori list of genes ----
 #read in a text file containing the genes (with expression data) you want to include in the heatmap

@@ -20,13 +20,14 @@ output:
 
 ```{r setup, include=FALSE}
 library(rmarkdown)
+library(tinytex)
 library(knitr)
 knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
 ```
 
 ## Introduction
 
-During the Spring 2019 offering of **[DIYtranscriptomics](http://diytranscriptomics.com/)**, we analyzed a dataset from Boris Striepen's lab, in which HCT-8 human intestinal epithelial cells were infected with the protozoan parasite, _Cryptosporidium parvum_.  This reproducible and dynamic report was created using Rmarkdown and the [Knitr package](https://yihui.name/knitr/), and summarizes the basic code and outputs (plots, tables, etc) produced during the course. 
+During the Fall 2019 offering of **[DIYtranscriptomics](http://diytranscriptomics.com/)**, we analyzed a dataset from Boris Striepen's lab, in which HCT-8 human intestinal epithelial cells were infected with the protozoan parasite, _Cryptosporidium parvum_.  This reproducible and dynamic report was created using Rmarkdown and the [Knitr package](https://yihui.name/knitr/), and summarizes the basic code and outputs (plots, tables, etc) produced during the course. 
 
 ***
 
@@ -39,17 +40,22 @@ library(tidyverse)
 library(reshape2)
 library(tximport)
 library(biomaRt)
+library(ensembldb)
 library(RColorBrewer) 
 library(genefilter)
 library(edgeR) 
 library(matrixStats)
-library(hrbrthemes)
 library(gplots) 
 library(limma)
-library(d3heatmap)
+library(heatmaply)
 library(DT)
 library(gt)
 library(plotly)
+library(hrbrthemes)
+library(EnsDb.Hsapiens.v86)
+library(cowplot)
+library(gprofiler2)
+library(GSEABase)
 ```
 
 ***
@@ -60,29 +66,6 @@ library(plotly)
 
 Raw reads were mapped to the human reference transcriptome using [Kallisto](https://pachterlab.github.io/kallisto/), version 0.45.  The quality of raw reads, as well as the results of Kallisto mapping are summarized in [this summary report](http://DIYtranscriptomics.github.io/Data/files/multiqc_report.html) generated using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [multiqc](https://multiqc.info/).
 
-```{bash, eval=FALSE}
-# build index from reference fasta
-kallisto index -i Homo_sapiens.GRCh38.cdna.all.index  Homo_sapiens.GRCh38.cdna.all.fa
-
-# map reads
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o uninf_rep1 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/Control1_mergedLanes_mergedRuns.fastq.gz &> uninf_rep1.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o uninf_rep2 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/Control2_mergedLanes_mergedRuns.fastq.gz &> uninf_rep2.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o uninf_rep3 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/Control3_mergedLanes_mergedRuns.fastq.gz &> uninf_rep3.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o crypto.wt_rep1 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/WT1_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep1.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o crypto.wt_rep2 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/WT2_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep2.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o crypto.wt_rep3 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/WT3_mergedLanes_mergedRuns.fastq.gz &> crypto.wt_rep3.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o crypto.mut_rep1 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/Trans1_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep1.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o crypto.mut_rep2 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/Trans2_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep2.log
-
-kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o crypto.mut_rep3 -t 4 -b 30 --single -l 250 -s 30 ../../DATA/raw/Trans3_mergedLanes_mergedRuns.fastq.gz &> crypto.mut_rep3.log
-```
 
 ***
 
@@ -90,24 +73,24 @@ kallisto quant -i Homo_sapiens.GRCh38.cdna.all.index -o crypto.mut_rep3 -t 4 -b 
 
 After read mapping with Kallisto, [TxImport](https://bioconductor.org/packages/release/bioc/html/tximport.html) was used to read kallisto outputs into the R environment.  Annotation data from Biomart was used to 'collapse' data from transcript-level to gene-level.
 
-```{r step 1}
+```{r step 1 - TxImport}
 # copy and paste in the essential code from the step 1 script
-targets <- read_tsv("../../studyDesign.txt")# read in your study design
-path <- file.path("../readMapping", targets$sample, "abundance.h5") # set file paths to your mapped data
-targets <- mutate(targets, path) # add paths to your study design (only necessary for Sleuth)
-Hs.anno <- useMart(biomart="ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl") # select 'mart' from biomaRt for annotations
-Tx <- getBM(attributes=c('ensembl_transcript_id_version', # get gene symbols for each transcript ID
-                         'external_gene_name'),
-            mart = Hs.anno)
-Tx <- as_tibble(Tx) # convert this annotation mapping file to a tibble (the tidyverse version of a dataframe)
-Txi_gene <- tximport(path, #reading kallisto data into R
+library(tidyverse) # provides access to Hadley Wickham's collection of R packages for data science, which we will use throughout the course
+library(tximport) # package for getting Kallisto results into R
+library(ensembldb) #helps deal with ensembl
+library(EnsDb.Hsapiens.v86) #replace with your organism-specific database package
+targets <- read_tsv("studyDesign.txt")# read in your study design
+path <- file.path(targets$sample, "abundance.h5") # set file paths to your mapped data
+Tx <- transcripts(EnsDb.Hsapiens.v86, columns=c("tx_id", "gene_name"))
+Tx <- as_tibble(Tx)
+Tx <- dplyr::rename(Tx, target_id = tx_id)
+Tx <- dplyr::select(Tx, "target_id", "gene_name")
+Txi_gene <- tximport(path, 
                      type = "kallisto", 
                      tx2gene = Tx, 
-                     txOut = FALSE, 
-                     countsFromAbundance = "lengthScaledTPM")
-myCPM <- as_tibble(Txi_gene$abundance, rownames = "geneSymbol") # these are you counts after adjusting for transcript length
-myCounts <- as_tibble(Txi_gene$counts, rownames = "geneSymbol") # these are your transcript per million (TPM) values, or counts per million (CPM) if you collapsed data to gene level
-
+                     txOut = FALSE, #determines whether your data represented at transcript or gene level
+                     countsFromAbundance = "lengthScaledTPM",
+                     ignoreTxVersion = TRUE)
 ```
 
 ***
@@ -116,47 +99,75 @@ myCounts <- as_tibble(Txi_gene$counts, rownames = "geneSymbol") # these are your
 
 ### Impact of filtering and normalization
 
-```{r step2, echo=FALSE}
-# copy and paste in your essential code from the step 2 script
-# because each code chunk in an Rmarkdown should only have one graphical output, we need make a few changes to this code
-# also get rid of title, subtitle, etc from these graphs
-groups1 <- targets$treatment
-groups1 <- factor(groups1)
+```{r step2 - dataWrangling}
+library(reshape2) 
+library(genefilter)
+library(edgeR) 
+library(matrixStats)
+
 sampleLabels <- targets$sample
 myDGEList <- DGEList(Txi_gene$counts)
 log2.cpm <- cpm(myDGEList, log=TRUE)
-nsamples <- ncol(log2.cpm)
-myColors <- brewer.pal(nsamples, "Paired")
-log2.cpm.df <- as_tibble(log2.cpm)
-colnames(log2.cpm.df) <- sampleLabels
+
+log2.cpm.df <- as_tibble(log2.cpm, rownames = "geneID")
+colnames(log2.cpm.df) <- c("geneID", sampleLabels)
 log2.cpm.df.melt <- melt(log2.cpm.df)
 
 p1 <- ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
-  labs(y="log2 expression", x = "sample") +
-  coord_flip() +
-  theme_ipsum_rc() 
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="unfiltered, non-normalized",
+       caption=paste0("produced on ", Sys.time()))
 
 cpm <- cpm(myDGEList)
 keepers <- rowSums(cpm>1)>=3 #user defined
 myDGEList.filtered <- myDGEList[keepers,]
+
+log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID") 
+colnames(log2.cpm.filtered.df) <- c("geneID", sampleLabels)
+log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
+
+p2 <- ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, non-normalized",
+       caption=paste0("produced on ", Sys.time()))
+
 myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
 log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
-log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
-colnames(log2.cpm.filtered.norm.df) <- sampleLabels
+log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneID")
+colnames(log2.cpm.filtered.norm.df) <- c("geneID", sampleLabels)
 log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
 
-p2 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
-  labs(y="log2 expression", x = "sample") +
-  coord_flip() +
-  theme_ipsum_rc() 
+  stat_summary(fun.y = "median", 
+               geom = "point", 
+               shape = 124, 
+               size = 6, 
+               color = "black", 
+               show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, TMM normalized",
+       caption=paste0("produced on ", Sys.time()))
 
-library(cowplot)
-plot_grid(p1, p2, labels = c("A", "B"))
-
+plot_grid(p1, p2, p3, labels = c('A', 'B', 'C'), label_size = 12)
 ```
 
 Filtering was carried out to remove lowly expressed genes. Genes with less than 1 count per million (CPM) in at least 3 or more samples filtered out.  This reduced the number of genes from `r nrow(myDGEList)` to `r nrow(myDGEList.filtered)`.  
@@ -167,11 +178,16 @@ Filtering was carried out to remove lowly expressed genes. Genes with less than 
 
 The table shown below includes expression data for `r nrow(myDGEList.filtered)` genes. You can sort and search the data directly from the table.
 
-```{r step 3 - part 1}
+```{r step 3 - multivariate part 1 (data table)}
+library(tidyverse)
+library(reshape2)
+library(DT)
+library(gt)
+library(plotly)
+
 mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
 colnames(mydata.df) <- c("geneSymbol", sampleLabels)
-write_tsv(mydata.df, "normData.txt")
-#user defined
+
 mydata.df <- mutate(mydata.df,
                     uninfected.AVG = (uninf_rep1 + uninf_rep2 + uninf_rep1)/3, 
                     crypto.wt.AVG = (crypto.wt_rep1 + crypto.wt_rep2 + crypto.wt_rep3)/3,
@@ -183,33 +199,52 @@ mydata.df <- mutate(mydata.df,
 
 datatable(mydata.df, 
           extensions = c('KeyTable', "FixedHeader"), 
-          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
-  formatRound(columns=c(1:6), digits=2)
+          caption = 'Table 1: Filtered and normalized data',
+          options = list(keys = TRUE, 
+                         searchHighlight = TRUE, 
+                         pageLength = 10, 
+                         lengthMenu = c("10", "25", "50", "100")))
 ```
 
 ***
 
 ## PCA plot
 
-```{r step 3 - part 2}
+```{r step 3 - multivariate part 2 (PCA plot)}
+
+treatment <- factor(targets$treatment)
+
 pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
 pc.var<-pca.res$sdev^2
 pc.per<-round(pc.var/sum(pc.var)*100, 1)
 
 pca.res.df <- as_tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC3, color=groups1)) +
-  geom_point(size=5) +
-  theme(legend.position="right") + 
-  theme_ipsum_rc()
+pca.plot <- ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
+  geom_point(size=4) +
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  labs(title="PCA plot",
+       caption=paste0("produced on ", Sys.time())) +
+  theme_bw()
+
+ggplotly(pca.plot)
 ```
 
 ***
 
 ## Volcano plot
 
-```{r step 5 - part 1}
-design <- model.matrix(~0 + groups1)
-colnames(design) <- levels(groups1)
+```{r step 5 - diffGenes part 1 (volcano plot)}
+library(tidyverse)
+library(limma)
+library(edgeR) 
+library(gt)
+library(DT) 
+library(plotly) 
+
+treatment <- factor(targets$treatment)
+design <- model.matrix(~0 + treatment)
+colnames(design) <- levels(treatment)
 v.DEGList.filtered.norm <- voom(myDGEList.filtered.norm, design, plot = FALSE)
 fit <- lmFit(v.DEGList.filtered.norm, design)
 contrast.matrix <- makeContrasts(infection_with_WT = crypto.wt - uninfected,
@@ -220,13 +255,18 @@ fits <- contrasts.fit(fit, contrast.matrix)
 ebFit <- eBayes(fits)
 myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC")
 myTopHits <- as_tibble(myTopHits, rownames = "geneSymbol")
-ggplotly(ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) +
+vplot <- ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) +
   geom_point(size=2) +
   ylim(-0.5,12) +
   geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +
   geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", size=1) +
   geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", size=1) +
-  theme_ipsum_rc())
+  labs(title="Volcano plot",
+       subtitle = "C. parvum infected vs. naive (HCT-8 cells)",
+       caption=paste0("produced on ", Sys.time())) +
+  theme_bw()
+
+ggplotly(vplot)
 ```
 
 ***
@@ -235,14 +275,14 @@ ggplotly(ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbo
 
 To identify differentially expressed genes, precision weights were first applied to each gene based on its mean-variance relationship using [VOOM](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29), then data was normalized using the [TMM method](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) in [EdgeR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2796818/).  Linear modeling and bayesian stats were employed via [Limma](https://academic.oup.com/nar/article/43/7/e47/2414268) to find genes that were up- or down-regulated in _C. parvum_ infected cells, compared to naive cells, by 2-fold or more, with a false-discovery rate (FDR) of 0.01. 
 
-```{r step 5 - part 2}
-results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=1)
+```{r step 5 - diffGenes part 2 (DEG table)}
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.05, lfc=1)
 colnames(v.DEGList.filtered.norm$E) <- sampleLabels
 diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0 | results[,2] !=0,]
 diffGenes.df <- as_tibble(diffGenes, rownames = "geneSymbol")
 datatable(diffGenes.df, 
           extensions = c('KeyTable', "FixedHeader"), 
-          caption = 'Table 1: DEGs for infected (wt Crypto) vs control',
+          caption = 'Table 2: DEGs for infected (wt Crypto) vs control',
           options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
   formatRound(columns=c(1:10), digits=2)
 ```
@@ -253,18 +293,60 @@ datatable(diffGenes.df,
 
 Pearson correlation was used to cluster **`r nrow(diffGenes)`** differentially expressed genes, which were then represented as heatmap with the data scaled by Zscore for each row.
 
-```{r step 6}
+```{r step 6 - modules}
+library(gplots) #the heatmap2 function in this package is a primary tool for making heatmaps
+library(RColorBrewer) #need colors to make heatmaps
+library(heatmaply) #for making interactive heatmaps using plotly
 myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
 clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete")
 module.assign <- cutree(clustRows, k=2)
 module.color <- rainbow(length(unique(module.assign)), start=0.1, end=0.9) 
 module.color <- module.color[as.vector(module.assign)] 
-d3heatmap(diffGenes,
+heatmaply(diffGenes,
           colors = myheatcolors2,
           Rowv=as.dendrogram(clustRows),
-          row_side_colors = module.color,
+          RowSideColors=module.color,
+          #showticklabels=c(FALSE,FALSE),
           scale='row')
+```
+
+## GO enrichment
+
+GO enrichment for the `r nrow(myTopHits)` genes induced by infection
+
+```{r step 7 - functionalEnrichment part 1 (gostplot)}
+library(tidyverse)
+library(limma)
+library(RColorBrewer)
+library(gplots)
+library(GSEABase) #functions and methods for Gene Set Enrichment Analysis
+library(Biobase) #base functions for bioconductor; required by GSEABase
+library(GSVA) #Gene Set Variation Analysis, a non-parametric and unsupervised method for estimating variation of gene set enrichment across samples.
+library(gprofiler2) #tools for accessing the GO enrichment results using g:Profiler web resources
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=50, sort.by="logFC")
+gost.res <- gost(rownames(myTopHits), organism = "hsapiens")
+gostplot(gost.res)
+# If you want a static gostplot, comment out the line above and uncomment the following two lines
+# static_gostplot <- gostplot(gost.res) 
+# publish_gostplot(static_gostplot, highlight_terms = "GO:0009165")
+```
+
+
+## GSEA
+
+```{r step 7 - functionalEnrichment part 3 (GSEA)}
+broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CP <- geneIds(broadSet.C2.CP)
+GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1]) 
+GSEAres <- as_tibble(GSEAres, rownames = "Gene set name")
+GSEAres <- dplyr::filter(GSEAres, FDR<=0.05)
+datatable(GSEAres, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          caption = 'Table 3: Signatures enriched in infected cells',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:10), digits=3)
+
 ```
 
 ***
@@ -275,7 +357,7 @@ Describe the results in your own words.  Some things to think about:
 
 * What are the key takeaways from the analysis?
 * What types of analyses would you want to do next?
-* Based on your analysis, what wet-lab experiments would you pursue?
+* Based on your analysis, are there any wet-lab experiments would might priortize?
 * How could you expand on or otherwise enhance this Rmarkdown report?
 
 ## Session info

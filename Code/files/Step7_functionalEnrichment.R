@@ -181,13 +181,17 @@ library(gprofiler2) #tools for accessing the GO enrichment results using g:Profi
 myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=50, sort.by="logFC")
 gost.res <- gost(rownames(myTopHits), organism = "hsapiens")
 gostplot(gost.res)
+# If you want a static gostplot, comment out the line above and uncomment the following two lines
+# static_gostplot <- gostplot(gost.res) 
+# publish_gostplot(static_gostplot, highlight_terms = "GO:0009165")
 broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
 broadSet.C2.CP <- geneIds(broadSet.C2.CP)
 GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1]) 
-GSEAres <- filter(GSEAres, FDR<=0.05)
+GSEAres <- as_tibble(GSEAres, rownames = "Gene set name")
+GSEAres <- dplyr::filter(GSEAres, FDR<=0.05)
 datatable(GSEAres, 
           extensions = c('KeyTable', "FixedHeader"), 
-          caption = 'Signatures enriched in infected cells',
+          caption = 'Table 3: Signatures enriched in infected cells',
           options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
   formatRound(columns=c(1:10), digits=3)
 
@@ -214,4 +218,3 @@ heatmap.2(diffSets.C2CP,
           col=myheatcol, scale="row",
           density.info="none", trace="none", 
           cexRow=0.9, cexCol=1, margins=c(10,14)) # Creates heatmap for entire data set where the obtained clusters are indicated in the color bar.
-

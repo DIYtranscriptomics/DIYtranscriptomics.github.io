@@ -208,3 +208,4 @@ p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=varia
        subtitle="filtered, TMM normalized",
        caption=paste0("produced on ", Sys.time()))
 
+plot_grid(p1, p2, p3, labels = c('A', 'B', 'C'), label_size = 12)
