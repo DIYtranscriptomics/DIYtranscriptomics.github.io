@@ -14,12 +14,15 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 ## Goals
 
-* Learn the basics of Docker and containerized software
+* Review the answer for hackdash #2
+* Discuss the basics of Docker and containerized software
 * Create a simple Docker file
 * Create your own CodeOcean account
 * Interact with the CodeOcean capsule for the course
 
 ## Code
+
+<script src="https://codeocean.com/widget.js?slug=1031026" async></script>
 
 ## Reading
 
