@@ -8,6 +8,8 @@ featured_image: '/images/capsule.jpg'
 
 <div style="text-align: right"> Image credit: 'Emoh: sculpture / time capsule & temporary home' by Loren Naji </div>
 
+[Lecture slides](https://www.icloud.com/keynote/0Nadab6WL2IRMYPcZn8zAAcww#Lecture13%5Freproducibility)
+
 ## Overview
 
 Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button.  
@@ -15,8 +17,8 @@ Reproducing an analysis requires more than just code. You need the original raw 
 ## Goals
 
 * Review the answer for hackdash #2
+* Brief review of Rmarkdown and intro to renv package
 * Discuss the basics of Docker and containerized software
-* Create a simple Docker file
 * Create your own CodeOcean account
 * Interact with the CodeOcean capsule for the course
 
