@@ -18,7 +18,7 @@ library(edgeR)
 library(matrixStats)
 library(gplots) 
 library(limma)
-library(heatmaply)
+library(d3heatmap)
 library(DT)
 library(gt)
 library(plotly)
@@ -74,7 +74,7 @@ p1 <- ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
   stat_summary(fun.y = "median", 
                geom = "point", 
-               shape = 124, 
+               shape = 95, 
                size = 6, 
                color = "black", 
                show.legend = FALSE) +
@@ -96,7 +96,7 @@ p2 <- ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable))
   geom_violin(trim = FALSE, show.legend = FALSE) +
   stat_summary(fun.y = "median", 
                geom = "point", 
-               shape = 124, 
+               shape = 95, 
                size = 6, 
                color = "black", 
                show.legend = FALSE) +
@@ -115,7 +115,7 @@ p3 <- ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=varia
   geom_violin(trim = FALSE, show.legend = FALSE) +
   stat_summary(fun.y = "median", 
                geom = "point", 
-               shape = 124, 
+               shape = 95, 
                size = 6, 
                color = "black", 
                show.legend = FALSE) +
@@ -143,13 +143,15 @@ pc.var<-pca.res$sdev^2
 pc.per<-round(pc.var/sum(pc.var)*100, 1)
 
 pca.res.df <- as_tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
+pca.plot <- ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$treatment)) +
   geom_point(size=4) +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
   theme_bw()
+
+ggplotly(pca.plot)
 
 ```
 
@@ -215,7 +217,7 @@ fits <- contrasts.fit(fit, contrast.matrix)
 ebFit <- eBayes(fits)
 myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC")
 myTopHits <- as_tibble(myTopHits, rownames = "geneSymbol")
-ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) +
+vplot <- ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) +
   geom_point(size=2) +
   ylim(-0.5,12) +
   geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +
@@ -225,6 +227,8 @@ ggplot(myTopHits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", gene
        subtitle = "C. parvum infected vs. naive (HCT-8 cells)",
        caption=paste0("produced on ", Sys.time())) +
   theme_bw()
+
+ggplotly(vplot)
 
 ```
 
@@ -252,22 +256,63 @@ datatable(diffGenes.df,
 ```{r heatmap}
 library(gplots) #the heatmap2 function in this package is a primary tool for making heatmaps
 library(RColorBrewer) #need colors to make heatmaps
-library(heatmaply) #for making interactive heatmaps using plotly
+library(d3heatmap) #for making interactive heatmaps using plotly
 myheatcolors2 <- colorRampPalette(colors=c("yellow","white","blue"))(100)
 clustRows <- hclust(as.dist(1-cor(t(diffGenes), method="pearson")), method="complete") #cluster rows by pearson correlation
 clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="complete")
 module.assign <- cutree(clustRows, k=2)
 module.color <- rainbow(length(unique(module.assign)), start=0.1, end=0.9) 
 module.color <- module.color[as.vector(module.assign)] 
-heatmap.2(diffGenes, 
-          Rowv=as.dendrogram(clustRows), 
-          Colv=as.dendrogram(clustColumns),
-          RowSideColors=module.color,
-          col=myheatcolors2, scale='row', labRow=NA,
-          density.info="none", trace="none",  
-          cexRow=1, cexCol=1, margins=c(8,20)) 
+d3heatmap(diffGenes,
+          colors = myheatcolors2,
+          Rowv=as.dendrogram(clustRows),
+          row_side_colors = module.color,
+          scale='row')
 ```
 
+Functional enrichment {data-icon="fa-signal"}
+===================================== 
+
+Column {data-width=500}
+------------------------------------------------------------------------------
+
+### 'gostplot' of GO enrichment
+
+```{r gostplot}
+library(tidyverse)
+library(limma)
+library(RColorBrewer)
+library(gplots)
+library(GSEABase) #functions and methods for Gene Set Enrichment Analysis
+library(Biobase) #base functions for bioconductor; required by GSEABase
+library(GSVA) #Gene Set Variation Analysis, a non-parametric and unsupervised method for estimating variation of gene set enrichment across samples.
+library(gprofiler2) #tools for accessing the GO enrichment results using g:Profiler web resources
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=50, sort.by="logFC")
+gost.res <- gost(rownames(myTopHits), organism = "hsapiens")
+gostplot(gost.res)
+# If you want a static gostplot, comment out the line above and uncomment the following two lines
+# static_gostplot <- gostplot(gost.res) 
+# publish_gostplot(static_gostplot, highlight_terms = "GO:0009165")
+```
+
+
+Column {data-width=500}
+------------------------------------------------------------------------------
+
+### GSEA result (MSigDB C2 CP collection)
+
+```{r GSEA}
+broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
+broadSet.C2.CP <- geneIds(broadSet.C2.CP)
+GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1]) 
+GSEAres <- as_tibble(GSEAres, rownames = "Gene set name")
+GSEAres <- dplyr::filter(GSEAres, FDR<=0.05)
+datatable(GSEAres, 
+          extensions = c('KeyTable', "FixedHeader"), 
+          caption = 'Table 3: Signatures enriched in infected cells',
+          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
+  formatRound(columns=c(1:10), digits=3)
+```
 
 
 About {data-orientation=rows data-icon="fa-comment-alt"}

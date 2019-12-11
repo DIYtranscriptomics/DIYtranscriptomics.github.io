@@ -34,7 +34,7 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 [Supplementary code file](http://DIYtranscriptomics.github.io/Reading/files/supplementaryCode.pdf) from a recent [Nature Immunology paper](http://DIYtranscriptomics.github.io/Reading/files/singleCellTranscriptome.pdf) 
 
-[Supplementary code file](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) from my lab's recent transcriptome paper. 
+Supplementary code files from some of our recent papers [here](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) ([PDF](http://DIYtranscriptomics.github.io/Reading/files/trichinella_markdown.pdf)), [here](https://www.nature.com/articles/s41564-019-0539-x) ([PDF](http://DIYtranscriptomics.github.io/Reading/files/crypto_markdown.pdf)), and [here](https://stm.sciencemag.org/content/11/519/eaax4204) ([PDF](http://DIYtranscriptomics.github.io/Reading/files/leish_markdown.pdf))
 
 [Make your own CV in markdown](https://github.com/dpbisme/CV_rmarkdown) - uses the [Vitae](https://github.com/ropenscilabs/vitae) and [Scholar](https://cran.r-project.org/web/packages/scholar/vignettes/scholar.html) packages in R. 
 
