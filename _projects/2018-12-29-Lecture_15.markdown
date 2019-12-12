@@ -17,12 +17,15 @@ Reproducing an analysis requires more than just code. You need the original raw 
 ## Goals
 
 * Review the answer for hackdash #2
-* Brief review of Rmarkdown and intro to renv package
+* Brief review of Rmarkdown
+* Create a reproducible R environment using the [renv package](https://rstudio.github.io/renv/articles/renv.html)
 * Discuss the basics of Docker and containerized software
-* Create your own CodeOcean account
-* Interact with the CodeOcean capsule for the course
+* Create your own CodeOcean account using your course email (comes with 15 compute hrs/month, free)
+* Interact with our 'course in a capsule'
 
 ## Code
+
+Clicking on the embedded code capsule below will take you directly to Code Ocean.  Simply login (or set-up a free account if you don't already have one) and you'll be able to re-run the entire course in a matter of minutes, without any software installation or data download.  Your first run may take ~15min, since the full computing environment must be being built, but subsequent runs will be much faster.  Note that this capsule includes raw fastq files, kallisto outputs, all of MSigDB for running GSEA, and the entire ARCHS4 database for interrogating ~700,000 publically available mouse and human RNAseq datasets.  Have fun adapting this capsule for your own analyses!
 
 <script src="https://codeocean.com/widget.js?slug=1031026" async></script>
 
@@ -30,9 +33,11 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 [Whitepaper](http://DIYtranscriptomics.github.io/Reading/files/codeOcean_whitepaper.pdf) describing CodeOcean, the first cloud-based computational reproducibility platform.
 
-CodeOcean is based Docker, a free and open-source tool that allows you to 'build, share and run applications anywhere'.  Take a look at this [intro to Docker](https://docker-curriculum.com/) to get learn more.
+CodeOcean is based on Docker, a free and open-source tool that allows you to 'build, share and run applications anywhere'.  Take a look at this [intro to Docker](https://docker-curriculum.com/) to get learn more.
 
-You can see an example of a reproducible code capsule in our [recent paper](https://stm.sciencemag.org/content/11/519/eaax4204)
+[On-boarding document](https://docs.google.com/document/d/1baA8IRFDZE1rJNB3SYk7Aksvuz5AJ9W4HG2iqYoPt-8/edit?usp=sharing) for gettign started with Code Ocean
+
+[recent paper](https://stm.sciencemag.org/content/11/519/eaax4204) from my lab, showing a code capsule embedded directly in the joural webpage. 
 
 
 
