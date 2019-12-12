@@ -31,13 +31,13 @@ Clicking on the embedded code capsule below will take you directly to Code Ocean
 
 ## Reading
 
-[Whitepaper](http://DIYtranscriptomics.github.io/Reading/files/codeOcean_whitepaper.pdf) describing CodeOcean, the first cloud-based computational reproducibility platform.
+[Code Ocean whitepaper](http://DIYtranscriptomics.github.io/Reading/files/codeOcean_whitepaper.pdf) describing the need for better tools for reproducible research and introducting their cloud-based computational platform for addressing this need.
 
-CodeOcean is based on Docker, a free and open-source tool that allows you to 'build, share and run applications anywhere'.  Take a look at this [intro to Docker](https://docker-curriculum.com/) to get learn more.
+[Intro to Docker](https://docker-curriculum.com/) - CodeOcean is based on Docker, a free and open-source tool that allows you to 'build, share and run applications anywhere'. 
 
 [On-boarding document](https://docs.google.com/document/d/1baA8IRFDZE1rJNB3SYk7Aksvuz5AJ9W4HG2iqYoPt-8/edit?usp=sharing) for gettign started with Code Ocean
 
-[recent paper](https://stm.sciencemag.org/content/11/519/eaax4204) from my lab, showing a code capsule embedded directly in the joural webpage. 
+[Our recent paper](https://stm.sciencemag.org/content/11/519/eaax4204), showing a code capsule embedded directly in the joural webpage (a first for any AAAS journal). 
 
 
 
