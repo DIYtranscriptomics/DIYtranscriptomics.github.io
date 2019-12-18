@@ -21,17 +21,17 @@
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
 	<title>Module identification – DIY.transcriptomics</title>
-	<meta name="description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis.">
+	<meta name="description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis to be covered in the next class.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Module identification – DIY.transcriptomics">
-	<meta name="twitter:description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis.">
+	<meta name="twitter:description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis to be covered in the next class.">
 	<meta name="twitter:image:src" content="http://localhost:4000/images/bird_flock.jpg">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Module identification – DIY.transcriptomics" />
-	<meta property="og:description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis." />
+	<meta property="og:description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis to be covered in the next class." />
 	<meta property="og:image" content="http://localhost:4000/images/bird_flock.jpg" />
 
 	
@@ -133,7 +133,7 @@
 	<div class="wrap">
 
 		<h1>Module identification</h1>
-		<p>Lecture 11 • 2019.04.03 • Hill 130</p>
+		<p>Lecture 11 • 2019.11.06 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,7 +145,9 @@
 
 		<article class="single-post">
 
-			<h2 id="overview">Overview</h2>
+			<div style="text-align: right"> Image credit: Adelaide Tyrol </div>
+
+<h2 id="overview">Overview</h2>
 
 <p>Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you’ll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.</p>
 
@@ -158,12 +160,17 @@
 
 <h2 id="code">Code</h2>
 
-<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step6_heatmap.R">Step 6 script</a></p>
+<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step6_modules.R">Step 6 script</a></p>
 
 <h2 id="reading">Reading</h2>
 
-<p><a href="https://doi.org/10.1186/s13059-018-1536-8">Clust: automatic extraction of optimal co-expressed gene clusters from gene expression data. Genome Biology, 2018</a>.</p>
+<p>If you want to try a clustering method outside of R, check out the Clust program: <a href="https://doi.org/10.1186/s13059-018-1536-8">Clust: automatic extraction of optimal co-expressed gene clusters from gene expression data. Genome Biology, 2018</a>.</p>
 
+<p><strong>Colors in R</strong> - Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the <a href="http://colorbrewer2.org">RColorBrewer package</a>.  These palettes can be viewed in <a href="http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf">this cheatsheet</a>.  Unfortunately, these standard palettes often don’t cut it, and you’ll need custom palettes. For this, I love using <a href="https://sipapp.io/">Sip</a> to pick, organize and access color palettes.</p>
+
+<h2 id="lecture-video">Lecture video</h2>
+
+<iframe src="https://player.vimeo.com/video/372122535" width="640" height="370" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
 
 
 		</article>
@@ -181,7 +188,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

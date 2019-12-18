@@ -1,0 +1,27 @@
+# Variables that can be put on the x and y axes
+axis_vars <- c(
+  "B6 untreated rep1" = "B6.untreated.1",
+  "B6 untreated rep2" = "B6.untreated.2",
+  "Ripk3 untreated rep1" = "Ripk3.untreated.1",
+  "Ripk3 untreated rep2" = "Ripk3.untreated.2",
+  "Ripk3Casp8 untreated rep1" = "Ripk3_Casp8.untreated.1",
+  "Ripk3Casp8 untreated rep2" = "Ripk3_Casp8.untreated.2",
+  "B6 untreated Avg" ="B6.untreated.AVG",
+  "Ripk3 untreated Avg" = "Ripk3.untreated.AVG", 
+  "Ripk3Casp8 untreated Avg" = "Ripk3_Casp8.untreated.AVG",
+  "B6 LPS rep1" = "B6.LPS_6hr.1",
+  "B6 LPS rep2" = "B6.LPS_6hr.2",
+  "Ripk3 LPS rep1" = "Ripk3.LPS_6hr.1",
+  "Ripk3 LPS rep2" = "Ripk3.LPS_6hr.2",
+  "Ripk3Casp8 LPS rep1" = "Ripk3_Casp8.LPS_6hr.1",
+  "Ripk3Casp8 LPS rep2" = "Ripk3_Casp8.LPS_6hr.2",
+  "B6 LPS Avg" = "B6.LPS_6hr.AVG",
+  "Ripk3 LPS Avg" = "Ripk3.LPS_6hr.AVG",
+  "Ripk3Casp8 LPS Avg" = "Ripk3_Casp8.LPS_6hr.AVG",
+  "LogFC Ripk3 LPS vs B6 LPS" = "LogFC.Ripk3.LPS_6hr.vs.B6.LPS_6hr",
+  "LogFC Ripk3Casp8 LPS vs Ripk3 LPS" = "LogFC.Ripk3_Casp8.LPS_6hr.vs.Ripk3.LPS_6hr",
+  "LogFC Ripk3Casp8 LPS vs B6 LPS" = "LogFC.Ripk3_Casp8.LPS_6hr.vs.B6.LPS_6hr",
+  "LogFC Ripk3Casp8 untreated vs Ripk3 untreated" = "LogFC.Ripk3_Casp8.untreated.vs.Ripk3.untreated",
+  "LogFC Ripk3 untreated vs B6 untreated" = "LogFC.Ripk3.untreated.vs.B6.untreated",
+  "LogFC Ripk3Casp8 untreated vs B6 untreated" = "LogFC.Ripk3_Casp8.untreated.vs.B6.untreated"
+  )

@@ -21,17 +21,17 @@
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
 	<title>Starting your R workflow – DIY.transcriptomics</title>
-	<meta name="description" content="Now that we've aligned our reads, it's time to read our data into R.  We'll discuss units for measuring gene expression (RPKM, FPKM, and TPM), how these units relate to basic properties of your experiment, and how normalize within and between samples.">
+	<meta name="description" content="We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Starting your R workflow – DIY.transcriptomics">
-	<meta name="twitter:description" content="Now that we've aligned our reads, it's time to read our data into R.  We'll discuss units for measuring gene expression (RPKM, FPKM, and TPM), how these units relate to basic properties of your experiment, and how normalize within and between samples.">
+	<meta name="twitter:description" content="We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.">
 	<meta name="twitter:image:src" content="http://localhost:4000/images/first_step.jpg">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Starting your R workflow – DIY.transcriptomics" />
-	<meta property="og:description" content="Now that we've aligned our reads, it's time to read our data into R.  We'll discuss units for measuring gene expression (RPKM, FPKM, and TPM), how these units relate to basic properties of your experiment, and how normalize within and between samples." />
+	<meta property="og:description" content="We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R." />
 	<meta property="og:image" content="http://localhost:4000/images/first_step.jpg" />
 
 	
@@ -133,7 +133,7 @@
 	<div class="wrap">
 
 		<h1>Starting your R workflow</h1>
-		<p>Lecture 5 • 2019.02.20 • Hill 131</p>
+		<p>Lecture 5 • 2019.09.25 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,23 +145,26 @@
 
 		<article class="single-post">
 
-			<p><a href="https://www.datacamp.com/courses/introduction-to-the-tidyverse">Homework: Introduction to the Tidyverse (~4hrs)</a> - due before the start of class on March 6th.</p>
+			<p>No lecture slides for this class.  We’ll spend the entire time working on Step 1 script.</p>
+
+<p><a href="https://www.datacamp.com/courses/introduction-to-the-tidyverse">Homework: Introduction to the Tidyverse (~4hrs)</a> - due before the start of class on Oct 2nd.</p>
 
 <h2 id="overview">Overview</h2>
 
-<p>Now that we’ve aligned our reads, it’s time to discuss units for measuring gene expression.  We’ll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We’ll also discuss normalization <em>within</em> and <em>between</em> samples.  To conclude this class, we’ll read our Kallisto data into the R environment.</p>
+<p>We’ll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We’ll then access annotation data before reading our Kallisto results into R.</p>
 
 <h2 id="goals">Goals</h2>
 
 <ul>
-  <li>Review basic elements of our scripts</li>
-  <li>View Kallisto results using Sleuth</li>
-  <li>Read our transcript abundance measurements into the R environment using TxImport</li>
+  <li>Review basic elements of an R script</li>
+  <li>Understand the importance of a study design file</li>
+  <li>Learn how to access R packages, and their help documentation</li>
+  <li>Read Kallisto transcript abundance measurements into the R environment using TxImport</li>
 </ul>
 
 <h2 id="code">Code</h2>
 
-<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R">Step 1 script</a></p>
+<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R">Step 1 script</a></p>
 
 <h2 id="reading">Reading</h2>
 
@@ -189,7 +192,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

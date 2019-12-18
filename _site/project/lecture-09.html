@@ -20,19 +20,19 @@
 
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
-	<title>Accessing public data – DIY.transcriptomics</title>
-	<meta name="description" content="In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.">
+	<title>Hackdash 1 – DIY.transcriptomics</title>
+	<meta name="description" content="You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  This 2hr in-class assignment will test your ability to use recent class material and code to solve a problem in a real RNAseq dataset.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Accessing public data – DIY.transcriptomics">
-	<meta name="twitter:description" content="In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.">
-	<meta name="twitter:image:src" content="http://localhost:4000/images/DataDeluge.jpg">
+	<meta name="twitter:title" content="Hackdash 1 – DIY.transcriptomics">
+	<meta name="twitter:description" content="You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  This 2hr in-class assignment will test your ability to use recent class material and code to solve a problem in a real RNAseq dataset.">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/timepiece.jpg">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="Accessing public data – DIY.transcriptomics" />
-	<meta property="og:description" content="In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources." />
-	<meta property="og:image" content="http://localhost:4000/images/DataDeluge.jpg" />
+	<meta property="og:title" content="Hackdash 1 – DIY.transcriptomics" />
+	<meta property="og:description" content="You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  This 2hr in-class assignment will test your ability to use recent class material and code to solve a problem in a real RNAseq dataset." />
+	<meta property="og:image" content="http://localhost:4000/images/timepiece.jpg" />
 
 	
 	<!-- Font Embed Code -->
@@ -122,18 +122,18 @@
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="Accessing public data – DIY.transcriptomics">
+		<div class="page__content" data-page-title="Hackdash 1 – DIY.transcriptomics">
 
 			<section class="hero hero--single">
 
-	<div class="hero__image" style="background-image: url(/images/DataDeluge.jpg)">
+	<div class="hero__image" style="background-image: url(/images/timepiece.jpg)">
 		<div class="hero__overlay"></div>
 	</div>
 
 	<div class="wrap">
 
-		<h1>Accessing public data</h1>
-		<p>Lecture 9 • 2019.03.20 • Hill 130</p>
+		<h1>Hackdash 1</h1>
+		<p>Lecture 9 • 2019.10.23 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,27 +145,59 @@
 
 		<article class="single-post">
 
-			<h2 id="overview">Overview</h2>
+			<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez (above) </div>
+<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
 
-<p>In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and other resources.</p>
+<p><img src="/images/schisto.png" alt="" /></p>
 
-<h2 id="goals">Goals</h2>
+<h2 id="the-worm-challenge">The worm challenge</h2>
+
+<p>A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, <em>Schistosoma mansoni</em>.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following <em>in vivo</em> treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced!  To begin this challenge, you’ll need to download the Kallisto read mapping results and study design file <strong><a href="https://drive.google.com/file/d/1a1S-hNK-ZU24iikTfOlkhiWljwxUF4Yo/view?usp=sharing">here</a></strong> and read these data into a new R project.</p>
+
+<p>To succeed at the worm challenge, you will need to use the tools you’ve learned in class for filtering, normalizing, multivariate analysis with PCA, and data wrangling with dplyr.</p>
+
+<p>The first team to submit the most complete answer (via private message on Slack) to the following three questions will win the challenge.</p>
+
+<h3 id="before-you-start">Before you start</h3>
 
 <ul>
-  <li>Learn about <code class="highlighter-rouge">fasterq_dump</code></li>
-  <li>Explore ARCHS4 database programatically</li>
-  <li>Discuss and explore LINCS L1000 database</li>
+  <li>download a fresh copy of the step 1, 2 and 3 scripts from the course website <a href="http://diytranscriptomics.com/scripts">here</a></li>
+  <li>use <em>only</em> the ‘essential’ code chunks from these scripts to complete the challenge.</li>
+  <li><em>don’t</em> try to annotate the data, just import at the transcript level</li>
 </ul>
 
-<h2 id="code">Code</h2>
+<h3 id="question-1">Question #1</h3>
 
-<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step4_publicData.R">Step 4 script</a></p>
+<p>Use plots to show the impact of filtering and normalization on the data.</p>
 
-<h2 id="reading">Reading</h2>
+<h4 id="tips">Tips</h4>
 
-<p><a href="https://www.nature.com/articles/s41467-018-03751-6">Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018</a>.  Describes the ARCHS4 resource from Avi Ma’ayan’s lab that provides web and R/bioconductor access to public RNAseq datasets from human and mouse,prealigned with Kallisto.</p>
+<ul>
+  <li>Do not use ‘coord_flip’ in your ggplot code, as the number of samples is so large that horizontal display is preferred</li>
+  <li>Don’t use cowplot to patch together your different ggplots into one figure.  Again, the number of samples in this particular study makes this too cramped.</li>
+</ul>
 
-<p><a href="https://doi.org/10.1016/j.cell.2017.10.049">A Next Generation Connectivity Map: L1000 Platform and the First 1,000,000 Profiles. Cell, Nov, 2017</a>.  Describes the development and use of a low-cost, reduced representation gene profiling method, termed L1000, applied to 1.3 million samples spanning many difference cell types, stimuli and timepoints.</p>
+<h3 id="question-2">Question #2</h3>
+
+<p>Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support your answer?</p>
+
+<h4 id="tips-1">Tips:</h4>
+
+<ul>
+  <li>take advantage of setting the ggplot ‘aes’ to map size and shape to different variables from your study design file</li>
+</ul>
+
+<h3 id="question-3">Question #3</h3>
+
+<p>Using dplyr ‘verbs’, identify the top 10 parasite genes induced by praziquantel treatment in female LE strain worms at the 24hr timepoint compared to control worms. The top 10 genes should be selected and ordered by <em>average</em> Log fold change for the groups of replicates.  Please include a table to support your answer.</p>
+
+<h3 id="bonus-question">Bonus question</h3>
+
+<p>Anything interesting stand out to you about the top genes on your list (requires a literature search)?</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>To be reviewed in class</p>
 
 
 		</article>
@@ -183,7 +215,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

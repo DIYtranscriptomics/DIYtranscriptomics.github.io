@@ -21,17 +21,17 @@
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
 	<title>Ultra-fast read mapping with Kallisto – DIY.transcriptomics</title>
-	<meta name="description" content="In this class we'll use Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome.">
+	<meta name="description" content="In this class we'll finally get down to the business of using Kallisto for memory-efficient mapping of your raw reads.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening under the hood. During this process, we'll touch on a range of topics, from reference files, to command line basics, and using shell scripts for automation and reproducibility.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Ultra-fast read mapping with Kallisto – DIY.transcriptomics">
-	<meta name="twitter:description" content="In this class we'll use Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome.">
+	<meta name="twitter:description" content="In this class we'll finally get down to the business of using Kallisto for memory-efficient mapping of your raw reads.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening under the hood. During this process, we'll touch on a range of topics, from reference files, to command line basics, and using shell scripts for automation and reproducibility.">
 	<meta name="twitter:image:src" content="http://localhost:4000/images/bear.jpg">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Ultra-fast read mapping with Kallisto – DIY.transcriptomics" />
-	<meta property="og:description" content="In this class we'll use Kallisto for memory-efficient mapping of your raw reads to a reference transcriptome." />
+	<meta property="og:description" content="In this class we'll finally get down to the business of using Kallisto for memory-efficient mapping of your raw reads.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening under the hood. During this process, we'll touch on a range of topics, from reference files, to command line basics, and using shell scripts for automation and reproducibility." />
 	<meta property="og:image" content="http://localhost:4000/images/bear.jpg" />
 
 	
@@ -133,7 +133,7 @@
 	<div class="wrap">
 
 		<h1>Ultra-fast read mapping with Kallisto</h1>
-		<p>Lecture 3 • 2019.02.06 • Hill 130</p>
+		<p>Lecture 3 • 2019.09.11 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,18 +145,20 @@
 
 		<article class="single-post">
 
-			<p><a href="https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments">Lecture slides</a></p>
+			<div style="text-align: right"> Image credit: Lior Pachter </div>
 
-<p><a href="https://www.datacamp.com/courses/free-introduction-to-r">Homework: DataCamp Intro to R course (~2hrs)</a> - due before the start of class on Feb 13th.</p>
+<p><a href="https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments">Lecture slides</a></p>
+
+<p><a href="https://www.datacamp.com/courses/free-introduction-to-r">Homework: DataCamp Intro to R course (~2hrs)</a> - due before the start of class on Sept 18th.</p>
 
 <h2 id="overview">Overview</h2>
 
-<p>In this class we’ll finally get down to the business of using <a href="https://pachterlab.github.io/kallisto/about">Kallisto</a>, software for memory-efficient mapping of your raw reads to a reference transcriptome.  You’ll carry out this mapping in class, right on your laptop, while we discuss what’s happening ‘under the hood’ with Kallisto and how this compares to more traditional alignment methods.</p>
+<p>In this class we’ll finally get down to the business of using <a href="https://pachterlab.github.io/kallisto/about">Kallisto</a>, software for memory-efficient mapping of your raw reads to a reference transcriptome.  You’ll carry out this mapping in class, right on your laptop, while we discuss what’s happening ‘under the hood’ with Kallisto and how this compares to more traditional alignment methods.  You’ll be introduced to using command line software and will learn about automation and reproducibility through shell scripts.</p>
 
 <h2 id="goals">Goals</h2>
 
 <ul>
-  <li>Start a project directory that we’ll use for the rest of the course, and discuss project management and organization</li>
+  <li>Start a project directory that we’ll use for the rest of the course.</li>
   <li>Download a reference transcriptome file (talk a bit about what is and is not in a reference file)</li>
   <li>Build an index from this reference file so that read mapping can be carried out more efficiently</li>
   <li>Map our raw reads to the index, and talk a bit about what’s happening under the hood</li>
@@ -164,35 +166,41 @@
 
 <h2 id="reading">Reading</h2>
 
-<p><em>papers, blogs posts and videos on Kallisto</em></p>
+<h3 id="papers-and-blogs-posts-on-kallisto">papers and blogs posts on Kallisto</h3>
 
-<p>The <a href="http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf">2016 Nature Biotech paper</a> from Lior Pachter’s lab describing Kallisto</p>
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf">2016 Nature Biotech paper</a> from Lior Pachter’s lab describing Kallisto</p>
 
-<p>The <a href="http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf">2017 Nature Methods paper</a> from Lior Pachter’s lab describing Sleuth</p>
-
-<p><a href="https://www.youtube.com/watch?v=b4tVokh6Law">Harold Pimentel’s talk on alignment</a></p>
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf">2017 Nature Methods paper</a> from Lior Pachter’s lab describing Sleuth</p>
 
 <p><a href="https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/">Lior Pachter’s blog post on Kallisto</a></p>
 
-<p>A great <a href="http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html">blog post</a> that explains the principle of ‘pseudoalignments’ that Kallisto uses to map reads to transcripts</p>
+<p><a href="http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html">blog post on pseudoalignments</a> - helps understand how Kallisto maps reads to transcripts</p>
 
 <p>Did you notice that Kallisto is using ‘Expectation Maximization (EM)’ during the alignment?  You can read more about what this is <a href="http://DIYtranscriptomics.github.io/Reading/files/EM.pdf">here</a></p>
 
-<p>Follow <a href="https://groups.google.com/forum/#!forum/kallisto-sleuth-users">Kallisto discussions/questions</a> and <a href="https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements">Kallisto announcements</a> on Google groups</p>
+<p><a href="https://groups.google.com/forum/#!forum/kallisto-sleuth-users">Kallisto discussions/questions</a> and <a href="https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements">Kallisto announcements</a> are available on Google groups</p>
 
-<p><em>more general info about ultra lightweight methods for transcript quantification</em></p>
+<h3 id="general-info-about-ultra-lightweight-methods-for-transcript-quantification">General info about ultra lightweight methods for transcript quantification</h3>
 
-<p><a href="http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf">This 2014 Nature Biotech paper</a> described Sailfish, which implimented the first lightweight method for quantifying transcript expression.</p>
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf">2014 Nature Biotech paper</a> - describes Sailfish, which implimented the first lightweight method for quantifying transcript expression.</p>
 
-<p>Rob Patro, the first author of the Sailfish paper, wrote a nice blog post called <a href="http://robpatro.com/blog/?p=248">Not quite alignments</a>, comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.</p>
+<p><a href="http://robpatro.com/blog/?p=248">Not quite alignments</a> - Rob Patro, the first author of the Sailfish paper, wrote a nice blog post comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.</p>
 
-<p>Read more about <a href="http://biorxiv.org/content/early/2015/10/03/021592">Salmon</a>, the newest lightweight aligment tool out from Rob Patro and Carl Kinsford.  <a href="https://combine-lab.github.io/salmon/">Check out the website too</a>.</p>
+<p><a href="https://www.nature.com/articles/nmeth.4197">2018 Nature Methods paper describing Salmon</a> - A lightweight aligment tool from Rob Patro and Carl Kinsford.   <a href="https://combine-lab.github.io/salmon/">Check out the website too</a>.</p>
 
-<p>Don’t understand what a de Bruijn graph is? Find out more in the <a href="http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf">this primer from Nature Biotechnology</a></p>
-
-<p><a href="http://theleadingstrand.cshl.edu/Course/Keynote/2013/INFO/135">Lior Pachter’s talk at Cold Spring Harbor</a></p>
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf">2011 Nature Biotechnology </a> - Great primer to better understand what de Bruijn graph is.</p>
 
 <p><a href="http://DIYtranscriptomics.github.io/Reading/files/gregGrant_aligners_natMeth.pdf">Greg Grant’s recent paper comparing different aligners</a>.  This should be a helpful guide in choosing alignment software outside of what we used in class.</p>
+
+<h2 id="videos">Videos</h2>
+
+<p><strong>Harold Pimentel’s talk on alignment (20 min)</strong></p>
+
+<iframe src="https://www.youtube.com/embed/b4tVokh6Law" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+
+<p><strong>Lior Pachter’s talk at CSHL (45 min)</strong></p>
+
+<iframe src="https://www.youtube.com/embed/5NiFibnbE8o" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
 
 
 		</article>
@@ -210,7 +218,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

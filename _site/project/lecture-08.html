@@ -20,19 +20,19 @@
 
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
-	<title>Hackdash I – DIY.transcriptomics</title>
-	<meta name="description" content="You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!">
+	<title>Accessing public data – DIY.transcriptomics</title>
+	<meta name="description" content="In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO).">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Hackdash I – DIY.transcriptomics">
-	<meta name="twitter:description" content="You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!">
-	<meta name="twitter:image:src" content="http://localhost:4000/images/timepiece.jpg">
+	<meta name="twitter:title" content="Accessing public data – DIY.transcriptomics">
+	<meta name="twitter:description" content="In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO).">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/DataDeluge.jpg">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="Hackdash I – DIY.transcriptomics" />
-	<meta property="og:description" content="You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!" />
-	<meta property="og:image" content="http://localhost:4000/images/timepiece.jpg" />
+	<meta property="og:title" content="Accessing public data – DIY.transcriptomics" />
+	<meta property="og:description" content="In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO)." />
+	<meta property="og:image" content="http://localhost:4000/images/DataDeluge.jpg" />
 
 	
 	<!-- Font Embed Code -->
@@ -122,18 +122,18 @@
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="Hackdash I – DIY.transcriptomics">
+		<div class="page__content" data-page-title="Accessing public data – DIY.transcriptomics">
 
 			<section class="hero hero--single">
 
-	<div class="hero__image" style="background-image: url(/images/timepiece.jpg)">
+	<div class="hero__image" style="background-image: url(/images/DataDeluge.jpg)">
 		<div class="hero__overlay"></div>
 	</div>
 
 	<div class="wrap">
 
-		<h1>Hackdash I</h1>
-		<p>Lecture 8 • 2019.03.13 • Hill 130</p>
+		<h1>Accessing public data</h1>
+		<p>Lecture 8 • 2019.10.16 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,13 +145,46 @@
 
 		<article class="single-post">
 
-			<h2 id="overview">Overview</h2>
+			<div style="text-align: right"> Image credit: Brett Ryder, The Economist </div>
 
-<p>You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don’t quite have time for a full Hackathon, so we’ll do a mad dash to the finish line instead.  The class will be broken up into small groups.  No grades will be given, but fun will be had by all!</p>
+<p><a href="https://www.icloud.com/keynote/0eFM_9DUG9UmIULnEPYqgr5Jg#Lecture_06%5FPublicData">Lecture slides</a></p>
 
-<h2 id="question">Question</h2>
+<p><a href="https://www.datacamp.com/courses/data-visualization-with-ggplot2-1">Homework: Data visualization with ggplot2 - part 1 (~4hrs)</a> - due by start of class today!</p>
 
-<p>The hackdash question will be posted at the start of class.</p>
+<h2 id="overview">Overview</h2>
+
+<p>In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO).</p>
+
+<h2 id="goals">Goals</h2>
+
+<ul>
+  <li>Learn about <code class="highlighter-rouge">fasterq_dump</code></li>
+  <li>Learn about HDF5 file format</li>
+  <li>Explore ARCHS4 database programatically</li>
+</ul>
+
+<h2 id="code">Code</h2>
+
+<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step4_publicData.R">Step 4 script</a></p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p><a href="https://amp.pharm.mssm.edu/archs4/download.html">ARCHS4 data in HDF5 format</a> - Download the <em>human_matrix.h5 v7</em> and the <em>mouse_matrix.h5 v7</em>.  These HDF5 files contain RNAseq data already aligned using Kallisto for 209,395 and 170,010 samples, respectively.  Note that each of these files will take about 5Gb of space on your hard-drive.</p>
+
+<h2 id="reading">Reading</h2>
+
+<p><a href="https://www.nature.com/articles/s41467-018-03751-6">Massive mining of publicly available RNA-seq data from human and mouse. Nature Communications, April, 2018</a>.  Describes the ARCHS4 resource from Avi Ma’ayan’s lab that provides convenient access to public RNAseq datasets, already prealigned with Kallisto.  You can access data either through the <a href="https://amp.pharm.mssm.edu/archs4/">ARCHS4 website</a> or using the <a href="https://www.bioconductor.org/packages/devel/bioc/vignettes/rhdf5/inst/doc/rhdf5.html">rhdf5 package</a>.</p>
+
+<p><a href="https://zenodo.org/record/1561840#.XIlI0hNKjOQ">Digital Expression Explorer 2: a repository of 4.5 trillion uniformly processed RNA-seq reads and counting</a> - similar to ARCHS4, the DEE2 project leverages Kallisto and GEO/SRA to make hundreds of thousands of samples readily available to you, either through <a href="http://dee2.io/">their website</a>, or through R using the <a href="https://github.com/markziemann/dee2/blob/master/AccessDEEfromR.md">DEE2 package</a></p>
+
+<p><a href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005910">Activity of Uncleaved Caspase-8 Controls Anti-bacterial Immune Defense and TLR-Induced Cytokine Production Independent of Cell Death, Oct, 2016</a>.  This paper contains the data we’ll retrieve from a public gene expression repository.  The data is available <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86922">here</a></p>
+
+<h2 id="video">Video</h2>
+
+<p><strong>ARCHS4 video describing how HDF5 files were created from gene expression data (13 min)</strong></p>
+
+<iframe src="https://www.youtube.com/embed/TjkWSBQuKoE" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+
 
 
 		</article>
@@ -169,7 +202,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

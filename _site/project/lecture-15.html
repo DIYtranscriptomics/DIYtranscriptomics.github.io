@@ -20,19 +20,19 @@
 
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
-	<title>Final exam – DIY.transcriptomics</title>
-	<meta name="description" content="During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A (and we'll eat pizza!).">
+	<title>Making your analysis portable and reproducible with Docker – DIY.transcriptomics</title>
+	<meta name="description" content="Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Final exam – DIY.transcriptomics">
-	<meta name="twitter:description" content="During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A (and we'll eat pizza!).">
-	<meta name="twitter:image:src" content="http://localhost:4000/images/pizza.jpg">
+	<meta name="twitter:title" content="Making your analysis portable and reproducible with Docker – DIY.transcriptomics">
+	<meta name="twitter:description" content="Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button.">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/capsule.jpg">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="Final exam – DIY.transcriptomics" />
-	<meta property="og:description" content="During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A (and we'll eat pizza!)." />
-	<meta property="og:image" content="http://localhost:4000/images/pizza.jpg" />
+	<meta property="og:title" content="Making your analysis portable and reproducible with Docker – DIY.transcriptomics" />
+	<meta property="og:description" content="Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button." />
+	<meta property="og:image" content="http://localhost:4000/images/capsule.jpg" />
 
 	
 	<!-- Font Embed Code -->
@@ -122,18 +122,18 @@
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="Final exam – DIY.transcriptomics">
+		<div class="page__content" data-page-title="Making your analysis portable and reproducible with Docker – DIY.transcriptomics">
 
 			<section class="hero hero--single">
 
-	<div class="hero__image" style="background-image: url(/images/pizza.jpg)">
+	<div class="hero__image" style="background-image: url(/images/capsule.jpg)">
 		<div class="hero__overlay"></div>
 	</div>
 
 	<div class="wrap">
 
-		<h1>Final exam</h1>
-		<p>Lecture 15 • 2019.05.01 • Hill 130</p>
+		<h1>Making your analysis portable and reproducible with Docker</h1>
+		<p>Lecture 15 • 2019.12.11 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,15 +145,43 @@
 
 		<article class="single-post">
 
-			<h2 id="overview">Overview</h2>
+			<div style="text-align: right"> Image credit: 'Emoh: sculpture / time capsule &amp; temporary home' by Loren Naji </div>
 
-<p>During this in-class exam, I’ll test your knowledge using a fun but challenging Jeopardy style Q&amp;A.</p>
+<p><a href="https://www.icloud.com/keynote/0Nadab6WL2IRMYPcZn8zAAcww#Lecture13%5Freproducibility">Lecture slides</a></p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you’ll learn how to ‘containerize’  your data, scripts and software into a code timecapsule, making it easy to share and rerun an entire analysis with the push of a button.</p>
 
 <h2 id="goals">Goals</h2>
 
 <ul>
-  <li>To eat pizza and have fun</li>
+  <li>Review the answer for hackdash #2</li>
+  <li>Brief review of Rmarkdown</li>
+  <li>Create a reproducible R environment using the <a href="https://rstudio.github.io/renv/articles/renv.html">renv package</a></li>
+  <li>Discuss the basics of Docker and containerized software</li>
+  <li>Create your own CodeOcean account using your course email (comes with 15 compute hrs/month, free)</li>
+  <li>Interact with our ‘course in a capsule’</li>
 </ul>
+
+<h2 id="code">Code</h2>
+
+<p>Clicking on the embedded code capsule below will take you directly to Code Ocean.  Simply login (or set-up a free account if you don’t already have one) and you’ll be able to re-run the entire course in a matter of minutes, without any software installation or data download.  Your first run may take ~15min, since the full computing environment must be being built, but subsequent runs will be much faster.  Note that this capsule includes raw fastq files, kallisto outputs, all of MSigDB for running GSEA, and the entire ARCHS4 database for interrogating ~700,000 publically available mouse and human RNAseq datasets.  Have fun adapting this capsule for your own analyses!</p>
+
+<p>If you do not see a embedded capsule below, please refresh the webpage.</p>
+
+<script src="https://codeocean.com/widget.js?slug=1031026" async=""></script>
+
+<h2 id="reading">Reading</h2>
+
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/codeOcean_whitepaper.pdf">Code Ocean whitepaper</a> describing the need for better tools for reproducible research and introducting their cloud-based computational platform for addressing this need.</p>
+
+<p><a href="https://docker-curriculum.com/">Intro to Docker</a> - CodeOcean is based on Docker, a free and open-source tool that allows you to ‘build, share and run applications anywhere’.</p>
+
+<p><a href="https://docs.google.com/document/d/1baA8IRFDZE1rJNB3SYk7Aksvuz5AJ9W4HG2iqYoPt-8/edit?usp=sharing">On-boarding document</a> for gettign started with Code Ocean</p>
+
+<p><a href="https://stm.sciencemag.org/content/11/519/eaax4204">Our recent paper</a>, showing a code capsule embedded directly in the joural webpage (a first for any AAAS journal).</p>
+
 
 
 		</article>
@@ -171,7 +199,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

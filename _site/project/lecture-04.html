@@ -21,17 +21,17 @@
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
 	<title>Understanding RNAseq count data – DIY.transcriptomics</title>
-	<meta name="description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment.">
+	<meta name="description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Understanding RNAseq count data – DIY.transcriptomics">
-	<meta name="twitter:description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment.">
+	<meta name="twitter:description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script.">
 	<meta name="twitter:image:src" content="http://localhost:4000/images/abacus.jpg">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Understanding RNAseq count data – DIY.transcriptomics" />
-	<meta property="og:description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We'll also discuss normalization *within* and *between* samples.  To conclude this class, we'll read our Kallisto data into the R environment." />
+	<meta property="og:description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script." />
 	<meta property="og:image" content="http://localhost:4000/images/abacus.jpg" />
 
 	
@@ -133,7 +133,7 @@
 	<div class="wrap">
 
 		<h1>Understanding RNAseq count data</h1>
-		<p>Lecture 4 • 2019.02.13 • Hill 131</p>
+		<p>Lecture 4 • 2019.09.18 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,13 +145,15 @@
 
 		<article class="single-post">
 
-			<p><a href="https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits">Lecture slides</a></p>
+			<div style="text-align: right"> Image credit: 'Abacus' ca. 1946: textile, Paul Rand </div>
 
-<p><a href="https://www.datacamp.com/courses/introduction-to-the-tidyverse">Homework: Introduction to the Tidyverse (~4hrs)</a> - due before the start of class on March 6th.</p>
+<p><a href="https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits">Lecture slides</a></p>
+
+<p><a href="https://www.datacamp.com/courses/introduction-to-the-tidyverse">Homework: Introduction to the Tidyverse (~4hrs)</a> - due before the start of class on Oct 2nd.</p>
 
 <h2 id="overview">Overview</h2>
 
-<p>Now that we’ve aligned our reads, it’s time to discuss units for measuring gene expression.  We’ll discuss differences between RPKM and TPM, and how these units relate to basic properties of your experiment.  We’ll also discuss normalization <em>within</em> and <em>between</em> samples.</p>
+<p>Now that we’ve aligned our reads, it’s time to discuss units for measuring gene expression.  We’ll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We’ll also discuss normalization within and between samples.  To conclude this class, we’ll fire up RStudio and take a look at our first script.</p>
 
 <h2 id="goals">Goals</h2>
 
@@ -163,17 +165,15 @@
 
 <h2 id="code">Code</h2>
 
-<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step1_preprocessingKallisto.R">Step 1 script</a></p>
+<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R">Step 1 script</a></p>
 
 <h2 id="reading">Reading</h2>
 
 <p><a href="https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/">What the FPKM?</a> - Blog post by Harold Pimentel discussing within sample normalization and the meaning of RNAseq expression units</p>
 
-<p><a href="https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/">Between sample normalization in RNAseq</a> - another great blog post from Harold Pimentel on between-sample normalization.</p>
-
 <p><a href="http://DIYtranscriptomics.github.io/Reading/files/wagnerTPM.pdf">Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, Dec 2012</a></p>
 
-<p><a href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25">original TMM normalization manuscript</a>.</p>
+<p><a href="https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/">Between sample normalization in RNAseq</a> - another great blog post from Harold Pimentel on between-sample normalization.</p>
 
 
 		</article>
@@ -191,7 +191,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

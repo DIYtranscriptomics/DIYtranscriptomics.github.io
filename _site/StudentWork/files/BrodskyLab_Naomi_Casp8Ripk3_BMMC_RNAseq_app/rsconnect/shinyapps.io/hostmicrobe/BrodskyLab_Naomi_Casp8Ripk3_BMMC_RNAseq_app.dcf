@@ -1,0 +1,7 @@
+name: BrodskyLab_Naomi_Casp8Ripk3_BMMC_RNAseq_app
+account: hostmicrobe
+server: shinyapps.io
+bundleId: 252073
+url:
+        https://hostmicrobe.shinyapps.io/BrodskyLab_Naomi_Casp8Ripk3_BMMC_RNAseq_app
+when: 1440550553.59481

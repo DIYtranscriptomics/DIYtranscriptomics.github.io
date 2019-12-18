@@ -21,17 +21,17 @@
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
 	<title>Hackdash II – DIY.transcriptomics</title>
-	<meta name="description" content="In this second and final Hackdash, expect your most challening problem – one that will incorporate both differential gene expression analysis and downstream functional enrichment analysis.">
+	<meta name="description" content="In this second Hackdash, you will have incorporate both differential gene expression analysis and downstream functional enrichment analysis to interroagte the human transcriptional response in the skin of patients infected with Leishmania braziliensis.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Hackdash II – DIY.transcriptomics">
-	<meta name="twitter:description" content="In this second and final Hackdash, expect your most challening problem – one that will incorporate both differential gene expression analysis and downstream functional enrichment analysis.">
+	<meta name="twitter:description" content="In this second Hackdash, you will have incorporate both differential gene expression analysis and downstream functional enrichment analysis to interroagte the human transcriptional response in the skin of patients infected with Leishmania braziliensis.">
 	<meta name="twitter:image:src" content="http://localhost:4000/images/timepiece.jpg">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Hackdash II – DIY.transcriptomics" />
-	<meta property="og:description" content="In this second and final Hackdash, expect your most challening problem – one that will incorporate both differential gene expression analysis and downstream functional enrichment analysis." />
+	<meta property="og:description" content="In this second Hackdash, you will have incorporate both differential gene expression analysis and downstream functional enrichment analysis to interroagte the human transcriptional response in the skin of patients infected with Leishmania braziliensis." />
 	<meta property="og:image" content="http://localhost:4000/images/timepiece.jpg" />
 
 	
@@ -133,7 +133,7 @@
 	<div class="wrap">
 
 		<h1>Hackdash II</h1>
-		<p>Lecture 13 • 2019.04.17 • Hill 130</p>
+		<p>Lecture 13 • 2019.11.20 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,13 +145,55 @@
 
 		<article class="single-post">
 
-			<h2 id="overview">Overview</h2>
+			<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
 
-<p>In this second and final Hackdash, expect your most challening problem – one that will incorporate both differential gene expression analysis and downstream functional enrichment analysis.</p>
+<p><img src="/images/leish.png" alt="" /></p>
 
-<h2 id="question">Question</h2>
+<h2 id="the-leishmania-challenge">The Leishmania challenge</h2>
 
-<p>The hackdash question will be posted at the start of class.</p>
+<p>You have just finished a detailed analysis of the human transcriptome using skin biopsies from 5 human patients affected by the parasitic disease, cutaneous leishmaniasis, compared to biospies from 5 healthy volunteers.  After submitting your paper describing your results, reviewer #3 – noticing that you did total RNA sequencing after ribosomal RNA depletion – pointed out that your figures only show mRNAs, and that you make no mention of <em>non-coding RNAs</em> (ncRNA) expression in your data.  After some discussion with your advisor, you decide to redo your analysis in a way that includes <strong>both</strong> mRNA and ncRNA.  You have two hours to complete this analysis.</p>
+
+<h3 id="before-you-start">Before you start</h3>
+
+<ul>
+  <li>We’ve already used Kallisto to map reads to both the human mRNA reference transcriptome, then carried out second read mapping using the separate ncRNA reference file.  You can download the kallisto outputs <strong><a href="https://drive.google.com/file/d/1Q6_zhLjxCdVOByo4I_EIbZ9TMlpKJ1aD/view?usp=sharing">here</a></strong> - this zip file includes both sets of read mapping results, as well as a study design file.</li>
+  <li>You will need to combine your data from these two read mappings into a single R object that you can use for all your analyses.</li>
+  <li>The term ‘gene’ is used below to refer to both ncRNAs and mRNAs.</li>
+  <li>Download a fresh copy of each ‘step’ script from the course website <a href="http://diytranscriptomics.com/scripts">here</a>. The only script you won’t need for this challenge is step 4 (public data).</li>
+  <li>use only the ‘essential’ code chunks from these scripts to complete the challenge.</li>
+</ul>
+
+<h3 id="question-1">Question 1</h3>
+
+<p>Show the impact of filtering and normalization using your combined mRNA/ncRNA dataset.  How would you filter this dataset and how many genes remain after filtering?</p>
+
+<h3 id="question-2">Question 2</h3>
+
+<p>Are the 5 patient samples distinguishable from the 5 healthy controls by PCA?  How much variance is accounted for by PC1?  Show your PCA plot.</p>
+
+<h3 id="question-3">Question 3</h3>
+
+<p>How many genes are differentially expressed (LogFC &gt;= 2 and FDR &lt;= 0.01) between the skin of patients and healthy controls?  Show a volcano plot with with these genes highlighted or marked in some way.</p>
+
+<h3 id="question-4">Question 4</h3>
+
+<p>Prepare a heatmap showing modules of co-expressed genes. You do not need to show a separate heatmap for different modules.</p>
+
+<h3 id="question-5">Question 5</h3>
+
+<p>Carry out Gene Ontology (GO) functional enrichment analysis using the gProfiler2 package on both modules of genes in your heatmap (up and down regulated), separately.  How do the ‘gost’ enrichment plots differ for these two modules?  Show gost plots for each module.</p>
+
+<h3 id="question-6">Question 6</h3>
+
+<p>Carry out Gene Set Enrichment Analysis (GSEA) using the CAMERA function from the Limma package and the MSigDB ‘C2 Canonical Pathways (C2)’ collection of signatures.  Produce a table of the top 10 pathways most enriched in patients, as well as second table of the top 10 pathways most repressed by infection.</p>
+
+<h3 id="bonus-question">Bonus question</h3>
+
+<p>Looking specifically at the module of genes upregulated by infection, can you glean anything that might be interesting with respect to the ncRNAs and their relationship to mRNAs in the same module?</p>
+
+<h3 id="solution">Solution</h3>
+
+<p>To be posted at a later date.</p>
 
 
 		</article>
@@ -169,7 +211,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>

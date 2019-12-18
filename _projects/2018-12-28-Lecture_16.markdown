@@ -1,18 +1,30 @@
 ---
-title: 'Final exam'
+title: 'Hackdash 3'
 subtitle: 'Lecture 16 • 2019.12.18 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2018-12-28 00:00:00
-description: During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A (and we'll eat pizza!). 
+description: We will conclude the course with a third and final hackdash (and we'll eat pizza!). 
 featured_image: '/images/pizza.jpg'
 ---
 
 <div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 
+![](/images/plasmoRBC.png)
 
-## Overview
+## The Malaria challenge
 
-During this in-class exam, I'll test your knowledge using a fun but challenging Jeopardy style Q&A. 
+You're tasked with studying gene expression in *Plasmodium falciparum*, a single-celled protozoan parasite that infects human red blood cells (RBCs) and is the causative agent of malaria, one of the deadliest infectious diseases on the planet.  After invading an RBC, parasites progress through a 48 hour developmental cycle before rupturing the cell and invading a new one.  To understand how parasite gene expression changes during this cycle, you infect RBCs *in vitro* and isolate RNA every 8 hours for 48 hours straight.  As you're finishing the experiment (and very much looking forward to sleeping), your PI asks if you can put together a figure for a last-minute grant submission.  **You have ~90 minutes to produce a publication-quality figure.  The team that produces the best figure will win this challenge.**
 
-## Goals
 
-* To eat pizza and have fun
+### Before you start
+
+* We've already used Kallisto to map reads to the *P. falciparum* reference transcriptome.  You can download the kallisto outputs and study design file **[here](https://drive.google.com/file/d/1V_Av9pDT_91G3NiIc08qTYGwGYn60z0b/view?usp=sharing)**.  
+* These data were produced by Manuel Llinás’ lab and are reported in their recent Biorxiv preprint: [Refining the transcriptome of the human malaria parasite Plasmodium falciparum using amplification-free RNA-seq](https://www.biorxiv.org/content/10.1101/852038v2.full). 
+* Please include a figure legend on your final figure.
+
+
+### Tips
+
+* Don't worry about annotations, just read data into R at the transcript-level
+* Given that this is a time course, set-up your experimental design using the `model.matrix()` function such that the 0hr timepoint is set as the intercept.  With this design, you will *not* need to use a contrast matrix.  
+* Think about what makes a good figure and use your data to tell a story!  
+* Include illustrations/schematics when useful.

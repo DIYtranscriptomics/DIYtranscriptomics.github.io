@@ -1,5 +1,5 @@
 ---
-title: 'Hackdash I'
+title: 'Hackdash 1'
 subtitle: 'Lecture 9 • 2019.10.23 • Levin 111 (SAIL classroom) • 3-5pm'
 date: 2019-01-04 00:00:00
 description: You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  This 2hr in-class assignment will test your ability to use recent class material and code to solve a problem in a real RNAseq dataset.
@@ -15,7 +15,7 @@ featured_image: '/images/timepiece.jpg'
 
 ## The worm challenge
 
-A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, *Schistosoma mansoni*.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following *in vivo* treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced!  To begin this challenge, you'll need to [Download the Kallisto read mapping results](https://drive.google.com/file/d/1t9cxprZLmOtq8vemCMXZ3yB7CD_VOEMr/view?usp=sharing) and the [study design file](https://drive.google.com/file/d/1w9roWCkvaVLp3ohxwBebO0nPfdFO9-y5/view?usp=sharing) and read these data into a new R project.
+A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, *Schistosoma mansoni*.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following *in vivo* treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced!  To begin this challenge, you'll need to download the Kallisto read mapping results and study design file **[here](https://drive.google.com/file/d/1a1S-hNK-ZU24iikTfOlkhiWljwxUF4Yo/view?usp=sharing)** and read these data into a new R project.
 
 To succeed at the worm challenge, you will need to use the tools you've learned in class for filtering, normalizing, multivariate analysis with PCA, and data wrangling with dplyr.
 
@@ -54,4 +54,5 @@ Anything interesting stand out to you about the top genes on your list (requires
 
 
 ## Solution
-Will be posted after class
+
+To be reviewed in class

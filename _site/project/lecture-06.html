@@ -21,17 +21,17 @@
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
 	<title>Wrangling gene expression data – DIY.transcriptomics</title>
-	<meta name="description" content="We'll use the Tidyverse tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data quickly and easily.">
+	<meta name="description" content="We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the dplyr package, expanding your understanding of tools within the Tidyverse.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Wrangling gene expression data – DIY.transcriptomics">
-	<meta name="twitter:description" content="We'll use the Tidyverse tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data quickly and easily.">
+	<meta name="twitter:description" content="We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the dplyr package, expanding your understanding of tools within the Tidyverse.">
 	<meta name="twitter:image:src" content="http://localhost:4000/images/tidyDNA.jpg">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Wrangling gene expression data – DIY.transcriptomics" />
-	<meta property="og:description" content="We'll use the Tidyverse tools to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data quickly and easily." />
+	<meta property="og:description" content="We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the dplyr package, expanding your understanding of tools within the Tidyverse." />
 	<meta property="og:image" content="http://localhost:4000/images/tidyDNA.jpg" />
 
 	
@@ -133,7 +133,7 @@
 	<div class="wrap">
 
 		<h1>Wrangling gene expression data</h1>
-		<p>Lecture 6 • 2019.02.27 • Hill 130</p>
+		<p>Lecture 6 • 2019.10.02 • Levin 111 (SAIL classroom) • 3-5pm</p>
 
 	</div>
 
@@ -145,33 +145,45 @@
 
 		<article class="single-post">
 
-			<p><a href="https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis">Lecture slides</a></p>
+			<div style="text-align: right"> Image credit: Daniel Horowitz for NPR </div>
 
-<p><a href="https://www.datacamp.com/courses/introduction-to-the-tidyverse">Homework: Introduction to the Tidyverse (~4hrs)</a> - due before the start of class on March 6th.</p>
+<p><a href="https://www.icloud.com/keynote/0wOhMvs1a4AZp-v4OMau1j67A#lecture05%5Frefslides">Lecture slides</a> -  Although the entire class was spent working on the Step 2 script, I briefly referenced a few slides, which I’ve included here.</p>
+
+<p><a href="https://www.datacamp.com/courses/data-visualization-with-ggplot2-1">Homework: Data visualization with ggplot2 - part 1 (~4hrs)</a> - due before the start of class on Oct 16th.</p>
 
 <h2 id="overview">Overview</h2>
 
-<p>In this class we’ll use Hadley Wickham’s <a href="http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html">dplyr</a> package along with other tools from his <a href="https://www.tidyverse.org/">tidyverse</a> of packages to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.</p>
+<p>We’ll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You’ll also be introduced to Hadley Wickham’s philosophy of ‘tidy data’ by using the <a href="http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html">dplyr</a> package, expanding your understanding of tools within the <a href="https://www.tidyverse.org/">tidyverse</a>.</p>
 
 <h2 id="goals">Goals</h2>
 
 <ul>
   <li>Start/finish step 2 script</li>
   <li>Begin to explore our data in R using ggplot2</li>
-  <li>Produce interactive graphic with plotly</li>
-  <li>Discuss basics of reshape package</li>
-  <li>Talk about color palettes in R</li>
+  <li>Discuss basics of Tidy data and the reshape2 package</li>
+  <li>Talk briefly about color palettes in R</li>
   <li>Filter data to remove lowly expressed genes</li>
   <li>Normalize data</li>
 </ul>
 
 <h2 id="code">Code</h2>
 
-<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step2_dataExploration.R">Step 2 script</a></p>
+<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step2_dataWrangling.R">Step 2 script</a></p>
 
 <h2 id="reading">Reading</h2>
 
-<p>Hadley Wickham (author of Dplyr, Reshape2 and ggplot2 packages) has a nice pre-print paper on the key aspects of making <a href="http://vita.had.co.nz/papers/tidy-data.pdf">‘Tidy Data’</a></p>
+<p><a href="http://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a> - Hadley Wickham (author of Tidyverse packages and Chief Scientist at RStudio) describes the philosophy of tidy data in this paper.</p>
+
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/layered-grammar.pdf">Grammar of graphics</a> - Another paper by Hadley Wickham.  This one explains the rationale behind ggplot2.</p>
+
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/ggplot2-cheatsheet.pdf">ggplot2 cheatsheet</a> – a very helpful guide as we continue to use ggplot2 for all of our plotting needs.</p>
+
+<p><a href="http://shiny.stat.ubc.ca/r-graph-catalog/">catalog of R graphs</a> - Take a look at some of the various ways to graph your data and the underlying R code in this</p>
+
+<p><a href="http://hdl.library.upenn.edu/1017.12/1675994">R Graphics Cookbook</a> - If you end up using R to make a lot of graphs, you will find the to be an important reference. It’s available free to UPenn folks as an Ebook.</p>
+
+<p><a href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25">original TMM normalization manuscript</a>.</p>
+
 
 
 		</article>
@@ -189,7 +201,7 @@
 
 	<div class="wrap">
 
-		<p class="footer__text">A course on using open-source tools to analyze RNAseq data.</p>
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
 			<span>© 2019 DIY.transcriptomics</span>
