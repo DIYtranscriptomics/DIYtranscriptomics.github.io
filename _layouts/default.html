@@ -55,6 +55,9 @@
 
 	{% if site.data.settings.advanced_settings.analytics_code %}
 	<!-- Analytics Code -->
+	{% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
 	{{ site.data.settings.advanced_settings.analytics_code }}
 	{% endif %}
 
@@ -100,7 +103,6 @@
 	{{ site.data.settings.advanced_settings.footer_js }}
 	{% endif %}
 
-	{% include analytics.html %}
 </body>
 
 </html>
