@@ -57,6 +57,7 @@
 	<!-- Analytics Code -->
 	
 	
+	
 
 	
 	<!-- Extra Header JS Code -->
@@ -487,7 +488,7 @@ Use this page to describe the results in your own words.  Some things to think a
 		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
-			<span>© 2019 DIY.transcriptomics</span>
+			<span>© 2020 DIY.transcriptomics</span>
 			<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
 		</div>
 
@@ -560,7 +561,6 @@ Use this page to describe the results in your own words.  Some things to think a
 	<!-- Extra Footer JS Code -->
 	
 	
-
 
 </body>
 

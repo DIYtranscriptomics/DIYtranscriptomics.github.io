@@ -1,55 +1,9 @@
 ---
 title: 'Hackdash 2'
-subtitle: 'Lecture 13 • 2019.11.20 • Levin 111 (SAIL classroom) • 3-5pm'
+subtitle: 'Lecture 13 • Wednesday • 2020.05.27 • 3-5pm'
 date: 2018-12-31 00:00:00
 description: In this second Hackdash, you will have incorporate both differential gene expression analysis and downstream functional enrichment analysis to interroagte the human transcriptional response in the skin of patients infected with Leishmania braziliensis.
 featured_image: '/images/timepiece.jpg'
 ---
 
-<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez </div>
-
-![](/images/leish.png)
-
-## The Leishmania challenge
-
-You have just finished a detailed analysis of the human transcriptome using skin biopsies from 5 human patients affected by the parasitic disease, cutaneous leishmaniasis, compared to biospies from 5 healthy volunteers.  After submitting your paper describing your results, reviewer #3 – noticing that you did total RNA sequencing after ribosomal RNA depletion – pointed out that your figures only show mRNAs, and that you make no mention of *non-coding RNAs* (ncRNA) expression in your data.  After some discussion with your advisor, you decide to redo your analysis in a way that includes **both** mRNA and ncRNA.  You have two hours to complete this analysis.
-
-### Before you start
-
-* We've already used Kallisto to map reads to both the human mRNA reference transcriptome, then carried out second read mapping using the separate ncRNA reference file.  You can download the kallisto outputs **[here](https://drive.google.com/file/d/1Q6_zhLjxCdVOByo4I_EIbZ9TMlpKJ1aD/view?usp=sharing)** - this zip file includes both sets of read mapping results, as well as a study design file. 
-* You will need to combine your data from these two read mappings into a single R object that you can use for all your analyses.
-* The term 'gene' is used below to refer to both ncRNAs and mRNAs. 
-* Download a fresh copy of each 'step' script from the course website [here](http://diytranscriptomics.com/scripts). The only script you won't need for this challenge is step 4 (public data).
-* use only the 'essential' code chunks from these scripts to complete the challenge.
-
-### Question 1
-
-Show the impact of filtering and normalization using your combined mRNA/ncRNA dataset.  How would you filter this dataset and how many genes remain after filtering?
-
-### Question 2
-
-Are the 5 patient samples distinguishable from the 5 healthy controls by PCA?  How much variance is accounted for by PC1?  Show your PCA plot.
-
-### Question 3
-
-How many genes are differentially expressed (LogFC >= 2 and FDR <= 0.01) between the skin of patients and healthy controls?  Show a volcano plot with with these genes highlighted or marked in some way.
-
-### Question 4
-
-Prepare a heatmap showing modules of co-expressed genes. You do not need to show a separate heatmap for different modules.  
-
-### Question 5
-
-Carry out Gene Ontology (GO) functional enrichment analysis using the gProfiler2 package on both modules of genes in your heatmap (up and down regulated), separately.  How do the 'gost' enrichment plots differ for these two modules?  Show gost plots for each module.
-
-### Question 6
-
-Carry out Gene Set Enrichment Analysis (GSEA) using the CAMERA function from the Limma package and the MSigDB 'C2 Canonical Pathways (C2)' collection of signatures.  Produce a table of the top 10 pathways most enriched in patients, as well as second table of the top 10 pathways most repressed by infection.
-
-### Bonus question
-
-Looking specifically at the module of genes upregulated by infection, can you glean anything that might be interesting with respect to the ncRNAs and their relationship to mRNAs in the same module?
-
-### Solution
-
-To be reviewed in class
+This page will be updated immediately prior to this live data 'hackdash'

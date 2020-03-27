@@ -1,6 +1,6 @@
 ---
 title: 'Starting your R workflow'
-subtitle: 'Lecture 5 • 2019.09.25 • Levin 111 (SAIL classroom) • 3-5pm'
+subtitle: 'Lecture 5 • Wednesday • 2020.04.29 • 3-5pm'
 date: 2019-01-08 00:00:00
 description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.     
 featured_image: '/images/first_step.jpg'
@@ -8,7 +8,7 @@ featured_image: '/images/first_step.jpg'
 
 No lecture slides for this class.  We'll spend the entire time working on Step 1 script.
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on Oct 2nd.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class next week.
 
 
 ## Overview
@@ -35,3 +35,11 @@ We'll begin this class by reviewing how to access R packages and help documentat
 [vignette for the Tximport package](https://bioconductor.org/packages/devel/bioc/vignettes/tximport/inst/doc/tximport.html) - the R package we'll use to read the Kallisto mapping results into R.
 
 [Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](http://f1000research.com/articles/4-1521/v2)* F1000Research, Dec 2015. This paper describes the Tximport package and its application for handling transcript-level expression measurments from lightweight aligners (Salmon, Sailfish, Kallisto)
+
+---
+
+## Lecture video
+
+Will be posted prior to this class time slot
+
+---

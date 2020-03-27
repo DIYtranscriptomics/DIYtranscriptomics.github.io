@@ -13,9 +13,9 @@ As access to high-throughput sequencing technology increases, the bottleneck in 
 
 The course is taught by Dan Beiting, Assistant Professor of Pathobiology at PennVet.  Camila Amorim and Alex Berry, both post-docs, serve as teaching assistants.
 
-## Location
+## Format
 
-Class meets every Wednesday from 3-5pm in the large lecture halls on the first floor of the Hill Pavilion (pictured in banner image above).
+This class is being run as an online virtual course that will 'meet' twice per week. These virtual classes require active participation (usually in form of coding and data analysis), so be prepared to work along with the videos.  In addition to recorded lectures, the course consists of three live ‘hackdash’ data analysis challenges, which will be hosted via Zoom.
 
 ## Course goals
 
@@ -31,4 +31,4 @@ This is a gradate level course offered through the Cell And Molecular Biology (C
 
 ## How will I be graded in this course?
 
-All students taking the course for credit will be assigned a grade.  Grades will be determined based on performance on two in-class hack-a-thons (called hackdashes) and completion of homework assignments.
+All students taking the course for credit will be assigned a pass/fail grade.  Pass/fail will be determined based on performance on two in-class hack-a-thons (called hackdashes) and completion of homework assignments.

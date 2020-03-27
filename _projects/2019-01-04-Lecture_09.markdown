@@ -1,58 +1,10 @@
 ---
 title: 'Hackdash 1'
-subtitle: 'Lecture 9 • 2019.10.23 • Levin 111 (SAIL classroom) • 3-5pm'
+subtitle: 'Lecture 9 • Wednesday • 2020.05.13 • 3-5pm'
 date: 2019-01-04 00:00:00
 description: You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  This 2hr in-class assignment will test your ability to use recent class material and code to solve a problem in a real RNAseq dataset.
 featured_image: '/images/timepiece.jpg'
 ---
 
 
-<div style="text-align: right"> Image credit: “Passing Time” by Lucia Martinez (above) </div>
-<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
-
-
-![](/images/schisto.png)
-
-## The worm challenge
-
-A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, *Schistosoma mansoni*.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following *in vivo* treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced!  To begin this challenge, you'll need to download the Kallisto read mapping results and study design file **[here](https://drive.google.com/file/d/1a1S-hNK-ZU24iikTfOlkhiWljwxUF4Yo/view?usp=sharing)** and read these data into a new R project.
-
-To succeed at the worm challenge, you will need to use the tools you've learned in class for filtering, normalizing, multivariate analysis with PCA, and data wrangling with dplyr.
-
-The first team to submit the most complete answer (via private message on Slack) to the following three questions will win the challenge. 
-
-### Before you start
-
-* download a fresh copy of the step 1, 2 and 3 scripts from the course website [here](http://diytranscriptomics.com/scripts)
-* use *only* the 'essential' code chunks from these scripts to complete the challenge.
-* *don't* try to annotate the data, just import at the transcript level
-
-### Question #1
-
-Use plots to show the impact of filtering and normalization on the data.  
-
-#### Tips
-
-* Do not use 'coord_flip' in your ggplot code, as the number of samples is so large that horizontal display is preferred
-* Don't use cowplot to patch together your different ggplots into one figure.  Again, the number of samples in this particular study makes this too cramped.
-
-### Question #2
-
-Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support your answer?
-
-#### Tips:
-
-* take advantage of setting the ggplot 'aes' to map size and shape to different variables from your study design file
-
-### Question #3
-
-Using dplyr 'verbs', identify the top 10 parasite genes induced by praziquantel treatment in female LE strain worms at the 24hr timepoint compared to control worms. The top 10 genes should be selected and ordered by *average* Log fold change for the groups of replicates.  Please include a table to support your answer.
-
-### Bonus question
-
-Anything interesting stand out to you about the top genes on your list (requires a literature search)?  
-
-
-## Solution
-
-To be reviewed in class
+This page will be updated immediately prior to this live data 'hackdash'

@@ -1,6 +1,6 @@
 ---
 title: 'Functional enrichment analysis'
-subtitle: 'Lecture 12 • 2019.11.13 • Levin 111 (SAIL classroom) • 3-5pm'
+subtitle: 'Lecture 12 • Friday • 2020.05.22 • 3-5pm'
 date: 2019-01-01 00:00:00
 description: Now that you've identified differentially expressed genes, what do they mean and how do you begin to elucidate the biological pathways governed by these genes?  To address this question, in this class you'll learn how to carry out functional enichment analyses using Gene Ontology and Gene Set Enrichment methods.  You'll also explore different options for how to present your functional enrichment results.
 featured_image: '/images/connections.png'
@@ -50,7 +50,10 @@ You know how I feel about Venn diagrams, so if you're interested in exploring in
 
 Here are my Datagraph templates for making [enrichment bubble plots](https://drive.google.com/drive/folders/1J1Fvw-73BjXYnStvAv7XIkK3FqI6dsMe?usp=sharing) and [GSEA enrichment plots](https://drive.google.com/drive/folders/1uzP1EvJ1c5qCMZI_SwVa7Lz8qUa1OubM?usp=sharing)
 
+---
 
 ## Lecture video
 
-<iframe src="https://player.vimeo.com/video/374063512" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+Will be posted prior to this class time slot
+
+---

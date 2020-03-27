@@ -1,6 +1,6 @@
 ---
 title: 'Documenting your analyses with Rmarkdown'
-subtitle: 'Lecture 14 • 2019.12.04 • Levin 111 (SAIL classroom) • 3-5pm'
+subtitle: 'Lecture 14 • Friday • 2020.05.29 • 3-5pm'
 date: 2018-12-30 00:00:00
 description: In order to make your analysis pipeline transparent, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
 featured_image: '/images/breadcrumbs2.jpg'
@@ -39,3 +39,11 @@ Supplementary code files from some of our recent papers [here](http://journals.p
 [Make your own CV in markdown](https://github.com/dpbisme/CV_rmarkdown) - uses the [Vitae](https://github.com/ropenscilabs/vitae) and [Scholar](https://cran.r-project.org/web/packages/scholar/vignettes/scholar.html) packages in R. 
 
 [This course website](https://github.com/DIYtranscriptomics/DIYtranscriptomics.github.io) - Each page on the course website is just a simple markdown document. 
+
+---
+
+## Lecture video
+
+Will be posted prior to this class time slot
+
+---

@@ -1,6 +1,6 @@
 ---
 title: 'Ultra-fast read mapping with Kallisto'
-subtitle: 'Lecture 3 • 2019.09.11 • Levin 111 (SAIL classroom) • 3-5pm'
+subtitle: 'Lecture 3 • Wednesday • 2020.04.22 • 3-5pm'
 date: 2019-01-10 00:00:00
 description: In this class we'll finally get down to the business of using Kallisto for memory-efficient mapping of your raw reads.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening under the hood. During this process, we'll touch on a range of topics, from reference files, to command line basics, and using shell scripts for automation and reproducibility.
 featured_image: '/images/bear.jpg'
@@ -10,7 +10,7 @@ featured_image: '/images/bear.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments)
 
-[Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class on Sept 18th. 
+[Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class next week. 
 
 
 ## Overview
@@ -53,7 +53,15 @@ Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the
 
 [Greg Grant's recent paper comparing different aligners](http://DIYtranscriptomics.github.io/Reading/files/gregGrant_aligners_natMeth.pdf).  This should be a helpful guide in choosing alignment software outside of what we used in class.
 
-## Videos
+---
+
+## Lecture video
+
+Will be posted prior to this class time slot
+
+---
+
+## Other videos
 
 **Harold Pimentel's talk on alignment (20 min)**
 

@@ -1,6 +1,6 @@
 ---
 title: 'Intro to RNAseq technology and data'
-subtitle: 'Lecture 1 • 2019.08.28 • Levin 111 (SAIL classroom)• 3-5pm'
+subtitle: 'Lecture 1 • Wednesday • 2020.04.15 • 3-5pm'
 date: 2019-01-12 00:00:00
 description: After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment. 
 featured_image: '/images/illumina_flowcell.jpg'
@@ -30,7 +30,13 @@ After a brief overview of the course, we'll spend the opening lecture talking ab
 
 ---
 
-## Videos 
+## Lecture video
+
+Will be posted prior to this class time slot
+
+---
+
+## Other videos 
 
 Illumina's SBS technology - Below is the video I showed in class.  It's a nice visual for how SBS works.
 
