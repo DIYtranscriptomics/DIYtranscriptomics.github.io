@@ -10,11 +10,11 @@ Although there are no formal prerequisties for the course and no official course
 
 ## Please complete before the first class
 
-**[Get access to course DataCamp portal](https://www.datacamp.com/)**.  You will receive an email from us with a link to access the course portal on the datacamp site. If you already have a DataCamp account under your UPenn email, then this account will be granted access to the course portal.  DataCamp is a online learning environment that is used throughout the course for homework assignments.  This is a subscription service that is being provided to you free-of-charge (courtesy of DataCamp) only during the Fall Semester, so take full advantage to explore any other learning materials on the site. 
+**[Get access to course DataCamp portal](https://www.datacamp.com/)**.  You will receive an email from us with a link to access the course portal on the datacamp site. If you already have a DataCamp account under your UPenn email, then this account will be granted access to the course portal.  DataCamp is a online learning environment that is used throughout the course for homework assignments.  This is a subscription service that is being provided to you free-of-charge (courtesy of DataCamp) only during the current course, so take full advantage to explore any other learning materials on the site. 
 
 [Download and sign-up for Slack](https://slack.com/), a messaging platform we will use heavily during the course.  *All course communication will happen through Slack, not email*.  You will also be able to direclty message the TAs, the instructor or other students through Slack.
 
-[Complete this skills survey](https://forms.gle/wMJ3Kjuaxxd7Ktwr6). 
+[Complete this skills survey](https://forms.gle/NK8mPnKFfWvKgiTs6). 
 
 
 ## Other useful info
