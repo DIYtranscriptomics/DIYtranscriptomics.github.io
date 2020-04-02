@@ -10,7 +10,7 @@ featured_image: '/images/illumina_flowcell.jpg'
 
 ## Overview
 
-After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, ribo-depletion, scRNAseq, and fastq will pratically roll off your tongue.
+After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, ribo-depletion, scRNAseq, and fastq will practically roll off your tongue.
 
 ---
 

@@ -25,11 +25,8 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 ## Code
 
-Clicking on the embedded code capsule below will take you directly to Code Ocean.  Simply login (or set-up a free account if you don't already have one) and you'll be able to re-run the entire course in a matter of minutes, without any software installation or data download.  Your first run may take ~15min, since the full computing environment must be being built, but subsequent runs will be much faster.  Note that this capsule includes raw fastq files, kallisto outputs, all of MSigDB for running GSEA, and the entire ARCHS4 database for interrogating ~700,000 publically available mouse and human RNAseq datasets.  Have fun adapting this capsule for your own analyses!
+We'll use Code Ocean to interact with a dockerized container that packs all the code, data and software from the course into one reproducible and web-accessible environment.  Simply login (or set-up a free account if you don't already have one) and you'll be able to re-run the entire course in a matter of minutes, without any software installation or data download.  Your first run may take ~15min, since the full computing environment must be being built, but subsequent runs will be much faster.  Note that this capsule includes raw fastq files, kallisto outputs, all of MSigDB for running GSEA, and the entire ARCHS4 database for interrogating ~700,000 publically available mouse and human RNAseq datasets.  Have fun adapting this capsule for your own analyses!
 
-If you do not see a embedded capsule below, please refresh the webpage.
-
-<script src="https://codeocean.com/widget.js?slug=1031026" async></script>
 
 ## Reading
 
