@@ -14,7 +14,7 @@ featured_image: '/images/rstudio.png'
 
 In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software and environment that will be used throughout the course, and each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
 
-## Goals
+## Learning objectives
 
 * Set-up *your* laptop with all the software needed for the course
 

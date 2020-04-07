@@ -17,7 +17,7 @@ featured_image: '/images/bear.jpg'
 
 In this class we'll finally get down to the business of using [Kallisto](https://pachterlab.github.io/kallisto/about), software for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.  You'll be introduced to using command line software and will learn about automation and reproducibility through shell scripts.
 
-## Goals
+## Learning objectives
 
 * Start a project directory that we’ll use for the rest of the course.
 * Download a reference transcriptome file (talk a bit about what is and is not in a reference file)

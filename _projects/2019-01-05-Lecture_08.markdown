@@ -17,7 +17,7 @@ featured_image: '/images/DataDeluge.jpg'
 
 In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO). 
 
-## Goals
+## Learning objectives
 
 * Learn about ```fasterq_dump```
 * Learn about HDF5 file format

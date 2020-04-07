@@ -16,7 +16,7 @@ featured_image: '/images/explorer.jpg'
 
 In this class you'll learn about a variety of approaches exploring your data.  You'll use multivariate statistical approaches such as Principal Component Analysis (PCA) to understand sources of variance in our data, while continuing to build your plotting skills by using ggplot2 to graph the results of PCA analyses. You'll also learn how to use the dplyr package to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.  We’ll discuss common missteps and how to identify sources of bias in transcriptional data sets.
 
-## Goals
+## Learning objectives
 
 * Start/finish step 3 script
 * Discuss basics of multivariate statistical analysis

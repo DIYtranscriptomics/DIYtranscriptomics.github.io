@@ -10,7 +10,7 @@ featured_image: '/images/breadcrumbs2.jpg'
 
 In order to document the code and results from a bioinformatics workflow you'll be introduced to [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/), and will use these tools to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
 
-## Goals
+## Learning objectives
 
 * learn the basics of Rmarkdown and dynamic documents
 * learn how to construct a basic R markdown document

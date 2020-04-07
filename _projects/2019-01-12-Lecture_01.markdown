@@ -14,7 +14,7 @@ After a brief overview of the course, we'll spend the opening lecture talking ab
 
 ---
 
-## Goals
+## Learning objectives
 
 * Familiarity with Illumina's 'Sequencing by Synthesis' (SBS) technology
 * Basics of setting up a sequencing experiment (read length vs depth, PE vs SE, etc.)

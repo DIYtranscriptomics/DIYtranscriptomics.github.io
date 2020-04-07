@@ -17,7 +17,7 @@ featured_image: '/images/tidyDNA.jpg'
 
 We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package, expanding your understanding of tools within the [tidyverse](https://www.tidyverse.org/). 
 
-## Goals
+## Learning objectives
 
 * Start/finish step 2 script
 * Begin to explore our data in R using ggplot2

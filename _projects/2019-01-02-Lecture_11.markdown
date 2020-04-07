@@ -13,7 +13,7 @@ featured_image: '/images/bird_flock.jpg'
 
 Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you'll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.
 
-## Goals
+## Learning objectives
 
 * Learn how to produce static and interactive heatmaps
 * Learn to use correlation methods and the gplots package to identify co-expression modules
