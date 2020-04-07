@@ -13,6 +13,10 @@ As access to high-throughput sequencing technology increases, the bottleneck in 
 
 The course is taught by Dan Beiting, Assistant Professor of Pathobiology at PennVet.  Camila Amorim and Alex Berry, both post-docs, serve as teaching assistants.
 
+## Support and Sponsors
+
+This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/).  In addition, we thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.  Finally, we thank the folks at [CodeOcean](https://codeocean.com/), who provide all students with convenient access to dockerized resources for transparency and reproducibility.
+
 ## Format
 
 This class is being run as an online virtual course that will 'meet' twice per week. These virtual classes require active participation (usually in form of coding and data analysis), so be prepared to work along with the videos.  In addition to recorded lectures, the course consists of three live ‘hackdash’ data analysis challenges, which will be hosted via Zoom.
@@ -31,4 +35,4 @@ This is a gradate level course offered through the Cell And Molecular Biology (C
 
 ## How will I be graded in this course?
 
-All students taking the course for credit will be assigned a pass/fail grade.  Pass/fail will be determined based on performance on two in-class hack-a-thons (called hackdashes) and completion of homework assignments.
+All students taking the course for credit will be assigned a pass/fail grade.  Pass/fail will be determined based on performance on three in-class hack-a-thons (called hackdashes) and completion of homework assignments.
