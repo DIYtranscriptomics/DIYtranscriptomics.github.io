@@ -16,7 +16,7 @@ Although there are no formal prerequisties for the course and no official course
 
 [Download and sign-up for Slack](https://slack.com/), a messaging platform we will use heavily during the course.  *All course communication will happen through Slack, not email*.  Questions related to material covered in a lecture should be posted to the specific Slack channel associated with that lecture.  Questions will be reviewed by the TAs and used as guidance for TA help sessions.  The Slack page comes equipped with standard messaging capabilities, but also includes video and voice calling features, as well as screensharing, making it easy for you to connect with your classmates and instructors when you have problems or questions. 
 
-[Complete this skills survey](bit.ly/DIYtranscriptomics_start). 
+[Complete this skills survey](https://bit.ly/DIYtranscriptomics_start). 
 
 
 ## Other useful info
