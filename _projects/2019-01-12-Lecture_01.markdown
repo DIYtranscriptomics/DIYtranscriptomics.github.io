@@ -6,7 +6,9 @@ description: After a brief overview of the course, we'll spend the opening lectu
 featured_image: '/images/illumina_flowcell.jpg'
 ---
 
-[Lecture slides](https://www.icloud.com/keynote/0sBpheSjnnkSIjKEHDpzd6kmw#Lecture01%5FRNAseqIntro)
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0n2tSKAVc2chal9Wt8cj-uDiQ#Lecture01%5FRNAseqIntro)
+
+[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due 3pm next Wednesday, April 22nd.
 
 ## Overview
 
@@ -16,9 +18,11 @@ After a brief overview of the course, we'll spend the opening lecture talking ab
 
 ## Learning objectives
 
-* Familiarity with Illumina's 'Sequencing by Synthesis' (SBS) technology
-* Basics of setting up a sequencing experiment (read length vs depth, PE vs SE, etc.)
-* Understand data output from HTS
+* Get familiar with jargon of RNAseq/HTS (paired-end, cluster density, fastq, index, etc)
+* Understand Illumina’s “Sequencing by Synthesis” (SBS) technology
+* Set priorities when planning a sequencing experiment
+* Understand the basics of library prep
+* Have sense for how single cell sequencing (scRNAseq) and spatial transcriptomics fit into the evolving landscape of transcriptomics
 
 ---
 
@@ -32,14 +36,12 @@ After a brief overview of the course, we'll spend the opening lecture talking ab
 
 ## Lecture video
 
-Will be posted prior to this class time slot
+### Part 1 - History of sequencing and details of Illumina's 'Sequencing by Synthesis' (SBS) technology
+
+<iframe src="https://player.vimeo.com/video/408044306" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Design considerations for RNAseq experiments, and the state-of-the-art for transcriptomics
+
+<iframe src="https://player.vimeo.com/video/408069325" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
-
-## Other videos 
-
-Illumina's SBS technology - Below is the video I showed in class.  It's a nice visual for how SBS works.
-
-<iframe src="https://www.youtube.com/embed/fCd6B5HRaZ8" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-
-
