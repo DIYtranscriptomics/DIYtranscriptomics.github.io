@@ -22,7 +22,7 @@ After a brief overview of the course, we'll spend the opening lecture talking ab
 * Understand Illumina’s “Sequencing by Synthesis” (SBS) technology
 * Set priorities when planning a sequencing experiment
 * Understand the basics of library prep
-* Have sense for how single cell sequencing (scRNAseq) and spatial transcriptomics fit into the evolving landscape of transcriptomics
+* Have a sense for how single cell sequencing (scRNAseq) and spatial transcriptomics fit into the evolving landscape of transcriptomics
 
 ---
 

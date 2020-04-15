@@ -6,9 +6,7 @@ description: In the first half of this lecture we'll discuss the open-source, cr
 featured_image: '/images/rstudio.png'
 ---
 
-[Lecture slides](http://bit.ly/1ToDM3R)
-
-[Homework: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due before the start of class on Sept 18th. 
+[Lecture slides](http://bit.ly/1ToDM3R) 
 
 ## Overview
 
@@ -16,11 +14,12 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 ## Learning objectives
 
+* Brief overview of the tools we’ll use throughout the course (R/Bioconductor, RStudio, etc.)
 * Set-up *your* laptop with all the software needed for the course
 
 ## Software
 
-**Download and install the following software before class (except Kallisto)**
+**I'll walk you through installing the following software**
 
 [R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) - The only programming language we'll work with in class.
 
