@@ -39,7 +39,7 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 ## Lecture video
 
-### Part 1 - An overview of the software tools we'll use on our laptops for the course, as well as overview of other options for computing hardware.
+### Part 1 - An overview of the software tools we'll use on our laptops for the course, as well as options for computing hardware.
 
 <iframe src="https://player.vimeo.com/video/408967948" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
