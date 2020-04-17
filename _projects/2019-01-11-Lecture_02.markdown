@@ -46,4 +46,6 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 ### Part 2 - Installing software and talking about the relationship between R, RStudio and Bioconductor.
 
+<iframe src="https://player.vimeo.com/video/409021094" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 ---
