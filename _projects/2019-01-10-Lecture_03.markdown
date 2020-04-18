@@ -8,14 +8,14 @@ featured_image: '/images/bear.jpg'
 
 <div style="text-align: right"> Image credit: Lior Pachter </div>
 
-[Lecture slides](https://www.icloud.com/keynote/02_yytlVoDebEIXctpJFMIkrg#Lecture03%5FKallistoAlignments)
+[Lecture slides on iCloud]()
 
 [Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) is **due today**!
 
 
 ## Overview
 
-In this class we'll finally get down to the business of using [Kallisto](https://pachterlab.github.io/kallisto/about), software for memory-efficient mapping of your raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.  You'll be introduced to using command line software and will learn about automation and reproducibility through shell scripts.
+In this class, we'll finally get down to the business of using [Kallisto](https://pachterlab.github.io/kallisto/about) for memory-efficient mapping of raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.  You'll be introduced to using command line software and will learn about automation and reproducibility through shell scripts.
 
 ## Learning objectives
 
@@ -48,7 +48,7 @@ Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the
 
 [Not quite alignments](http://robpatro.com/blog/?p=248) - Rob Patro, the first author of the Sailfish paper, wrote a nice blog post comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.
 
-[2018 Nature Methods paper describing Salmon](https://www.nature.com/articles/nmeth.4197) - A lightweight aligment tool from Rob Patro and Carl Kinsford.   [Check out the website too](https://combine-lab.github.io/salmon/).
+[2018 Nature Methods paper describing Salmon](https://www.nature.com/articles/nmeth.4197) - A lightweight aligment tool from Rob Patro and Carl Kinsford.  [Check out the website too](https://combine-lab.github.io/salmon/).
 
 [2011 Nature Biotechnology ](http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf) - Great primer to better understand what de Bruijn graph is.
 
