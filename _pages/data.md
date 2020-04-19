@@ -13,7 +13,7 @@ This course offers multiple 'on-ramps', or entry points, for starting an analysi
 
 ---
 
-### Option 1 (preferred)- Download raw data and accessory files.  
+### Option 1 (preferred)- Download raw data and accessory files
 
 [fastq files](https://www.dropbox.com/sh/df58trgab010s55/AAAQ86KkKPzuqvGG-YoeISNEa?dl=0) – You will need about **30Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  
 
@@ -25,7 +25,9 @@ This course offers multiple 'on-ramps', or entry points, for starting an analysi
 
 ### Option 2 – Download data already mapped
 
-[Kallisto output](https://www.dropbox.com/s/q62tbmj1ieyyaii/mappedReads.zip?dl=0) - In the event that you don't have enough free harddrive space to download the raw fastq files, or if you have any problems installing or using Kallisto to map this raw data, you can bypass the Kallisto step and download mapped data to start working immediately.  These files are available as a single compressed file.  Unzipping this file will reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs.
+In the event that you don't have enough free harddrive space to download the raw fastq files in Option 1 above, or if you have any problems installing or using Kallisto to map this raw data, you can bypass the Kallisto step and download mapped data to start working immediately. 
+
+[Kallisto output](https://www.dropbox.com/s/q62tbmj1ieyyaii/mappedReads.zip?dl=0) -  These files are available as a single compressed zip file.  Download and unzip this file to reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs.
 
 ---
 
