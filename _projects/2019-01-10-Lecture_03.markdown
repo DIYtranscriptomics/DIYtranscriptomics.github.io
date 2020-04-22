@@ -19,11 +19,11 @@ In this class, we'll finally get down to the business of using [Kallisto](https:
 
 ## Learning objectives
 
-* Start an RStudio Project directory that we’ll use for the rest of the course.
 * Discuss [the course dataset](http://diytranscriptomics.com/data).
 * Download and examine a reference transcriptome from [Ensembl](https://useast.ensembl.org/info/data/ftp/index.html).
 * Use Kallisto to construct an index from this reference file.
-* Use Kallisto to map our raw reads to this index, and talk a bit about what’s happening under the hood
+* Use Kallisto to map our raw reads to this index
+* Talk a bit about how an index is built and facilitates read alignment
 
 
 ## Reading
