@@ -35,8 +35,7 @@ In this class, we'll finally get down to the business of using [Kallisto](https:
 
 ### Part 2 - A discussion of traditional and alignment-free (pseudoalignment) methods for quantifying gene expression
 
-<iframe src="https://player.vimeo.com/video/410782115" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
+<iframe src="https://player.vimeo.com/video/410782115" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 ---
 
 ## Reading
