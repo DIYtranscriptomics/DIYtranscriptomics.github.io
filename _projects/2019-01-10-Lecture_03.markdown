@@ -25,6 +25,15 @@ In this class, we'll finally get down to the business of using [Kallisto](https:
 * Use Kallisto to map our raw reads to this index
 * Talk a bit about how an index is built and facilitates read alignment
 
+---
+
+## Lecture video
+
+### Part 1 - Step-by-step walkthrough of using FastQC, Kallisto and MultiQC on our course dataset.
+
+<iframe src="https://player.vimeo.com/video/410750113" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+---
 
 ## Reading
 
@@ -53,12 +62,6 @@ Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the
 [2011 Nature Biotechnology ](http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf) - Great primer to better understand what de Bruijn graph is.
 
 [Greg Grant's recent paper comparing different aligners](http://DIYtranscriptomics.github.io/Reading/files/gregGrant_aligners_natMeth.pdf).  This should be a helpful guide in choosing alignment software outside of what we used in class.
-
----
-
-## Lecture video
-
-Will be posted prior to this class time slot
 
 ---
 
