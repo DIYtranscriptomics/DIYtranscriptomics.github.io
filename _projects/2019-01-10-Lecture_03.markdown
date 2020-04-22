@@ -8,7 +8,7 @@ featured_image: '/images/bear.jpg'
 
 <div style="text-align: right"> Image credit: Lior Pachter </div>
 
-[Lecture slides on iCloud]()
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0UePBv3d_VkYkZSiZ2lqnYclQ#Lecture3%5FreadMapping)
 
 [Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) is **due today**!
 
@@ -32,6 +32,10 @@ In this class, we'll finally get down to the business of using [Kallisto](https:
 ### Part 1 - Step-by-step walkthrough of using FastQC, Kallisto and MultiQC on our course dataset.
 
 <iframe src="https://player.vimeo.com/video/410750113" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - A discussion of traditional and alignment-free (pseudoalignment) methods for quantifying gene expression
+
+<iframe src="https://player.vimeo.com/video/410782115" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
