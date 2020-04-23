@@ -8,9 +8,9 @@ featured_image: '/images/abacus.jpg'
 
 <div style="text-align: right"> Image credit: 'Abacus' ca. 1946: textile, Paul Rand </div>
 
-[Lecture slides](https://www.icloud.com/keynote/0Oex4CzdWhhMZpcwwAmTjPwzA#Lecture04%5Funits)
+[Lecture slides](https://www.icloud.com/keynote/03XFG7iDxCqONRP_qEPEUsq2Q#Lecture4%5Funits)
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on Oct 2nd.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due by the start of class on Friday, May 1st.
 
 ## Overview
 
@@ -28,6 +28,8 @@ featured_image: '/images/abacus.jpg'
 [Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R)
 
 ## Reading
+
+[The RNA-seq abundance zoo](http://robpatro.com/blog/?p=235) - Blog post by Rob Patro (developer of Salfish and Salmon software) that describes units for RNAseq, and has a nice description of 'effective length' for transcripts.
 
 [What the FPKM?](https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/) - Blog post by Harold Pimentel discussing within sample normalization and the meaning of RNAseq expression units
 
