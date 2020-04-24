@@ -27,6 +27,20 @@ featured_image: '/images/abacus.jpg'
 
 [Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R)
 
+---
+
+## Lecture video
+
+### Part 1 - Measuring digital gene expression
+
+<iframe src="https://player.vimeo.com/video/411253362" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Starting our R project and step 1 script
+
+<iframe src="https://player.vimeo.com/video/411270684" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+---
+
 ## Reading
 
 [The RNA-seq abundance zoo](http://robpatro.com/blog/?p=235) - Blog post by Rob Patro (developer of Salfish and Salmon software) that describes units for RNAseq, and has a nice description of 'effective length' for transcripts.
@@ -39,8 +53,3 @@ featured_image: '/images/abacus.jpg'
 
 ---
 
-## Lecture video
-
-Will be posted prior to this class time slot
-
----
