@@ -5,7 +5,7 @@ description: Recordings of lectures and code review
 featured_image: /images/muybridge.jpg
 ---
 
-## Mission 
+## Videos 
 
 Video recordings are available on each lecture page under the syllabus tab.  The full set of videos is also available on Vimeo (showcased below)
 
