@@ -16,6 +16,8 @@ menu_settings:
       url: '/data'
     - title: 'Scripts'
       url: '/scripts'
+    - title: 'Videos'
+      url: '/videos'
     - title: 'Help'
       url: '/help'
 
