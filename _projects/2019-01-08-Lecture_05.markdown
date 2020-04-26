@@ -8,7 +8,7 @@ featured_image: '/images/first_step.jpg'
 
 No lecture slides for this class.  We'll spend the entire time working on Step 1 script.
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class next week.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on Friday, May 1st.
 
 
 ## Overview
