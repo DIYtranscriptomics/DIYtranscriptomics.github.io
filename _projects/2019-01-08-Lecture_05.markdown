@@ -18,8 +18,9 @@ We'll begin this class by reviewing how to access R packages and help documentat
 ## Learning objectives
 
 * Review basic elements of an R script
-* Understand the importance of a study design file
 * Learn how to access R packages, and their help documentation
+* Understand the importance of a study design file
+* Access annotation information for transcripts using Bioconductor
 * Read Kallisto transcript abundance measurements into the R environment using TxImport
 
 ## Code
