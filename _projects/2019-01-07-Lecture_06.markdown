@@ -8,23 +8,23 @@ featured_image: '/images/tidyDNA.jpg'
 
 <div style="text-align: right"> Image credit: Daniel Horowitz for NPR </div>
 
-[Lecture slides](https://www.icloud.com/keynote/0wOhMvs1a4AZp-v4OMau1j67A#lecture05%5Frefslides) -  Although the entire class was spent working on the Step 2 script, I briefly referenced a few slides, which I've included here.
+[Lecture slides on iCloud](https://www.icloud.com/keynote/08doB1cvNS8JR9PjSyXV7rPbw#Lecture5%5Fwrangling)
 
-[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due before the start of class on Oct 16th.
+[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) is **due today**!
 
 
 ## Overview
 
-We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the [dplyr](http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) package, expanding your understanding of tools within the [tidyverse](https://www.tidyverse.org/). 
+We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' and expand your understanding of tools within the [tidyverse](https://www.tidyverse.org/). 
 
 ## Learning objectives
 
-* Start/finish step 2 script
-* Begin to explore our data in R using ggplot2
-* Discuss basics of Tidy data and the reshape2 package
-* Talk briefly about color palettes in R
+* Briefly review 'the essentials' from Step 1 script
+* Start and finish the Step 2 script
+* Understand the concept of a layered 'grammar of graphics' and how to use ggplot2
+* Discuss basics of 'tidy' vs messy data and the tidyr package
 * Filter data to remove lowly expressed genes
-* Normalize data
+* Normalize data (to allow between-sample comparisons)
 
 ## Code
 
