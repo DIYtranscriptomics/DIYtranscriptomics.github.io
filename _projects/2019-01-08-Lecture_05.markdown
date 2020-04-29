@@ -27,6 +27,20 @@ We'll begin this class by reviewing how to access R packages and help documentat
 
 [Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R)
 
+---
+
+## Lecture video
+
+### Part 1 - Starting Step 1 script
+
+<iframe src="https://player.vimeo.com/video/412181764" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Tapping into annotation databases and reading Kallisto data into R
+
+<iframe src="https://player.vimeo.com/video/412182494" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+---
+
 ## Reading
 
 [Differential analysis of RNA-seq incorporating quantification uncertainty. Nature Methods, June, 2017](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) - Original paper describing Sleuth
@@ -36,11 +50,5 @@ We'll begin this class by reviewing how to access R packages and help documentat
 [vignette for the Tximport package](https://bioconductor.org/packages/devel/bioc/vignettes/tximport/inst/doc/tximport.html) - the R package we'll use to read the Kallisto mapping results into R.
 
 [Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](http://f1000research.com/articles/4-1521/v2)* F1000Research, Dec 2015. This paper describes the Tximport package and its application for handling transcript-level expression measurments from lightweight aligners (Salmon, Sailfish, Kallisto)
-
----
-
-## Lecture video
-
-Will be posted prior to this class time slot
 
 ---
