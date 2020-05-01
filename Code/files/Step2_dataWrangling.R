@@ -11,7 +11,6 @@
 
 # Load packages -----
 library(tidyverse) # already know about this from Step 1 script
-library(genefilter) # as the package name suggests, it's for filtering genes
 library(edgeR) # well known package for differential expression analysis, but we only use for the DGEList object and for normalization methods
 library(matrixStats) # let's us easily calculate stats on rows or columns of a data matrix
 library(cowplot) # allows you to combine multiple plots in one figure
@@ -19,7 +18,7 @@ library(cowplot) # allows you to combine multiple plots in one figure
 # Examine your data up to this point ----
 myTPM <- Txi_gene$abundance
 myCounts <- Txi_gene$counts
-colSums(myTPM_trans)
+colSums(myTPM)
 colSums(myCounts)
 
 # capture sample labels from the study design file that you worked with and saved as 'targets' in step 1
@@ -42,7 +41,7 @@ head(myTPM.stats)
 # produce a scatter plot of the transformed data
 ggplot(myTPM.stats) + 
   aes(x = SD, y = MED) +
-  geom_point(shape=16, size=2)
+  geom_hex(shape=25, size=3)
 # Experiment with point shape and size in the plot above
 # Experiment with other plot types (e.g. 'geom_hex' instead of 'geom_point')
 # Add a theme to your ggplot code above.  Try 'theme_bw()'
@@ -120,9 +119,11 @@ table(rowSums(myDGEList$counts==0)==10)
 
 # now set some cut-off to get rid of genes/transcripts with low counts
 # again using rowSums to tally up the 'TRUE' results of a simple evaluation
-# how many genes had more than 1CPM (TRUE) in at least 3 samples
+# how many genes had more than 1 CPM (TRUE) in at least 3 samples
 
-keepers <- rowSums(cpm>1)>=5 # This step is important! Set up this cutoff for the number of samples in the smallest group of comparison.
+# The line below is important! This is where the filtering starts
+# Be sure to adjust this cutoff for the number of samples in the smallest group of comparison.
+keepers <- rowSums(cpm>1)>=5
 # now use base R's simple subsetting method to filter your DGEList based on the logical produced above
 myDGEList.filtered <- myDGEList[keepers,]
 dim(myDGEList.filtered)
@@ -182,8 +183,6 @@ ggplot(log2.cpm.filtered.norm.df.pivot) +
        caption=paste0("produced on ", Sys.time())) +
   theme_bw()
 
-
-
 # what if we wanted to put all three violin plots together?
 # go back and assign each plot to a variable (rather than printing to the plots viewer)
 # here we assigned the last 3 plots to p1, p2 and p3
@@ -193,9 +192,9 @@ print("Step 2 complete!")
 
 # the essentials ----
 library(tidyverse)
-library(genefilter)
 library(edgeR)
 library(matrixStats)
+library(cowplot)
 
 sampleLabels <- targets$sample
 myDGEList <- DGEList(Txi_gene$counts)
