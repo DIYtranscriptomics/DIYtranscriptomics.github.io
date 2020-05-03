@@ -38,7 +38,7 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 <iframe src="https://player.vimeo.com/video/413822811" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Part 2 - Walking through the Step 2 script, and related our work to the 'grammar of graphics' and 'tidy' data
+### Part 2 - Walking through the Step 2 script, and relating our work to the 'grammar of graphics' and 'tidy' data
 
 <iframe src="https://player.vimeo.com/video/413833130" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
@@ -52,8 +52,6 @@ We'll begin this class by filtering and normalzing our data, all while using the
 [Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf) - Hadley Wickham (author of Tidyverse packages and Chief Scientist at RStudio) describes the philosophy of tidy data in this paper. 
 
 [Grammar of graphics](http://DIYtranscriptomics.github.io/Reading/files/layered-grammar.pdf) - Another paper by Hadley Wickham.  This one explains the rationale behind ggplot2.
-
-[ggplot2 cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/ggplot2-cheatsheet.pdf) – a very helpful guide as we continue to use ggplot2 for all of our plotting needs.
 
 [ggplot2 cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/ggplot2-cheatsheet.pdf) – a very helpful guide as we continue to use ggplot2 for all of our plotting needs.
 

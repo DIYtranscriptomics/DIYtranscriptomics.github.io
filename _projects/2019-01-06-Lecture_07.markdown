@@ -8,9 +8,9 @@ featured_image: '/images/explorer.jpg'
 
 <div style="text-align: right"> Image credit: 'Maps' by Cara Barer</div>
 
-[Lecture slides](https://www.icloud.com/keynote/0i4VPYHj9N0286jLLF20BYipw#Lecture05%5FexploratoryAnalysis)
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0yQPc4lJXR9owaIo8fNO5IQxg#Lecture7%5FdataExploration)
 
-[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due before the start of class on Oct 16th.
+[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of class next Wednesday, May 13th.
 
 ## Overview
 
@@ -18,7 +18,7 @@ In this class you'll learn about a variety of approaches exploring your data.  Y
 
 ## Learning objectives
 
-* Start/finish step 3 script
+* Start and finish Step 3 script
 * Discuss basics of multivariate statistical analysis
 * Carry out hierarchical clustering of samples
 * Discuss and perform principal component analyses (PCA)
@@ -31,20 +31,27 @@ In this class you'll learn about a variety of approaches exploring your data.  Y
 
 [Step 3 script](http://DIYtranscriptomics.github.io/Code/files/Step3_multivariate.R)
 
-
-
-## Reading
-
-[Blog post describing T-SNE](http://distill.pub/2016/misread-tsne/) - I mentioned various unsupervised methods for dimensional reduction of your data (PCA, MDS, T-SNE).  In particular, T-SNE has become popular in representing single-cell RNAseq data and flow cytometry data, but it is also one of the more complex visualization methods to understand. 
-
-[Original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  
-
-[UMAP](https://www.nature.com/articles/nbt.4314) - A new algorithm, called uniform manifold approximation and projection (UMAP) has been recently published and is gaining popularity in single cell RNAseq and flow cytometry analysis.  UMAP is proposed to preserve as much of the local and more of the global data structure than t-SNE, with a shorter run time.
- 
- ---
+---
 
 ## Lecture video
 
 Will be posted prior to this class time slot
 
 ---
+
+## Reading
+
+[Ten quick tips for effective dimensionality reduction](https://doi.org/10.1371/journal.pcbi.1006907)
+
+[Blog post describing T-SNE](http://distill.pub/2016/misread-tsne/) - I mentioned various unsupervised linear methods for dimensional reduction of your data (PCA, MDS).  T-SNE and UMAP are *non-linear* unsupervised methods that have become popular for representing single-cell RNAseq data and flow cytometry data. 
+
+[Original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  
+
+[UMAP paper](https://www.nature.com/articles/nbt.4314) - A new algorithm, called uniform manifold approximation and projection (UMAP) has been recently published and is gaining popularity in single cell RNAseq and flow cytometry analysis.  UMAP is proposed to preserve as much of the local and more of the global data structure than t-SNE, with a shorter run time.
+ 
+
+## Other videos
+
+### Josh Starmer does a fantastic job breakding down the math behind PCA in his StatQuest series 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FgakZw6K1QQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

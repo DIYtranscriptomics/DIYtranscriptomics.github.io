@@ -10,7 +10,7 @@ featured_image: '/images/DataDeluge.jpg'
 
 [Lecture slides](https://www.icloud.com/keynote/0eFM_9DUG9UmIULnEPYqgr5Jg#Lecture_06%5FPublicData)
 
-[Homework: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of class today!
+[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of class on Wednesday, May 13th.
 
 
 ## Overview

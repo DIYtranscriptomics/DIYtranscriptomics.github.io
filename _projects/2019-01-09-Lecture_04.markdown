@@ -10,7 +10,7 @@ featured_image: '/images/abacus.jpg'
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/03XFG7iDxCqONRP_qEPEUsq2Q#Lecture4%5Funits)
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due by start of class, Friday, May 1st.
+[Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due by start of class, Friday, May 1st.
 
 ## Overview
 
