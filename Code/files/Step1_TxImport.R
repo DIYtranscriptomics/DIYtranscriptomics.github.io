@@ -14,7 +14,6 @@ library(tidyverse) # provides access to Hadley Wickham's collection of R package
 library(tximport) # package for getting Kallisto results into R
 library(ensembldb) #helps deal with ensembl
 library(EnsDb.Hsapiens.v86) #replace with your organism-specific database package
-library(biomaRt) # an alternative for annotation
 library(beepr) #just for fun
 
 # read in your study design ----
@@ -43,6 +42,7 @@ Tx <- dplyr::select(Tx, "target_id", "gene_name")
 # however, this is only the case for human, mouse and rat....
 # so, this optional code chunk shows one way you can get annotation data for other target organisms
 # in this example, we're retrieving 1:1 mappings between transcript identifiers and gene symbols for the domesticated dog (Canis familiaris)
+library(biomaRt) # an alternative for annotation
 
 listMarts() #default host is ensembl.org, and most current release of mammalian genomes
 #listMarts(host="parasite.wormbase.org") #access to parasite worm genomes
@@ -102,6 +102,6 @@ Tx <- dplyr::select(Tx, "target_id", "gene_name")
 Txi_gene <- tximport(path, 
                      type = "kallisto", 
                      tx2gene = Tx, 
-                     txOut = FALSE, #determines whether your data represented at transcript or gene level
+                     txOut = TRUE, #determines whether your data represented at transcript or gene level
                      countsFromAbundance = "lengthScaledTPM",
                      ignoreTxVersion = TRUE)

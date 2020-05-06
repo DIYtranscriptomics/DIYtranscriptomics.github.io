@@ -41,7 +41,7 @@ head(myTPM.stats)
 # produce a scatter plot of the transformed data
 ggplot(myTPM.stats) + 
   aes(x = SD, y = MED) +
-  geom_hex(shape=25, size=3)
+  geom_point(shape=25, size=3)
 # Experiment with point shape and size in the plot above
 # Experiment with other plot types (e.g. 'geom_hex' instead of 'geom_point')
 # Add a theme to your ggplot code above.  Try 'theme_bw()'

@@ -4,10 +4,9 @@
 # This script starts with your filtered and normalized abundance data from the Step 2 script.
 
 # Load packages ------
-library(tidyverse)
+library(tidyverse) # you're familiar with this fromt the past two lectures
 library(DT) # for making interactive tables
 library(plotly) # for making interactive plots
-library(skimr) # great tool for summarizing dataframes
 library(gt) # A layered 'grammar of tables' - think ggplot, but for tables
 
 # Identify variables of interest in study design file ----
@@ -20,15 +19,13 @@ group <- factor(group)
 # make sure you have this object already in your work environment
 # if you don't, go back to the Step2 script and generate it
 log2.cpm.filtered.norm.df
-# Now we need to convert our datamatrix to a dataframe, while preserving the rownames as a new column in this dataframe
-skim(log2.cpm.filtered.norm.df)
 
 # Hierarchical clustering ---------------
 #hierarchical clustering can only work on a data matrix, not a data frame
 #try using filtered and unfiltered data...how does this change the result?
 #try other distance methods (e.g. switch from 'maximum' to 'euclidean')...how does this change the result?
-distance <- dist( t(log2.cpm.filtered.norm), method = "maximum") #other distance methods are "euclidean", maximum", "manhattan", "canberra", "binary" or "minkowski"
-clusters <- hclust(distance, method = "average") #other agglomeration methods are "ward.D", "ward.D2", "single", "complete", "average", "mcquitty", "median", or "centroid"
+distance <- dist(t(log2.cpm.filtered.norm), method = "maximum") #other distance methods are "euclidean", maximum", "manhattan", "canberra", "binary" or "minkowski"
+clusters <- hclust(distance, method = "complete") #other agglomeration methods are "ward.D", "ward.D2", "single", "complete", "average", "mcquitty", "median", or "centroid"
 plot(clusters, labels=sampleLabels)
 
 # Principal component analysis (PCA) -------------
@@ -51,25 +48,28 @@ pca.res.df <- as_tibble(pca.res$x)
 ggplot(pca.res.df) +
   aes(x=PC1, y=PC2, label=sampleLabels) +
   geom_point(size=4) +
-  stat_ellipse() +
+  # geom_label() +
+  # stat_ellipse() +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
-  coord_fixed() +
+  # coord_fixed() +
   theme_bw()
 
 # Let's discuss and iteratively refine the PCA code and plot from above
+# First, take note of the fact that we can use information from our PCA analysis to label our axes
 # Remember that PCA is unsupervised, so knows nothing about group assignment (healthy vs disease)
 # But *we* know, and so we can use this knowledge to enhance the plot.  Add a 'color=group' mapping to the aes of the plot above
-# uncomment 'coord_fixed()' to apply the correct aspect ratio
-# uncomment 'stat_ellipse()' to see how you can circle clusters on the PCA
-# how would this PCA look if you used raw counts (myCounts) instead of log2 CPM?
-# what are the disadvantages of looking at a PCA result using such a simple XY plot?
+# Can we figure out the identity of the outlier?  We have already provided samplelabel mapping in aes, so just uncomment the 'geom_label()'
+# Uncomment 'coord_fixed()' to apply the correct aspect ratio
+# Uncomment 'stat_ellipse()' to see how you can circle clusters on the PCA
+# How would this PCA look if you used raw counts (myCounts) instead of log2 CPM?
+# What are the disadvantages of looking at a PCA result using such a simple XY plot?
 
 # Create a PCA 'small multiples' chart ----
 # this is another way to view PCA laodings to understand impact of each sample on each pricipal component
-pca.res.df <- pca.res$x[,1:4] %>%
+pca.res.df <- pca.res$x[,1:4] %>% # note that this is the first time you've seen the 'pipe' operator from the magrittr package
   as_tibble() %>%
   add_column(sample = sampleLabels,
              group = group)
@@ -80,7 +80,7 @@ pca.pivot <- pivot_longer(pca.res.df, # dataframe to be pivoted
                           values_to = "loadings") # name of new variable (column) storing all the values (data)
 
 ggplot(pca.pivot) +
-  aes(x=sample, y=loadings, fill=group) +
+  aes(x=sample, y=loadings, fill=group) + # you could iteratively 'paint' different covariates onto this plot using the 'fill' aes
   geom_bar(stat="identity") +
   facet_wrap(~PC) +
   labs(title="PCA 'small multiples' plot",
@@ -92,11 +92,11 @@ ggplot(pca.pivot) +
 
 # Use dplyr 'verbs' to modify our dataframe ----
 # use dplyr 'mutate' function to add new columns based on existing data
-mydata.df <- mutate(log2.cpm.filtered.norm.df,
-                    healthy.AVG = (HS01 + HS02 + HS03 + HS04 + HS05)/5, 
-                    disease.AVG = (CL08 + CL10 + CL11 + CL12 + CL13)/5,
-                    #now make columns comparing each of the averages above that you're interested in
-                    LogFC = (disease.AVG - healthy.AVG)) %>% #note that this is the first time you've seen the 'pipe' operator
+mydata.df <- log2.cpm.filtered.norm.df %>% 
+  mutate(healthy.AVG = (HS01 + HS02 + HS03 + HS04 + HS05)/5,
+         disease.AVG = (CL08 + CL10 + CL11 + CL12 + CL13)/5,
+         #now make columns comparing each of the averages above that you're interested in
+         LogFC = (disease.AVG - healthy.AVG)) %>% 
   mutate_if(is.numeric, round, 2)
 
 #now look at this modified data table
@@ -116,8 +116,10 @@ mydata.sort <- mydata.df %>%
 # can refer to columns using exact name or numerical indicator
 # use boolean operators such as '&' (and), '|' (or), '==' (equal to), '!' (not)
 mydata.filter <- mydata.df %>%
-  dplyr::filter(geneID=="MMP1" | geneID=="GZMB" | geneID=="IL1B" | geneID=="GNLY") %>%
-  dplyr::select(geneID, healthy.AVG, disease.AVG, LogFC)
+  dplyr::filter(geneID=="MMP1" | geneID=="GZMB" | geneID=="IL1B" | geneID=="GNLY" | geneID=="IFNG"
+                | geneID=="CCL4" | geneID=="KIR2DL4" | geneID=="PRF1" | geneID=="APOBEC3A" | geneID=="UNC13A" ) %>%
+  dplyr::select(geneID, healthy.AVG, disease.AVG, LogFC) %>%
+  dplyr::arrange(desc(LogFC))
 
 # you can also filter based on any regular expression
 mydata.grep <- mydata.df %>%
@@ -126,18 +128,36 @@ mydata.grep <- mydata.df %>%
   dplyr::arrange(desc(geneID))
 
 # Produce publication-quality tables using the gt package ----
-gt(mydata.grep)
+gt(mydata.filter)
 # now with a few more options
-mydata.grep %>%
+mydata.filter %>%
   gt() %>%
-  gt::fmt_number(columns=2:4, decimals = 1) %>%
-  gt::tab_header(title = md("**My favorite genes!**"),
-             subtitle = md("but just *some* of them"))
+  fmt_number(columns=2:4, decimals = 1) %>%
+  tab_header(title = md("**Regulators of skin pathogenesis**"),
+             subtitle = md("*during cutaneous leishmaniasis*")) %>%
+  tab_footnote(
+    footnote = "Deletion or blockaid ameliorates disease in mice",
+    locations = cells_body(
+      columns = vars(geneID),
+      rows = c(6, 7))) %>% 
+  tab_footnote(
+    footnote = "Associated with treatment failure in multiple studies",
+    locations = cells_body(
+      columns = vars(geneID),
+      rows = c(2:10))) %>%
+  tab_footnote(
+    footnote = "Implicated in parasite control",
+    locations = cells_body(
+      columns = vars(geneID),
+      rows = c(2))) %>%
+  tab_source_note(
+    source_note = md("Reference: Amorim *et al*., (2019). DOI: 10.1126/scitranslmed.aar3619"))
+
 
 # Make an interactive table using the DT package ----
-datatable(mydata.df, 
+datatable(mydata.df[,c(1,12:14)], 
           extensions = c('KeyTable', "FixedHeader"), 
-          caption = 'my cool table',
+          filter = 'top',
           options = list(keys = TRUE, 
                          searchHighlight = TRUE, 
                          pageLength = 10, 
@@ -196,9 +216,9 @@ mydata.df <- mutate(log2.cpm.filtered.norm.df,
                     LogFC = (disease.AVG - healthy.AVG)) %>% #note that this is the first time you've seen the 'pipe' operator
   mutate_if(is.numeric, round, 2)
 
-datatable(mydata.df, 
+datatable(mydata.df[,c(1,12:14)], 
           extensions = c('KeyTable', "FixedHeader"), 
-          caption = 'my cool table',
+          filter = 'top',
           options = list(keys = TRUE, 
                          searchHighlight = TRUE, 
                          pageLength = 10, 
