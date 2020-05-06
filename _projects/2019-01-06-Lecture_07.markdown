@@ -39,7 +39,13 @@ In this class you'll learn about a variety of approaches exploring your data.  Y
 
 <iframe src="https://player.vimeo.com/video/415584939" width="640" height="267" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Part 2 - PCA in plots, dplyr and interactivity through Plotly and DT
+### Part 2 - Plotting PCA results and small multiples
+
+<iframe src="https://player.vimeo.com/video/415642798" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 3 - Producing interactive tables and plots
+
+<iframe src="https://player.vimeo.com/video/415644355" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
