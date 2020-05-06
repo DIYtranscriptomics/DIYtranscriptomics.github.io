@@ -35,7 +35,11 @@ In this class you'll learn about a variety of approaches exploring your data.  Y
 
 ## Lecture video
 
-Will be posted prior to this class time slot
+### Part 1 - Discussion of multivariate data, dimensional reduction via PCA, and starting our Step 3 script
+
+<iframe src="https://player.vimeo.com/video/415584939" width="640" height="267" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - PCA in plots, dplyr and interactivity through Plotly and DT
 
 ---
 
