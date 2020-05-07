@@ -31,12 +31,12 @@ In the event that you don't have enough free harddrive space to download the raw
 
 ---
 
-### Can I work with my own data during the course?
+## Can I work with my own data during the course?
 
 Yes!  We encourage students to work with their own data during the course.  Nothing will keep you more enagaged and crystalize the content of the course quite like working on questions you *actually* care about.  That said, it is not a requirement that you come with data in hand.  Throughout the course, I will demonstrate every step in the analysis using the dataset above. If you are working with your own dataset and run into problems, I strongly recommend that you switch to the course dataset so you don't fall behind.  You can always return to working on your own data once you have a functional pipeline and understand the process.  
 
 ---
 
-## Accessing public RNA-seq data
+## Where can I acces public RNA-seq data
 
-In the second half of the course, you'll learn how to access hundreds of thousands of samples already pre-mapped using Kallisto!  These are available through several different resources, which we'll discuss, but we'll focus on the [ARCHS4 database from Avi Ma'ayan's lab](https://amp.pharm.mssm.edu/archs4/index.html).  You'll want to download the compressed ARCHS4 databases for mouse samples [here](javascript:downloadFile('https://mssm-seq-matrix.s3.amazonaws.com/mouse_matrix.h5','mouse_matrix.h5','8')).  Note that this download is ~7GB of data.
+In the second half of the course, you'll learn how to access hundreds of thousands of samples already pre-mapped using Kallisto!  These are available through several different resources, which we'll discuss, but we'll focus on the [ARCHS4 database from Avi Ma'ayan's lab](https://amp.pharm.mssm.edu/archs4/index.html).  You'll want to download the compressed ARCHS4 databases for mouse samples [here](https://www.dropbox.com/s/crz1ctpqhbpb1ox/mouse_matrix_v8.h5?dl=0).  Note that this download is ~7GB of data.
