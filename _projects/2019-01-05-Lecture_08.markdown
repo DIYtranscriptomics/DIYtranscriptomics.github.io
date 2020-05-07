@@ -22,6 +22,7 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 * Learn about ```fasterq_dump```
 * Learn about HDF5 file format
 * Explore ARCHS4 database programatically 
+* Start and finish the Step 4 script
 
 ## Code
 
