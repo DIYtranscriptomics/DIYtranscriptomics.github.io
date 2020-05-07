@@ -8,7 +8,7 @@ featured_image: '/images/DataDeluge.jpg'
 
 <div style="text-align: right"> Image credit: Brett Ryder, The Economist </div>
 
-[Lecture slides](https://www.icloud.com/keynote/0eFM_9DUG9UmIULnEPYqgr5Jg#Lecture_06%5FPublicData)
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0JxZ0dtOnG4G2ptcHJUg0K00Q#Lecture8%5FpublicData)
 
 [Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of class on Wednesday, May 13th.
 
