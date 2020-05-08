@@ -37,6 +37,6 @@ Yes!  We encourage students to work with their own data during the course.  Noth
 
 ---
 
-## Where can I acces public RNA-seq data
+## Where can I access public RNA-seq data
 
 In the second half of the course, you'll learn how to access hundreds of thousands of samples already pre-mapped using Kallisto!  These are available through several different resources, which we'll discuss, but we'll focus on the [ARCHS4 database from Avi Ma'ayan's lab](https://amp.pharm.mssm.edu/archs4/index.html).  You'll want to download the compressed ARCHS4 databases for mouse samples [here](https://www.dropbox.com/s/crz1ctpqhbpb1ox/mouse_matrix_v8.h5?dl=0).  Note that this download is ~7GB of data.
