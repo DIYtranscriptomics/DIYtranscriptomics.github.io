@@ -1,29 +1,26 @@
 # Introduction to this script -----------
 # the goal of this script is to give you access to massive amounts of gene expression data without the need to download and analyze individual .fastq files
-# this script allows you to access RNAseq data from GEO and SRA using the "all RNA-seq and ChIP-seq sample and signature search" (ARCHS4) project (https://amp.pharm.mssm.edu/archs4)
-# this script also provides programmatic access to the "Library of Integrated Network-Based Cellular Signatures" (LINCS)  
+# this script allows you to access RNAseq data from GEO and SRA using the "All RNA-seq and CHIP-Seq Sample and Signature Search" (ARCHS4) project (https://amp.pharm.mssm.edu/archs4)
 
 # Load packages ------
+# nothing new here...you should already have all these packages in your R package library
 library(tidyverse)
-library(reshape2)
 library(rhdf5)
 library(edgeR)
 
 # load ARCHS4 database -----
 # you should have already downloaded the most recent versions of mouse and human RNAseq data from ARCHS4 in hdf5 format
-# begin by setting the path to your archs4 data files
-archs4.human <- "~/Dropbox/publicData/human_matrix.v7.h5"
-archs4.mouse <- "~/Dropbox/publicData/mouse_matrix.v7.h5"
+# begin by creating file paths that point to the hdf5 archs4 files
+archs4.human <- "../../ARCHS4/human_matrix_v8.h5" # if you placed the hdf5 file in your working directory, just use "human_matrix_v8.h5" as the path
+archs4.mouse <- "../../ARCHS4/mouse_matrix_v8.h5" # if you placed the hdf5 file in your working directory, just use "human_matrix_v8.h5" as the path
 # use the h5 list (h5ls) function from the rhdf5 package to look at the contents of these databases
-# but first, remember our Kallisto outputs were hdf5 files, so let's look at one of these first.
-h5ls("uninf_rep1/abundance.h5")
 h5ls(archs4.human)
 h5ls(archs4.mouse)
 
-# 209,395 samples from human
+# 238,522 samples from human
 all.samples.human <- h5read(archs4.human, name="meta/Sample_geo_accession")
 
-# 170,010 samples from mouse
+# 284,907 samples from mouse
 all.samples.mouse <- h5read(archs4.mouse, name="meta/Sample_geo_accession")
 
 # query ARCHS4 database ----
@@ -42,14 +39,14 @@ mySamples <- c("GSM2310941", # WT_unstim_rep1
                "GSM2310952") # Ripk3Casp8_LPS.6hr_rep2
 
 # Identify columns to be extracted from ARCHS4 database
-my.sample.locations <- which(all.samples.mouse %in% mySamples)
+my.sample.locations <- which(all.samples.mouse %in% mySamples) # first time you've seen the $in$ operator.
 # extract gene symbols from the metadata
 genes <- h5read(archs4.mouse, "meta/genes")
 
 # Extract expression data from ARCHS4 ----
 expression <- h5read(archs4.mouse, "data/expression", 
                      index=list(1:length(genes), my.sample.locations))
-H5close()
+
 rownames(expression) <- genes
 colnames(expression) <- all.samples.mouse[my.sample.locations]
 colSums(expression) #this shows the sequencing depth for each of the samples you've extracted
@@ -57,7 +54,7 @@ archs4.dgelist <- DGEList(expression)
 archs4.cpm <- cpm(archs4.dgelist)
 colSums(archs4.cpm)
 
-# Filter and normalize extracted data ----
+# Filter and normalize the extracted data ----
 table(rowSums(archs4.dgelist$counts==0)==12)
 keepers <- rowSums(archs4.cpm>1)>=2
 archs4.dgelist.filtered <- archs4.dgelist[keepers,]
@@ -76,13 +73,18 @@ Sample_characteristics<- h5read(archs4.mouse, name="meta/Sample_characteristics_
 
 # let's try putting this all together in a study design file
 studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
-                   Sample_source = Sample_source_name_ch1[my.sample.locations],
-                   Sample_characteristics = Sample_characteristics[my.sample.locations])
+                      Sample_source = Sample_source_name_ch1[my.sample.locations],
+                      Sample_characteristics = Sample_characteristics[my.sample.locations])
 
 #based on what we extracted from ARCHS4 above, lets customize and clean-up this study design file
-studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
-                   genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
-                   treatment = c("unstim", "unstim", "unstim", "unstim", "unstim", "unstim", "LPS", "LPS", "LPS", "LPS", "LPS", "LPS"))
+studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations],
+                      genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
+                      treatment = c("unstim", "unstim", "unstim", "unstim", "unstim", "unstim", "LPS", "LPS", "LPS", "LPS", "LPS", "LPS"))
+
+#capture experimental variables as factors from this study design
+genotype <- factor(studyDesign$genotype)
+treatment <- factor(studyDesign$treatment)
+sampleName <- studyDesign$Sample_title
 
 # Pricipal component analysis (PCA) -------------
 pca.res <- prcomp(t(archs4.filtered.norm.log2.cpm), scale.=F, retx=T)
@@ -100,12 +102,16 @@ pc.per
 #lets first plot any two PCs against each other
 #We know how much each sample contributes to each PC (loadings), so let's plot
 pca.res.df <- as_tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$genotype, shape=studyDesign$treatment)) +
-  geom_point(size=6) +
+ggplot(pca.res.df) +
+  aes(x=PC1, y=PC2) +
+  geom_point(size=4) +
+  # geom_label() +
+  # stat_ellipse() +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
+  coord_fixed() +
   theme_bw()
 
 # now try painting other variables from your study design file onto this PCA.
@@ -113,23 +119,35 @@ ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$genotype, shape=studyDesi
 # can we map one variable to point color and another to point shape?
 
 # now create a small multiple PCA plot
-melted <- cbind(factor(studyDesign$genotype), melt(pca.res$x[,1:4]))
-head(melted) #look at your 'melted' data
-colnames(melted) <- c('group', 'treatment', 'PC', 'loadings')
-ggplot(melted) +
-  geom_bar(aes(x=treatment, y=loadings, fill=group), stat="identity") +
+pca.res.df <- pca.res$x[,1:4] %>% # note that this is the first time you've seen the 'pipe' operator from the magrittr package
+  as_tibble() %>%
+  add_column(treatment) %>%
+  add_column(genotype) %>%
+  add_column(sampleName)
+
+
+pca.pivot <- pivot_longer(pca.res.df, # dataframe to be pivoted
+                          cols = PC1:PC4, # column names to be stored as a SINGLE variable
+                          names_to = "PC", # name of that new variable (column)
+                          values_to = "loadings") # name of new variable (column) storing all the values (data)
+
+ggplot(pca.pivot) +
+  aes(x=sampleName, y=loadings, fill=treatment) + # you could iteratively 'paint' different covariates onto this plot using the 'fill' aes. Try doing this with the genotype variable you created above.
+  geom_bar(stat="identity") +
   facet_wrap(~PC) +
   labs(title="PCA 'small multiples' plot",
        caption=paste0("produced on ", Sys.time())) +
+  theme_bw() +
   coord_flip()
+
+
 
 # the essentials ----
 library(tidyverse)
-library(reshape2)
 library(rhdf5)
 library(edgeR)
 
-archs4.mouse <- "~/Dropbox/publicData/mouse_matrix.v7.h5"
+archs4.mouse <- "../../ARCHS4/mouse_matrix_v8.h5" # if you placed the hdf5 file in your working directory, just use "human_matrix_v8.h5" as the path
 all.samples.mouse <- h5read(archs4.mouse, name="meta/Sample_geo_accession")
 mySamples <- c("GSM2310941", # WT_unstim_rep1
                "GSM2310942", # WT_unstim_rep2
@@ -169,11 +187,15 @@ studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations],
 
 pca.res <- prcomp(t(archs4.filtered.norm.log2.cpm), scale.=F, retx=T)
 pca.res.df <- as_tibble(pca.res$x)
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=studyDesign$genotype, shape=studyDesign$treatment)) +
-  geom_point(size=6) +
+ggplot(pca.res.df) +
+  aes(x=PC1, y=PC2, color=treatment, shape=genotype) +
+  geom_point(size=4) +
+  # geom_label() +
+  # stat_ellipse() +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
+  coord_fixed() +
   theme_bw()
 
