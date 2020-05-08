@@ -32,6 +32,20 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 
 ARCHS4 database in HDF5 format for **[human](https://www.dropbox.com/s/t9umqxu5ahsy9rc/human_matrix_v8.h5?dl=0)** and **[mouse](https://www.dropbox.com/s/crz1ctpqhbpb1ox/mouse_matrix_v8.h5?dl=0)**.  These HDF5 files contain RNAseq data already aligned using Kallisto for 238,522 and 284,907 samples, respectively.  Note that each of these files will take about ~7GB of space on your hard-drive. For the purposes of this lecture, *you only need to download the mouse data*.
 
+---
+
+## Lecture video
+
+### Part 1 - Lecture covering how to access public RNA-seq data
+
+<iframe src="https://player.vimeo.com/video/416160670" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Working through the Step 4 script to access the ARCHS4 database
+
+<iframe src="https://player.vimeo.com/video/416361577" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+---
+
 
 ## Reading
 
@@ -41,13 +55,6 @@ ARCHS4 database in HDF5 format for **[human](https://www.dropbox.com/s/t9umqxu5a
 
 [Activity of Uncleaved Caspase-8 Controls Anti-bacterial Immune Defense and TLR-Induced Cytokine Production Independent of Cell Death, Oct, 2016](https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005910).  This paper contains the data we'll retrieve from a public gene expression repository.  The data is available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86922)
 
----
-
-## Lecture video
-
-Will be posted prior to this class time slot
-
----
 
 ## Other video
 

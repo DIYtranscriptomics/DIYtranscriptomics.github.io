@@ -39,7 +39,7 @@ mySamples <- c("GSM2310941", # WT_unstim_rep1
                "GSM2310952") # Ripk3Casp8_LPS.6hr_rep2
 
 # Identify columns to be extracted from ARCHS4 database
-my.sample.locations <- which(all.samples.mouse %in% mySamples) # first time you've seen the $in$ operator.
+my.sample.locations <- which(all.samples.mouse %in% mySamples) # first time you've seen the %in% operator.
 # extract gene symbols from the metadata
 genes <- h5read(archs4.mouse, "meta/genes")
 
@@ -86,7 +86,7 @@ genotype <- factor(studyDesign$genotype)
 treatment <- factor(studyDesign$treatment)
 sampleName <- studyDesign$Sample_title
 
-# Pricipal component analysis (PCA) -------------
+# Principal component analysis (PCA) -------------
 pca.res <- prcomp(t(archs4.filtered.norm.log2.cpm), scale.=F, retx=T)
 #look at pca.res in environment
 ls(pca.res)
