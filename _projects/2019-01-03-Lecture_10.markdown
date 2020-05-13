@@ -2,29 +2,38 @@
 title: 'Differential gene expression'
 subtitle: 'Lecture 10 • Friday • 2020.05.15 • 3-5pm'
 date: 2019-01-03 00:00:00
-description: The ultimate goal of most transcriptional profiling experiments is to identify differentially expressed genes or transcripts.  In this class, we'll dig into differential expression using the popular and venerable Limma package in R. Finally, we'll continue to explore options for producing compelling plots from your differential expression results.
+description: The ultimate goal of most transcriptional profiling experiments is to identify differentially expressed genes or transcripts.  In this class, we'll dig into differential expression using the popular and venerable Limma package in R, while continuing to explore options for producing compelling plots from your differential expression results.  Finally, we'll discuss a workflow for going beyond DGE analysis to look at differentail transcript (isoform) usage (DTU).
 featured_image: '/images/apples.jpg'
 ---
 
 
 ## Overview
 
-The ultimate goal of most transcriptional profiling experiments is to identify differentailly expressed genes or transcripts.  Earlier in the course, we used [Sleuth](http://pachterlab.github.io/sleuth/) to get a quick view of differential transcript expression.  In this class, we'll dig into differential expression more deeply using the popular and venerable [Limma](http://www.bioconductor.org/packages/release/bioc/html/limma.html) package in R.  This gives us a chance to compare and contrast these two methods for identifying genes/transcripts of interest.  We'll also have a chance to talk about special cases when your analyses should include a paired design or correct for batch effects. 
+The ultimate goal of most transcriptional profiling experiments is to identify differentially expressed genes or transcripts.  In this class, we'll dig into differential expression using the popular and venerable Limma package in R, while continuing to explore options for producing compelling plots from your differential expression results.  Finally, we'll discuss a workflow for going beyond DGE analysis to look at differentail transcript (isoform) usage (DTU).
 
 ## Learning objectives
 
+* Talk about the *model.matrix()* function
+* Talk about how to set your pairwise comparisons using the *contrast.matrix()* function
 * Use the limma package to identify differentially expressed genes
 * Produce static and interactive volcano plots
+* Use the [isoformSwitchAnalyzeR](https://bioconductor.org/packages/release/bioc/vignettes/IsoformSwitchAnalyzeR/inst/doc/IsoformSwitchAnalyzeR.html) package to carry out an analysis of differential transcript usage (DTU).
 
 ## Code
 
 [Step 5 script](http://DIYtranscriptomics.github.io/Code/files/Step5_diffGenes.R)
 
+---
+
+## Lecture video
+
+Will be posted prior to this class time slot
+
+---
+
 ## Reading
 
 [VOOM: precision weights unlock linear model analysis tools for RNA-seq read counts. Genome Biology, Feb, 2014](http://DIYtranscriptomics.github.io/Reading/files/voom.pdf) - Describes one of the approaches for adjusting RNAseq count data based on the mean-variance relationship.
-
-[RNA-Seq workflow: gene-level exploratory analysis and differential expression. F1000, Oct 2015](http://f1000research.com/articles/4-1070/v1)
 
 [Harold Pimentel's talk on differential expression with RNAseq](https://www.youtube.com/watch?v=BRWj6re9iGc)
 
@@ -36,10 +45,12 @@ The ultimate goal of most transcriptional profiling experiments is to identify d
 
 [EdgeR user's guide](https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf).  See section 3.4 and 3.5 for details about how to modify your model.matrix function for a 'blocking' design.
 
----
 
-## Lecture video
-
-Will be posted prior to this class time slot
 
 ---
+
+## Other videos
+
+### Josh Starmer from StatQuest describing False Discovery Rates for RNAseq 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K8LQSvtjcEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
