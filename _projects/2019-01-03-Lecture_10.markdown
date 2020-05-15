@@ -6,6 +6,7 @@ description: The ultimate goal of most transcriptional profiling experiments is 
 featured_image: '/images/apples.jpg'
 ---
 
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0EOtDglqLllokio0dWNsZb-XQ#Lecture9%5FDGE)
 
 ## Overview
 
@@ -27,7 +28,21 @@ The ultimate goal of most transcriptional profiling experiments is to identify d
 
 ## Lecture video
 
-Will be posted prior to this class time slot
+### Part 1 – Introduction to differential feature selection in R/Bioconductor
+
+<iframe src="https://player.vimeo.com/video/418948870" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Starting Step 5 script for DGE analysis
+
+<iframe src="https://player.vimeo.com/video/418951469" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 3 - Visualizing DGEs
+
+<iframe src="https://player.vimeo.com/video/418953077" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 4 - Differential transcript usage (DTU) analysis with isoformSwitchAnalyzeR
+
+<iframe src="https://player.vimeo.com/video/418954856" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
@@ -35,11 +50,13 @@ Will be posted prior to this class time slot
 
 [VOOM: precision weights unlock linear model analysis tools for RNA-seq read counts. Genome Biology, Feb, 2014](http://DIYtranscriptomics.github.io/Reading/files/voom.pdf) - Describes one of the approaches for adjusting RNAseq count data based on the mean-variance relationship.
 
+[Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences](https://doi.org/10.12688/f1000research.7563.2) – describes the TxImport package with extensive discussion/consideration for DGE vs DTE vs DTU analysis.  A must read for this lecture.
+
 [Harold Pimentel's talk on differential expression with RNAseq](https://www.youtube.com/watch?v=BRWj6re9iGc)
 
 [how to set-up a design matrix](http://genomicsclass.github.io/book/pages/expressing_design_formula.html)
 
-[Count-based differential expression analysis of RNA sequencing data using R and Bioconductor. Nature Protocols, Aug 22, 2013](http://DIYtranscriptomics.github.io/Reading/files/nprot.2013.099.pdf) -  This is great overview of the edgeR and DESeq packages, their use, and explains how each one approaches differential gene expression.
+[Count-based differential expression analysis of RNA sequencing data using R and Bioconductor. Nature Protocols, Aug 22, 2013](http://DIYtranscriptomics.github.io/Reading/files/nprot.2013.099.pdf) -  This is a great overview of the edgeR and DESeq packages, their use, and explains how each one approaches differential gene expression.
 
 [Limma user's guide](http://www.bioconductor.org/packages/release/bioc/vignettes/limma/inst/doc/usersguide.pdf)
 
@@ -54,3 +71,11 @@ Will be posted prior to this class time slot
 ### Josh Starmer from StatQuest describing False Discovery Rates for RNAseq 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K8LQSvtjcEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### StatQuest for linear regression and least squares
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PaFPbb66DxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### More StatQuest for Linear models
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nk2CQITm_eo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
