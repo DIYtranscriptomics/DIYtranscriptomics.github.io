@@ -39,7 +39,7 @@ Lists of differentially expressed transcripts often include different patterns o
 
 ### Alternatively clustering methods
 
-
+<iframe src="https://player.vimeo.com/video/420793600" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
