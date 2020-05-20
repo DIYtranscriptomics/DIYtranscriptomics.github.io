@@ -27,6 +27,14 @@ Lists of differentially expressed transcripts often include different patterns o
 
 ---
 
+## Lecture video
+
+### Intro to clustering and starting the Step 6 script
+
+<iframe src="https://player.vimeo.com/video/420768891" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+---
+
 ## Downloads
 
 If you want to try *Clust* on your own, you'll need to install the program first (see [github page](https://github.com/BaselAbujamous/clust) for instructions).  You can test it out using the Schisto hackdash dataset to reproduce what I showed you in class.  There are two files you'll need for this: 1) [this text file of DEGs](https://drive.google.com/open?id=1OgrR7YbSuhbFxvwvGdHLRViJixWr2bGZ) in female LE-strain worms; and 2) [a reps file](https://drive.google.com/open?id=1qv5x-MHqg-bh9OllAf-JsE1eB-AkEgIC) that maps the columns (samples) to groups (conditions).  You'll need to read these two files into your R environment before running *Clust*.  You can view an example of the output [here](https://drive.google.com/open?id=1BWVl42rhzC1Kd7GA5JF0OwX73bAUd_mm)
@@ -38,10 +46,4 @@ If you want to try *Clust* on your own, you'll need to install the program first
 
 **Colors in R** - Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the [RColorBrewer package](http://colorbrewer2.org).  These palettes can be viewed in [this cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf).  Unfortunately, these standard palettes often don't cut it, and you'll need custom palettes. For this, I love using [Sip](https://sipapp.io/) to pick, organize and access color palettes.
 
----
 
-## Lecture video
-
-Will be posted prior to this class time slot
-
----
