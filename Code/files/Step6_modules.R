@@ -10,8 +10,6 @@ library(gplots) #the heatmap2 function in this package is a primary tool for mak
 library(gameofthrones) #because...why not.  Install using 'devtools::install_github("aljrico/gameofthrones")'
 library(heatmaply) #for making interactive heatmaps using plotly
 library(d3heatmap) #for making interactive heatmaps using D3
-devtools::install_github("ropensci/plotly") # you will probably benefit from the latest version of plotly
-devtools::install_github('talgalili/heatmaply')
 
 # Choose your color pallette ----
 #Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]).
@@ -55,7 +53,7 @@ clustColumns <- hclust(as.dist(1-cor(diffGenes, method="spearman")), method="com
 #see lecture slides for an example using a mock dataset.
 
 #Cut the resulting tree and create color vector for clusters.  
-#Vary the cut height to give more or fewer clusters, or you the 'k' argument to force n number of clusters
+#Vary the cut height (h =) to give more or fewer clusters, or use force k= number of clusters
 #we'll look at these clusters in more detail later
 module.assign <- cutree(clustRows, k=2)
 
@@ -74,7 +72,7 @@ heatmap.2(diffGenes,
           cexRow=1, cexCol=1, margins=c(8,20)) 
 
 #what do the colors represent in this heatmap?
-#what happens when you change scale=NULL
+#what happens when you change scale='none'
 
 # Make interactive heatmap ----
 #first, we'll make an interactive heatmap using plotly (https://plot.ly/)
@@ -96,7 +94,7 @@ d3heatmap(diffGenes,
 #notice that the heatmap includes ALL the columns from your dataset
 #a useful way to simplify heatmaps, especially when there are many conditions, is to average your biological replicates and display only one column per condition
 #rerun the heatmap script above using diffData.AVG as input instead of diffData
-colnames(diffGenes) <- targets$treatment
+colnames(diffGenes) <- targets$group
 
 #now an old function from the limma package to average your replicates 
 diffGenes.AVG <- avearrays(diffGenes)
