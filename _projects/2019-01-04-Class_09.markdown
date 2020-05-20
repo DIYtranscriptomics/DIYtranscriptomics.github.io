@@ -1,6 +1,6 @@
 ---
 title: 'Hackdash 1'
-subtitle: 'Lecture 9 • Wednesday • 2020.05.13 • 3-5pm'
+subtitle: 'Hackdash • Wednesday • 2020.05.13 • 3-5pm'
 date: 2019-01-04 00:00:00
 description: You may have heard of a Hackathon before - an event that typically lasts several days and brings together people for a collaborative challenge in computer programming.  Well, we don't quite have time for a full Hackathon, so we'll do a mad dash to the finish line instead.  This 2hr in-class assignment will test your ability to use recent class material and code to solve a problem in a real RNAseq dataset.
 featured_image: '/images/timepiece.jpg'

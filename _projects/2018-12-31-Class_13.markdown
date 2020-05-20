@@ -1,6 +1,6 @@
 ---
 title: 'Hackdash 2'
-subtitle: 'Lecture 13 • Wednesday • 2020.05.27 • 3-5pm'
+subtitle: 'Hackdash • Wednesday • 2020.05.27 • 3-5pm'
 date: 2018-12-31 00:00:00
 description: In this second Hackdash, you will have incorporate both differential gene expression analysis and downstream functional enrichment analysis to solve your challenge.
 featured_image: '/images/timepiece.jpg'

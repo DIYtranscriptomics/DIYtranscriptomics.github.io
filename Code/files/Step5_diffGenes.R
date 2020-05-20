@@ -36,7 +36,8 @@ contrast.matrix <- makeContrasts(infection = disease - healthy,
 fits <- contrasts.fit(fit, contrast.matrix)
 #get bayesian stats for your linear model fit
 ebFit <- eBayes(fits)
-#stats <- write.fit(ebFit)
+# if you want to output the stats from your linear model fit, uncomment the line below.
+# write.fit(ebFit, file='lmfit_stats.txt')
 
 # TopTable to view DEGs -----
 myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=10, sort.by="logFC")
