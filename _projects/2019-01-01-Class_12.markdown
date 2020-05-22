@@ -39,6 +39,14 @@ Now that you've identified differentially expressed genes, what do they mean and
 
 <iframe src="https://player.vimeo.com/video/421669877" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+### Part 3 - GSEA enrichment and visuals
+
+<iframe src="https://player.vimeo.com/video/421684919" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 4 - Guidelines on making figures
+
+
+
 ---
 
 ## Reading
