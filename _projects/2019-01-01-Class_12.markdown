@@ -43,7 +43,7 @@ Now that you've identified differentially expressed genes, what do they mean and
 
 <iframe src="https://player.vimeo.com/video/421684919" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Part 4 - Competitive vs self-contained GSEA, and exploring single sample GSEA (ssGSEA)
+### Part 4 - Competitive vs self-contained GSEA, and exploring gene set *variation* analysis (GSVA)
 
 <iframe src="https://player.vimeo.com/video/421752542" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
