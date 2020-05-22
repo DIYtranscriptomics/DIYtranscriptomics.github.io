@@ -18,7 +18,7 @@ Now that you've identified differentially expressed genes, what do they mean and
 ## Learning objectives
 
 * Carry out Gene Ontology (GO) enrichment analysis using modules identified in the previous script
-* Carry out a GSEA enrichment analysis using our full dataset
+* Carry out a Gene Set Enrichment Analysis (GSEA) using our full dataset
 * Understand the differences between GO and GSEA
 * Understand the MSigDB resource and how to access signature collections
 * Discuss the basic building blocks for assembling a figure
@@ -35,6 +35,9 @@ Now that you've identified differentially expressed genes, what do they mean and
 
 <iframe src="https://player.vimeo.com/video/421643144" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+### Part 2 - GO enrichment using gprofiler and our modules
+
+<iframe src="https://player.vimeo.com/video/421669877" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
