@@ -21,7 +21,6 @@ Now that you've identified differentially expressed genes, what do they mean and
 * Carry out a Gene Set Enrichment Analysis (GSEA) using our full dataset
 * Understand the differences between GO and GSEA
 * Understand the MSigDB resource and how to access signature collections
-* Discuss the basic building blocks for assembling a figure
 
 ## Code
 
