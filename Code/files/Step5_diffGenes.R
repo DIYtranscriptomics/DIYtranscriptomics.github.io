@@ -36,8 +36,7 @@ contrast.matrix <- makeContrasts(infection = disease - healthy,
 fits <- contrasts.fit(fit, contrast.matrix)
 #get bayesian stats for your linear model fit
 ebFit <- eBayes(fits)
-# if you want to output the stats from your linear model fit, uncomment the line below.
-# write.fit(ebFit, file='lmfit_stats.txt')
+#write.fit(ebFit, file="lmfit_results.txt")
 
 # TopTable to view DEGs -----
 myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=10, sort.by="logFC")
@@ -166,9 +165,9 @@ library(gt)
 library(DT) 
 library(plotly) 
 
-treatment <- factor(targets$treatment)
-design <- model.matrix(~0 + treatment)
-colnames(design) <- levels(treatment)
+group <- factor(targets$group)
+design <- model.matrix(~0 + group)
+colnames(design) <- levels(group)
 
 v.DEGList.filtered.norm <- voom(myDGEList.filtered.norm, design, plot = FALSE)
 fit <- lmFit(v.DEGList.filtered.norm, design)
@@ -178,8 +177,10 @@ contrast.matrix <- makeContrasts(infection = disease - healthy,
 fits <- contrasts.fit(fit, contrast.matrix)
 ebFit <- eBayes(fits)
 myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC")
-myTopHits <- as_tibble(myTopHits, rownames = "geneSymbol")
-vplot <- ggplot(myTopHits.df) +
+myTopHits.df <- myTopHits %>%
+  as_tibble(rownames = "geneID")
+
+vplot <- ggplot(myTopHits) +
   aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneID)) +
   geom_point(size=2) +
   geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +

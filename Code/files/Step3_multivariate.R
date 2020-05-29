@@ -25,7 +25,7 @@ log2.cpm.filtered.norm.df
 #try using filtered and unfiltered data...how does this change the result?
 #try other distance methods (e.g. switch from 'maximum' to 'euclidean')...how does this change the result?
 distance <- dist(t(log2.cpm.filtered.norm), method = "maximum") #other distance methods are "euclidean", maximum", "manhattan", "canberra", "binary" or "minkowski"
-clusters <- hclust(distance, method = "complete") #other agglomeration methods are "ward.D", "ward.D2", "single", "complete", "average", "mcquitty", "median", or "centroid"
+clusters <- hclust(distance, method = "average") #other agglomeration methods are "ward.D", "ward.D2", "single", "complete", "average", "mcquitty", "median", or "centroid"
 plot(clusters, labels=sampleLabels)
 
 # Principal component analysis (PCA) -------------
@@ -190,14 +190,15 @@ library(DT)
 library(gt)
 library(plotly)
 
+group <- targets$group
+group <- factor(group)
+
 pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
-pca.res$rotation # 'rotation' shows you how much each gene influenced each PC (called 'scores')
-pca.res$x # 'x' shows you how much each sample influenced each PC (called 'loadings')
-pc.var<-pca.res$sdev^2 # sdev^2 captures these eigenvalues from the PCA result
-pc.per<-round(pc.var/sum(pc.var)*100, 1) 
+pc.var <- pca.res$sdev^2 # sdev^2 captures these eigenvalues from the PCA result
+pc.per <- round(pc.var/sum(pc.var)*100, 1) 
 pca.res.df <- as_tibble(pca.res$x)
 pca.plot <- ggplot(pca.res.df) +
-  aes(x=PC1, y=PC2, label=sampleLabels) +
+  aes(x=PC1, y=PC2, label=sampleLabels, color = group) +
   geom_point(size=4) +
   stat_ellipse() +
   xlab(paste0("PC1 (",pc.per[1],"%",")")) + 

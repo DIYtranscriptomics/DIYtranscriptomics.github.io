@@ -37,6 +37,14 @@ publish_gostplot(
   width = NA,
   height = NA)
 
+#you can also generate a table of your gost results
+publish_gosttable(
+  gost.res,
+  highlight_terms = NULL,
+  use_colors = TRUE,
+  show_columns = c("source", "term_name", "term_size", "intersection_size"),
+  filename = NULL,
+  ggplot=TRUE)
 # now repeat the above steps using only genes from a single module from the step 6 script, by using `rownames(myModule)`
 # what is value in breaking up DEGs into modules for functional enrichment analysis?
 
@@ -84,9 +92,9 @@ datatable(myGSEA.df,
   formatRound(columns=c(2:10), digits=2)
 # create enrichment plots using the enrichplot package
 gseaplot2(myGSEA.res, 
-          geneSetID = 47, #can choose multiple signatures to overlay in this plot
+          geneSetID = c(6, 47, 262), #can choose multiple signatures to overlay in this plot
           pvalue_table = FALSE, #can set this to FALSE for a cleaner plot
-          title = GSEA.res$Description[47]) #can also turn off this title
+          title = myGSEA.res$Description[47]) #can also turn off this title
 
 # add a variable to this result that matches enrichment direction with phenotype
 myGSEA.df <- myGSEA.df %>%
@@ -218,9 +226,10 @@ library(gprofiler2) #tools for accessing the GO enrichment results using g:Profi
 library(clusterProfiler) # provides a suite of tools for functional enrichment analysis
 library(msigdbr) # access to msigdb collections directly within R
 library(enrichplot) # great for making the standard GSEA enrichment plots
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=50, sort.by="logFC")
-gost.res <- gost(rownames(myTopHits), organism = "hsapiens", correction_method = "fdr")
-gostplot(gost.res, interactive = T, capped = T) #set interactive=FALSE to get plot for publications
+gost.res_up <- gost(rownames(myModule_up), organism = "hsapiens", correction_method = "fdr")
+gostplot(gost.res_up, interactive = T, capped = T) #set interactive=FALSE to get plot for publications
+gost.res_down <- gost(rownames(myModule_down), organism = "hsapiens", correction_method = "fdr")
+gostplot(gost.res_down, interactive = T, capped = T) #set interactive=FALSE to get plot for publications
 
 hs_gsea_c2 <- msigdbr(species = "Homo sapiens", # change depending on species your data came from
                       category = "C2") %>% # choose your msigdb collection of interest
@@ -248,7 +257,7 @@ datatable(myGSEA.df,
 gseaplot2(myGSEA.res, 
           geneSetID = 47, #can choose multiple signatures to overlay in this plot
           pvalue_table = FALSE, #can set this to FALSE for a cleaner plot
-          title = GSEA.res$Description[47]) #can also turn off this title
+          title = myGSEA.res$Description[47]) #can also turn off this title
 
 # add a variable to this result that matches enrichment direction with phenotype
 myGSEA.df <- myGSEA.df %>%

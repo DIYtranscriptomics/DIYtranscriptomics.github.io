@@ -6,6 +6,8 @@ description: In order to make your analysis pipeline transparent, in this class 
 featured_image: '/images/breadcrumbs2.jpg'
 ---
 
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0Vu6tndCpajbMEMseVYy3Hj9A#Lecture12%5FRmarkdown)
+
 ## Overview
 
 In order to document the code and results from a bioinformatics workflow you'll be introduced to [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/), and will use these tools to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
@@ -25,6 +27,22 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 [flexdashboard_essentials.Rmd](http://DIYtranscriptomics.github.io/Code/files/flexdashboard_essentials.Rmd) - a different style of Rmarkdown that puts the focus on creating a dashboard of graphics.  Particularly powerful when combined with the interactive graphs we produced during the course.
 
+---
+
+## Lecture video
+
+### Part 1 – Building blocks for making a good figure
+
+<iframe src="https://player.vimeo.com/video/424060469" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Introduction to markdown
+
+<iframe src="https://player.vimeo.com/video/424071155" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 3 - Constructing an Rmarkdown document that compiles to HTML or PDF
+
+<iframe src="https://player.vimeo.com/video/424086672" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 ## Reading
 
 [Blog post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
@@ -42,7 +60,7 @@ Supplementary code files from some of our recent papers:
 
 [This course website!](https://github.com/DIYtranscriptomics/DIYtranscriptomics.github.io) - Each page on the course website is just a simple markdown document. 
 
-[My lab website](http://hostmicrobe.org/) is just a bunch of text files served from github (repo [here](https://github.com/hostmicrobe/hostmicrobe.github.io))
+[My lab website](http://hostmicrobe.org/) is just a bunch of markdown files served from github (repo [here](https://github.com/hostmicrobe/hostmicrobe.github.io))
 
 ---
 

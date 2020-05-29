@@ -1,0 +1,111 @@
+sample	description	source	host_species	host_common_name	cell_line	subject_status	tissue_cell_type	treatment	virus_strain	timepoint_postTreament	GEO_accession
+Series1_NHBE_Mock_1	SARS004-mock-3_S3	Mock treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	Mock treatment	NA	24hrs	GSM4432378
+Series1_NHBE_Mock_2	SARS004-mock-2_S2	Mock treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	Mock treatment	NA	24hrs	GSM4432379
+Series1_NHBE_Mock_3	SARS004-mock-1_S1	Mock treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	Mock treatment	NA	24hrs	GSM4432380
+Series1_NHBE_SARS-CoV-2_1	SARS004-CoV2-3_S6	SARS-CoV-2 infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4432381
+Series1_NHBE_SARS-CoV-2_2	SARS004-CoV2-2_S5	SARS-CoV-2 infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4432382
+Series1_NHBE_SARS-CoV-2_3	SARS004-CoV2-1_S4	SARS-CoV-2 infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4432383
+Series2_A549_Mock_1	CoV002-mock3-indexG3_S3	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4432384
+Series2_A549_Mock_2	CoV002-mock2-indexG2_S2	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4432385
+Series2_A549_Mock_3	CoV002-mock1-indexG1_S1	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4432386
+Series2_A549_SARS-CoV-2_1	CoV002-CoV2-3-indexG6_S6	SARS-CoV-2 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 0.2)	USA-WA1/2020	24hrs	GSM4432387
+Series2_A549_SARS-CoV-2_2	CoV002-CoV2-2-indexG5_S5	SARS-CoV-2 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 0.2)	USA-WA1/2020	24hrs	GSM4432388
+Series2_A549_SARS-CoV-2_3	CoV002-CoV2-1-indexG4_S4	SARS-CoV-2 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 0.2)	USA-WA1/2020	24hrs	GSM4432389
+Series3_A549_Mock_1	svRNA184-mock-3-indexF3_S15	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4432390
+Series3_A549_Mock_2	svRNA184-mock-1-indexF1_S13	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4432391
+Series3_A549_RSV_1	svRNA184-RSV-3-indexH9_S18	RSV infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	RSV infected (MOI 15)	A2	24hrs	GSM4432392
+Series3_A549_RSV_2	svRNA184-RSV-1-indexF4_S16	RSV infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	RSV infected (MOI 15)	A2	24hrs	GSM4432393
+Series4_A549_Mock_1	3-9-mock1-13_S20	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	09hrs	GSM4432394
+Series4_A549_Mock_2	3-9-mock2-14_S1	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	09hrs	GSM4432395
+Series4_A549_IAV_1	3-9-wt1-15_S2	IAV infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	IAV infected (MOI 5)	A/Puerto Rico/8/1934 (H1N1)	09hrs	GSM4432396
+Series4_A549_IAV_2	3-9-wt2-16_S16	IAV infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	IAV infected (MOI 5)	A/Puerto Rico/8/1934 (H1N1)	09hrs	GSM4432397
+Series5_A549_Mock_1	CoV_A549-mock3	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462336
+Series5_A549_Mock_2	CoV_A549-mock2	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462337
+Series5_A549_Mock_3	CoV_A549-mock1	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462338
+Series5_A549_SARS-CoV-2_1	CoV_A549-SARSCoV2-3	SARS-CoV-2 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4462339
+Series5_A549_SARS-CoV-2_2	CoV_A549-SARSCoV2-2	SARS-CoV-2 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4462340
+Series5_A549_SARS-CoV-2_3	CoV_A549-SARSCoV2-1	SARS-CoV-2 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4462341
+Series6_A549-ACE2_Mock_1	A549-Adeno-GFP-ACE2-mock3	Mock treated A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462342
+Series6_A549-ACE2_Mock_2	A549-Adeno-GFP-ACE2-mock2	Mock treated A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462343
+Series6_A549-ACE2_Mock_3	A549-Adeno-GFP-ACE2-mock1	Mock treated A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462344
+Series6_A549-ACE2_SARS-CoV-2_1	A549-Adeno-GFP-ACE2-SARS-CoV2-3	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 0.2)	USA-WA1/2020	24hrs	GSM4462345
+Series6_A549-ACE2_SARS-CoV-2_2	A549-Adeno-GFP-ACE2-SARS-CoV2-2	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 0.2)	USA-WA1/2020	24hrs	GSM4462346
+Series6_A549-ACE2_SARS-CoV-2_3	A549-Adeno-GFP-ACE2-SARS-CoV2-1	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 0.2)	USA-WA1/2020	24hrs	GSM4462347
+Series7_Calu3_Mock_1	Calu3-mock3	Mock treated Calu-3 cells	homo_sapiens	human	Calu-3	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462348
+Series7_Calu3_Mock_2	Calu3-mock2	Mock treated Calu-3 cells	homo_sapiens	human	Calu-3	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462349
+Series7_Calu3_Mock_3	Calu3-mock1	Mock treated Calu-3 cells	homo_sapiens	human	Calu-3	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462350
+Series7_Calu3_SARS-CoV-2_1	Calu3-SARSCoV2-3	SARS-CoV-2 infected Calu-3 cells	homo_sapiens	human	Calu-3	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4462351
+Series7_Calu3_SARS-CoV-2_2	Calu3-SARSCoV2-2	SARS-CoV-2 infected Calu-3 cells	homo_sapiens	human	Calu-3	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4462352
+Series7_Calu3_SARS-CoV-2_3	Calu3-SARSCoV2-1	SARS-CoV-2 infected Calu-3 cells	homo_sapiens	human	Calu-3	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4462353
+Series8_A549_Mock_1	RSV_A549-mock3	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462354
+Series8_A549_Mock_2	RSV_A549-mock2	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462355
+Series8_A549_Mock_3	RSV_A549-mock1	Mock treated A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	Mock treatment	NA	24hrs	GSM4462356
+Series8_A549_RSV_1	RSV_A549-RSV-MOI2-3	RSV infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	RSV infected (MOI 2)	A2	24hrs	GSM4462357
+Series8_A549_RSV_2	RSV_A549-RSV-MOI2-2	RSV infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	RSV infected (MOI 2)	A2	24hrs	GSM4462358
+Series8_A549_RSV_3	RSV_A549-RSV-MOI2-1	RSV infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	RSV infected (MOI 2)	A2	24hrs	GSM4462359
+Series8_A549_HPIV3_3	A549-HPIV3-MOI2-1-indexD1	HPIV3 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	HPIV3 infected (MOI 3)	JS	24hrs	GSM4462360
+Series8_A549_HPIV3_2	A549-HPIV3-MOI2-2-indexD2	HPIV3 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	HPIV3 infected (MOI 3)	JS	24hrs	GSM4462361
+Series8_A549_HPIV3_1	A549-HPIV3-MOI2-3-indexD3	HPIV3 infected A549 cells	homo_sapiens	human	A549	NA	Lung adenocarcinoma	HPIV3 infected (MOI 3)	JS	24hrs	GSM4462362
+Series9_NHBE_Mock_1	NHBE-Mock-1	Mock treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	Mock treatment	NA	12hrs	GSM4462363
+Series9_NHBE_Mock_2	NHBE-Mock-2	Mock treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	Mock treatment	NA	12hrs	GSM4462364
+Series9_NHBE_Mock_3	NHBE-Mock-3	Mock treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	Mock treatment	NA	12hrs	GSM4462365
+Series9_NHBE_Mock_4	NHBE-Mock-4	Mock treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	Mock treatment	NA	12hrs	GSM4462366
+Series9_NHBE_IAV_1	IAV-LD-1	IAV infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAV infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1)	12hrs	GSM4462367
+Series9_NHBE_IAV_2	IAV-LD-2	IAV infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAV infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1)	12hrs	GSM4462368
+Series9_NHBE_IAV_3	IAV-LD-3	IAV infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAV infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1)	12hrs	GSM4462369
+Series9_NHBE_IAV_4	IAV-LD-4	IAV infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAV infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1)	12hrs	GSM4462370
+Series9_NHBE_IAVdNS1_1	dNS1-LD-1	IAVdNS1 infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAVdNS1 infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1) (dNS1)	12hrs	GSM4462371
+Series9_NHBE_IAVdNS1_2	dNS1-LD-2	IAVdNS1 infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAVdNS1 infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1) (dNS1)	12hrs	GSM4462372
+Series9_NHBE_IAVdNS1_3	dNS1-LD-3	IAVdNS1 infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAVdNS1 infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1) (dNS1)	12hrs	GSM4462373
+Series9_NHBE_IAVdNS1_4	dNS1-LD-4	IAVdNS1 infected NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	IAVdNS1 infected (MOI 3)	A/Puerto Rico/8/1934 (H1N1) (dNS1)	12hrs	GSM4462374
+Series9_NHBE_IFNB_4h_1	IFN_4_1	human IFNB treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	human IFNB treatment (100U/ml)	NA	04hrs	GSM4462375
+Series9_NHBE_IFNB_4h_2	IFN_4_2	human IFNB treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	human IFNB treatment (100U/ml)	NA	04hrs	GSM4462376
+Series9_NHBE_IFNB_6h_1	IFN_6_1	human IFNB treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	human IFNB treatment (100U/ml)	NA	06hrs	GSM4462377
+Series9_NHBE_IFNB_6h_2	IFN_6_2	human IFNB treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	human IFNB treatment (100U/ml)	NA	06hrs	GSM4462378
+Series9_NHBE_IFNB_12h_1	IFN_12_1	human IFNB treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	human IFNB treatment (100U/ml)	NA	12hrs	GSM4462379
+Series9_NHBE_IFNB_12h_2	IFN_12_2	human IFNB treated NHBE cells	homo_sapiens	human	primary NHBE	NA	primary human bronchial epithelial cells	human IFNB treatment (100U/ml)	NA	12hrs	GSM4462380
+Series15_HealthyLungBiopsy_2	Lung25220-77yearsold-male-GB1-indD11	Lung biopsy for heatly negative control	homo_sapiens	human	NA	healthy 77 years old, male	Lung Biopsy	NA	NA	NA	GSM4462413
+Series15_HealthyLungBiopsy_1	Lunng8-22839-72yearsold-male-GB2-indD12	Lung biopsy for heatly negative control	homo_sapiens	human	NA	healthy 72 years old, male	Lung Biopsy	NA	NA	NA	GSM4462414
+Series15_COVID19Lung_2	COVID-1-Cornell-indexC10	Lung sample from postmortem COVID-19 patient	homo_sapiens	human	NA	COVID-19 deceased patient, >60 years old male 	Lung Biopsy	NA	NA	NA	GSM4462415
+Series15_COVID19Lung_1	COVID-2-Cornell-indexC11	Lung sample from postmortem COVID-19 patient	homo_sapiens	human	NA	COVID-19 deceased patient, >60 years old male 	Lung Biopsy	NA	NA	NA	GSM4462416
+Series16_A549-ACE2_Mock_1	BN1-indexA1	Mock treated A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	Mock treatment	NA	NA	GSM4486157
+Series16_A549-ACE2_Mock_2	BN2-indexA2	Mock treated A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	Mock treatment	NA	NA	GSM4486158
+Series16_A549-ACE2_Mock_3	BN3-IndexA3	Mock treated A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	Mock treatment	NA	NA	GSM4486159
+Series16_A549-ACE2_SARS-CoV-2_1	BN4-indexA4	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4486160
+Series16_A549-ACE2_SARS-CoV-2_2	BN5-indexA5	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4486161
+Series16_A549-ACE2_SARS-CoV-2_3	BN6-indexA6	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4486162
+Series16_A549-ACE2_SARS-CoV-2_Rux_1	BN7-indexA7	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2 (1hr after Ruxolitinib pre-treatment)	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	1hr Ruxolitinib pretreat + SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4486163
+Series16_A549-ACE2_SARS-CoV-2_Rux_2	BN8-indexA8	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2 (1hr after Ruxolitinib pre-treatment)	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	1hr Ruxolitinib pretreat + SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4486164
+Series16_A549-ACE2_SARS-CoV-2_Rux_3	BN9-indexA9	SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2 (1hr after Ruxolitinib pre-treatment)	homo_sapiens	human	A549-ACE2	NA	Lung adenocarcinoma	1hr Ruxolitinib pretreat + SARS-CoV-2 infected (MOI 2)	USA-WA1/2020	24hrs	GSM4486165
+Series10_FerretNW_Ctl_d1_1	MfNL_Gr4_d1_870	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day1	GSM4462381
+Series10_FerretNW_Ctl_d1_2	MfNL_Gr4_d1_873	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day1	GSM4462382
+Series10_FerretNW_SARS-CoV-2_d1_1	MfNL_Gr2_d1_872	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day1	GSM4462383
+Series10_FerretNW_SARS-CoV-2_d1_2	MfNL_Gr3_d1_877	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day1	GSM4462384
+Series11_FerretNW_Ctl_d3_1	MfNL_Gr4_d3_870	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day3	GSM4462385
+Series11_FerretNW_Ctl_d3_2	MfNL_Gr4_d3_873	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day3	GSM4462386
+Series11_FerretNW_SARS-CoV-2_d3_1	MfNL_Gr2_d3_872	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day3	GSM4462387
+Series11_FerretNW_SARS-CoV-2_d3_2	MfNL_Gr3_d3_877	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day3	GSM4462388
+Series12_FerretNW_Ctl_d7_1	Mf_NL_Gr4_d7_870	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day7	GSM4462389
+Series12_FerretNW_Ctl_d7_2	Mf_NL_Gr4_d7_873	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day7	GSM4462390
+Series12_FerretNW_SARS-CoV-2_d7_1	Mf_NL_Gr3_d7_376	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day7	GSM4462391
+Series12_FerretNW_SARS-CoV-2_d7_2	Mf_NL_Gr3_d7_877	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day7	GSM4462392
+Series12_FerretNW_IAV_d7_1	pH1N1-d7-nw-F5572	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	IAV infected (1E5 PFU)	A/California/04/2009 (pH1N1)	day7	GSM4462393
+Series12_FerretNW_IAV_d7_2	pH1N1-d7-nw-F5576	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	IAV infected (1E5 PFU)	A/California/04/2009 (pH1N1)	day7	GSM4462394
+Series13_FerretNW_Ctl_d14_1	Naive-F873-14dpi-indexF9	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day14	GSM4462395
+Series13_FerretNW_Ctl_d14_2	Naive-F873-B-14dpi-indexF7	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	Mock treatment	NA	day14	GSM4462396
+Series13_FerretNW_SARS-CoV-2_d14_1	USA-WA1-2020-F876-14dpi-indexE7	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day14	GSM4462397
+Series13_FerretNW_SARS-CoV-2_d14_2	USA-WA1-2020-F877-14dpi-indexE9	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	Nasal Wash	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day14	GSM4462398
+Series14_FerretTrachea_Ctl_d3_1	Mf-trachea-mock-3d-F751	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	Mock treatment	NA	day3	GSM4462399
+Series14_FerretTrachea_Ctl_d3_2	Mf-trachea-mock-3d-F752	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	Mock treatment	NA	day3	GSM4462400
+Series14_FerretTrachea_Ctl_d3_3	Mf-trachea-naive-3d-F751	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	Mock treatment	NA	day3	GSM4462401
+Series14_FerretTrachea_Ctl_d3_4	Mf-trachea-naive-3d-F752	Mock treated 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	Mock treatment	NA	day3	GSM4462402
+Series14_FerretTrachea_SARS-CoV-2_d3_1	Mf-Tr-16	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day3	GSM4462403
+Series14_FerretTrachea_SARS-CoV-2_d3_2	Mf-Tr-17	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day3	GSM4462404
+Series14_FerretTrachea_SARS-CoV-2_d3_3	Mf-Tr-18	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day3	GSM4462405
+Series14_FerretTrachea_SARS-CoV-2_d3_4	Mf-Tr-19	SARS-CoV-2 infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	SARS-CoV-2 infected (5E4 PFU)	USA-WA1/2020	day3	GSM4462406
+Series14_FerretTrachea_IAV_d3_1	Mf-trachea-H3N2-3d-F531-1	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	IAV infected (1E5 PFU)	A/Texas/71/2017, clade 3C.3a (H3N2)	day3	GSM4462407
+Series14_FerretTrachea_IAV_d3_2	Mf-trachea-H3N2-3d-F531-2	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	IAV infected (1E5 PFU)	A/Texas/71/2017, clade 3C.3a (H3N2)	day3	GSM4462408
+Series14_FerretTrachea_IAV_d3_3	Mf-trachea-H3N2-3d-F532-1	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	IAV infected (1E5 PFU)	A/Texas/71/2017, clade 3C.3a (H3N2)	day3	GSM4462409
+Series14_FerretTrachea_IAV_d3_4	Mf-trachea-H3N2-3d-F532-2	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	IAV infected (1E5 PFU)	A/Texas/71/2017, clade 3C.3a (H3N2)	day3	GSM4462410
+Series14_FerretTrachea_IAV_d3_5	Mf-trachea-H3N2-3d-F533-1	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	IAV infected (1E5 PFU)	A/Texas/71/2017, clade 3C.3a (H3N2)	day3	GSM4462411
+Series14_FerretTrachea_IAV_d3_6	Mf-trachea-H3N2-3d-F533-2	IAV infected 4 month old Ferret	Mustela_putorius_furo	ferret	NA	NA	trachea	IAV infected (1E5 PFU)	A/Texas/71/2017, clade 3C.3a (H3N2)	day3	GSM4462412

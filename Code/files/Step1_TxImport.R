@@ -102,6 +102,6 @@ Tx <- dplyr::select(Tx, "target_id", "gene_name")
 Txi_gene <- tximport(path, 
                      type = "kallisto", 
                      tx2gene = Tx, 
-                     txOut = TRUE, #determines whether your data represented at transcript or gene level
+                     txOut = FALSE, #determines whether your data represented at transcript or gene level
                      countsFromAbundance = "lengthScaledTPM",
                      ignoreTxVersion = TRUE)

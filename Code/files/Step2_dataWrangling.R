@@ -89,7 +89,7 @@ log2.cpm.df.pivot <- pivot_longer(log2.cpm.df, # dataframe to be pivoted
 # let's look at the impact of pivoting the data
 log2.cpm.df.pivot
 
-# now it is easy to plot this pivoted data
+# not it is easy to plot this pivoted data
 ggplot(log2.cpm.df.pivot) +
   aes(x=samples, y=expression, fill=samples) +
   geom_violin(trim = FALSE, show.legend = FALSE) +

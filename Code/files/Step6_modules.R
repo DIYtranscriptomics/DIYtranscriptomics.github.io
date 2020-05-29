@@ -23,7 +23,7 @@ myheatcolors2 <- colorRampPalette(colors=c("blue","white","red"))(100)
 # 2). use rcolorbrewer to choose any palette by name and n colors from that palette
 myheatcolors3 <- brewer.pal(name="RdBu", n=11)
 # 3). paste in your own hex codes using the Sip app (or other tools)
-myheatcolors3 <- c("")
+myheatcolors3 <- c("#fed976", "#268f9c")
 # 4). have some fun with outside color packages (e.g. GameOfThrones)
 got_palette <- got(75, option = "Arya")
 
@@ -67,7 +67,7 @@ heatmap.2(diffGenes,
           Rowv=as.dendrogram(clustRows), 
           Colv=as.dendrogram(clustColumns),
           RowSideColors=module.color,
-          col=myheatcolors1, scale='row', labRow=NA,
+          col=rev(myheatcolors3), scale='row', labRow=NA,
           density.info="none", trace="none",  
           cexRow=1, cexCol=1, margins=c(8,20)) 
 
@@ -85,7 +85,7 @@ heatmaply(diffGenes,
 
 # now let's try using D3 to create an html widget version of our heatmap
 d3heatmap(diffGenes,
-          colors = myheatcolors2,
+          colors = myheatcolors,
           Rowv=as.dendrogram(clustRows),
           row_side_colors = module.color,
           scale='row')
@@ -116,8 +116,9 @@ module.assign.pivot <- pivot_longer(module.assign.df, # dataframe to be pivoted
 
 module.assign.pivot <- module.assign.pivot %>%
   mutate(moduleColor = case_when(
-    module == 1 ~ "#FF0099",
-    module == 2 ~ "#FF9900"))
+    module == 1 ~ "#FF9900",
+    module == 2 ~ "#FF0099"))
+
 
 ggplot(module.assign.pivot) +
   aes(module) +
@@ -135,7 +136,7 @@ heatmap.2(myModule,
           Rowv=as.dendrogram(hrsub), 
           Colv=NA, 
           labRow = NA,
-          col=myheatcolors2, scale="row", 
+          col=rev(myheatcolors3), scale="row", 
           density.info="none", trace="none", 
           RowSideColors=module.color[module.assign%in%modulePick], margins=c(8,20)) 
 
@@ -182,3 +183,27 @@ heatmap.2(diffGenes,
           col=myheatcolors, scale='row', labRow=NA,
           density.info="none", trace="none",  
           cexRow=1, cexCol=1, margins=c(8,20))
+
+modulePick <- 2 
+myModule_up <- diffGenes[names(module.assign[module.assign %in% modulePick]),] 
+hrsub_up <- hclust(as.dist(1-cor(t(myModule_up), method="pearson")), method="complete") 
+
+heatmap.2(myModule_up, 
+          Rowv=as.dendrogram(hrsub_up), 
+          Colv=NA, 
+          labRow = NA,
+          col=myheatcolors, scale="row", 
+          density.info="none", trace="none", 
+          RowSideColors=module.color[module.assign%in%modulePick], margins=c(8,20))
+
+modulePick <- 1 
+myModule_down <- diffGenes[names(module.assign[module.assign %in% modulePick]),] 
+hrsub_down <- hclust(as.dist(1-cor(t(myModule_down), method="pearson")), method="complete") 
+
+heatmap.2(myModule_down, 
+          Rowv=as.dendrogram(hrsub_down), 
+          Colv=NA, 
+          labRow = NA,
+          col=myheatcolors, scale="row", 
+          density.info="none", trace="none", 
+          RowSideColors=module.color[module.assign%in%modulePick], margins=c(8,20))

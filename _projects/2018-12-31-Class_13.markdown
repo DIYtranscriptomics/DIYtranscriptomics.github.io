@@ -29,3 +29,13 @@ You're tasked with studying gene expression in *Plasmodium falciparum*, a single
 * You'll use the Steps 1, 2, 3, 5 and 6 for challenge.  Don't worry about trying to do any functional enrichment analysis.
 * Think about what makes a good figure and use your data to tell a story!  
 * Feel free to include illustrations/schematics if useful.
+
+## Solution
+
+### Part 1 – A brief overview of the challenge, as well as first steps for importing, filtering and normalizing
+
+<iframe src="https://player.vimeo.com/video/424040965" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Walking through PCA, differential transcript analysis, and module identification for this hackdash
+
+<iframe src="https://player.vimeo.com/video/424040328" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
