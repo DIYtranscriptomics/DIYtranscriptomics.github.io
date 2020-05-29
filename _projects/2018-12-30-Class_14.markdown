@@ -43,10 +43,13 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 <iframe src="https://player.vimeo.com/video/424086672" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+---
+
 ## Reading
 
 [Blog post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
 
+---
 
 ### Other examples of markdown in action
 
@@ -61,11 +64,3 @@ Supplementary code files from some of our recent papers:
 [This course website!](https://github.com/DIYtranscriptomics/DIYtranscriptomics.github.io) - Each page on the course website is just a simple markdown document. 
 
 [My lab website](http://hostmicrobe.org/) is just a bunch of markdown files served from github (repo [here](https://github.com/hostmicrobe/hostmicrobe.github.io))
-
----
-
-## Lecture video
-
-Will be posted prior to this class time slot
-
----
