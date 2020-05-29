@@ -30,7 +30,7 @@ Our hackdash will follow the same format as usual, with random assignment to bre
 
 Your group's final figure(s) must be turned in at the conclusion of the hackdash, along with a description of your key findings.
 
-## Key concepts
+### Key concepts
 
 * Thinking about what you want to ask with a large dataset, priortizing questions when there are many possible things you *could* ask, and then constructing your analysis around one or a few key questions.
 * Flying solo on a data analysis project, then coming together with collaborators at different points in the project to see how colleagues differ in their approach and perspective, then incorporating these different perspectives in a final product is a key part of the research process when large datasets are involved.
