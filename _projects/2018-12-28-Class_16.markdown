@@ -37,10 +37,13 @@ Your group's final figure(s) must be turned in at the conclusion of the hackdash
 
 ### What you'll need to get started
 
-* [Human expression data](http://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Human.tsv) - raw counts obtained as a table, obtained directly from the public GEO record
-* [Ferret expression data](http://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Ferret.tsv) - raw counts obtained as a table, obtained directly from the public GEO record
-* [Study design file](http://DIYtranscriptomics.github.io/Data/files/covid_metadata.txt) - Constructed manually (and somewhat painfully) from sample descriptions in GEO.
-* [Rscript](http://DIYtranscriptomics.github.io/Data/files/loadData.R) - to get you over the hump of importing the three files above into R
+[Human expression data](http://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Human.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
+
+[Ferret expression data](http://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Ferret.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
+
+[Study design file](http://DIYtranscriptomics.github.io/Data/files/covid_metadata.txt) - Constructed manually (and somewhat painfully) from sample descriptions in GEO.
+
+[Rscript](http://DIYtranscriptomics.github.io/Data/files/loadData.R) - to get you over the hump of importing the three files above into R.
 
 
 ### Tips
