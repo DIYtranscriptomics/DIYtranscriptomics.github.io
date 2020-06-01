@@ -3,7 +3,7 @@ title: 'Hackdash 3'
 subtitle: 'Hackdash • Friday • 2020.06.05 • 3-5pm'
 date: 2018-12-28 00:00:00
 description: We will conclude the course with a third and final hackdash. 
-featured_image: '/images/pizza.jpg'
+featured_image: '/images/timepiece.jpg'
 ---
 
 <div style="text-align: right"> Image credit: Picture-alliance/AP Photo/M. Schreiber </div>
