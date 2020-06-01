@@ -14,13 +14,13 @@ featured_image: '/images/pizza.jpg'
 
 ### Background on the dataset
 
-You will be given raw counts and a study design file for an extensive RNA-seq exploration of the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points, and which include human primary samples as well as *in vivo* studies in ferrets.  An incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You could read about their study in the BioRxiv preprint: [SARS-CoV-2 launches a unique transcriptional signature from in vitro, ex vivo, and in vivo systems](https://doi.org/10.1101/2020.03.24.004655).
+You will be given raw counts and a study design file for an extensive RNA-seq exploration of the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points, and which include human primary samples as well as *in vivo* studies in ferrets – an incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You should check out their recent BioRxiv preprint: [SARS-CoV-2 launches a unique transcriptional signature from in vitro, ex vivo, and in vivo systems](https://doi.org/10.1101/2020.03.24.004655).
 
 ### The challenge
 
-This challenge certainly falls into the category of 'easier said than done'!
+This challenge certainly falls into the category of 'easier said than done'.
 
-Your challenge is to look at the study design file and decide on a question **you** would like to ask using this highly multivariate dataset, and then carry out your analysis using code from the course.  
+Your challenge is to look at the study design file and decide on a question **YOU** would like to ask using this highly multivariate dataset, and then carry out your analysis using code from the course.  
 
 ### Logistics
 
@@ -41,7 +41,7 @@ Your group's final figure(s) must be turned in at the conclusion of the hackdash
 
 [Ferret expression data](http://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Ferret.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
 
-[Study design file](http://DIYtranscriptomics.github.io/Data/files/covid_metadata.txt) - Constructed manually (and somewhat painfully) from sample descriptions in GEO.
+[Study design file](http://DIYtranscriptomics.github.io/Data/files/covid_metadata.txt) - Manually assembled and curated from sample descriptions in GEO.
 
 [Rscript](http://DIYtranscriptomics.github.io/Data/files/loadData.R) - to get you over the hump of importing the three files above into R.
 
