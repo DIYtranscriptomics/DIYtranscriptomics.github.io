@@ -16,9 +16,11 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 ## Learning objectives
 
+* Learn how to make your research analyses reproducible 
 * Create a reproducible package environment with [renv](https://rstudio.github.io/renv/articles/renv.html)
 * Share your project via [GitHub](https://github.com/) and git
-* Understand how to streamline your code by making your own R functions.
+* Understand how to streamline code using custom R functions.
+* Share your work as an R package
 * Discuss the basics of Docker and containerized software
 * Use CodeOcean to access the entire DIY course as a reproducible computing environment
 
