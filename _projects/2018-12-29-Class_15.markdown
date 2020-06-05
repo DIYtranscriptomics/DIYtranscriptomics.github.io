@@ -8,7 +8,7 @@ featured_image: '/images/capsule.jpg'
 
 <div style="text-align: right"> Image credit: 'Emoh: sculpture / time capsule & temporary home' by Loren Naji </div>
 
-[Lecture slides](https://www.icloud.com/keynote/0Nadab6WL2IRMYPcZn8zAAcww#Lecture13%5Freproducibility)
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0gPGSkggD-NUmJUg9tSyFis2w#Lecture13%5Freproducibility)
 
 ## Overview
 
@@ -26,9 +26,21 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 ## What you need to do
 
-* Sign-up for a an account on [Code Ocean](https://codeocean.com/) (*be sure* to use the same email address from your DataCamp login).  You'll get 15 compute hrs/month for free.
+* Sign-up for an account on [Code Ocean](https://codeocean.com/) (*be sure* to use the same email address from your DataCamp login).  You'll get 15 compute hrs/month for free.
 * Sign-up for a free [GitHub](https://github.com/) account (doesn't matter which email you use)
 * [Download this gitignore file](/Users/danielbeiting/DIYtranscriptomics/DIYtranscriptomics.github.io/Code/files/gitignore.txt) - useful for updating your own .gitignore file in a project repo
+
+## Lecture video
+
+### Part 1 - Reproducibility via the renv package
+
+<iframe src="https://player.vimeo.com/video/426273940" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Connecting your project to GitHub
+
+<iframe src="https://player.vimeo.com/video/426287346" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+---
 
 ## Code
 
@@ -53,9 +65,4 @@ We'll use Code Ocean to interact with a dockerized container that packs all the 
 
 ---
 
-## Lecture video
-
-Will be posted prior to this class time slot
-
----
 
