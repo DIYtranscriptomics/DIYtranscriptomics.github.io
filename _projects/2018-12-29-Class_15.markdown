@@ -40,6 +40,14 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 <iframe src="https://player.vimeo.com/video/426287346" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+### Part 3 - CodeOcean capsules for full reproducibility in publications
+
+<iframe src="https://player.vimeo.com/video/426535680" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 4 - Keeping your code clean via custom functions
+
+<iframe src="https://player.vimeo.com/video/426552841" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 ---
 
 ## Code
