@@ -33,6 +33,10 @@ This class is being run as an online virtual course that will 'meet' twice per w
 
 This is a gradate level course offered through the Cell And Molecular Biology (CAMB) graduate group at the University of Pennsylvania.  Space permitting, the course is open to students outside of CAMB. If you are not a graduate student at UPenn you can still access the course slides, code, videos and reading material on the site.  This course is ideal for biomedical graduate students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNAseq data to the course.
 
+## Can I just follow along online?
+
+For the most part.  All lectures, reading material and code are freely available and are organized on the website by lecture, so you can proceed at your own pace.  However, there are some elements of the course that are only available for people who have officially registered.  This include access to DataCamp for homework and extended learning, participation in our in-class hackathons (a.k.a. hackdashes), access to our course CodeOcean group, access to our class Slack page for 1:1 help from the instructor and our TAs throughout the course (and with your own data), and last but not least, course credit.
+
 ## How will I be graded in this course?
 
 All students taking the course for credit will be assigned a pass/fail grade.  Pass/fail will be determined based on performance on three in-class hack-a-thons (called hackdashes) and completion of homework assignments.
