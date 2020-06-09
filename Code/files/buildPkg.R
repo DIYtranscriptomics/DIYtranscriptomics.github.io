@@ -99,6 +99,8 @@ use_mit_license("Daniel Beiting")
 # load all R code from /R using 'load_all()' and test that your function works
 load_all() # probably best to run in the RStudio session for your new package
 check() # probably best to run in the RStudio session for your new package
+# If check proceeded with no errors or warning, then you are ready to build your package!
+build() # probably best to run in the RStudio session for your new package
 
 # Autenticate to use GitHub ----
 # You only need to do this authentication once
