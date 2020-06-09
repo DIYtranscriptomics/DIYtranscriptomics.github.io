@@ -51,7 +51,7 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 ---
 
-## Code
+## Code Ocean
 
 We'll use Code Ocean to interact with a dockerized container that packs all the code, data and software from the course into one reproducible and web-accessible environment.  Simply login (or set-up a free account if you don't already have one) and you'll be able to re-run the entire course in a matter of minutes, without any software installation or data download.  Your first run may take ~15min, since the full computing environment must be being built, but subsequent runs will be much faster.  Note that this capsule includes raw fastq files, kallisto outputs, all of MSigDB for running GSEA, and the entire ARCHS4 database for interrogating ~700,000 publically available mouse and human RNAseq datasets.  Have fun adapting this capsule for your own analyses!
 
@@ -62,7 +62,7 @@ We'll use Code Ocean to interact with a dockerized container that packs all the 
 
 [Happy Git and GitHub with RStudio](https://happygitwithr.com/) - Jenny Bryan and team walk through every step of how to install git, connect to GitHub and access version control from within RStudio.
 
-There's a lot of reading material for how to get started making functions and packages.  Beyond the extensive and very well written [book on building R packages](http://r-pkgs.had.co.nz/) and excellent documentation for the [usethis package](https://usethis.r-lib.org/), you may also want to check out some great blog posts on making R packages ([here](https://masalmon.eu/2017/12/11/goodrpackages/), [here](https://r-mageddon.netlify.app/post/writing-an-r-package-from-scratch/), [here](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html), and [here](https://kbroman.org/pkg_primer/).
+There's a lot of reading material for how to get started making functions and packages.  Beyond the extensive and very well written [book on building R packages](http://r-pkgs.had.co.nz/) and excellent documentation for the [usethis package](https://usethis.r-lib.org/), you may also want to check out some great blog posts on making R packages ([here](https://masalmon.eu/2017/12/11/goodrpackages/), [here](https://r-mageddon.netlify.app/post/writing-an-r-package-from-scratch/), [here](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html), and [here](https://kbroman.org/pkg_primer/)).
 
 [Code Ocean whitepaper](http://DIYtranscriptomics.github.io/Reading/files/codeOcean_whitepaper.pdf) - describes the need for better tools for reproducible research and introduces their cloud-based computational platform for addressing this need.
 
