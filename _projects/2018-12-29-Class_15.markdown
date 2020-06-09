@@ -49,6 +49,10 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 <iframe src="https://player.vimeo.com/video/426552841" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+### Part 5 - How to turn your analysis project into a stand alone R package
+
+<iframe src="https://player.vimeo.com/video/427243128" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 ---
 
 ## Code Ocean
