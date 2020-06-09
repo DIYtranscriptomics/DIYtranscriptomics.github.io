@@ -100,8 +100,8 @@ use_mit_license("Daniel Beiting")
 load_all() # probably best to run in the RStudio session for your new package
 check() # probably best to run in the RStudio session for your new package
 
-# Set-up for git and GitHub ----
-# First, be sure to modify your .gitignore file in the package directory as discussed in course lecture
+# Autenticate to use GitHub ----
+# You only need to do this authentication once
 use_git_config(user.name = "dpbisme", user.email = "danielbeiting@gmail.com")
 git_sitrep()
 # now get a personal access token (PAT) so you can create a github repo directly from RStudio
@@ -113,6 +113,8 @@ browse_github_token()
 # line should read 'GITHUB_PAT=...', where ... is your PAT
 edit_r_environ() #you'll need to restart R after this by going to RStudio Session menu -> restart R
 # since you restarted R, you'll need to reload devtools and roxygen from the top of this script
+
+# Put your package on GitHub ----
 use_git() #makes your project version controlled
 use_github() #pushes contents up to github
 
