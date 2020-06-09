@@ -12,4 +12,4 @@ Video recordings are available on each lecture page under the syllabus tab.  You
 ## Tips for watching videos
 
 * Use the speed controls (available under the gear icon in each video) to slow or speed up the video as needed.
-* Most lectures are split into two videos to help break-up the content for an easier viewing experience.
+* Most lectures are split into multiple videos to help break-up the content for an easier viewing experience.
