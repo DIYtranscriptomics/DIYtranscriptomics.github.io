@@ -22,7 +22,7 @@ Reproducing an analysis requires more than just code. You need the original raw 
 * Understand how to streamline code using custom R functions.
 * Share your work as an R package
 * Discuss the basics of Docker and containerized software
-* Use CodeOcean to access the entire DIY course as a reproducible computing environment
+* Use Code Ocean to access the entire DIY course as a reproducible computing environment
 
 ## What you need to do
 
@@ -41,7 +41,7 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 <iframe src="https://player.vimeo.com/video/426287346" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Part 3 - CodeOcean capsules for full reproducibility in publications
+### Part 3 - Code Ocean capsules for full reproducibility in publications
 
 <iframe src="https://player.vimeo.com/video/426535680" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
@@ -70,9 +70,9 @@ There's a lot of reading material for how to get started making functions and pa
 
 [Code Ocean whitepaper](http://DIYtranscriptomics.github.io/Reading/files/codeOcean_whitepaper.pdf) - describes the need for better tools for reproducible research and introduces their cloud-based computational platform for addressing this need.
 
-[Intro to Docker](https://docker-curriculum.com/) - CodeOcean is based on Docker, a free and open-source tool that allows you to 'build, share and run applications anywhere'. 
+[Intro to Docker](https://docker-curriculum.com/) - Code Ocean is based on Docker, a free and open-source tool that allows you to 'build, share and run applications anywhere'. 
 
-[CodeOcean On-boarding document](https://docs.google.com/document/d/1baA8IRFDZE1rJNB3SYk7Aksvuz5AJ9W4HG2iqYoPt-8/edit?usp=sharing) - Step-by-step details for how to set-up your own capsule.
+[Code Ocean On-boarding document](https://docs.google.com/document/d/1baA8IRFDZE1rJNB3SYk7Aksvuz5AJ9W4HG2iqYoPt-8/edit?usp=sharing) - Step-by-step details for how to set-up your own capsule.
 
 [Our recent paper](https://stm.sciencemag.org/content/11/519/eaax4204), showing a code capsule embedded directly in the joural webpage (a first for any AAAS journal). 
 

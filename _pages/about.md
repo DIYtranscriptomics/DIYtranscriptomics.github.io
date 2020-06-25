@@ -15,7 +15,7 @@ The course is taught by Dan Beiting, Assistant Professor of Pathobiology at Penn
 
 ## Support and Sponsors
 
-This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/).  In addition, we thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.  Finally, we thank the folks at [CodeOcean](https://codeocean.com/), who provide all students with convenient access to dockerized resources for transparency and reproducibility.
+This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/).  In addition, we thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.  Finally, we thank the folks at [Code Ocean](https://codeocean.com/), who provide all students with convenient access to dockerized resources for transparency and reproducibility.
 
 ## Format
 
@@ -35,7 +35,7 @@ This is a gradate level course offered through the Cell And Molecular Biology (C
 
 ## Can I just follow along online?
 
-For the most part.  All lectures, reading material and code are freely available and are organized on the website by lecture, so you can proceed at your own pace.  However, there are some elements of the course that are only available for people who have officially registered.  This include access to DataCamp for homework and extended learning, participation in our in-class hackathons (a.k.a. hackdashes), access to our course CodeOcean group, access to our class Slack page for 1:1 help from the instructor and our TAs throughout the course (and with your own data), and last but not least, course credit.
+For the most part.  All lectures, reading material and code are freely available and are organized on the website by lecture, so you can proceed at your own pace.  However, there are some elements of the course that are only available for people who have officially registered.  This include access to DataCamp for homework and extended learning, participation in our in-class hackathons (a.k.a. hackdashes), access to our course Code Ocean group, access to our class Slack page for 1:1 help from the instructor and our TAs throughout the course (and with your own data), and last but not least, course credit.
 
 ## How will I be graded in this course?
 
