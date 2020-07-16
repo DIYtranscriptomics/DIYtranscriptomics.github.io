@@ -15,7 +15,7 @@ The course is taught by Dan Beiting, Assistant Professor of Pathobiology at Penn
 
 ## Support and Sponsors
 
-This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/).  In addition, we thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.  Finally, we thank the folks at [Code Ocean](https://codeocean.com/), who provide all students with convenient access to dockerized resources for transparency and reproducibility.
+This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/).  In addition, we thank [RStudio](https://rstudio.com/) for allowing access to RStudio Server Pro for this course, and for their continued free access to RStudio desktop, which is a critical resource for academic research in R.  We also thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.  Finally, we thank the folks at [Code Ocean](https://codeocean.com/), who provide all students with convenient access to dockerized resources for transparency and reproducibility.
 
 ## Format
 
