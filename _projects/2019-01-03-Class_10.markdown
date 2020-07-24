@@ -1,6 +1,6 @@
 ---
 title: 'Differential gene expression'
-subtitle: 'Lecture 9 • Friday • 2020.05.15 • 3-5pm'
+subtitle: 'Module 9 • 2hrs'
 date: 2019-01-03 00:00:00
 description: The ultimate goal of most transcriptional profiling experiments is to identify differentially expressed genes or transcripts.  In this class, we'll dig into differential expression using the popular and venerable Limma package in R, while continuing to explore options for producing compelling plots from your differential expression results.  Finally, we'll discuss a workflow for going beyond DGE analysis to look at differentail transcript (isoform) usage (DTU).
 featured_image: '/images/apples.jpg'

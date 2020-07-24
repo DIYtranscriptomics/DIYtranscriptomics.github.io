@@ -1,6 +1,6 @@
 ---
 title: 'Hackdash 3'
-subtitle: 'Hackdash • Friday • 2020.06.05 • 3-5pm'
+subtitle: 'An in-class and open-code final exam'
 date: 2018-12-28 00:00:00
 description: We will conclude the course with a third and final hackdash. 
 featured_image: '/images/timepiece.jpg'

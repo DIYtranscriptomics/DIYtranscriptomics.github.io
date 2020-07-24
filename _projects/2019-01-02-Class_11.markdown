@@ -1,6 +1,6 @@
 ---
 title: 'Module identification'
-subtitle: 'Lecture 10 • Wednesday • 2020.05.20 • 3-5pm'
+subtitle: 'Module 10 • 2hrs'
 date: 2019-01-02 00:00:00
 description: Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis to be covered in the next class.
 featured_image: '/images/bird_flock.jpg'

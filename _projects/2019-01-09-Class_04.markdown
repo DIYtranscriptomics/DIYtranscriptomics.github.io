@@ -1,6 +1,6 @@
 ---
 title: 'Understanding RNAseq count data'
-subtitle: 'Lecture 4 • Friday • 2020.04.24 • 3-5pm'
+subtitle: 'Module 4 • 2hrs'
 date: 2019-01-09 00:00:00
 description: Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script.  
 featured_image: '/images/abacus.jpg'

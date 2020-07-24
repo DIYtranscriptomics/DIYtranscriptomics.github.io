@@ -1,6 +1,6 @@
 ---
 title: 'Accessing public data'
-subtitle: 'Lecture 8 • Friday • 2020.05.08 • 3-5pm'
+subtitle: 'Module 8 • 2hrs'
 date: 2019-01-05 00:00:00
 description: In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO).
 featured_image: '/images/DataDeluge.jpg'

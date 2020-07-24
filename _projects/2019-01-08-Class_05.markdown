@@ -1,6 +1,6 @@
 ---
 title: 'Starting your R workflow'
-subtitle: 'Lecture 5 • Wednesday • 2020.04.29 • 3-5pm'
+subtitle: 'Module 5 • 2hrs'
 date: 2019-01-08 00:00:00
 description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.     
 featured_image: '/images/first_step.jpg'
