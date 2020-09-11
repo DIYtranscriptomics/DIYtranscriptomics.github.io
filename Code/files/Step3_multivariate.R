@@ -223,4 +223,6 @@ datatable(mydata.df[,c(1,12:14)],
           options = list(keys = TRUE, 
                          searchHighlight = TRUE, 
                          pageLength = 10, 
+                         #dom = "Blfrtip", 
+                         #buttons = c("copy", "csv", "excel"),
                          lengthMenu = c("10", "25", "50", "100")))
