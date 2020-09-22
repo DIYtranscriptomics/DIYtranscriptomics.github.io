@@ -29,15 +29,15 @@ Lists of differentially expressed transcripts often include different patterns o
 
 ## Lecture video
 
-### Intro to clustering and starting the Step 6 script
+### Part 1 - Intro to clustering and starting the Step 6 script
 
 <iframe src="https://player.vimeo.com/video/420768891" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Making and interpreting heatmaps
+### Part 2 - Making and interpreting heatmaps
 
 <iframe src="https://player.vimeo.com/video/420785250" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Alternative clustering methods
+### Part 3 - Alternative clustering methods
 
 <iframe src="https://player.vimeo.com/video/420793600" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
