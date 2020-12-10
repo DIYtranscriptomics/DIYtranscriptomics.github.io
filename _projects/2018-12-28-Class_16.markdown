@@ -49,7 +49,7 @@ Your group's final figure(s) must be turned in at the conclusion of the hackdash
 ### Tips
 
 * You are not required to produce an Rmarkdown document for this challenge, but you can certainly do so if you prefer this over making a figure as a way to show how you worked through the data.
-* You can ignore the step 1 script for this challenge, since we didn't align the data, but rather got raw counts directly from the GEO entry.
+* You can ignore the step 1 script for this challenge since we didn't align the data, but rather got raw counts directly from the GEO entry.
 * Since the data is already in the form of a count table (genes as rows and samples as columns) you don't need to worry about annotations either.  Go straight to creating a DGEList object.
 * dplyr is going to be critical in this challenge, as you will need to wrangle the study design file and the raw count tables to get what you need to address your question(s).
 
