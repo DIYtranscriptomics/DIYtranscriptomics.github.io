@@ -1,16 +1,16 @@
 ---
-title: 'Hackdash 2'
-subtitle: 'An in-class and open-code exam'
+title: 'The Malaria Lab'
+subtitle: 'Explore gene expression throughout the Plasmodium falciparum erythrocytic cycle'
 date: 2018-12-31 00:00:00
-description: In this second Hackdash, you'll have to up your game to tackle one of world's deadliest pathogens.
-featured_image: '/images/timepiece.jpg'
+description: In this lab, you'll have to up your game to tackle one of world's deadliest pathogens.
+featured_image: '/images/plasmoRBC.png'
 ---
 
 <div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 
 ![](/images/plasmoRBC.png)
 
-## The Malaria challenge
+## The Malaria Lab
 
 You're tasked with studying gene expression in *Plasmodium falciparum*, a single-celled protozoan parasite that infects human red blood cells (RBCs) and is the causative agent of malaria, one of the deadliest infectious diseases on the planet.  After invading an RBC, parasites progress through a 48 hour developmental cycle before rupturing the cell and invading a new one.  To understand how parasite gene expression changes during this cycle, you infect RBCs *in vitro* and isolate RNA every 8 hours for 48 hours straight.  As you're finishing the experiment (and very much looking forward to sleeping), your PI asks if you can put together a figure for a last-minute grant submission.  **You have ~2hrs to produce a publication-quality figure.  The team that produces the best figure (as judged by the TAs) will win this challenge.**
 
