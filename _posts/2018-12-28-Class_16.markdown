@@ -1,5 +1,5 @@
 ---
-title: 'The COVID19 Collaborative Challenge
+title: 'The COVID19 Collaborative Challenge'
 subtitle: 'Explore host responses to SARS-CoV-2'
 date: 2018-12-28 00:00:00
 description: We will conclude the course with a third and final hackdash. 
