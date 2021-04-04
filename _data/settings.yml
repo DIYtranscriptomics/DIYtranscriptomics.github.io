@@ -14,6 +14,8 @@ menu_settings:
       url: '/about'
     - title: 'Data'
       url: '/data'
+    - title: 'Labs'
+      url: '/posts/'
     - title: 'Scripts'
       url: '/scripts'
     - title: 'Videos'
