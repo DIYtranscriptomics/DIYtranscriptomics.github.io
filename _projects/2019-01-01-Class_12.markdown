@@ -52,7 +52,7 @@ Now that you've identified differentially expressed genes, what do they mean and
 
 [The what, where, how and why of gene ontology -- a primer for bioinformaticians.](http://DIYtranscriptomics.github.io/Reading/files/GO.pdf)  Briefings in Bioinformatics, Feb 2011
 
-[A nice blog post on the hypergeometric test and Fisher's exact test](http://mengnote.blogspot.com/2012/12/calculate-correct-hypergeometric-p.html) - these statistical tests are at the core of many functional enrichment approaches.
+[A nice lab post on the hypergeometric test and Fisher's exact test](http://mengnote.labspot.com/2012/12/calculate-correct-hypergeometric-p.html) - these statistical tests are at the core of many functional enrichment approaches.
 
 [Analyzing gene expression data in terms of gene sets: methodological issues](https://doi.org/10.1093/bioinformatics/btm051) - A seminal paper on the statistics of enrichment analysis in gene expression studies.
 

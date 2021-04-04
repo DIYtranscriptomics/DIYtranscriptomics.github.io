@@ -47,7 +47,7 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 ## Reading
 
-[Blog post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
+[lab post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
 
 ---
 

@@ -53,7 +53,7 @@ In this class you'll learn about a variety of approaches exploring your data.  Y
 
 [Ten quick tips for effective dimensionality reduction](https://doi.org/10.1371/journal.pcbi.1006907) - a absolute must-read for understanding data exploration methods.
 
-[Blog post describing T-SNE](http://distill.pub/2016/misread-tsne/) - I mentioned various unsupervised linear methods for dimensional reduction of your data (PCA, MDS).  T-SNE and UMAP are *non-linear* unsupervised methods that have become popular for representing single-cell RNAseq data and flow cytometry data. 
+[lab post describing T-SNE](http://distill.pub/2016/misread-tsne/) - I mentioned various unsupervised linear methods for dimensional reduction of your data (PCA, MDS).  T-SNE and UMAP are *non-linear* unsupervised methods that have become popular for representing single-cell RNAseq data and flow cytometry data. 
 
 [Original T-SNE paper](http://DIYtranscriptomics.github.io/Reading/files/TSNE.pdf).  
 

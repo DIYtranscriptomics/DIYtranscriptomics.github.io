@@ -31,7 +31,7 @@ The main things you might need to change here are:
 
 `site: Personal Jekyll Theme` – change this to your website's name
 
-`paginate: 6` – change this to set the number of blog posts on each page
+`paginate: 6` – change this to set the number of lab posts on each page
 
 You can also change more advanced things here like the path names, collections etc. You do not need to change any of these to achieve the same look as the demo, so best to leave everything else unless you are confident.
 
@@ -53,7 +53,7 @@ You'll find this inside the `_data` folder – this is where you can set all of 
 
 **Menu settings**
 
-This allows you to set the links inside your menu. Add each one as a list item with a `title` and `url`. When hosting on GitHub Pages, make sure you leave a trailing `/` at the end of links to category pages (e.g. `/blog/` or `/projects/`).
+This allows you to set the links inside your menu. Add each one as a list item with a `title` and `url`. When hosting on GitHub Pages, make sure you leave a trailing `/` at the end of links to category pages (e.g. `/lab/` or `/projects/`).
 
 **Footer settings**
 
@@ -61,7 +61,7 @@ This allows you to set the links inside your menu. Add each one as a list item w
 
 **Hero settings**
 
-`overlay_opacity` – this sets the opacity of the overlay when you hover over grid items (portfolio and blog posts). Use a decimal value here, e.g. `0.8` will give you 80% opacity on hover.
+`overlay_opacity` – this sets the opacity of the overlay when you hover over grid items (portfolio and lab posts). Use a decimal value here, e.g. `0.8` will give you 80% opacity on hover.
 
 **Post settings**
 
@@ -121,7 +121,7 @@ The images in the `/demo/` subfolder are used in the demo project, post and page
 
 `favicon.png` – you should replace this with the favicon image you'd like to use for your website.
 
-`social.jpg` – this image is used by default as the meta image on the Home and Blog pages. This shows up on social shares of your page, for example Facebook or Twitter – so you should change it to a relevant image, or change the image URL in that page's Front Matter (see below).
+`social.jpg` – this image is used by default as the meta image on the Home and lab pages. This shows up on social shares of your page, for example Facebook or Twitter – so you should change it to a relevant image, or change the image URL in that page's Front Matter (see below).
 
 ---
 
@@ -139,9 +139,9 @@ This is your website home page. You can edit some details in the Front Matter at
 
 Below the Front Matter is the code for the page. You should edit this to set your title and intro text. Hint - the main <h1> tag respects line breaks on tablet size screens and larger. This is useful if you want to prevent typographic widows.
 
-### The blog page – `/blog/index.html`
+### The lab page – `/lab/index.html`
 
-This is the blog listing page, which shows all your blog posts. You can edit the same things as on the home page to customise it for your website.
+This is the lab listing page, which shows all your lab posts. You can edit the same things as on the home page to customise it for your website.
 
 ---
 

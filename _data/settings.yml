@@ -11,7 +11,7 @@ menu_settings:
     - title: 'Syllabus'
       url: '/'
     - title: 'Labs'
-      url: '/blog/'
+      url: '/lab/'
     - title: 'Data'
       url: '/data'
     - title: 'Scripts'

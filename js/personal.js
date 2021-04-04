@@ -171,10 +171,10 @@
 				});
 			});
 
-			// Blog grid layout
-			$('.blog-wrap').imagesLoaded( function() {
-				$('.blog-wrap').masonry({
-					itemSelector: '.blog-post',
+			// lab grid layout
+			$('.lab-wrap').imagesLoaded( function() {
+				$('.lab-wrap').masonry({
+					itemSelector: '.lab-post',
 					transitionDuration: 0
 				});
 			});

@@ -45,7 +45,7 @@ We'll begin this class by reviewing how to access R packages and help documentat
 
 [Differential analysis of RNA-seq incorporating quantification uncertainty. Nature Methods, June, 2017](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) - Original paper describing Sleuth
 
-[Lior Pachter's blog post on Sleuth](https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/)
+[Lior Pachter's lab post on Sleuth](https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/)
 
 [vignette for the Tximport package](https://bioconductor.org/packages/devel/bioc/vignettes/tximport/inst/doc/tximport.html) - the R package we'll use to read the Kallisto mapping results into R.
 

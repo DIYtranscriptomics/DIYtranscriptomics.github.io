@@ -40,15 +40,15 @@ In this class, we'll finally get down to the business of using [Kallisto](https:
 
 ## Reading
 
-### papers and blogs posts on Kallisto
+### papers and labs posts on Kallisto
 
 [2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
 
 [2017 Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) from Lior Pachter's lab describing Sleuth
 
-[Lior Pachter's blog post on Kallisto](https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/)
+[Lior Pachter's lab post on Kallisto](https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/)
 
-[blog post on pseudoalignments](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) - helps understand how Kallisto maps reads to transcripts
+[lab post on pseudoalignments](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) - helps understand how Kallisto maps reads to transcripts
 
 Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the alignment?  You can read more about what this is [here](http://DIYtranscriptomics.github.io/Reading/files/EM.pdf)
 
@@ -58,7 +58,7 @@ Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the
 
 [2014 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf) - describes Sailfish, which implimented the first lightweight method for quantifying transcript expression.
 
-[Not quite alignments](http://robpatro.com/blog/?p=248) - Rob Patro, the first author of the Sailfish paper, wrote a nice blog post comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.
+[Not quite alignments](http://robpatro.com/lab/?p=248) - Rob Patro, the first author of the Sailfish paper, wrote a nice lab post comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.
 
 [2018 Nature Methods paper describing Salmon](https://www.nature.com/articles/nmeth.4197) - A lightweight aligment tool from Rob Patro and Carl Kinsford.  [Check out the website too](https://combine-lab.github.io/salmon/).
 
