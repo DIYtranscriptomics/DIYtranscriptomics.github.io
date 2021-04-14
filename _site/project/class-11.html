@@ -1,0 +1,302 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	DIY.transcriptomics
+
+	Personal Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your lab or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Page Info -->
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<title>Module identification – DIY.transcriptomics</title>
+	<meta name="description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis to be covered in the next class.">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Module identification – DIY.transcriptomics">
+	<meta name="twitter:description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis to be covered in the next class.">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/bird_flock.jpg">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Module identification – DIY.transcriptomics" />
+	<meta property="og:description" content="Coordinately expressed genes, or modules, often contain a more coherent functional signature.  We'll discuss strategies for clustering expression data to identify these modules, setting the stage for downstream function enrichment analysis to be covered in the next class." />
+	<meta property="og:image" content="http://localhost:4000/images/bird_flock.jpg" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	
+	
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="http://localhost:4000" data-page-url="/project/class-11">
+
+
+	<header class="header">
+
+	<div class="wrap">
+
+		
+		<a href="/" class="header__title">
+			DIY.transcriptomics
+		</a>
+		
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link">Modules</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/lab/" class="menu__list__item__link">Labs</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/data" class="menu__list__item__link">Data</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/scripts" class="menu__list__item__link">Scripts</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/videos" class="menu__list__item__link">Videos</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/help" class="menu__list__item__link">Help</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Module identification – DIY.transcriptomics">
+
+			<section class="hero hero--single">
+
+	<div class="hero__image" style="background-image: url(/images/bird_flock.jpg)">
+		<div class="hero__overlay"></div>
+	</div>
+
+	<div class="wrap">
+
+		<h1>Module identification</h1>
+		<p>Module 10 • 2hrs</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<article class="single-post">
+
+			<div style="text-align: right"> Image credit: Adelaide Tyrol </div>
+
+<p><a href="https://www.icloud.com/keynote/0MGb9ZuG55gjG_Ly7eMC1kKFQ#Lecture10%5Fmodules">Lecture slides on iCloud</a></p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Lists of differentially expressed transcripts often include different patterns or modules of genes that are coordinately regulated across treatments or conditions, and these patterns can provide powerful insight into biology.  In this class you’ll use correlation-based clustering methods and heatmap visualization to interrogate DEGs to reveal modules of co-regulated genes.</p>
+
+<h2 id="learning-objectives">Learning objectives</h2>
+
+<ul>
+  <li>Be able to interpret and construct heatmaps</li>
+  <li>Understand color choice in R</li>
+  <li>Understand how clustering methods are used to identify coordinately expressed genes (a.k.a modules)</li>
+  <li>Learn to use the command-line <a href="https://github.com/BaselAbujamous/clust">clust</a> program</li>
+</ul>
+
+<h2 id="code">Code</h2>
+
+<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step6_modules.R">Step 6 script</a></p>
+
+<hr />
+
+<h2 id="lecture-video">Lecture video</h2>
+
+<h3 id="part-1---intro-to-clustering-and-starting-the-step-6-script">Part 1 - Intro to clustering and starting the Step 6 script</h3>
+
+<iframe src="https://player.vimeo.com/video/420768891" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<h3 id="part-2---making-and-interpreting-heatmaps">Part 2 - Making and interpreting heatmaps</h3>
+
+<iframe src="https://player.vimeo.com/video/420785250" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<h3 id="part-3---alternative-clustering-methods">Part 3 - Alternative clustering methods</h3>
+
+<iframe src="https://player.vimeo.com/video/420793600" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<hr />
+
+<h2 id="downloads">Downloads</h2>
+
+<p>If you want to try <em>Clust</em> on your own, you’ll need to install the program first (see <a href="https://github.com/BaselAbujamous/clust">github page</a> for instructions).  You can test it out using the Schisto hackdash dataset to reproduce what I showed you in class.  There are two files you’ll need for this: 1) <a href="https://drive.google.com/open?id=1OgrR7YbSuhbFxvwvGdHLRViJixWr2bGZ">this text file of DEGs</a> in female LE-strain worms; and 2) <a href="https://drive.google.com/open?id=1qv5x-MHqg-bh9OllAf-JsE1eB-AkEgIC">a reps file</a> that maps the columns (samples) to groups (conditions).  You’ll need to read these two files into your R environment before running <em>Clust</em>.  You can view an example of the output <a href="https://drive.google.com/open?id=1BWVl42rhzC1Kd7GA5JF0OwX73bAUd_mm">here</a></p>
+
+<h2 id="reading">Reading</h2>
+
+<p><a href="https://doi.org/10.1186/s13059-018-1536-8">Clust: automatic extraction of optimal co-expressed gene clusters from gene expression data. Genome Biology, 2018</a>.</p>
+
+<p><strong>Colors in R</strong> - Colors palettes are an often underappreciated aspect of making beautiful and informative plots in R. You can access a suite of color palettes using the <a href="http://colorbrewer2.org">RColorBrewer package</a>.  These palettes can be viewed in <a href="http://DIYtranscriptomics.github.io/Reading/files/colorbrewerPalettes.pdf">this cheatsheet</a>.  Unfortunately, these standard palettes often don’t cut it, and you’ll need custom palettes. For this, I love using <a href="https://sipapp.io/">Sip</a> to pick, organize and access color palettes.</p>
+
+
+
+		</article>
+
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<div class="wrap">
+
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
+
+		<div class="footer__copyright">
+			<span>© 2021 DIY.transcriptomics</span>
+			<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
+		</div>
+
+		<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+
+	</div>
+
+</footer>
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/personal-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+</body>
+
+</html>

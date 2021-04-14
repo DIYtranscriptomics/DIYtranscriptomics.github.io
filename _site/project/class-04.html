@@ -1,0 +1,302 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	DIY.transcriptomics
+
+	Personal Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your lab or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Page Info -->
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<title>Understanding RNAseq count data – DIY.transcriptomics</title>
+	<meta name="description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script.">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Understanding RNAseq count data – DIY.transcriptomics">
+	<meta name="twitter:description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script.">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/abacus.jpg">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Understanding RNAseq count data – DIY.transcriptomics" />
+	<meta property="og:description" content="Now that we've aligned our reads, it's time to discuss units for measuring gene expression.  We'll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We'll also discuss normalization within and between samples.  To conclude this class, we'll fire up RStudio and take a look at our first script." />
+	<meta property="og:image" content="http://localhost:4000/images/abacus.jpg" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	
+	
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="http://localhost:4000" data-page-url="/project/class-04">
+
+
+	<header class="header">
+
+	<div class="wrap">
+
+		
+		<a href="/" class="header__title">
+			DIY.transcriptomics
+		</a>
+		
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link">Modules</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/lab/" class="menu__list__item__link">Labs</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/data" class="menu__list__item__link">Data</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/scripts" class="menu__list__item__link">Scripts</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/videos" class="menu__list__item__link">Videos</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/help" class="menu__list__item__link">Help</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Understanding RNAseq count data – DIY.transcriptomics">
+
+			<section class="hero hero--single">
+
+	<div class="hero__image" style="background-image: url(/images/abacus.jpg)">
+		<div class="hero__overlay"></div>
+	</div>
+
+	<div class="wrap">
+
+		<h1>Understanding RNAseq count data</h1>
+		<p>Module 4 • 2hrs</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<article class="single-post">
+
+			<div style="text-align: right"> Image credit: 'Abacus' ca. 1946: textile, Paul Rand </div>
+
+<p><a href="https://www.icloud.com/keynote/03XFG7iDxCqONRP_qEPEUsq2Q#Lecture4%5Funits">Lecture slides on iCloud</a></p>
+
+<p><a href="https://www.datacamp.com/courses/introduction-to-the-tidyverse">Homework #2: Introduction to the Tidyverse (~4hrs)</a> - due by start of class, Friday, May 1st.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Now that we’ve aligned our reads, it’s time to discuss units for measuring gene expression.  We’ll discuss differences between RPKM and TPM, and how these units relate to basic properties of your reference file and data.  We’ll also discuss normalization within and between samples.  To conclude this class, we’ll fire up RStudio and take a look at our first script.</p>
+
+<h2 id="learning-objectives">Learning objectives</h2>
+
+<ul>
+  <li>Review steps from last class (using Kallisto).</li>
+  <li>Discuss output from Kallisto and units of measurement for RNAseq and ‘normalization’</li>
+  <li>Start an RStudio Project directory that we’ll use for the rest of the course.</li>
+  <li>Open and discuss our first script, including installation of packages</li>
+</ul>
+
+<h2 id="code">Code</h2>
+
+<p><a href="http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R">Step 1 script</a></p>
+
+<hr />
+
+<h2 id="lecture-video">Lecture video</h2>
+
+<h3 id="part-1---measuring-digital-gene-expression">Part 1 - Measuring digital gene expression</h3>
+
+<iframe src="https://player.vimeo.com/video/411253362" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<h3 id="part-2---starting-our-r-project-and-step-1-script">Part 2 - Starting our R project and step 1 script</h3>
+
+<iframe src="https://player.vimeo.com/video/411270684" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<hr />
+
+<h2 id="reading">Reading</h2>
+
+<p><a href="http://robpatro.com/lab/?p=235">The RNA-seq abundance zoo</a> - lab post by Rob Patro (developer of Salfish and Salmon software) that describes units for RNAseq, and has a nice description of ‘effective length’ for transcripts.</p>
+
+<p><a href="https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/">What the FPKM?</a> - lab post by Harold Pimentel discussing within sample normalization and the meaning of RNAseq expression units</p>
+
+<p><a href="http://DIYtranscriptomics.github.io/Reading/files/wagnerTPM.pdf">Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, Dec 2012</a></p>
+
+<p><a href="https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/">Between sample normalization in RNAseq</a> - another great lab post from Harold Pimentel on between-sample normalization.</p>
+
+<hr />
+
+
+
+		</article>
+
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<div class="wrap">
+
+		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
+
+		<div class="footer__copyright">
+			<span>© 2021 DIY.transcriptomics</span>
+			<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
+		</div>
+
+		<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+
+	</div>
+
+</footer>
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/personal-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+</body>
+
+</html>

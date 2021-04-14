@@ -33,8 +33,8 @@ function e(){
 o(".page__content").find(".hero__image").imagesLoaded({background:!0},function(){
 // Portfolio grid layout
 o(".portfolio-wrap").imagesLoaded(function(){o(".portfolio-wrap").masonry({itemSelector:".portfolio-item",transitionDuration:0})}),
-// Blog grid layout
-o(".blog-wrap").imagesLoaded(function(){o(".blog-wrap").masonry({itemSelector:".blog-post",transitionDuration:0})}),
+// lab grid layout
+o(".lab-wrap").imagesLoaded(function(){o(".lab-wrap").masonry({itemSelector:".lab-post",transitionDuration:0})}),
 // Show the content
 o("body").removeClass("loading"),
 // Hide the menu

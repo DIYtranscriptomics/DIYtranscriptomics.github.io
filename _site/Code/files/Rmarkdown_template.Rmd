@@ -10,7 +10,7 @@
 	DIY.transcriptomics
 
 	Personal Theme by https://jekyllthemes.io
-	Premium + free Jekyll themes for your blog or website.
+	Premium + free Jekyll themes for your lab or website.
 
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
@@ -20,17 +20,17 @@
 
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="/images/favicon.png">
-	<title><center> The host response to infection with _Cryptosporidium parvum_ <center> – DIY.transcriptomics</title>
+	<title><center> The transcriptional response during human cutaneous leishmaniasis <center> – DIY.transcriptomics</title>
 	<meta name="description" content="">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="<center> The host response to infection with _Cryptosporidium parvum_ <center> – DIY.transcriptomics">
+	<meta name="twitter:title" content="<center> The transcriptional response during human cutaneous leishmaniasis <center> – DIY.transcriptomics">
 	<meta name="twitter:description" content="">
 	<meta name="twitter:image:src" content="http://localhost:4000">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="<center> The host response to infection with _Cryptosporidium parvum_ <center> – DIY.transcriptomics" />
+	<meta property="og:title" content="<center> The transcriptional response during human cutaneous leishmaniasis <center> – DIY.transcriptomics" />
 	<meta property="og:description" content="" />
 	<meta property="og:image" content="http://localhost:4000" />
 
@@ -88,11 +88,11 @@
 				<ul class="menu__list">
 					
 					<li class="menu__list__item">
-						<a href="/" class="menu__list__item__link">Syllabus</a>
+						<a href="/" class="menu__list__item__link">Modules</a>
 					</li>
 					
 					<li class="menu__list__item">
-						<a href="/about" class="menu__list__item__link">About</a>
+						<a href="/lab/" class="menu__list__item__link">Labs</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -101,6 +101,14 @@
 					
 					<li class="menu__list__item">
 						<a href="/scripts" class="menu__list__item__link">Scripts</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/videos" class="menu__list__item__link">Videos</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -123,7 +131,7 @@
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="<center> The host response to infection with _Cryptosporidium parvum_ <center> – DIY.transcriptomics">
+		<div class="page__content" data-page-title="<center> The transcriptional response during human cutaneous leishmaniasis <center> – DIY.transcriptomics">
 
 			<section class="hero hero--single">
 
@@ -133,7 +141,7 @@
 
 	<div class="wrap">
 
-		<h1><center> The host response to infection with _Cryptosporidium parvum_ <center></h1>
+		<h1><center> The transcriptional response during human cutaneous leishmaniasis <center></h1>
 		<p></p>
 
 	</div>
@@ -155,36 +163,13 @@ knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
 
 ## Introduction
 
-During the Fall 2019 offering of **[DIYtranscriptomics](http://diytranscriptomics.com/)**, we analyzed a dataset from Boris Striepen's lab, in which HCT-8 human intestinal epithelial cells were infected with the protozoan parasite, _Cryptosporidium parvum_.  This reproducible and dynamic report was created using Rmarkdown and the [Knitr package](https://yihui.name/knitr/), and summarizes the basic code and outputs (plots, tables, etc) produced during the course. 
+During the Spring 2020 offering of **[DIYtranscriptomics](http://diytranscriptomics.com/)**, we analyzed a subset of patients and healthy controls from [Amorim et al., 2019](https://doi.org/10.1126/scitranslmed.aax4204).  This reproducible and dynamic report was created using Rmarkdown and the [Knitr package](https://yihui.name/knitr/), and summarizes the basic code and outputs (plots, tables, etc) produced during the course. 
 
 ***
 
 ## R packages used
 
-A variety of R packages was used for this analysis.  All graphics and data wrangling were handled using the [tidyverse suite of packages](https://www.tidyverse.org/).  Typographic style for graphs was set using [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes).  All packages used are available from the Comprehensive R Archive Network (CRAN), Bioconductor.org, or Github.  
-
-```{r packages}
-library(tidyverse)
-library(reshape2)
-library(tximport)
-library(biomaRt)
-library(ensembldb)
-library(RColorBrewer) 
-library(genefilter)
-library(edgeR) 
-library(matrixStats)
-library(gplots) 
-library(limma)
-library(heatmaply)
-library(DT)
-library(gt)
-library(plotly)
-library(hrbrthemes)
-library(EnsDb.Hsapiens.v86)
-library(cowplot)
-library(gprofiler2)
-library(GSEABase)
-```
+A variety of R packages was used for this analysis.  All graphics and data wrangling were handled using the [tidyverse suite of packages](https://www.tidyverse.org/).  All packages used are available from the Comprehensive R Archive Network (CRAN), Bioconductor.org, or Github.  
 
 ***
 
@@ -192,17 +177,16 @@ library(GSEABase)
 
 ### Aligning raw reads with Kallisto
 
-Raw reads were mapped to the human reference transcriptome using [Kallisto](https://pachterlab.github.io/kallisto/), version 0.45.  The quality of raw reads, as well as the results of Kallisto mapping are summarized in [this summary report](http://DIYtranscriptomics.github.io/Data/files/multiqc_report.html) generated using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [multiqc](https://multiqc.info/).
+Raw reads were mapped to the human reference transcriptome using [Kallisto](https://pachterlab.github.io/kallisto/), version 0.46.2.  The quality of raw reads, as well as the results of Kallisto mapping are summarized in [this summary report](http://DIYtranscriptomics.github.io/Data/files/multiqc_report.html) generated using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [multiqc](https://multiqc.info/).
 
 
 ***
 
 ### Importing count data into R
 
-After read mapping with Kallisto, [TxImport](https://bioconductor.org/packages/release/bioc/html/tximport.html) was used to read kallisto outputs into the R environment.  Annotation data from Biomart was used to 'collapse' data from transcript-level to gene-level.
+After read mapping with Kallisto, [TxImport](https://bioconductor.org/packages/release/bioc/html/tximport.html) was used to read kallisto outputs into the R environment.  Annotation data from Biomart was used to summarize data from transcript-level to gene-level.
 
 ```{r step 1 - TxImport}
-# copy and paste in the essential code from the step 1 script
 
 ```
 
@@ -213,28 +197,27 @@ After read mapping with Kallisto, [TxImport](https://bioconductor.org/packages/r
 ### Impact of filtering and normalization
 
 ```{r step2 - dataWrangling}
-# copy and paste in the essential code from the step 2 script
 
 ```
 
-Filtering was carried out to remove lowly expressed genes. Genes with less than 1 count per million (CPM) in at least 3 or more samples filtered out.  This reduced the number of genes from `r nrow(myDGEList)` to `r nrow(myDGEList.filtered)`.  
+Filtering was carried out to remove lowly expressed genes. Genes with less than 1 count per million (CPM) in at least 5 or more samples filtered out.  This reduced the number of genes from `r nrow(myDGEList)` to `r nrow(myDGEList.filtered)`.  
 
 ***
 
 ### table of filtered and normalized data
 
-The table shown below includes expression data for `r nrow(myDGEList.filtered)` genes. You can sort and search the data directly from the table.
-
 ```{r step 3 - multivariate part 1 (data table)}
 
 ```
+
+The table shown below includes expression data for `r nrow(myDGEList.filtered)` genes. You can sort and search the data directly from the table.
+
 
 ***
 
 ## PCA plot
 
 ```{r step 3 - multivariate part 2 (PCA plot)}
-
 
 ```
 
@@ -248,9 +231,9 @@ The table shown below includes expression data for `r nrow(myDGEList.filtered)` 
 
 ***
 
-## table of DEGs
+## Table of DEGs
 
-To identify differentially expressed genes, precision weights were first applied to each gene based on its mean-variance relationship using [VOOM](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29), then data was normalized using the [TMM method](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) in [EdgeR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2796818/).  Linear modeling and bayesian stats were employed via [Limma](https://academic.oup.com/nar/article/43/7/e47/2414268) to find genes that were up- or down-regulated in _C. parvum_ infected cells, compared to naive cells, by 2-fold or more, with a false-discovery rate (FDR) of 0.01. 
+To identify differentially expressed genes, precision weights were first applied to each gene based on its mean-variance relationship using [VOOM](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29), then data was normalized using the [TMM method](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) in [EdgeR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2796818/).  Linear modeling and bayesian stats were employed via [Limma](https://academic.oup.com/nar/article/43/7/e47/2414268) to find genes that were up- or down-regulated in leishmania patients by 4-fold or more, with a false-discovery rate (FDR) of 0.01. 
 
 ```{r step 5 - diffGenes part 2 (DEG table)}
 
@@ -258,36 +241,51 @@ To identify differentially expressed genes, precision weights were first applied
 
 ***
 
-## heatmap
+## Heatmaps and modules
 
 Pearson correlation was used to cluster **`r nrow(diffGenes)`** differentially expressed genes, which were then represented as heatmap with the data scaled by Zscore for each row.
 
-```{r step 6 - modules}
+```{r step 6 - modules part 1 (heatmap)}
 
 ```
+
+
+```{r step 6 - modules part 2 (upregulated genes)}
+
+```
+
+
+```{r step 6 - modules part 3 (downregulated genes)}
+
+```
+
+
 
 ## GO enrichment
 
 GO enrichment for the `r nrow(myTopHits)` genes induced by infection
 
-```{r step 7 - functionalEnrichment part 1 (gostplot)}
+```{r step 7 - functionalEnrichment part 1 (gostplot for upregulated genes)}
+
+
+```
+
+```{r step 7 - functionalEnrichment part 2 (gostplot for downregulated genes)}
+
+```
+
+## GSEA
+
+```{r step 7 - functionalEnrichment part 3 (GSEA table)}
+
+```
+
+```{r step 7 - functionalEnrichment part 4 (enrich plot)}
 
 ```
 
 
-## GSEA
-
-```{r step 7 - functionalEnrichment part 3 (GSEA)}
-broadSet.C2.CP <- getGmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v7.0.symbols.gmt", geneIdType=SymbolIdentifier())
-broadSet.C2.CP <- geneIds(broadSet.C2.CP)
-GSEAres <- camera(v.DEGList.filtered.norm$E, broadSet.C2.CP, design, contrast.matrix[,1]) 
-GSEAres <- as_tibble(GSEAres, rownames = "Gene set name")
-GSEAres <- dplyr::filter(GSEAres, FDR<=0.05)
-datatable(GSEAres, 
-          extensions = c('KeyTable', "FixedHeader"), 
-          caption = 'Table 3: Signatures enriched in infected cells',
-          options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
-  formatRound(columns=c(1:10), digits=3)
+```{r step 7 - functionalEnrichment part 5 (bubble plot)}
 
 ```
 
@@ -330,7 +328,7 @@ sessionInfo()
 		<p class="footer__text">Teaching students how to use open-source tools to analyze RNAseq data since 2015.</p>
 
 		<div class="footer__copyright">
-			<span>© 2020 DIY.transcriptomics</span>
+			<span>© 2021 DIY.transcriptomics</span>
 			<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
 		</div>
 

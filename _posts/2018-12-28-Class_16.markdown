@@ -10,11 +10,9 @@ featured_image: '/images/COVID.jpg'
 
 ![](/images/COVID.jpg)
 
-## Background on the dataset
+## Background
 
 You will be given raw counts and a study design file for an extensive RNA-seq exploration of the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points, and which include human primary samples as well as *in vivo* studies in ferrets – an incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You should check out their recent Cell paper: [Imbalanced Host Response to SARS-CoV-2 Drives Development of COVID-19](https://doi.org/10.1016/j.cell.2020.04.026).
-
-## The challenge
 
 This challenge certainly falls into the category of 'easier said than done'.
 
