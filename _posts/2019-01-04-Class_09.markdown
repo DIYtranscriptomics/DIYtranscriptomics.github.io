@@ -2,7 +2,7 @@
 title: 'The worm lab'
 subtitle: 'Schistosoma mansoni response to praziquantel'
 date: 2019-01-04 00:00:00
-description: In this lab you'll explore a large and multivariate dataset generated from the helmith parasite, Schistosoma mansoni, an important pathogen of humans.  You'll use dimensional reduction to understand how factors like sex, developmental stage, genetic strain and drug treatment contribute to differences in gene expression.
+description: Explore a large and multivariate dataset generated from the helmith parasite, Schistosoma mansoni, an important pathogen of humans.  You'll use dimensional reduction to understand how factors like sex, developmental stage, genetic strain and drug treatment contribute to differences in gene expression.
 featured_image: '/images/schisto.png'
 ---
 
