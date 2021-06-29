@@ -7,9 +7,6 @@ featured_image: '/images/IT-help.jpeg'
 ---
 
 
-<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
-
-
 ![](/images/IT-problems.jpeg)
 
 ## Background
