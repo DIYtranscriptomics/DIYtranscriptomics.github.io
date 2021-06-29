@@ -2,7 +2,7 @@
 title: 'Setting up your software environment'
 subtitle: 'Module 2 • watch by September 1, 2021'
 date: 2019-01-11 00:00:00
-description: In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software and environment that will be used throughout the course, then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
+description: In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
 featured_image: '/images/rstudio.png'
 ---
 
@@ -10,11 +10,12 @@ featured_image: '/images/rstudio.png'
 
 ## Overview
 
-In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software and environment that will be used throughout the course, then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.
+In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
 
 ## Learning objectives
 
 * Brief overview of the tools we’ll use throughout the course (R/Bioconductor, RStudio, etc.)
+
 * Set-up *your* laptop with all the software needed for the course
 
 ## Software
@@ -29,7 +30,7 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 [Visual Studio Code](https://code.visualstudio.com/) - an alternative to Sublime and an excellent choice for working with scripts outside of RStudio.
 
-[XCode developer tools](https://developer.apple.com/xcode/) - *Only download if running on Mac OS on your laptop.*
+[XCode developer tools](https://developer.apple.com/xcode/) - *Only download if running Mac OS on your laptop.*
 
 [Cygwin](https://www.cygwin.com/) - *Only download if running a Windows OS on your laptop.*  Cygwin will give your system more linux-like capabilities
 
