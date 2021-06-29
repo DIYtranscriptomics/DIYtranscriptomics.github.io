@@ -2,7 +2,7 @@
 title: 'The Malaria Lab'
 subtitle: 'Explore gene expression throughout the Plasmodium falciparum erythrocytic cycle'
 date: 2018-12-31 00:00:00
-description: Ready yo tackle one of world's deadliest pathogens?  Using data collected throughout the 48hr red blood cell cycle, you'll be tasked with putting together a publication-quality figure that best captures your main findings.
+description: Ready to tackle one of world's deadliest pathogens?  Using data collected throughout the 48hr red blood cell cycle, you'll be tasked with putting together a publication-quality figure that best captures your main findings.
 featured_image: '/images/plasmoRBC.png'
 ---
 
