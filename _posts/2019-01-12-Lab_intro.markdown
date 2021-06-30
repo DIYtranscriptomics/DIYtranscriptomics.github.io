@@ -6,6 +6,8 @@ description: Click here for a brief description for how you can participate in o
 featured_image: '/images/dataDeluge.jpeg'
 ---
 
+<div style="text-align: right"> Image credit: Brett Ryder.  The Economist. Feb 27 2010 edition</div>
+
 ## Background
 
 Coming soon!

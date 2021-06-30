@@ -6,8 +6,6 @@ description: Installing software can be a real headache, so let us help you! Thi
 featured_image: '/images/IT-help.jpeg'
 ---
 
-
-![](/images/IT-problems.jpeg)
-
 ## Background
 
+Coming soon!

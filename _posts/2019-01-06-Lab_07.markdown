@@ -9,9 +9,6 @@ featured_image: '/images/schisto.png'
 
 <div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
 
-
-![](/images/schisto.png)
-
 ## Background
 
 A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, *Schistosoma mansoni*.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following *in vivo* treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced!  To begin this challenge, you'll need to download the Kallisto read mapping results and study design file **[here](https://www.dropbox.com/s/k0959o6luvda69p/schistosoma.zip?dl=0)** and read these data into a new R project.
