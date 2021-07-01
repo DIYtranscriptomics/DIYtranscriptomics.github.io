@@ -1,8 +1,8 @@
 ---
 title: 'How do labs work for this class?'
-subtitle: 'participate in our data-driven lab exercises in-person or virtually.'
+subtitle: 'precourse material'
 date: 2019-01-12 00:00:00
-description: Learn more about our in-person labs, how you can participate, and what you'll learn along the way.
+description: Learn more about our in-person labs, how you can participate in-person or virtually, and what you'll learn along the way.
 featured_image: '/images/class.jpg'
 ---
 

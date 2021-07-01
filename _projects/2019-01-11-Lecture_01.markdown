@@ -1,6 +1,6 @@
 ---
 title: 'Setting up your software environment'
-subtitle: 'Lecture 2 • watch by September 1, 2021'
+subtitle: 'Lecture 1 • watch by September 1, 2021'
 date: 2019-01-11 00:00:00
 description: In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
 featured_image: '/images/rstudio.png'

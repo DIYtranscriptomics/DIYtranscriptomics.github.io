@@ -1,0 +1,15 @@
+---
+title: 'Software installation and IT support'
+subtitle: 'Lab 1 (drop-in help) • September 1, 2021'
+date: 2019-01-11 00:00:00
+description: Installing software can be a real headache, so let us help you! This lab will be focused on helping you with IT support and getting to know the software tools that we'll be using throughout the course.
+featured_image: '/images/IT-help.jpeg'
+---
+
+## Corresponding lecture
+
+Lecture 1 - Setting up your software environment
+
+## Background
+
+Coming soon!

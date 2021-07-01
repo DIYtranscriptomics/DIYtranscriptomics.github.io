@@ -1,6 +1,6 @@
 ---
 title: 'Wrangling gene expression data'
-subtitle: 'Lecture 6 • watch by September 29, 2021'
+subtitle: 'Lecture 5 • watch by September 29, 2021'
 date: 2019-01-07 00:00:00
 description: We'll begin this class by filtering and normalizing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the dplyr package, expanding your understanding of tools within the Tidyverse.  
 featured_image: '/images/tidyDNA.jpg'

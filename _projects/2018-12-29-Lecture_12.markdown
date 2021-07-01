@@ -1,6 +1,6 @@
 ---
 title: 'Making your analysis portable and reproducible'
-subtitle: 'Lecture 13 •  watch by November 17, 2021'
+subtitle: 'Lecture 12 •  watch by November 17, 2021'
 date: 2018-12-29 00:00:00
 description: Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software, making it easy to share and rerun an entire analysis with the push of a button. 
 featured_image: '/images/capsule.jpg'
