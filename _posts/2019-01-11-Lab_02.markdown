@@ -6,6 +6,10 @@ description: Installing software can be a real headache, so let us help you! Thi
 featured_image: '/images/IT-help.jpeg'
 ---
 
+## Corresponding lecture
+
+Module 1 - Setting up your software environment
+
 ## Background
 
 Coming soon!

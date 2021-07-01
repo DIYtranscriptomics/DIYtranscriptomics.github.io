@@ -3,7 +3,7 @@ title: 'How do labs work for this class?'
 subtitle: 'Module 1 • precourse material'
 date: 2019-01-12 00:00:00
 description: Click here for a brief description for how you can participate in our data-driven lab exercises either in-person or virtually.
-featured_image: '/images/dataDeluge.jpeg'
+featured_image: '/images/class.jpg'
 ---
 
 <div style="text-align: right"> Image credit: Brett Ryder.  The Economist. Feb 27 2010 edition</div>
@@ -11,3 +11,4 @@ featured_image: '/images/dataDeluge.jpeg'
 ## Background
 
 Coming soon!
+
