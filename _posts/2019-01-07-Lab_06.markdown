@@ -1,0 +1,15 @@
+---
+title: 'Exploring the grammar of graphics and other plotting tools'
+subtitle: 'Hone your data plotting skills in R'
+date: 2019-01-11 00:00:00
+description: Think you know how to wrangle and plot data?  We'll put your skills to the test using a large dataset.  To illustrate the general utility of the methods you've used up to this point, we'll step away from gene expression for this lab and explore a different (and exciting!) type of data.
+featured_image: '/images/gg.png'
+---
+
+## Corresponding lecture
+
+Module 6 – Wrangling gene expression data
+
+## Background
+
+Coming soon!

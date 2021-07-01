@@ -6,6 +6,9 @@ description: Explore a large and multivariate dataset generated from the helmith
 featured_image: '/images/schisto.png'
 ---
 
+## Corresponding lecture
+
+Module 7 – Data exploration
 
 <div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
 

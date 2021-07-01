@@ -1,0 +1,16 @@
+---
+title: 'Annotating gene expression data'
+subtitle: 'Because NR2E1 sounds so much better than ENSG00000112333'
+date: 2019-01-11 00:00:00
+description: At some point we all have to wrestle with gene annotations – that is, all the stuff we can label a gene with. In this lab, you'll learn to access a world of gene-centric annotation data and will practice on gene expression data from non-model organisms.
+featured_image: '/images/biomart.png'
+---
+
+## Corresponding Lecture
+
+Module 5 - Starting your R workflow
+
+## Background
+
+Coming soon!
+

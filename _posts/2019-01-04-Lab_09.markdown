@@ -6,6 +6,10 @@ description: Ready to tackle one of world's deadliest pathogens?  Using data col
 featured_image: '/images/plasmoRBC.png'
 ---
 
+## Corresponding lecture
+
+Module 9 – Differential gene expression
+
 <div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 
 ## Background

@@ -1,0 +1,15 @@
+---
+title: 'Channeling your inner data parasite'
+subtitle: 'Practice accessing public RNA-seq data'
+date: 2019-01-04 00:00:00
+description: Practice searching, finding and accessing data from public respositories.  This is a great opportunity to go hunting for some cool data that YOU care about and that may help you address one of your research questions. Who knows, maybe you'll find a dataset that is so helpful it saves you from some time consuming and costly experiments.
+featured_image: '/images/dataDeluge.jpeg'
+---
+
+## Corresponding lecture
+
+Module 8 - Accessing public data
+
+## Background
+
+Coming soon!

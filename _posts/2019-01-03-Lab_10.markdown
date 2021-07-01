@@ -1,0 +1,15 @@
+---
+title: 'Finding patterns in gene expression data'
+subtitle: 'Use clustering methods to identify co-regulated genes'
+date: 2018-12-31 00:00:00
+description: 
+featured_image: '/images/plasmoRBC.png'
+---
+
+## Corresponding lecture
+
+Module 10 – Module identification
+
+## Background
+
+Coming soon!
