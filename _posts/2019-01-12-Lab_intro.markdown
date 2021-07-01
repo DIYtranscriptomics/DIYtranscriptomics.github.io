@@ -1,8 +1,8 @@
 ---
 title: 'How do labs work for this class?'
-subtitle: 'Module 1 • precourse material'
+subtitle: 'participate in our data-driven lab exercises in-person or virtually.'
 date: 2019-01-12 00:00:00
-description: Click here for a brief description for how you can participate in our data-driven lab exercises either in-person or virtually.
+description: Learn more about our in-person labs, how you can participate, and what you'll learn along the way.
 featured_image: '/images/class.jpg'
 ---
 

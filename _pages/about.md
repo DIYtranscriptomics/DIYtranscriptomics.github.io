@@ -35,8 +35,8 @@ This is a gradate level course offered through the Cell And Molecular Biology (C
 
 ## Can I just follow along online?
 
-For the most part.  All lectures, reading material and code are freely available and are organized on the website by lecture, so you can proceed at your own pace.  However, there are some elements of the course that are only available for people who have officially registered.  This include access to DataCamp for homework and extended learning, participation in our in-class hackathons (a.k.a. hackdashes), access to our course Code Ocean group, access to our class Slack page for 1:1 help from the instructor and our TAs throughout the course (and with your own data), and last but not least, course credit.
+Yes (mostly).  All lectures, reading material and code are freely available and are organized on the website by lecture, so you can proceed at your own pace.  However, there are some elements of the course that are only available for people who have officially registered.  This include access to DataCamp for homework and extended learning, participation in our in-class [lab exercises](https://diytranscriptomics.com/lab/), access to our course Code Ocean group, access to our class Slack page for 1:1 help from the instructor and our TAs throughout the course (and with your own data), and last but not least, course credit.
 
 ## How will I be graded in this course?
 
-All students taking the course for credit will be assigned a pass/fail grade.  Pass/fail will be determined based on performance on three in-class hack-a-thons (called hackdashes) and completion of homework assignments.
+All students taking the course for credit will be assigned a pass/fail grade.  Pass/fail will be determined based on participation in labs and completion of homework assignments.

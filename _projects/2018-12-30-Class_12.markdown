@@ -1,6 +1,6 @@
 ---
 title: 'Documenting your analyses with Rmarkdown'
-subtitle: 'Module 12 • watch by November 10, 2021'
+subtitle: 'Lecture 12 • watch by November 10, 2021'
 date: 2018-12-30 00:00:00
 description: In order to make your analysis pipeline transparent, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
 featured_image: '/images/breadcrumbs2.jpg'

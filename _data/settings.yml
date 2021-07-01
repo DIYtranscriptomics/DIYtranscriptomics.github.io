@@ -8,7 +8,7 @@ header_settings:
 
 menu_settings:
   menu_items:
-    - title: 'Modules'
+    - title: 'Lectures'
       url: '/'
     - title: 'Labs'
       url: '/lab/'
