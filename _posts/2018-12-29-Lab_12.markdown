@@ -8,7 +8,7 @@ featured_image: '/images/github_logo.png'
 
 ## Corresponding lecture
 
-Module 13 – Making your analysis portable and reproducible
+Lecture 12 – Making your analysis portable and reproducible
 
 ## Background
 
