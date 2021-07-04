@@ -1,5 +1,5 @@
 ---
-title: 'Single cell RNA-seq (scRNA-seq) – principles and processing'
+title: 'Single cell RNA-seq – principles and processing'
 subtitle: 'Lecture 13 •  watch by December 3, 2021'
 date: 2018-12-29 00:00:00
 description: Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our focus to the rapidly developing landscape of single cell RNA-seq (scRNA-seq).  In this lecture, you'll learn about the underlying technology and we'll demonstrate how to process raw single cell data for importing into R/bioconductor.
