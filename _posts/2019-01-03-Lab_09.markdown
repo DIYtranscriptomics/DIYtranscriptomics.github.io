@@ -1,7 +1,7 @@
 ---
 title: 'Finding patterns in gene expression data'
 subtitle: 'Lab 9 (skill development) • October 27, 2021'
-date: 2018-12-31 00:00:00
+date: 2019-01-03 00:00:00
 description: Use clustering methods to identify coordinately regulated genes throughout the red blood cell cycle of Plasmodium falciparum
 featured_image: '/images/modules.png'
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'The COVID19 Collaborative Challenge'
 subtitle: 'Lab 11 (skill development) • November 10, 2021'
-date: 2018-12-28 00:00:00
+date: 2019-01-01 00:00:00
 description: Explore one of the first and largest transcriptomic studies of of SARS-CoV-2. You start by parsing the study metadata to identify a question you're interested in, formulate a hypothesis, and carry out an analysis of the data to test this hypothesis.
 featured_image: '/images/COVID.jpg'
 ---

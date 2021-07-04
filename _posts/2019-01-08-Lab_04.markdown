@@ -1,7 +1,7 @@
 ---
 title: 'Annotating gene expression data'
 subtitle: 'Lab 4 (skill development) • September 22, 2021'
-date: 2019-01-11 00:00:00
+date: 2019-01-08 00:00:00
 description: At some point we all have to wrestle with gene annotations – that is, all the stuff we can label a gene with. In this lab, you'll learn to access a world of gene-centric annotation data and will practice on gene expression data from non-model organisms.
 featured_image: '/images/biomart.png'
 ---

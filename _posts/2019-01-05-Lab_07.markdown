@@ -1,7 +1,7 @@
 ---
 title: 'Channeling your inner data parasite'
 subtitle: 'Lab 7 (skill development) • October 13, 2021'
-date: 2019-01-04 00:00:00
+date: 2019-01-05 00:00:00
 description: Practice searching, finding and accessing data from public respositories.  This is a great opportunity to go hunting for some cool data that YOU care about and that may help you address one of your research questions. Who knows, maybe you'll find a dataset that is so helpful it saves you from some time consuming and costly experiments.
 featured_image: '/images/dataDeluge.jpeg'
 ---

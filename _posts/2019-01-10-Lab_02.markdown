@@ -1,7 +1,7 @@
 ---
 title: 'Creating and using shell scripts'
 subtitle: 'Lab 2 (skill development) • September 8, 2021'
-date: 2019-01-11 00:00:00
+date: 2019-01-10 00:00:00
 description: Using command-line tools often requires that you run similar code for each of your samples (e.g. read mapping).  In this lab, you'll learn how to automate this redundant process using a simple code-aware text editor, making it possible for you to get work done even when you're not sitting in front of your computer.  How great is that?!
 featured_image: '/images/shellscript.png'
 ---
