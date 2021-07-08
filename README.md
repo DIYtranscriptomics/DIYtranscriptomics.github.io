@@ -1,8 +1,8 @@
 # Overview of this repo
 
-> A semester-long 'do-it-yourself' (DIY) transcriptomics course that teaches basic principles of bioinformatics using the R programming language and RNA-seq datasets from infectious disease studies.  
+A semester-long 'do-it-yourself' (DIY) transcriptomics course that teaches basic principles of bioinformatics using the R programming language and RNA-seq datasets from infectious disease studies.  
 
-> A brief description of the content in this repo is included below:
+A brief description of the content in this repo is included below:
 
 - /Posts - contains all markdown documents corresponding to lecture pages, which get rendered on the [main course page](https://diytranscriptomics.com/).
 - /Projects - contains markdown documents corresponding to in-person lab exercises rendered on the [course lab page](https://diytranscriptomics.com/lab/)
