@@ -22,4 +22,4 @@ Because the entire course, even down to the website, is contained within this gi
 - /\_pages - contains markdown docs corresponding to the [about](https://diytranscriptomics.com/about), [data](https://diytranscriptomics.com/data), [scripts](https://diytranscriptomics.com/scripts), [help](https://diytranscriptomics.com/help) and [video](https://diytranscriptomics.com/video) pages linked at the top of the main course page.
 - /\_includes - contains a google analytics file (analytics.html) that you'll want to delete or edit if you decide to clone this repo and launch your own course site
 - /\_data - contains settings.yml file that determines the header, menu, colors, fonts and other settings for the main page.
-- index.html - this is where you can set the text and image for the landing page
+- index.html - this is where you can set the text and image for the main page
