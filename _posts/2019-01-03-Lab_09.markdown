@@ -10,6 +10,6 @@ featured_image: '/images/modules.png'
 
 Lecture 9 – Module identification
 
-## Background
+## Description
 
 Coming soon!

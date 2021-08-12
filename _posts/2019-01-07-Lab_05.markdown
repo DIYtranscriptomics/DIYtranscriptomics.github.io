@@ -8,8 +8,8 @@ featured_image: '/images/gg.png'
 
 ## Corresponding lecture
 
-Lecture 5 – Wrangling gene expression data
+[Lecture 5 – Wrangling gene expression data](https://diytranscriptomics.com/project/lecture-05)
 
-## Background
+## Description
 
 Coming soon!

@@ -12,6 +12,6 @@ featured_image: '/images/dataDeluge.jpeg'
 
 Lecture 7 - Accessing public data
 
-## Background
+## Description
 
 Coming soon!

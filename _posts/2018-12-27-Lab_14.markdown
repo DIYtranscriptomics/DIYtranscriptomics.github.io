@@ -10,6 +10,6 @@ featured_image: '/images/chalkboard.jpeg'
 
 Lectures 13 and 14
 
-## Background
+## Description
 
 Coming soon!

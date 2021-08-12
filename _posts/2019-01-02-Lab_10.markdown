@@ -10,6 +10,6 @@ featured_image: '/images/chalkboard.jpeg'
 
 We're available to help with anything we've covered up to this point.  Considering we are nearing the end of the course, this is a great time to get feedback on your own data analysis projects.
 
-## Background
+## Description
 
 Coming soon!

@@ -10,6 +10,6 @@ featured_image: '/images/github_logo.png'
 
 Lecture 12 – Making your analysis portable and reproducible
 
-## Background
+## Description
 
 Coming soon!

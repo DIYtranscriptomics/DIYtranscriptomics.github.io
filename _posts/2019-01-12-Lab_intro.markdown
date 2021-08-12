@@ -12,9 +12,13 @@ Labs are held in-person, every Wednesday afternoon from 3:30-5:30pm EST in Levin
 
 There are two kinds of labs: 
 
-* Optional labs - in-person help sessions where you can get assistance from the instructor and Teaching Assistants.  Maybe you have you that are best for individuals who want help with sometThe goal of each lab to give you hands-on practical experience working on skills discussed in the lectures.  Many labs use real datasets from infectious diseases.
+* Optional labs - The course includes 3-4 in-person help sessions where you can get hands-on assistance from the instructor and Teaching Assistants.  Maybe you're struggling with a topic we covered in class, and just need to talk through the issue; or maybe you'd like to get asssistance analyzing you own dataset.  As the name suggests, attendence for these labs is optional and if you do decide to attend, you're free to leave once you've gotten help.  
 
-All plans are subject to change depending on University policies regarding in-person teaching during the COVID19 pandemic.
+* Required labs - The majority of labs are sdesigned around specific datasets or skills.  You are required to attend all of these labs, and to stay for the full 2 hours.  
+
+You can find out whether a lab is optional or required by looking at the card on the website
+
+*All plans are subject to change depending on University policies regarding in-person teaching during the COVID19 pandemic.*
 
 If you are a virtual learner, you won't be able to participate in labs remotely, but you will still be able to access lab materials and can self-navigate through each lab.
 
