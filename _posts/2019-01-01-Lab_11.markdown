@@ -18,9 +18,9 @@ Your challenge is to look at the study design file and decide on a question **YO
 
 ## Logistics
 
-**You should start working on this dataset ASAP.**  You have 1 week until we meet for the scheduled hackdash on the last day of the course.  Use that time to work through the dataset either alone, or together with your classmates (don't forget that you can use the call/videoconference function directly within the course Slack page).  
+**You should start working on this dataset by Nov 4th.**.  Use the week in advance of this lab to work through the dataset either alone, or together with your classmates (don't forget that you can use the call/videoconference function directly within the course Slack page).  
 
-Our hackdash will follow the same format as usual, with random assignment to breakout rooms of 3-4 people.  Once in your room, you will need to discuss the various approaches/questions that each person pursued, then bring your different perspectives together to produce a final figure or set of figures that illustrates what you found.  
+The Nov 10th lab will follow the same format as usual.  You will work with your usual lab group to discuss the various approaches/questions that each person pursued, then bring your different perspectives together to produce a final figure or set of figures that illustrates what you found.  
 
 Your group's final figure(s) must be turned in at the conclusion of the hackdash, along with a description of your key findings.
 

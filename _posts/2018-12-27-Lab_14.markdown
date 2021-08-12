@@ -2,7 +2,7 @@
 title: 'scRNA-seq lab - Part II'
 subtitle: 'Lab 14 (required) • December 8, 2021'
 date: 2018-12-27 00:00:00
-description: Now that you've identified clusters in an integrated dataset, we'll find cluster-specific genes and carry out functional enrichment analysis to understand what these genes might tell us about cell function.
+description: Now that you've identified clusters in the scRNA-seq dataset, we'll integrate this data with another sample and carry out more detail analysis of clusters.
 featured_image: '/images/chalkboard.jpeg'
 ---
 

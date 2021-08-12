@@ -2,7 +2,7 @@
 title: 'scRNA-seq lab - Part I'
 subtitle: 'Lab 13 (required) • December 1, 2021'
 date: 2018-12-28 00:00:00
-description: You'll work with a scRNA-seq data set from a recent infectious disease study.  In this lab you'll start with a matrix of genes (rows) by cells (columns) and carry out dimensional reduction and cluster identification.  We'll conclude this lab by integrating multiple samples and discussing the concept of assays in Seurat. 
+description: You'll work with a scRNA-seq data set from a recent infectious disease study.  In this lab you'll carry out processing of raw scRNA-seq data, including dimensional reduction, cluster identification and annotation.  
 featured_image: '/images/toxoBrain.png'
 ---
 
@@ -13,5 +13,9 @@ featured_image: '/images/toxoBrain.png'
 [Lecture 14 - Analysis of scRNA-seq data using R](https://diytranscriptomics.com/project/lecture-14)
 
 ## Description
+
+In this lab, you'll work with an unpublished scRNA-seq dataset, courtesy of [Chris Hunter's lab](https://www.vet.upenn.edu/research/centers-laboratories/research-laboratory/hunter-laboratory).  This scRNA-seq dataset was generated from the brain of a mouse that harbored a chronic infection with the protozoan parasite, *Toxoplasma gondii*.  Chronic infection with this parasite results in latent cysts in the brain.  Immune cells infiltrate the brain in response to this infection, where they produce antimicrobial factors that are critical in limiting parasite growth and catastrophic pathology. 
+
+### Questions
 
 Coming soon!
