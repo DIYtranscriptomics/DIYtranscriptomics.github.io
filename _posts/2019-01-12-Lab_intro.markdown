@@ -28,5 +28,10 @@ featured_image: '/images/class.jpg'
 
 ![This lab is required](http://DIYtranscriptomics.github.io/images/labCard.png)
 
+![This lab is required](/images/labCard.png)
+
+![This lab is required](../images/labCard.png)
+
+
 
 
