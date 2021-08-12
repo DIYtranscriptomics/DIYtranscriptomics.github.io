@@ -1,6 +1,6 @@
 ---
 title: 'The worm lab'
-subtitle: 'Lab 6 (skill development) • October 6, 2021'
+subtitle: 'Lab 6 (required) • October 6, 2021'
 date: 2019-01-06 00:00:00
 description: Explore a large and multivariate dataset generated from the helmith parasite, Schistosoma mansoni, an important pathogen of humans.  You'll use dimensional reduction to understand how factors like sex, developmental stage, genetic strain and drug treatment contribute to differences in gene expression.
 featured_image: '/images/schisto.png'
@@ -8,13 +8,15 @@ featured_image: '/images/schisto.png'
 
 ## Corresponding lecture
 
-Lecture 6 – Data exploration
+[Lecture 6 – Data exploration](https://diytranscriptomics.com/project/lecture-06)
 
 <div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
 
-## Background
+## Description
 
 A colleague has asked for your help to mine data produced from a very large RNAseq study of the parasitc worm, *Schistosoma mansoni*.  In this experiment, male (M), female (F), juvenile (J) and mixed sex (X) worms were recovered from infected mice at various timepoints (control, 3hr, 12hr, and 24hr) following *in vivo* treatment with a low dose of the frontline anti-parasitic drug, praziquantel.  Experiments were carried out with three different strains of worms: NMRI, LE, and LEPZQ.  In total, 144 samples were sequenced!  To begin this challenge, you'll need to download the Kallisto read mapping results and study design file **[here](https://www.dropbox.com/s/k0959o6luvda69p/schistosoma.zip?dl=0)** and read these data into a new R project.
+
+<img src="wormDesign.png" alt="Experimental design">
 
 To succeed at the worm challenge, you will need to use the tools you've learned in class for filtering, normalizing, multivariate analysis with PCA, and data wrangling with dplyr.
 

@@ -1,6 +1,6 @@
 ---
 title: 'scRNA-seq lab - Part I'
-subtitle: 'Lab 13 (skill development) • December 1, 2021'
+subtitle: 'Lab 13 (required) • December 1, 2021'
 date: 2018-12-28 00:00:00
 description: You'll work with a scRNA-seq data set from a recent infectious disease study.  In this lab you'll start with a matrix of genes (rows) by cells (columns) and carry out dimensional reduction and cluster identification.  We'll conclude this lab by integrating multiple samples and discussing the concept of assays in Seurat. 
 featured_image: '/images/chalkboard.jpeg'

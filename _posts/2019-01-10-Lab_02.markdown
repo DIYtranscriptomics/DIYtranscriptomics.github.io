@@ -1,6 +1,6 @@
 ---
-title: 'Creating and using shell scripts'
-subtitle: 'Lab 2 (skill development) • September 8, 2021'
+title: 'Creating and using shell scripts and loops'
+subtitle: 'Lab 2 (required) • September 8, 2021'
 date: 2019-01-10 00:00:00
 description: Using command-line tools often requires that you run similar code for each of your samples (e.g. read mapping).  In this lab, you'll learn how to automate this redundant process using a simple code-aware text editor, making it possible for you to get work done even when you're not sitting in front of your computer.  How great is that?!
 featured_image: '/images/shellscript.png'
@@ -8,8 +8,8 @@ featured_image: '/images/shellscript.png'
 
 ## Corresponding lecture
 
-Lecture 2 - Ultra-fast read mapping with Kallisto
+[Lecture 2 - Ultra-fast read mapping with Kallisto](https://diytranscriptomics.com/project/lecture-02)
 
-## Background
+## Description
 
-Coming soon!
+In our lecture, we covered the basics for running Kallisto with a single sample.  However, you will rarely, if ever, be dealing with a single sample.  In this lab, we'll work through how to automate alignments and other command-line work using shell scripts and 'for loops'.  To keep the lab moving along, we'll work with very small fastq files.

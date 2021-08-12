@@ -1,6 +1,6 @@
 ---
 title: 'Software installation and IT support'
-subtitle: 'Lab 1 (drop-in help) • September 1, 2021'
+subtitle: 'Lab 1 (optional) • September 1, 2021'
 date: 2019-01-11 00:00:00
 description: Installing software can be a real headache, so let us help you! This lab will be focused on helping you with IT support and getting to know the software tools that we'll be using throughout the course.
 featured_image: '/images/IT-help.jpeg'
@@ -8,8 +8,8 @@ featured_image: '/images/IT-help.jpeg'
 
 ## Corresponding lecture
 
-Lecture 1 - Setting up your software environment
+[Lecture 1 - Setting up your software environment](https://diytranscriptomics.com/project/lecture-01)
 
-## Background
+## Description
 
-Coming soon!
+At this point in the course, it is critical that you have your laptop properly set-up, and have successfully installed R, RStudio, Kallisto and other software discussed in the lectures.  In this lab, our TAs will be on hand to help you with any installation issues, and they are experienced with troubleshooting issues on various versions of Mac and Windows operating systems.  

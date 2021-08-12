@@ -1,6 +1,6 @@
 ---
 title: 'TA help session'
-subtitle: 'Lab 3 (drop-in help) • September 15, 2021'
+subtitle: 'Lab 3 (optional) • September 15, 2021'
 date: 2019-01-10 00:00:00
 description: Struggling with something we covered recently in class, or do you want to discuss some of your own RNA-seq data?  Then drop in for hand-on help from one of our amazing Teaching Assistants!
 featured_image: '/images/chalkboard.jpeg'
@@ -10,6 +10,6 @@ featured_image: '/images/chalkboard.jpeg'
 
 We're available to help with anything we've covered up to this point.
 
-## Background
+## Description
 
-Coming soon!
+The pace of the course is about to start picking up, so if there is a concept we have covered that is not clear or if you are feeling lost, please stop by for help!  

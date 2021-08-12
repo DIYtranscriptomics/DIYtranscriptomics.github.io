@@ -17,6 +17,7 @@ Because the entire course, even down to the website, is contained within this gi
 - /Code - contains all R scripts used throughout the course. 
 - /Data - contains course datasets.
 - /Reading - This is where you put PDFs and other files that are linked in the lecture and lab markdown files described above.
+- /images - contains all the graphics used on the lecture and lab pages.  
 - /\_posts - contains all markdown documents corresponding to lecture pages, which get rendered on the [course main page](https://diytranscriptomics.com/)
 - /\_projects - contains markdown documents corresponding to in-person lab exercises rendered on the [course lab page](https://diytranscriptomics.com/lab/)
 - /\_pages - contains markdown docs corresponding to the [about](https://diytranscriptomics.com/about), [data](https://diytranscriptomics.com/data), [scripts](https://diytranscriptomics.com/scripts), [help](https://diytranscriptomics.com/help) and [video](https://diytranscriptomics.com/video) pages linked at the top of the main course page.

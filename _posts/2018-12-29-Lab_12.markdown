@@ -1,6 +1,6 @@
 ---
 title: 'The reproducibility lab'
-subtitle: 'Lab 12 (skill development) • November 17, 2021'
+subtitle: 'Lab 12 (required) • November 17, 2021'
 date: 2018-12-29 00:00:00
 description: In this lab you'll set-up your own project on github, learn to interact with this project from the command line, and then archive the project for publication using Zenodo.
 featured_image: '/images/github_logo.png'

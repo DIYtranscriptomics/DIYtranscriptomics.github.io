@@ -6,7 +6,20 @@ description: Learn more about our in-person labs, how you can participate in-per
 featured_image: '/images/class.jpg'
 ---
 
-## Background
+## What you need to know.
 
-Coming soon!
+Labs are held in-person, every Wednesday afternoon from 3:30-5:30pm EST in Levin 111 ('SAIL' classroom) at the University of Pennsylvania.  
+
+There are two kinds of labs: 
+
+* Optional labs - in-person help sessions where you can get assistance from the instructor and Teaching Assistants.  Maybe you have you that are best for individuals who want help with sometThe goal of each lab to give you hands-on practical experience working on skills discussed in the lectures.  Many labs use real datasets from infectious diseases.
+
+All plans are subject to change depending on University policies regarding in-person teaching during the COVID19 pandemic.
+
+If you are a virtual learner, you won't be able to participate in labs remotely, but you will still be able to access lab materials and can self-navigate through each lab.
+
+## What you need to do.
+
+Nothing really, just show up :)
+
 
