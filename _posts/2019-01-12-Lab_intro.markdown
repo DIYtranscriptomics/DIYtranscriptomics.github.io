@@ -8,24 +8,28 @@ featured_image: '/images/class.jpg'
 
 ## What you need to know.
 
-Labs are held in-person, every Wednesday afternoon from 3:30-5:30pm EST in Levin 111 ('SAIL' classroom) at the University of Pennsylvania.  
+**When** - every Wednesday afternoon from 3:30-5:30pm EST 
+
+**Where** - [Levin 111](https://www.facilities.upenn.edu/maps?glid=720) in the 'SAIL' classroom on the first floor at the University of Pennsylvania.  
 
 There are two kinds of labs: 
 
-* Optional labs - The course includes 3-4 in-person help sessions where you can get hands-on assistance from the instructor and Teaching Assistants.  Maybe you're struggling with a topic we covered in class, and just need to talk through the issue; or maybe you'd like to get asssistance analyzing you own dataset.  As the name suggests, attendence for these labs is optional and if you do decide to attend, you're free to leave once you've gotten help.  
+*Optional* labs - The course includes 3-4 in-person help sessions where you can get hands-on assistance from the instructor and Teaching Assistants.  Maybe you're struggling with a topic we covered in class, and just need to talk through the issue; or maybe you'd like to get asssistance analyzing you own dataset.  As the name suggests, attendence for these labs is optional and if you do decide to attend, you're free to leave once you've gotten help.  
 
-* Required labs - The majority of labs are sdesigned around specific datasets or skills.  You are required to attend all of these labs, and to stay for the full 2 hours.  
+*Required* labs - The majority of labs are sdesigned around specific datasets or skills.  You are required to attend all of these labs, and to stay for the full 2 hours.  
 
-Not sure whether a lab is optional or required?  Just take a look at the lab card (example below)!
+# Frequently asked questions
 
-<img src="/images/labCard.png" alt="This lab is required">
+* **How do I know if a lab is optional or required?**  Easy, just look at the lab card on the website (example below)
 
-*All plans are subject to change depending on University policies regarding in-person teaching during the COVID19 pandemic.*
+<img src="http://DIYtranscriptomics.github.io/images/labCard.png" alt="This lab is required">
 
-If you are a virtual learner, you won't be able to participate in labs remotely, but you will still be able to access lab materials and can self-navigate through each lab.
+* **Do I need to prepare for labs ahead of time?**  Usually no, just show up.  However, there are a few labs toward the end of the course that deal with COVID data or single cell data and which will require that you prepare in advance.  Stay tuned for more guidance on this.
 
-## What you need to do.
+* **What if I am not officially registered for the course, but am following along online?**  Unfortunately, you don't currently offer a way for you to remotely participate in the in-person labs, but you will still be able to access lab materials on the site and can self-navigate through the content.
 
-Nothing really, just show up :)
+
+
+
 
 
