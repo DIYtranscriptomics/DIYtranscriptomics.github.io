@@ -8,7 +8,8 @@ featured_image: '/images/chalkboard.jpeg'
 
 ## Corresponding lecture
 
-Lectures 13 and 14
+Lecture 13 – [Single cell RNA-seq principles and processing](https://diytranscriptomics.com/project/lecture-13)
+[Lecture 14 - Analysis of scRNA-seq data using R](https://diytranscriptomics.com/project/lecture-14)
 
 ## Description
 

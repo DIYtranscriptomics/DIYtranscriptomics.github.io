@@ -16,7 +16,9 @@ There are two kinds of labs:
 
 * Required labs - The majority of labs are sdesigned around specific datasets or skills.  You are required to attend all of these labs, and to stay for the full 2 hours.  
 
-You can find out whether a lab is optional or required by looking at the card on the website
+Not sure whether a lab is optional or required?  Just take a look at the lab card (example below)!
+
+<img src="/images/labCard.png" alt="This lab is required">
 
 *All plans are subject to change depending on University policies regarding in-person teaching during the COVID19 pandemic.*
 

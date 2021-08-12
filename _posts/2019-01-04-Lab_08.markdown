@@ -8,7 +8,7 @@ featured_image: '/images/plasmoRBC.png'
 
 ## Corresponding lecture
 
-Lecture 8 – Differential gene expression
+[Lecture 8 – Differential gene expression](https://diytranscriptomics.com/project/lecture-08)
 
 <div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 

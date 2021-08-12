@@ -8,7 +8,7 @@ featured_image: '/images/github_logo.png'
 
 ## Corresponding lecture
 
-Lecture 12 – Making your analysis portable and reproducible
+[Lecture 12 – Making your analysis portable and reproducible](https://diytranscriptomics.com/project/lecture-12)
 
 ## Description
 

@@ -10,7 +10,7 @@ featured_image: '/images/dataDeluge.jpeg'
 
 ## Corresponding lecture
 
-Lecture 7 - Accessing public data
+[Lecture 7 - Accessing public data](https://diytranscriptomics.com/project/lecture-07)
 
 ## Description
 

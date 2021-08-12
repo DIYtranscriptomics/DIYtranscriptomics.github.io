@@ -8,7 +8,7 @@ featured_image: '/images/modules.png'
 
 ## Corresponding lecture
 
-Lecture 9 – Module identification
+[Lecture 9 – Module identification](https://diytranscriptomics.com/project/lecture-09)
 
 ## Description
 

@@ -8,8 +8,8 @@ featured_image: '/images/chalkboard.jpeg'
 
 ##  Corresponding lecture
 
-We're available to help with anything we've covered up to this point.  Considering we are nearing the end of the course, this is a great time to get feedback on your own data analysis projects.
+We're available to help with anything we've covered up to this point.  
 
 ## Description
 
-Coming soon!
+Considering we are nearing the end of the course, this is a great time to get feedback on your own data analysis projects, or to get help on any recent topics we've covered in the lectures.
