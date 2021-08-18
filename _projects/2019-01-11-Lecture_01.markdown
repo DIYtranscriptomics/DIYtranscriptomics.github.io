@@ -28,7 +28,7 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 [Sublime text editor](http://www.sublimetext.com/) - a simple but powerful text editor that is 'code aware'
 
-[Visual Studio Code](https://code.visualstudio.com/) - an alternative to Sublime and an excellent choice for working with scripts outside of RStudio.
+[Visual Studio Code](https://code.visualstudio.com/) - an excellent choice for working with virtually any kind of code outside of RStudio.  We'll use this later in the semester for connecting to and working with GitHub repositories.
 
 [XCode developer tools](https://developer.apple.com/xcode/) - *Only download if running Mac OS on your laptop.*
 

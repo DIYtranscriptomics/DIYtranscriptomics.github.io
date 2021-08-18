@@ -7,11 +7,11 @@ featured_image: /images/pennvet.jpg
 
 ## Mission 
 
-As access to high-throughput sequencing technology increases, the bottleneck in biomedical research has shifted from generating data, to analyzing and integrating diverse data types.  Addressing these needs requires that students and postdocs equip themselves with a toolkit for data mining and interrogation. This course focuses specifically on studying global gene expression (transcriptomics) through the use of the R programming environment and the Bioconductor suite of software packages – a versatile and robust collection of tools for bioinformatics, statistics, and plotting.  During this semester-long course, students participate in a mix of lectures and guided code review, all while working with real datasets directly on their laptop.  Students will learn to analyze RNAseq data using a lightweight and reusable set of modular scripts that leverage open-source software.  In addition, students will learn best practices in data science for working in R/Bioconductor, including creating interactive data visualizations, making their analyses transparent and reproducible, and identifying experimental bias in large datasets. 
+As access to high-throughput sequencing technology increases, the bottleneck in biomedical research has shifted from generating data, to analyzing and integrating diverse data types.  Addressing these needs requires that students and postdocs equip themselves with a toolkit for data mining and interrogation. This course focuses specifically on studying global gene expression (transcriptomics) through the use of the R programming environment and the Bioconductor suite of software packages – a versatile and robust collection of tools for bioinformatics, statistics, and plotting.  During this semester-long course, students participate in a mix of virtual lectures and guided code review, all while working with real infectious disease datasets directly on their laptop.  Students will learn to analyze RNAseq data using a lightweight and reusable set of modular scripts that leverage open-source software.  In addition, students will learn best practices in data science for working in R/Bioconductor, including creating interactive data visualizations, making their analyses transparent and reproducible, and identifying experimental bias in large datasets. 
 
 ## Instructors
 
-The course is taught by Dan Beiting, Assistant Professor of Pathobiology at PennVet.  Camila Amorim and Alex Berry, both post-docs, serve as teaching assistants.
+Dan Beiting designed and teaches the course. He is an Assistant Professor of Pathobiology at PennVet.   Camila Amorim (postdoc), Seble Nagatu and Sheridan Littleton (PhD studnets) are teaching assistants for the course in 2021.
 
 ## Support and Sponsors
 
@@ -23,7 +23,7 @@ This class is being run as an online virtual course that will 'meet' twice per w
 
 ## Course goals
 
-* Learn to analyze your own RNAseq data 
+* Learn to analyze your bulk RNAseq and single cell RNA-seq (scRNA-seq) data 
 * Develop a lightweight and reusable RNAseq pipeline.
 * Learn best practices for working in R/bioconductor (extensible to other datatypes)
 * Learn the basics of ‘data science’
@@ -31,7 +31,7 @@ This class is being run as an online virtual course that will 'meet' twice per w
 
 ## Who can take the course? 
 
-This is a gradate level course offered through the Cell And Molecular Biology (CAMB) graduate group at the University of Pennsylvania.  Space permitting, the course is open to students outside of CAMB. If you are not a graduate student at UPenn you can still access the course slides, code, videos and reading material on the site.  This course is ideal for biomedical graduate students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNAseq data to the course.
+This is a gradate level course offered through the Cell And Molecular Biology (CAMB) graduate group at the University of Pennsylvania.  Space permitting, the course is open to students outside of CAMB. If you are not a graduate student at UPenn you can still access the lectures, course slides, code, videos and reading material on the site.  This course is ideal for biomedical graduate students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNAseq data to the course.
 
 ## Can I just follow along online?
 

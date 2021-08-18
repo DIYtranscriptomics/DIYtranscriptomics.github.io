@@ -1,15 +1,24 @@
 ---
-title: 'Exploring the grammar of graphics and other plotting tools'
+title: 'Dumpster diving in RNA-seq data'
 subtitle: 'Lab 5 (required) • September 29, 2021'
 date: 2019-01-07 00:00:00
-description: Think you know how to wrangle and plot data?  We'll put your skills to the test using a large dataset.  To illustrate the general utility of the methods you've used up to this point, we'll step away from gene expression for this lab and explore a different (and exciting!) type of data.
-featured_image: '/images/gg.png'
+description: What about those reads that didn't map to the human reference? In this lab you'll learn to make the most from your RNA-seq data by digging through these 'junk' unmapped reads.
+featured_image: '/images/chalkboard.jpeg'
 ---
 
 ## Corresponding lecture
 
-[Lecture 5 – Wrangling gene expression data](https://diytranscriptomics.com/project/lecture-05)
+Lectures 1-4
 
 ## Description
 
-Coming soon!
+We never get 100% of reads mapping to our reference genome or transcriptome, and it can be tempting to ignore these unmapped reads and move on with your analysis.  However, these reads came from *somewhere* and learning about the identity of these junk reads can often be very informative, particularly when dealing with samples from infectious disease studies.  In this lab, we map our reads to other references to learn more about what was present in these patient samples. 
+
+## What you need to do
+
+Nothing...at least not yet!  **The content for this lab will be posted on Sept 29th**.  If you're following along virtually, this content will remain up after Sept 29th for anyone to access.
+
+
+
+
+

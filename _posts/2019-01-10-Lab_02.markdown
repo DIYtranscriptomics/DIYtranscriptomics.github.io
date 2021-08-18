@@ -13,3 +13,8 @@ featured_image: '/images/shellscript.png'
 ## Description
 
 In our lecture, we covered the basics for running Kallisto with a single sample.  However, you will rarely, if ever, be dealing with a single sample.  In this lab, we'll work through how to automate alignments and other command-line work using shell scripts and 'for loops'.  To keep the lab moving along, we'll work with very small fastq files.
+
+## What you need to do
+
+Nothing...at least not yet!  **The content for this lab will be posted on Sept 8th**.  If you're following along virtually, this content will remain up after Sept 8th for anyone to access.
+

@@ -1,17 +1,22 @@
 ---
-title: 'Channeling your inner data parasite'
+title: 'Wrangling and plotting large datasets'
 subtitle: 'Lab 7 (required) • October 13, 2021'
 date: 2019-01-05 00:00:00
-description: Practice searching, finding and accessing data from public respositories.  This is a great opportunity to go hunting for some cool data that YOU care about and that may help you address one of your research questions. Who knows, maybe you'll find a dataset that is so helpful it saves you from some time consuming and costly experiments.
-featured_image: '/images/dataDeluge.jpeg'
+description: Think you know how to wrangle and plot data?  We'll put your skills to the test using a dataframe with millions of rows.  To illustrate the general utility of the methods you've learned thus far in the course, we'll step away from gene expression for this lab and instead explore data from a completely different type of study.
+featured_image: '/images/gg.png'
 ---
-
-<div style="text-align: right"> Image credit: Brett Ryder.  The Economist. Feb 27 2010 edition</div>
 
 ## Corresponding lecture
 
-[Lecture 7 - Accessing public data](https://diytranscriptomics.com/project/lecture-07)
+[Lecture 5 – Wrangling gene expression data](https://diytranscriptomics.com/project/lecture-05)
 
 ## Description
 
-Coming soon!
+In this lab, you'll tackle data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations of 28 variables, showing the flow of live wildlife and wildlife products into and out of the USA from 2000-2014.  Given that most infectious diseases have a zoonotic (animal to human) component, this dataset offers critical insight into the potential for the global spread of both human and animal diseases.
+
+An analysis of a portion of this large dataset was published by EcoHealth Alliance [here](https://doi.org/10.1007/s10393-017-1211-7).
+
+## What you need to do
+
+Nothing...at least not yet!  **The content for this lab will be posted on Oct 13th**.  If you're following along virtually, this content will remain up after Oct 13th for anyone to access.
+

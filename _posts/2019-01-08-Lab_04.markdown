@@ -12,5 +12,10 @@ featured_image: '/images/biomart.png'
 
 ## Description
 
-[The course dataset](https://diytranscriptomics.com/data) is from human samples.  Annotating human and mouse data is relatively easy, since these organisms are the most well studied, have high quality genomes, and have undergone years of manual curation efforts.  In this lab, we'll talk about how to access annotation data from non-human, non-mouse studies.  
+[The course dataset](https://diytranscriptomics.com/data) is from human samples.  Annotating human and mouse data is relatively easy, since these organisms are the most well studied, have high quality genomes, and have undergone years of manual curation efforts.  In this lab, you'll work on accessing annotation data from non-human, non-mouse studies.  
+
+## What you need to do
+
+Nothing...at least not yet!  **The content for this lab will be posted on Sept 22nd**.  If you're following along virtually, this content will remain up after Sept 22nd for anyone to access.
+
 
