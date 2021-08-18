@@ -3,7 +3,7 @@ title: 'Dumpster diving in RNA-seq data'
 subtitle: 'Lab 5 (required) • September 29, 2021'
 date: 2019-01-07 00:00:00
 description: What about those reads that didn't map to the human reference? In this lab you'll learn to make the most from your RNA-seq data by digging through these 'junk' unmapped reads.
-featured_image: '/images/chalkboard.jpeg'
+featured_image: '/images/needle_haystack.png'
 ---
 
 ## Corresponding lecture
