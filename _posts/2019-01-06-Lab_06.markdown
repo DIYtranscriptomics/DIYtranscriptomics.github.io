@@ -6,11 +6,15 @@ description: Explore a large and multivariate dataset generated from the helmith
 featured_image: '/images/schisto.png'
 ---
 
+<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
+
 ## Corresponding lecture
 
 [Lecture 6 – Data exploration](https://diytranscriptomics.com/project/lecture-06)
 
-<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
+## Homework
+
+[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of in-person lab, Wednesday, Oct 20th.
 
 ## Description
 

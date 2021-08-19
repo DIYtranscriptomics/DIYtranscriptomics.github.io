@@ -10,6 +10,10 @@ featured_image: '/images/shellscript.png'
 
 [Lecture 2 - Ultra-fast read mapping with Kallisto](https://diytranscriptomics.com/project/lecture-02)
 
+## Homework
+
+[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) is **due today**!
+
 ## Description
 
 In our lecture, we covered the basics for running Kallisto with a single sample.  However, you will rarely, if ever, be dealing with a single sample.  In this lab, we'll work through how to automate alignments and other command-line work using shell scripts and 'for loops'.  To keep the lab moving along, we'll work with very small fastq files.

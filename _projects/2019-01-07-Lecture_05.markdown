@@ -10,9 +10,6 @@ featured_image: '/images/tidyDNA.jpg'
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/08doB1cvNS8JR9PjSyXV7rPbw#Lecture6%5Fwrangling)
 
-[Homework: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) is **due today**!
-
-
 ## Overview
 
 We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' and expand your understanding of tools within the [tidyverse](https://www.tidyverse.org/). 

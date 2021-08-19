@@ -10,9 +10,6 @@ featured_image: '/images/bear.jpg'
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/0UePBv3d_VkYkZSiZ2lqnYclQ#Lecture3%5FreadMapping)
 
-[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) is **due today**!
-
-
 ## Overview
 
 In this class, we'll finally get down to the business of using [Kallisto](https://pachterlab.github.io/kallisto/about) for memory-efficient mapping of raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.  You'll be introduced to using command line software and will learn about automation and reproducibility through shell scripts.

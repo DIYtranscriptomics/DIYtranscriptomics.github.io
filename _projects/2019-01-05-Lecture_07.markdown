@@ -10,9 +10,6 @@ featured_image: '/images/DataDeluge.jpg'
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/0JxZ0dtOnG4G2ptcHJUg0K00Q#Lecture8%5FpublicData)
 
-[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of class on Wednesday, May 13th.
-
-
 ## Overview
 
 In this class we’ll discuss how you can use R/Bioconductor to tap into vast amounts of RNAseq data available through the Sequence Read Archive (SRA) and Gene Expression Omnibus (GEO). 

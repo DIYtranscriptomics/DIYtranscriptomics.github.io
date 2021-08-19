@@ -10,6 +10,10 @@ featured_image: '/images/IT-help.jpeg'
 
 [Lecture 1 - Setting up your software environment](https://diytranscriptomics.com/project/lecture-01)
 
+## Homework
+
+[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due by start of in-person lab next week, Wednesday, Sept 8th.
+
 ## Description
 
 At this point in the course, it is critical that you have your laptop properly set-up, and have successfully installed R, RStudio, Kallisto and other software discussed in the lectures.  In this lab, our TAs will be on hand to help you with any installation issues, and they are experienced with troubleshooting issues on various versions of Mac and Windows operating systems.  

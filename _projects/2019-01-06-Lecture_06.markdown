@@ -10,8 +10,6 @@ featured_image: '/images/explorer.jpg'
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/0yQPc4lJXR9owaIo8fNO5IQxg#Lecture7%5FdataExploration)
 
-[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of class next Wednesday, May 13th.
-
 ## Overview
 
 In this class you'll learn about a variety of approaches exploring your data.  You'll use multivariate statistical approaches such as Principal Component Analysis (PCA) to understand sources of variance in our data, while continuing to build your plotting skills by using ggplot2 to graph the results of PCA analyses. You'll also learn how to use the dplyr package to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.  We’ll discuss common missteps and how to identify sources of bias in transcriptional data sets.

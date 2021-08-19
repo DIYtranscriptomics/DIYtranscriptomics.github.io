@@ -6,11 +6,15 @@ description: Ready to tackle one of world's deadliest pathogens?  Using data col
 featured_image: '/images/plasmoRBC.png'
 ---
 
+<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
+
 ## Corresponding lecture
 
 [Lecture 8 – Differential gene expression](https://diytranscriptomics.com/project/lecture-08)
 
-<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
+## Homework
+
+[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) is **due today**!
 
 ## Description
 

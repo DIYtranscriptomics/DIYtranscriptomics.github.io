@@ -10,6 +10,10 @@ featured_image: '/images/needle_haystack.png'
 
 Lectures 1-4
 
+## Homework
+
+[Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) is **due today**!
+
 ## Description
 
 We never get 100% of reads mapping to our reference genome or transcriptome, and it can be tempting to ignore these unmapped reads and move on with your analysis.  However, these reads came from *somewhere* and learning about the identity of these junk reads can often be very informative, particularly when dealing with samples from infectious disease studies.  In this lab, we map our reads to other references to learn more about what was present in these patient samples. 

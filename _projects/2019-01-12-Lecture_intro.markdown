@@ -10,8 +10,6 @@ featured_image: '/images/illumina_flowcell.jpg'
 
 [Intro to RNA-seq lecture slides on iCloud](https://www.icloud.com/keynote/0n2tSKAVc2chal9Wt8cj-uDiQ#Lecture01%5FRNAseqIntro)
 
-[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due 3pm next Wednesday, April 22nd.
-
 After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, ribo-depletion, scRNAseq, and fastq will practically roll off your tongue.
 
 Although there are no formal prerequisties for the course and no official course text book, there are a few important housekeeping things you'll need to take care of before the first class.  **Scroll down to the bottom of the page and watch the introductory video.**

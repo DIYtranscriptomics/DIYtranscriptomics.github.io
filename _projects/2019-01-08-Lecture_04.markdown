@@ -8,9 +8,6 @@ featured_image: '/images/first_step.jpg'
 
 No lecture slides for this class.  We'll spend the entire time working on Step 1 script.
 
-[Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due before the start of class on Friday, May 1st.
-
-
 ## Overview
 
 We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.  
