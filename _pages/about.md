@@ -11,7 +11,7 @@ As access to high-throughput sequencing technology increases, the bottleneck in 
 
 ## Instructors
 
-Dan Beiting designed and teaches the course. He is an Assistant Professor of Pathobiology at PennVet.   Camila Amorim (postdoc), Seble Nagatu and Sheridan Littleton (PhD studnets) are teaching assistants for the course in 2021.
+Dan Beiting designed and teaches the course. He is an Assistant Professor of Pathobiology at PennVet.   Camila Amorim (postdoc), Seble Negatu and Sheridan Littleton (PhD students) are teaching assistants for the course in 2021.
 
 ## Support and Sponsors
 
@@ -19,11 +19,11 @@ This course is made possible in part by generous support for TA stipends from th
 
 ## Format
 
-This class is being run as an online virtual course that will 'meet' twice per week. These virtual classes require active participation (usually in form of coding and data analysis), so be prepared to work along with the videos.  In addition to recorded lectures, the course consists of three live ‘hackdash’ data analysis challenges, which will be hosted via Zoom.
+This class is being run as a 'flipped' class. Lectures are entirely virtual and all lecture videos will be posted to this website.  In-class time will be devoted to working through [structured labs](https://diytranscriptomics.com/lab/) that focus on building better data science skills using datasets from infectious disease.
 
 ## Course goals
 
-* Learn to analyze your bulk RNAseq and single cell RNA-seq (scRNA-seq) data 
+* Learn to analyze bulk RNAseq and single cell RNA-seq (scRNA-seq) data 
 * Develop a lightweight and reusable RNAseq pipeline.
 * Learn best practices for working in R/bioconductor (extensible to other datatypes)
 * Learn the basics of ‘data science’
@@ -31,12 +31,12 @@ This class is being run as an online virtual course that will 'meet' twice per w
 
 ## Who can take the course? 
 
-This is a gradate level course offered through the Cell And Molecular Biology (CAMB) graduate group at the University of Pennsylvania.  Space permitting, the course is open to students outside of CAMB. If you are not a graduate student at UPenn you can still access the lectures, course slides, code, videos and reading material on the site.  This course is ideal for biomedical graduate students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNAseq data to the course.
+All lectures are freely available, and lab materials will be posted the website after each lab.  In-person attendence for labs is available for gradate students in the Biomedical Graduate Studies (BGS) group at the University of Pennsylvania.  Space permitting, the course is open to graduates students outside of BGS. If you are not a graduate student at UPenn you can still access the lectures, course slides, code, videos and reading material on the site.  This course is ideal for students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNAseq data to the course.
 
 ## Can I just follow along online?
 
-Yes (mostly).  All lectures, reading material and code are freely available and are organized on the website by lecture, so you can proceed at your own pace.  However, there are some elements of the course that are only available for people who have officially registered.  This include access to DataCamp for homework and extended learning, participation in our in-class [lab exercises](https://diytranscriptomics.com/lab/), access to our course Code Ocean group, access to our class Slack page for 1:1 help from the instructor and our TAs throughout the course (and with your own data), and last but not least, course credit.
+Yes!  All lectures, reading material and code are freely available and are organized on the website by lecture, so you can proceed at your own pace.  However, there are some elements of the course that are only available for people who have officially registered and participate in-person.  This includes access to DataCamp for homework and extended learning, participation in our in-person [labs](https://diytranscriptomics.com/lab/), access to our course Code Ocean group, access to our class Slack page for 1:1 help from the instructor and our TAs throughout the course (and with your own data), and last but not least, course credit.
 
 ## How will I be graded in this course?
 
-All students taking the course for credit will be assigned a pass/fail grade.  Pass/fail will be determined based on participation in labs and completion of homework assignments.
+All students who officially register for the course through UPenn will receive a letter grade.  At this time we unable to provide grades or proof-of-completion for virtual learners.
