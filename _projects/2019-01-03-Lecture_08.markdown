@@ -28,6 +28,8 @@ The ultimate goal of most transcriptional profiling experiments is to identify d
 
 ## Lecture video
 
+> “Warning - videos below are from 2020 lectures and will soon be updated for 2021.”
+
 ### Part 1 – Introduction to differential feature selection in R/Bioconductor
 
 <iframe src="https://player.vimeo.com/video/418948870" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>

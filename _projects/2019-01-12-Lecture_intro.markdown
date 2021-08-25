@@ -44,7 +44,7 @@ The course website is meant to be the go-to place for all content related to the
 
 ## Welcome video
 
-War
+> “Warning - videos below are from 2020 lectures and will soon be updated for 2021.”
 
 Please watch the video below for a introduction to the course, how you will interact with the course materials on this website.
 
