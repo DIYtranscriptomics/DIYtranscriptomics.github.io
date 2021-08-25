@@ -18,8 +18,8 @@ menu_settings:
       url: '/scripts'
     - title: 'Videos'
       url: '/videos'
-    - title: 'About'
-      url: '/about'
+    - title: 'FAQs'
+      url: '/FAQs'
     - title: 'Help'
       url: '/help'
 
