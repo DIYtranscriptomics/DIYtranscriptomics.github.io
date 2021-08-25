@@ -19,7 +19,7 @@ menu_settings:
     - title: 'Videos'
       url: '/videos'
     - title: 'FAQs'
-      url: '/FAQs'
+      url: '/faqs'
     - title: 'Help'
       url: '/help'
 
