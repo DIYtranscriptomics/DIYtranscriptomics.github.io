@@ -1,9 +1,9 @@
 ---
-title: 'Course overview and intro to RNAseq technology and data'
+title: 'Course overview'
 subtitle: 'precourse lectures'
 date: 2019-01-12 00:00:00
-description: After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment. 
-featured_image: '/images/illumina_flowcell.jpg'
+description: A brief (but important!) overview that describes how the course is structuerd and how you can get the most from the material on this website. 
+featured_image: '/images/welcome_mat_dna.jpeg'
 ---
 
 [Course overview slides](https://www.icloud.com/keynote/0dABsRGX-LxA3pHuwCUgejkhg#precourse%5Fintro)
