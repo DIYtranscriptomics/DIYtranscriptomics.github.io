@@ -13,6 +13,8 @@ As access to high-throughput sequencing technology increases, the bottleneck in 
 
 Dan Beiting designed and teaches the course. He is an Assistant Professor of Pathobiology at PennVet.   Camila Amorim (postdoc), Seble Negatu and Sheridan Littleton (PhD students) are teaching assistants for the course in 2021.
 
+<img src="http://DIYtranscriptomics.github.io/images/instructors.png" alt="Meet your instructors!">
+
 ## Support and Sponsors
 
 This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/).  In addition, we thank [RStudio](https://rstudio.com/) for allowing access to RStudio Server Pro for this course, and for their continued free access to RStudio desktop, which is a critical resource for academic research in R.  We also thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.  Finally, we thank the folks at [Code Ocean](https://codeocean.com/), who provide all students with convenient access to dockerized resources for transparency and reproducibility.

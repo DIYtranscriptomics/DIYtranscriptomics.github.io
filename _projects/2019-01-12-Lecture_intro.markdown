@@ -8,24 +8,35 @@ featured_image: '/images/illumina_flowcell.jpg'
 
 [Course overview slides](https://www.icloud.com/keynote/0dABsRGX-LxA3pHuwCUgejkhg#precourse%5Fintro)
 
-[Intro to RNA-seq lecture slides on iCloud](https://www.icloud.com/keynote/0n2tSKAVc2chal9Wt8cj-uDiQ#Lecture01%5FRNAseqIntro)
+This page describes the structure of the DIYtranscriptomcis course, and how *you* can interact with the content on this website depending on whether you are a 100% virtual learner, or whether you have offically registered for the course at the University of Pennsylvania.
 
-After a brief overview of the course, we'll spend the opening lecture talking about Illumina's 'Sequencing by Synthesis' technology, and walk through the steps involved in planning for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, ribo-depletion, scRNAseq, and fastq will practically roll off your tongue.
+## 100% virtual learner
 
-Although there are no formal prerequisties for the course and no official course text book, there are a few important housekeeping things you'll need to take care of before the first class.  **Scroll down to the bottom of the page and watch the introductory video.**
+### How to watch lectures
 
-## Please complete before the first class
+Anyone, anywhere in the world is welcome to self-navigate the course by working their way through [the lectures](https://diytranscriptomics.com/).  Clicking on a lecture will take you to a lecture page, complete with learning objectives, reading material, a link to lecture slides, and...most importantly...lecture videos.  Each lecture topic should take ~2hrs or less to complete.  Reading materials are not required, but rather are provided as useful starting points if you wish to learn more about the topics covered in each lecture.
 
-If you officially registered for the course with Dr. Beiting, then you have access to DataCamp for course homework and to our course Slack workspace for communicating with other students and your TAs.  If you did not register for the course, you will not have access to DataCamp or the Slack workspace, but will still be able to follow the video lectures for each module.
+**lectures are updated every year during the Fall semester (August-December).**  If you happen to be visiting the site during this time, don't be surprised if some of the content is changing.  Take note of the dates listed on each lecture card, since this will give you a good sense for when the material for a given lecture will be finalized.
 
-**[Get access to course DataCamp portal](https://www.datacamp.com/)**.  You will receive an email from us with a link to access the course portal on the datacamp site. If you already have a DataCamp account under your UPenn email, then this account will be granted access to the course portal.  DataCamp is a online learning environment that is used throughout the course for homework assignments.  This is a subscription service that is being provided to you free-of-charge (courtesy of DataCamp) only during the current course, so take full advantage to explore any other learning materials on the site. 
+### How to participate in labs
 
-[Download and sign-up for Slack](https://slack.com/), a messaging platform we will use heavily during the course.  *All course communication will happen through Slack, not email*.  Questions related to material covered in a lecture should be posted to the specific Slack channel associated with that lecture.  Questions will be reviewed by the TAs and used as guidance for TA help sessions.  The Slack page comes equipped with standard messaging capabilities, but also includes video and voice calling features, as well as screensharing, making it easy for you to connect with your classmates and instructors when you have problems or questions. 
+[Labs](https://diytranscriptomics.com/lab/) are focused on gaining hands-on experience working with transriptomic datasets in R/bioconductor and are offered in-person at the University of Pennsylvania.  Unfortunately we do not currently have a good way for learners to participate virtually.  However, as with the lectures, take note of the date listed on each lab card.  Although general descriptions are always visible for each lab, specific materials and questions are only displayed beginning on the date shown on each card.
 
-[Complete this skills survey](https://bit.ly/DIYtranscriptomics_start). 
+## In-person learners
 
+### How to watch lectures
 
-## Other useful info
+Lectures are only available virtually, so everything stated above for virtual learners also applies to you.
+
+### How to participate in labs
+
+Labs will take place every week from 3:30-5:30 PM EST.  See [here](https://diytranscriptomics.com/lab/lab-intro) for more details.
+
+### The 'perks' of in-person learning.
+
+If you officially registered for this course, not only will have access to the weekly in-person lab, but you will also be granted access to a private course Slack page where you can communicate with classmates, the instructor and TA's to get one-on-one help throughout the course, including help with analyzing your own data.  You will also be given unrestricted access to [DataCamp](https://www.datacamp.com/) for homework and extended learning.
+
+## Other useful info that applies to everyone
 
 The course website is meant to be the go-to place for all content related to the course, including lecture slides, recordings, reading material, code and more.  Below are some additional resources that I will refer to throughout class.
 
@@ -33,38 +44,8 @@ The course website is meant to be the go-to place for all content related to the
 
 ## Welcome video
 
-Please watch the video below for a introduction to the course, how you will interact with the course materials on this website, and how you can communicate with your classmates and instructors.
+Please watch the video below for a introduction to the course, how you will interact with the course materials on this website.
 
 <iframe src="https://player.vimeo.com/video/405054924" width="640" height="338" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
----
-
-## Learning objectives
-
-* Get familiar with jargon of RNAseq/HTS (paired-end, cluster density, fastq, index, etc)
-* Understand Illumina’s “Sequencing by Synthesis” (SBS) technology
-* Set priorities when planning a sequencing experiment
-* Understand the basics of library prep
-* Have a sense for how single cell sequencing (scRNAseq) and spatial transcriptomics fit into the evolving landscape of transcriptomics
-
----
-
-## Reading
-
-[File formats produced by sequencing](http://binf.snipcademy.com/lessons/sequence-file-formats).
-
-[RNA-seqlopedia](http://rnaseq.uoregon.edu/) - Created by the Univ. of Orgeon, this is a great resource for understanding the entire RNAseq workflow.
-
----
-
-## Lecture video
-
-### Part 1 - History of sequencing and details of Illumina's 'Sequencing by Synthesis' (SBS) technology
-
-<iframe src="https://player.vimeo.com/video/408044306" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
-### Part 2 - Design considerations for RNAseq experiments, and the state-of-the-art for transcriptomics
-
-<iframe src="https://player.vimeo.com/video/408069325" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
