@@ -44,6 +44,8 @@ The course website is meant to be the go-to place for all content related to the
 
 ## Welcome video
 
+War
+
 Please watch the video below for a introduction to the course, how you will interact with the course materials on this website.
 
 <iframe src="https://player.vimeo.com/video/405054924" width="640" height="338" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>

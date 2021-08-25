@@ -1,7 +1,7 @@
 ---
 title: Frequently Asked Questions
-subtitle: A brief description of the course structure and philosophy.
-description: A brief description of the course structure and philosophy.
+subtitle: Everything you ever wanted to know about the course...and more!
+description: Everything you ever wanted to know about the course...and more!
 featured_image: /images/pennvet.jpg
 ---
 
