@@ -12,7 +12,7 @@ featured_image: '/images/class.jpg'
 
 **Where** - [Levin Bldg, room 111](https://www.facilities.upenn.edu/maps?glid=720) in the 'SAIL' classroom on the first floor at the University of Pennsylvania.  
 
-**Optional labs** - The course includes 4 in-person help sessions where you can get hands-on assistance from the instructor and Teaching Assistants.  Maybe you're struggling with a topic we covered in class and just need to talk through the issue; or maybe you'd like to get asssistance analyzing you own dataset.  As the name suggests, attendence for these labs is optional and if you do decide to attend, you're not obligated to stay for the full two hours (though you are certainly welcome to do so!).  
+**Optional labs** - The course includes *three* in-person help sessions where you can get hands-on assistance from the instructor and Teaching Assistants.  Maybe you're struggling with a topic we covered in class and just need to talk through the issue; or maybe you'd like to get asssistance analyzing you own dataset.  As the name suggests, attendence for these labs is optional and if you do decide to attend, you're not obligated to stay for the full two hours (though you are certainly welcome to do so!).  
 
 **Required labs** - The majority of labs are designed around specific datasets or skills.  You are required to attend all of these labs, and to stay for the full 2 hours.  
 
