@@ -12,11 +12,14 @@ featured_image: '/images/rstudio.png'
 
 In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation. 
 
+---
+
 ## Learning objectives
 
 * Brief overview of the tools we’ll use throughout the course (R/Bioconductor, RStudio, etc.)
-
 * Set-up *your* laptop with all the software needed for the course
+
+---
 
 ## Software
 
@@ -34,7 +37,7 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 [Cygwin](https://www.cygwin.com/) - *Only download if running a Windows OS on your laptop.*  Cygwin will give your system more linux-like capabilities
 
-[Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto are available on my lab's protocols site [here](https://www.notion.so/Pseudoalignment-with-Kallisto-d5265344b71a40bc9b61d10149b233c8). 
+[Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto and other course-related software is available on my lab's protocols site [here](https://protocols.hostmicrobe.org/conda). 
 
 ---
 
