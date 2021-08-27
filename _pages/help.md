@@ -7,9 +7,9 @@ description: A collection of local (UPenn), regional (Philly), and online places
 
 ## Getting help from the TAs
 
-Camila Amorim and Alex Berry are Teaching Assistants for the course.  Please don't hesitate to reach out to them via the course [Slack page](https://join.slack.com/t/diytranscriptomics/shared_invite/enQtNDE1MTI2MzY2MDY5LWMxOWI2YWE5YmVjM2ZkMjM1ZjYxNTdkOWRkM2ZlNGI0OTYzMWQ2NDRmMjRjMTBhNTVkZjdjZTBkODI0ODFlNmY) if you have questions.
+Camila Amorim, Seble Negatu and Sheridan Littleton are Teaching Assistants for the course.  Please don't hesitate to reach out to them via the course Slack page if you have questions.
 
-1hr open TA help sessions are held every week in room H234 (in PennVet library) immediately before class at 2-3pm.   
+One of the best places to get 1:1 help from the instructor and TAs is via the three optional labs.
 
 -----------------------------
 
