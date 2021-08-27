@@ -2,7 +2,7 @@
 title: 'Course overview'
 subtitle: 'precourse lectures'
 date: 2019-01-12 00:00:00
-description: A brief (but important!) overview that describes how the course is structuerd and how you can get the most from the material on this website. 
+description: A brief (but important!) overview that describes how the course is structured and how you can get the most from the material on this website. 
 featured_image: '/images/welcome_mat_dna.jpeg'
 ---
 
@@ -46,7 +46,7 @@ The course website is meant to be the go-to place for all content related to the
 
 > “Warning - videos below are from 2020 lectures and will soon be updated for 2021.”
 
-Please watch the video below for a introduction to the course, how you will interact with the course materials on this website.
+Please watch the video below for a introduction to the course, and an overview of how you will interact with the course materials on this website.
 
 <iframe src="https://player.vimeo.com/video/405054924" width="640" height="338" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 

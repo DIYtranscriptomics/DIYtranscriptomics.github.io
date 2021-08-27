@@ -6,7 +6,7 @@ description: Learn all about Illumina's 'Sequencing by Synthesis' technology, an
 featured_image: '/images/illumina_flowcell.jpg'
 ---
 
-[Intro to RNA-seq lecture slides on iCloud](https://www.icloud.com/keynote/0n2tSKAVc2chal9Wt8cj-uDiQ#Lecture01%5FRNAseqIntro)
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0n2tSKAVc2chal9Wt8cj-uDiQ#Lecture01%5FRNAseqIntro)
 
 As the inaugural lecture for the course, we'll spend this lecture discussing Illumina's 'Sequencing by Synthesis' technology.  We'll also walk through the steps involved in planning for a transcriptomics experiment.  After this lecture, jargon like flow cell, single-end, paired-end, indexing, cluster density, library, ribo-depletion, scRNAseq, and fastq will practically roll off your tongue.
 
