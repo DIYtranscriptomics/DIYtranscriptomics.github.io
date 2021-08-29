@@ -23,7 +23,7 @@ As the inaugural lecture for the course, we'll spend this lecture discussing Ill
 
 ## Reading
 
-[File formats produced by sequencing](http://binf.snipcademy.com/lessons/sequence-file-formats).
+[File formats produced by sequencing](https://learn.gencore.bio.nyu.edu/ngs-file-formats/).
 
 [RNA-seqlopedia](http://rnaseq.uoregon.edu/) - Created by the Univ. of Orgeon, this is a great resource for understanding the entire RNAseq workflow.
 
