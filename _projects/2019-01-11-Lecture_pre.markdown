@@ -17,8 +17,7 @@ As the inaugural lecture for the course, we'll spend this lecture discussing Ill
 * Get familiar with jargon of RNAseq/HTS (paired-end, cluster density, fastq, index, etc)
 * Understand Illumina’s “Sequencing by Synthesis” (SBS) technology
 * Set priorities when planning a sequencing experiment
-* Understand the basics of library prep
-* Have a sense for how single cell sequencing (scRNAseq) and spatial transcriptomics fit into the evolving landscape of transcriptomics
+* Understand the basics of library prep for HTS
 
 ---
 
