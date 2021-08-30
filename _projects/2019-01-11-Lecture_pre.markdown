@@ -31,8 +31,6 @@ As the inaugural lecture for the course, we'll spend this lecture discussing Ill
 
 ## Lecture video
 
-> “Warning - videos below are from 2020 lectures and will soon be updated for 2021.”
-
 ### Part 1 - History of sequencing and details of Illumina's 'Sequencing by Synthesis' (SBS) technology
 
 <iframe src="https://player.vimeo.com/video/408044306" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
