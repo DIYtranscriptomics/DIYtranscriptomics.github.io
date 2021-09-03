@@ -20,7 +20,7 @@ featured_image: '/images/class.jpg'
 
 **Do I need to prepare for labs ahead of time?**  Usually no, just show up.  However, there are a few labs toward the end of the course that deal with COVID data or single cell data and which will require that you prepare in advance.  Stay tuned for more guidance on this.
 
-**What if I am not officially registered for the course, but am following along online?**  Unfortunately, you don't currently offer a way for you to remotely participate in the in-person labs, but you will still be able to access lab materials on the site and can self-navigate through the content.  The description for each lab is shown, but questions and other details are not posted to the website until the start of each lab.
+**What if I am not officially registered for the course, but am following along online?**  Unfortunately, you don't currently offer a way for you to remotely participate in the in-person labs, but you will still be able to access lab materials on the site and can self-navigate through the content.  The description for each lab is always displayed on the lab page, but questions and other details may not be available on the site until the start of each lab.
 
 **Will I have to work through labs on my own?** No! Our wonderful active learning classroom places students at round tables, so you'll be working with a group of your peers to get through each lab.  At the conclusion of each lab, each table (not each person) will be asked to turn in their work and answers.
 
