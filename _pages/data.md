@@ -27,7 +27,7 @@ This course offers multiple 'on-ramps', or entry points, for starting an analysi
 
 In the event that you don't have enough free harddrive space to download the raw fastq files in Option 1 above, or if you have any problems installing or using Kallisto to map this raw data, you can bypass the Kallisto step and download mapped data to start working immediately. 
 
-[Kallisto output](https://www.dropbox.com/s/94klzelk2w2w2mj/mappedReads.zip?dl=0) -  These files are available as a single compressed zip file.  Download and unzip this file to reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs.
+[Kallisto output](https://www.dropbox.com/s/hyjo3yiduard7by/mappedReads.zip?dl=0) -  These files are available as a single compressed zip file.  Download and unzip this file to reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs.
 
 ---
 
