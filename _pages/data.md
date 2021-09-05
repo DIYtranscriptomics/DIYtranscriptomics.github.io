@@ -7,7 +7,7 @@ featured_image: /images/corte.jpg
 
 ## Course dataset
 
-The course dataset comes from a collaboration between my lab, Phil Scott's lab, and our colleagues in Salvador, Brazil, and was [recently published](https://doi.org/10.1126/scitranslmed.aax4204) by none other than the course TA, Camila!  This is an RNAseq dataset from skin biopsies obtained from patients with cutaneous leishmaniasis, a parasitic disease endemic in Brazil and other areas of South America.  You'll be working with data from 5 patients with this disease and 5 healthy endemic controls.   
+The course dataset comes from a collaboration between my lab, Phil Scott's lab, and our colleagues in Salvador, Brazil (manuscript [here](https://doi.org/10.1126/scitranslmed.aax4204)).  This is an RNAseq dataset from skin biopsies obtained from patients with cutaneous leishmaniasis, a parasitic disease endemic in Brazil and other areas of South America.  You'll be working with data from 5 patients with this disease and 5 healthy endemic controls.   
 
 This course offers multiple 'on-ramps', or entry points, for starting an analysis.  Below are a few of these options.
 
@@ -39,4 +39,4 @@ Yes!  We encourage students to work with their own data during the course.  Noth
 
 ## Where can I access public RNA-seq data
 
-In the second half of the course, you'll learn how to access hundreds of thousands of samples already pre-mapped using Kallisto!  These are available through several different resources, which we'll discuss, but we'll focus on the [ARCHS4 database from Avi Ma'ayan's lab](https://amp.pharm.mssm.edu/archs4/index.html).  You'll want to download the compressed ARCHS4 databases for mouse samples [here](https://www.dropbox.com/s/crz1ctpqhbpb1ox/mouse_matrix_v8.h5?dl=0).  Note that this download is ~7GB of data.
+In the second half of the course, you'll learn how to access hundreds of thousands of samples already pre-mapped using Kallisto!  These are available through several different resources, which we'll discuss, but we'll focus on the [ARCHS4 database from Avi Ma'ayan's lab](https://amp.pharm.mssm.edu/archs4/index.html).  You'll want to download the compressed ARCHS4 databases for mouse samples [here](https://www.dropbox.com/s/crz1ctpqhbpb1ox/mouse_matrix_v8.h5?dl=0).  Note that this download is ~12GB of data.
