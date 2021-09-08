@@ -15,7 +15,9 @@ This course offers multiple 'on-ramps', or entry points, for starting an analysi
 
 ### Option 1 (preferred)- Download raw data and accessory files
 
-[fastq files](https://www.dropbox.com/sh/df58trgab010s55/AAAQ86KkKPzuqvGG-YoeISNEa?dl=0) – You will need about **30Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  
+[fastq files](https://drive.google.com/drive/folders/1sEk1od1MJKLjqyCExYyfHc0n7DAIy_x7?usp=sharing) – You will need about **30Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  
+
+If you're unable to download the files above, you can always get them from **[here](https://www.ebi.ac.uk/ena/browser/view/PRJNA525604?show=reads)** where these files were deposited during publication. Be sure to select only the specific files we'll be using during the course, which you can see **[here](https://diytranscriptomics.com/images/ena_screenshot.png)**.
 
 [study design file](https://www.dropbox.com/s/c1vy2bdg4fynk7e/studydesign.txt?dl=0) - A simple text file that contains one row for each sample and columns for each variable in the study.
 
@@ -27,7 +29,7 @@ This course offers multiple 'on-ramps', or entry points, for starting an analysi
 
 In the event that you don't have enough free harddrive space to download the raw fastq files in Option 1 above, or if you have any problems installing or using Kallisto to map this raw data, you can bypass the Kallisto step and download mapped data to start working immediately. 
 
-[Kallisto output](https://www.dropbox.com/s/hyjo3yiduard7by/mappedReads.zip?dl=0) -  These files are available as a single compressed zip file.  Download and unzip this file to reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs.
+[Kallisto output](https://drive.google.com/file/d/1gjWWTmStP1VT2TeIOTKJwByFOpyDHBkg/view?usp=sharing) -  These files are available as a single compressed zip file.  Download and unzip this file to reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs.
 
 ---
 
