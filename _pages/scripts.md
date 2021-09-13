@@ -7,6 +7,8 @@ featured_image: /images/code2.png
 
 ## Scripts
 
+Clicking on a script in the table below *should* open a download window. Some browsers or browser configurations may block this activity.  If you have trouble downloading the scripts below, please try a different browser.  Alternatively, you can right/control click on the link below and choose 'Copy Link Address'.  Open a new browser tab or window, paste in this copied URL, hit return, and the download window should pop-up.
+
 |	Script Name	|	Packages	|
 |---------|:-----------:|
 [Step1_TxImport.R](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R) 	|	[tximport](http://bioconductor.org/packages/release/bioc/html/tximport.html), [tidyverse](https://www.tidyverse.org/), [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html), [ensemblDB](https://bioconductor.org/packages/release/bioc/html/ensembldb.html)
