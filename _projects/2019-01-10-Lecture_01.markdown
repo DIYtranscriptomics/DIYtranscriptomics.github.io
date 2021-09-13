@@ -21,7 +21,7 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 ---
 
-## Software
+## Software everyone will need
 
 **I'll walk you through installing the following software**
 
@@ -33,9 +33,15 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 [Visual Studio Code](https://code.visualstudio.com/) - an excellent choice for working with virtually any kind of code outside of RStudio.  We'll use this later in the semester for connecting to and working with GitHub repositories.
 
+## Additional software **Mac users** *will* need
+
 [XCode developer tools](https://developer.apple.com/xcode/) - *Only download if running Mac OS on your laptop.*
 
-[Cygwin](https://www.cygwin.com/) - *Only download if running a Windows OS on your laptop.*  Cygwin will give your system more linux-like capabilities
+## Additional software **Windows** users *will* need
+
+[Cygwin](https://www.cygwin.com/) - Cygwin will give your system more linux-like capabilities
+
+[Git for Windows](https://gitforwindows.org/) – This will give you a bash emulator that works really nicely for running standard command-line programs.
 
 [Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto and other course-related software is available on my lab's protocols site [here](https://protocols.hostmicrobe.org/conda). 
 

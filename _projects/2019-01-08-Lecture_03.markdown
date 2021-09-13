@@ -43,13 +43,13 @@ featured_image: '/images/abacus.jpg'
 
 ## Reading
 
-[The RNA-seq abundance zoo](http://robpatro.com/lab/?p=235) - lab post by Rob Patro (developer of Salfish and Salmon software) that describes units for RNAseq, and has a nice description of 'effective length' for transcripts.
+[The RNA-seq abundance zoo](http://robpatro.com/lab/?p=235) - Blog post by Rob Patro (developer of Salfish and Salmon software) that describes units for RNAseq, and has a nice description of 'effective length' for transcripts.
 
-[What the FPKM?](https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/) - lab post by Harold Pimentel discussing within sample normalization and the meaning of RNAseq expression units
+[What the FPKM?](https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/) - Blog post by Harold Pimentel discussing within sample normalization and the meaning of RNAseq expression units
 
 [Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, Dec 2012](http://DIYtranscriptomics.github.io/Reading/files/wagnerTPM.pdf)
 
-[Between sample normalization in RNAseq](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/) - another great lab post from Harold Pimentel on between-sample normalization.
+[Between sample normalization in RNAseq](https://haroldpimentel.wordpress.com/2014/12/08/in-rna-seq-2-2-between-sample-normalization/) - another great blog post from Harold Pimentel on between-sample normalization.
 
 ---
 
