@@ -19,7 +19,7 @@ This course offers multiple 'on-ramps', or entry points, for starting an analysi
 
 If you're unable to download the files above, you can always get them from **[here](https://www.ebi.ac.uk/ena/browser/view/PRJNA525604?show=reads)** where these files were deposited during publication. Be sure to select only the specific files we'll be using during the course, which you can see **[here](https://diytranscriptomics.com/images/ena_screenshot.png)**.
 
-[study design file](https://drive.google.com/file/d/1sGkMk-ekZk3pVD0aT5qzvMBo3UYnZSyU/view?usp=sharing) - A simple text file that contains one row for each sample and columns for each variable in the study.
+[study design file](https://drive.google.com/file/d/1t08Ysjrg-a7yw-_eQ9_KrAphPBVtVk48/view?usp=sharing) - A simple text file that contains one row for each sample and columns for each variable in the study.
 
 [shell script](https://drive.google.com/file/d/1sGkMk-ekZk3pVD0aT5qzvMBo3UYnZSyU/view?usp=sharing) – For carrying out read mapping and QC analysis for multiple samples
 
