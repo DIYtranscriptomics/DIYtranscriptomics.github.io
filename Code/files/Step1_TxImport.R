@@ -54,7 +54,7 @@ myMart <- useMart(biomart="ENSEMBL_MART_ENSEMBL")
 available.datasets <- listDatasets(myMart)
 #now grab the ensembl annotations for dog
 dog.anno <- useMart(biomart="ENSEMBL_MART_ENSEMBL", dataset = "clfamiliaris_gene_ensembl")
-dog.filters <- listFilters(dog.anno)
+dog.attributes <- listAttributes(dog.anno)
 
 Tx.dog <- getBM(attributes=c('ensembl_transcript_id_version',
                          'external_gene_name'),
