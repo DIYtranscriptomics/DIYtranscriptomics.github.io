@@ -28,12 +28,12 @@ Curious about the origin of the remaining ~9M reads left after running KneadData
 
 Since you have no idea where these reads are coming from, you decide that a broad and unbiased approach is your best bet to identify potential non-human reads in your sample.  One strategy is to use [Sourmash](https://sourmash.readthedocs.io/en/latest/) to create a minHash 'sketch' of your fastq file and compare this sketch against a reference set of sketches.  To begin this task, you will need to download a set of about 90,000 microbial genomes **[here](https://osf.io/4f8n3/download)** (don't worry, it's a small file). Here's some example code to get you started. *Be sure you run this in the appropriate Conda environment.*
 
-```
+```bash
 # time = ~2min to sketch ~9M reads
 sourmash sketch dna -p scaled=10000,k=31,abund SRR8668774_dehosted.fastq.gz --name-from-first 
 ```
 
-```
+```bash
 # time = ~2min
 sourmash gather -k 31 SRR8668774_dehosted.fastq.gz.sig genbank-k31.lca.json.gz
 # once this is done, try rerunning with an additional argument to relax the threshold used for classification: '--threshold-bp 100'
@@ -45,7 +45,7 @@ sourmash gather -k 31 SRR8668774_dehosted.fastq.gz.sig genbank-k31.lca.json.gz
 
 Encouraged by the Sourmash results, you try a complementary approach that uses [Centrifuge](https://ccb.jhu.edu/software/centrifuge/).  To get started, you'll need to download a reference database that contains sequences from bacteria, human and viral genomes.  Click **[here](https://genome-idx.s3.amazonaws.com/centrifuge/p_compressed%2Bh%2Bv.tar.gz)** to download (this file is ~ 6Gb, so it may take a while).  Now use this database to search for signatures in your fastq file:
 
-```
+```bash
 # time = ~10min
 # unzip the file you downloaded above to get a folder.  Move the three files present in this folder to your working directory where your dehosted fastq file is located.
 centrifuge -x p_compressed+h+v -U SRR8668774_dehosted.fastq.gz --report-file CL13_dehosted_report.txt -S CL13_dehosted_results.txt
