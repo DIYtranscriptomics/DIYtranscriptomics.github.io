@@ -6,15 +6,11 @@ description: Explore a large and multivariate dataset generated from the helmith
 featured_image: '/images/schisto.png'
 ---
 
-<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
-
 ## Corresponding lecture
 
 [Lecture 6 – Data exploration](https://diytranscriptomics.com/project/lecture-06)
 
-## Homework
-
-[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of in-person lab, Wednesday, Oct 20th.
+<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
 
 ## Description
 
@@ -22,9 +18,38 @@ A colleague has asked for your help to mine data produced from a very large RNAs
 
 <img src="http://DIYtranscriptomics.github.io/images/wormDesign.png" alt="Study design for the data used in this lab">
 
-To succeed at the worm challenge, you will need to use the tools you've learned in class for filtering, normalizing, multivariate analysis with PCA, and data wrangling with dplyr.
+To succeed in this lab, you will need to use the tools you've learned in class for filtering, normalizing, multivariate analysis with PCA, and data wrangling with dplyr.
 
-## What you need to do
+The first team to submit the most complete answer (via private message on Slack) to the following three questions will win the challenge. 
 
-Nothing...at least not yet!  **The content for this lab will be posted on Oct 6th**.  If you're following along virtually, this content will remain up after Oct 6th for anyone to access.
+### Before you start
+
+* download a fresh copy of the step 1, 2 and 3 scripts from the course website [here](http://diytranscriptomics.com/scripts)
+* use *only* the 'essential' code chunks from these scripts to complete the challenge.
+* *don't* try to annotate the data, just import at the transcript level
+
+### Question #1
+
+Use plots to show the impact of filtering and normalization on the data.  
+
+#### Tips
+
+* Do not use 'coord_flip' in your ggplot code, as the number of samples is so large that horizontal display is preferred
+* Don't use cowplot to patch together your different ggplots into one figure.  Again, the number of samples in this particular study makes this too cramped.
+
+### Question #2
+
+Which biological variables explain the majority of the variance in this dataset?  Please include PCA plot(s) to support your answer?
+
+#### Tips:
+
+* take advantage of setting the ggplot aesthetics (aes) to map size and shape to different variables from your study design file
+
+### Question #3
+
+Using dplyr 'verbs', identify the top 10 parasite genes induced by praziquantel treatment in female LE strain worms at the 24hr timepoint compared to control worms. The top 10 genes should be selected and ordered by *average* Log fold change for the groups of replicates.  Please include a table to support your answer.
+
+### Bonus question
+
+Anything interesting stand out to you about the top genes on your list (requires a literature search)?  
 
