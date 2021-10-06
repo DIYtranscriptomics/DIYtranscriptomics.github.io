@@ -117,7 +117,7 @@ mydata.sort <- mydata.df %>%
 # use boolean operators such as '&' (and), '|' (or), '==' (equal to), '!' (not)
 mydata.filter <- mydata.df %>%
   dplyr::filter(geneID=="MMP1" | geneID=="GZMB" | geneID=="IL1B" | geneID=="GNLY" | geneID=="IFNG"
-                | geneID=="CCL4" | geneID=="KIR2DL4" | geneID=="PRF1" | geneID=="APOBEC3A" | geneID=="UNC13A" ) %>%
+                | geneID=="CCL4" | geneID=="PRF1" | geneID=="APOBEC3A" | geneID=="UNC13A" ) %>%
   dplyr::select(geneID, healthy.AVG, disease.AVG, LogFC) %>%
   dplyr::arrange(desc(LogFC))
 
@@ -138,17 +138,17 @@ mydata.filter %>%
   tab_footnote(
     footnote = "Deletion or blockaid ameliorates disease in mice",
     locations = cells_body(
-      columns = vars(geneID),
+      columns = geneID,
       rows = c(6, 7))) %>% 
   tab_footnote(
     footnote = "Associated with treatment failure in multiple studies",
     locations = cells_body(
-      columns = vars(geneID),
-      rows = c(2:10))) %>%
+      columns = geneID,
+      rows = c(2:9))) %>%
   tab_footnote(
     footnote = "Implicated in parasite control",
     locations = cells_body(
-      columns = vars(geneID),
+      columns = geneID,
       rows = c(2))) %>%
   tab_source_note(
     source_note = md("Reference: Amorim *et al*., (2019). DOI: 10.1126/scitranslmed.aar3619"))
