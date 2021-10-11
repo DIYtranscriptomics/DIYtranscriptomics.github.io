@@ -11,17 +11,17 @@ library(edgeR)
 # load ARCHS4 database -----
 # you should have already downloaded the most recent versions of mouse and human RNAseq data from ARCHS4 in hdf5 format
 # begin by creating file paths that point to the hdf5 archs4 files
-archs4.human <- "../../ARCHS4/human_matrix_v8.h5" # if you placed the hdf5 file in your working directory, just use "human_matrix_v8.h5" as the path
-archs4.mouse <- "../../ARCHS4/mouse_matrix_v8.h5" # if you placed the hdf5 file in your working directory, just use "human_matrix_v8.h5" as the path
+archs4.human <- "human_matrix_v10.h5" 
+archs4.mouse <- "mouse_matrix_v10.h5"
 # use the h5 list (h5ls) function from the rhdf5 package to look at the contents of these databases
 h5ls(archs4.human)
 h5ls(archs4.mouse)
 
-# 238,522 samples from human
-all.samples.human <- h5read(archs4.human, name="meta/Sample_geo_accession")
+# 348,184 samples from human
+all.samples.human <- h5read(archs4.human, name="meta/samples/geo_accession")
 
-# 284,907 samples from mouse
-all.samples.mouse <- h5read(archs4.mouse, name="meta/Sample_geo_accession")
+# 405,640 samples from mouse
+all.samples.mouse <- h5read(archs4.mouse, name="meta/samples/geo_accession")
 
 # query ARCHS4 database ----
 # choose your samples based on GEO or SRA ID
@@ -41,11 +41,13 @@ mySamples <- c("GSM2310941", # WT_unstim_rep1
 # Identify columns to be extracted from ARCHS4 database
 my.sample.locations <- which(all.samples.mouse %in% mySamples) # first time you've seen the %in% operator.
 # extract gene symbols from the metadata
-genes <- h5read(archs4.mouse, "meta/genes")
+genes <- h5read(archs4.mouse, "meta/genes/gene_symbol")
 
 # Extract expression data from ARCHS4 ----
 expression <- h5read(archs4.mouse, "data/expression", 
-                     index=list(1:length(genes), my.sample.locations))
+                     index=list(my.sample.locations, 1:length(genes)))
+# transpose to get genes as rows and samples as columns
+expression <- t(expression)
 
 rownames(expression) <- genes
 colnames(expression) <- all.samples.mouse[my.sample.locations]
@@ -65,16 +67,16 @@ archs4.filtered.norm.log2.cpm <- cpm(archs4.dgelist.filtered.norm, log=TRUE)
 
 # Extract sample metadata from ARCHS4 to create a study design file ----
 # extract the sample source
-Sample_source_name_ch1 <- h5read(archs4.mouse, "meta/Sample_source_name_ch1")
+sample_source_name <- h5read(archs4.mouse, "meta/samples/source_name_ch1")
 # extract sample title
-Sample_title <- h5read(archs4.mouse, name="meta/Sample_title")
+sample_title <- h5read(archs4.mouse, name="meta/samples/title")
 # extract sample characteristics
-Sample_characteristics<- h5read(archs4.mouse, name="meta/Sample_characteristics_ch1")
+sample_characteristics<- h5read(archs4.mouse, name="meta/samples/characteristics_ch1")
 
 # let's try putting this all together in a study design file
-studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
-                      Sample_source = Sample_source_name_ch1[my.sample.locations],
-                      Sample_characteristics = Sample_characteristics[my.sample.locations])
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations], 
+                      Sample_source = sample_source_name[my.sample.locations],
+                      Sample_characteristics = sample_characteristics[my.sample.locations])
 
 #based on what we extracted from ARCHS4 above, lets customize and clean-up this study design file
 studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations],
@@ -147,8 +149,8 @@ library(tidyverse)
 library(rhdf5)
 library(edgeR)
 
-archs4.mouse <- "../../ARCHS4/mouse_matrix_v8.h5" # if you placed the hdf5 file in your working directory, just use "human_matrix_v8.h5" as the path
-all.samples.mouse <- h5read(archs4.mouse, name="meta/Sample_geo_accession")
+archs4.mouse <- "mouse_matrix_v10.h5" # if you placed the hdf5 file in your working directory, just use "human_matrix_v8.h5" as the path
+all.samples.mouse <- h5read(archs4.mouse, name="meta/samples/geo_accession")
 mySamples <- c("GSM2310941", # WT_unstim_rep1
                "GSM2310942", # WT_unstim_rep2
                "GSM2310943", # Ripk3_unstim_rep1
@@ -163,10 +165,11 @@ mySamples <- c("GSM2310941", # WT_unstim_rep1
                "GSM2310952") # Ripk3Casp8_LPS.6hr_rep2
 
 my.sample.locations <- which(all.samples.mouse %in% mySamples)
-genes <- h5read(archs4.mouse, "meta/genes")
+genes <- h5read(archs4.mouse, "meta/genes/gene_symbol")
 expression <- h5read(archs4.mouse, "data/expression", 
-                     index=list(1:length(genes), my.sample.locations))
+                     index=list(my.sample.locations, 1:length(genes)))
 
+expression <- t(expression)
 rownames(expression) <- genes
 colnames(expression) <- all.samples.mouse[my.sample.locations]
 archs4.dgelist <- DGEList(expression)
@@ -177,9 +180,13 @@ archs4.dgelist.filtered <- archs4.dgelist[keepers,]
 archs4.dgelist.filtered.norm <- calcNormFactors(archs4.dgelist.filtered, method = "TMM")
 archs4.filtered.norm.log2.cpm <- cpm(archs4.dgelist.filtered.norm, log=TRUE)
 
-Sample_source_name_ch1 <- h5read(archs4.mouse, "meta/Sample_source_name_ch1")
-Sample_title <- h5read(archs4.mouse, name="meta/Sample_title")
-Sample_characteristics<- h5read(archs4.mouse, name="meta/Sample_characteristics_ch1")
+sample_source_name <- h5read(archs4.mouse, "meta/samples/source_name_ch1")
+sample_title <- h5read(archs4.mouse, name="meta/samples/title")
+sample_characteristics<- h5read(archs4.mouse, name="meta/samples/characteristics_ch1")
+
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations], 
+                      Sample_source = sample_source_name[my.sample.locations],
+                      Sample_characteristics = sample_characteristics[my.sample.locations])
 
 studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
                       genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
