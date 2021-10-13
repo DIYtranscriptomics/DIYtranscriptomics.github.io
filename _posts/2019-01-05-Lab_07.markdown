@@ -12,11 +12,19 @@ featured_image: '/images/gg.png'
 
 ## Description
 
-In this lab, you'll tackle data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations of 28 variables, showing the flow of live wildlife and wildlife products into and out of the USA from 2000-2014.  Given that most infectious diseases have a zoonotic (animal to human) component, this dataset offers critical insight into the potential for the global spread of both human and animal diseases.
+In this lab, you'll tackle data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations of 28 variables, showing the flow of live wildlife and wildlife products into the USA from 2000-2014.  Given that most infectious diseases have a zoonotic (animal to human) component, this dataset offers critical insight into the potential for the global spread of both human and animal diseases.
 
 An analysis of a portion of this large dataset was published by EcoHealth Alliance [here](https://doi.org/10.1007/s10393-017-1211-7).
 
 ## What you need to do
 
-Nothing...at least not yet!  **The content for this lab will be posted on Oct 13th**.  If you're following along virtually, this content will remain up after Oct 13th for anyone to access.
+To start, you'll need to **[download the LEMIS data](https://drive.google.com/file/d/1-FOtbLRIrL0dPw5hYElGgtIQ8FDKmLZx/view?usp=sharing)**
 
+Once the download is complete, unzip the file, and set-up a new R project.  Then read the data into your R environment
+
+```bash
+library(tidyverse)
+lemis <- read_delim("lemis_cleaned.csv")
+```
+
+Using primarily dplyr and ggplot, answer the following questions (to be posted on the day of lab):
