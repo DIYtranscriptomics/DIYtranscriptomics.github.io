@@ -72,12 +72,12 @@ Sample_title <- h5read(archs4.mouse, name="meta/Sample_title")
 Sample_characteristics<- h5read(archs4.mouse, name="meta/Sample_characteristics_ch1")
 
 # let's try putting this all together in a study design file
-studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations], 
                       Sample_source = Sample_source_name_ch1[my.sample.locations],
                       Sample_characteristics = Sample_characteristics[my.sample.locations])
 
 #based on what we extracted from ARCHS4 above, lets customize and clean-up this study design file
-studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations],
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations],
                       genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
                       treatment = c("unstim", "unstim", "unstim", "unstim", "unstim", "unstim", "LPS", "LPS", "LPS", "LPS", "LPS", "LPS"))
 

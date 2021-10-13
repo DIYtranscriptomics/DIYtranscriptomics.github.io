@@ -18,13 +18,32 @@ An analysis of a portion of this large dataset was published by EcoHealth Allian
 
 ## What you need to do
 
-To start, you'll need to **[download the LEMIS data](https://drive.google.com/file/d/1-FOtbLRIrL0dPw5hYElGgtIQ8FDKmLZx/view?usp=sharing)**
+To start, you'll need to **[download the LEMIS data](https://drive.google.com/file/d/1-GAGY0us-eqzfawPfxI88B-Qeyv1dycQ/view?usp=sharing)**
 
-Once the download is complete, unzip the file, and set-up a new R project.  Then read the data into your R environment
+Once the download is complete, unzip the file, and set-up a new R project.  Then read the data into your R environment.  Don't try to open the file in Excel you'll regret it.  Also, don't try to ```View``` the object after importing into R.
 
 ```bash
 library(tidyverse)
 lemis <- read_delim("lemis_cleaned.tsv")
+
+#take a minute to explore this huge dataset
+glimpse(lemis)
 ```
 
-Using primarily dplyr and ggplot, answer the following questions (to be posted on the day of lab):
+Use dplyr and ggplot to complete the tasks below.  *Tip: the magrittr pipe (%>%) is your friend.*
+
+1. Identify the most common (by 'quantity') live mammal taken from the wild for import into the US.
+2. Building on your analysis above, produce a plot showing animals (use 'generic_name') imported for the purposes of science/research. (tip: use ```geom_col()`` in ggplot for this).  Feel free to play around with different themes to make your plot more exciting.
+3. Identify the countries from which we import the most macaques (again, use a simple plot).
+4. Using the same approach as above, create a plot showing the countries from which we import live bats.
+5. For what purposes do we import bats?
+6. How does the type of bat (use 'specific_name') imported differ between countries (hint: use ```facet_wrap``` in your ggplot code)?
+7. Identify the largest shipment (by 'quantity') of live mammals to enter the US.
+8. Identify the most expensive (by 'value') shipment of live mammals to enter the US.
+9. How does the answer above compare with the most expensive shipment of any kind (live or not)?
+10. You are alerted to a concerning new viral disease of humans that is believed to originate from Fruit bats (though the exact type of fruit bat is not clear).  Identify the US cities that would would be most likely to be exposed to such a virus from the import of live fruit bats.
+11. A recent case of Anthrax in NYC was traced back to a contaminated Wildebeest hide that was stretched and used to make a traditional drum.  Through which port(s) did this animal product most likely enter the country? (note: [this actually happens](https://www.cdc.gov/anthrax/animal-products/hides-drums.html)).
+12. Ask and answer a question that *you* care about!
+
+Bonus: create an animated ggplot using the [gganimate](https://gganimate.com/) package
+
