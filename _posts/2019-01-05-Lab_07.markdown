@@ -24,7 +24,7 @@ Once the download is complete, unzip the file, and set-up a new R project.  Then
 
 ```bash
 library(tidyverse)
-lemis <- read_delim("lemis_cleaned.csv")
+lemis <- read_delim("lemis_cleaned.tsv")
 ```
 
 Using primarily dplyr and ggplot, answer the following questions (to be posted on the day of lab):
