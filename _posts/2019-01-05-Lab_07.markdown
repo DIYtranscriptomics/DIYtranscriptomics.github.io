@@ -48,6 +48,5 @@ glimpse(lemis)
 ## Extended learning
 
 * Ask and answer a question that *you* care about!
-
 * Create an animated ggplot using the date information in LEMIS and the [gganimate](https://gganimate.com/) package
 
