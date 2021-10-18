@@ -39,7 +39,7 @@ ebFit <- eBayes(fits)
 #write.fit(ebFit, file="lmfit_results.txt")
 
 # TopTable to view DEGs -----
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=10, sort.by="logFC")
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC")
 
 # convert to a tibble
 myTopHits.df <- myTopHits %>%
@@ -127,17 +127,20 @@ mySwitchList <- importRdata(
   designMatrix         = targets.mod,
   removeNonConvensionalChr = TRUE,
   addAnnotatedORFs=TRUE,
-  isoformExonAnnoation = "Homo_sapiens.GRCh38.100.chr_patch_hapl_scaff.gtf.gz",
-  isoformNtFasta       = "Homo_sapiens.GRCh38.cdna.all.fa.gz",
+  ignoreAfterPeriod=TRUE,
+  isoformExonAnnoation = "Homo_sapiens.GRCh38.104.chr_patch_hapl_scaff.gtf.gz",
+  isoformNtFasta       = "Homo_sapiens.GRCh38.cdna.all.fa",
   showProgress = TRUE)
 
 # We'll do the isoform analysis in one step, but there's a lot to unpack here, so you should really read the package documentation at:
 # https://bioconductor.org/packages/release/bioc/vignettes/IsoformSwitchAnalyzeR/inst/doc/IsoformSwitchAnalyzeR.html
 # Note that without additional manual work here (beyond the scope of this class), we'll only capture isoform annotations for 1) intron retention; 2) ORF sequence similarity; and 3) nonsense mediate decay (NMD)
+
+#NOTE: THIS NEXT BIT COULD TAKE A WHILE!
 mySwitchList <- isoformSwitchAnalysisCombined(
   switchAnalyzeRlist   = mySwitchList,
-  pathToOutput = 'isoform_output', # directory must already exist
-  outputSequences = TRUE)  
+  pathToOutput = 'isoform_output') # directory must already exist
+
 # now look at the directory that you just created above
 # in case you missed the summary output from the function above
 extractSwitchSummary(mySwitchList)
