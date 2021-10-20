@@ -10,6 +10,10 @@ featured_image: '/images/github_logo.png'
 
 [Lecture 12 – Making your analysis portable and reproducible](https://diytranscriptomics.com/project/lecture-12)
 
+## Homework
+
+[Homework #4: Case Study: Exploratory Data Analysis in R (~4hrs)](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r) - is **due today**!
+
 ## Description
 
 At this point in the course, you have a working directory full of scripts, tabular data, plots, and many other breadcrumbs from your project.  So, it's well past time for us to start taking steps to make our analysis reproducible.  To do this, we'll spend this lab producing an renv lock file, upload our entire project to github, learn to edit the repo remotely using VS Code, and then archive the repo using Zenodo so that you can include a DOI for your code in any paper.

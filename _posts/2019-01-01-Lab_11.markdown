@@ -10,10 +10,6 @@ featured_image: '/images/chalkboard.jpeg'
 
 We're available to help with anything we've covered up to this point.
 
-## Homework
-
-[Homework #4: Case Study: Exploratory Data Analysis in R (~4hrs)](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r) - is **due today**!
-
 ## Description
 
 Hooray!  You're done with all the lectures and labs for bulk RNA-seq.  Since the remainder of the course will focus on single cell RNA-seq, this is a good time to resolve any outstanding issues or questions you have about the scripts we've covered up to this point.
