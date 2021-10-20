@@ -12,7 +12,7 @@ We're available to help with anything we've covered up to this point.
 
 ## Homework
 
-[Homework #4: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - is **due today**!
+[Homework #4: Case Study: Exploratory Data Analysis in R (~4hrs)](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r) - is **due today**!
 
 ## Description
 
