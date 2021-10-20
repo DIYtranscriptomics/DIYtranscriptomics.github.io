@@ -1,15 +1,18 @@
 ---
-title: 'TA help session'
-subtitle: 'Lab 10 (optional) • November 3, 2021'
+title: 'The COVID19 Collaborative Challenge'
+subtitle: 'Lab 10 (required) • November 3, 2021'
 date: 2019-01-02 00:00:00
-description: Struggling with something we covered recently in class, or do you want to discuss some of your own RNA-seq data?  Then drop in for hand-on help from one of our amazing Teaching Assistants!
-featured_image: '/images/chalkboard.jpeg'
+description: Explore one of the first and largest transcriptomic studies of of SARS-CoV-2. You start by parsing the study metadata to identify a question you're interested in, formulate a hypothesis, and carry out an analysis of the data to test this hypothesis.
+featured_image: '/images/COVID.jpg'
 ---
 
-##  Corresponding lecture
-
-We're available to help with anything we've covered up to this point.  
+<div style="text-align: right"> Image credit: Picture-alliance/AP Photo/M. Schreiber </div>
 
 ## Description
 
-Considering we are nearing the end of the course, this is a great time to get feedback on your own data analysis projects, or to get help on any recent topics we've covered in the lectures.
+You will be given raw counts and a study design file for an extensive RNA-seq exploration of the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points, and which include human primary samples as well as *in vivo* studies in ferrets – an incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You should check out their recent Cell paper: [Imbalanced Host Response to SARS-CoV-2 Drives Development of COVID-19](https://doi.org/10.1016/j.cell.2020.04.026).
+
+## What you need to do
+
+Nothing...at least not yet!  **The content for this lab will be posted on Nov 10th**.  If you're following along virtually, this content will remain up after Nov 10th for anyone to access.
+

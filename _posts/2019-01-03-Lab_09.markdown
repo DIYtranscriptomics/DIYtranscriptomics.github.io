@@ -1,15 +1,22 @@
 ---
-title: 'Finding patterns in gene expression data'
+title: 'The Malaria Lab'
 subtitle: 'Lab 9 (required) • October 27, 2021'
 date: 2019-01-03 00:00:00
-description: Use clustering methods to identify coordinately regulated genes throughout the red blood cell cycle of Plasmodium falciparum
-featured_image: '/images/modules.png'
+description: Ready to tackle one of world's deadliest pathogens?  Using data collected throughout the 48hr red blood cell cycle, you'll be tasked with putting together a publication-quality figure that best captures your main findings.
+featured_image: '/images/plasmoRBC.png'
 ---
+
+<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 
 ## Corresponding lecture
 
-[Lecture 9 – Module identification](https://diytranscriptomics.com/project/lecture-09)
+[Lecture 8 – Differential gene expression](https://diytranscriptomics.com/project/lecture-08)
 
 ## Description
 
-Coming soon!
+You're tasked with studying gene expression in *Plasmodium falciparum*, a single-celled protozoan parasite that infects human red blood cells (RBCs) and is the causative agent of malaria, one of the deadliest infectious diseases on the planet.  After invading an RBC, parasites progress through a 48 hour developmental cycle before rupturing the cell and invading a new one.  To understand how parasite gene expression changes during this cycle, you infect RBCs *in vitro* and isolate RNA every 8 hours for 48 hours straight.  As you're finishing the experiment (and very much looking forward to sleeping), your PI asks if you can put together a figure for a last-minute grant submission.  
+
+## What you need to do
+
+Nothing...at least not yet!  **The content for this lab will be posted on Oct 20th**.  If you're following along virtually, this content will remain up after Oct 20th for anyone to access.
+

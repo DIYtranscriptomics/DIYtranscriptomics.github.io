@@ -1,18 +1,19 @@
 ---
-title: 'The COVID19 Collaborative Challenge'
-subtitle: 'Lab 11 (required) • November 10, 2021'
+title: 'TA help session'
+subtitle: 'Lab 11 (optional) • November 10, 2021'
 date: 2019-01-01 00:00:00
-description: Explore one of the first and largest transcriptomic studies of of SARS-CoV-2. You start by parsing the study metadata to identify a question you're interested in, formulate a hypothesis, and carry out an analysis of the data to test this hypothesis.
-featured_image: '/images/COVID.jpg'
+description: Struggling with something we covered recently in class, or do you want to discuss some of your own RNA-seq data?  Then drop in for hand-on help from one of our amazing Teaching Assistants!
+featured_image: '/images/chalkboard.jpeg'
 ---
 
-<div style="text-align: right"> Image credit: Picture-alliance/AP Photo/M. Schreiber </div>
+## Corresponding lecture
+
+We're available to help with anything we've covered up to this point.
+
+## Homework
+
+[Homework #4: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - is **due today**!
 
 ## Description
 
-You will be given raw counts and a study design file for an extensive RNA-seq exploration of the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points, and which include human primary samples as well as *in vivo* studies in ferrets – an incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You should check out their recent Cell paper: [Imbalanced Host Response to SARS-CoV-2 Drives Development of COVID-19](https://doi.org/10.1016/j.cell.2020.04.026).
-
-## What you need to do
-
-Nothing...at least not yet!  **The content for this lab will be posted on Nov 10th**.  If you're following along virtually, this content will remain up after Nov 10th for anyone to access.
-
+Hooray!  You're done with all the lectures and labs for bulk RNA-seq.  Since the remainder of the course will focus on single cell RNA-seq, this is a good time to resolve any outstanding issues or questions you have about the scripts we've covered up to this point.

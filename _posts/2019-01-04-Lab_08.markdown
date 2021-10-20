@@ -1,16 +1,14 @@
 ---
-title: 'The Malaria Lab'
-subtitle: 'Lab 8 (required) • October 20, 2021'
+title: 'TA help session'
+subtitle: 'Lab 8 (optional) • October 20, 2021'
 date: 2019-01-04 00:00:00
-description: Ready to tackle one of world's deadliest pathogens?  Using data collected throughout the 48hr red blood cell cycle, you'll be tasked with putting together a publication-quality figure that best captures your main findings.
-featured_image: '/images/plasmoRBC.png'
+description: Struggling with something we covered recently in class, or do you want to discuss some of your own RNA-seq data?  Then drop in for hand-on help from one of our amazing Teaching Assistants!
+featured_image: '/images/chalkboard.jpeg'
 ---
-
-<div style="text-align: right"> Image credit: Khrystyna Kozyuk </div>
 
 ## Corresponding lecture
 
-[Lecture 8 – Differential gene expression](https://diytranscriptomics.com/project/lecture-08)
+We're available to help with anything we've covered up to this point.
 
 ## Homework
 
@@ -18,9 +16,4 @@ featured_image: '/images/plasmoRBC.png'
 
 ## Description
 
-You're tasked with studying gene expression in *Plasmodium falciparum*, a single-celled protozoan parasite that infects human red blood cells (RBCs) and is the causative agent of malaria, one of the deadliest infectious diseases on the planet.  After invading an RBC, parasites progress through a 48 hour developmental cycle before rupturing the cell and invading a new one.  To understand how parasite gene expression changes during this cycle, you infect RBCs *in vitro* and isolate RNA every 8 hours for 48 hours straight.  As you're finishing the experiment (and very much looking forward to sleeping), your PI asks if you can put together a figure for a last-minute grant submission.  
-
-## What you need to do
-
-Nothing...at least not yet!  **The content for this lab will be posted on Oct 20th**.  If you're following along virtually, this content will remain up after Oct 20th for anyone to access.
-
+Now that you've learned about differential gene expression analysis, this is a good time to address questions, clear up any confusion and help everyone get caught-up with any past material.

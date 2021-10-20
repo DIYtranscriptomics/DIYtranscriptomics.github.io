@@ -1,8 +1,8 @@
 ---
-title: 'scRNA-seq lab - Part I'
-subtitle: 'Lab 13 (required) • December 1, 2021'
+title: 'scRNA-seq lab'
+subtitle: 'Labs 13 and 14 (required) • December 1 and December 8, 2021'
 date: 2018-12-28 00:00:00
-description: You'll work with a scRNA-seq data set from a recent infectious disease study.  In this lab you'll carry out processing of raw scRNA-seq data, including dimensional reduction, cluster identification and annotation.  
+description: In this week-long final project, you'll work as part of a team to apply your newfound scRNA-seq skills to a dataset from the Immune Health group at UPenn, with the goal of identifying transcriptional programs associated with severe COVID. 
 featured_image: '/images/toxoBrain.png'
 ---
 
@@ -17,7 +17,7 @@ featured_image: '/images/toxoBrain.png'
 
 ## Description
 
-In this lab, you'll work with an unpublished scRNA-seq dataset, courtesy of [Chris Hunter's lab](https://www.vet.upenn.edu/research/centers-laboratories/research-laboratory/hunter-laboratory).  This scRNA-seq dataset was generated from the brain of a mouse that harbored a chronic infection with the protozoan parasite, *Toxoplasma gondii*.  Chronic infection with this parasite results in latent cysts in the brain.  Immune cells infiltrate the brain in response to this infection, where they produce antimicrobial factors that are critical in limiting parasite growth and catastrophic pathology.  You'll be presented with raw scRNA-seq data from one of these mouse brains.  Your goal is to complete an analysis of this data in order to identify cluster of cells.
+In this lab, you'll work with an unpublished scRNA-seq dataset, courtesy of [John Wherry's lab](https://www.med.upenn.edu/wherrylab/), Allie Greenplate, and the UPenn [Immune Health group](https://www.med.upenn.edu/immunehealth/).  Stay tuned for more info about this dataset!
 
 ## What you need to do
 
