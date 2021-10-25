@@ -85,7 +85,7 @@ heatmaply(diffGenes,
 
 # now let's try using D3 to create an html widget version of our heatmap
 d3heatmap(diffGenes,
-          colors = myheatcolors,
+          colors = myheatcolors2,
           Rowv=as.dendrogram(clustRows),
           row_side_colors = module.color,
           scale='row')
@@ -110,7 +110,7 @@ names(module.color) <- names(module.assign)
 
 module.assign.df <- as_tibble(as.list(module.assign))
 module.assign.pivot <- pivot_longer(module.assign.df, # dataframe to be pivoted
-                          cols = 1:2314, # column names to be stored as a SINGLE variable
+                          cols = 1:2307, # column names to be stored as a SINGLE variable
                           names_to = "geneID", # name of that new variable (column)
                           values_to = "module") # name of new variable (column) storing all the values (data)
 
@@ -207,3 +207,4 @@ heatmap.2(myModule_down,
           col=myheatcolors, scale="row", 
           density.info="none", trace="none", 
           RowSideColors=module.color[module.assign%in%modulePick], margins=c(8,20))
+
