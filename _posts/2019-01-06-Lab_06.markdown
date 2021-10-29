@@ -53,3 +53,20 @@ Using dplyr 'verbs', identify the top 10 parasite genes induced by praziquantel 
 
 Anything interesting stand out to you about the top genes on your list (requires a literature search)?  
 
+## Solution
+
+Hey, no cheating :)  
+
+You won't be able to view the answer videos below until you have a password from me (via Slack). This ensures that everyone in the course has made a good faith effort to work through the questions on their own.
+
+### Answer to question #1
+
+<iframe src="https://player.vimeo.com/video/418615841" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Answer to question #2
+
+<iframe src="https://player.vimeo.com/video/418643636" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Answer to question #3
+
+<iframe src="https://player.vimeo.com/video/418645922" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>

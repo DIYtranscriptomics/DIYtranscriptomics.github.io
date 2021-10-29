@@ -31,3 +31,17 @@ You're tasked with studying gene expression in *Plasmodium falciparum*, a single
 * You'll use the Step scripts 1, 2, 3, 5 and 6 for challenge.  
 * Think about what makes a good figure and use your data to tell a story!  
 * Feel free to include illustrations/schematics if useful.
+
+## Solution
+
+Hey, no cheating :)  
+
+You won't be able to view the answer videos below until you have a password from me (via Slack). This ensures that everyone in the course has made a good faith effort to work through the questions on their own.
+
+### Solution - part 1
+
+<iframe src="https://player.vimeo.com/video/424040965" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Solution - part 2
+
+<iframe src="https://player.vimeo.com/video/424040328" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
