@@ -58,7 +58,7 @@ c2cp <- read.gmt("/Users/danielbeiting/Dropbox/MSigDB/c2.cp.v7.1.symbols.gmt")
 # option2: use the msigdb package to access up-to-date collections 
 # this option has the additional advantage of providing access to species-specific collections
 # are also retrieved as tibbles
-msigdbr_show_species()
+msigdbr_species()
 hs_gsea <- msigdbr(species = "Homo sapiens") #gets all collections/signatures with human gene IDs
 #take a look at the categories and subcategories of signatures available to you
 hs_gsea %>% 
