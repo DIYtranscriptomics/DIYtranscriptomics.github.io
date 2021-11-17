@@ -2,7 +2,7 @@
 title: 'The reproducibility lab'
 subtitle: 'Lab 12 (required) • November 17, 2021'
 date: 2018-12-29 00:00:00
-description: In this lab you'll set-up your own project on github, learn to interact with this project from the command line, and then archive the project for publication using Zenodo.
+description: In this lab you'll set-up your own project on github, learn to interact with this project directly from RStudio, and then archive the project for publication using Zenodo.
 featured_image: '/images/github_logo.png'
 ---
 
@@ -16,11 +16,62 @@ featured_image: '/images/github_logo.png'
 
 ## Description
 
-At this point in the course, you have a working directory full of scripts, tabular data, plots, and many other breadcrumbs from your project.  So, it's well past time for us to start taking steps to make our analysis reproducible.  To do this, we'll spend this lab praticing what you learned in this week's lectures.  You'll produce an renv lock file, upload our entire project to github, learn to edit the repo remotely using VS Code, and then archive the repo using Zenodo so that you can include a DOI for your code in any paper.
+At this point in the course, you have a working directory full of scripts, tabular data, plots, and many other breadcrumbs from your project.  So, it's well past time for us to start taking steps to make our analysis reproducible.  To do this, we'll spend this lab praticing what you learned in this week's lectures.  You'll produce an renv lock file, upload our entire project to github, learn to edit the repo remotely using RStudio, and then archive the repo using Zenodo so that you can include a Digital Object Identifier (DOI; a permanent link) for your code that you can then include in a manuscript.
 
 ## What you need to do
 
-Nothing...at least not yet!  **The content for this lab will be posted on Nov 17th**.  If you're following along virtually, this content will remain up after Nov 17th for anyone to access.
+### Initialize a reproducible environment in R using renv
 
+At any point in the process of working on an analysis project in R, you can initialize a reproducible environment within your working directory using the wonderful [renv package](https://rstudio.github.io/renv/articles/renv.html). Simply run the following commands in RStudio:
+
+```r
+library(renv)
+#initialize a reproducible environment and captures a snapshot of your package environment
+renv::init() 
+#OPTIONAL: at any point during your work, you can update the snapshot with:
+renv::snapshot() 
+```
+
+Now that you have initialized using renv, notice the try deleting a few packages and updating others. 
+
+### Install git on your laptop
+
+* Windows ->  https://git-scm.com/download/win
+* Mac     ->  https://git-scm.com/download/mac
+* Linux   ->  https://git-scm.com/download/linux
+
+### Configure git and authenticate with github
+
+```r
+library(usethis)
+usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com")
+
+## create a personal access token for authentication:
+usethis::create_github_token() 
+## in case usethis version < 2.0.0: usethis::browse_github_token() (or even better: update usethis!)
+
+## set personal access token:
+credentials::set_github_pat("YourToken")
+
+## or store it manually in '.Renviron':
+usethis::edit_r_environ()
+```
+
+### Set-up a GitHub repository ('repo') and connect to it using RStudio
+
+* Sign-up for an account on Github and login 
+* Create a new private repo with a readme. Click on the green 'code' button on your repo and copy the https URL
+* Start *new* R project in RStudio, choosing the 'version control' option and 'Git'.  Paste in the URL that you copied in the step above
+* Since this is a private repo, RStudio will prompt you for credentials
+* *Copy* relevant files over from your active R project folder to the newly created version control R project
+* When ready to publish, make your GitHub repo public
+* 'Release' repo as a version. This is analogous to releasing a software version
+
+### Archive your repo with Zenodo
+
+* Sign-in to zenodo using the 'login with github' option
+* once logged in, under your email login in upperright of zenodo page, toggle menu and select 'github'
+* archiving is now super easy, just toggle the on button next to any of your repos listed under the 'enabled repos' section on zenodo
+* you now can copy/paste the DOI from zenodo into any publication!
 
 

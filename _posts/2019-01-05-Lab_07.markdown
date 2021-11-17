@@ -25,7 +25,7 @@ Once the download is complete, unzip the file, and set-up a new R project.  Then
 To help you get started, here's a bit of code to read in the data and explore the variables.  With the data in your R environment, you'll then want to use dplyr and ggplot to complete each of the tasks below.  *Tip: the magrittr pipe (%>%) is your friend.*
 
 
-```bash
+```r
 library(tidyverse)
 lemis <- read_delim("lemis_cleaned.tsv")
 
