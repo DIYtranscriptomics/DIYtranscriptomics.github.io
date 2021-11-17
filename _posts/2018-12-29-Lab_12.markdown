@@ -56,8 +56,10 @@ usethis::create_github_token()
 # set personal access token:
 credentials::set_github_pat("YourToken")
 
-# or store it manually in '.Renviron':
+# if the command above gave you problems, you can also store your PAT manually in '.Renviron':
 usethis::edit_r_environ()
+# store your personal access token with: GITHUB_PAT=xxxyyyzzz
+# and make sure '.Renviron' ends with a newline
 ```
 
 ### Set-up a GitHub repository ('repo') and connect to it using RStudio
