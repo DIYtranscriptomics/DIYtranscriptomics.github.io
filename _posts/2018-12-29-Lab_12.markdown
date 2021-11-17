@@ -32,13 +32,17 @@ renv::init()
 renv::snapshot() 
 ```
 
-Now that you have initialized using renv, notice the try deleting a few packages and updating others. 
+Now that you have initialized using renv, take a look at your library tab in RStudio.  Notice anything different? Try deleting a few packages and updating others. Once you've done this, we'll practice restoring our project environment using the information stored in the renv.lock file.  This is as easy as:
+
+```r
+renv::restore() 
+```
 
 ### Install git on your laptop
 
-* Windows ->  https://git-scm.com/download/win
-* Mac     ->  https://git-scm.com/download/mac
-* Linux   ->  https://git-scm.com/download/linux
+* [Windows](https://git-scm.com/download/win)
+* [Mac](https://git-scm.com/download/mac)
+* [Linux](https://git-scm.com/download/linux)
 
 ### Configure git and authenticate with github
 
@@ -46,14 +50,13 @@ Now that you have initialized using renv, notice the try deleting a few packages
 library(usethis)
 usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com")
 
-## create a personal access token for authentication:
+# create a personal access token for authentication:
 usethis::create_github_token() 
-## in case usethis version < 2.0.0: usethis::browse_github_token() (or even better: update usethis!)
 
-## set personal access token:
+# set personal access token:
 credentials::set_github_pat("YourToken")
 
-## or store it manually in '.Renviron':
+# or store it manually in '.Renviron':
 usethis::edit_r_environ()
 ```
 
