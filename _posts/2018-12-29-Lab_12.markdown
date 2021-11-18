@@ -32,13 +32,21 @@ renv::init()
 renv::snapshot() 
 ```
 
-Now that you have initialized using renv, take a look at your library tab in RStudio.  Notice anything different? Try deleting a few packages and updating others. Once you've done this, we'll practice restoring our project environment using the information stored in the renv.lock file.  This is as easy as:
+Now that you have initialized using renv, take a look at your library tab in RStudio.  Notice anything different?  You should now see that you have both a 'Project Library' as well as your usual 'System Library'.  The Project Library contains 
+
+OK, now let's test renv by deleting a few packages from your Project Library and updating others (you can always find packages with updates available by clicking on the 'Update' icon in the Library pane on RStudio. Once you've done this, try restoring our project environment using the information stored in the renv.lock file.  This is as easy as:
 
 ```r
 renv::restore() 
 ```
 
+And, voila!  You should now see that the packages you deleted or updated in in the step above have now been reinstalled or returned to their previous version.
+
+I recommend using renv early on in a project and using `renv::snapshot()` periodically to update the lockfile. 
+
 ### Install git on your laptop
+
+You might already have git installed (you can check by opening a terminal window and typing 'git').  If not, download using one of the links below:
 
 * [Windows](https://git-scm.com/download/win)
 * [Mac](https://git-scm.com/download/mac)
@@ -46,37 +54,41 @@ renv::restore()
 
 ### Configure git and authenticate with github
 
+Once you have git installed, you'll need to configure it so that you can link git to github.  We'll do this using the **[usethis](https://usethis.r-lib.org/)** R package, which contains lots of handy functions for project management.  
+
+Before we configure git, head to [github.com](https://github.com/) and sign-up for a free account.  Take note of your username and the email you used to set up the account.  We'll use both below.
+
 ```r
 library(usethis)
-usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com")
+usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com") #add your github username and email 
 
 # create a personal access token for authentication:
 usethis::create_github_token() 
 
 # set personal access token:
-credentials::set_github_pat("YourToken")
+credentials::set_github_pat("YourToken") #add your token from github
 
-# if the command above gave you problems, you can also store your PAT manually in '.Renviron':
-usethis::edit_r_environ()
+# if the command above gave you any errors, you can also store your PAT manually in '.Renviron':
+usethis::edit_r_environ() #opens your .Renviron file directly in RStudio
 # store your personal access token with: GITHUB_PAT=xxxyyyzzz
 # and make sure '.Renviron' ends with a newline
+# save and close the .Renviron file and restart R
 ```
 
 ### Set-up a GitHub repository ('repo') and connect to it using RStudio
 
-* Sign-up for an account on Github and login 
-* Create a new private repo with a readme. Click on the green 'code' button on your repo and copy the https URL
+* Got to GitHub and create a new private repo with a readme. Click on the green 'code' button on your repo and copy the https URL
 * Start *new* R project in RStudio, choosing the 'version control' option and 'Git'.  Paste in the URL that you copied in the step above
-* Since this is a private repo, RStudio will prompt you for credentials
+* If you correctly authenticated above using your token, you should be able to connect to the repo using RStudio and will see the contents of the repo appear in your RStudio file browser.
 * *Copy* relevant files over from your active R project folder to the newly created version control R project
-* When ready to publish, make your GitHub repo public
-* 'Release' repo as a version. This is analogous to releasing a software version
+* When ready to publish, make your GitHub repo public (Settings -> Manage Access -> Manage -> Change Repository Visibilty)
 
 ### Archive your repo with Zenodo
 
-* Sign-in to zenodo using the 'login with github' option
-* once logged in, under your email login in upperright of zenodo page, toggle menu and select 'github'
-* archiving is now super easy, just toggle the on button next to any of your repos listed under the 'enabled repos' section on zenodo
-* you now can copy/paste the DOI from zenodo into any publication!
+* Sign-in to [Zenodo](https://zenodo.org/) using the 'login with github' option
+* Once logged in, under your email login in upper right of the Zenodo page, toggle the menu and select 'github'
+* Archiving is now super easy, just toggle the on button next to any of your repos listed under the 'enabled repos' section on zenodo
+* Create a 'release' of your Github repo (see [here](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) for an explanation of how to do this)
+* You should now see a DOI for that repo on Zenodo.  Copy/paste this DOI for use in any publication!
 
 
