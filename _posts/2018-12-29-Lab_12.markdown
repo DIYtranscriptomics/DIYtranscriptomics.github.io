@@ -92,3 +92,15 @@ usethis::edit_r_environ() #opens your .Renviron file directly in RStudio
 * You should now see a DOI for that repo on Zenodo.  Copy/paste this DOI for use in any publication!
 
 
+## Putting it all together
+
+Working through the steps outlined above may seem like a lot, but keep in mind that most of this only needs to be done once (e.g., installing Git) or infrequently (e.g., authenticating with github).  Here's how you would incorporate these best practices for reproducibility into your work in R:
+
+1. Start you work in RStudio and use renv early and often to capture snapshots of your working environment
+2. At any time during an analysis project, set-up a repo on github for your project.  You can choose to make this a private or public repo...it's up to you.
+3. Connect to this repo using RStudio (may require authentication). 
+4. Once connected, update your .gitignore file using RStudio.  [You can use mine to get started](https://drive.google.com/open?id=13HhGnxAjCJilQNFHrIkBjGceXP6hZmKQ).
+5. Copy all your project files to this new version controlled project directory. Stage, commit and push these files up to your Github repo.
+6. When you're ready to publish, [make sure your repo is set to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility).
+7. Login to Zenodo and archive your project to get a DOI ([instructions on Zenodo](https://zenodo.org/account/settings/github/)).
+8. Include the DOI in your paper!
