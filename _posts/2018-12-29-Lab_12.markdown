@@ -34,7 +34,7 @@ renv::snapshot()
 
 Now that you have initialized using renv, take a look at your library tab in RStudio.  Notice anything different?  You should now see that you have both a 'Project Library' as well as your usual 'System Library'.  The Project Library contains 
 
-OK, now let's test renv by deleting a few packages from your Project Library and updating others (you can always find packages with updates available by clicking on the 'Update' icon in the Library pane on RStudio. Once you've done this, try restoring our project environment using the information stored in the renv.lock file.  This is as easy as:
+OK, now let's test renv by deleting a few packages from your Project Library and updating others (you can always find packages with updates available by clicking on the 'Update' icon in the Library pane on RStudio). Once you've done this, try restoring our project environment using the information stored in the renv.lock file.  This is as easy as:
 
 ```r
 renv::restore() 
