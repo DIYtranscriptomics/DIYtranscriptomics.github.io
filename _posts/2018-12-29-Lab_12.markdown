@@ -42,7 +42,7 @@ renv::restore()
 
 And, voila!  You should now see that the packages you deleted or updated in the step above have now been reinstalled or returned to their previous version.
 
-I recommend using renv early on in a project and using `renv::snapshot()` periodically to update the lockfile. 
+I recommend using renv early during a project and using `renv::snapshot()` periodically to update the lockfile. 
 
 ### Install git on your laptop
 
