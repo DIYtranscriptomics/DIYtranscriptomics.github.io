@@ -40,7 +40,7 @@ OK, now let's test renv by deleting a few packages from your Project Library and
 renv::restore() 
 ```
 
-And, voila!  You should now see that the packages you deleted or updated in in the step above have now been reinstalled or returned to their previous version.
+And, voila!  You should now see that the packages you deleted or updated in the step above have now been reinstalled or returned to their previous version.
 
 I recommend using renv early on in a project and using `renv::snapshot()` periodically to update the lockfile. 
 
