@@ -13,18 +13,25 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 ## Learning objectives
 
 * Understand droplet-based scRNA-seq technology
-* Get a sense for how scRNA-seq compares to the bulk RNA-seq methods and data you've learned about up to this point
+* Be able to compare and contrast single cell and bulk RNA-seq methods 
 * Understand cost and experimental design considerations for scRNA-seq experiments.
-* Understand multiplexed assays compatible with scRNA-seq (CITE-seq, 'multiome', TEA-seq)
-* Be able to define the followinf terms and concepts: UMI, barcode, waterfall plot, ambient RNA, BUS.
-* Gain compentency in using Kallisto-BUStools to preprocess raw scRNA-seq data (via [kb-python](https://www.kallistobus.tools/))
+* Understand multiplexed single cell assays (CITE-seq, 'multiome', TEA-seq)
+* Be able to define common terms and concepts in single cell genomics
+* Use Kallisto-BUStools to preprocess raw scRNA-seq data (via [kb-python](https://www.kallistobus.tools/))
 
 
 ## What you need to do
 
 * **[Download raw files](https://drive.google.com/drive/folders/1DbLRO4kv-y3W06adFR26RdSaDPmfB4UA?usp=sharing)**.  You will need about **5Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  This is data from 1000 peripheral blood mononuclear cells (PBMCs) and is one of the sample datasets provided by 10X Genomics [here](https://bit.ly/10xPBMC_small).  I have merged the separate lane files to make this simpler to work with for the course.  
-* In addition to paired-end raw fastq files, the folder you downloaded above also contains a ['barcode whitelist'](https://kb.10xgenomics.com/hc/en-us/articles/115004506263-What-is-a-barcode-whitelist-) (3M-february-2018_v3.txt) that contains all the barcodes for the 10X RNA-seq assay.
-* You'll need the human transcriptome index file that you created way back in [lecture 2](https://diytranscriptomics.com/project/lecture-02).  If you don't have this, remember it's easy to create using `kallisto index -i Homo_sapiens.GRCh38.cdna.all.index Homo_sapiens.GRCh38.cdna.all.fasta`
+* In addition to paired-end raw fastq files, the folder you downloaded above also contains a ['barcode whitelist'](https://kb.10xgenomics.com/hc/en-us/articles/360031133451-Why-is-there-a-discrepancy-in-the-3M-february-2018-txt-barcode-whitelist-) (3M-february-2018_v3.txt) that contains all the barcodes for the 10X RNA-seq assay.
+* You'll need the human transcriptome index file that you created way back in [lecture 2](https://diytranscriptomics.com/project/lecture-02).  If you don't have this, remember it's easy to create using:
+
+```bash
+# activate your rnaseq environment and create the index
+conda activate rnaseq
+kallisto index -i Homo_sapiens.GRCh38.cdna.all.index Homo_sapiens.GRCh38.cdna.all.fasta
+```
+
 * You will need to have kb-python installed in a Conda environment on your laptop.  We did this way back in [lecture 1](https://diytranscriptomics.com/project/lecture-01).  If you can't get this software installed, no worries, just download the already processed data [here](), and focus on the concepts in the lecture.
 
 ## Lecture video

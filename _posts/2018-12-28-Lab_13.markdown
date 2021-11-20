@@ -3,7 +3,7 @@ title: 'scRNA-seq lab'
 subtitle: 'Labs 13 and 14 (required) • December 1 and December 8, 2021'
 date: 2018-12-28 00:00:00
 description: In this week-long final project, you'll work as part of a team to apply your newfound scRNA-seq skills to a dataset from the Immune Health group at UPenn, with the goal of identifying transcriptional programs associated with severe COVID. 
-featured_image: '/images/toxoBrain.png'
+featured_image: '/images/drops.png'
 ---
 
 <div style="text-align: right"> Bhagavati 2009, Journal of Neuroimaging. Vol 19, Issue 2, pgs 169-173 </div>
