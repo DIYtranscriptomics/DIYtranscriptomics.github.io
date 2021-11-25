@@ -24,7 +24,7 @@ In this class, we'll finally get down to the business of using [Kallisto](https:
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - Step-by-step walkthrough of using FastQC, Kallisto and MultiQC on our course dataset.
 

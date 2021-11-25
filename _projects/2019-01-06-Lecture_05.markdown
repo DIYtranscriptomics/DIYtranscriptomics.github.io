@@ -29,7 +29,7 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - Starting Step 2 script
 

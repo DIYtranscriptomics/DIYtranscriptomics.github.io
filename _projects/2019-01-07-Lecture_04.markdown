@@ -26,7 +26,7 @@ We'll begin this class by reviewing how to access R packages and help documentat
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - Starting Step 1 script
 

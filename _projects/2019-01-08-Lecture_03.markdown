@@ -27,7 +27,7 @@ featured_image: '/images/abacus.jpg'
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Preamble
 

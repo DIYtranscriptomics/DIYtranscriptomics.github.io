@@ -31,7 +31,7 @@ ARCHS4 database in HDF5 format for **[mouse](https://s3.amazonaws.com/mssm-seq-m
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - Lecture covering how to access public RNA-seq data
 

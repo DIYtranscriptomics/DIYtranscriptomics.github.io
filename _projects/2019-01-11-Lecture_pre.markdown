@@ -29,7 +29,7 @@ As the inaugural lecture for the course, we'll spend this lecture discussing Ill
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - History of sequencing and details of Illumina's 'Sequencing by Synthesis' (SBS) technology
 

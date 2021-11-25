@@ -15,7 +15,7 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 * Understand droplet-based scRNA-seq technology
 * Be able to compare and contrast single cell and bulk RNA-seq methods 
 * Understand cost and experimental design considerations for scRNA-seq experiments.
-* Understand multiplexed single cell assays (CITE-seq, 'multiome', TEA-seq)
+* Familiarity with multiplexed single cell assays (CITE-seq, 'multiome', TEA-seq)
 * Be able to define common terms and concepts in single cell genomics
 * Use Kallisto-BUStools to preprocess raw scRNA-seq data (via [kb-python](https://www.kallistobus.tools/))
 
@@ -23,7 +23,7 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 ## What you need to do
 
 * **[Download raw files](https://drive.google.com/drive/folders/1DbLRO4kv-y3W06adFR26RdSaDPmfB4UA?usp=sharing)**.  You will need about **5Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  This is data from 1000 peripheral blood mononuclear cells (PBMCs) and is one of the sample datasets provided by 10X Genomics [here](https://bit.ly/10xPBMC_small).  I have merged the separate lane files to make this simpler to work with for the course.  
-* In addition to paired-end raw fastq files, the folder you downloaded above also contains a ['barcode whitelist'](https://kb.10xgenomics.com/hc/en-us/articles/360031133451-Why-is-there-a-discrepancy-in-the-3M-february-2018-txt-barcode-whitelist-) (3M-february-2018_v3.txt) that contains all the barcodes for the 10X RNA-seq assay.
+
 * You'll need the human transcriptome index file that you created way back in [lecture 2](https://diytranscriptomics.com/project/lecture-02).  If you don't have this, remember it's easy to create using:
 
 ```bash
@@ -42,7 +42,13 @@ Coming soon!
 
 ## Reading
 
-Coming soon!
+Páll Melsted, A. Sina Booeshaghi, Fan Gao, Eduardo Beltrame, Lambda Lu, Kristján Eldjárn Hjorleifsson, Jase Gehring, Lior Pachter. (2019). Modular and efficient pre-processing of single-cell RNA-seq. bioRxiv; doi: https://doi.org/10.1101/673285
+
+Páll Melsted, Vasilis Ntranos, Lior Pachter. (2019). The barcode, UMI, set format and BUStools, Bioinformatics; doi: https://doi.org/10.1093/bioinformatics/btz279
+
+* In addition to paired-end raw fastq files, the folder you downloaded above also contains a ['barcode whitelist'](https://kb.10xgenomics.com/hc/en-us/articles/360031133451-Why-is-there-a-discrepancy-in-the-3M-february-2018-txt-barcode-whitelist-) (3M-february-2018_v3.txt) that contains all the barcodes for the 10X RNA-seq assay.
+
+
 
 ---
 

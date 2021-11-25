@@ -29,7 +29,7 @@ Reproducing an analysis requires more than just code. You need the original raw 
 * [Download this gitignore file](https://drive.google.com/open?id=13HhGnxAjCJilQNFHrIkBjGceXP6hZmKQ) - useful for updating your own .gitignore file in a project repo
 * [Download this script](http://DIYtranscriptomics.github.io/Code/files/buildPkg.R) that walks through how to turn any analysis project into an R package. You may also want this [text file](http://DIYtranscriptomics.github.io/Code/files/pkgDocs.txt) as a simple starting point for data documentation, and [this function file](http://DIYtranscriptomics.github.io/Code/files/DIYprofile.R) also as an example.
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - Reproducibility via the renv package
 

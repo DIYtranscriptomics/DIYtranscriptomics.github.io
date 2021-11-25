@@ -27,7 +27,7 @@ Lists of differentially expressed transcripts often include different patterns o
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - Intro to clustering and starting the Step 6 script
 

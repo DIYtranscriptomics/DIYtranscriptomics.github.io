@@ -29,7 +29,7 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 – Building blocks for making a good figure
 

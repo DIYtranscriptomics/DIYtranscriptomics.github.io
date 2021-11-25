@@ -28,7 +28,7 @@ Now that you've identified differentially expressed genes, what do they mean and
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 - Introduction to enrichment analysis methods
 

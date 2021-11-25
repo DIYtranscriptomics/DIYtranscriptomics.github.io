@@ -12,13 +12,24 @@ Coming soon!
 
 ## Learning objectives
 
-Coming soon!
+* Be able to import preprocessed data into R and create a Seurat object
+* Carry out filtering using [DropUtils](https://bioconductor.org/packages/release/bioc/html/DropletUtils.html)
+* Generate a Quality Control report of your scRNA-seq data directly within R
+* Carry out filtering and basic visualizations of scRNA-seq data
+* Generate clusters and visualize via UMAP dimensional reduction.
+* Find cluster-specific marker genes
+* Annotate unknown clusters using public databases and [CellAssign](https://www.rdocumentation.org/packages/cellassign/) and [SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html)
+* Integrate multiple samples and use sample details to analyze integrated data
 
-## What you need to do
+## Code
 
-Coming soon!
+[DIY_scRNAseq.R](http://DIYtranscriptomics.github.io/Code/files/DIY_scRNAseq.R) - this is the main R script that we'll use for the remainder of the course.
 
-## Lecture video
+[functions.R](http://DIYtranscriptomics.github.io/Code/files/functions.R) - this is the custom function we'll use for generating a QC report with our scRNA-seq data (see Reading material below for source).
+
+[t2g.txt](http://DIYtranscriptomics.github.io/Code/files/t2g.txt) - this is the human transcript-to-gene mapping file that we will use with Kallisto-Bustools to preprocess our data.  This file is easy to generate with `kb ref`, but downloading it now will save you some time.
+
+## Lecture videos
 
 Coming soon!
 
@@ -26,8 +37,15 @@ Coming soon!
 
 ## Reading
 
-Coming soon!
+[EmptyDrops: distinguishing cells from empty droplets in droplet-based single-cell RNA sequencing data.](https://10.1186/s13059-019-1662-y). Genome Biology. Lun ATL, Riesenfeld S, Andrews T, Dao T, Gomes T, participants in the 1st Human Cell Atlas Jamboree, Marioni JC (2019). *This is paper describing DropUtils*.
+
+[Sarah Ennis' Github repo for preprocessing scRNA-seq data](https://github.com/Sarah145/scRNA_pre_process).  This is the source of the custom script we used to generate the CellRanger-esque html QC report.  
 
 ---
 
+## Other videos
+
+### Letitia Parcalabescu (and Ms. Coffee Bean) explains UMAP in 10min.  Great video!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6BPl81wGGP8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -26,7 +26,7 @@ The ultimate goal of most transcriptional profiling experiments is to identify d
 
 ---
 
-## Lecture video
+## Lecture videos
 
 ### Part 1 – Introduction to differential feature selection in R/Bioconductor
 
