@@ -22,19 +22,15 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 
 ## What you need to do
 
-* **[Download raw files](https://drive.google.com/drive/folders/1DbLRO4kv-y3W06adFR26RdSaDPmfB4UA?usp=sharing)**.  You will need about **5Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  This is data from 1000 peripheral blood mononuclear cells (PBMCs) and is one of the sample datasets provided by 10X Genomics [here](https://bit.ly/10xPBMC_small).  I have merged the separate lane files to make this simpler to work with for the course.  
+**[Download raw files](https://drive.google.com/drive/folders/1DbLRO4kv-y3W06adFR26RdSaDPmfB4UA?usp=sharing)**.  You will need about **5Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  This is data from 1000 peripheral blood mononuclear cells (PBMCs) and is one of the sample datasets provided by 10X Genomics [here](https://bit.ly/10xPBMC_small).  I  merged the separate lane files to make this simpler to work with for the course.  
 
-* You'll need the human transcriptome index file that you created way back in [lecture 2](https://diytranscriptomics.com/project/lecture-02).  If you don't have this, remember it's easy to create using:
+**Human transcriptome reference index file** - this is the index you created way back in [lecture 2](https://diytranscriptomics.com/project/lecture-02).  If you don't have this, remember it's easy to create using `kallisto index`.
 
-```bash
-# activate your rnaseq environment and create the index
-conda activate rnaseq
-kallisto index -i Homo_sapiens.GRCh38.cdna.all.index Homo_sapiens.GRCh38.cdna.all.fasta
-```
+**[t2g.txt](http://DIYtranscriptomics.github.io/Code/files/t2g.txt)** - this is the human transcript-to-gene mapping file that we will use with Kallisto-Bustools to preprocess our data.  This file is easy to generate with `kb ref`, but downloading it now will save you some time.
 
-* You will need to have kb-python installed in a Conda environment on your laptop.  We did this way back in [lecture 1](https://diytranscriptomics.com/project/lecture-01).  If you can't get this software installed, no worries, just download the already processed data [here](), and focus on the concepts in the lecture.
+**[kb-python](https://github.com/pachterlab/kb_python)** - You will need to have this software installed in a Conda environment on your laptop.  We did this way back in [lecture 1](https://diytranscriptomics.com/project/lecture-01).  If you are unable to install or use kb-python, just follow along with the lecture so you understand the concepts.
 
-## Lecture video
+## Lecture videos
 
 Coming soon!
 
@@ -42,13 +38,11 @@ Coming soon!
 
 ## Reading
 
-Páll Melsted, A. Sina Booeshaghi, Fan Gao, Eduardo Beltrame, Lambda Lu, Kristján Eldjárn Hjorleifsson, Jase Gehring, Lior Pachter. (2019). Modular and efficient pre-processing of single-cell RNA-seq. bioRxiv; doi: https://doi.org/10.1101/673285
+[Modular and efficient pre-processing of single-cell RNA-seq](https://doi.org/10.1101/673285) - describes the full Kallisto-Bustools workflow for memory efficient processing of scRNA-seq data.
 
-Páll Melsted, Vasilis Ntranos, Lior Pachter. (2019). The barcode, UMI, set format and BUStools, Bioinformatics; doi: https://doi.org/10.1093/bioinformatics/btz279
+[The barcode, UMI, set format and BUStools, Bioinformatics](https://doi.org/10.1093/bioinformatics/btz279) - Describes the BUS format as an efficient and platform-independent way to store information from scRNA-seq data.
 
-* In addition to paired-end raw fastq files, the folder you downloaded above also contains a ['barcode whitelist'](https://kb.10xgenomics.com/hc/en-us/articles/360031133451-Why-is-there-a-discrepancy-in-the-3M-february-2018-txt-barcode-whitelist-) (3M-february-2018_v3.txt) that contains all the barcodes for the 10X RNA-seq assay.
-
-
+[A curated database reveals trends in single-cell transcriptomics](https://doi.org/10.1093/database/baaa073) - describes the growing collection of scRNA-seq experiments found [here](www.nxn.se/single-cell-studies/gui), which I used to produce two of the plots in the slides for this lecture.
 
 ---
 

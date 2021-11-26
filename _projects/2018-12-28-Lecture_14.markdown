@@ -8,26 +8,26 @@ featured_image: '/images/umap.png'
 
 ## Overview
 
-Coming soon!
+With your data already preprocessed with Kallisto-Bustools, you're now ready to import into R and use a variety of packages to filter, plot and analyze your data.
 
 ## Learning objectives
 
 * Be able to import preprocessed data into R and create a Seurat object
 * Carry out filtering using [DropUtils](https://bioconductor.org/packages/release/bioc/html/DropletUtils.html)
 * Generate a Quality Control report of your scRNA-seq data directly within R
-* Carry out filtering and basic visualizations of scRNA-seq data
-* Generate clusters and visualize via UMAP dimensional reduction.
-* Find cluster-specific marker genes
+* Use standard QC metrics and plots to filter your data
+* Generate clusters and visualize via UMAP dimensional reduction
+* Find cluster-specific marker genes with Seurat
 * Annotate unknown clusters using public databases and [CellAssign](https://www.rdocumentation.org/packages/cellassign/) and [SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html)
 * Integrate multiple samples and use sample details to analyze integrated data
 
-## Code
+## Code and files
+
+If you were unable to use kb-python in the last lecture to process raw scRNA-seq data, you'll need to download pre-processed data [here](https://drive.google.com/drive/folders/1RO45z5DEVpuaq5qwlF5QNdhc0tbGVK7l?usp=sharing), which will allow you to follow along with this lecture.
 
 [DIY_scRNAseq.R](http://DIYtranscriptomics.github.io/Code/files/DIY_scRNAseq.R) - this is the main R script that we'll use for the remainder of the course.
 
 [functions.R](http://DIYtranscriptomics.github.io/Code/files/functions.R) - this is the custom function we'll use for generating a QC report with our scRNA-seq data (see Reading material below for source).
-
-[t2g.txt](http://DIYtranscriptomics.github.io/Code/files/t2g.txt) - this is the human transcript-to-gene mapping file that we will use with Kallisto-Bustools to preprocess our data.  This file is easy to generate with `kb ref`, but downloading it now will save you some time.
 
 ## Lecture videos
 
@@ -37,9 +37,14 @@ Coming soon!
 
 ## Reading
 
-[EmptyDrops: distinguishing cells from empty droplets in droplet-based single-cell RNA sequencing data.](https://10.1186/s13059-019-1662-y). Genome Biology. Lun ATL, Riesenfeld S, Andrews T, Dao T, Gomes T, participants in the 1st Human Cell Atlas Jamboree, Marioni JC (2019). *This is paper describing DropUtils*.
+[EmptyDrops: distinguishing cells from empty droplets in droplet-based single-cell RNA sequencing data.](https://10.1186/s13059-019-1662-y). - This is the paper describing the DropletUtils package that we use in this lecture to identify empty drops.
 
-[Sarah Ennis' Github repo for preprocessing scRNA-seq data](https://github.com/Sarah145/scRNA_pre_process).  This is the source of the custom script we used to generate the CellRanger-esque html QC report.  
+[Sarah Ennis' Github repo for preprocessing scRNA-seq data](https://github.com/Sarah145/scRNA_pre_process) - This is the source of the custom script we use to generate the CellRanger-esque html QC report. 
+
+[Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling](https://pubmed.ncbi.nlm.nih.gov/31501550/) - Describes the CellAssign algorithm and R package that we use to identify clusters.
+
+[Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage](https://doi.org/10.1038/s41590-018-0276-y) – describes the SingleR package that allows us to use bulk RNA-seq data in public repositories to curate clusters in our scRNA-seq.
+
 
 ---
 
