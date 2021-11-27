@@ -23,11 +23,13 @@ With your data already preprocessed with Kallisto-Bustools, you're now ready to 
 
 ## Code and files
 
-If you were unable to use kb-python in the last lecture to process raw scRNA-seq data, you'll need to download pre-processed data [here](https://drive.google.com/drive/folders/1RO45z5DEVpuaq5qwlF5QNdhc0tbGVK7l?usp=sharing), which will allow you to follow along with this lecture.
+**[pre-processed data for 1000 PBMCs](https://drive.google.com/drive/folders/1RO45z5DEVpuaq5qwlF5QNdhc0tbGVK7l?usp=sharing)** - You only need to download this if you were unable to use kb-python in the last lecture to process raw scRNA-seq data.  This ensures that everyone can follow along with this lecture, regardless of whether you were able to install or use Kb-python.
 
-[DIY_scRNAseq.R](http://DIYtranscriptomics.github.io/Code/files/DIY_scRNAseq.R) - this is the main R script that we'll use for the remainder of the course.
+**[DIY_scRNAseq.R](http://DIYtranscriptomics.github.io/Code/files/DIY_scRNAseq.R)** - this is the R script that we'll use for this lecture.
 
-[functions.R](http://DIYtranscriptomics.github.io/Code/files/functions.R) - this is the custom function we'll use for generating a QC report with our scRNA-seq data (see Reading material below for source).
+**[functions.R](http://DIYtranscriptomics.github.io/Code/files/functions.R)** - this is the custom R function we'll use for generating a QC report with our scRNA-seq data (see Reading material below for source).
+
+**[Seurat objects]()** - this folder contains two Seurat objects from an unpublished mouse experiment (courtesy of Chris Hunter's lab).  One sample is from a naive control mouse, while the second is from a mouse infected with the protozoan parasite, *Toxoplasma gondii*.  We'll use these data in the second 1/2 of the lecture to practice integration and differential gene testing between conditions.
 
 ## Lecture videos
 
@@ -58,5 +60,5 @@ Coming soon!
 
 ## Acknowledgements
 
-I owe a big 'thank you' to Lindsey Shalberg and Dr. Chris Hunter for their willingness to share unpublished scRNA-seq data from the spleen of Toxoplasma-infected mice, which is used at the end of this lecture to illustrate data integration and downstream analysis.
+I owe a big THANK YOU to Lindsey Shallberg and Dr. Chris Hunter for their willingness to share unpublished scRNA-seq data from the spleen of Toxoplasma-infected mice, which is used at the end of this lecture to illustrate data integration and downstream analysis.
 
