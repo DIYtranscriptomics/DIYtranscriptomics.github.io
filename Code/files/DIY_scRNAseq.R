@@ -1,6 +1,7 @@
 # Introduction ----
 # this script walks through the quality assessment (QA) and analysis of single cell RNA-seq data
-# we use a small (~1000 cell) dataset from human peripheral blood mononuclear cells (PBMCs)
+# In the 1st 1/2 of the script, we pratice some basics using a small (~1000 cell) dataset from human peripheral blood mononuclear cells (PBMCs). This dataset comes from the public datasets on the 10X Genomics website: https://www.10xgenomics.com/resources/datasets
+# In the 2nd 1/2 of the script, we import two separate Seurat objects generated from the spleen of naive and Toxoplasma gondii infected mice, giving us an opportunity to create and analyze an integrated dataset
 
 # Import data into R and filter out empty drops ----
 # Begin by setting up a new RProject in the folder where you just processed your scRNA-seq data with Kb
@@ -33,12 +34,14 @@ filt_mtx <- raw_mtx[,keep]
 # write out filtered results
 write10xCounts('counts_filtered', gene.symbol = genes[,2], filt_mtx, overwrite=T) 
 
-# Generate QC report ----
+# Generate QA report ----
 # this report will contain some useful metrics as well as the traditional log-transformed UMI rank plot (a.k.a. 'waterfall' plot)
 # plot was first described in the Drop-seq paper: - Macosko et al. 2015, DOI:10.1016/j.cell.2015.05.002
 # this plot has two important points that we will try to identify:
-# 1. 'knee point' - is the point where the signed curvature is minimized. This corresponds to a transition between a distinct subset of barcodes with large totals and the majority of barcodes with smaller totals
-# 2. 'inflection point' - is the point on the curve where the first derivative is minimized. This corresponds to the point past which cells cannot reliably be distinguished from background
+# 1. 'knee point' - is the point where the signed curvature is minimized. 
+# This corresponds to a transition between a distinct subset of barcodes with large totals and the majority of barcodes with smaller totals
+# 2. 'inflection point' - is the point on the curve where the first derivative is minimized. 
+# This corresponds to the point past which cells cannot reliably be distinguished from background
 
 # source the R script that contains the bc_rank_plot and print_HTML functions we'll use to produce a QC report
 # this script comes from Sarah Ennis's github repo here:  https://github.com/Sarah145/scRNA_pre_process
@@ -52,7 +55,7 @@ kb_stats <- c(fromJSON(file = 'inspect.json'),
               fromJSON(file = 'run_info.json')) 
 
 # determine chemistry version
-tech <- grep('10x(.*)', strsplit(kb_stats$call, '\\s')[[1]], value=T) 
+tech <- grep('10X(.*)', strsplit(kb_stats$call, '\\s')[[1]], value=T) 
 
 # make a nice/simple table that summarizes that stats
 seq_stats <- data.frame(stat = c('Sequencing technology', 'Number of reads processed', '% reads pseudoaligned', # get sequencing/alignment stats 
@@ -120,6 +123,9 @@ pbmc.1k.seurat <- subset(pbmc.1k.seurat, subset =
 ggplot(pbmc.1k.seurat@meta.data, aes(nCount_RNA, nFeature_RNA)) +
   geom_point(alpha = 0.7, size = 0.5) +
   labs(x = "Total UMI counts per cell", y = "Number of genes detected")
+# Potential things to look for in the type of QA plot produced above:
+# 1. Data points in the bottom LEFT hand quadrant = low genes and UMIs per cell. May represent poor quality cells.
+# 2. Data points in the bottom RIGHT hand quadrant = low genes but high UMIs per cell. These could be dying cells, but also could represent a population of a low complexity celltype (i.e red blood cells).
 
 # Plot UMAP ----
 # it is standard practice to apply a linear transformation ('scaling') before PCA. For single cell data this includes:
@@ -146,8 +152,7 @@ cluster1.markers.df <- as_tibble(cluster1.markers, rownames = "geneID")
 # Export DEGs for each cluster (ranked by avg_logFC > 0.5)
 myTopHits_cluster1 <- cluster1.markers.df %>% arrange(desc(avg_log2FC))
 myTopHits_cluster1 <- dplyr::slice(myTopHits_cluster1, 1:20)
-# Take a look at this dataframe.  If many genes have pct.diff > 0.4, may want to take more genes
-DoHeatmap(pbmc.1k.seurat, features = top10$gene)
+
 # you can make this list of genes into an interactive table
 datatable(myTopHits_cluster1, 
           extensions = c('KeyTable', "FixedHeader"), 
@@ -241,6 +246,7 @@ fit <- cellassign(
 
 # incorporate the cellAssign result into your singleCellExperiment
 pbmc.1k.sce$cell_type <- fit$cell_type
+# plotUMAP is the Scater equivalent of Seurat's DimPlot
 plotUMAP(pbmc.1k.sce, colour_by = "cell_type")
 
 # a different way of labeling clusters using public datasets
@@ -266,55 +272,164 @@ plotUMAP(pbmc.1k.sce, colour_by = "SingleR.labels")
 # Integrate multiple scRNA-seq datasets ----
 # To demonstrate integration, we'll import a dataset with 10k PBMCs (already preprocessed)
 # our goal is to integrate these data with our 1k dataset
-load("pbmc.10k.seurat")
+load("spleen.naive.seurat")
+DimPlot(spleen.naive.seurat, reduction = "umap", split.by = "orig.ident", label = TRUE)
+
+load("spleen.toxoInfected.seurat")
+DimPlot(spleen.toxoInfected.seurat, reduction = "umap", split.by = "orig.ident", label = TRUE)
 
 # since we are now going to work with multiple samples, we need a study design file with our sample metadata
 targets <- read_tsv("studyDesign.txt")
 
 # extract variables of interest
 sampleID <- targets$sampleID
-description <- targets$description
+treatment <- targets$treatment
 
 # annotate your seurat objects with as much or as little metadata as you want!
-pbmc.1k.seurat$description <- description[1]
-pbmc.10k.seurat$description <- description[2]
+spleen.naive.seurat$treatment <- treatment[1]
+spleen.toxoInfected.seurat$treatment <- treatment[2]
+
+# take a look at where this metadata lives in the seurat object
+spleen.naive.seurat@meta.data$treatment
 
 # select features that are repeatedly variable across datasets for integration
-pbmc_features <- SelectIntegrationFeatures(object.list = c(pbmc.1k.seurat, pbmc.10k.seurat))
-pbmc_anchors <- FindIntegrationAnchors(object.list = c(pbmc.1k.seurat, pbmc.10k.seurat), anchor.features = pbmc_features)
-pbmc_integrated <- IntegrateData(anchorset = pbmc_anchors)
+spleen_features <- SelectIntegrationFeatures(object.list = c(spleen.naive.seurat, spleen.toxoInfected.seurat))
+spleen_anchors <- FindIntegrationAnchors(object.list = c(spleen.naive.seurat, spleen.toxoInfected.seurat), anchor.features = spleen_features)
+spleen_integrated <- IntegrateData(anchorset = spleen_anchors)
 # NOTE: if you look at your seurat object, the default assay as changed from 'RNA' to 'integrated'
 # this can be change anytime using the line below
 # this would be the same way you would change between scRNA-seq and scATAC-seq
 # DefaultAssay(pbmc_integrated) <- "RNA"
 
 # Run the standard workflow for visualization and clustering
-pbmc_integrated <- ScaleData(pbmc_integrated, verbose = FALSE)
-pbmc_integrated <- RunPCA(pbmc_integrated, npcs = 30, verbose = FALSE)
-pbmc_integrated <- RunUMAP(pbmc_integrated, reduction = "pca", dims = 1:30)
-pbmc_integrated<- FindNeighbors(pbmc_integrated, reduction = "pca", dims = 1:30)
-pbmc_integrated <- FindClusters(pbmc_integrated, resolution = 0.5)
-DimPlot(pbmc_integrated, reduction = "umap", label = TRUE)
+spleen_integrated <- ScaleData(spleen_integrated, verbose = FALSE)
+spleen_integrated <- RunPCA(spleen_integrated, npcs = 30, verbose = FALSE)
+spleen_integrated <- RunUMAP(spleen_integrated, reduction = "pca", dims = 1:30)
+spleen_integrated<- FindNeighbors(spleen_integrated, reduction = "pca", dims = 1:30)
+spleen_integrated <- FindClusters(spleen_integrated, resolution = 0.5)
+DimPlot(spleen_integrated, reduction = "umap", label = TRUE)
+
+# let's see what proportion of our total cells reside in each cluster
+prop.table(table(Idents(spleen_integrated)))
+
 # remember, we have metadata in this integrated seurat object, so you can use this to split your UMAP
-DimPlot(pbmc_integrated, reduction = "umap", 
-        split.by = "description", # this facets the plot 
+DimPlot(spleen_integrated, reduction = "umap", 
+        split.by = "treatment", # this facets the plot 
         group.by = "seurat_clusters", # labels the cells with values from your group.by variable
         label = TRUE)
 
-# now let's rerun our cluster identification using SingleR
-pbmc_integrated.sce <- as.SingleCellExperiment(pbmc_integrated)
-predictions <- SingleR(test=pbmc_integrated.sce, assay.type.test=1, 
-                       ref=Monaco.data, labels=Monaco.data$label.main)
+# plot genes of interest on UMAP
+FeaturePlot(spleen_integrated, 
+            reduction = "umap", 
+            features = 'Sdc1',
+            pt.size = 0.4, 
+            order = TRUE,
+            split.by = "treatment",
+            min.cutoff = 'q10',
+            label = FALSE)
 
-plotScoreHeatmap(predictions)
+# we can plot more than one gene here
+my_fav_genes <- c("Cd4", "Cd8a")
+FeaturePlot(spleen_integrated, 
+            reduction = "umap", 
+            features = my_fav_genes,
+            pt.size = 0.4, 
+            order = TRUE,
+            split.by = "treatment",
+            min.cutoff = 'q10',
+            label = FALSE)
+
+# Stuff I'm not sure I need for ID'ing clusters in integrated data ----
+# now let's rerun our cluster identification using SingleR
+spleen_integrated.sce <- as.SingleCellExperiment(spleen_integrated)
+predictions <- SingleR(test=spleen_integrated.sce, assay.type.test=1, 
+                       ref=MouseRNAseq.data, labels=MouseRNAseq.data$label.main)
 
 #now add back to singleCellExperiment object (or Seurat objects)
-pbmc_integrated.sce[["SingleR.labels"]] <- predictions$labels
-plotUMAP(pbmc_integrated.sce, colour_by = "SingleR.labels")
+spleen_integrated.sce[["SingleR.labels"]] <- predictions$labels
+plotUMAP(spleen_integrated.sce, colour_by = "SingleR.labels")
 
-# you could explore other aspects of your data by looking at the available slots in your seurat object
-DimPlot(pbmc.1k.seurat, group.by = "orig.ident") 
+spleen_integrated2 <- as.Seurat(spleen_integrated.sce, counts = NULL)
+DimPlot(spleen_integrated2, reduction = "UMAP", 
+        split.by = "treatment", # this facets the plot 
+        group.by = "SingleR.labels", # labels the cells with values from your group.by variable
+        label = TRUE)
+
+# If we repeat the steps above for different cell type markers, we get a sense for the following cluster IDs
+new.cluster.ids <- c("B cells", "RBCs", "CD8+ T cells", "B cells", "RBCs", "CD4+ T cells", "CD4+ T cells", "Monocytes/Macrophages", "Granulocytes", "Monocytes/Macrophages", "B cells", "Plasma cells", "Monocytes/Macrophages", "Monocytes/Macrophages", "Granulocytes", "CD8+ T cells", "CD8+ T cells", "17", "18", "19", "20") 
+names(new.cluster.ids) <- levels(spleen_integrated)
+spleen_integrated <- RenameIdents(spleen_integrated, new.cluster.ids)
+DimPlot(spleen_integrated, reduction = "umap", 
+        split.by = "treatment", # this facets the plot 
+        label = TRUE)
+
+# CellAssign bit not working right now...but that's OK ----
+spleen_marker_list <- list(
+  Monocytes = c("Itgam", "Ly6g", "Ly6c"),
+  RBCs = c("Ter119", "Itga2b"),
+  Macrophages = c("Adgre1", "Ly6g", "Itgam" ),
+  `CD4 T cells` = c("Cd4", "Cd3e", "Tcra"),
+  `CD8 T cells` = c("Cd8", "Cd3e", "Tcra"),
+  `Plasma cells` = c("Sdc1", "Ighg1", "Cd79a", "Ighg2"),
+  `B cells` = c("Cd21", "Cd23", "Ighm", "Cd19", "Ighd", "Ptprc"))
+
+# convert your marker gene list from above to a matrix
+spleen_marker_matrix <- marker_list_to_mat(spleen_marker_list, include_other = FALSE)
+
+# you can view this matrix as a heatmap
+pheatmap(spleen_marker_matrix)
+
+# make sure all your markers were actually observed in your single cell data.  Remove markers that were not detected
+marker_in_sce <- match(rownames(spleen_marker_list), rowData(spleen_integrated.sce)$Symbol)
+stopifnot(all(!is.na(marker_in_sce)))
+
+#subset data to include only markers
+sce_marker <- spleen_integrated.sce[marker_in_sce, ]
+stopifnot(all.equal(rownames(spleen_marker_list), rowData(sce_marker)$Symbol))
+
+# run cellAssign
+fit <- cellassign(
+  exprs_obj = sce_marker,
+  marker_gene_info = spleen_marker_matrix,
+  s = sizeFactors(spleen_integrated.sce),
+  shrinkage = TRUE,
+  max_iter_adam = 50,
+  min_delta = 2,
+  verbose = TRUE)
+
+# incorporate the cellAssign result into your singleCellExperiment
+pbmc.1k.sce$cell_type <- fit$cell_type
+# plotUMAP is the Scater equivalent of Seurat's DimPlot
+plotUMAP(pbmc.1k.sce, colour_by = "cell_type")
 
 
-prop.table(table(Idents(Rat.EpCAM.germ.reclustered)))
 
+# subset seurat object to focus on single cluster ----
+# let's get just the CD4 T cells
+spleen_integrated.CD4.Tcells <- subset(spleen_integrated, idents = "CD4+ T cells")
+# you could re-cluster if you want...depends on what you're trying to accomplish
+#spleen_integrated.CD4.Tcells <- FindNeighbors(spleen_integrated.CD4.Tcells, dims = 1:10, k.param = 5)
+#spleen_integrated.CD4.Tcells <- FindClusters(spleen_integrated.CD4.Tcells)
+DimPlot(spleen_integrated.CD4.Tcells, reduction = "umap", label = TRUE)
+Idents(spleen_integrated.CD4.Tcells)
+
+# now we need to switch out 'Idents' to be treatment, rather than cluster
+Idents(spleen_integrated.CD4.Tcells) <- spleen_integrated.CD4.Tcells$treatment
+inf.vs.naive.markers <- FindMarkers(object = spleen_integrated.CD4.Tcells, 
+                                   ident.1 = "infected", 
+                                   ident.2 = "naive", 
+                                   min.pct = 0)
+
+inf.vs.naive.markers$pct.diff <- inf.vs.naive.markers$pct.1 - inf.vs.naive.markers$pct.2
+inf.vs.naive.markers.df <- as_tibble(inf.vs.naive.markers, rownames = "geneID")
+# Export DEGs for each cluster (ranked by avg_logFC > 0.5)
+myTopHits <- inf.vs.naive.markers.df %>% arrange(desc(avg_log2FC))
+
+FeaturePlot(spleen_integrated.CD4.Tcells, 
+            reduction = "umap", 
+            features = "Ccl5",
+            pt.size = 0.4, 
+            order = TRUE,
+            split.by = "treatment",
+            min.cutoff = 'q10',
+            label = FALSE)

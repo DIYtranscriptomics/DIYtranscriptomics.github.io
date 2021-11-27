@@ -24,9 +24,9 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 
 **[Download raw files](https://drive.google.com/drive/folders/1DbLRO4kv-y3W06adFR26RdSaDPmfB4UA?usp=sharing)**.  You will need about **5Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  This is data from 1000 peripheral blood mononuclear cells (PBMCs) and is one of the sample datasets provided by 10X Genomics [here](https://bit.ly/10xPBMC_small).  I  merged the separate lane files to make this simpler to work with for the course.  
 
-**Human transcriptome reference index file** - this is the index you created way back in [lecture 2](https://diytranscriptomics.com/project/lecture-02).  If you don't have this, remember it's easy to create using `kallisto index`.
+**[Human transcriptome reference index file](https://diytranscriptomics.com/project/lecture-02)** - this is the index you created using Kallisto way back in lecture 2.  If you don't have this, remember it's easy to create using `kallisto index`.
 
-**[t2g.txt](http://DIYtranscriptomics.github.io/Code/files/t2g.txt)** - this is the human transcript-to-gene mapping file that we will use with Kallisto-Bustools to preprocess our data.  This file is easy to generate with `kb ref`, but downloading it now will save you some time.
+**[t2g.txt](http://DIYtranscriptomics.github.io/Code/files/t2g.txt)** - this is a human transcript-to-gene mapping file that we will use with Kallisto-Bustools to preprocess our data.  This file is easy to generate with `kb ref`, but downloading it now will save you some time.
 
 **[kb-python](https://github.com/pachterlab/kb_python)** - You will need to have this software installed in a Conda environment on your laptop.  We did this way back in [lecture 1](https://diytranscriptomics.com/project/lecture-01).  If you are unable to install or use kb-python, just follow along with the lecture so you understand the concepts.
 
@@ -45,5 +45,11 @@ Coming soon!
 [A curated database reveals trends in single-cell transcriptomics](https://doi.org/10.1093/database/baaa073) - describes the growing collection of scRNA-seq experiments found [here](www.nxn.se/single-cell-studies/gui), which I used to produce two of the plots in the slides for this lecture.
 
 ---
+
+## Acknowledgements
+
+I am deeply grateful to Dr. Eoin Whelan for hours of conversation that helped structure this lecture and code. 
+
+----
 
 

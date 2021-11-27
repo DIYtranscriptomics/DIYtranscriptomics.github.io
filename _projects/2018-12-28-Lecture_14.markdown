@@ -43,7 +43,7 @@ Coming soon!
 
 [Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling](https://pubmed.ncbi.nlm.nih.gov/31501550/) - Describes the CellAssign algorithm and R package that we use to identify clusters.
 
-[Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage](https://doi.org/10.1038/s41590-018-0276-y) – describes the SingleR package that allows us to use bulk RNA-seq data in public repositories to curate clusters in our scRNA-seq.
+[Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage](https://doi.org/10.1038/s41590-018-0276-y) – describes the SingleR and celldex packages that allow us to leverage bulk RNA-seq data in public repositories to curate clusters in our scRNA-seq.
 
 
 ---
@@ -53,4 +53,10 @@ Coming soon!
 ### Letitia Parcalabescu (and Ms. Coffee Bean) explains UMAP in 10min.  Great video!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6BPl81wGGP8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+## Acknowledgements
+
+I owe a big 'thank you' to Lindsey Shalberg and Dr. Chris Hunter for their willingness to share unpublished scRNA-seq data from the spleen of Toxoplasma-infected mice, which is used at the end of this lecture to illustrate data integration and downstream analysis.
 
