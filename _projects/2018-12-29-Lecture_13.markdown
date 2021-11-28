@@ -32,7 +32,17 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 
 ## Lecture videos
 
-Coming soon!
+### Part 1 – Intro to single cell RNA-seq (scRNA-seq)
+
+<iframe src="https://player.vimeo.com/video/650686313" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 – Practical considerations for single cell experiments
+
+<iframe src="https://player.vimeo.com/video/650690531" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 3 – Pre-processing scRNA-seq data using Kallisto-bustools
+
+<iframe src="https://player.vimeo.com/video/650697085" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
