@@ -6,6 +6,8 @@ description: Now that you're comfortable with bulk RNA-seq data analysis, we'll 
 featured_image: '/images/colorbins.png'
 ---
 
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0Le8wONoMpbxbT03G7kCbUg6Q#Lecture14%5FscRNAseq)
+
 ## Overview
 
 Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our focus to the rapidly developing landscape of single cell RNA-seq (scRNA-seq).  In this lecture, you'll learn about the underlying technology and we'll demonstrate how to process raw single cell data directly on your laptop (!) for importing into R/bioconductor.

@@ -6,6 +6,8 @@ description: In this final lecture of the course, you'll learn to use Seurat to 
 featured_image: '/images/drops.png'
 ---
 
+No lecture slides for this class.  We'll spend the entire time working on scRNA-seq script.
+
 ## Overview
 
 With your data already preprocessed with Kallisto-Bustools, you're now ready to import into R and use a variety of packages to filter, plot and analyze your data.
