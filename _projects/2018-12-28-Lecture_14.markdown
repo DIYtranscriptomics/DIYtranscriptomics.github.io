@@ -43,9 +43,9 @@ With your data already preprocessed with Kallisto-Bustools, you're now ready to 
 
 <iframe src="https://player.vimeo.com/video/650714817" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Part 2 – Integration of multiple samples and working with sample metadata
+### Part 3 – Integration of multiple samples and working with sample metadata
 
-<iframe src="https://player.vimeo.com/video/650714817" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/650848304" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
@@ -59,7 +59,7 @@ With your data already preprocessed with Kallisto-Bustools, you're now ready to 
 
 [Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage](https://doi.org/10.1038/s41590-018-0276-y) – describes the SingleR and celldex packages that allow us to leverage bulk RNA-seq data in public repositories to curate clusters in our scRNA-seq.
 
-[Comprehensive Integration of Single-Cell Data](https://doi.org/10.1016/j.cell.2019.05.031) - This 2019 paper describes the underlying 
+[Comprehensive Integration of Single-Cell Data](https://doi.org/10.1016/j.cell.2019.05.031) - This 2019 paper describes the underlying statistical approach for data integration in Seurat.
 
 
 
@@ -75,5 +75,5 @@ With your data already preprocessed with Kallisto-Bustools, you're now ready to 
 
 ## Acknowledgements
 
-I owe a big THANK YOU to Lindsey Shallberg and Dr. Chris Hunter for their willingness to share unpublished scRNA-seq data from the spleen of Toxoplasma-infected mice, which is used at the end of this lecture to illustrate data integration and downstream analysis.
+I owe a big THANK YOU to Lindsey Shallberg and Dr. Chris Hunter for their willingness to share scRNA-seq data from their experiment in Toxoplasma-infected mice, which is used at the end of this lecture to illustrate data integration and downstream analysis.
 

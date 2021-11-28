@@ -1,7 +1,7 @@
 # Introduction ----
 # this script walks through the quality assessment (QA) and analysis of single cell RNA-seq data
-# In the 1st 1/2 of the script, we pratice some basics using a small (~1000 cell) dataset from human peripheral blood mononuclear cells (PBMCs). This dataset comes from the public datasets on the 10X Genomics website: https://www.10xgenomics.com/resources/datasets
-# In the 2nd 1/2 of the script, we import two separate Seurat objects generated from the spleen of naive and Toxoplasma gondii infected mice, giving us an opportunity to create and analyze an integrated dataset
+# In the 1st 1/2 of the script, we'll practice some basics using a small (~1000 cell) dataset from human peripheral blood mononuclear cells (PBMCs). This dataset comes from the public datasets on the 10X Genomics website: https://www.10xgenomics.com/resources/datasets
+# In the 2nd 1/2 of the script, we'll import two separate Seurat objects generated from the spleen of naive and Toxoplasma gondii infected mice, giving us an opportunity to create and analyze an integrated dataset
 
 # Import data into R and filter out empty drops ----
 # Begin by setting up a new RProject in the folder where you just processed your scRNA-seq data with Kb
@@ -270,8 +270,8 @@ pbmc.1k.sce[["SingleR.labels"]] <- predictions$labels
 plotUMAP(pbmc.1k.sce, colour_by = "SingleR.labels")
 
 # Integrate multiple scRNA-seq datasets ----
-# To demonstrate integration, we'll import a dataset with 10k PBMCs (already preprocessed)
-# our goal is to integrate these data with our 1k dataset
+# To demonstrate integration, we'll leave behind the PBMC dataset we worked with above
+# We'll read in two Seurat objects - one generated from the spleen of a untreated mouse (control), and the second from the spleen of mouse infected with Toxoplasma gondii
 load("spleen.naive.seurat")
 DimPlot(spleen.naive.seurat, reduction = "umap", split.by = "orig.ident", label = TRUE)
 
@@ -290,7 +290,7 @@ spleen.naive.seurat$treatment <- treatment[1]
 spleen.toxoInfected.seurat$treatment <- treatment[2]
 
 # take a look at where this metadata lives in the seurat object
-spleen.naive.seurat@meta.data$treatment
+spleen.toxoInfected.seurat@meta.data$treatment
 
 # select features that are repeatedly variable across datasets for integration
 spleen_features <- SelectIntegrationFeatures(object.list = c(spleen.naive.seurat, spleen.toxoInfected.seurat))
@@ -299,13 +299,13 @@ spleen_integrated <- IntegrateData(anchorset = spleen_anchors)
 # NOTE: if you look at your seurat object, the default assay as changed from 'RNA' to 'integrated'
 # this can be change anytime using the line below
 # this would be the same way you would change between scRNA-seq and scATAC-seq
-# DefaultAssay(pbmc_integrated) <- "RNA"
+# DefaultAssay(spleen_integrated) <- "RNA"
 
 # Run the standard workflow for visualization and clustering
 spleen_integrated <- ScaleData(spleen_integrated, verbose = FALSE)
 spleen_integrated <- RunPCA(spleen_integrated, npcs = 30, verbose = FALSE)
 spleen_integrated <- RunUMAP(spleen_integrated, reduction = "pca", dims = 1:30)
-spleen_integrated<- FindNeighbors(spleen_integrated, reduction = "pca", dims = 1:30)
+spleen_integrated <- FindNeighbors(spleen_integrated, reduction = "pca", dims = 1:30)
 spleen_integrated <- FindClusters(spleen_integrated, resolution = 0.5)
 DimPlot(spleen_integrated, reduction = "umap", label = TRUE)
 
@@ -363,6 +363,9 @@ DimPlot(spleen_integrated, reduction = "umap",
         split.by = "treatment", # this facets the plot 
         label = TRUE)
 
+# take a look at what you've done
+Idents(spleen_integrated)
+
 # subset seurat object to focus on single cluster ----
 # let's get just the CD4 T cells
 spleen_integrated.CD4.Tcells <- subset(spleen_integrated, idents = "CD4+ T cells")
@@ -375,9 +378,9 @@ Idents(spleen_integrated.CD4.Tcells)
 # now we need to switch out 'Idents' to be treatment, rather than cluster
 Idents(spleen_integrated.CD4.Tcells) <- spleen_integrated.CD4.Tcells$treatment
 inf.vs.naive.markers <- FindMarkers(object = spleen_integrated.CD4.Tcells, 
-                                   ident.1 = "infected", 
-                                   ident.2 = "naive", 
-                                   min.pct = 0)
+                                    ident.1 = "infected", 
+                                    ident.2 = "naive", 
+                                    min.pct = 0)
 
 inf.vs.naive.markers$pct.diff <- inf.vs.naive.markers$pct.1 - inf.vs.naive.markers$pct.2
 inf.vs.naive.markers.df <- as_tibble(inf.vs.naive.markers, rownames = "geneID")
@@ -392,3 +395,4 @@ FeaturePlot(spleen_integrated.CD4.Tcells,
             split.by = "treatment",
             min.cutoff = 'q10',
             label = FALSE)
+
