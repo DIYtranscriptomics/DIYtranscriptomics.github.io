@@ -363,47 +363,6 @@ DimPlot(spleen_integrated, reduction = "umap",
         split.by = "treatment", # this facets the plot 
         label = TRUE)
 
-# CellAssign bit not working right now...but that's OK ----
-spleen_marker_list <- list(
-  Monocytes = c("Itgam", "Ly6g", "Ly6c"),
-  RBCs = c("Ter119", "Itga2b"),
-  Macrophages = c("Adgre1", "Ly6g", "Itgam" ),
-  `CD4 T cells` = c("Cd4", "Cd3e", "Tcra"),
-  `CD8 T cells` = c("Cd8", "Cd3e", "Tcra"),
-  `Plasma cells` = c("Sdc1", "Ighg1", "Cd79a", "Ighg2"),
-  `B cells` = c("Cd21", "Cd23", "Ighm", "Cd19", "Ighd", "Ptprc"))
-
-# convert your marker gene list from above to a matrix
-spleen_marker_matrix <- marker_list_to_mat(spleen_marker_list, include_other = FALSE)
-
-# you can view this matrix as a heatmap
-pheatmap(spleen_marker_matrix)
-
-# make sure all your markers were actually observed in your single cell data.  Remove markers that were not detected
-marker_in_sce <- match(rownames(spleen_marker_list), rowData(spleen_integrated.sce)$Symbol)
-stopifnot(all(!is.na(marker_in_sce)))
-
-#subset data to include only markers
-sce_marker <- spleen_integrated.sce[marker_in_sce, ]
-stopifnot(all.equal(rownames(spleen_marker_list), rowData(sce_marker)$Symbol))
-
-# run cellAssign
-fit <- cellassign(
-  exprs_obj = sce_marker,
-  marker_gene_info = spleen_marker_matrix,
-  s = sizeFactors(spleen_integrated.sce),
-  shrinkage = TRUE,
-  max_iter_adam = 50,
-  min_delta = 2,
-  verbose = TRUE)
-
-# incorporate the cellAssign result into your singleCellExperiment
-pbmc.1k.sce$cell_type <- fit$cell_type
-# plotUMAP is the Scater equivalent of Seurat's DimPlot
-plotUMAP(pbmc.1k.sce, colour_by = "cell_type")
-
-
-
 # subset seurat object to focus on single cluster ----
 # let's get just the CD4 T cells
 spleen_integrated.CD4.Tcells <- subset(spleen_integrated, idents = "CD4+ T cells")
