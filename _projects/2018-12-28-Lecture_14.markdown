@@ -35,7 +35,17 @@ With your data already preprocessed with Kallisto-Bustools, you're now ready to 
 
 ## Lecture videos
 
-Coming soon!
+### Part 1 – Importing scRNA-seq data into R and carrying out basic QA analysis.
+
+<iframe src="https://player.vimeo.com/video/650710835" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 – Dimensional reduction with UMAP, and cluster identification
+
+<iframe src="https://player.vimeo.com/video/650714817" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 – Integration of multiple samples and working with sample metadata
+
+<iframe src="https://player.vimeo.com/video/650714817" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 
@@ -48,6 +58,9 @@ Coming soon!
 [Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling](https://pubmed.ncbi.nlm.nih.gov/31501550/) - Describes the CellAssign algorithm and R package that we use to identify clusters.
 
 [Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage](https://doi.org/10.1038/s41590-018-0276-y) – describes the SingleR and celldex packages that allow us to leverage bulk RNA-seq data in public repositories to curate clusters in our scRNA-seq.
+
+[Comprehensive Integration of Single-Cell Data](https://doi.org/10.1016/j.cell.2019.05.031) - This 2019 paper describes the underlying 
+
 
 
 ---

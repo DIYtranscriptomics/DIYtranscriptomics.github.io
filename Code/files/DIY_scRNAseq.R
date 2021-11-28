@@ -339,7 +339,7 @@ FeaturePlot(spleen_integrated,
             min.cutoff = 'q10',
             label = FALSE)
 
-# Stuff I'm not sure I need for ID'ing clusters in integrated data ----
+# Leveraging cluster identity in your analysis ----
 # now let's rerun our cluster identification using SingleR
 spleen_integrated.sce <- as.SingleCellExperiment(spleen_integrated)
 predictions <- SingleR(test=spleen_integrated.sce, assay.type.test=1, 
