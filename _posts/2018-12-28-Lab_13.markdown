@@ -14,7 +14,7 @@ featured_image: '/images/covid_scale.png'
 
 ## Description
 
-In this lab you'll work with a large scRNA-seq dataset, courtesy of [John Wherry's lab](https://www.med.upenn.edu/wherrylab/), Allie Greenplate, and the UPenn [Immune Health group](https://www.med.upenn.edu/immunehealth/).  This dataset is part of a study that they [recently published in Science](https://doi.org/10.1126/science.abc8511).  Your goal is to import this data into R and carry out an analysis of your choosing
+In this lab you'll work with a large unpublished scRNA-seq dataset from PBMCs, courtesy of [John Wherry's lab](https://www.med.upenn.edu/wherrylab/), Allie Greenplate, and the UPenn [Immune Health group](https://www.med.upenn.edu/immunehealth/).  This PBMC dataset expands on a study that they [recently published in Science](https://doi.org/10.1126/science.abc8511), and includes a subset of the same patients, selected to represent a range in disease severity.  Your goal is to import these data into R and carry out an analysis of your choosing.
 
 ## What you need to do
 
@@ -29,6 +29,8 @@ Each team will have the 2hrs in this lab to get started, as well as the remainin
 
 ## Files
 
-**[studyDesign.txt]()** - This file contains the metadata for each patient, which you'll need for your analysis.
+**[ImmuneHealth.seurat](https://drive.google.com/file/d/1SWy8oTMACflATD5_588x0XSoDH1oPAHU/view?usp=sharing)** - This Seurat object contains integrated data for PBMCs from 12 COVID patients and 4 healthy controls, for a total of ~65,000 cells.
+
+**[ImmuneHealth_COVID_studyDesign.txt](https://drive.google.com/file/d/1SVGdE10aIBBPAA6ZKaLWt_sDlm4isNOZ/view?usp=sharing)** - This file contains the metadata for each patient included in the integrated Seurat object above.
 
 
