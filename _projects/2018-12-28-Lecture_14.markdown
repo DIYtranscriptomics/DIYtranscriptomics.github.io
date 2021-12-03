@@ -51,7 +51,7 @@ With your data already preprocessed with Kallisto-Bustools, you're now ready to 
 
 ## Reading
 
-[EmptyDrops: distinguishing cells from empty droplets in droplet-based single-cell RNA sequencing data.](https://10.1186/s13059-019-1662-y). - This is the paper describing the DropletUtils package that we use in this lecture to identify empty drops.
+[EmptyDrops: distinguishing cells from empty droplets in droplet-based single-cell RNA sequencing data.](https://doi.org/10.1186/s13059-019-1662-y). - This is the paper describing the DropletUtils package that we use in this lecture to identify empty drops.
 
 [Sarah Ennis' Github repo for preprocessing scRNA-seq data](https://github.com/Sarah145/scRNA_pre_process) - This is the source of the custom script we use to generate the CellRanger-esque html QC report. 
 
