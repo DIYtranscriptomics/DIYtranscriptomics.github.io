@@ -1,6 +1,6 @@
 ---
 title: 'The reproducibility lab'
-subtitle: 'Lab 12 (required) • November 17, 2021'
+subtitle: 'Lab 12 (required) • April 5, 2023'
 date: 2018-12-29 00:00:00
 description: In this lab you'll set-up your own project on github, learn to interact with this project directly from RStudio, and then archive the project for publication using Zenodo.
 featured_image: '/images/github_logo.png'
@@ -27,22 +27,22 @@ At any point in the process of working on an analysis project in R, you can init
 ```r
 library(renv)
 #initialize a reproducible environment and captures a snapshot of your package environment
-renv::init() 
+renv::init()
 #OPTIONAL: at any point during your work, you can update the snapshot with:
-renv::snapshot() 
+renv::snapshot()
 ```
 
-Now that you have initialized using renv, take a look at your library tab in RStudio.  Notice anything different?  You should now see that you have both a 'Project Library' as well as your usual 'System Library'.  The Project Library contains 
+Now that you have initialized using renv, take a look at your library tab in RStudio.  Notice anything different?  You should now see that you have both a 'Project Library' as well as your usual 'System Library'.  The Project Library contains
 
 OK, now let's test renv by deleting a few packages from your Project Library and updating others (you can always find packages with updates available by clicking on the 'Update' icon in the Library pane on RStudio). Once you've done this, try restoring our project environment using the information stored in the renv.lock file.  This is as easy as:
 
 ```r
-renv::restore() 
+renv::restore()
 ```
 
 And, voila!  You should now see that the packages you deleted or updated in the step above have now been reinstalled or returned to their previous version.
 
-I recommend using renv early during a project and using `renv::snapshot()` periodically to update the lockfile. 
+I recommend using renv early during a project and using `renv::snapshot()` periodically to update the lockfile.
 
 ### Install git on your laptop
 
@@ -54,16 +54,16 @@ You might already have git installed (you can check by opening a terminal window
 
 ### Configure git and authenticate with github
 
-Once you have git installed, you'll need to configure it so that you can link git to github.  We'll do this using the **[usethis](https://usethis.r-lib.org/)** R package, which contains lots of handy functions for project management.  
+Once you have git installed, you'll need to configure it so that you can link git to github.  We'll do this using the **[usethis](https://usethis.r-lib.org/)** R package, which contains lots of handy functions for project management.
 
 Before we configure git, head to [github.com](https://github.com/) and sign-up for a free account.  Take note of your username and the email you used to set up the account.  We'll use both below.
 
 ```r
 library(usethis)
-usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com") #add your github username and email 
+usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com") #add your github username and email
 
 # create a personal access token for authentication:
-usethis::create_github_token() 
+usethis::create_github_token()
 
 # set personal access token:
 credentials::set_github_pat("YourToken") #add your token from github
@@ -98,7 +98,7 @@ Working through the steps outlined above may seem like a lot, but keep in mind t
 
 1. Start you work in RStudio and use renv early and often to capture snapshots of your working environment
 2. At any time during an analysis project, set-up a repo on github for your project.  You can choose to make this a private or public repo...it's up to you.
-3. Connect to this repo using RStudio (may require authentication). 
+3. Connect to this repo using RStudio (may require authentication).
 4. Once connected, update your .gitignore file using RStudio.  [You can use mine to get started](https://drive.google.com/open?id=13HhGnxAjCJilQNFHrIkBjGceXP6hZmKQ).
 5. Copy all your project files to this new version controlled project directory. Stage, commit and push these files up to your Github repo.
 6. When you're ready to publish, [make sure your repo is set to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility).

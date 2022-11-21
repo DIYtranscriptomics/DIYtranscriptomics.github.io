@@ -1,6 +1,6 @@
 ---
 title: 'The Malaria Lab'
-subtitle: 'Lab 9 (required) • October 27, 2021'
+subtitle: 'Lab 9 (required) • March 15, 2023'
 date: 2019-01-03 00:00:00
 description: Ready to tackle one of world's deadliest pathogens?  Using data collected throughout the 48hr red blood cell cycle, you'll be tasked with putting together a publication-quality figure that best captures your main findings.
 featured_image: '/images/plasmoRBC.png'
@@ -15,12 +15,12 @@ featured_image: '/images/plasmoRBC.png'
 
 ## Description
 
-You're tasked with studying gene expression in *Plasmodium falciparum*, a single-celled protozoan parasite that infects human red blood cells (RBCs) and is the causative agent of malaria, one of the deadliest infectious diseases on the planet.  After invading an RBC, parasites progress through a 48 hour developmental cycle before rupturing the cell and invading a new one.  To understand how parasite gene expression changes during this cycle, you infect RBCs *in vitro* and isolate RNA every 8 hours for 48 hours straight.  As you're finishing the experiment (and very much looking forward to sleeping), your PI asks if you can put together a figure for a last-minute grant submission.  
+You're tasked with studying gene expression in *Plasmodium falciparum*, a single-celled protozoan parasite that infects human red blood cells (RBCs) and is the causative agent of malaria, one of the deadliest infectious diseases on the planet.  After invading an RBC, parasites progress through a 48 hour developmental cycle before rupturing the cell and invading a new one.  To understand how parasite gene expression changes during this cycle, you infect RBCs *in vitro* and isolate RNA every 8 hours for 48 hours straight.  As you're finishing the experiment (and very much looking forward to sleeping), your PI asks if you can put together a figure for a last-minute grant submission.
 
 ### Before you start
 
 * We already mapped the raw reads to the *P. falciparum* reference transcriptome ahead of time.  You should've already downloaded this data to your laptop before the start of the hackdash, but [here it is again](https://www.dropbox.com/s/av8uh0o64jjfefl/malaria.zip?dl=0) just in case.
-* These data were produced by [Manuel Llinás’ lab](http://llinaslab.psu.edu/) and are reported in their 2020 BMC Genomics paper: [Refining the transcriptome of the human malaria parasite Plasmodium falciparum using amplification-free RNA-seq](https://doi.org/10.1186/s12864-020-06787-5). 
+* These data were produced by [Manuel Llinás’ lab](http://llinaslab.psu.edu/) and are reported in their 2020 BMC Genomics paper: [Refining the transcriptome of the human malaria parasite Plasmodium falciparum using amplification-free RNA-seq](https://doi.org/10.1186/s12864-020-06787-5).
 * Please include a figure legend on your final figure.
 
 
@@ -28,13 +28,13 @@ You're tasked with studying gene expression in *Plasmodium falciparum*, a single
 
 * Don't worry about annotations or summarizing data to gene-level, just read the data into R at the transcript-level
 * There are different ways that you could set-up the model matrix, so you'll have to choose an approach and move forward
-* You'll use the Step scripts 1, 2, 3, 5 and 6 for challenge.  
-* Think about what makes a good figure and use your data to tell a story!  
+* You'll use the Step scripts 1, 2, 3, 5 and 6 for challenge.
+* Think about what makes a good figure and use your data to tell a story!
 * Feel free to include illustrations/schematics if useful.
 
 ## Solution
 
-Hey, no cheating :)  
+Hey, no cheating :)
 
 You won't be able to view the answer videos below until you have a password from me (via Slack). This ensures that everyone in the course has made a good faith effort to work through the questions on their own.
 

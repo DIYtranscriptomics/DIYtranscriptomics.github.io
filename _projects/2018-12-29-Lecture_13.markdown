@@ -1,6 +1,6 @@
 ---
 title: 'Single cell RNA-seq – principles and processing'
-subtitle: 'Lecture 13 •  watch by December 1, 2021'
+subtitle: 'Lecture 13 •  watch by April 19, 2023'
 date: 2018-12-29 00:00:00
 description: Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our focus to the rapidly developing landscape of single cell RNA-seq (scRNA-seq).  In this lecture, you'll learn about the underlying technology and we'll demonstrate how to process raw single cell data directly on your laptop (!) for importing into R/bioconductor.
 featured_image: '/images/colorbins.png'
@@ -15,7 +15,7 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 ## Learning objectives
 
 * Understand droplet-based scRNA-seq technology
-* Be able to compare and contrast single cell and bulk RNA-seq methods 
+* Be able to compare and contrast single cell and bulk RNA-seq methods
 * Understand cost and experimental design considerations for scRNA-seq experiments.
 * Familiarity with multiplexed single cell assays (CITE-seq, 'multiome', TEA-seq)
 * Be able to define common terms and concepts in single cell genomics
@@ -24,7 +24,7 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 
 ## What you need to do
 
-**[Download raw files](https://drive.google.com/drive/folders/1DbLRO4kv-y3W06adFR26RdSaDPmfB4UA?usp=sharing)**.  You will need about **5Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  This is data from 1000 peripheral blood mononuclear cells (PBMCs) and is one of the sample datasets provided by 10X Genomics [here](https://bit.ly/10xPBMC_small).  I  merged the separate lane files to make this simpler to work with for the course.  
+**[Download raw files](https://drive.google.com/drive/folders/1DbLRO4kv-y3W06adFR26RdSaDPmfB4UA?usp=sharing)**.  You will need about **5Gb** of storage space on your harddrive to accomodate this download.  *please do not uncompress these files (leave them as .gz files)*.  This is data from 1000 peripheral blood mononuclear cells (PBMCs) and is one of the sample datasets provided by 10X Genomics [here](https://bit.ly/10xPBMC_small).  I  merged the separate lane files to make this simpler to work with for the course.
 
 **[Human transcriptome reference index file](https://diytranscriptomics.com/project/lecture-02)** - this is the index you created using Kallisto way back in lecture 2.  If you don't have this, remember it's easy to create using `kallisto index`.
 
@@ -60,7 +60,7 @@ Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our foc
 
 ## Acknowledgements
 
-I am deeply grateful to Dr. Eoin Whelan for hours of conversation that helped structure this lecture and code. 
+I am deeply grateful to Dr. Eoin Whelan for hours of conversation that helped structure this lecture and code.
 
 ----
 

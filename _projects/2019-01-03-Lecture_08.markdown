@@ -1,6 +1,6 @@
 ---
 title: 'Differential gene expression'
-subtitle: 'Lecture 8 • watch by October 20, 2021'
+subtitle: 'Lecture 8 • watch by March 8, 2023'
 date: 2019-01-03 00:00:00
 description: The ultimate goal of most transcriptional profiling experiments is to identify differentially expressed genes or transcripts.  In this class, we'll dig into differential expression using the popular and venerable Limma package in R, while continuing to explore options for producing compelling plots from your differential expression results.  Finally, we'll discuss a workflow for going beyond DGE analysis to look at differentail transcript (isoform) usage (DTU).
 featured_image: '/images/apples.jpg'
@@ -68,7 +68,7 @@ The ultimate goal of most transcriptional profiling experiments is to identify d
 
 ## Other videos
 
-### Josh Starmer from StatQuest describing False Discovery Rates for RNAseq 
+### Josh Starmer from StatQuest describing False Discovery Rates for RNAseq
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K8LQSvtjcEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

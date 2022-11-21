@@ -1,8 +1,8 @@
 ---
 title: 'Wrangling gene expression data'
-subtitle: 'Lecture 5 • watch by September 29, 2021'
+subtitle: 'Lecture 5 • watch by February 15, 2023'
 date: 2019-01-06 00:00:00
-description: We'll begin this class by filtering and normalizing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the dplyr package, expanding your understanding of tools within the Tidyverse.  
+description: We'll begin this class by filtering and normalizing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' by using the dplyr package, expanding your understanding of tools within the Tidyverse.
 featured_image: '/images/tidyDNA.jpg'
 ---
 
@@ -12,7 +12,7 @@ featured_image: '/images/tidyDNA.jpg'
 
 ## Overview
 
-We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' and expand your understanding of tools within the [tidyverse](https://www.tidyverse.org/). 
+We'll begin this class by filtering and normalzing our data, all while using the ggplot2 graphing package to visualize the impact these changes have our data. You'll also be introduced to Hadley Wickham's philosophy of 'tidy data' and expand your understanding of tools within the [tidyverse](https://www.tidyverse.org/).
 
 ## Learning objectives
 
@@ -46,7 +46,7 @@ We'll begin this class by filtering and normalzing our data, all while using the
 
 [original TMM normalization manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).
 
-[Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf) - Hadley Wickham (author of Tidyverse packages and Chief Scientist at RStudio) describes the philosophy of tidy data in this paper. 
+[Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf) - Hadley Wickham (author of Tidyverse packages and Chief Scientist at RStudio) describes the philosophy of tidy data in this paper.
 
 [Grammar of graphics](http://DIYtranscriptomics.github.io/Reading/files/layered-grammar.pdf) - Another paper by Hadley Wickham.  This one explains the rationale behind ggplot2.
 

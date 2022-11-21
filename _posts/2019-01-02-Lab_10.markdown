@@ -1,6 +1,6 @@
 ---
 title: 'The COVID19 Collaborative Challenge'
-subtitle: 'Lab 10 (required) • November 3, 2021'
+subtitle: 'Lab 10 (required) • March 22, 2023'
 date: 2019-01-02 00:00:00
 description: Explore one of the first and largest transcriptomic studies of of SARS-CoV-2. You start by parsing the study metadata to identify a question you're interested in, formulate a hypothesis, and carry out an analysis of the data to test this hypothesis.
 featured_image: '/images/COVID.jpg'
@@ -14,11 +14,11 @@ You will be given raw counts and a study design file for an extensive RNA-seq ex
 
 This challenge certainly falls into the category of 'easier said than done'.
 
-Your challenge is to look at the study design file and decide on a question **YOU** would like to ask using this highly multivariate dataset, and then carry out your analysis using code from the course.  
+Your challenge is to look at the study design file and decide on a question **YOU** would like to ask using this highly multivariate dataset, and then carry out your analysis using code from the course.
 
 ## Logistics
 
-**You have a full week to complete this lab**.  Use this time to work through the dataset either alone, or together with your classmates (don't forget that you can use Slack's 'huddle' feature to communicate with one or more of your classmates).  
+**You have a full week to complete this lab**.  Use this time to work through the dataset either alone, or together with your classmates (don't forget that you can use Slack's 'huddle' feature to communicate with one or more of your classmates).
 
 Your group's final figure(s) must be turned in at the conclusion of the hackdash, along with a description of your key findings.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Analysis of scRNA-seq data using R'
-subtitle: 'Lecture 14 •  watch by December 8, 2021'
+subtitle: 'Lecture 14 •  watch by April 26, 2023'
 date: 2018-12-28 00:00:00
 description: In this final lecture of the course, you'll learn to use Seurat to analyze scRNA-seq data, including carrying out dimensional reduction and display using UMAP, identifying cell clusters and cluster-specific marker genes, and how to integrate data from multiple samples.
 featured_image: '/images/drops.png'
@@ -53,7 +53,7 @@ With your data already preprocessed with Kallisto-Bustools, you're now ready to 
 
 [EmptyDrops: distinguishing cells from empty droplets in droplet-based single-cell RNA sequencing data.](https://doi.org/10.1186/s13059-019-1662-y). - This is the paper describing the DropletUtils package that we use in this lecture to identify empty drops.
 
-[Sarah Ennis' Github repo for preprocessing scRNA-seq data](https://github.com/Sarah145/scRNA_pre_process) - This is the source of the custom script we use to generate the CellRanger-esque html QC report. 
+[Sarah Ennis' Github repo for preprocessing scRNA-seq data](https://github.com/Sarah145/scRNA_pre_process) - This is the source of the custom script we use to generate the CellRanger-esque html QC report.
 
 [Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling](https://pubmed.ncbi.nlm.nih.gov/31501550/) - Describes the CellAssign algorithm and R package that we use to identify clusters.
 

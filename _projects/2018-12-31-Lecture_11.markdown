@@ -1,6 +1,6 @@
 ---
 title: 'Documenting your analyses with Rmarkdown'
-subtitle: 'Lecture 11 • watch by November 10, 2021'
+subtitle: 'Lecture 11 • watch by March 29, 2023'
 date: 2018-12-31 00:00:00
 description: In order to make your analysis pipeline transparent, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
 featured_image: '/images/breadcrumbs2.jpg'
@@ -47,20 +47,20 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 ## Reading
 
-[lab post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/) 
+[lab post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/)
 
 ---
 
 ### Other examples of markdown in action
 
-Supplementary code files from some of our recent papers: 
+Supplementary code files from some of our recent papers:
 
 * [here](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1005347) ([PDF](http://DIYtranscriptomics.github.io/Reading/files/trichinella_markdown.pdf))
-* [here](https://www.nature.com/articles/s41564-019-0539-x) ([PDF](http://DIYtranscriptomics.github.io/Reading/files/crypto_markdown.pdf)) 
+* [here](https://www.nature.com/articles/s41564-019-0539-x) ([PDF](http://DIYtranscriptomics.github.io/Reading/files/crypto_markdown.pdf))
 * [here](https://stm.sciencemag.org/content/11/519/eaax4204) ([PDF](http://DIYtranscriptomics.github.io/Reading/files/leish_markdown.pdf))
 
 [Make your own CV in markdown](https://github.com/dpbisme/CV_rmarkdown) - uses the [Vitae](https://github.com/ropenscilabs/vitae) and [Scholar](https://cran.r-project.org/web/packages/scholar/vignettes/scholar.html) packages in R. Here's mine on github
 
-[This course website!](https://github.com/DIYtranscriptomics/DIYtranscriptomics.github.io) - Each page on the course website is just a simple markdown document. 
+[This course website!](https://github.com/DIYtranscriptomics/DIYtranscriptomics.github.io) - Each page on the course website is just a simple markdown document.
 
 [My lab website](http://hostmicrobe.org/) is just a bunch of markdown files served from github (repo [here](https://github.com/hostmicrobe/hostmicrobe.github.io))

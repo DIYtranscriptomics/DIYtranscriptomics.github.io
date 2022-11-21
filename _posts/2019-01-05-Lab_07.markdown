@@ -1,6 +1,6 @@
 ---
 title: 'Wrangling and plotting large datasets'
-subtitle: 'Lab 7 (required) • October 13, 2021'
+subtitle: 'Lab 7 (required) • March 1, 2023'
 date: 2019-01-05 00:00:00
 description: Think you know how to wrangle and plot data?  We'll put your skills to the test using a dataframe with millions of rows.  To illustrate the general utility of the methods you've learned thus far in the course, we'll step away from gene expression for this lab and instead explore data from a completely different type of study.
 featured_image: '/images/gg.png'
@@ -20,7 +20,7 @@ An analysis of a portion of this large dataset was published by EcoHealth Allian
 
 To start, you'll need to **[download this cleaned up version of the LEMIS data](https://drive.google.com/file/d/1-GAGY0us-eqzfawPfxI88B-Qeyv1dycQ/view?usp=sharing)**
 
-Once the download is complete, unzip the file, and set-up a new R project.  Then read the data into your R environment.  Don't try to open the file in Excel....you'll regret it.  Also, don't try to ```View()``` the object after importing into R.  
+Once the download is complete, unzip the file, and set-up a new R project.  Then read the data into your R environment.  Don't try to open the file in Excel....you'll regret it.  Also, don't try to ```View()``` the object after importing into R.
 
 To help you get started, here's a bit of code to read in the data and explore the variables.  With the data in your R environment, you'll then want to use dplyr and ggplot to complete each of the tasks below.  *Tip: the magrittr pipe (%>%) is your friend.*
 

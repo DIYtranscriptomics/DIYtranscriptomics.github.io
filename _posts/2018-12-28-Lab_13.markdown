@@ -1,8 +1,8 @@
 ---
 title: 'scRNA-seq lab'
-subtitle: 'Labs 13 and 14 (required) • December 1 and December 8, 2021'
+subtitle: 'Labs 13 and 14 (required) • April 19 and April 26, 2021'
 date: 2018-12-28 00:00:00
-description: In this week-long final project, you'll work as part of a team to apply your newfound scRNA-seq skills to a dataset from the Immune Health group at UPenn, with the goal of identifying transcriptional programs associated with severe COVID. 
+description: In this week-long final project, you'll work as part of a team to apply your newfound scRNA-seq skills to a dataset from the Immune Health group at UPenn, with the goal of identifying transcriptional programs associated with severe COVID.
 featured_image: '/images/covid_scale.png'
 ---
 
@@ -18,12 +18,12 @@ In this lab you'll work with a large unpublished scRNA-seq dataset from PBMCs, c
 
 ## What you need to do
 
-I've already pre-processed the data for you using Kallisto-Bustools.  Integrating data from all patients and healthy controls took over 5 hours on my laptop!  You will be given a single integrated Seurat object and study design file that describes the metadata associated with patient.  Note, severity scores are based on the NIH scale shown below.  
+I've already pre-processed the data for you using Kallisto-Bustools.  Integrating data from all patients and healthy controls took over 5 hours on my laptop!  You will be given a single integrated Seurat object and study design file that describes the metadata associated with patient.  Note, severity scores are based on the NIH scale shown below.
 
 <img src="http://DIYtranscriptomics.github.io/images/covid_scale.png" class="center">
 
 
-Your goal is to apply the clustering, annotation and analysis approaches you learned in Lectures 13 and 14 to this dataset.  Although each student team is free to approach this final project however they wish, I suggest choosing one or more cell clusters and comparing the expression of these cells between COVID patients and healthy controls, and/or between COVID patients that differ by disease severity.  Don't forget that all the useful code you've learned for handling bulk RNA-seq (e.g. heatmap generation, functional enrichment analysis, etc) could be used with any gene lists you identify in your analysis. 
+Your goal is to apply the clustering, annotation and analysis approaches you learned in Lectures 13 and 14 to this dataset.  Although each student team is free to approach this final project however they wish, I suggest choosing one or more cell clusters and comparing the expression of these cells between COVID patients and healthy controls, and/or between COVID patients that differ by disease severity.  Don't forget that all the useful code you've learned for handling bulk RNA-seq (e.g. heatmap generation, functional enrichment analysis, etc) could be used with any gene lists you identify in your analysis.
 
 Each team will have the 2hrs in this lab to get started, as well as the remaining full week leading up to our final lab (Dec 8th) to work together to prepare one or more figures that summarize their findings.  Teams will present their results (10-12 min per team) to your classmates as well as the researchers who generated the data!
 

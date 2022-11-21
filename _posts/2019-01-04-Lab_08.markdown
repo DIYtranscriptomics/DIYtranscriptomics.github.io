@@ -1,6 +1,6 @@
 ---
 title: 'TA help session'
-subtitle: 'Lab 8 (optional) • October 20, 2021'
+subtitle: 'Lab 8 (optional) • March 8, 2023'
 date: 2019-01-04 00:00:00
 description: Struggling with something we covered recently in class, or do you want to discuss some of your own RNA-seq data?  Then drop in for hand-on help from one of our amazing Teaching Assistants!
 featured_image: '/images/chalkboard.jpeg'

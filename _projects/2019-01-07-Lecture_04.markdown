@@ -1,8 +1,8 @@
 ---
 title: 'Starting your R workflow'
-subtitle: 'Lecture 4 • watch by September 22, 2021'
+subtitle: 'Lecture 4 • watch by February 8, 2023'
 date: 2019-01-07 00:00:00
-description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.     
+description: We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.
 featured_image: '/images/first_step.jpg'
 ---
 
@@ -10,7 +10,7 @@ No lecture slides for this class.  We'll spend the entire time working on Step 1
 
 ## Overview
 
-We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.  
+We'll begin this class by reviewing how to access R packages and help documentation, as well as understanding the basic structure of an R script and RStudio project. We'll then access annotation data before reading our Kallisto results into R.
 
 ## Learning objectives
 
