@@ -5,11 +5,11 @@ description: A collection of local (UPenn), regional (Philly), and online places
 ---
 
 
-## Getting help from the TAs
+## Getting help from TAs and other DIY students
 
-Camila Amorim, Seble Negatu and Sheridan Littleton are Teaching Assistants for the course.  Please don't hesitate to reach out to them via the course Slack page if you have questions.
+To interact with TAs, ask questions, and join the conversation, join our discord server
 
-One of the best places to get 1:1 help from the instructor and TAs is via the three optional labs.
+<iframe src="https://discord.com/widget?id=1057774697867120750&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
 -----------------------------
 
@@ -25,11 +25,11 @@ One of the best places to get 1:1 help from the instructor and TAs is via the th
 
 -----------------------------
 
-## Finding help online 
- 
-[Bioconductor's help site](http://www.bioconductor.org/help/) - full of great tutorials, links to videos, and  message board for more more complicated questions. 
+## Finding help online
 
-[Biostars](https://www.biostars.org/) - More general bioinformatics questions not pertaining to a specific R package are best addressed here. 
+[Bioconductor's help site](http://www.bioconductor.org/help/) - full of great tutorials, links to videos, and  message board for more more complicated questions.
+
+[Biostars](https://www.biostars.org/) - More general bioinformatics questions not pertaining to a specific R package are best addressed here.
 
 [StackOverflow](http://stackoverflow.com/) - great place for programming questions that are not related specifically to bioinformatics.
 
@@ -38,7 +38,7 @@ One of the best places to get 1:1 help from the instructor and TAs is via the th
 
 ## Getting help without ever leaving RStudio
 
-**Help within R** - R has a comprehensive help system built right in! Type ```?FunctionName``` right in the R terminal (no quotes and replace FunctionName with the name of the function you need help with).  
+**Help within R** - R has a comprehensive help system built right in! Type ```?FunctionName``` right in the R terminal (no quotes and replace FunctionName with the name of the function you need help with).
 
 **package vignettes** - Each Bioconductor package contains at least one vignette, a document that provides a task-oriented description of package functionality. Vignettes contain executable examples and are intended to be used interactively.  To access the vignette for a package, simply type ```browseVignettes(packageName)``` (without quotes)
 
@@ -49,7 +49,7 @@ One of the best places to get 1:1 help from the instructor and TAs is via the th
 
 ## Take advantage of your local UPenn and Philly community
 
-Below are a few examples of some of the great local resources. 
+Below are a few examples of some of the great local resources.
 
 [Use R! group at UPenn](https://pennusergroup.wordpress.com) - A groups of Penn staff, students and researchers who get together to improve their R knowledge and skills.  The group, which is open to R users of all levels, meets weekly on Wednesdays, 11am-noon, in the Weigle Informations Commons (WIC) seminar room of the Van Pelt-Dietrich Library Center.
 
@@ -61,7 +61,7 @@ Below are a few examples of some of the great local resources.
 
 [R-Ladies Philly](http://rladiesphilly.org/) is part of a world-wide organization to promote gender diversity in the R community.  R-Ladies Philly is a free, community-driven group that is open to all levels of R users. While the group name does have ‘Ladies’ in the title, they welcome all individuals who share their values.  Monthly meetings are skills-focused, with encouragement of interdisciplinary statistical and coding methods.
 
-[Girl Develop It](https://www.girldevelopit.com/chapters/philadelphia) - Philadelphia has a local chapter of GDI that hosts speakers, workshops and social events aimed at bringing together and empowering women to learn web and software development in a judgment-free environment.  
+[Girl Develop It](https://www.girldevelopit.com/chapters/philadelphia) - Philadelphia has a local chapter of GDI that hosts speakers, workshops and social events aimed at bringing together and empowering women to learn web and software development in a judgment-free environment.
 
 [FemmeHacks](http://femmehacks.io/) is a all-women collegiate hackathon held in Philadelphia at UPenn's Huntsman Hall, and is hosted by the Penn [Women in Computer Science (WiCS)](www.seas.upenn.edu/~wics).  This year's hackathon will take place in February.  Friday, Feb 24th will consist of social mixers, workshops, and teams will be formed at Penn Engineering (220 South 33rd St), with the hackthon taking place the following day on Saturday the 25th at the Pennovation Center (3401 Grays Ferry Ave)
 
@@ -71,9 +71,9 @@ Below are a few examples of some of the great local resources.
 
 [Datacamp tutorials](https://www.datacamp.com) - You have access to the full content of Datacamp *for free* during the course, so why not work toward a certificate in data science using R.
 
-[Bioconductor for Genomic Data Science](https://www.coursera.org/course/genbioconductor) - This is the fifth course in the Genomic Data Science Specialization from Johns Hopkins University. (see below).  Learn to use tools from the Bioconductor project to perform analysis of genomic data. 
+[Bioconductor for Genomic Data Science](https://www.coursera.org/course/genbioconductor) - This is the fifth course in the Genomic Data Science Specialization from Johns Hopkins University. (see below).  Learn to use tools from the Bioconductor project to perform analysis of genomic data.
 
-[Coursera's specialization in Genomic Data Science](https://www.coursera.org/specializations/genomics?utm_medium=courseDescripTop). Takes you through 7 courses, each lasting 1 month, that cover topics relevant to the analysis of data generated by biomedical research approaches.  
+[Coursera's specialization in Genomic Data Science](https://www.coursera.org/specializations/genomics?utm_medium=courseDescripTop). Takes you through 7 courses, each lasting 1 month, that cover topics relevant to the analysis of data generated by biomedical research approaches.
 
 [Coursera's specialization in Data Science](http://bit.ly/1NLDqnn) - Brought to you by Johns Hopkins and Coursera, this 10 course 'degree' spans nearly a year, and covers takes a much more broad approach to understanding data than the genomic specialization described above.  This specialization offers more on statistics, modeling, deploying data to the web, etc.  In a way, I feel that my course on transcriptomics is a blend of the Coursera Genomic Data Science and Data Science Specializations.
 
