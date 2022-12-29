@@ -1,15 +1,16 @@
 ---
-title: Help
+title: Community
 subtitle: A collection of local (UPenn), regional (Philly), and online places where you can go to learn more about using R/bioconductor.
 description: A collection of local (UPenn), regional (Philly), and online places where you can go to learn more about using R/bioconductor.
 ---
 
 
-## Getting help from TAs and other DIY students
+## Getting help from TAs and other students
 
-To interact with TAs, ask questions, and join the conversation, join our discord server
+To interact with the instructor and TAs, ask questions, join our discord community by clicking 'join discord' below.
 
-<iframe src="https://discord.com/widget?id=1057774697867120750&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+<iframe src="https://discord.com/widget?id=1057774697867120750&theme=dark" width="700" height="1000" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
 
 -----------------------------
 
