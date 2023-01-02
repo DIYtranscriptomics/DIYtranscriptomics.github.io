@@ -3,7 +3,7 @@ basic_settings:
   favicon_image: /images/favicon.png
 
 header_settings:
-  logo_image: 
+  logo_image:
   logo_width: 200
 
 menu_settings:
@@ -20,8 +20,8 @@ menu_settings:
       url: '/videos'
     - title: 'FAQs'
       url: '/faqs'
-    - title: 'Help'
-      url: '/help'
+    - title: 'Community'
+      url: '/Community'
 
 footer_settings:
   footer_tagline: Teaching students how to use open-source tools to analyze RNAseq data since 2015.
