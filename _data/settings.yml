@@ -21,7 +21,7 @@ menu_settings:
     - title: 'FAQs'
       url: '/faqs'
     - title: 'Community'
-      url: '/Community'
+      url: '/community'
 
 footer_settings:
   footer_tagline: Teaching students how to use open-source tools to analyze RNAseq data since 2015.
