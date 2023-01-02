@@ -7,7 +7,7 @@ description: A collection of local (UPenn), regional (Philly), and online places
 
 ## Getting help from TAs and other students
 
-To interact with the instructor and TAs, ask questions, join our discord community by clicking 'join discord' below.
+You can interact with the instructor and TAs to get feedback and ask questions by joining our discord community.  Just click 'join discord' at the bottom of the widget below.
 
 <iframe src="https://discord.com/widget?id=1057774697867120750&theme=dark" width="700" height="1000" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 

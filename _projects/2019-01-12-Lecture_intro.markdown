@@ -2,7 +2,7 @@
 title: 'Course overview'
 subtitle: 'precourse lectures'
 date: 2019-01-12 00:00:00
-description: A brief (but important!) overview that describes how the course is structured and how you can get the most from the material on this website. 
+description: A brief (but important!) overview that describes how the course is structured and how you can get the most from the material on this website.
 featured_image: '/images/welcome_mat_dna.jpeg'
 ---
 
@@ -16,11 +16,15 @@ This page describes the structure of the DIYtranscriptomcis course, and how *you
 
 Anyone, anywhere in the world is welcome to self-navigate the course by working their way through [the lectures](https://diytranscriptomics.com/).  Clicking on a lecture will take you to a lecture page, complete with learning objectives, reading material, a link to lecture slides, and...most importantly...lecture videos.  Each lecture topic should take ~2hrs or less to complete.  Reading materials are not required, but rather are provided as useful starting points if you wish to learn more about the topics covered in each lecture.
 
-**lectures are updated every year during the Fall semester (August-December).**  If you happen to be visiting the site during this time, don't be surprised if some of the content is changing.  Take note of the dates listed on each lecture card, since this will give you a good sense for when the material for a given lecture will be finalized.
+**lectures are updated every year during the Spring semester (January-April).**  If you happen to be visiting the site during this time, don't be surprised if some of the content is changing.  Take note of the dates listed on each lecture card, since this will give you a good sense for when the material for a given lecture will be finalized.
 
 ### How to participate in labs
 
 [Labs](https://diytranscriptomics.com/lab/) are focused on gaining hands-on experience working with transriptomic datasets in R/bioconductor and are offered in-person at the University of Pennsylvania.  Unfortunately we do not currently have a good way for learners to participate virtually.  However, as with the lectures, take note of the date listed on each lab card.  Although general descriptions are always visible for each lab, specific materials and questions are only displayed beginning on the date shown on each card.
+
+### Join our Discord community
+
+You can join our Discord community by clicking [here](https://discord.gg/VpjD2pWHDX).  The video below explains how we'll use this community page during the course.
 
 ## In-person learners
 
@@ -32,9 +36,13 @@ Lectures are only available virtually, so everything stated above for virtual le
 
 Labs will take place every week from 3:30-5:30 PM EST.  See [here](https://diytranscriptomics.com/lab/lab-intro) for more details.
 
+### Join our Discord community
+
+You can join our Discord community by clicking [here](https://discord.gg/VpjD2pWHDX).  The video below explains how we'll use this community page during the course.
+
 ### The 'perks' of in-person learning.
 
-If you officially registered for this course, not only will have access to the weekly in-person lab, but you will also be granted access to a private course Slack page where you can communicate with classmates, the instructor and TA's to get one-on-one help throughout the course, including help with analyzing your own data.  You will also be given unrestricted access to [DataCamp](https://www.datacamp.com/) for homework and extended learning.
+If you officially registered for this course, not only will have access to the weekly in-person lab, but you'll also receive priority support for all questions and troubleshooting through our community page on Discord...yay! You will also be given unrestricted access to [DataCamp](https://www.datacamp.com/) for homework and extended learning.
 
 ## Other useful info that applies to everyone
 

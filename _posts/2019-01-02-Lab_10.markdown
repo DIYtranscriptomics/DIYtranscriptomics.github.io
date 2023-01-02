@@ -18,7 +18,7 @@ Your challenge is to look at the study design file and decide on a question **YO
 
 ## Logistics
 
-**You have a full week to complete this lab**.  Use this time to work through the dataset either alone, or together with your classmates (don't forget that you can use Slack's 'huddle' feature to communicate with one or more of your classmates).
+**You have a full week to complete this lab**.  Use this time to work through the dataset either alone, or together with your classmates.
 
 Your group's final figure(s) must be turned in at the conclusion of the hackdash, along with a description of your key findings.
 

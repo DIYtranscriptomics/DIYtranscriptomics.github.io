@@ -36,7 +36,7 @@ You're tasked with studying gene expression in *Plasmodium falciparum*, a single
 
 Hey, no cheating :)
 
-You won't be able to view the answer videos below until you have a password from me (via Slack). This ensures that everyone in the course has made a good faith effort to work through the questions on their own.
+You won't be able to view the answer videos below until you have a password from me (via Discord). This ensures that everyone in the course has made a good faith effort to work through the questions on their own.
 
 ### Solution - part 1
 
