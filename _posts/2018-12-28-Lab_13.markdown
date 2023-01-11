@@ -12,25 +12,8 @@ featured_image: '/images/covid_scale.png'
 
 [Lecture 14 - Analysis of scRNA-seq data using R](https://diytranscriptomics.com/project/lecture-14)
 
-## Description
+## What you need to know
 
-In this lab you'll work with a large unpublished scRNA-seq dataset from PBMCs, courtesy of [John Wherry's lab](https://www.med.upenn.edu/wherrylab/), Allie Greenplate, and the UPenn [Immune Health group](https://www.med.upenn.edu/immunehealth/).  This PBMC dataset expands on a study that they [recently published in Science](https://doi.org/10.1126/science.abc8511), and includes a subset of the same patients, selected to represent a range in disease severity.  Your goal is to import these data into R and carry out an analysis of your choosing.
-
-## What you need to do
-
-I've already pre-processed the data for you using Kallisto-Bustools.  Integrating data from all patients and healthy controls took over 5 hours on my laptop!  You will be given a single integrated Seurat object and study design file that describes the metadata associated with patient.  Note, severity scores are based on the NIH scale shown below.
-
-<img src="http://DIYtranscriptomics.github.io/images/covid_scale.png" class="center">
-
-
-Your goal is to apply the clustering, annotation and analysis approaches you learned in Lectures 13 and 14 to this dataset.  Although each student team is free to approach this final project however they wish, I suggest choosing one or more cell clusters and comparing the expression of these cells between COVID patients and healthy controls, and/or between COVID patients that differ by disease severity.  Don't forget that all the useful code you've learned for handling bulk RNA-seq (e.g. heatmap generation, functional enrichment analysis, etc) could be used with any gene lists you identify in your analysis.
-
-Each team will have the 2hrs in this lab to get started, as well as the remaining full week leading up to our final lab (Dec 8th) to work together to prepare one or more figures that summarize their findings.  Teams will present their results (10-12 min per team) to your classmates as well as the researchers who generated the data!
-
-## Files
-
-**[ImmuneHealth.seurat](https://drive.google.com/file/d/1SWy8oTMACflATD5_588x0XSoDH1oPAHU/view?usp=sharing)** - This Seurat object contains integrated data for PBMCs from 12 COVID patients and 4 healthy controls, for a total of ~65,000 cells.
-
-**[ImmuneHealth_COVID_studyDesign.txt](https://drive.google.com/file/d/1SVGdE10aIBBPAA6ZKaLWt_sDlm4isNOZ/view?usp=sharing)** - This file contains the metadata for each patient included in the integrated Seurat object above.
+Come back soon!  The content for this lab will be posted on or before the date shown at the top of the page.
 
 

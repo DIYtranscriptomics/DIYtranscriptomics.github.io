@@ -14,21 +14,8 @@ featured_image: '/images/shellscript.png'
 
 [Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) is **due today**!
 
-## Description
+## What you need to know
 
-In our lecture, we covered the basics for running Kallisto with a single sample.  However, you will rarely, if ever, be dealing with a single sample.  In this lab, we'll work through how to automate alignments and other command-line work using shell scripts and 'for loops'.  To keep the lab moving along, we'll work with very small fastq files (see below)
-
-## Files you'll need for this lab
-
-**[subsampled fastq files](https://drive.google.com/drive/folders/1RVzpLQH62yirGjGpIyjuunOLDlZi2Zjb?usp=sharing)** - This is the [course dataset](https://diytranscriptomics.com/data), but each file has been subsampled to retrieve only 10,000 reads per sample.
-
-**[shell script](https://drive.google.com/file/d/1sGkMk-ekZk3pVD0aT5qzvMBo3UYnZSyU/view?usp=sharing)** – To carry out read mapping and QC analysis for multiple samples.
-
-## Follow along
-
-**[Bash basics](https://protocols.hostmicrobe.org/bash)** - this is the code I'll be running and discussing in lab today.  You can copy/paste lines from this page to follow along.
-
-
-
+Come back soon!  The content for this lab will be posted on or before the date shown at the top of the page.
 
 
