@@ -11,6 +11,8 @@ To interact with the instructor and TAs, get feedback, and ask questions, please
 
 <iframe src="https://discord.com/widget?id=1057774697867120750&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
+In addition to interacting with the rest of the class, our Discord page will also has a fun and cool AI bot (named AImee) that uses ChatGPT to help you understand and fix code throughout the class.  You'll learn more about this in Lecture
+
 
 -----------------------------
 
