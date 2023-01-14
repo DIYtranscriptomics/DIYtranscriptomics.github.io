@@ -8,19 +8,19 @@ featured_image: '/images/class.jpg'
 
 ## What you need to know.
 
-**When** - every Wednesday afternoon from 3:30-5:30pm EST 
+**When** - every Wednesday afternoon from 3:30-5:30pm EST
 
-**Where** - [Levin Bldg, room 111](https://www.facilities.upenn.edu/maps?glid=720) in the 'SAIL' classroom on the first floor at the University of Pennsylvania.  
+**Where** - [Levin Bldg, room 111](https://www.facilities.upenn.edu/maps?glid=720) in the 'SAIL' classroom on the first floor at the University of Pennsylvania.
 
-**Optional labs** - The course includes *three* in-person help sessions where you can get hands-on assistance from the instructor and Teaching Assistants.  Maybe you're struggling with a topic we covered in class and just need to talk through the issue; or maybe you'd like to get asssistance analyzing you own dataset.  As the name suggests, attendence for these labs is optional and if you do decide to attend, you're not obligated to stay for the full two hours (though you are certainly welcome to do so!).  
+**Optional labs** - The course includes *three* in-person help sessions where you can get hands-on assistance from the instructor and Teaching Assistants.  Maybe you're struggling with a topic we covered in class and just need to talk through the issue; or maybe you'd like to get asssistance analyzing you own dataset.  As the name suggests, attendence for these labs is optional and if you do decide to attend, you're not obligated to stay for the full two hours (though you are certainly welcome to do so!).
 
-**Required labs** - The majority of labs are designed around specific datasets or skills.  You are required to attend all of these labs, and to stay for the full 2 hours.  
+**Required labs** - The majority of labs are designed around specific datasets or skills.  You are required to attend all of these labs, and to stay for the full 2 hours.
 
 ## Frequently asked questions
 
 **Do I need to prepare for labs ahead of time?**  Usually no, just show up.  However, there are a few labs toward the end of the course that deal with COVID data or single cell data and which will require that you prepare in advance.  Stay tuned for more guidance on this.
 
-**What if I am not officially registered for the course, but am following along online?**  Unfortunately, you don't currently offer a way for you to remotely participate in the in-person labs, but you will still be able to access lab materials on the site and can self-navigate through the content.  The description for each lab is always displayed on the lab page, but questions and other details may not be available on the site until the start of each lab.
+**What if I am not officially registered for the course, but am following along online?**  We're experimenting with live streaming labs using our Discord page (see instructions on how to join [here](https://diytranscriptomics.com/community)). Once you've joined our Discord page, you'll find an events link in the upper left corner of the Discord app.  Each lab is listed as an event, and once an event starts you'll be able to tune in by navigating to the 'Labs (live streaming)' voice channel.  This will allow you to hear the instructor as we navigate through the content on each lab page, and you may even be able to ask questions (again, we're experimenting here).
 
 **Will I have to work through labs on my own?** No! Our wonderful active learning classroom places students at round tables, so you'll be working with a group of your peers to get through each lab.  At the conclusion of each lab, each table (not each person) will be asked to turn in their work and answers.
 
