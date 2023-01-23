@@ -12,7 +12,11 @@ featured_image: '/images/IT-help.jpeg'
 
 ## Homework
 
-[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due by start of in-person lab next week, Wednesday, Sept 8th.
+[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due by start of in-person lab on Wednesday, Feb 8th.
+
+[Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due by start of in-person lab on Wednesday, Feb 14th.
+
+[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of in-person lab on Wednesday, Feb 22nd.
 
 ## Description
 

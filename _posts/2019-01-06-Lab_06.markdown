@@ -12,6 +12,10 @@ featured_image: '/images/schisto.png'
 
 <div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
 
+## Homework
+
+[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) is **due today**!
+
 
 ## What you need to know
 

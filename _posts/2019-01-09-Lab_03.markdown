@@ -14,6 +14,8 @@ We're available to help with anything we've covered up to this point.
 
 [Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due by start of in-person lab, Wednesday, Sept 29th.
 
+
+
 ## Description
 
 The pace of the course is about to start picking up, so if there is a concept we have covered that is not clear or if you are feeling lost, please stop by for help!

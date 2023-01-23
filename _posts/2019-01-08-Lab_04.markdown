@@ -10,6 +10,10 @@ featured_image: '/images/biomart.png'
 
 [Lecture 4 - Starting your R workflow](https://diytranscriptomics.com/project/lecture-04)
 
+## Homework
+
+[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) is **due today**!
+
 ## Description
 
 [The course dataset](https://diytranscriptomics.com/data) is from human samples.  Annotating human and mouse data is relatively easy, since these organisms are the most well studied, have high quality genomes, and have undergone years of manual curation efforts.  In this lab, you'll work on accessing annotation data from non-human, non-mouse studies.
