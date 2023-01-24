@@ -12,6 +12,10 @@ featured_image: '/images/ark.png'
 
 [Lecture 5 – Wrangling gene expression data](https://diytranscriptomics.com/project/lecture-05)
 
+## Homework
+
+[Homework #4: Case Study: Exploratory Data Analysis in R (~4hrs)](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r) is **due today**!
+
 ## What you need to know
 
 Come back soon!  The content for this lab will be posted on or before the date shown at the top of the page.
