@@ -18,6 +18,8 @@ Lectures 1-4
 
 After spending nearly two years working on a large RNA-seq study, you and your advisor have written up the results and submitted your work to a top journal.  Three reviewers provided comments on the paper.  Reviewer #1 and #3 asked for only minor changes, but reviewer #2 offered a more, ahem, detailed critique.  In particular, they raised concerns about the quality of your RNA-seq data (which forms the entire basis of the paper), and noted that it was particularly concerning that only 50-60% of the reads aligned to the human reference transcriptome.  'If these reads aren't human, then what are they?' said the reviewer.  To address this critique, you'll have to employ multiple strategies for identifying the origin of reads in high-throughput data.
 
+**to participate in this lab, you will need to have successfully completed the steps outlined in [Lecture 1 - Setting up your software environment](https://diytranscriptomics.com/project/lecture-01)**
+
 ### Task 1
 
 To help you get started, I already used [KneadData](https://huttenhower.sph.harvard.edu/kneaddata/) to filter out any reads that mapped to the human reference genome.  Using a single sample from the course dataset (CL13) as an example, KneadData reduced the number of total reads from 133M to ~9M!  Why do you think KneadData is saying that 93% of the reads are of human origin, but Kallisto only mapped ~ 57% to the human reference?
@@ -45,7 +47,7 @@ To understand the ouput from `Sourmash gather`, check out the documentation [her
 
 *Note: this task will be more computationally demanding than to the task above, but is still feasible on many laptop configurations*
 
-Encouraged by the Sourmash results, you try a complementary approach that uses [Centrifuge](https://ccb.jhu.edu/software/centrifuge/).  To get started, you'll need to download a reference database that contains sequences from bacteria, human and viral genomes.  Click **[here](https://genome-idx.s3.amazonaws.com/centrifuge/p_compressed%2Bh%2Bv.tar.gz)** to download (this file is ~ 6Gb, so it may take a while).  Double-click this file once downloaded to unzip.  Now you can use this database to search for signatures in your fastq file:
+Encouraged by the Sourmash results, you try a complementary approach that uses [Centrifuge](https://ccb.jhu.edu/software/centrifuge/).  To get started, you'll need to download a reference database that contains sequences from bacteria, human and viral genomes.  Click **[here](https://genome-idx.s3.amazonaws.com/centrifuge/p_compressed%2Bh%2Bv.tar.gz)** to download (this file is ~ 6Gb, so it may take a while).  Double-click this file once downloaded to unzip.  Now you can use this database to search for signatures in your fastq file.  How do these results compare with what you saw with Sourmash in Task 2?  Why do you think the outputs produced by these two tools differ?
 
 ```bash
 # time = ~10min
@@ -53,6 +55,8 @@ Encouraged by the Sourmash results, you try a complementary approach that uses [
 centrifuge -x p_compressed+h+v -U SRR8668774_dehosted.fastq.gz --report-file CL13_dehosted_report.txt -S CL13_dehosted_results.txt
 # once done running, open the 'CL13_dehosted_results.txt' ouput file in Excel and sort based on 'numUniqueReads' column
 ```
+
+
 
 ### Task 4
 
@@ -64,7 +68,7 @@ You present the Sourmash and Centrifuge results above to your advisor and, after
 
 A few months later, a colleague comes to you because he is working on identifying SARS-CoV-2 in wastewater collected during the peak of the COVID19 pandemic from municipal sewer systems in Northern California (see [this paper](https://journals.asm.org/doi/10.1128/mBio.02703-20)).  RNA purified from these samples was intially used for virus-specific QPCR, but he also decided to carry out untargeted RNA-seq on the same samples to get a 'metatranscriptome' of wastewater.  After hearing about your ability to identify pathogens lurking in RNA-seq data, he asks if you could take a look at one of his RNA-seq samples to see if this approach is sensitive enough to detect SARS-CoV-2.  You can download one of his raw files **[here](https://drive.google.com/file/d/1-9-urdGKYB39TRg0sVk8Om0N1apXZn_H/view?usp=sharing)**.
 
-After you've run Centrifuge and Sourmash on the wastewater data, you begin to wonder if the reference databases have good representation of new SARS virus sequences.  Luckily, you find out that the Centrifgue team incorporated over 100 SARS-CoV-2 sequences into an updated reference database available **[here](https://zenodo.org/record/3732127/files/h+v+c.tar.gz?download=1)**.  Download this reference and re-run Centrifuge.  How do the results compare?
+ Luckily, you discover that the Centrifgue team incorporated over 100 SARS-CoV-2 sequences into an updated reference database available **[here](https://zenodo.org/record/3732127/files/h+v+c.tar.gz?download=1)**.  Download this reference and run Centrifuge on this sample.  How do these Centrifuge results compare to what Sourmash detects in the sample?
 
 
 ## Takeaways
