@@ -11,17 +11,20 @@ library(edgeR)
 # load ARCHS4 database -----
 # you should have already downloaded the most recent versions of mouse and human RNAseq data from ARCHS4 in hdf5 format
 # begin by creating file paths that point to the hdf5 archs4 files
-archs4.human <- "human_matrix_v10.h5" 
-archs4.mouse <- "mouse_matrix_v10.h5"
+# because of the size of these files, feel free to skip the human data and just work with mouse
+archs4.human <- "archs4_gene_human_v2.1.2.h5"
+archs4.mouse <- "archs4_gene_mouse_v2.1.2.h5"
 # use the h5 list (h5ls) function from the rhdf5 package to look at the contents of these databases
 h5ls(archs4.human)
 h5ls(archs4.mouse)
 
-# 348,184 samples from human
+# 620,825 samples from human
 all.samples.human <- h5read(archs4.human, name="meta/samples/geo_accession")
+dim(all.samples.human)
 
-# 405,640 samples from mouse
+# 717,966 samples from mouse!
 all.samples.mouse <- h5read(archs4.mouse, name="meta/samples/geo_accession")
+dim(all.samples.mouse)
 
 # query ARCHS4 database ----
 # choose your samples based on GEO or SRA ID
@@ -44,7 +47,7 @@ my.sample.locations <- which(all.samples.mouse %in% mySamples) # first time you'
 genes <- h5read(archs4.mouse, "meta/genes/gene_symbol")
 
 # Extract expression data from ARCHS4 ----
-expression <- h5read(archs4.mouse, "data/expression", 
+expression <- h5read(archs4.mouse, "data/expression",
                      index=list(my.sample.locations, 1:length(genes)))
 # transpose to get genes as rows and samples as columns
 expression <- t(expression)
@@ -74,12 +77,12 @@ sample_title <- h5read(archs4.mouse, name="meta/samples/title")
 sample_characteristics<- h5read(archs4.mouse, name="meta/samples/characteristics_ch1")
 
 # let's try putting this all together in a study design file
-studyDesign <- tibble(Sample_title = sample_title[my.sample.locations], 
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations],
                       Sample_source = sample_source_name[my.sample.locations],
                       Sample_characteristics = sample_characteristics[my.sample.locations])
 
 #based on what we extracted from ARCHS4 above, lets customize and clean-up this study design file
-studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations],
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations],
                       genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
                       treatment = c("unstim", "unstim", "unstim", "unstim", "unstim", "unstim", "LPS", "LPS", "LPS", "LPS", "LPS", "LPS"))
 
@@ -109,7 +112,7 @@ ggplot(pca.res.df) +
   geom_point(size=4) +
   # geom_label() +
   # stat_ellipse() +
-  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) +
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
@@ -166,7 +169,7 @@ mySamples <- c("GSM2310941", # WT_unstim_rep1
 
 my.sample.locations <- which(all.samples.mouse %in% mySamples)
 genes <- h5read(archs4.mouse, "meta/genes/gene_symbol")
-expression <- h5read(archs4.mouse, "data/expression", 
+expression <- h5read(archs4.mouse, "data/expression",
                      index=list(my.sample.locations, 1:length(genes)))
 
 expression <- t(expression)
@@ -184,11 +187,11 @@ sample_source_name <- h5read(archs4.mouse, "meta/samples/source_name_ch1")
 sample_title <- h5read(archs4.mouse, name="meta/samples/title")
 sample_characteristics<- h5read(archs4.mouse, name="meta/samples/characteristics_ch1")
 
-studyDesign <- tibble(Sample_title = sample_title[my.sample.locations], 
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations],
                       Sample_source = sample_source_name[my.sample.locations],
                       Sample_characteristics = sample_characteristics[my.sample.locations])
 
-studyDesign <- tibble(Sample_title = Sample_title[my.sample.locations], 
+studyDesign <- tibble(Sample_title = sample_title[my.sample.locations],
                       genotype = c("WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8", "WT", "WT", "Ripk3", "Ripk3", "Ripk3Casp8", "Ripk3Casp8"),
                       treatment = c("unstim", "unstim", "unstim", "unstim", "unstim", "unstim", "LPS", "LPS", "LPS", "LPS", "LPS", "LPS"))
 
@@ -199,7 +202,7 @@ ggplot(pca.res.df) +
   geom_point(size=4) +
   # geom_label() +
   # stat_ellipse() +
-  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) +
   ylab(paste0("PC2 (",pc.per[2],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
