@@ -27,7 +27,7 @@ In this class we’ll discuss how you can use R/Bioconductor to tap into vast am
 
 ## Downloads
 
-ARCHS4 database in HDF5 format for **[mouse](https://s3.amazonaws.com/mssm-seq-matrix/mouse_matrix_v10.h5)** and **[human](https://s3.amazonaws.com/mssm-seq-matrix/human_matrix_v10.h5)**.  These HDF5 files contain RNA-seq data already aligned using Kallisto for 405,640 samples and 348,184 samples, respectively.  Note that these files will each take about ~12GB of space on your hard-drive. For the purposes of this lecture, **you only need to download the mouse data**.
+ARCHS4 database in HDF5 format for **[mouse](https://s3.dev.maayanlab.cloud/archs4/archs4_gene_mouse_v2.1.2.h5)** and **[human](https://s3.dev.maayanlab.cloud/archs4/archs4_gene_human_v2.1.2.h5)**.  These HDF5 files contain RNA-seq data already aligned using Kallisto for 717,966 and 620,825 samples, respectively.  Note that these files will each take about ~25-30GB of space on your hard-drive. For the purposes of this lecture, **you only need to download the mouse data**.
 
 ---
 
