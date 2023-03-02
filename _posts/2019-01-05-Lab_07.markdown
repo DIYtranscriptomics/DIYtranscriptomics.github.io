@@ -41,13 +41,10 @@ glimpse(lemis)
 #with large datasets like this, it's useful to know how to see the 'levels' for any variable of interest
 unique(lemis$description)
 
-
 ```
 
 1. Identify the most common (by 'quantity') live mammal taken from the wild for import into the US.
-
 2. Building on your analysis above, produce a plot showing live mammals (use 'generic_name') imported for the purposes of science/research. (tip: use ```geom_col()``` in ggplot for this).  Feel free to play around with different themes to make your plot more exciting.
-
 3. Identify the countries from which we import the most macaques (again, a simple plot will suffice).
 4. Using the same approach as above, create a plot showing the countries from which we import live bats.
 5. For what purposes do we import bats?
@@ -61,8 +58,13 @@ unique(lemis$description)
 ## Extended learning
 
 * Ask and answer a question that *you* care about!
+* Create a report on the confiscated imports
 * Create an animated ggplot using the date information in LEMIS and the [gganimate](https://gganimate.com/) package
 
+
+## Solution
+
+Download **[this script](http://DIYtranscriptomics.github.io/Code/files/LEMIS_solution.R)** to see answers to all 10 questions above.
 
 
 

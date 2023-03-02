@@ -55,19 +55,21 @@ Anything interesting stand out to you about the top genes on your list (requires
 
 ## Solution
 
-Hey, no cheating :)
+### script
 
-You won't be able to view the answer videos below until you have a password from me (via Discord). This ensures that everyone in the course has made a good faith effort to work through the questions on their own.
+Download **[this script](http://DIYtranscriptomics.github.io/Code/files/wormlab_solution.R)** to see my answers to the questions above.
 
-### Solution to question #1
+Below you will also see video solutions for each question.  Reach out on Discord if you'd like the password.
+
+### video for question #1
 
 <iframe src="https://player.vimeo.com/video/418615841" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Solution to question #2
+### video for question #2
 
 <iframe src="https://player.vimeo.com/video/418643636" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-### Solution to question #3
+### video for question #3
 
 <iframe src="https://player.vimeo.com/video/418645922" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
