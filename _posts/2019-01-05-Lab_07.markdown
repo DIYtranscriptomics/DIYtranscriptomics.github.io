@@ -37,17 +37,24 @@ lemis <- read_delim("lemis_cleaned.tsv")
 
 #take a minute to explore this huge dataset
 glimpse(lemis)
+
+#with large datasets like this, it's useful to know how to see the 'levels' for any variable of interest
+unique(lemis$description)
+
+
 ```
 
 1. Identify the most common (by 'quantity') live mammal taken from the wild for import into the US.
+
 2. Building on your analysis above, produce a plot showing live mammals (use 'generic_name') imported for the purposes of science/research. (tip: use ```geom_col()``` in ggplot for this).  Feel free to play around with different themes to make your plot more exciting.
+
 3. Identify the countries from which we import the most macaques (again, a simple plot will suffice).
 4. Using the same approach as above, create a plot showing the countries from which we import live bats.
 5. For what purposes do we import bats?
 6. How does the type of bat (use 'specific_name') imported differ between countries (hint: use ```facet_wrap``` in your ggplot code)?
 7. Identify the most expensive (by 'value') shipment of live mammals to enter the US.
 8. How does the answer above compare with the most expensive shipment of any kind (live *or* not)?
-9. You are alerted to a concerning new viral disease of humans that is believed to originate from Fruit bats (though the exact type of fruit bat is not clear).  Identify the US cities that would would be most likely to be exposed to such a virus from the import of live fruit bats.
+9.  You are alerted to a concerning new viral disease of humans that is believed to originate from Fruit bats (though the exact type of fruit bat is not clear).  Identify the US cities that would would be most likely to be exposed to such a virus from the import of live fruit bats.
 10. A recent case of Anthrax in NYC was traced back to a contaminated Wildebeest hide that was stretched and used to make a traditional drum.  Through which port(s) did this animal product most likely enter the country? (note: [this actually happens](https://www.cdc.gov/anthrax/animal-products/hides-drums.html)).
 
 
