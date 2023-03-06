@@ -24,7 +24,7 @@ lemis.live.summary <- lemis %>%
   summarize(sum = sum(quantity, na.rm = TRUE)) %>%
   dplyr::arrange(desc(sum))
 # bears still win :)
-                  
+
 
 # QUESTION_02: Building on your analysis above, produce a plot showing live animals (use 'generic_name') imported for the purposes of science/research ----
 lemis.science <- lemis %>%
@@ -105,7 +105,7 @@ ggplot(lemis.seized) +
   aes(y=generic_name, x=quantity) +
   geom_col()
 # Use ggAnimate to create a animation of import data over time
-library(gganimate) 
+library(gganimate)
 library(gifski) #only need to download once and gganimate will load
 library(av) #only need to download once and gganimate will load
 # restart R after installing the gifski and av packages above, then you're ready to go
@@ -119,8 +119,9 @@ ggplot(lemis.seized) +
   ease_aes('linear')
 
 
+# to save a gif produced by gganimate above, store your ggplot object (e.g., as 'plot')
+# then pass to 'anim_save("filename.gif", plot)'
 
-  
 
 
 

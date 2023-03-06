@@ -9,9 +9,9 @@
 library(tidyverse) # you know it well by now!
 library(limma) # venerable package for differential gene expression using linear modeling
 library(edgeR)
-library(gt) 
-library(DT) 
-library(plotly) 
+library(gt)
+library(DT)
+library(plotly)
 
 # Set up your design matrix ----
 group <- factor(targets$group)
@@ -19,7 +19,7 @@ design <- model.matrix(~0 + group)
 colnames(design) <- levels(group)
 
 # NOTE: if you need a paired analysis (a.k.a.'blocking' design) or have a batch effect, the following design is useful
-# design <- model.matrix(~block + treatment) 
+# design <- model.matrix(~block + treatment)
 # this is just an example. 'block' and 'treatment' would need to be objects in your environment
 
 # Model mean-variance trend and fit linear model to data ----
@@ -49,7 +49,7 @@ gt(myTopHits.df)
 # TopTable (from Limma) outputs a few different stats:
 # logFC, AveExpr, and P.Value should be self-explanatory
 # adj.P.Val is your adjusted P value, also known as an FDR (if BH method was used for multiple testing correction)
-# B statistic is the log-odds that that gene is differentially expressed. If B = 1.5, then log odds is e^1.5, where e is euler's constant (approx. 2.718).  So, the odds of differential expression os about 4.8 to 1 
+# B statistic is the log-odds that that gene is differentially expressed. If B = 1.5, then log odds is e^1.5, where e is euler's constant (approx. 2.718).  So, the odds of differential expression os about 4.8 to 1
 # t statistic is ratio of the logFC to the standard error (where the error has been moderated across all genes...because of Bayesian approach)
 
 # Volcano Plots ----
@@ -91,8 +91,8 @@ dim(diffGenes)
 diffGenes.df <- as_tibble(diffGenes, rownames = "geneID")
 
 # create interactive tables to display your DEGs ----
-datatable(diffGenes.df, 
-          extensions = c('KeyTable', "FixedHeader"), 
+datatable(diffGenes.df,
+          extensions = c('KeyTable', "FixedHeader"),
           caption = 'Table 1: DEGs in cutaneous leishmaniasis',
           options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
   formatRound(columns=c(2:11), digits=2)
@@ -117,8 +117,8 @@ targets.mod <- targets %>%
 Txi_trans <- importIsoformExpression(sampleVector = path)
 
 # fix column headers of abundance and counts data to match sampleID in target.mod
-colnames(Txi_trans$abundance) <- c("isoform_id", sampleLabels) 
-colnames(Txi_trans$counts) <- c("isoform_id", sampleLabels) 
+colnames(Txi_trans$abundance) <- c("isoform_id", sampleLabels)
+colnames(Txi_trans$counts) <- c("isoform_id", sampleLabels)
 
 # import data
 mySwitchList <- importRdata(
@@ -128,9 +128,12 @@ mySwitchList <- importRdata(
   removeNonConvensionalChr = TRUE,
   addAnnotatedORFs=TRUE,
   ignoreAfterPeriod=TRUE,
-  isoformExonAnnoation = "Homo_sapiens.GRCh38.104.chr_patch_hapl_scaff.gtf.gz",
+  # the files below must be from the same ensembl release (in this case release 108), and must match the reference release version that we originally mapped our reads to at the beginning of the course
+  # you can find version 108 of the gtf file below here: https://ftp.ensembl.org/pub/release-108/gtf/homo_sapiens/
+  isoformExonAnnoation = "Homo_sapiens.GRCh38.108.chr_patch_hapl_scaff.gtf.gz",
   isoformNtFasta       = "Homo_sapiens.GRCh38.cdna.all.fa",
   showProgress = TRUE)
+
 
 # We'll do the isoform analysis in one step, but there's a lot to unpack here, so you should really read the package documentation at:
 # https://bioconductor.org/packages/release/bioc/vignettes/IsoformSwitchAnalyzeR/inst/doc/IsoformSwitchAnalyzeR.html
@@ -145,17 +148,17 @@ mySwitchList <- isoformSwitchAnalysisCombined(
 # in case you missed the summary output from the function above
 extractSwitchSummary(mySwitchList)
 
-# extract the top n isoform switching events 
+# extract the top n isoform switching events
 extractTopSwitches(
-  mySwitchList, 
+  mySwitchList,
   filterForConsequences = TRUE, # these 'consequences' related to the annotations I reference above.
-  n = 50, 
+  n = 50,
   sortByQvals = FALSE) #change to TRUE if you want this list sorted by FDR-adusted Pval (a.k.a., q value)
 
 # visualize by making a 'switch plot'
 switchPlot(
   mySwitchList,
-  gene='FCGR1B',
+  gene='FCGR3B',
   condition1 = 'disease',
   condition2 = 'healthy',
   localTheme = theme_bw())
@@ -163,10 +166,10 @@ switchPlot(
 # the essentials ----
 library(tidyverse)
 library(limma)
-library(edgeR) 
+library(edgeR)
 library(gt)
-library(DT) 
-library(plotly) 
+library(DT)
+library(plotly)
 
 group <- factor(targets$group)
 design <- model.matrix(~0 + group)
@@ -202,8 +205,8 @@ results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.05,
 colnames(v.DEGList.filtered.norm$E) <- sampleLabels
 diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0,]
 diffGenes.df <- as_tibble(diffGenes, rownames = "geneID")
-datatable(diffGenes.df, 
-          extensions = c('KeyTable', "FixedHeader"), 
+datatable(diffGenes.df,
+          extensions = c('KeyTable', "FixedHeader"),
           caption = 'Table 1: DEGs in cutaneous leishmaniasis',
           options = list(keys = TRUE, searchHighlight = TRUE, pageLength = 10, lengthMenu = c("10", "25", "50", "100"))) %>%
   formatRound(columns=c(2:11), digits=2)
