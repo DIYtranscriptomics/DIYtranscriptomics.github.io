@@ -11,6 +11,7 @@ featured_image: '/images/plasmoRBC.png'
 ## Corresponding lecture
 
 [Lecture 8 – Differential gene expression](https://diytranscriptomics.com/project/lecture-08)
+
 [Lecture 9 – Module Identification](https://diytranscriptomics.com/project/lecture-09)
 
 ## Description
