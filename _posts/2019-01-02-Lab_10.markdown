@@ -20,7 +20,7 @@ Your challenge is to look at the study design file and decide on a question **YO
 
 **You have a full week to complete this lab**.  Use this time to work through the dataset either alone, or together with your classmates.
 
-Your group's final figure(s) **must be turned by noon on the day before the next lab**, along with a description of your key findings.
+In lab next week, you will have the first ~45min of class to put together the pieces of the figure that you spent the week working on.  The reminder of class will be devoted to presenting your figure to the class!
 
 ## Learning objectives
 
