@@ -33,11 +33,19 @@ You're tasked with studying gene expression in *Plasmodium falciparum*, a single
 * Think about what makes a good figure and use your data to tell a story!
 * Feel free to include illustrations/schematics if useful.
 
+## Extended learning
+
+* While filtering/normalizing/plotting this data, you may have noticed an odd pattern in the distributions that you plotted.  Why do you think this is, and what (if anything) could you do to deal with this?
+* What do you think of PCA plot, and what does this tell you about the biology of the Malaria erythrocytic cycle?
+* Did the small multiples plot of the PCA results give you any additional insight into sources of variance in this dataset?
+* In the solution script below, we use a model matrix with no intercept, and then rely on our contrast matrix to compare each timepoint to timepoint zero.  This probably isn't the smartest approach, and the Limma manual spends a great deal of time explaining how to set-up more elegant designs for timeseries studies.  Can you make a better design that identifies more differentially expressed genes?
+
+
 ## Solution
 
-Hey, no cheating :)
+Download **[this script](http://DIYtranscriptomics.github.io/Code/files/malarialab_solution.R)** to see answers to all 10 questions above.
 
-You won't be able to view the answer videos below until you have a password from me (via Discord). This ensures that everyone in the course has made a good faith effort to work through the questions on their own.
+The videos below may help you understand how I work through this solution.
 
 ### Solution - part 1
 
