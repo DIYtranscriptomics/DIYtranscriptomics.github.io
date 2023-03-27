@@ -6,8 +6,11 @@ description: Each group will present their final figures from last week's COVID 
 featured_image: '/images/itscomplicated.jpeg'
 ---
 
-## What you need to know
+## Description
 
-Come back soon!  The content for this lab will be posted on or before the date shown at the top of the page.
+You've had a full week to work on your analysis and figure for [The COVID19 Collaborative Challenge](https://diytranscriptomics.com/lab/lab-10), so now it is time to show and tell!  Learning to talk about complex data and focus your discussion on one or a few salient findings is a really valuable skill.  Toward this end, in this lab each group will give a short (10-15 min) oral presentation on their analysis.  You can either designate a single person from your group to present, or you can split up the work amongst multiple people in the group.  You will not need to prepare slides for your presentation.  Instead, each group's figure will be projected onto the main displays as we work through each presentation. Although you are free to talk through your figure how ever you see fit, please plan to cover the following in your talk:
 
-
+* what was your question and/or hypothesis?
+* what was your approach?
+* what are your main findings?
+* what do you think of your results?
