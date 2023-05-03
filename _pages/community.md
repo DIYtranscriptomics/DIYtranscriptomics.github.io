@@ -54,9 +54,11 @@ In addition to interacting with the rest of the class, on our Discord page you'l
 
 Below are a few examples of some of the great local resources.
 
-[Use R! group at UPenn](https://pennusergroup.wordpress.com) - A groups of Penn staff, students and researchers who get together to improve their R knowledge and skills.  The group, which is open to R users of all levels, meets weekly on Wednesdays, 11am-noon, in the Weigle Informations Commons (WIC) seminar room of the Van Pelt-Dietrich Library Center.
+[GEMINI workshop series](https://gemini-series.netlify.app/) - GEMINI is a monthly series of day-long workshops geared toward helping researchers access and use software tools for the analysis of large and complex datasets in GEnomics, MIcrobiology aNd Immunology.  Each workshop in the series focuses on a single piece of software, involves hands-on active learning, and is free and open to the UPenn biomedical research community, including graduate students, postdocs, faculty and staff.
 
-[CHOPR]()
+The GEMINI Series was founded and is co-organized by Allie Greenplate, PhD and Dan Beiting, PhD and is supported by Immune Health, the Institute for Immunology, and the Institute for Infectious and Zoonotic Diseases (IIZD).
+
+[The R Penn Group (RPG)]() - The RPG meets to discuss, learn, and collaborate on topics and projects related to statistics, mapping, data wrangling, visualization, and analysis with R programming language through community focused problem solving.  RPG will meet at 12pm on the first floor of the Van-Pelt Dietrich Library Center on the second Thursday of the month throughout the Spring and Fall semesters.  All inquiries about the group should be directed to the founder and organizer, Jaj Karajgikar (jajk@upenn.edu), the Applied Data Science Librarian at UPenn.
 
 [Weekly 'Code Review'](https://groups.google.com/forum/?hl=en#!forum/bushmancode) - Led by Kyle Bittinger, a Computational Biologist and faculty at CHOP.  Each week one person presents some programming code they are working on for their research.  Attendees get a chance to hear how code was put together to achieve a goal, while the presenter gets feedback, collective troubleshooting, etc.  Less experienced programmers will have a chance to learn about design options when programming.  Group meets one Wednesdays @ 9am in Johnson 207.  Contact Kyle by email at <kylebittinger@gmail.com> to be added to the mailing list.
 
