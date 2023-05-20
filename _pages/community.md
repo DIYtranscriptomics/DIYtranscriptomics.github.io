@@ -2,6 +2,7 @@
 title: Community
 subtitle: A collection of local (UPenn), regional (Philly), and online places where you can go to learn more about using R/bioconductor.
 description: A collection of local (UPenn), regional (Philly), and online places where you can go to learn more about using R/bioconductor.
+featured_image: /images/discord.png
 ---
 
 
