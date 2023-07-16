@@ -8,6 +8,8 @@ header_settings:
 
 menu_settings:
   menu_items:
+    - title: 'Learn R!'
+      url: '/LearnR'
     - title: 'Lectures'
       url: '/'
     - title: 'Labs'
