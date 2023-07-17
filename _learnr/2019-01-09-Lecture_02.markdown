@@ -1,0 +1,80 @@
+---
+title: 'Ultra-fast read mapping with Kallisto'
+subtitle: 'Lecture 2 • watch by January 25, 2023'
+date: 2019-01-09 00:00:00
+description: In this class we'll finally get down to the business of using Kallisto for memory-efficient mapping of your raw reads.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening under the hood. During this process, we'll touch on a range of topics, from reference files, to command line basics, and using shell scripts for automation and reproducibility.
+featured_image: '/images/bear.jpg'
+---
+
+<div style="text-align: right"> Image credit: Lior Pachter </div>
+
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0UePBv3d_VkYkZSiZ2lqnYclQ#Lecture3%5FreadMapping)
+
+## Overview
+
+In this class, we'll finally get down to the business of using [Kallisto](https://pachterlab.github.io/kallisto/about) for memory-efficient mapping of raw reads to a reference transcriptome.  You'll carry out this mapping in class, right on your laptop, while we discuss what's happening 'under the hood' with Kallisto and how this compares to more traditional alignment methods.  You'll be introduced to using command line software and will learn about automation and reproducibility through shell scripts.
+
+## Learning objectives
+
+* Discuss [the course dataset](http://diytranscriptomics.com/data).
+* Download and examine a reference transcriptome from [Ensembl](https://useast.ensembl.org/info/data/ftp/index.html).
+* Use Kallisto to construct an index from this reference file.
+* Use Kallisto to map our raw reads to this index
+* Talk a bit about how an index is built and facilitates read alignment
+
+---
+
+## Lecture videos
+
+### Part 1 - Step-by-step walkthrough of using FastQC and FastP on your raw sequence data
+
+<iframe src="https://player.vimeo.com/video/410750113" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 2 - Read mapping with Kallisto, and summarizing outputs with MultiQC
+
+<iframe src="https://player.vimeo.com/video/791916878" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 3 - A discussion of traditional and alignment-free (pseudoalignment) methods for quantifying gene expression
+
+<iframe src="https://player.vimeo.com/video/410782115" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+---
+
+## Reading
+
+### papers and labs posts on Kallisto
+
+[2016 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Kallisto.pdf) from Lior Pachter's lab describing Kallisto
+
+[2017 Nature Methods paper](http://DIYtranscriptomics.github.io/Reading/files/sleuth.pdf) from Lior Pachter's lab describing Sleuth
+
+[Lior Pachter's lab post on Kallisto](https://liorpachter.wordpress.com/2015/05/10/near-optimal-rna-seq-quantification-with-kallisto/)
+
+[lab post on pseudoalignments](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html) - helps understand how Kallisto maps reads to transcripts
+
+Did you notice that Kallisto is using 'Expectation Maximization (EM)' during the alignment?  You can read more about what this is [here](http://DIYtranscriptomics.github.io/Reading/files/EM.pdf)
+
+[Kallisto discussions/questions](https://groups.google.com/forum/#!forum/kallisto-sleuth-users) and [Kallisto announcements](https://groups.google.com/forum/#!forum/kallisto-sleuth-announcements) are available on Google groups
+
+### General info about ultra lightweight methods for transcript quantification
+
+[2014 Nature Biotech paper](http://DIYtranscriptomics.github.io/Reading/files/Sailfish.pdf) - describes Sailfish, which implimented the first lightweight method for quantifying transcript expression.
+
+[Not quite alignments](http://robpatro.com/lab/?p=248) - Rob Patro, the first author of the Sailfish paper, wrote a nice lab post comparing and contrasting alignment-free methods used by Sailfish, Salmon and Kallisto.
+
+[2018 Nature Methods paper describing Salmon](https://www.nature.com/articles/nmeth.4197) - A lightweight aligment tool from Rob Patro and Carl Kinsford.  [Check out the website too](https://combine-lab.github.io/salmon/).
+
+[2011 Nature Biotechnology ](http://DIYtranscriptomics.github.io/Reading/files/deBruijn.pdf) - Great primer to better understand what de Bruijn graph is.
+
+[Greg Grant's recent paper comparing different aligners](http://DIYtranscriptomics.github.io/Reading/files/gregGrant_aligners_natMeth.pdf).  This should be a helpful guide in choosing alignment software outside of what we used in class.
+
+---
+
+## Other videos
+
+**Harold Pimentel's talk on alignment (20 min)**
+
+<iframe src="https://www.youtube.com/embed/b4tVokh6Law" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
+**Lior Pachter's talk at CSHL (45 min)**
+
+<iframe src="https://www.youtube.com/embed/5NiFibnbE8o" width="640" height="360" frameborder="0" allowfullscreen></iframe>

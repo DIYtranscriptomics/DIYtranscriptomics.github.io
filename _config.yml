@@ -10,6 +10,9 @@ collections:
   projects:
     output: true
     permalink: /project/:slug
+  learnr:
+    output: true
+    permalink: /learnr/:slug
 
 defaults:
   -
@@ -35,13 +38,19 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+  -
+    scope:
+      path: ""
+      type: "learnr"
+    values:
+      layout: "learnr"
 
 markdown: kramdown
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-  
+
 sass:
   style: compressed
 
@@ -51,4 +60,3 @@ plugins:
 
 paginate: 20
 paginate_path: "/lab/page:num/"
-  

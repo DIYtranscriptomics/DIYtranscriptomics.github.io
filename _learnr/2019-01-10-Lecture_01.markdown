@@ -1,0 +1,61 @@
+---
+title: 'Setting up your software environment'
+subtitle: 'Lecture 1 • watch by Jan 18, 2023'
+date: 2019-01-10 00:00:00
+description: In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.
+featured_image: '/images/rstudio.png'
+---
+
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0gntL7jitMXjx7nWRy4oakAjg#Lecture2%5FtoolsIntro)
+
+## Overview
+
+In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.
+
+---
+
+## Learning objectives
+
+* Brief overview of the tools we’ll use throughout the course (R/Bioconductor, RStudio, etc.)
+* Set-up *your* laptop with all the software needed for the course
+
+---
+
+## Software everyone will need
+
+**I'll walk you through installing the following software**
+
+[R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) - The only programming language we'll work with in class.
+
+[RStudio](http://www.rstudio.com/products/rstudio/download/) - a development environment for the R programming language.
+
+[Sublime text editor](http://www.sublimetext.com/) - a simple but powerful text editor that is 'code aware'
+
+[Visual Studio Code](https://code.visualstudio.com/) - an excellent choice for working with virtually any kind of code outside of RStudio.  We'll use this later in the semester for connecting to and working with GitHub repositories.
+
+## Additional software **Mac users** *will* need
+
+[XCode developer tools](https://developer.apple.com/xcode/) - *Only download if running Mac OS on your laptop.*
+
+## Additional software **Windows** users *will* need
+
+[Cygwin](https://www.cygwin.com/) - Cygwin will give your system more linux-like capabilities
+
+[Git for Windows](https://gitforwindows.org/) – This will give you a bash emulator that works really nicely for running standard command-line programs.
+
+[Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto and other course-related software is available on my lab's protocols site [here](https://protocols.hostmicrobe.org/conda).
+
+---
+
+## Lecture videos
+
+### Part 1 - An overview of the software tools we'll use on our laptops for the course, as well as options for computing hardware.
+
+<iframe src="https://player.vimeo.com/video/408967948" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+
+### Part 2 - Installing software and talking about the relationship between R, RStudio and Bioconductor.
+
+<iframe src="https://player.vimeo.com/video/409021094" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+---
