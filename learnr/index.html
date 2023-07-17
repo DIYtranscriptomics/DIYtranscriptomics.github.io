@@ -13,7 +13,7 @@ featured_image: /images/class.jpg
 
 	<div class="wrap">
 
-		<h1>Data labs</h1>
+		<h1>Learn R!</h1>
 		<p>Hone and expand your skills using real RNA-seq datasets from infectious disease research</p>
 
 	</div>
@@ -24,19 +24,19 @@ featured_image: /images/class.jpg
 
 	<div class="wrap">
 
-		{% for post in paginator.posts %}
+		{% for learnr in paginator.learnr %}
 
 		<article class="post">
 
 			<div class="post__image-wrap">
-				<div class="post__image" style="background-image: url({{ post.featured_image }})"></div>
+				<div class="post__image" style="background-image: url({{ learnr.featured_image }})"></div>
 			</div>
 
 			<div class="post__content-wrap">
 				<div class="post__content">
-					<h2 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-					<p class="post__subtitle">{{ post.subtitle }}</p>
-					<p class="post__description">{{ post.description }}</p>
+					<h2 class="post__title"><a href="{{ learnr.url }}">{{ learnr.title }}</a></h2>
+					<p class="post__subtitle">{{ learnr.subtitle }}</p>
+					<p class="post__description">{{ learnr.description }}</p>
 				</div>
 			</div>
 
