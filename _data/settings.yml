@@ -8,8 +8,6 @@ header_settings:
 
 menu_settings:
   menu_items:
-    - title: 'Learn R!'
-      url: '/LearnR'
     - title: 'Lectures'
       url: '/'
     - title: 'Labs'
@@ -24,6 +22,8 @@ menu_settings:
       url: '/faqs'
     - title: 'Community'
       url: '/community'
+    - title: 'Learn R!'
+      url: '/learnr'
 
 footer_settings:
   footer_tagline: Teaching students how to use open-source tools to analyze RNAseq data since 2015.
