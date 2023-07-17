@@ -24,7 +24,7 @@ featured_image: /images/class.jpg
 
 	<div class="wrap">
 
-		{% for learnr in paginator.learnr %}
+		{% for learnr in site.learnr reversed %}
 
 		<article class="post">
 
@@ -47,22 +47,3 @@ featured_image: /images/class.jpg
 	</div>
 
 </section>
-
-{% if paginator.total_pages > 1 %}
-
-<section class="pagination">
-
-	<div class="wrap">
-
-		{% if paginator.previous_page %}
-		<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button pagination__prev"><i class="fa fa-arrow-left" aria-hidden="true"></i> <span>Newer Posts</span></a>
-		{% endif %}
-		{% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button pagination__next"><span>Older Posts</span> <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-		{% endif %}
-
-	</div>
-
-</section>
-
-{% endif %}
