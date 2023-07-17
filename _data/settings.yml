@@ -23,7 +23,7 @@ menu_settings:
     - title: 'Community'
       url: '/community'
     - title: 'Learn R!'
-      url: '/learnr'
+      url: '/learnr/'
 
 footer_settings:
   footer_tagline: Teaching students how to use open-source tools to analyze RNAseq data since 2015.
