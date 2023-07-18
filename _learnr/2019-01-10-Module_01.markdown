@@ -10,14 +10,14 @@ featured_image: '/images/rstudio.png'
 
 ## Overview
 
-In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.
+In the first half of this lecture we'll discuss the open-source, cross-platform R programming language.  Then each student will set-up their own laptop with the newest version of R and RStudio, as well as several other tools that are generally useful for working with code.
 
 ---
 
 ## Learning objectives
 
-* Brief overview of the tools we’ll use throughout the course (R/Bioconductor, RStudio, etc.)
-* Set-up *your* laptop with all the software needed for the course
+* Brief overview of R, RStudio, and Bioconductor
+* Set-up *your* laptop with all the software you'll need for working in R
 
 ---
 
@@ -33,23 +33,11 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 [Visual Studio Code](https://code.visualstudio.com/) - an excellent choice for working with virtually any kind of code outside of RStudio.  We'll use this later in the semester for connecting to and working with GitHub repositories.
 
-## Additional software **Mac users** *will* need
-
-[XCode developer tools](https://developer.apple.com/xcode/) - *Only download if running Mac OS on your laptop.*
-
-## Additional software **Windows** users *will* need
-
-[Cygwin](https://www.cygwin.com/) - Cygwin will give your system more linux-like capabilities
-
-[Git for Windows](https://gitforwindows.org/) – This will give you a bash emulator that works really nicely for running standard command-line programs.
-
-[Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto and other course-related software is available on my lab's protocols site [here](https://protocols.hostmicrobe.org/conda).
-
 ---
 
 ## Lecture videos
 
-### Part 1 - An overview of the software tools we'll use on our laptops for the course, as well as options for computing hardware.
+### Part 1 - An overview of the software tools you'll be using.
 
 <iframe src="https://player.vimeo.com/video/408967948" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
