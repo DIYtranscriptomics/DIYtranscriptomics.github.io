@@ -24,6 +24,8 @@ In the first half part of this module you'll watch a video that walks through th
 
 ## Lecture video
 
+[Lecture slides on iCloud](https://www.icloud.com/keynote/018C2tYpyB8epL5AtVsXelFaQ#module%5F04%5Fggplot2)
+
 ### ggplot2 basics
 
 <iframe src="https://player.vimeo.com/video/421643144" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -31,9 +33,9 @@ In the first half part of this module you'll watch a video that walks through th
 
 ## Active coding exercise in Datacamp
 
-[Introduction to the ggplot, part 1 - exercises in Datacamp](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+[Introduction to the ggplot, part 1](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 
-[Introduction to the ggplot, part 2 - exercises in Datacamp](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+[Introduction to the ggplot, part 2](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 
 
 ## Reading (optional)
