@@ -1,13 +1,45 @@
 ---
 title: 'Introduction to R'
-subtitle: 'Module 2 (Datacamp exercises)'
+subtitle: 'Module 2 • 4hrs'
 date: 2019-01-09 00:00:00
 description: In this module, you'll master the basics of data analysis in R, including working with vectors, lists, and data frames.  You'll also practice using R by working with real datasets.
 featured_image: '/images/aRt.png'
 ---
 
+## Overview
 
-## Hands-on coding
+In the first half of this module, you'll watch a video that walks through the basics of working with an R script.  Then, you'll begin your first active coding lesson in Datacamp
 
-[Introduction to R - exercises in Datacamp](https://www.datacamp.com/courses/free-introduction-to-r)
+---
+
+## Learning objectives
+
+* Understand the structure of an R script and how to navigate a script in RStudio
+* Know how to get data into and out of R
+* Know how to install and load packages into your environment
+* Understand the common data structures used when working in R
+* Undestand basic subsetting operations in base R
+* Know how to get help directly in RStudio
+
+## Files you'll need
+
+Download the three files below and place them on your desktop.  If any of these files do not download when you click on them, simply right-click and choose 'copy link address', then open a new browser tab, paste the path into your web-browser URL bar, and hit enter.
+
+[R script]() - I'll use this script in the first video to demonstrate key basic concepts in R
+
+[swine_study.txt]() - a simple text file that we'll use as an example of working with dataframes
+
+[matrix.txt]() - a simple data matrix that we'll also use in the script above.
+
+
+## Lecture video
+
+### Getting started with R
+
+<iframe src="https://player.vimeo.com/video/421643144" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+
+## Active coding exercise in Datacamp
+
+[Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)
 

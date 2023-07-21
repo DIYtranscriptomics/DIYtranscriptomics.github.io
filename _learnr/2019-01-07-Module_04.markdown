@@ -1,20 +1,48 @@
 ---
 title: 'Introduction to plotting with ggplot2'
-subtitle: 'Module 4 (Datacamp exercises)'
+subtitle: 'Module 4 • 8hrs'
 date: 2019-01-09 00:00:00
-description: Get started on the path to exploring and visualizing your own data with the tidyverse, a powerful and popular collection of data science tools within R.
+description: Learn to create detailed, publication-quality plots using ggplot2, a system for declaratively creating graphics, based on The Grammar of Graphics
 featured_image: '/images/minard.png'
 ---
 
 <div style="text-align: right"> Image credit: Charles Joseph Minard </div>
 
 
-## ggplot2 basics
+## Overview
+
+In the first half part of this module you'll watch a video that walks through the basics of using ggplot2, a system for declaratively creating graphics, based on The Grammar of Graphics.  Then, you'll complete two active coding lesson in Datacamp.
+
+---
+
+## Learning objectives
+
+* Understand the advantages of a layered grammar of graphics
+* Understand and be able to modfiy the basic code for producing plots with ggplot2
+* Understand themes for ggplot2
+* Know how to find and use colors in creating graphics in R
+
+## Lecture video
+
+### ggplot2 basics
+
+<iframe src="https://player.vimeo.com/video/421643144" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 
-
-## Hands-on coding
+## Active coding exercise in Datacamp
 
 [Introduction to the ggplot, part 1 - exercises in Datacamp](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 
 [Introduction to the ggplot, part 2 - exercises in Datacamp](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+
+
+## Reading (optional)
+
+[Grammar of graphics](http://DIYtranscriptomics.github.io/Reading/files/layered-grammar.pdf) - Another paper by Hadley Wickham.  This one explains the rationale behind ggplot2.
+
+[ggplot2 cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/ggplot2-cheatsheet.pdf) – a very helpful guide as we continue to use ggplot2 for all of our plotting needs.
+
+[catalog of R graphs](http://shiny.stat.ubc.ca/r-graph-catalog/) - Take a look at some of the various ways to graph your data and the underlying R code in this
+
+[R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994) - If you end up using R to make a lot of graphs, you will find the to be an important reference. It's available free to UPenn folks as an Ebook.
+

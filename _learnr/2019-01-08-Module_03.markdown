@@ -1,17 +1,36 @@
 ---
 title: 'Introduction to the Tidyverse'
-subtitle: 'Module 3 (Datacamp exercises)'
+subtitle: 'Module 3 • 4hrs'
 date: 2019-01-09 00:00:00
 description: Get started on the path to exploring and visualizing your own data with the tidyverse, a powerful and popular collection of data science tools within R.
 featured_image: '/images/tidyverse.png'
 ---
 
+## Overview
 
-## Tidyverse basics
+In the first half part of this module, you'll watch a video that walks through the basics of using the Tidyverse ecosystem of R packages for data science.  Then, you'll complete an active coding lesson in Datacamp
+
+---
+
+## Learning objectives
+
+* Learn about the Tidyverse ecosystem of packages and functions
+* Know the basic dplyr 'verbs' and how to use them to work with data frames
+* Know what makes data tidy or messy, and how and when to move between these two states
+* Understand the utility of the %>% pipe operator
+
+## Lecture video
+
+### Tidyverse basics
+
+<iframe src="https://player.vimeo.com/video/421643144" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 
+## Active coding exercise in Datacamp
 
-## Hands-on coding
+[Introduction to the Tidyverse](https://www.datacamp.com/courses/introduction-to-the-tidyverse)
 
-[Introduction to the Tidyverse - exercises in Datacamp](https://www.datacamp.com/courses/introduction-to-the-tidyverse)
+## Reading (optional)
+
+[Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf) - Hadley Wickham (author of Tidyverse packages and Chief Scientist at RStudio) describes the philosophy of tidy data in this paper.
 
