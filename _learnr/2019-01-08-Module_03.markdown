@@ -1,10 +1,14 @@
 ---
 title: 'Introduction to the Tidyverse'
-subtitle: 'Module 3 (DataCamp)'
+subtitle: 'Module 3 (Datacamp exercises)'
 date: 2019-01-09 00:00:00
 description: Get started on the path to exploring and visualizing your own data with the tidyverse, a powerful and popular collection of data science tools within R.
-featured_image: '/images/bear.jpg'
+featured_image: '/images/tidyverse.png'
 ---
+
+
+## Tidyverse basics
+
 
 
 ## Hands-on coding

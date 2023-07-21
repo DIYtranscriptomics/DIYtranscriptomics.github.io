@@ -1,9 +1,9 @@
 ---
 title: 'Introduction to R'
-subtitle: 'Module 2 (DataCamp)'
+subtitle: 'Module 2 (Datacamp exercises)'
 date: 2019-01-09 00:00:00
 description: In this module, you'll master the basics of data analysis in R, including working with vectors, lists, and data frames.  You'll also practice using R by working with real datasets.
-featured_image: '/images/bear.jpg'
+featured_image: '/images/aRt.png'
 ---
 
 

@@ -2,7 +2,7 @@
 title: 'Setting up your software environment'
 subtitle: 'Module 1 (lecture)'
 date: 2019-01-10 00:00:00
-description: In the first half of this lecture we'll discuss the open-source, cross-platform R/bioconductor software that we will use throughout the course.  Then each student will set-up their own laptop to be a powerful, stand-alone bioinformatics workstation.
+description: In the first half of this lecture we'll discuss the open-source, cross-platform R programming language.  Then each student will set-up their own laptop with the newest version of R and RStudio, as well as several other tools that are generally useful for working with code.
 featured_image: '/images/rstudio.png'
 ---
 
