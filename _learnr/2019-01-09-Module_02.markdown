@@ -38,7 +38,7 @@ Download the three files below and place them on your desktop.  If any of these 
 
 ### Getting started with R
 
-<iframe src="https://player.vimeo.com/video/421643144" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/848120605" width="1296" height="540" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 
 ## Active coding exercise in Datacamp
