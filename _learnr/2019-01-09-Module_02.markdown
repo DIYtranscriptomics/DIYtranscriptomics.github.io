@@ -25,16 +25,16 @@ In the first half of this module, you'll watch a video that walks through the ba
 
 Download the three files below and place them on your desktop.  If any of these files do not download when you click on them, simply right-click and choose 'copy link address', then open a new browser tab, paste the path into your web-browser URL bar, and hit enter.
 
-[R script]() - I'll use this script in the first video to demonstrate key basic concepts in R
+[R script](https://drive.google.com/file/d/1ZWf_k9BPMRBVO6RGk00wdR4fNCW6O2CH/view?usp=sharing) - I'll use this script in the first video to demonstrate key basic concepts in R
 
-[swine_study.txt]() - a simple text file that we'll use as an example of working with dataframes
+[swine_study.txt](https://drive.google.com/file/d/1ZZjAObjSWVl6tNg0qu-pCEagsTAm6K2i/view?usp=sharing) - a simple text file that we'll use as an example of working with dataframes
 
-[matrix.txt]() - a simple data matrix that we'll also use in the script above.
+[matrix.txt](https://drive.google.com/file/d/1ZV1rPgMVlNf1GULB-iQ_VRPbErPZ6_T9/view?usp=sharing) - a simple data matrix that we'll also use in the script above.
 
 
 ## Lecture video
 
-[Lecture slides on iCloud](https://www.icloud.com/keynote/084BDHizLJHY4-G04OmHUiXfw#module%5F02%5FRbasics)
+[Lecture slides on iCloud](https://www.icloud.com/keynote/084BDHizLJHY4-G04OmHUiXfw#module_02_Rbasics)
 
 ### Getting started with R
 
