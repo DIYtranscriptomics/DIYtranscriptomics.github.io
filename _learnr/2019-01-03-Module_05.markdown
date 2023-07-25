@@ -47,10 +47,3 @@ unique(lemis$description)
 9.  You are alerted to a concerning new viral disease of humans that is believed to originate from Fruit bats (though the exact type of fruit bat is not clear).  Identify the US cities that would would be most likely to be exposed to such a virus from the import of live fruit bats.
 10. A recent case of Anthrax in NYC was traced back to a contaminated Wildebeest hide that was stretched and used to make a traditional drum.  Through which port(s) did this animal product most likely enter the country? (note: [this actually happens](https://www.cdc.gov/anthrax/animal-products/hides-drums.html)).
 
-
-## Solution
-
-Download **[this script](http://DIYtranscriptomics.github.io/Code/files/LEMIS_solution.R)** to see answers to all 10 questions above.
-
-
-
