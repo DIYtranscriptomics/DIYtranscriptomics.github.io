@@ -26,8 +26,6 @@ In the first half part of this module you'll watch a video that walks through th
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/018C2tYpyB8epL5AtVsXelFaQ#module%5F04%5Fggplot2)
 
-### ggplot2 basics
-
 COMING SOON!
 
 ## Active coding exercise in Datacamp

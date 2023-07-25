@@ -23,7 +23,7 @@ In the first half part of this module, you'll watch a video that walks through t
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/041kUdYLaCsn4yWaKiYAonfVw#module%5F03%5FTidyverse)
 
-### Tidyverse basics
+### Introduction to the Tidyverse
 
 <iframe src="https://player.vimeo.com/video/848193927" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 

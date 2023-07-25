@@ -36,8 +36,6 @@ Download the three files below and place them on your desktop.  If any of these 
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/084BDHizLJHY4-G04OmHUiXfw#module%5F02%5FRbasics)
 
-### Getting started with R
-
 <iframe src="https://player.vimeo.com/video/848120605" width="1296" height="540" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 
