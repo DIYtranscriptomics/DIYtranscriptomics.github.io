@@ -18,9 +18,7 @@ An analysis of a portion of this large dataset was published by EcoHealth Allian
 ## What you need to do
 
 1. First, complete the Datacamp assignment: **[Exploratory Data Analysis in R](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r)**
-
 2. You'll need to **[download this cleaned up version of the LEMIS data](https://drive.google.com/file/d/1-GAGY0us-eqzfawPfxI88B-Qeyv1dycQ/view?usp=sharing)**
-
 3. Once the download is complete, unzip the file, and read the data into your R environment.  Don't try to open the file in Excel....you'll regret it.  Also, **do not** try to ```View()``` the object after importing into R....it's simply too large.
 
 To help you get started, here's a bit of code to read in the data and explore the variables.  With the data in your R environment, you'll then want to use dplyr and ggplot to complete each of the tasks below.  *Tip: the magrittr pipe (%>%) is your friend.*
