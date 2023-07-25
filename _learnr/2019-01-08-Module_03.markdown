@@ -25,7 +25,7 @@ In the first half part of this module, you'll watch a video that walks through t
 
 ### Tidyverse basics
 
-<iframe src="https://player.vimeo.com/video/848120605" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/848193927" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 
 ## Active coding exercise in Datacamp
