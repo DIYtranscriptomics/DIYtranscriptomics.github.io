@@ -1,6 +1,6 @@
 ---
 title: 'Tracking the global animal trade'
-subtitle: 'Module 5 • 4hrs'
+subtitle: 'Module 5 • 6hrs'
 date: 2019-01-05 00:00:00
 description: Think you know how to wrangle and plot data?  We'll put your skills to the test using a dataframe with millions of rows.  To illustrate the general utility of the methods you've learned thus far, we'll explore the import of animals and animal products into US port cities over a 14 year period.
 featured_image: '/images/ark.png'
@@ -11,15 +11,17 @@ featured_image: '/images/ark.png'
 
 ## Description
 
-In this capstone module, you'll tackle data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations of 28 variables, showing the flow of live wildlife and wildlife products into the USA at every major port city from 2000-2014.
+In this capstone module, you'll gets lots of practice using Tidyverse tools on a US census data in Datacamp.  Once you've completed this, you'll wrap-up the bootcamp by applying your data science skills outside of Datacamp by analyzing data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations of 28 variables, showing the flow of live wildlife and wildlife products into the USA at every major port city from 2000-2014.
 
 An analysis of a portion of this large dataset was published by EcoHealth Alliance [here](https://doi.org/10.1007/s10393-017-1211-7).
 
 ## What you need to do
 
-To start, you'll need to **[download this cleaned up version of the LEMIS data](https://drive.google.com/file/d/1-GAGY0us-eqzfawPfxI88B-Qeyv1dycQ/view?usp=sharing)**
+1. First, complete the Datacamp assignment: [Exploratory Data Analysis in R](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r)
 
-Once the download is complete, unzip the file, and set-up a new R project.  Then read the data into your R environment.  Don't try to open the file in Excel....you'll regret it.  Also, **do not** try to ```View()``` the object after importing into R....it's simply too large.
+2. You'll need to **[download this cleaned up version of the LEMIS data](https://drive.google.com/file/d/1-GAGY0us-eqzfawPfxI88B-Qeyv1dycQ/view?usp=sharing)**
+
+3. Once the download is complete, unzip the file, and read the data into your R environment.  Don't try to open the file in Excel....you'll regret it.  Also, **do not** try to ```View()``` the object after importing into R....it's simply too large.
 
 To help you get started, here's a bit of code to read in the data and explore the variables.  With the data in your R environment, you'll then want to use dplyr and ggplot to complete each of the tasks below.  *Tip: the magrittr pipe (%>%) is your friend.*
 
@@ -35,6 +37,8 @@ glimpse(lemis)
 unique(lemis$description)
 
 ```
+
+Using Tidyverse tools, do you best to come up with answers to the following questions related to the LEMIS dataset
 
 1. Identify the most common (by 'quantity') live mammal taken from the wild for import into the US.
 2. Building on your analysis above, produce a plot showing live mammals (use 'generic_name') imported for the purposes of science/research. (tip: use ```geom_col()``` in ggplot for this).  Feel free to play around with different themes to make your plot more exciting.

@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to plotting with ggplot2'
-subtitle: 'Module 4 • 8hrs'
+subtitle: 'Module 4 • 4hrs'
 date: 2019-01-09 00:00:00
 description: Learn to create detailed, publication-quality plots using ggplot2, a system for declaratively creating graphics, based on The Grammar of Graphics
 featured_image: '/images/minard.png'
@@ -30,9 +30,7 @@ COMING SOON!
 
 ## Active coding exercise in Datacamp
 
-[Introduction to the ggplot, part 1](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
-
-[Introduction to the ggplot, part 2](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+[Introduction to data visualization with ggplot2](https://www.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 
 
 ## Reading (optional)
