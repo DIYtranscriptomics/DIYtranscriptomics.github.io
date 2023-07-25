@@ -11,13 +11,13 @@ featured_image: '/images/ark.png'
 
 ## Description
 
-In this capstone module, you'll gets lots of practice using Tidyverse tools on a US census data in Datacamp.  Once you've completed this, you'll wrap-up the bootcamp by applying your data science skills outside of Datacamp by analyzing data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations of 28 variables, showing the flow of live wildlife and wildlife products into the USA at every major port city from 2000-2014.
+In this capstone module, you'll gets lots of practice using Tidyverse tools on a historical voting of the UN General Assembly via Datacamp.  Once you've completed this work, you'll wrap-up the bootcamp by applying your data science skills outside of Datacamp to analyze data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations (rows) of 28 variables (columns), showing the flow of live wildlife and wildlife products into the USA at every major port city from 2000-2014.
 
 An analysis of a portion of this large dataset was published by EcoHealth Alliance [here](https://doi.org/10.1007/s10393-017-1211-7).
 
 ## What you need to do
 
-1. First, complete the Datacamp assignment: [Exploratory Data Analysis in R](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r)
+1. First, complete the Datacamp assignment: **[Exploratory Data Analysis in R](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r)**
 
 2. You'll need to **[download this cleaned up version of the LEMIS data](https://drive.google.com/file/d/1-GAGY0us-eqzfawPfxI88B-Qeyv1dycQ/view?usp=sharing)**
 
@@ -38,7 +38,7 @@ unique(lemis$description)
 
 ```
 
-Using Tidyverse tools, do you best to come up with answers to the following questions related to the LEMIS dataset
+Using Tidyverse tools, do your best to come up with answers to the following questions related to the LEMIS dataset.  Reach out to the TAs if you need help.
 
 1. Identify the most common (by 'quantity') live mammal taken from the wild for import into the US.
 2. Building on your analysis above, produce a plot showing live mammals (use 'generic_name') imported for the purposes of science/research. (tip: use ```geom_col()``` in ggplot for this).  Feel free to play around with different themes to make your plot more exciting.
