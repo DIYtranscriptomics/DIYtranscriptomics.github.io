@@ -22,11 +22,30 @@ In the first half part of this module you'll watch a video that walks through th
 * Understand themes for ggplot2
 * Know how to find and use colors in creating graphics in R
 
+## Files you'll need
+
+Download the files below and place them on your desktop.  If any of these files do not download when you click on them, simply right-click and choose 'copy link address', then open a new browser tab, paste the path into your web-browser URL bar, and hit enter.
+
+[R script](http://DIYtranscriptomics.github.io/Code/files/ggplot2.R) - I'll use this script to demonstrate key basic concepts in R
+
+### Data for reproducing 'Napoleon's March'
+
+[cities.txt](http://DIYtranscriptomics.github.io/Data/files/cities.txt)
+
+[troops.txt](http://DIYtranscriptomics.github.io/Data/files/troops.txt)
+
+[temps.txt](http://DIYtranscriptomics.github.io/Data/files/temps.txt)
+
+### Data for reproducing 'Climate Spiral'
+
+[cities.txt](http://DIYtranscriptomics.github.io/Data/files/GLB.Ts+dSST.csv)
+
+
 ## Lecture video
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/018C2tYpyB8epL5AtVsXelFaQ#module%5F04%5Fggplot2)
 
-COMING SOON!
+<iframe src="https://player.vimeo.com/video/851462674?h=58ba130b44" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
 ## Active coding exercise in Datacamp
 
@@ -35,11 +54,13 @@ COMING SOON!
 
 ## Reading (optional)
 
-[Grammar of graphics](http://DIYtranscriptomics.github.io/Reading/files/layered-grammar.pdf) - Another paper by Hadley Wickham.  This one explains the rationale behind ggplot2.
+[The Grammar of Graphics, Second Edition](https://link.springer.com/book/10.1007/0-387-28695-0) - This 2005 book makes the philosophy and application of a grammar for graphics.  A critical book in dataviz.
+
+[A Layered Grammar of graphics](http://DIYtranscriptomics.github.io/Reading/files/layered-grammar.pdf) - Seminal 2010 paper by Hadley Wickham that builds on Wilkinson's work above and introduces ggplot2 and the concept of a layered grammar for graphics in R.
 
 [ggplot2 cheatsheet](http://DIYtranscriptomics.github.io/Reading/files/ggplot2-cheatsheet.pdf) – a very helpful guide as we continue to use ggplot2 for all of our plotting needs.
 
-[catalog of R graphs](http://shiny.stat.ubc.ca/r-graph-catalog/) - Take a look at some of the various ways to graph your data and the underlying R code in this
+[Gallery of ggplot2 graphics](https://r-graph-gallery.com/ggplot2-package.html) - Take a look at some of the various ways to graph your data and the underlying R code.
 
-[R Graphics Cookbook](http://hdl.library.upenn.edu/1017.12/1675994) - If you end up using R to make a lot of graphs, you will find the to be an important reference. It's available free to UPenn folks as an Ebook.
+[R Graphics Cookbook](https://r-graphics.org/) - If you end up using R to make a lot of graphs, you will find this book to be an important reference. It's free too!
 

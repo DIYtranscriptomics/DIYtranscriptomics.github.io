@@ -19,11 +19,19 @@ In the first half part of this module, you'll watch a video that walks through t
 * Know what makes data tidy or messy, and how and when to move between these two states
 * Understand the utility of the %>% pipe operator
 
+## Files you'll need
+
+Download the files below and place them on your desktop.  If any of these files do not download when you click on them, simply right-click and choose 'copy link address', then open a new browser tab, paste the path into your web-browser URL bar, and hit enter.
+
+[R script](http://DIYtranscriptomics.github.io/Code/files/bootcamp.R) - I'll use this script in the first video to demonstrate key basic concepts in R
+
+[swine_study.txt](http://DIYtranscriptomics.github.io/Data/files/swine_study.txt) - a simple text file that we'll use as an example of working with dataframes
+
+[matrix.txt](http://DIYtranscriptomics.github.io/Data/files/matrix.txt) - a simple data matrix that we'll also use in the script above.
+
 ## Lecture video
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/041kUdYLaCsn4yWaKiYAonfVw#module%5F03%5FTidyverse)
-
-### Introduction to the Tidyverse
 
 <iframe src="https://player.vimeo.com/video/848193927" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
