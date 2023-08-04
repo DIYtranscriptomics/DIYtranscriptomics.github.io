@@ -26,7 +26,7 @@ In the first half part of this module you'll watch a video that walks through th
 
 Download the files below and place them on your desktop.  If any of these files do not download when you click on them, simply right-click and choose 'copy link address', then open a new browser tab, paste the path into your web-browser URL bar, and hit enter.
 
-[R script](http://DIYtranscriptomics.github.io/Code/files/ggplot2.R) - I'll use this script to demonstrate key basic concepts in R
+[R script](http://DIYtranscriptomics.github.io/Code/files/ggplot2.R) - I'll use this script to demonstrate basic aspects of using ggplot2.
 
 ### Data for reproducing 'Napoleon's March'
 
