@@ -1,6 +1,6 @@
 ---
 title: 'The reproducibility lab'
-subtitle: 'Lab 12 (required) • April 5, 2023'
+subtitle: 'Lab 12 (required) • April 17, 2024'
 date: 2018-12-29 00:00:00
 description: In this lab you'll set-up your own project on github, learn to interact with this project directly from RStudio, and then archive the project for publication using Zenodo.
 featured_image: '/images/github_logo.png'

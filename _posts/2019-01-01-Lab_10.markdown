@@ -1,0 +1,11 @@
+---
+title: 'No lab this week'
+subtitle: 'Lab 11 • April 3, 2024'
+date: 2019-01-01 00:00:00
+description: Time to relax and enjoy some downtime!
+featured_image: '/images/itscomplicated.jpeg'
+---
+
+## Description
+
+There's no lab this week, but you're still responsible for watching the lecture.

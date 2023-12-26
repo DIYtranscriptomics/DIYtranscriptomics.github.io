@@ -1,0 +1,19 @@
+---
+title: 'TBD'
+subtitle: 'Lab 12 (required) • April 10, 2024'
+date: 2018-12-30 00:00:00
+description: TBD
+featured_image: '/images/github_logo.png'
+---
+
+## Corresponding lecture
+
+tBD
+
+## Description
+
+TBD
+
+## What you need to do
+
+TBD

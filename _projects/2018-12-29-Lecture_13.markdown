@@ -1,6 +1,6 @@
 ---
 title: 'Single cell RNA-seq – principles and processing'
-subtitle: 'Lecture 13 •  watch by April 19, 2023'
+subtitle: 'Lecture 13 •  watch by April 24, 2024'
 date: 2018-12-29 00:00:00
 description: Now that you're comfortable with bulk RNA-seq data analysis, we'll shift our focus to the rapidly developing landscape of single cell RNA-seq (scRNA-seq).  In this lecture, you'll learn about the underlying technology and we'll demonstrate how to process raw single cell data directly on your laptop (!) for importing into R/bioconductor.
 featured_image: '/images/colorbins.png'

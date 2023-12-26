@@ -1,0 +1,32 @@
+---
+title: 'Advanced topics in single cell genomics'
+subtitle: 'Lecture 15 •  watch by May 8, 2024'
+date: 2018-12-27 00:00:00
+description: In this final lecture of the course, you'll learn how to handle multi-omic single cell data.
+featured_image: '/images/drops.png'
+---
+
+No lecture slides for this class.  We'll spend the entire time working on scRNA-seq script.
+
+## Overview
+
+Stay tuned for more info
+
+## Learning objectives
+
+Stay tuned for more info
+
+## Code and files
+
+Stay tuneed for more info
+
+## Lecture videos
+
+Stay tuned for more info
+
+---
+
+## Reading
+
+Stay tuned for more info
+
