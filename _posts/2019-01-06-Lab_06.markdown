@@ -6,11 +6,11 @@ description: Explore a large and multivariate dataset generated from the helmith
 featured_image: '/images/schisto.png'
 ---
 
+<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
+
 ## Corresponding lecture
 
 [Lecture 6 – Data exploration](https://diytranscriptomics.com/project/lecture-06)
-
-<div style="text-align: right"> Image credit: Schistosoma mansoni by Sydney Stafl (below) </div>
 
 ## Description
 

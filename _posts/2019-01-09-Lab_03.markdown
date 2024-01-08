@@ -6,6 +6,8 @@ description: Artificial Intelligence is revolutionizing how we interact with cod
 featured_image: '/images/llm_midjourney.png'
 ---
 
+<div style="text-align: right"> Image credit: It's an AI lab, so seems only fitting that this image was produced with Midjourney model version 5.2. Prompt was 'artistic interpretation of a large language model for coding'. </div>
+
 ## Corresponding lecture
 
 There is no corresponding lecture.  Instead, I'll demonstrate some key AI tools and you will be tasked with using these tools during a set of structured in-class exercises.
@@ -17,4 +19,4 @@ Please take time to work through [this Learn R! module on the Tidyverse](https:/
 
 ## Description
 
-Check back
+A full description will be posted on the date listed for this lab.

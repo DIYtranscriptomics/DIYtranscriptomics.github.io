@@ -6,6 +6,9 @@ description: What about those reads that didn't map to the human reference? In t
 featured_image: '/images/needle_haystack.png'
 ---
 
+<div style="text-align: right"> Image credit: Rutledge and Ariani, 2017. Nature Reviews Microbiology'. </div>
+
+
 ## Corresponding lecture
 
 [Lecture 02 - Setting up your software environment](https://diytranscriptomics.com/project/lecture-02)

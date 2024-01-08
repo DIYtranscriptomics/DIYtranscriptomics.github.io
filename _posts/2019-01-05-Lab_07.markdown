@@ -3,10 +3,10 @@ title: 'Lit lab'
 subtitle: 'Lab 7 (required) • March 13, 2024'
 date: 2019-01-05 00:00:00
 description: In this lab, we'll look to the literature and pull papers from a wide range of fields, including cancer biology, developmental biology, immunology, and more.  You'll have two hours to pull data from a publication and reproduce key figures.
-featured_image: '/images/ark.png'
+featured_image: '/images/paper_art.png'
 ---
 
-<div style="text-align: right"> Mildred Hado, Noah’s Ark Folk Art Mixed Media Watercolor, Acrylic Painting </div>
+<div style="text-align: right"> Midjourney v5.2 with prompt 'abstract art made of papers and handwriting' </div>
 
 ## Corresponding lecture
 
