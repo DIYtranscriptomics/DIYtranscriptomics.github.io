@@ -3,7 +3,7 @@ title: 'Spring Break!'
 subtitle: 'Lab 11 • April 3, 2024'
 date: 2019-01-01 00:00:00
 description: No lab this week. Hope you find some time to relax and recharge over the break!
-featured_image: '/images/itscomplicated.jpeg'
+featured_image: '/images/palmtree.jpg'
 ---
 
 ## Description
