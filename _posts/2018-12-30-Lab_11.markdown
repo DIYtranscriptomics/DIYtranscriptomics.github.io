@@ -3,7 +3,7 @@ title: 'The enrichment lab'
 subtitle: 'Lab 12 (required) • April 10, 2024'
 date: 2018-12-30 00:00:00
 description: In last week's lecture, you learned to use functional enrichment tools like GO and GSEA to identify themes in your RNA-seq data.  In this lab, we'll put these important skills to the test!
-featured_image: '/images/github_logo.png'
+featured_image: '/images/palmtree.jpg'
 ---
 
 ## Corresponding Lectures

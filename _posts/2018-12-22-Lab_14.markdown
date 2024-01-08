@@ -6,6 +6,8 @@ description: At this point, you've learned the basics of processing and analyzin
 featured_image: '/images/tapeworm.jpg'
 ---
 
+<div style="text-align: right"> Image credit: CDC's Public Health Image Library (PHIL) </div>
+
 ## Corresponding lectures
 
 [Lecture 13 - Single cell RNA-seq – principles and processing](https://diytranscriptomics.com/project/lecture-13)

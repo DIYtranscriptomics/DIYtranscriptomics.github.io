@@ -6,6 +6,8 @@ description: To conclude the course, you'll try your hand at analysis of multi-o
 featured_image: '/images/waddington.jpeg'
 ---
 
+<div style="text-align: right"> Image credit: CH Waddington; The Strategy of Genes, 1957 </div>
+
 ## Corresponding lecture
 
 [Lecture 15 - Advanced topics in single cell genomics](https://diytranscriptomics.com/project/lecture-15)
