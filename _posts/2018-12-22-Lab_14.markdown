@@ -1,7 +1,7 @@
 ---
 title: 'Stem cells in pathogens'
 subtitle: 'Lab 14 (required) • May 1, 2024'
-date: 2018-12-27 00:00:00
+date: 2018-12-22 00:00:00
 description: At this point, you've learned the basics of processing and analyzing scRNA-seq data.  In this lab, we'll put those skills to the test with a bizarre and fascinating pathogen...tapeworms.  You'll be looking for stem cells that allow the parasite to generate a seemingly unlimited supply of segements.  Get ready for a wild ride!
 featured_image: '/images/tapeworm.jpg'
 ---
