@@ -24,6 +24,10 @@ We'll begin this class by reviewing how to access R packages and help documentat
 
 [Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R)
 
+## If you're new to R
+
+Please take time to work through [this Learn R! module](https://diytranscriptomics.com/learnr/module-04)
+
 ---
 
 ## Lecture videos

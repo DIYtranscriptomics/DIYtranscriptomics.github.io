@@ -22,6 +22,10 @@ In this class, we'll finally get down to the business of using [Kallisto](https:
 * Use Kallisto to map our raw reads to this index
 * Talk a bit about how an index is built and facilitates read alignment
 
+## If you're new to R
+
+Please take time to work through [this Learn R! module](https://diytranscriptomics.com/learnr/module-02)
+
 ---
 
 ## Lecture videos

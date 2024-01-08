@@ -10,15 +10,10 @@ featured_image: '/images/shellscript.png'
 
 [Lecture 2 - Ultra-fast read mapping with Kallisto](https://diytranscriptomics.com/project/lecture-02)
 
-## Homework
+## If you're new to R
 
-[Homework #1: DataCamp Intro to R course (~2hrs)](https://www.datacamp.com/courses/free-introduction-to-r) - due by start of in-person lab on Wednesday, Feb 8th.
+Please take time to work through [this Learn R! module](https://diytranscriptomics.com/learnr/module-02)
 
-[Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due by start of in-person lab on Wednesday, Feb 14th.
-
-[Homework #3: Data visualization with ggplot2 - part 1 (~4hrs)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1) - due by start of in-person lab on Wednesday, Feb 22nd.
-
-[Homework #4: Case Study: Exploratory Data Analysis in R (~4hrs)](https://app.datacamp.com/learn/courses/case-study-exploratory-data-analysis-in-r) - due by start of in-person lab on Wednesday, March 1st.
 
 ## Description
 

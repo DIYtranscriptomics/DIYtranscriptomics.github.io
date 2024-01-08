@@ -21,6 +21,10 @@ featured_image: '/images/abacus.jpg'
 * Start an RStudio Project directory that we’ll use for the rest of the course.
 * Open and discuss our first script, including installation of packages
 
+## If you're new to R
+
+Please take time to work through [this Learn R! module](https://diytranscriptomics.com/learnr/module-03)
+
 ## Code
 
 [Step 1 script](http://DIYtranscriptomics.github.io/Code/files/Step1_TxImport.R)

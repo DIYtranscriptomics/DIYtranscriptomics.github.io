@@ -25,7 +25,7 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 **I'll walk you through installing the following software**
 
-[R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) - The only programming language we'll work with in class.
+[R Programming Language](http://lib.stat.cmu.edu/R/CRAN/) - The main programming language we'll work with in class.
 
 [RStudio](http://www.rstudio.com/products/rstudio/download/) - a development environment for the R programming language.
 
@@ -39,9 +39,7 @@ In the first half of this lecture we'll discuss the open-source, cross-platform 
 
 ## Additional software **Windows** users *will* need
 
-[Cygwin](https://www.cygwin.com/) - Cygwin will give your system more linux-like capabilities
-
-[Git for Windows](https://gitforwindows.org/) – This will give you a bash emulator that works really nicely for running standard command-line programs.
+[Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) - After years of teaching this course and trying to find the best/easiest way for Windows users to navigate the course materials, we have found that it is critical that you install WSL in order to give your system more linux-like capabilities.  ***Please DO NOT skip this step***.
 
 [Kallisto](https://pachterlab.github.io/kallisto/) - This is the software we'll use for mapping raw reads to a reference transcriptome.  Detailed instructions for installing and using Kallisto and other course-related software is available on my lab's protocols site [here](https://protocols.hostmicrobe.org/conda).
 

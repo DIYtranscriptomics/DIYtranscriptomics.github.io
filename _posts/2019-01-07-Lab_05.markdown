@@ -8,7 +8,7 @@ featured_image: '/images/needle_haystack.png'
 
 ## Corresponding lecture
 
-Lectures 1-4
+[Lecture 02 - Setting up your software environment](https://diytranscriptomics.com/project/lecture-02)
 
 ## Homework
 

@@ -1,21 +1,20 @@
 ---
-title: 'TA help session'
-subtitle: 'Lab 3 (optional) • February 7, 2024'
+title: 'Using generative AI to supercharge your coding'
+subtitle: 'Lab 3 (required) • February 7, 2024'
 date: 2019-01-09 00:00:00
-description: Struggling with something we covered recently in class, or do you want to discuss some of your own RNA-seq data?  Then drop in for hand-on help from one of our amazing Teaching Assistants!
-featured_image: '/images/chalkboard.jpeg'
+description: Artificial Intelligence is revolutionizing how we interact with code.  Since we're about to dive into using R scripts in this class, this is a good time to familiarize ourselves with cutting-edge AI tools to improve the use of coding langages.
+featured_image: '/images/llm_midjourney.png'
 ---
 
 ## Corresponding lecture
 
-We're available to help with anything we've covered up to this point.
+There is no corresponding lecture.  Instead, I'll demonstrate some key AI tools and you will be tasked with using these tools during a set of structured in-class exercises.
 
-## Homework
+## If you're new to R
 
-[Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) - due by start of in-person lab, Wednesday, Sept 29th.
-
+Please take time to work through [this Learn R! module on the Tidyverse](https://diytranscriptomics.com/learnr/module-03)
 
 
 ## Description
 
-The pace of the course is about to start picking up, so if there is a concept we have covered that is not clear or if you are feeling lost, please stop by for help!
+Check back
