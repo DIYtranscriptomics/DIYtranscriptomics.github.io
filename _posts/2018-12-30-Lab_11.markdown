@@ -6,7 +6,7 @@ description: In last week's lecture, you learned to use functional enrichment to
 featured_image: '/images/pathway.png'
 ---
 
-<div style="text-align: right"> Midjourney v5.2 with prompt 'abstract pathway made from mosaic pieces' </div>
+<div style="text-align: right"> Image credit: Midjourney v5.2 with prompt 'abstract pathway made from mosaic pieces' </div>
 
 ## Corresponding Lectures
 

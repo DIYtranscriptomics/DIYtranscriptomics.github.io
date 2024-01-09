@@ -8,78 +8,10 @@ featured_image: '/images/needle_haystack.png'
 
 <div style="text-align: right"> Image credit: Rutledge and Ariani, 2017. Nature Reviews Microbiology'. </div>
 
+## If you're new to R
 
-## Corresponding lecture
-
-[Lecture 02 - Setting up your software environment](https://diytranscriptomics.com/project/lecture-02)
-
-## Homework
-
-[Homework #2: Introduction to the Tidyverse (~4hrs)](https://www.datacamp.com/courses/introduction-to-the-tidyverse) is **due today**!
+Try applying your new found Tidyverse and ggplot skills to [this Learn R! challenge](https://diytranscriptomics.com/learnr/module-05)
 
 ## Description
 
-After spending nearly two years working on a large RNA-seq study, you and your advisor have written up the results and submitted your work to a top journal.  Three reviewers provided comments on the paper.  Reviewer #1 and #3 asked for only minor changes, but reviewer #2 offered a more, ahem, detailed critique.  In particular, they raised concerns about the quality of your RNA-seq data (which forms the entire basis of the paper), and noted that it was particularly concerning that only 50-60% of the reads aligned to the human reference transcriptome.  'If these reads aren't human, then what are they?' said the reviewer.  To address this critique, you'll have to employ multiple strategies for identifying the origin of reads in high-throughput data.
-
-**To participate in this lab, you will need to have successfully completed the steps outlined in [Lecture 1 - Setting up your software environment](https://diytranscriptomics.com/project/lecture-01)**
-
-### Task 1
-
-To help you get started, I already used [KneadData](https://huttenhower.sph.harvard.edu/kneaddata/) to filter out any reads that mapped to the human reference genome.  Using a single sample from the course dataset (CL13) as an example, KneadData reduced the number of total reads from 133M to ~9M!  Why do you think KneadData is saying that 93% of the reads are of human origin, but Kallisto only mapped ~ 57% to the human reference?
-
-Curious about the origin of the remaining ~9M reads left after running KneadData, you press forward with your analysis.  Download the 'dehosted' fastq file for CL13 **[here](https://drive.google.com/file/d/1-k5Nay_ufVVk03LU-cm3CHfhuNXWs-6k/view?usp=sharing)**.  Anytime you have a new dataset in-hand, it's always good practice to check the quality of the data.  Open up your Conda environment and run fastqc (or fastp) on this new fastq file.  Does the fastqc/fastp report provide any clues as the origin of your mystery reads?
-
-### Task 2
-
-Since you have no idea where these reads are coming from, you decide that a broad and unbiased approach is your best bet to identify potential non-human reads in your sample.  One strategy is to use [Sourmash](https://sourmash.readthedocs.io/en/latest/) to create a minHash 'sketch' of your fastq file and compare this sketch against a reference set of sketches.  To begin this task, you will need to download a set of about 90,000 microbial genomes **[here](https://osf.io/4f8n3/download)** (don't worry, it's a small file). Here's some example code to get you started. *Be sure you run this in the appropriate Conda environment.*
-
-```bash
-# time = ~2min to sketch ~9M reads
-sourmash sketch dna -p scaled=10000,k=31,abund SRR8668774_dehosted.fastq.gz --name-from-first
-```
-
-```bash
-# time = ~2min
-sourmash gather -k 31 SRR8668774_dehosted.fastq.gz.sig genbank-k31.lca.json.gz
-# once this is done, try rerunning with an additional argument to relax the threshold used for classification: '--threshold-bp 100'
-```
-
-To understand the ouput from `Sourmash gather`, check out the documentation [here](https://sourmash.readthedocs.io/en/latest/tutorial-lemonade.html#find-matching-genomes-with-sourmash-gather.)
-
-### Task 3
-
-*Note: this task will be more computationally demanding than to the task above, but is still feasible on many laptop configurations*
-
-Encouraged by the Sourmash results, you try a complementary approach that uses [Centrifuge](https://ccb.jhu.edu/software/centrifuge/).  To get started, you'll need to download a reference database that contains sequences from bacteria, human and viral genomes.  Click **[here](https://genome-idx.s3.amazonaws.com/centrifuge/p_compressed%2Bh%2Bv.tar.gz)** to download (this file is ~ 6Gb, so it may take a while).  Double-click this file once downloaded to unzip.  Now you can use this database to search for signatures in your fastq file.  How do these results compare with what you saw with Sourmash in Task 2?  Why do you think the outputs produced by these two tools differ?
-
-**Tip:** If you haven't done so already, unzip the file you downloaded above to get a folder.  Move the three files present in this folder to your working directory where your dehosted fastq file is located.
-
-```bash
-# time = ~10min
-centrifuge -x p_compressed+h+v -U SRR8668774_dehosted.fastq.gz --report-file CL13_dehosted_report.txt -S CL13_dehosted_results.txt
-```
-
-**Tip:** once centrifuge is done running, open the 'CL13_dehosted_report.txt' ouput file in Excel and sort based on 'numUniqueReads' column
-
-
-### Task 4
-
-*Note: if you're short on time, feel free to use only Sourmash and not Centrifuge for this task*
-
-You present the Sourmash and Centrifuge results above to your advisor and, after some discussion and head-scratching, you conclude that without a positive control, it's hard to know what to think of the results!  A collaborator suggests evaluating both software tools using a synthetic or 'mock' microbial community.  After combing through the literature, you identify [a recent paper](https://doi.org/10.3389/fmicb.2020.00953) that shares raw data generated from sequencing the [ZymoBiomics Mock Community standard](https://files.zymoresearch.com/datasheets/ds1706_zymobiomics_microbial_community_standards_data_sheet.pdf).  Perfect!  Now all you need to do is download one of their fastq files **[here](https://drive.google.com/file/d/1-57CU-Ps7MOPD14S7laklQJLgH52EJrk/view?usp=sharing)** and run both Sourmash and Centrifuge on the data.  How do your results compare with what is reported in Zymo's product document?
-
-
-### Task 5
-
-A few months later, after your paper is accepted, a colleague comes to you because he is working on identifying SARS-CoV-2 in wastewater collected during the peak of the COVID19 pandemic from municipal sewer systems in Northern California (see [this paper](https://journals.asm.org/doi/10.1128/mBio.02703-20)).  RNA purified from these samples was intially used for virus-specific QPCR, but he also decided to carry out untargeted RNA-seq on the same samples to get a 'metatranscriptome' of wastewater.  After hearing about your ability to identify pathogens lurking in RNA-seq data, he asks if you could take a look at one of his RNA-seq samples to see if this approach is sensitive enough to detect SARS-CoV-2.  You can download one of his raw files **[here](https://drive.google.com/file/d/1-9-urdGKYB39TRg0sVk8Om0N1apXZn_H/view?usp=sharing)**.
-
- Luckily, you discover that the Centrifgue team incorporated over 100 SARS-CoV-2 sequences into an updated reference database available **[here](https://zenodo.org/record/3732127/files/h+v+c.tar.gz?download=1)**.  Download this reference and run Centrifuge on this sample.  How do these Centrifuge results compare to what Sourmash detects in the sample?
-
-
-## Takeaways
-
-* Software tools originally developed for metagenomics can be *really* useful for identifying the origin of even low abundance reads present in RNA-seq.
-* RNA-seq of tissues, blood, and environmental samples should really be thought of as metatranscriptomes that can be mined for additional information beyond just read mapping to a single species.
-* Sourmash and Centrifuge are just two of the many tools out there for this type of analysis, and they happen to run really well on a laptop.
-* Additional reference databases are available for both pieces of software, some of which are much larger than the ones we used today, and you can also create your own custom databases.
-* Since both tools use a reference database, you have to consider how the choice of database impacts your results.
+A full description will be posted on the date listed for this lab.

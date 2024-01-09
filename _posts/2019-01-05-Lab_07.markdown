@@ -6,7 +6,7 @@ description: In this lab, we'll look to the literature and pull papers from a wi
 featured_image: '/images/paper_art.png'
 ---
 
-<div style="text-align: right"> Midjourney v5.2 with prompt 'abstract art made of papers and handwriting' </div>
+<div style="text-align: right"> Image credit: Midjourney v5.2 with prompt 'abstract art made of papers and handwriting' </div>
 
 ## Corresponding lecture
 

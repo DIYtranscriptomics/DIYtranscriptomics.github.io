@@ -6,6 +6,8 @@ description: No lab this week. Hope you find some time to relax and recharge ove
 featured_image: '/images/palmtree.jpg'
 ---
 
+<div style="text-align: right"> Image credit: Dan Beiting.  Paradise Island, Bahamas. Palm tree wih Holga camera. 2007. </div>
+
 ## Description
 
-There's no lab this week, but you're still responsible for watching the lecture.
+There's no lab this week, but you're still responsible for watching the lecture. Sorry!
