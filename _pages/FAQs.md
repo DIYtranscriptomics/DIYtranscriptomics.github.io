@@ -17,7 +17,7 @@ Dan Beiting designed and teaches the course. He is an Assistant Professor of Pat
 
 ## Who supports and sponsors this course?
 
-This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/).  In addition, we thank [RStudio](https://rstudio.com/) for allowing access to RStudio Server Pro for this course, and for their continued free access to RStudio desktop, which is a critical resource for academic research in R.  We also thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.  Finally, we thank the folks at [Code Ocean](https://codeocean.com/), who provide all students with convenient access to dockerized resources for transparency and reproducibility.
+This course is made possible in part by generous support for TA stipends from the [UPenn Institute for Immunology (IFI)](https://www.med.upenn.edu/ifi/) and the [Biomedical Graduate Studies (BGS) program](https://www.med.upenn.edu/bgs/).  In addition, we thank the folks at [RStudio](https://rstudio.com/) for allowing access to RStudio Server Pro for this course, and for their continued free access to RStudio desktop, which is a critical resource for academic research in R.  We also thank [DataCamp](https://learn.datacamp.com/) for generously providing free and unrestricted access to their online learning content to all students enrolled in the course.
 
 ## What is the format of the course?
 
@@ -28,12 +28,13 @@ This class is being run as a 'hybrid' class. Lectures are entirely virtual and a
 * Learn to analyze bulk RNAseq and single cell RNA-seq (scRNA-seq) data
 * Develop a lightweight and reusable RNAseq pipeline.
 * Learn best practices for working in R/bioconductor (extensible to other datatypes)
-* Learn the basics of ‘data science’
+* Learn the basics of being a good ‘data scientist’
 * Learn how to report your analysis and results in a transparent and reproducible way
+* Leann how to use emerging AI tools to enchance you data analysis skills.
 
 ## Who can take the course?
 
-All lectures are freely available, and lab materials will be posted the website after each lab.  In-person attendence for labs is available for gradate students in the Biomedical Graduate Studies (BGS) group at the University of Pennsylvania.  Space permitting, the course is open to graduates students outside of BGS. If you are not a graduate student at UPenn you can still access the lectures, course slides, code, videos and reading material on the site.  This course is ideal for students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNAseq data to the course.
+All lectures are freely available, and lab materials will be posted the website after each lab.  In-person attendence for labs is available for gradate students in the Biomedical Graduate Studies (BGS) group at the University of Pennsylvania.  Space permitting, the course is open to graduates students outside of BGS. If you are not a graduate student at UPenn you can still access the lectures, course slides, code, videos and reading material on the site.  This course is ideal for students and postdocs who have little or no experience in bioinformatics, and we encourage students to bring their own RNA-seq data to the course.
 
 ## Can I just follow along online?
 
@@ -41,11 +42,11 @@ Yes!  All lectures, reading material and code are freely available and are organ
 
 ## What are the advantages of taking the course in-person?
 
-There are some elements of the course that are only available for people who have officially registered and participate in-person.  This includes access to DataCamp for homework and extended learning, participation in our in-person [labs](https://diytranscriptomics.com/lab/), priority support from the course instructor and TAs through our Discord community page, and last but not least, course credit!
+There are some elements of the course that are only available for people who have officially registered and participate in-person.  This includes access to DataCamp for homework and extended learning, participation in our in-person [labs](https://diytranscriptomics.com/lab/), priority support from the course instructor and TAs through our Discord community page, access to Github classroom and [Copilot](https://github.com/features/copilot), and last but not least, course credit!
 
 ## How will I be graded in this course?
 
-All students who officially register for the course through UPenn will receive a letter grade.  At this time we unable to provide grades or proof-of-completion for virtual learners.
+All students who officially register for the course through UPenn will receive a letter grade.  At this time we are unable to provide grades or proof-of-completion for virtual learners.
 
 ## Can I cite the course in my publications?
 

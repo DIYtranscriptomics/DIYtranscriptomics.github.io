@@ -1,6 +1,6 @@
 ---
 title: 'Show and Tell'
-subtitle: 'Lab 11 • March 27, 2024'
+subtitle: 'Lab 09 • March 27, 2024'
 date: 2019-01-02 00:00:00
 description: Each group will present their final figures from last week's COVID Challenge.
 featured_image: '/images/itscomplicated.jpeg'
