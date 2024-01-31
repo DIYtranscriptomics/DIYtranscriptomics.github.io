@@ -20,11 +20,11 @@ Anyone, anywhere in the world is welcome to self-navigate the course by working 
 
 ### How to participate in labs
 
-[Labs](https://diytranscriptomics.com/lab/) are focused on gaining hands-on experience working with transriptomic datasets in R/bioconductor and are offered in-person at the University of Pennsylvania.  Unfortunately we do not currently have a good way for learners to participate virtually.  However, as with the lectures, take note of the date listed on each lab card.  Although general descriptions are always visible for each lab, specific materials and questions are only displayed beginning on the date shown on each card.
+[Labs](https://diytranscriptomics.com/lab/) are focused on gaining hands-on experience working with transriptomic datasets in R/bioconductor and are offered in-person at the University of Pennsylvania.  We are currently experimenting with live streaming labs through our course discord page, which you can learn more about **[here](https://diytranscriptomics.com/community)**.  As with the lectures, take note of the date listed on each lab card.  Although general descriptions are always visible for each lab, specific materials and questions are only displayed beginning on the date shown on each card.
 
 ### Join our Discord community
 
-You can join our Discord community by clicking [here](https://discord.gg/VpjD2pWHDX).  The video below explains how we'll use this community page during the course.
+You can join our Discord community by clicking **[here](https://discord.gg/VpjD2pWHDX)**.  The video below explains how we'll use this community page during the course.
 
 ## In-person learners
 
@@ -34,15 +34,15 @@ Lectures are only available virtually, so everything stated above for virtual le
 
 ### How to participate in labs
 
-Labs will take place every week from 3:30-5:30 PM EST.  See [here](https://diytranscriptomics.com/lab/lab-intro) for more details.
+Labs will take place every week from 3:30-5:30 PM EST.  See **[here](https://diytranscriptomics.com/lab/lab-intro)** for more details.
 
 ### Join our Discord community
 
-You can join our Discord community by clicking [here](https://discord.gg/VpjD2pWHDX).  The video below explains how we'll use this community page during the course.
+You can join our Discord community by clicking **[here](https://discord.gg/VpjD2pWHDX)**.  The video below explains how we'll use this community page during the course.
 
 ### The 'perks' of in-person learning.
 
-If you officially registered for this course, not only will have access to the weekly in-person lab, but you'll also receive priority support for all questions and troubleshooting through our community page on Discord...yay! You will also be given unrestricted access to [DataCamp](https://www.datacamp.com/) for homework and extended learning.
+If you officially registered for this course, not only will have access to the weekly in-person lab, but you'll be able to interact 1:1 with the course TAs and will also receive priority support for all questions and troubleshooting through our community page on Discord...yay! You will also be given unrestricted access to [DataCamp](https://www.datacamp.com/) for homework and extended learning, and you will join our GitHub classroom, which gives you access to [Copilot](https://github.com/features/copilot/) for AI accelerated coding...how cool is that!
 
 ## Other useful info that applies to everyone
 
