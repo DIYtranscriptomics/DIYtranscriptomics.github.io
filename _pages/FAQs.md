@@ -13,7 +13,7 @@ As access to high-throughput sequencing technology increases, the bottleneck in 
 
 Dan Beiting designed and teaches the course. He is an Assistant Professor of Pathobiology at PennVet.   Camila Amorim (postdoc), Seble Negatu and Sheridan Littleton (PhD students) are teaching assistants for the course in 2021.
 
-<img src="http://DIYtranscriptomics.github.io/images/instructors.png" alt="Meet your instructors!">
+<img src="http://DIYtranscriptomics.github.io/images/instructors_2024.png" alt="Meet your instructors!">
 
 ## Who supports and sponsors this course?
 
