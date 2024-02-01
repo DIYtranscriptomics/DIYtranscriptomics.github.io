@@ -29,7 +29,7 @@ If you're unable to download the files above, you can always get them from **[he
 
 In the event that you don't have enough free harddrive space to download the raw fastq files in Option 1 above, or if you have any problems installing or using Kallisto to map this raw data, you can bypass the Kallisto step and download mapped data to start working immediately.
 
-[Kallisto output](https://drive.google.com/file/d/1WUbHa4eQ2gjvBve-wY1SveoVMYt_MiNq/view?usp=share_link) -  These files are available as a single compressed zip file.  Download and unzip this file to reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs.
+[Kallisto output](https://drive.google.com/drive/folders/1uUUeSd3DusJHqyKOAdBdh44eayvBnDXg?usp=sharing) -  These files are available as a single compressed zip file.  Download and unzip this file to reveal 10 folders (each containing the Kallisto output from mapping each of the 10 fastq files above), along with 10 log files – one for each sample that was mapped.  You may notice that each folder contains several files.  Please do not move or rename these files.  During the course, we will discuss these Kallisto outputs. *Note: these data were mapped on Jan 31, 2024 using Kallisto v0.50.1.
 
 ---
 
