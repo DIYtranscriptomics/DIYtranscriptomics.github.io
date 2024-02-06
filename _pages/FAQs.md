@@ -11,7 +11,7 @@ As access to high-throughput sequencing technology increases, the bottleneck in 
 
 ## Who teaches the class and maintains the website?
 
-Dan Beiting designed and teaches the course. He is an Assistant Professor of Pathobiology at PennVet.   Camila Amorim (postdoc), Seble Negatu and Sheridan Littleton (PhD students) are teaching assistants for the course in 2021.
+Dan Beiting designed and teaches the course. He is an Associate Professor of Pathobiology at PennVet.   Megha Lal (postdoc), Qianxuan She (grad student), Leena Babiker (grad student), Nikhil Joshi (Bioinformatician) are all former students who now serve as teaching assistants for the course in 2024.
 
 <img src="http://DIYtranscriptomics.github.io/images/instructors_2024.png" alt="Meet your instructors!">
 

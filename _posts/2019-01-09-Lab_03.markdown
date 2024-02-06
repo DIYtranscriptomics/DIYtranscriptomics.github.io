@@ -1,20 +1,18 @@
 ---
-title: 'Using generative AI to supercharge your coding'
+title: 'Project management made easy with Git and Github'
 subtitle: 'Lab 3 (required) • February 7, 2024'
 date: 2019-01-09 00:00:00
-description: Artificial Intelligence is revolutionizing how we interact with code.  Since we're about to dive into using R scripts in this class, this is a good time to familiarize ourselves with cutting-edge AI tools to improve the use of coding langages.
-featured_image: '/images/llm_midjourney.png'
+description: Your working directory is already starting to get messy, and the proliferation of files and file-types will only continue throughout the course.  It's time to discuss best practices for managing an active coding project using the version control system, Git, and the related web resource, Github.
+featured_image: '/images/git.png'
 ---
-
-<div style="text-align: right"> Image credit: It's an AI lab, so seems only fitting that this image was produced with Midjourney model version 5.2. Prompt was 'artistic interpretation of a large language model for coding'. </div>
 
 ## Corresponding lecture
 
-There is no corresponding lecture.  Instead, I'll demonstrate some key AI tools and you will be tasked with using these tools during a set of structured in-class exercises.
+There is no corresponding lecture.  Instead, I'll walk through how to set-up and use Git and Github on your computer.
 
 ## If you're new to R
 
-Please take time to work through [this Learn R! module on the Tidyverse](https://diytranscriptomics.com/learnr/module-03)
+We're approaching the point the class where we'll be making the jump from working in the bash/terminal to working in R/RStudio.  So, if you're completely new to R, please take time to work through [this Learn R! module on the Tidyverse](https://diytranscriptomics.com/learnr/module-03)
 
 
 ## Description
