@@ -12,9 +12,28 @@ There is no corresponding lecture.  Instead, I'll walk through how to set-up and
 
 ## If you're new to R
 
-We're approaching the point the class where we'll be making the jump from working in the bash/terminal to working in R/RStudio.  So, if you're completely new to R, please take time to work through [this Learn R! module on the Tidyverse](https://diytranscriptomics.com/learnr/module-03)
-
+We're approaching the point the class where we'll be making the jump from working in the bash/terminal to working in R/RStudio.  So, if you're completely new to R, please take time to work through [this Learn R! module on the Tidyverse](https://diytranscriptomics.com/learnr/module-03).
 
 ## Description
 
-A full description will be posted on the date listed for this lab.
+Your working directory is already starting to get messy, and the proliferation of files and file-types will only continue throughout the course.  It's time to discuss best practices for managing an active coding project using the version control system, Git, and the related web resource, Github.
+
+## Files and other things you'll need for this lab
+
+**[Set-up an account on Github](https://github.com/)** - You'll need an account to particpate in today's lab.  Fortunately, it's free!
+
+**[Visual Studio Code](https://code.visualstudio.com/)** - Download and install this free program on your computer.  This is one of the 'code aware' text editors I mentioned in Lecture 1, but it's actually much more than a simple text editor, and you'll be using today to interact with Git an Github.
+
+**[Git](https://git-scm.com/)** – This is not the same as Github (which, I hope, will be clear by the end of lab today).  You may already have this installed and not even know it.  You can check by opening your bash program and typing 'Git' at the prompt.  We'll discuss installation today.
+
+**[chocolateMuffin.txt](https://drive.google.com/file/d/1eF9N_xuDippRLXASXbFYW4zUa43ZBLjk/view?usp=sharing)** - Yep, you read that right.  We'll be using a recipe to establish an understanding of Git and version control before we move on to our *real* project directory.
+
+**[gitignore.txt](https://drive.google.com/file/d/1eBjQpJKNJz4AsKDhXaQsaednrF3VbmaQ/view?usp=sharing)** – This may seem a bit cryptic and obscure, but I'll explain this very important feature of Git during lab today.  We'll use the content of this file to make sure that Git ignores large files and raw data present in our working directory.
+
+## Follow along
+
+**[Git and Github basics](https://protocols.hostmicrobe.org/git-basics)** - We'll work through this step-by-step tutorial together today.
+
+## On your own
+
+Using the steps we just went through together, set-up your own Github repo based on your project folder for this course.  Please make this repo public and share a link with the TAs.

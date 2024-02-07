@@ -29,6 +29,6 @@ In our lecture, we covered the basics for running Kallisto with a single sample.
 
 **[Bash basics](https://protocols.hostmicrobe.org/bash)** - this is the code I'll be running and discussing in lab today.  You can copy/paste lines from this page to follow along.
 
-## By the end of this lab...
+## On your own
 
 You should be able to run a for loop, using your bash program, to create a shell script.  You should then be able to run this shell script in bash to iterate over the subsampled fastq files (linked above) to quality check these reads, map to the human reference transcriptome, and produce a multiQC output.
