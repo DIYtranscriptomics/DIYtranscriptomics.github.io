@@ -40,6 +40,6 @@ Using the steps we just went through together, set-up your own Github repo based
 
 ## Video walkthrough
 
-A quick (~5min) demo of the process we walked through in class.  This video assumes you have Git and VS Code installed on your computer, and that you've enabled the Github Repositories extension in VS Code.
+A quick (~5min) demo of the process we walked through in class.  This video assumes you have Git and VS Code installed on your computer, that you've installed the Github Repositories extension in VS Code, and that you have a Github account and have authenticated/linked to this account through VS Code.
 
 <iframe src="https://player.vimeo.com/video/912718910" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
