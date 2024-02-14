@@ -36,7 +36,7 @@ Your working directory is already starting to get messy, and the proliferation o
 
 ## On your own
 
-Using the steps we just went through together, set-up your own Github repo based on your project folder for this course.  Please make this repo public and share a link with the TAs.
+Using the steps we just went through together, set-up your own Github repo based on your project folder for this course.  Please make this repo public and share a link with the TAs.  **As part of the required homework, all in-person learners will be asked to provide this link by the start of lab on Feb 21st.**
 
 ## Video walkthrough
 
