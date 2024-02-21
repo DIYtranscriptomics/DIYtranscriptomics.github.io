@@ -1,5 +1,5 @@
 ---
-title: 'The worm lab'
+title: 'Making sense of multivariate data'
 subtitle: 'Lab 6 (required) • February 28, 2024'
 date: 2019-01-06 00:00:00
 description: Explore a large and multivariate dataset generated from the helmith parasite, Schistosoma mansoni, an important pathogen of humans.  You'll use dimensional reduction to understand how factors like sex, developmental stage, genetic strain and drug treatment contribute to differences in gene expression.
