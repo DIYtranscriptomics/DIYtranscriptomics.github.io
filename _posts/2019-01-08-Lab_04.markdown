@@ -32,7 +32,11 @@ After showing your PI how you successfully used R to solve the annotation proble
 
 ## On your own
 
-If you're working through this lab on your own, you should be able to produce a short R script that accomplishes the two tasks above.  If you're an in-person learner that was unable to attend this lab, you should turn your script in to the TAs before the start of class next week.
+If you're working through this lab on your own, you should be able to produce a short R script that accomplishes the two tasks above.  **If you're an in-person learner that was unable to attend this lab, you should turn your script in to the TAs before the start of class next week to get credit.**
+
+### Solution
+
+[Download this script](http://DIYtranscriptomics.github.io/Code/files/lab4_solution.R) to see how to solve the tasks above
 
 ## Discussion points
 

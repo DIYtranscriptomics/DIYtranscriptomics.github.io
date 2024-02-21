@@ -47,24 +47,24 @@ To understand the ouput from `Sourmash gather`, check out the documentation [her
 
 Encouraged by the Sourmash results, you try a complementary approach that uses [Centrifuge](https://ccb.jhu.edu/software/centrifuge/).  To get started, you'll need to download a reference database that contains sequences from bacteria, human and viral genomes.  Click **[here](https://genome-idx.s3.amazonaws.com/centrifuge/p_compressed%2Bh%2Bv.tar.gz)** to download (this file is ~ 6Gb, so it may take a while).  Double-click this file once downloaded to unzip.  Now you can use this database to search for signatures in your fastq file.  How do these results compare with what you saw with Sourmash in Task 2?  Why do you think the outputs produced by these two tools differ?
 
-**Tip:** If you haven't done so already, unzip the file you downloaded above to get a folder.  Move the three files present in this folder to your working directory where your dehosted fastq file is located.
+**Tip:** If you haven't done so already, unzip the file you downloaded above to get a folder.
 
 ```bash
 # time = ~10min
-centrifuge -x p_compressed+h+v -U SRR8668774_dehosted.fastq.gz --report-file CL13_dehosted_report.txt -S CL13_dehosted_results.txt
+centrifuge -x p_compressed+h+v/p_compressed+h+v -U SRR8668774_dehosted.fastq.gz --report-file CL13_dehosted_report.txt -S CL13_dehosted_results.txt
 ```
 
 **Tip:** once centrifuge is done running, open the 'CL13_dehosted_report.txt' ouput file in Excel and sort based on 'numUniqueReads' column
 
+## On your own
 
-### Task 4
+If you're working through this lab on your own, you should be able to complete the two parts below. **If you're an in-person learner and were unable to attend this lab, you should turn in your Sourmash results for parts below to the TAs before the start of class next week to get credit.**
 
-*Note: if you're short on time, feel free to use only Sourmash and not Centrifuge for this task*
+### Part 1
 
-You present the Sourmash and Centrifuge results above to your advisor and, after some discussion and head-scratching, you conclude that without a positive control, it's hard to know what to think of the results!  A collaborator suggests evaluating these software tools using a synthetic or 'mock' microbial community.  After combing through the literature, you identify [a recent paper](https://doi.org/10.3389/fmicb.2020.00953) that shares raw data generated from sequencing the [ZymoBiomics Mock Community standard](https://files.zymoresearch.com/datasheets/ds1706_zymobiomics_microbial_community_standards_data_sheet.pdf).  Perfect!  Now all you need to do is download one of their fastq files **[here](https://drive.google.com/file/d/1-57CU-Ps7MOPD14S7laklQJLgH52EJrk/view?usp=sharing)** and run both Sourmash and Centrifuge on the data.  How do your results compare with what is reported in Zymo's product document?
+You present the Sourmash and Centrifuge results above to your advisor and, after some discussion and head-scratching, you conclude that without a positive control, it's hard to know what to think of the results!  A collaborator suggests evaluating these software tools using a synthetic or 'mock' microbial community.  After combing through the literature, you identify [a recent paper](https://doi.org/10.3389/fmicb.2020.00953) that shares raw data generated from sequencing the [ZymoBiomics Mock Community standard](https://files.zymoresearch.com/datasheets/ds1706_zymobiomics_microbial_community_standards_data_sheet.pdf).  Perfect!  Now all you need to do is download one of their fastq files **[here](https://drive.google.com/file/d/1-57CU-Ps7MOPD14S7laklQJLgH52EJrk/view?usp=sharing)** and run both Sourmash and Centrifuge on the data.  How do your results compare with what is reported in Zymo's product document? *If you're pressed for time and/or are struggling with the compute resources needed to run Centrifuge, then just use Sourmash for this part.*
 
-
-### Task 5
+### Part 2
 
 A few months later, after your paper is accepted, a colleague comes to you because he is working on identifying SARS-CoV-2 in wastewater collected during the peak of the COVID19 pandemic from municipal sewer systems in Northern California (see [this paper](https://journals.asm.org/doi/10.1128/mBio.02703-20)).  RNA purified from these samples was intially used for virus-specific QPCR, but he also decided to carry out untargeted RNA-seq on the same samples to get a 'metatranscriptome' of wastewater.  After hearing about your ability to identify pathogens lurking in RNA-seq data, he asks if you could take a look at one of his RNA-seq samples to see if this approach is sensitive enough to detect SARS-CoV-2.  You can download one of his raw files **[here](https://drive.google.com/file/d/1-9-urdGKYB39TRg0sVk8Om0N1apXZn_H/view?usp=sharing)**.
 
