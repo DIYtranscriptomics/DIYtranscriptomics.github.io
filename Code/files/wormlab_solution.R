@@ -11,18 +11,17 @@ drugSensitivity <- factor(targets$drugSensitivity)
 
 # read in Kallisto data
 path <- file.path(targets$sample, "abundance.h5")
-Txi_gene <- tximport(path, 
-                     type = "kallisto", 
-                     txOut = TRUE, 
+Txi_gene <- tximport(path,
+                     type = "kallisto",
+                     txOut = TRUE,
                      countsFromAbundance = "lengthScaledTPM",
                      ignoreTxVersion = TRUE)
 
 
 
 # FILTER, NORMALIZE, PLOT (question 1)----
-library(reshape2) 
-library(genefilter)
-library(edgeR) 
+library(reshape2)
+library(edgeR)
 library(matrixStats)
 library(cowplot)
 myDGEList <- DGEList(Txi_gene$counts)
@@ -33,15 +32,15 @@ colnames(log2.cpm.df) <- c("geneID", sampleLabels)
 log2.cpm.df.pivot <- pivot_longer(log2.cpm.df, # dataframe to be pivoted
                                   cols = 2:145, # column names to be stored as a SINGLE variable
                                   names_to = "samples", # name of that new variable (column)
-                                  values_to = "expression") 
+                                  values_to = "expression")
 
 ggplot(log2.cpm.df.pivot, aes(x=samples, y=expression, fill=samples)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", 
-               geom = "point", 
-               shape = 124, 
-               size = 6, 
-               color = "black", 
+  stat_summary(fun.y = "median",
+               geom = "point",
+               shape = 124,
+               size = 6,
+               color = "black",
                show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
@@ -53,7 +52,7 @@ keepers <- rowSums(cpm>1)>=3 #user defined
 myDGEList.filtered <- myDGEList[keepers,]
 
 log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
-log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID") 
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID")
 colnames(log2.cpm.filtered.df) <- c("geneID", sampleLabels)
 
 log2.cpm.filtered.df.pivot <- pivot_longer(log2.cpm.filtered.df, # dataframe to be pivoted
@@ -63,11 +62,11 @@ log2.cpm.filtered.df.pivot <- pivot_longer(log2.cpm.filtered.df, # dataframe to 
 
 ggplot(log2.cpm.filtered.df.pivot, aes(x=samples, y=expression, fill=samples)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", 
-               geom = "point", 
-               shape = 124, 
-               size = 6, 
-               color = "black", 
+  stat_summary(fun.y = "median",
+               geom = "point",
+               shape = 124,
+               size = 6,
+               color = "black",
                show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
@@ -86,11 +85,11 @@ log2.cpm.filtered.norm.df.pivot <- pivot_longer(log2.cpm.filtered.norm.df, # dat
 
 ggplot(log2.cpm.filtered.norm.df.pivot, aes(x=samples, y=expression, fill=samples)) +
   geom_violin(trim = FALSE, show.legend = FALSE) +
-  stat_summary(fun.y = "median", 
-               geom = "point", 
-               shape = 124, 
-               size = 6, 
-               color = "black", 
+  stat_summary(fun.y = "median",
+               geom = "point",
+               shape = 124,
+               size = 6,
+               color = "black",
                show.legend = FALSE) +
   labs(y="log2 expression", x = "sample",
        title="Log2 Counts per Million (CPM)",
@@ -105,16 +104,23 @@ pc.per<-round(pc.var/sum(pc.var)*100, 1)
 
 pca.res.df <- as_tibble(pca.res$x)
 
-#Here, I chose to mape point color to the worm strain, and point shape to 
-ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$sex, shape=targets$strain)) +
-  geom_point(size=5) +
-  theme(legend.position="right") +
+#Here, I chose to mape point color to the worm strain, and point shape to
+ggplot(pca.res.df) +
+  aes(x=PC1, y=PC2, color=sex) +
+  geom_point(size=4) +
+  # geom_label() +
+  stat_ellipse() +
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) +
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  labs(title="PCA plot",
+       caption=paste0("produced on ", Sys.time())) +
+  # coord_fixed() +
   theme_bw()
 
-pca.res.df <- pca.res$x[,1:6] %>% # note that this is the first time you've seen the 'pipe' operator from the magrittr package
+pca.res.df <- pca.res$x[,1:6] %>%
   as_tibble() %>%
   add_column(sample = sampleLabels,
-             group = targets$timpoint)
+             group = targets$sex)
 
 pca.pivot <- pivot_longer(pca.res.df, # dataframe to be pivoted
                           cols = PC1:PC6, # column names to be stored as a SINGLE variable
@@ -135,6 +141,20 @@ ggplot(pca.pivot) +
 # PC2 and PC4 are strain and collectively explain about 20% of the variance
 # PC3 seems to be linked to timepoint
 
+# let's confirm our interpretations from the small multiples by returning to our original PCA
+#Let's look at PC2 vs PC4
+ggplot(pca.res.df) +
+  aes(x=PC2, y=PC4, color=strain) +
+  geom_point(size=4) +
+  # geom_label() +
+  # stat_ellipse() +
+  xlab(paste0("PC1 (",pc.per[2],"%",")")) +
+  ylab(paste0("PC2 (",pc.per[4],"%",")")) +
+  labs(title="PCA plot",
+       caption=paste0("produced on ", Sys.time())) +
+  # coord_fixed() +
+  theme_bw()
+
 
 # DATA GYMNASTICS WITH DPLYR (question 3) ----
 # begin by selecting the columns based on sex, strain and timepoint
@@ -144,8 +164,8 @@ data.subset <- log2.cpm.filtered.norm.df %>%
 
 #now use dplyr mutate to create averages for control and 24hr, as well as a logFC column
 data.subset <- data.subset %>%
-  dplyr::mutate(F24h_LE_AVG = (F24h_LE_1 + F24h_LE_2 + F24h_LE_3)/3,  
-                FCtl_LE_AVG = (FCtl_LE_1 + FCtl_LE_2 + FCtl_LE_3)/3, 
+  dplyr::mutate(F24h_LE_AVG = (F24h_LE_1 + F24h_LE_2 + F24h_LE_3)/3,
+                FCtl_LE_AVG = (FCtl_LE_1 + FCtl_LE_2 + FCtl_LE_3)/3,
                 LogFC_24hr.vs.Ctl = F24h_LE_AVG - FCtl_LE_AVG)
 
 #now use dplyr filter and arrange to pick and rank the top 10 genes based on logFC
@@ -161,8 +181,8 @@ gt(data.subset)
 
 # ANY INTERSTING BIOLOGY IN THIS LIST OF GENES (Bonus question) ----
 # multiple genes in the top 10 list (e.g. Smp_138080.1) belong to a unique class of genes called Micro Exon Genes (MEGs)
-# MEGs have many exons..usually very small, and always of a length that is divisble by 3.  
-# as a result, the transcriptional machinery easly 'slips' past an exon, but the transcript remains in-frame
+# MEGs have many exons..usually very small, and always of a length that is divisble by 3.
+# as a result, the transcriptional machinery easily 'slips' past an exon, but the transcript remains in-frame
 # the result is genetic diversity without need to rely on alternative splicing
 # MEGs also happen to be secreted, which may be one reason the parasite wants to easily and quickly modify the protein
 # super interesting that these genes seem to be induced by drug treatment.

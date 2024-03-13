@@ -1,17 +1,50 @@
 ---
-title: 'Lit lab'
+title: 'Tracking the global animal trade'
 subtitle: 'Lab 7 (required) • March 13, 2024'
 date: 2019-01-05 00:00:00
-description: In this lab, we'll look to the literature and pull papers from a wide range of fields, including cancer biology, developmental biology, immunology, and more.  You'll have two hours to pull data from a publication and reproduce key figures.
-featured_image: '/images/paper_art.png'
+description: Think you know how to wrangle and plot data?  We'll put your skills to the test using a dataframe with millions of rows.  To illustrate the general utility of the methods you've learned thus far, we'll explore the import of animals and animal products into US port cities over a 14 year period.
+featured_image: '/images/ark.png'
 ---
 
-<div style="text-align: right"> Image credit: Midjourney v5.2 with prompt 'abstract art made of papers and handwriting' </div>
+<div style="text-align: right"> Mildred Hado, Noah’s Ark Folk Art Mixed Media Watercolor, Acrylic Painting </div>
 
-## Corresponding lecture
-
-[Lecture 7 – Accessing public data](https://diytranscriptomics.com/project/lecture-07)
 
 ## Description
 
-A full description will be posted on the date listed for this lab.
+In this lab you'll apply your data wrangling skills to analyze data from the US Fish and Wildlife Service (USFWS) Law Enforcement Management Information System (LEMIS) data on wildlife and wildlife product imports into the United States. This data was obtained via Freedom of Information Act (FOIA) requests by [EcoHealth Alliance](https://www.ecohealthalliance.org/) and contains over 5.5 million observations (rows) of 28 variables (columns), showing the flow of live wildlife and wildlife products into the USA at every major port city from 2000-2014.
+
+An analysis of a portion of this large dataset was published by EcoHealth Alliance [here](https://doi.org/10.1007/s10393-017-1211-7).
+
+## What you need to do
+
+1. **[Download this cleaned up version of the LEMIS data](https://drive.google.com/file/d/1-GAGY0us-eqzfawPfxI88B-Qeyv1dycQ/view?usp=sharing)**
+2. Once the download is complete, unzip the file, and read the data into your R environment.  Don't try to open the file in Excel....you'll regret it.  Also, **do not** try to ```View()``` the object after importing into R....it's simply too large.
+
+To help you get started, here's a bit of code to read in the data and explore the variables.  With the data in your R environment, you'll then want to use dplyr and ggplot to complete each of the tasks below.  *Tip: the magrittr pipe (%>%) is your friend.*
+
+
+```r
+library(tidyverse)
+lemis <- read_delim("lemis_cleaned.tsv")
+
+#take a minute to explore this huge dataset
+glimpse(lemis)
+
+#with large datasets like this, it's useful to know how to see the 'levels' for any variable of interest
+unique(lemis$description)
+
+```
+
+Using Tidyverse tools, do your best to come up with answers to the following questions related to the LEMIS dataset.  Reach out to the TAs if you need help.
+
+1. Identify the most common (by 'quantity') live mammal taken from the wild for import into the US.
+2. Building on your analysis above, produce a plot showing live mammals (use 'generic_name') imported for the purposes of science/research. (tip: use ```geom_col()``` in ggplot for this).  Feel free to play around with different themes to make your plot more exciting.
+3. Identify the countries from which we import the most macaques (again, a simple plot will suffice).
+4. Using the same approach as above, create a plot showing the countries from which we import live bats.
+5. For what purposes do we import bats?
+6. How does the type of bat (use 'specific_name') imported differ between countries (hint: use ```facet_wrap``` in your ggplot code)?
+7. Identify the most expensive (by 'value') shipment of live mammals to enter the US.
+8. How does the answer above compare with the most expensive shipment of any kind (live *or* not)?
+9.  You are alerted to a concerning new viral disease of humans that is believed to originate from Fruit bats (though the exact type of fruit bat is not clear).  Identify the US cities that would would be most likely to be exposed to such a virus from the import of live fruit bats.
+10. A recent case of Anthrax in NYC was traced back to a contaminated Wildebeest hide that was stretched and used to make a traditional drum.  Through which port(s) did this animal product most likely enter the country? (note: [this actually happens](https://www.cdc.gov/anthrax/animal-products/hides-drums.html)).
+

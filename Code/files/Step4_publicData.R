@@ -12,17 +12,17 @@ library(edgeR)
 # you should have already downloaded the most recent versions of mouse and human RNAseq data from ARCHS4 in hdf5 format
 # begin by creating file paths that point to the hdf5 archs4 files
 # because of the size of these files, feel free to skip the human data and just work with mouse
-archs4.human <- "archs4_gene_human_v2.1.2.h5"
-archs4.mouse <- "archs4_gene_mouse_v2.1.2.h5"
+archs4.human <- "human_gene_v2.3.h5"
+archs4.mouse <- "mouse_gene_v2.3.h5"
 # use the h5 list (h5ls) function from the rhdf5 package to look at the contents of these databases
 h5ls(archs4.human)
 h5ls(archs4.mouse)
 
-# 620,825 samples from human
+# data for 67,186 HUMAN genes across 819,856 samples
 all.samples.human <- h5read(archs4.human, name="meta/samples/geo_accession")
 dim(all.samples.human)
 
-# 717,966 samples from mouse!
+# data for 53,511 MOUSE genes across 932,405 samples
 all.samples.mouse <- h5read(archs4.mouse, name="meta/samples/geo_accession")
 dim(all.samples.mouse)
 
@@ -44,7 +44,7 @@ mySamples <- c("GSM2310941", # WT_unstim_rep1
 # Identify columns to be extracted from ARCHS4 database
 my.sample.locations <- which(all.samples.mouse %in% mySamples) # first time you've seen the %in% operator.
 # extract gene symbols from the metadata
-genes <- h5read(archs4.mouse, "meta/genes/gene_symbol")
+genes <- h5read(archs4.mouse, "meta/genes/symbol")
 
 # Extract expression data from ARCHS4 ----
 expression <- h5read(archs4.mouse, "data/expression",
@@ -120,7 +120,7 @@ ggplot(pca.res.df) +
   theme_bw()
 
 # now try painting other variables from your study design file onto this PCA.
-# can you determine the relationship between PC2 and your metadata?
+# can you determine the relationship between PC1 and your metadata?
 # can we map one variable to point color and another to point shape?
 
 # now create a small multiple PCA plot
@@ -168,7 +168,7 @@ mySamples <- c("GSM2310941", # WT_unstim_rep1
                "GSM2310952") # Ripk3Casp8_LPS.6hr_rep2
 
 my.sample.locations <- which(all.samples.mouse %in% mySamples)
-genes <- h5read(archs4.mouse, "meta/genes/gene_symbol")
+genes <- h5read(archs4.mouse, "meta/genes/symbol")
 expression <- h5read(archs4.mouse, "data/expression",
                      index=list(my.sample.locations, 1:length(genes)))
 

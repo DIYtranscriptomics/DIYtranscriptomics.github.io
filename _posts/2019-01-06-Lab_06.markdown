@@ -62,17 +62,3 @@ If you're working through this lab on your own, you should be able to complete a
 ### script
 
 Download **[this script](http://DIYtranscriptomics.github.io/Code/files/wormlab_solution.R)** to see my answers to the questions above.
-
-Below you will also see video solutions for each question.
-
-### video for question #1
-
-<iframe src="https://player.vimeo.com/video/418615841" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
-### video for question #2
-
-<iframe src="https://player.vimeo.com/video/418643636" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
-### video for question #3
-
-<iframe src="https://player.vimeo.com/video/418645922" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
