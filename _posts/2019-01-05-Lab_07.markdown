@@ -51,3 +51,9 @@ Using Tidyverse tools, do your best to come up with answers to the following que
 ## On your own
 
 If you're working through this lab on your own, you should be able to complete at least one of the ten questions listed above. **If you're an in-person learner and were unable to attend this lab, you should turn in an answer with your code to at least one of these question to the TAs before the start of class next week to get credit.**
+
+## Solution
+
+### script
+
+Download **[this script](http://DIYtranscriptomics.github.io/Code/files/lemis_solution.R)** to see my answers to the questions above.
