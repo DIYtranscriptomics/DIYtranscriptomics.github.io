@@ -1,7 +1,7 @@
 ---
 title: 'Using generative AI to supercharge your coding'
 subtitle: 'Lab 8 (required) • March 20, 2024'
-date: 2019-01-09 00:00:00
+date: 2019-01-04 00:00:00
 description: Artificial Intelligence is revolutionizing how we interact with code.  In this lab, we'll review the solution for the last lab ('Global Animal Trade'), but will use AI to guide us.  I'll demonstrate how you can use the AI 'pair programmer' called Github Copilot to much more rapidly and seemlessly start new coding projects.
 featured_image: '/images/llm_midjourney.png'
 ---
