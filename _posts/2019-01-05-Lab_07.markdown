@@ -56,4 +56,4 @@ If you're working through this lab on your own, you should be able to complete a
 
 ### script
 
-Download **[this script](http://DIYtranscriptomics.github.io/Code/files/lemis_solution.R)** to see my answers to the questions above.
+Download **[this script](https://DIYtranscriptomics.github.io/Code/files/LEMIS_solution.R)** to see my answers to the questions above.

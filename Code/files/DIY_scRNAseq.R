@@ -83,10 +83,16 @@ raw_cells <- read.csv('counts_unfiltered/cellranger/barcodes.tsv', header = F, s
 filt_cells <- read.csv('counts_filtered/barcodes.tsv', header = F, sep ='\t')[,1] 
 
 # create barcode rank plot png
-bc_rank_plot(stats = stats, raw_cells = raw_cells, filt_cells = filt_cells, save = 'counts_filtered/barcode_rank.png') 
+bc_rank_plot(stats = stats, 
+             raw_cells = raw_cells, 
+             filt_cells = filt_cells, 
+             save = 'counts_filtered/barcode_rank.png') 
 
 # output a HTML summary of the run
-print_HTML(seq_stats = seq_stats, cell_stats = cell_stats, dir = 'counts_filtered', sample_id = NULL)
+print_HTML(seq_stats = seq_stats, 
+           cell_stats = cell_stats, 
+           dir = 'counts_filtered', 
+           sample_id = NULL)
 
 # Create Seurat object ----
 datadir <- 'counts_filtered'
@@ -177,17 +183,13 @@ pbmc.1k.markers <- FindAllMarkers(pbmc.1k.seurat, only.pos = TRUE, min.pct = 0.2
 top10 <- pbmc.1k.markers %>% 
   group_by(cluster) %>%
   top_n(n = 10, wt = avg_log2FC)
+
 DoHeatmap(pbmc.1k.seurat, features = top10$gene)
 
 # Assigning identity to cell clusters  ----
 library(scater) #quality control and visualization for scRNA-seq data
 library(scran) #for low level processing of scRNA-seq data
 library(DropletUtils)
-library(tensorflow)
-# need to install tensorflow R package first (above)
-# then run tensorflow::install_tensorflow(extra_packages='tensorflow-probability'), 
-# then install cellassign from github: https://github.com/irrationone/cellassign
-library(cellassign) 
 library(SingleR) #automated cell type annotation ('label transfer') using reference data
 library(celldex) #a large collection of reference expression datasets with curated cell type labels for use with SingleR package
 library(pheatmap)
@@ -208,49 +210,8 @@ assays(pbmc.1k.sce)
 my.subset <- pbmc.1k.sce[,c(1,2,8)]
 rowData(pbmc.1k.sce)$Symbol <- rownames(pbmc.1k.sce)
 
-# create a list of markers
-# you can find cell specific markers here: http://biocc.hrbmu.edu.cn/CellMarker/
-pbmc_marker_list <- list(
-  Monocytes = c("CD14", "CD68"),
-  `T cells` = c("CD2", "CD3D", "TRAC", "IL32", "CD3E", "PTPRC"),
-  `NK cells` = c("GZMK", "KLRF1", "CCL3", "CMC1", "NKG7", "PTPRC"),
-  `Plasma cells` = c("CD27", "IGHG1", "CD79A", "IGHG2", "PTPRC", "IGKC"),
-  `Mature B cells` = c("MS4A1", "LTB", "CD52", "IGHD", "CD79A", "PTPRC", "IGKC"))
-
-# convert your marker gene list from above to a matrix
-pbmc_marker_matrix <- marker_list_to_mat(pbmc_marker_list, include_other = FALSE)
-
-# you can view this matrix as a heatmap
-pheatmap(pbmc_marker_matrix)
-
-# make sure all your markers were actually observed in your single cell data.  Remove markers that were not detected
-marker_in_sce <- match(rownames(pbmc_marker_matrix), rowData(pbmc.1k.sce)$Symbol)
-stopifnot(all(!is.na(marker_in_sce)))
-
-#subset data to include only markers
-sce_marker <- pbmc.1k.sce[marker_in_sce, ]
-stopifnot(all.equal(rownames(pbmc_marker_matrix), rowData(sce_marker)$Symbol))
-
-# compute size factors
-pbmc.1k.sce <- scran::computeSumFactors(pbmc.1k.sce)
-
-# run cellAssign
-fit <- cellassign(
-  exprs_obj = sce_marker,
-  marker_gene_info = pbmc_marker_matrix,
-  s = sizeFactors(pbmc.1k.sce),
-  shrinkage = TRUE,
-  max_iter_adam = 50,
-  min_delta = 2,
-  verbose = TRUE)
-
-# incorporate the cellAssign result into your singleCellExperiment
-pbmc.1k.sce$cell_type <- fit$cell_type
-# plotUMAP is the Scater equivalent of Seurat's DimPlot
-plotUMAP(pbmc.1k.sce, colour_by = "cell_type")
-
-# a different way of labeling clusters using public datasets
-# now label using singleR and celldex (requires an internet connection to connect to ExperimentHub)
+# One way to assign identity to cell clusters is to use public RNA-seq datasets
+# We'll use singleR and celldex (requires an internet connection to connect to ExperimentHub)
 ENCODE.data <- BlueprintEncodeData(ensembl = FALSE) #259 RNA-seq samples of pure stroma and immune cells as generated and supplied by Blueprint and ENCODE
 HPCA.data <- HumanPrimaryCellAtlasData(ensembl = FALSE) #713 microarray samples from the Human Primary Cell Atlas (HPCA) (Mabbott et al., 2013).
 DICE.data <- DatabaseImmuneCellExpressionData(ensembl = FALSE) #1561 bulk RNA-seq samples of sorted immune cell populations
@@ -279,11 +240,11 @@ load("spleen.toxoInfected.seurat")
 DimPlot(spleen.toxoInfected.seurat, reduction = "umap", split.by = "orig.ident", label = TRUE)
 
 # since we are now going to work with multiple samples, we need a study design file with our sample metadata
-targets <- read_tsv("studyDesign.txt")
+studyDesign_singleCell <- read_tsv("studyDesign_singleCell.txt")
 
 # extract variables of interest
-sampleID <- targets$sampleID
-treatment <- targets$treatment
+sampleID <- studyDesign_singleCell$sampleID
+treatment <- studyDesign_singleCell$treatment
 
 # annotate your seurat objects with as much or as little metadata as you want!
 spleen.naive.seurat$treatment <- treatment[1]

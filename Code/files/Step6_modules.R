@@ -8,8 +8,7 @@ library(limma) #we only use limma in this script for the 'avearrays' function
 library(RColorBrewer) #need colors to make heatmaps
 library(gplots) #the heatmap2 function in this package is a primary tool for making heatmaps
 library(gameofthrones) #because...why not.  Install using 'devtools::install_github("aljrico/gameofthrones")'
-library(heatmaply) #for making interactive heatmaps using plotly
-library(d3heatmap) #for making interactive heatmaps using D3
+library(d3heatmap) # install from github with: devtools::install_github("talgalili/d3heatmap")
 
 # Choose your color pallette ----
 #Some useful examples: colorpanel(40, "darkblue", "yellow", "white"); heat.colors(75); cm.colors(75); rainbow(75); redgreen(75); library(RColorBrewer); rev(brewer.pal(9,"Blues")[-1]).
@@ -67,7 +66,7 @@ heatmap.2(diffGenes,
           Rowv=as.dendrogram(clustRows), 
           Colv=as.dendrogram(clustColumns),
           RowSideColors=module.color,
-          col=rev(myheatcolors3), scale='row', labRow=NA,
+          col=rev(myheatcolors1), scale='row', labRow=NA,
           density.info="none", trace="none",  
           cexRow=1, cexCol=1, margins=c(8,20)) 
 
@@ -75,17 +74,10 @@ heatmap.2(diffGenes,
 #what happens when you change scale='none'
 
 # Make interactive heatmap ----
-#first, we'll make an interactive heatmap using plotly (https://plot.ly/)
-heatmaply(diffGenes,
-          colors = myheatcolors2,
-          Rowv=as.dendrogram(clustRows),
-          RowSideColors=module.color,
-          #showticklabels=c(FALSE,FALSE),
-          scale='row')
-
-# now let's try using D3 to create an html widget version of our heatmap
+# let's try using D3 to create an html widget version of our heatmap
+# you migth have to drag/select a region on the image to see the colors
 d3heatmap(diffGenes,
-          colors = myheatcolors2,
+          colors = myheatcolors1,
           Rowv=as.dendrogram(clustRows),
           row_side_colors = module.color,
           scale='row')
@@ -110,7 +102,7 @@ names(module.color) <- names(module.assign)
 
 module.assign.df <- as_tibble(as.list(module.assign))
 module.assign.pivot <- pivot_longer(module.assign.df, # dataframe to be pivoted
-                          cols = 1:2307, # column names to be stored as a SINGLE variable
+                          cols = everything(), # column names to be stored as a SINGLE variable
                           names_to = "geneID", # name of that new variable (column)
                           values_to = "module") # name of new variable (column) storing all the values (data)
 
@@ -136,7 +128,7 @@ heatmap.2(myModule,
           Rowv=as.dendrogram(hrsub), 
           Colv=NA, 
           labRow = NA,
-          col=rev(myheatcolors3), scale="row", 
+          col=rev(myheatcolors1), scale="row", 
           density.info="none", trace="none", 
           RowSideColors=module.color[module.assign%in%modulePick], margins=c(8,20)) 
 

@@ -22,4 +22,10 @@ We'll spend the first 1/2 of this lab discussing the solution for the LEMIS lab 
 
 1. Copilot is free for students and teachers, but getting access to it can be a little confusing.  I've put together step-by-step instructions **[here](https://protocols.hostmicrobe.org/copilot)**.
 
-2. [Download this stripped down version of the solutions script from out lab last week](). Note, this 'script' has only comments...no code.  With Copilot turned on in RStudio, I'll demo how we can analyze the LEMIS dataset and answer the questions from last week's lab using Copilot.
+2. [Download this stripped down version of the solutions script from out lab last week](https://DIYtranscriptomics.github.io/Code/files/LEMIS_copilot.R). Note, this 'script' has only comments...no code.  With Copilot turned on in RStudio, I'll demo how we can analyze the LEMIS dataset and answer the questions from last week's lab using Copilot.
+
+## Tips and tricks for using Copilot
+
+* Probably the single most important thing to understand from this lab is that, with Copiot turned on, your comments in your scripts now become powerful prompts for generative AI.  In other words, your comments are no longer just for you or someone else that might look at your script...they are also helping Copilot understand what you hope to achieve at each point in your script.
+* Copilot has 'cross-tab' awareness.  This means that if you have open multiple scripts in RStudio, Copilot will be aware of the code in these other tabs and will use this information to provide better responses to your prompts.  So, in this class for example, if you were to open all the step scripts, this would be immensely helpful as you begin a new RNA-seq analysis project with a new analysis script.
+

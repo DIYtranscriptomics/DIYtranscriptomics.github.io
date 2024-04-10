@@ -39,7 +39,7 @@ ebFit <- eBayes(fits)
 #write.fit(ebFit, file="lmfit_results.txt")
 
 # TopTable to view DEGs -----
-myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC")
+myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=10, sort.by="logFC")
 
 # convert to a tibble
 myTopHits.df <- myTopHits %>%
@@ -59,9 +59,9 @@ gt(myTopHits.df)
 vplot <- ggplot(myTopHits.df) +
   aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneID)) +
   geom_point(size=2) +
-  #geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +
-  #geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", size=1) +
-  #geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", size=1) +
+  #geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", linewidth=1) +
+  #geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", linewidth=1) +
+  #geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", linewidth=1) +
   #annotate("rect", xmin = 1, xmax = 12, ymin = -log10(0.01), ymax = 7.5, alpha=.2, fill="#BE684D") +
   #annotate("rect", xmin = -1, xmax = -12, ymin = -log10(0.01), ymax = 7.5, alpha=.2, fill="#2C467A") +
   labs(title="Volcano plot",
@@ -130,7 +130,7 @@ mySwitchList <- importRdata(
   ignoreAfterPeriod=TRUE,
   # the files below must be from the same ensembl release (in this case release 108), and must match the reference release version that we originally mapped our reads to at the beginning of the course
   # you can find version 108 of the gtf file below here: https://ftp.ensembl.org/pub/release-108/gtf/homo_sapiens/
-  isoformExonAnnoation = "Homo_sapiens.GRCh38.108.chr_patch_hapl_scaff.gtf.gz",
+  isoformExonAnnoation = "Homo_sapiens.GRCh38.111.chr_patch_hapl_scaff.gtf.gz",
   isoformNtFasta       = "Homo_sapiens.GRCh38.cdna.all.fa",
   showProgress = TRUE)
 
@@ -186,12 +186,12 @@ myTopHits <- topTable(ebFit, adjust ="BH", coef=1, number=40000, sort.by="logFC"
 myTopHits.df <- myTopHits %>%
   as_tibble(rownames = "geneID")
 
-vplot <- ggplot(myTopHits) +
+vplot <- ggplot(myTopHits.df) +
   aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneID)) +
   geom_point(size=2) +
-  geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", size=1) +
-  geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", size=1) +
-  geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", size=1) +
+  geom_hline(yintercept = -log10(0.01), linetype="longdash", colour="grey", linewidth=1) +
+  geom_vline(xintercept = 1, linetype="longdash", colour="#BE684D", linewidth=1) +
+  geom_vline(xintercept = -1, linetype="longdash", colour="#2C467A", linewidth=1) +
   #annotate("rect", xmin = 1, xmax = 12, ymin = -log10(0.01), ymax = 7.5, alpha=.2, fill="#BE684D") +
   #annotate("rect", xmin = -1, xmax = -12, ymin = -log10(0.01), ymax = 7.5, alpha=.2, fill="#2C467A") +
   labs(title="Volcano plot",
@@ -201,7 +201,7 @@ vplot <- ggplot(myTopHits) +
 
 ggplotly(vplot)
 
-results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.05, lfc=1)
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=2)
 colnames(v.DEGList.filtered.norm$E) <- sampleLabels
 diffGenes <- v.DEGList.filtered.norm$E[results[,1] !=0,]
 diffGenes.df <- as_tibble(diffGenes, rownames = "geneID")

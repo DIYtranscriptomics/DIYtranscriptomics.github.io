@@ -71,9 +71,9 @@ save(myDGEList, file = "myDGEList")
 load(file = "myDGEList")
 
 # use the 'cpm' function from EdgeR to get counts per million
-cpm <- cpm(myDGEList) 
+cpm <- edgeR::cpm(myDGEList) 
 colSums(cpm)
-log2.cpm <- cpm(myDGEList, log=TRUE)
+log2.cpm <- edgeR::cpm(myDGEList, log=TRUE)
 
 # 'coerce' your data matrix to a dataframe so that you can use tidyverse tools on it
 log2.cpm.df <- as_tibble(log2.cpm, rownames = "geneID")
@@ -128,12 +128,12 @@ keepers <- rowSums(cpm>1)>=5
 myDGEList.filtered <- myDGEList[keepers,]
 dim(myDGEList.filtered)
 
-log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
+log2.cpm.filtered <- edgeR::cpm(myDGEList.filtered, log=TRUE)
 log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID")
 colnames(log2.cpm.filtered.df) <- c("geneID", sampleLabels)
 # pivot this FILTERED data, just as you did earlier
 log2.cpm.filtered.df.pivot <- pivot_longer(log2.cpm.filtered.df, # dataframe to be pivoted
-                                           cols = HS01:CL13, # column names to be stored as a SINGLE variable
+                                           cols = -1, # column names to be stored as a SINGLE variable
                                            names_to = "samples", # name of that new variable (column)
                                            values_to = "expression") # name of new variable (column) storing all the values (data)
 
@@ -158,12 +158,12 @@ myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
 # take a look at this new DGEList object...how has it changed?
 
 # use the 'cpm' function from EdgeR to get counts per million from your normalized data
-log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
+log2.cpm.filtered.norm <- edgeR::cpm(myDGEList.filtered.norm, log=TRUE)
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneID")
 colnames(log2.cpm.filtered.norm.df) <- c("geneID", sampleLabels)
 # pivot this NORMALIZED data, just as you did earlier
 log2.cpm.filtered.norm.df.pivot <- pivot_longer(log2.cpm.filtered.norm.df, # dataframe to be pivoted
-                                                cols = HS01:CL13, # column names to be stored as a SINGLE variable
+                                                cols = -1, # column names to be stored as a SINGLE variable
                                                 names_to = "samples", # name of that new variable (column)
                                                 values_to = "expression") # name of new variable (column) storing all the values (data)
 
@@ -203,7 +203,7 @@ log2.cpm <- cpm(myDGEList, log=TRUE)
 log2.cpm.df <- as_tibble(log2.cpm, rownames = "geneID")
 colnames(log2.cpm.df) <- c("geneID", sampleLabels)
 log2.cpm.df.pivot <- pivot_longer(log2.cpm.df, # dataframe to be pivoted
-                                  cols = HS01:CL13, # column names to be stored as a SINGLE variable
+                                  cols = -1, # column names to be stored as a SINGLE variable
                                   names_to = "samples", # name of that new variable (column)
                                   values_to = "expression") # name of new variable (column) storing all the values (data)
 
@@ -230,7 +230,7 @@ log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
 log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered, rownames = "geneID")
 colnames(log2.cpm.filtered.df) <- c("geneID", sampleLabels)
 log2.cpm.filtered.df.pivot <- pivot_longer(log2.cpm.filtered.df, # dataframe to be pivoted
-                                           cols = HS01:CL13, # column names to be stored as a SINGLE variable
+                                           cols = -1, # column names to be stored as a SINGLE variable
                                            names_to = "samples", # name of that new variable (column)
                                            values_to = "expression") # name of new variable (column) storing all the values (data)
 
@@ -254,7 +254,7 @@ log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
 log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneID")
 colnames(log2.cpm.filtered.norm.df) <- c("geneID", sampleLabels)
 log2.cpm.filtered.norm.df.pivot <- pivot_longer(log2.cpm.filtered.norm.df, # dataframe to be pivoted
-                                                cols = HS01:CL13, # column names to be stored as a SINGLE variable
+                                                cols = -1, # column names to be stored as a SINGLE variable
                                                 names_to = "samples", # name of that new variable (column)
                                                 values_to = "expression") # name of new variable (column) storing all the values (data)
 

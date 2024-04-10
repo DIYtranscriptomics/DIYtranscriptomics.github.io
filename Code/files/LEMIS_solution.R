@@ -1,10 +1,17 @@
-# PREPARE: read data into R and explore ----
+# Introduction ----
+# The goal of this script is to analyze data from LEMIS, tracking the import of animals and animal products into US ports.
+# We'll use a combination of tidyverse and ggplot2 to explore the data and answer a series of questions.
+
+# Load tidyverse package ----
 library(tidyverse)
+
+# read in lemis data, stored locally as lemis_cleaned.tsv
 lemis <- read_delim("lemis_cleaned.tsv")
-#take a look at all the variables and values ('levels' of a variable) in this dataset
+
+#take a look at the unique levels for any of the variables in this dataset
 glimpse(lemis)
 #here's how you can see all the levels of any variable in this dataset
-unique(lemis.live$description)
+unique(lemis$description)
 
 # QUESTION_01: Identify the most common (by 'quantity') live mammal taken from the wild for import into the US. ----
 # note that I will continue to use this 'live.lemis' dataframe many times throughout this script
@@ -16,13 +23,13 @@ lemis.live <- lemis %>%
 
 # note that the above solution ranks by the largest shipment, but a smarter way to do with would consider the sum of all shipments for each animal type.
 # this is pretty easy to do using 'group_by' and 'summarize' from dplyr
-lemis.live.summary <- lemis %>%
+lemis.live <- lemis %>%
   dplyr::filter(description == "Live specimens (live animals or plants)") %>%
   dplyr::filter(class == "Mammalia") %>%
   dplyr::filter(source == "Specimens taken from the wild") %>%
-  group_by(generic_name) %>%
-  summarize(sum = sum(quantity, na.rm = TRUE)) %>%
-  dplyr::arrange(desc(sum))
+  dplyr::group_by(generic_name) %>%
+  dplyr::summarize(total_quantity = sum(quantity)) %>%
+  dplyr::arrange(desc(total_quantity))
 # bears still win :)
 
 
@@ -33,18 +40,19 @@ lemis.science <- lemis %>%
   dplyr::filter(source == "Specimens taken from the wild") %>%
   dplyr::filter(purpose == "Scientific" | purpose == "Biomedical research")
 
+# plot quantity vs name of animal, ordered by quantity
 ggplot(lemis.science) +
-  aes(y=generic_name, x=quantity) +
+  aes(x=quantity, y=generic_name) +
   geom_col() +
   theme_bw()
 
-# QUESTION_03: Identify the countries from which we import the most macaques (again, use a simple plot). ----
 
+# QUESTION_03: Identify the countries from which we import the most macaques (again, use a simple plot). ----
 lemis.live.macaques <- lemis.live %>%
   dplyr::filter(generic_name == "MACAQUE")
 
 ggplot(lemis.live.macaques) +
-  aes(y=country_origin, x=quantity) +
+  aes(y=country_origin, x=total_quantity) +
   geom_col()
 #how does this result change if we don't require them to come from the wild?
 
@@ -90,8 +98,6 @@ lemis.skin <- lemis %>%
 ggplot(lemis.skin) +
   aes(y=port, x=quantity) +
   geom_col()
-
-
 
 
 # BONUS IDEAS ----

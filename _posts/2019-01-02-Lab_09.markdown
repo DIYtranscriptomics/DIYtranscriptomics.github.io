@@ -33,13 +33,13 @@ In lab next week, you will have the first ~45min of class to put together the pi
 
 ## What you'll need to get started
 
-[Human expression data](http://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Human.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
+[Human expression data](https://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Human.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
 
-[Ferret expression data](http://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Ferret.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
+[Ferret expression data](https://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Ferret.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
 
-[Study design file](http://DIYtranscriptomics.github.io/Data/files/covid_metadata.txt) - Manually assembled and curated from sample descriptions in GEO.
+[Study design file](https://DIYtranscriptomics.github.io/Data/files/covid_metadata.txt) - Manually assembled and curated from sample descriptions in GEO.
 
-[Rscript](http://DIYtranscriptomics.github.io/Data/files/loadData.R) - to get you over the hump of importing the three files above into R.
+[Rscript](https://DIYtranscriptomics.github.io/Data/files/loadData.R) - to get you over the hump of importing the three files above into R.
 
 
 ## Tips
