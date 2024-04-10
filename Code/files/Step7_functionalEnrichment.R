@@ -343,7 +343,7 @@ ebFit.C2CP <- eBayes(fit.C2CP)
 
 # use topTable and decideTests functions to identify the differentially enriched gene sets
 topPaths.C2CP <- topTable(ebFit.C2CP, adjust ="BH", coef=1, number=50, sort.by="logFC")
-res.C2CP <- decideTests(ebFit.C2CP, method="global", adjust.method="BH", p.value=0.05, lfc=0.58)
+res.C2CP <- decideTests(ebFit.C2CP, method="global", adjust.method="BH", p.value=0.05, lfc=0.5)
 # the summary of the decideTests result shows how many sets were enriched in induced and repressed genes in all sample types
 summary(res.C2CP)
 
