@@ -24,7 +24,7 @@ For this lab, we'll use data from **[this really nice 2019 Journal of Investigat
 
 To help you succeed in this lab, consider using the following approach:
 
-* use provided sample IDs (Part 1) to get data from ARCHS4 and structure as a DGEList object
+* use provided sample IDs (Part 1) to get data from ARCHS4 and make a DGEList
 * filter and normalize data (don't worry about plotting after filtering and normalizing)
 * use provided study design file (Part 2) to capture variables of interest and carry out a PCA
 * set up a design and contrast matrix for the comparisons of interest
