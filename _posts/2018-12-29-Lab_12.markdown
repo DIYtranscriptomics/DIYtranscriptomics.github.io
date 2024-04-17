@@ -3,7 +3,7 @@ title: 'The reproducibility lab'
 subtitle: 'Lab 12 (required) • April 17, 2024'
 date: 2018-12-29 00:00:00
 description: In this lab you'll set-up your own project on github, learn to interact with this project directly from RStudio, and then archive the project for publication using Zenodo.
-featured_image: '/images/github_logo.png'
+featured_image: '/images/brackets.png'
 ---
 
 ## Corresponding lecture
@@ -12,81 +12,23 @@ featured_image: '/images/github_logo.png'
 
 ## Description
 
-At this point in the course, you have a working directory full of scripts, tabular data, plots, and many other breadcrumbs from your project.  So, it's well past time for us to start taking steps to make our analysis reproducible.  To do this, we'll spend this lab praticing what you learned in this week's lectures.  You'll produce an renv lock file, upload our entire project to github, learn to edit the repo remotely using RStudio, and then archive the repo using Zenodo so that you can include a Digital Object Identifier (DOI; a permanent link) for your code that you can then include in a manuscript.
+You have just begun your postdoc in a lab that does a lot of genomics to study human disease.  In talking to your PI, it becomes clear that you will need to generate and analyze a lot of RNA-seq data for your project.  To streamline this process, you will need to use the core elements of the code we've covered in this course to create a single custom R function (you may want to review [this lecture video](https://vimeo.com/426552841)) that you could then apply to any dataset.  Creating custom functions is not only an incredibly useful skill to have, but it also forces you to *really* think about how your code works and which elements could be generalized.  In today's lab, you'll try your hand at creating an R function that encapsulates key aspects of the course scripts.
 
-## Part 1: Review use of Renv package and archiving a project with Zenodo
+## What you'll need to do
 
-### Initialize a reproducible environment in R using renv
+Your goal is to create a single function script (feel free to call it whatever you want) that carries out as many of the following steps as possible on the psoriasis/AD dataset from last lab:
 
-At any point in the process of working on an analysis project in R, you can initialize a reproducible environment within your working directory using the wonderful [renv package](https://rstudio.github.io/renv/articles/renv.html). Simply run the following commands in RStudio:
+1. visualizes the impact of filtering and normalizing your data
+2. visualizes the PCA result
+3. visualizes a volcano plot
+4. visualizes a GO enrichment plot (from gProfiler2)
 
-```r
-library(renv)
-#initialize a reproducible environment and captures a snapshot of your package environment
-renv::init()
-#OPTIONAL: at any point during your work, you can update the snapshot with:
-renv::snapshot()
-```
+## Tips
 
-Now that you have initialized using renv, take a look at your library tab in RStudio.  Notice anything different?  You should now see that you have both a 'Project Library' as well as your usual 'System Library'.  The Project Library contains copies of the packages that are specific to the active R project.
-
-OK, now let's test renv by deleting a few packages from your Project Library and updating others (you can always find packages with updates available by clicking on the 'Update' icon in the Library pane on RStudio). Once you've done this, try restoring our project environment using the information stored in the renv.lock file.  This is as easy as:
-
-```r
-renv::restore()
-```
-
-And, voila!  You should now see that the packages you deleted or updated in the step above have now been reinstalled or returned to their previous version.
-
-I recommend using renv early during a project and using `renv::snapshot()` periodically to update the lockfile.
-
-### Install git on your laptop
-
-You should already have git installed (from way back in Lab 3).  If you're unsure whether it's still installed, you can check by opening a terminal window and typing 'git'.  If you still need to install Git and link to Github, you should review my step-by-step instructions that we worked through in Lab 3 [here](https://protocols.hostmicrobe.org/git-basics).
-
-
-```r
-library(usethis)
-usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com") #add your github username and email
-
-# create a personal access token for authentication:
-usethis::create_github_token()
-
-# set personal access token:
-credentials::set_github_pat("YourToken") #add your token from github
-
-# if the command above gave you any errors, you can also store your PAT manually in '.Renviron':
-usethis::edit_r_environ() #opens your .Renviron file directly in RStudio
-# store your personal access token with: GITHUB_PAT=xxxyyyzzz
-# and make sure '.Renviron' ends with a newline
-# save and close the .Renviron file and restart R
-```
-
-### Archive your repo with Zenodo
-
-* Sign-in to [Zenodo](https://zenodo.org/) using the 'login with github' option
-* Once logged in, under your email login in upper right of the Zenodo page, toggle the menu and select 'github'
-* Archiving is now super easy, just toggle the on button next to any of your repos listed under the 'enabled repos' section on zenodo
-* Create a 'release' of your Github repo (see [here](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) for an explanation of how to do this)
-* You should now see a DOI for that repo on Zenodo.  Copy/paste this DOI for use in any publication!
-
-
-### Putting it all together
-
-Working through the steps outlined above may seem like a lot, but keep in mind that most of this only needs to be done once (e.g., installing Git) or infrequently (e.g., authenticating with github).  Here's how you would incorporate these best practices for reproducibility into your work in R:
-
-1. Start your work in RStudio and use renv early and often to capture snapshots of your working environment
-2. At any time during an analysis project, push your work up to Github (see **[this video](https://player.vimeo.com/video/912718910)** from lab 3 for a quick refresher).  You can choose to make this a private or public repo...it's up to you.
-3. Don't forget to add a .gitignore file and commit it to your local Git repo so you don't accidentally try to track large files.
-4. When you're ready to publish, [make sure your repo is set to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility).
-5. Login to Zenodo and archive your project to get a DOI ([instructions on Zenodo](https://zenodo.org/account/settings/github/)).
-6. Include the DOI in your paper!
-
-## Part 2: review Rmarkdown for course 'essentials'
-
-
-
-
-## Part 2: develop your own function
-
-In this week's lecture, you saw how the repetitive code we used during [Lecture 05](https://diytranscriptomics.com/project/lecture-05) for wrangling and plotting data after filtering and normalizing could be turned into a custom function.  Now, you're going to do a similar
+* start with the DGEList object from last week, which you can download **[here](https://DIYtranscriptomics.github.io/Data/files/archs4.DGEList)**
+* you'll also need the study design file from last week, which you can get **[here](https://DIYtranscriptomics.github.io/Data/files/studydesign_lab11.txt)**
+* start small and unit test along the way
+* each time you change your function script, you'll need to source it
+* Think about what you'll want to do **outside** of the function script.  For example, reading in the data (DGEList) and study design file, capturing your variable of interest, experimental design (model.matrix), and contrast matrix.
+* In your function script, take advantage of using ggsave (Github Copilot will be helpful here) to save each image to a file in your working directory.
+* I recommend that you not try to make any interactive elements (plots or tables)...just stick with static ggplots saved to file with ggsave.
