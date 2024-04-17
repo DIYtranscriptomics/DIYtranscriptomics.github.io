@@ -32,3 +32,14 @@ Your goal is to create a single function script (feel free to call it whatever y
 * Think about what you'll want to do **outside** of the function script.  For example, reading in the data (DGEList) and study design file, capturing your variable of interest, experimental design (model.matrix), and contrast matrix.
 * In your function script, take advantage of using ggsave (Github Copilot will be helpful here) to save each image to a file in your working directory.
 * I recommend that you not try to make any interactive elements (plots or tables)...just stick with static ggplots saved to file with ggsave.
+
+
+## On your own
+
+If you're working through this lab on your own, do your best to create a working function that accomplishes at least the first two visualizations listed above. **If you're an in-person learner and were unable to attend this lab, you should turn in both your custom function script along with your separate R script that calls this function.  These items should be turned in to the TAs before the start of class next week to get credit.**
+
+## Solution
+
+### script
+
+A solution script will be posted next week before the start of lab.
