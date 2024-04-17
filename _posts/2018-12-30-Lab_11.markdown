@@ -62,3 +62,6 @@ After exploring the data above, use CAMERA from the Limma package to carry out f
 * atopic dermatitis vs healthy control
 * atopic dermatitis vs psoriasis
 
+## On your own
+
+If you're working through this lab on your own, you should complete all three parts above. **If you're an in-person learner and were unable to attend this lab, you should turn in an answer with your code for all three parts to the TAs before the start of class next week to get credit.**

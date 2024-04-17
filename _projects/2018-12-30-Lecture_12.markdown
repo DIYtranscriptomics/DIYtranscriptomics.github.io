@@ -55,14 +55,6 @@ Reproducing an analysis requires more than just code. You need the original raw 
 
 There's a lot of reading material for how to get started making functions and packages.  Beyond the extensive and very well written [book on building R packages](http://r-pkgs.had.co.nz/) and excellent documentation for the [usethis package](https://usethis.r-lib.org/), you may also want to check out some great lab posts on making R packages ([here](https://masalmon.eu/2017/12/11/goodrpackages/), [here](https://r-mageddon.netlify.app/post/writing-an-r-package-from-scratch/), [here](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html), and [here](https://kbroman.org/pkg_primer/)).
 
-[Code Ocean whitepaper](http://DIYtranscriptomics.github.io/Reading/files/codeOcean_whitepaper.pdf) - describes the need for better tools for reproducible research and introduces their cloud-based computational platform for addressing this need.
-
-[Intro to Docker](https://docker-curriculum.com/) - Code Ocean is based on Docker, a free and open-source tool that allows you to 'build, share and run applications anywhere'.
-
-[Code Ocean On-boarding document](https://docs.google.com/document/d/1baA8IRFDZE1rJNB3SYk7Aksvuz5AJ9W4HG2iqYoPt-8/edit?usp=sharing) - Step-by-step details for how to set-up your own capsule.
-
-[Our recent paper](https://stm.sciencemag.org/content/11/519/eaax4204), showing a code capsule embedded directly in the joural webpage (a first for any AAAS journal).
-
 [Google Collaboratory](https://colab.research.google.com/) - Write, edit and share Python code directly in your browser
 
 ---

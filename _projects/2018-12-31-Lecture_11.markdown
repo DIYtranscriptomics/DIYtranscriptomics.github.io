@@ -21,11 +21,11 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 ## Code
 
-[Rmarkdown_template.Rmd](https://www.dropbox.com/s/f1c610tx0360cbd/Rmarkdown_template.Rmd?dl=0) - a skeletal template that you can fill out with the code 'essentials' that we covered in class.
+[Rmarkdown_template.Rmd](https://DIYtranscriptomics.github.io/Code/files/Rmarkdown_template.Rmd) - a skeletal template that you can fill out with the code 'essentials' that we covered in class.
 
-[Rmarkdown_essentials.Rmd](https://www.dropbox.com/s/elui0r4x3uoxvzw/Rmarkdown_essentials.Rmd?dl=0) - same template as above, but already filled in with essentials
+[Rmarkdown_essentials.Rmd](https://DIYtranscriptomics.github.io/Code/files/Rmarkdown_essentials.Rmd) - same template as above, but already filled in with essentials
 
-[flexdashboard_essentials.Rmd](https://www.dropbox.com/s/pp1oow3u8wnfp2i/flexdashboard_essentials.Rmd?dl=0) - a different style of Rmarkdown that puts the focus on creating a dashboard of graphics.  Particularly powerful when combined with the interactive graphs we produced during the course.
+[flexdashboard_essentials.Rmd](https://DIYtranscriptomics.github.io/Code/files/flexdashboard_essentials.Rmd) - a different style of Rmarkdown that puts the focus on creating a dashboard of graphics.  Particularly powerful when combined with the interactive graphs we produced during the course.
 
 ---
 
