@@ -137,22 +137,6 @@ ggplot(pbmc.1k.seurat@meta.data, aes(nCount_RNA, nFeature_RNA)) +
 # 1. Data points in the bottom LEFT hand quadrant = low genes and UMIs per cell. May represent poor quality cells.
 # 2. Data points in the bottom RIGHT hand quadrant = low genes but high UMIs per cell. These could be dying cells, but also could represent a population of a low complexity celltype (i.e red blood cells).
 
-# Create SingleCellExperiment object ----
-# it can also be useful to turn the Seurat object into a singleCellExperiment object, for better interoperability with other bioconductor tools
-# two ways to get singleCellExperiment object
-# option 1 - use 'read10xCounts' function from DropletUtils package
-pbmc.1k.sce <- read10xCounts(datadir)
-
-# option 2 - Seurat allows you to convert directly
-pbmc.1k.sce <- as.SingleCellExperiment(pbmc.1k.seurat)
-
-# the singleCellExperiment data structure is easy to work with
-rownames(pbmc.1k.sce)
-colnames(pbmc.1k.sce)
-reducedDims(pbmc.1k.sce)
-assays(pbmc.1k.sce)
-my.subset <- pbmc.1k.sce[,c(1,2,8)]
-rowData(pbmc.1k.sce)$Symbol <- rownames(pbmc.1k.sce)
 # Plot UMAP ----
 # it is standard practice to apply a linear transformation ('scaling') before PCA. For single cell data this includes:
 # 1. Shifting the expression of each gene, so that the mean expression across cells is 0
@@ -222,6 +206,21 @@ library(Azimuth) #this can be a headache to install, depending on your existing 
 ## you can fix this with by reinstalling TFBStools as follows:
 # BiocManager::install("TFBSTools", type = "source", force = TRUE)
 
+# it can also be useful to turn the Seurat object into a singleCellExperiment object, for better interoperability with other bioconductor tools
+# two ways to get singleCellExperiment object
+# option 1 - use 'read10xCounts' function from DropletUtils package
+pbmc.1k.sce <- read10xCounts(datadir)
+
+# option 2 - Seurat allows you to convert directly
+pbmc.1k.sce <- as.SingleCellExperiment(pbmc.1k.seurat)
+
+# the singleCellExperiment data structure is easy to work with
+rownames(pbmc.1k.sce)
+colnames(pbmc.1k.sce)
+reducedDims(pbmc.1k.sce)
+assays(pbmc.1k.sce)
+my.subset <- pbmc.1k.sce[,c(1,2,8)]
+rowData(pbmc.1k.sce)$Symbol <- rownames(pbmc.1k.sce)
 
 # OPTION 1: assign identity to cell clusters using public RNA-seq datasets
 # To do this, we'll use singleR and celldex (requires an internet connection to connect to ExperimentHub)
