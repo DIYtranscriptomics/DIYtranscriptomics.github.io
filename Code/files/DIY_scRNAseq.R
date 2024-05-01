@@ -3,17 +3,21 @@
 # In the 1st 1/2 of the script, we'll practice some basics using a small (~1000 cell) dataset from human peripheral blood mononuclear cells (PBMCs). This dataset comes from the public datasets on the 10X Genomics website: https://www.10xgenomics.com/resources/datasets
 # In the 2nd 1/2 of the script, we'll import two separate Seurat objects generated from the spleen of naive and Toxoplasma gondii infected mice, giving us an opportunity to create and analyze an integrated dataset
 
-# Import data into R and filter out empty drops ----
-# Begin by setting up a new RProject in the folder where you just processed your scRNA-seq data with Kb
+# Load packages ----
 library(tidyverse)
-library(DropletUtils)
+library(DropletUtils) # robust stats package for removing empty droplets from your data
 library(Seurat) # a huge, powerful, and popular library for analyzing single cell genomic data
+library(SeuratData)
+library(scater) # bioconductor package for quality control and visualization for scRNA-seq data
+library(scran) # bioconductor package for low level processing of scRNA-seq data
 library(Matrix)
 library(scales)
 library(rjson)
 library(R2HTML)
 library(DT)
 
+# Import data into R and filter out empty drops ----
+# Begin by setting up a new RProject in the folder where you just processed your scRNA-seq data with Kb
 # load raw data matrix using the readMM function from the Matrix package
 raw_mtx <- readMM('counts_unfiltered/cellranger/matrix.mtx') 
 # load genes
@@ -34,7 +38,7 @@ filt_mtx <- raw_mtx[,keep]
 # write out filtered results
 write10xCounts('counts_filtered', gene.symbol = genes[,2], filt_mtx, overwrite=T) 
 
-# Generate QA report ----
+# Generate QC report ----
 # this report will contain some useful metrics as well as the traditional log-transformed UMI rank plot (a.k.a. 'waterfall' plot)
 # plot was first described in the Drop-seq paper: - Macosko et al. 2015, DOI:10.1016/j.cell.2015.05.002
 # this plot has two important points that we will try to identify:
@@ -133,6 +137,22 @@ ggplot(pbmc.1k.seurat@meta.data, aes(nCount_RNA, nFeature_RNA)) +
 # 1. Data points in the bottom LEFT hand quadrant = low genes and UMIs per cell. May represent poor quality cells.
 # 2. Data points in the bottom RIGHT hand quadrant = low genes but high UMIs per cell. These could be dying cells, but also could represent a population of a low complexity celltype (i.e red blood cells).
 
+# Create SingleCellExperiment object ----
+# it can also be useful to turn the Seurat object into a singleCellExperiment object, for better interoperability with other bioconductor tools
+# two ways to get singleCellExperiment object
+# option 1 - use 'read10xCounts' function from DropletUtils package
+pbmc.1k.sce <- read10xCounts(datadir)
+
+# option 2 - Seurat allows you to convert directly
+pbmc.1k.sce <- as.SingleCellExperiment(pbmc.1k.seurat)
+
+# the singleCellExperiment data structure is easy to work with
+rownames(pbmc.1k.sce)
+colnames(pbmc.1k.sce)
+reducedDims(pbmc.1k.sce)
+assays(pbmc.1k.sce)
+my.subset <- pbmc.1k.sce[,c(1,2,8)]
+rowData(pbmc.1k.sce)$Symbol <- rownames(pbmc.1k.sce)
 # Plot UMAP ----
 # it is standard practice to apply a linear transformation ('scaling') before PCA. For single cell data this includes:
 # 1. Shifting the expression of each gene, so that the mean expression across cells is 0
@@ -187,31 +207,24 @@ top10 <- pbmc.1k.markers %>%
 DoHeatmap(pbmc.1k.seurat, features = top10$gene)
 
 # Assigning identity to cell clusters  ----
-library(scater) #quality control and visualization for scRNA-seq data
-library(scran) #for low level processing of scRNA-seq data
-library(DropletUtils)
 library(SingleR) #automated cell type annotation ('label transfer') using reference data
 library(celldex) #a large collection of reference expression datasets with curated cell type labels for use with SingleR package
 library(pheatmap)
+library(Azimuth) #this can be a headache to install, depending on your existing package environment
+## If azimuth fails to install, you can try the following
+## set a higher timeout option for R as follows:
+# options(timeout = max(1000, getOption("timeout")))
+## this high timeout will let you install the following dependency, if R is complaining that it wants it
+# install.packages("BSgenome.Hsapiens.UCSC.hg38")
+## now try to install Azimuth again
+# remotes::install_github('satijalab/azimuth', ref = 'master')
+## if running Azimuth fails and complains with the error "object 'CRsparse_colSums' not found", this is a documented error (https://github.com/satijalab/seurat/issues/8202#issue-2047511055)
+## you can fix this with by reinstalling TFBStools as follows:
+# BiocManager::install("TFBSTools", type = "source", force = TRUE)
 
-# it can also be useful to turn the Seurat object into a singleCellExperiment object, for better interoperability with other bioconductor tools
-# two ways to get singleCellExperiment object
-# option 1 - use 'read10xCounts' function from DropletUtils package
-pbmc.1k.sce <- read10xCounts(datadir)
 
-# option 2 - Seurat allows you to convert directly
-pbmc.1k.sce <- as.SingleCellExperiment(pbmc.1k.seurat)
-
-# the singleCellExperiment data structure is easy to work with
-rownames(pbmc.1k.sce)
-colnames(pbmc.1k.sce)
-reducedDims(pbmc.1k.sce)
-assays(pbmc.1k.sce)
-my.subset <- pbmc.1k.sce[,c(1,2,8)]
-rowData(pbmc.1k.sce)$Symbol <- rownames(pbmc.1k.sce)
-
-# One way to assign identity to cell clusters is to use public RNA-seq datasets
-# We'll use singleR and celldex (requires an internet connection to connect to ExperimentHub)
+# OPTION 1: assign identity to cell clusters using public RNA-seq datasets
+# To do this, we'll use singleR and celldex (requires an internet connection to connect to ExperimentHub)
 ENCODE.data <- BlueprintEncodeData(ensembl = FALSE) #259 RNA-seq samples of pure stroma and immune cells as generated and supplied by Blueprint and ENCODE
 HPCA.data <- HumanPrimaryCellAtlasData(ensembl = FALSE) #713 microarray samples from the Human Primary Cell Atlas (HPCA) (Mabbott et al., 2013).
 DICE.data <- DatabaseImmuneCellExpressionData(ensembl = FALSE) #1561 bulk RNA-seq samples of sorted immune cell populations
@@ -219,7 +232,6 @@ ImmGen.data <- ImmGenData(ensembl = FALSE) # 830 microarray samples of pure mous
 Monaco.data <- MonacoImmuneData(ensembl = FALSE) #114 bulk RNA-seq samples of sorted immune cell populations that can be found in GSE107011.
 MouseRNAseq.data <- MouseRNAseqData(ensembl = FALSE) #358 bulk RNA-seq samples of sorted cell populations
 Hemato.data <- NovershternHematopoieticData(ensembl = FALSE) #211 bulk human microarray samples of sorted hematopoietic cell populations that can be found in GSE24759
-
 
 predictions <- SingleR(test=pbmc.1k.sce, assay.type.test=1, 
                        ref=Monaco.data, labels=Monaco.data$label.main)
@@ -229,6 +241,16 @@ plotScoreHeatmap(predictions)
 #now add back to singleCellExperiment object (or Seurat objects)
 pbmc.1k.sce[["SingleR.labels"]] <- predictions$labels
 plotUMAP(pbmc.1k.sce, colour_by = "SingleR.labels")
+
+# OPTION 2: assign identity to cell clusters using Azimuth
+# Azimuth using reference 'atlas' scRNA-seq datasets to ID clusters in a query dataset
+# Azimuth lets you choose different levels of specificity for cell type annotation
+# The RunAzimuth function can take a Seurat object as input
+pbmc.1k.seurat <- RunAzimuth(pbmc.1k.seurat, 
+                             reference = "/Users/danielbeiting/Dropbox/azimuth_refs/hPBMC")
+
+DimPlot(pbmc.1k.seurat, group.by = "predicted.celltype.l2", label = TRUE, label.size = 3)
+
 
 # Integrate multiple scRNA-seq datasets ----
 # To demonstrate integration, we'll leave behind the PBMC dataset we worked with above
@@ -330,6 +352,7 @@ Idents(spleen_integrated)
 # subset seurat object to focus on single cluster ----
 # let's get just the CD4 T cells
 spleen_integrated.CD4.Tcells <- subset(spleen_integrated, idents = "CD4+ T cells")
+DEenrichRPlot(spleen_integrated, idents = "CD4+ T cells", assay = "RNA", enrichR = "GO_Biological_Process_2018")
 # you could re-cluster if you want...depends on what you're trying to accomplish
 #spleen_integrated.CD4.Tcells <- FindNeighbors(spleen_integrated.CD4.Tcells, dims = 1:10, k.param = 5)
 #spleen_integrated.CD4.Tcells <- FindClusters(spleen_integrated.CD4.Tcells)
