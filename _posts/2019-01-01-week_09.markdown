@@ -1,8 +1,8 @@
 ---
 title: 'Spring Break!'
-subtitle: 'Lab 10 • April 3, 2024'
+subtitle: 'off week • March 12, 2025'
 date: 2019-01-01 00:00:00
-description: No lab this week. Hope you find some time to relax and recharge over the break!
+description: No lab this week. Hope you find some time to relax and recharge over the Sprimg break!
 featured_image: '/images/palmtree.jpg'
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'Project management made easy with Git and Github'
-subtitle: 'Lab 3 (required) • February 7, 2024'
+subtitle: 'Lab 3 (required) • January 29, 2025'
 date: 2019-01-09 00:00:00
 description: Your working directory is already starting to get messy, and the proliferation of files and file-types will only continue throughout the course.  It's time to discuss best practices for managing an active coding project using the version control system, Git, and the related web resource, Github.
 featured_image: '/images/git.png'

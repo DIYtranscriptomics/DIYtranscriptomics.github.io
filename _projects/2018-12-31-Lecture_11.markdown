@@ -1,16 +1,19 @@
 ---
 title: 'Documenting your analyses with Rmarkdown'
-subtitle: 'Lecture 11 • watch by April 10, 2024'
+subtitle: 'Lecture 11 • watch by March 26, 2025'
 date: 2018-12-31 00:00:00
-description: In order to make your analysis pipeline transparent, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
+description: In order to make your analysis pipeline transparent, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software, making it easy to share and rerun an entire analysis with the push of a button.
 featured_image: '/images/breadcrumbs2.jpg'
 ---
 
 [Lecture slides on iCloud](https://www.icloud.com/keynote/0Vu6tndCpajbMEMseVYy3Hj9A#Lecture12%5FRmarkdown)
 
+[Lecture slides on iCloud](https://www.icloud.com/keynote/0gPGSkggD-NUmJUg9tSyFis2w#Lecture13%5Freproducibility)
+
+
 ## Overview
 
-In order to document the code and results from a bioinformatics workflow you'll be introduced to [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/), and will use these tools to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.
+In order to document the code and results from a bioinformatics workflow you'll be introduced to [R Markdown](http://rmarkdown.rstudio.com/) and [Knitr](http://yihui.name/knitr/), and will use these tools to wrap up all your code and outputs (figures, tables, etc) together in a dyanmic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software, making it easy to share and rerun an entire analysis with the push of a button.
 
 ## Learning objectives
 
@@ -18,6 +21,10 @@ In order to document the code and results from a bioinformatics workflow you'll 
 * Understand the basics of Rmarkdown and dynamic documents
 * Learn how to construct an Rmarkdown doc using 'essential' code chunks from the course.
 * make a flexdashboard the incorporates graphics and code
+* Learn how to make your research analyses reproducible
+* Create a reproducible package environment with [renv](https://rstudio.github.io/renv/articles/renv.html)
+* Share your project via [GitHub](https://github.com/) and git
+* Understand how to streamline code using custom R functions.
 
 ## Code
 
@@ -43,11 +50,25 @@ In order to document the code and results from a bioinformatics workflow you'll 
 
 <iframe src="https://player.vimeo.com/video/424086672" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+### Part 4 - Reproducibility via the renv package
+
+<iframe src="https://player.vimeo.com/video/426273940" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+### Part 5 - Keeping your code clean via custom functions
+
+<iframe src="https://player.vimeo.com/video/426552841" width="640" height="268" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+
 ---
 
 ## Reading
 
 [lab post on Knitr by Karl Broman](http://kbroman.org/knitr_knutshell/)
+
+[Happy Git and GitHub with RStudio](https://happygitwithr.com/) - Jenny Bryan and team walk through every step of how to install git, connect to GitHub and access version control from within RStudio.
+
+There's a lot of reading material for how to get started making functions and packages.  Beyond the extensive and very well written [book on building R packages](http://r-pkgs.had.co.nz/) and excellent documentation for the [usethis package](https://usethis.r-lib.org/), you may also want to check out some great lab posts on making R packages ([here](https://masalmon.eu/2017/12/11/goodrpackages/), [here](https://r-mageddon.netlify.app/post/writing-an-r-package-from-scratch/), [here](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html), and [here](https://kbroman.org/pkg_primer/)).
+
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'Open lab'
-subtitle: 'Lab 13 (optional) • April 24, 2024'
+subtitle: 'Lab 12 (optional) • April 2, 2025'
 date: 2018-12-28 00:00:00
 description: Struggling with something we covered recently in class, or do you want to discuss some of your own RNA-seq data? Then drop in for hands-on help from one of our amazing Teaching Assistants!
 featured_image: '/images/chalkboard.jpeg'

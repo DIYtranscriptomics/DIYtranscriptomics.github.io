@@ -1,0 +1,17 @@
+---
+title: 'The intestinal response to infection'
+subtitle: 'Lab 14 (required) • April 16, 2025'
+date: 2018-12-20 00:00:00
+description: To conclude the course, you'll continue working with the MIST dataset from the last lab and will use more sophisticated single cell approaches to identify unique transcriptional states elicited by infection in the intestine.
+featured_image: '/images/waddington.jpeg'
+---
+
+<div style="text-align: right"> Image credit: CH Waddington; The Strategy of Genes, 1957 </div>
+
+## Corresponding lecture
+
+[Lecture 15 - Advanced topics in single cell genomics](https://diytranscriptomics.com/project/lecture-14)
+
+## Description
+
+A full description will be posted on the date listed for this lab.

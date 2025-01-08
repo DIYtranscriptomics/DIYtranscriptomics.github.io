@@ -1,6 +1,6 @@
 ---
 title: 'Dumpster diving in RNA-seq data'
-subtitle: 'Lab 5 (required) • February 21, 2024'
+subtitle: 'Lab 5 (required) • February 12, 2025'
 date: 2019-01-07 00:00:00
 description: What about those reads that didn't map to the human reference? In this lab you'll learn to make the most from your RNA-seq data by digging through these 'junk' unmapped reads.  It turns out that most RNA-seq studies are 'metatranscriptomes'.
 featured_image: '/images/needle_haystack.png'

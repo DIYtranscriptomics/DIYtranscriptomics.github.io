@@ -1,6 +1,6 @@
 ---
 title: 'The reproducibility lab'
-subtitle: 'Lab 12 (required) • April 17, 2024'
+subtitle: 'Lab 11 (required) • March 26, 2025'
 date: 2018-12-29 00:00:00
 description: In this lab you'll create a custom R function that automates many of the tasks and visualizations that we've worked with throughout the course.
 featured_image: '/images/brackets.png'
@@ -8,7 +8,7 @@ featured_image: '/images/brackets.png'
 
 ## Corresponding lecture
 
-[Lecture 12 – Making your analysis portable and reproducible](https://diytranscriptomics.com/project/lecture-12)
+[Lecture 12 – Making your analysis portable and reproducible](https://diytranscriptomics.com/project/lecture-11)
 
 ## Description
 

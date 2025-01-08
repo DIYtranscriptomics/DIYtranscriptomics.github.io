@@ -1,6 +1,6 @@
 ---
 title: 'Data exploration'
-subtitle: 'Lecture 6 • watch by February 28, 2024'
+subtitle: 'Lecture 6 • watch by February 19, 2025'
 date: 2019-01-05 00:00:00
 description: In this class you'll learn about a variety of approaches exploring your data.  You'll use multivariate statistical approaches such as Principal Component Analysis (PCA) to understand sources of variance in our data, while continuing to build your plotting skills by using ggplot2 to graph the results of PCA analyses. You'll also learn how to use the dplyr package to take control over our gene expression dataframes, allowing us to change, sort, filter, arrange and summarize large data sets quickly and easily using simple commands in R.  We’ll discuss common missteps and how to identify sources of bias in transcriptional data sets.
 featured_image: '/images/explorer.jpg'

@@ -1,8 +1,8 @@
 ---
 title: 'The COVID19 Collaborative Challenge'
-subtitle: 'Lab 9 (required) • March 27, 2024'
+subtitle: 'Lab 8 (required) • March 5, 2025'
 date: 2019-01-02 00:00:00
-description: Explore one of the first and largest transcriptomic studies of of SARS-CoV-2. You start by parsing the study metadata to identify a question you're interested in, formulate a hypothesis, and carry out an analysis of the data to test this hypothesis.
+description: Use your newfound public data sleuthing skills to find and analyze one of the first and largest transcriptomic studies of SARS-CoV-2. You'll start by using the tools from the last class of find this data online, then explore the study metadata to formulate a question, and carry out an analysis of the data to find an answer to your question.
 featured_image: '/images/COVID.jpg'
 ---
 
@@ -14,11 +14,11 @@ featured_image: '/images/COVID.jpg'
 
 ## Description
 
-You will be given raw counts and a study design file for an extensive RNA-seq exploration of the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points, and which include human primary samples as well as *in vivo* studies in ferrets – an incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You should check out their recent Cell paper: [Imbalanced Host Response to SARS-CoV-2 Drives Development of COVID-19](https://doi.org/10.1016/j.cell.2020.04.026).
+You will explore the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points – an incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You should check out the Cell paper describing this work: [Imbalanced Host Response to SARS-CoV-2 Drives Development of COVID-19](https://doi.org/10.1016/j.cell.2020.04.026).
 
 This challenge certainly falls into the category of 'easier said than done'.
 
-Your challenge is to look at the study design file and decide on a question **YOU** would like to ask using this highly multivariate dataset, and then carry out your analysis using code from the course.
+Your challenge is to pull this large study from the ARCHS4 database and decide on a question **YOU** would like to ask using this highly multivariate dataset, and then carry out your analysis using code from the course.
 
 ## Logistics
 
@@ -33,6 +33,17 @@ In lab next week, you will have the first ~45min of class to put together the pi
 
 ## What you'll need to get started
 
+* Take a minute to explore the GEO page for this study (Accession number **[GSE147507](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE147507)**).
+* Use the skills you learned in the last class to download pre-mapped data for this study directly from ARCHS4 and create a study design file from the metadata.
+
+## Tips
+
+
+
+## Extended learning
+
+ ARCHS4 only serves up human and mouse data, so you're missing all the ferret data from this study.  If you'd like to continue working on this dataset, try reading in the normalized expression data available from GEO, since this will give you access to both human and ferret data.  I've provided convenient links to these files below, as well as a cleaned up study design file and a script to get you started with reading these files into your R environment.  Take some time to explore the study design file.  You big picture goal here is to analyze the ferret data and compare (formally or informally) the immune response to SARS-CoV-2 in this animal model to either human patients or *in vitro* data from this study.
+
 [Human expression data](https://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Human.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
 
 [Ferret expression data](https://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Ferret.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
@@ -41,10 +52,8 @@ In lab next week, you will have the first ~45min of class to put together the pi
 
 [Rscript](https://DIYtranscriptomics.github.io/Data/files/loadData.R) - to get you over the hump of importing the three files above into R.
 
-
-## Tips
+A few tips for this extended learning
 
 * You can ignore the step 1 script for this challenge since we didn't align the data, but rather got raw counts directly from the authors entry in the Gene Expression Omnibus repository (GEO).
 * Since the data is already in the form of a count table (genes as rows and samples as columns) you don't need to worry about annotations either.  Go straight to creating a DGEList object.
 * dplyr is going to be critical in this challenge, as you will need to wrangle the study design file and the raw count tables to get what you need to address your question(s).
-
