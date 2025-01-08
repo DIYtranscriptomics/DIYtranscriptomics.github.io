@@ -2,7 +2,7 @@
 title: 'Documenting your analyses with Rmarkdown'
 subtitle: 'Lecture 11 • watch by March 26, 2025'
 date: 2018-12-31 00:00:00
-description: In order to make your analysis pipeline transparent, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document that can be placed in your lab notebook or published as a supplementary file in your manuscript.  Reproducing an analysis requires more than just code. You need the original raw data, access to the appropriate programming languages, and application specific packages (and often specific versions of these packages).  This poses a major impediment to reproducibility, even for researchers with a background in bioinformatics.  To address this challenge, you'll learn how to 'containerize'  your data, scripts and software, making it easy to share and rerun an entire analysis with the push of a button.
+description: In order to make your analysis pipeline transparent and reproducible, in this class you'll use Rmarkdown and Knitr to wrap up all your code and outputs together in a dynamic document. Reproducing an analysis requires more than just code. To address this challenge, you'll learn how to 'containerize'  your data, scripts and software, making it easy to share and rerun an entire analysis with the push of a button.
 featured_image: '/images/breadcrumbs2.jpg'
 ---
 

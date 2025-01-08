@@ -3,7 +3,7 @@ title: 'Analysis of scRNA-seq data using R'
 subtitle: 'Lecture 13 •  watch by April 9, 2025'
 date: 2018-12-28 00:00:00
 description: In this lecture, you'll learn to use Seurat to analyze scRNA-seq data, including carrying out dimensional reduction and display using UMAP, identifying cell clusters and cluster-specific marker genes, and how to integrate data from multiple samples.
-featured_image: '/images/drops.png'
+featured_image: '/images/colorbins.png'
 ---
 
 No lecture slides for this class.  We'll spend the entire time working on scRNA-seq script.
