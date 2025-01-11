@@ -14,34 +14,4 @@ featured_image: '/images/biomart.png'
 
 Please take time to work through [this Learn R! module on ggplot2](https://diytranscriptomics.com/learnr/module-04)
 
-## Description
-
-[The course dataset](https://diytranscriptomics.com/data) is from human samples.  Annotating human and mouse data is relatively easy, since these organisms are the most well studied, have high quality genomes, and have undergone years of manual curation efforts.  In this lab, you'll work on accessing annotation data from non-human, non-mouse studies.
-
-In lecture 4, we used a human annotation package (EnsDb.Hsapiens.v86) to handle the task of mapping our Ensembl transcript IDs to gene symbols.  Bioconductor provides access to several [organism-specific annotation packages](https://www.bioconductor.org/packages/release/data/annotation/), but it is common run into situations where you are working with gene expression data for which there are no annotation packages available in Bioconductor.  In these cases, you have two choices.  You can either skip annotation and just use transcript IDs throughout, or you can look elsewhere for annotation info. One useful resource to explore is the [biomaRt package](https://bioconductor.org/packages/release/bioc/html/biomaRt.html), which provides convenient access to a broad range of annotation data.
-
-In this lab you will use the BiomaRt package to complete the following tasks:
-
-### Task 1
-
-You're a new grad student starting their first rotation in a viral pathogenesis lab.  A previous postdoc in the lab carried out RNA-seq on lung tissue collected from ferrets infected with influenza (ferrets are a great animal model for pathogenic respiratory viruses).  For your rotation, your PI asks you to analyze this dataset, and she is particularly interested in antiviral genes.  To begin this project, you must first find annotation data for ferrets (*Mustela putorius furo*).  To complete this task, you must use BiomaRt to locate this annotation data, and generate a dataframe that contains the following information for each transcript in the ferret genome: transcript ID, start position, end position, gene name, gene description, entrez gene ID, and pfam domains.
-
-### Task 2
-
-After showing your PI how you successfully used R to solve the annotation problem above, she gets excited and decides you might be able to help her with a related question.  Given her interest in antiviral genes, she asks if you could retreive the ferret promoter sequences (1kb upstream) for her 5 favorite antiviral genes, IFIT2, OAS2, IRF1, IFNAR1, and MX1.  She hopes to use these sequences to engineer some reporter constructs.  To get started on this task, you may want to use RStudio to access the help documentation for the *getSequence* function that is part of the BiomaRt package.
-
-## On your own
-
-If you're working through this lab on your own, you should be able to produce a short R script that accomplishes the two tasks above.  **If you're an in-person learner that was unable to attend this lab, you should turn your script in to the TAs before the start of class next week to get credit.**
-
-### Solution
-
-[Download this script](https://DIYtranscriptomics.github.io/Code/files/lab4_solution.R) to see how to solve the tasks above
-
-## Discussion points
-
-1. Why did your dataframe in Task 1 have so many transcripts without gene symbols? And, why didn't our query in Task 2 return the sequence for MX1?  How does a genome get annotated and when is the process complete?
-2. We used 'seqType = "gene_flank"' in Task 2, but what about the other options?  How you define a promoter?  Would 'transcript_flank' be better?
-3. BiomaRt is too large to fit in an R package, so functions like useMart and getBM are actually sending calls to ensembl servers.  Turn off your wifi and see what happens when you run these commands.
-
-
+## Details of this lab will be made available on the day of the lab

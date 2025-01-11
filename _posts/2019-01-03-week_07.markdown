@@ -12,20 +12,4 @@ featured_image: '/images/llm_midjourney.png'
 
 There is no corresponding lecture.
 
-## Description
-
-When OpenAI debuted its now famous ChatGPT on November 30th, 2022, it took the world by storm.   In the short time since, OpenAI has led the rapid development of large language models (LLM) and generative AI for a range of applications.  One clear place where AI and LLMs excel is in coding.  The [Codex LLM created by OpenAI](https://arxiv.org/abs/2107.03374) is trained on Github code and a production version of this tool is available as [Github Copilot](https://github.com/features/copilot).  In this lab, I'll demonstrate how you can use Copilot as a 'pair programmer', allowing you much more rapidly and seemlessly start new coding projects.
-
-We'll spend the first 1/2 of this lab discussing the solution for the LEMIS lab from last week, and learn to use Copilot in the process.  Then, for the second 1/2 of the class, we'll discuss and begin the lab for next week.
-
-## What you'll need to get started
-
-1. Copilot is free for students and teachers, but getting access to it can be a little confusing.  I've put together step-by-step instructions **[here](https://protocols.hostmicrobe.org/copilot)**.
-
-2. [Download this stripped down version of the solutions script from out lab last week](https://DIYtranscriptomics.github.io/Code/files/LEMIS_copilot.R). Note, this 'script' has only comments...no code.  With Copilot turned on in RStudio, I'll demo how we can analyze the LEMIS dataset and answer the questions from last week's lab using Copilot.
-
-## Tips and tricks for using Copilot
-
-* Probably the single most important thing to understand from this lab is that, with Copiot turned on, your comments in your scripts now become powerful prompts for generative AI.  In other words, your comments are no longer just for you or someone else that might look at your script...they are also helping Copilot understand what you hope to achieve at each point in your script.
-* Copilot has 'cross-tab' awareness.  This means that if you have open multiple scripts in RStudio, Copilot will be aware of the code in these other tabs and will use this information to provide better responses to your prompts.  So, in this class for example, if you were to open all the step scripts, this would be immensely helpful as you begin a new RNA-seq analysis project with a new analysis script.
-
+## Details of this lab will be made available on the day of the lab

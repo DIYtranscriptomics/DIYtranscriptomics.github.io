@@ -13,40 +13,4 @@ featured_image: '/images/gut_abstractAI.png'
 [Lecture 12 - Single cell RNA-seq – principles and processing](https://diytranscriptomics.com/project/lecture-13)
 [Lecture 13 - Analysis of scRNA-seq data using R](https://diytranscriptomics.com/project/lecture-14)
 
-## Description
-
-In the past two lectures, you learned to do ~90% of the common tasks associated with analyzing single cell RNA-seq (scRNA-seq) data, including QC analysis, producing UMAP dimensional reductions, labeling cell clusters, and identifying cluster-defining genes.  You then applied this to spleen samples from naive and *Toxoplasma gondii* infected mice.  In this lab, we'll review these steps and extend what we've learned to intestinal samples from a large unpublished study from the ['MIST' program](https://mucosal.org/), an NIH/NIAID-supported group of infectious disease and mucosal immunology researchers.
-
-## What you'll need to do
-
-To get started, download [this seurat object]().  This is scRNA-seq data from the distal most portion of the small intestine (ileum) from mice.  I've already run this through ScaleData, RunPCA, RunUMAP, FindNeighbors, and FindClusters in Seurat.
-
-Of course, you'll also need to download the course [DIY_scRNAseq.R script](https://DIYtranscriptomics.github.io/Code/files/DIY_scRNAseq.R)
-
-Finally, you'll want to download some reference data from the [Azimuth project](https://azimuth.hubmapconsortium.org/).  Specifically, download the Mouse Pansci idx.annoy and ref.Rds files from [here](https://zenodo.org/records/14042645).  You'll use this data to apply labels to the cell clusters in this lab.
-
-## Part 1
-
-Read the integrated Seurat object into your R environment and create a UMAP.  I recommend using a new clean environment
-
-```r
-load("gut_integrated.RData")
-
-gut_integrated <- UpdateSeuratObject(gut_integrated)
-gut_integrated[["RNA"]] <- JoinLayers(gut_integrated[["RNA"]])
-# create a singleCellExperiment object as well, in case you choose to use SingleR and CellDex to label clusters
-gut_integrated.SCE <- as.SingleCellExperiment(gut_integrated)
-
-DimPlot(gut_integrated, reduction = "umap",
-        #split.by = "treatment", # this facets the plot
-        group.by = "seurat_clusters", # labels the cells with values from your group.by variable
-        label = TRUE)
-```
-
-## Part 2
-
-Use the Azimuth reference data you downloaded above to apply labels to the clusters in your UMAP.  If you have any issues with Azimuth, just use CellDex and SingleR to apply labels instead.
-
-## Part 3 (Bonus)
-
-What is the most abundant cell type present in this dataset, and what are the genes that best define this cluster?
+## Details of this lab will be made available on the day of the lab

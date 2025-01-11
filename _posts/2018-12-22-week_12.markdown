@@ -10,6 +10,4 @@ featured_image: '/images/chalkboard.jpeg'
 
 We’re available to help with anything we’ve covered up to this point.
 
-## Description
-
-A full description will be posted on the date listed for this lab.
+## Details of this lab will be made available on the day of the lab

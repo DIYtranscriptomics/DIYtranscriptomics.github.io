@@ -12,6 +12,4 @@ featured_image: '/images/waddington.jpeg'
 
 [Lecture 15 - Advanced topics in single cell genomics](https://diytranscriptomics.com/project/lecture-14)
 
-## Description
-
-A full description will be posted on the date listed for this lab.
+## Details of this lab will be made available on the day of the lab

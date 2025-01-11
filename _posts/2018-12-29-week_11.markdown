@@ -10,36 +10,4 @@ featured_image: '/images/brackets.png'
 
 [Lecture 12 – Making your analysis portable and reproducible](https://diytranscriptomics.com/project/lecture-11)
 
-## Description
-
-You have just begun your postdoc in a lab that does a lot of genomics to study human disease.  In talking to your PI, it becomes clear that you will need to generate and analyze a lot of RNA-seq data for your project.  To streamline this process, you will need to use the core elements of the code we've covered in this course to create a single custom R function (you may want to review [this lecture video](https://vimeo.com/426552841)) that you could then apply to any dataset.  Creating custom functions is not only an incredibly useful skill to have, but it also forces you to *really* think about how your code works and which elements could be generalized.  In today's lab, you'll try your hand at creating an R function that encapsulates key aspects of the course scripts.
-
-## What you'll need to do
-
-Your goal is to create a single function script (feel free to call it whatever you want) that carries out as many of the following steps as possible on the psoriasis/AD dataset from last lab:
-
-1. visualizes the impact of filtering and normalizing your data
-2. visualizes the PCA result
-3. visualizes a volcano plot
-4. visualizes a GO enrichment plot (from gProfiler2)
-
-## Tips
-
-* start with the DGEList object from last week, which you can download **[here](https://DIYtranscriptomics.github.io/Data/files/archs4.DGEList)**
-* you'll also need the study design file from last week, which you can get **[here](https://DIYtranscriptomics.github.io/Data/files/studydesign_lab11.txt)**
-* start small and unit test along the way
-* each time you change your function script, you'll need to source it
-* Think about what you'll want to do **outside** of the function script.  For example, reading in the data (DGEList) and study design file, capturing your variable of interest, experimental design (model.matrix), and contrast matrix.
-* In your function script, take advantage of using ggsave (Github Copilot will be helpful here) to save each image to a file in your working directory.
-* I recommend that you not try to make any interactive elements (plots or tables)...just stick with static ggplots saved to file with ggsave.
-
-
-## On your own
-
-If you're working through this lab on your own, do your best to create a working function that accomplishes at least the first two visualizations listed above. **If you're an in-person learner and were unable to attend this lab, you should turn in both your custom function script along with your separate R script that calls this function.  These items should be turned in to the TAs before the start of class next week to get credit.**
-
-## Solution
-
-### script
-
-A solution script will be posted next week before the start of lab.
+## Details of this lab will be made available on the day of the lab
