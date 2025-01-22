@@ -13,7 +13,7 @@ As access to high-throughput sequencing technology increases, the bottleneck in 
 
 Dan Beiting designed and teaches the course. He is an Associate Professor of Pathobiology at PennVet.   Megha Lal (postdoc), Qianxuan She (grad student), Leena Babiker (grad student), Nikhil Joshi (Bioinformatician) are all former students who now serve as teaching assistants for the course in 2024.
 
-<img src="http://DIYtranscriptomics.github.io/images/instructors_2024.png" alt="Meet your instructors!">
+<img src="http://DIYtranscriptomics.github.io/images/instructors_2025.jpeg" alt="Meet your instructors!">
 
 ## Who supports and sponsors this course?
 
