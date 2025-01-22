@@ -29,6 +29,6 @@ In our lecture, we covered the basics for running Kallisto with a single sample.
 
 **[Bash basics](https://protocols.hostmicrobe.org/bash)** - this is the code I'll be running and discussing in lab today.  You can copy/paste lines from this page to follow along.
 
-
-
+## On your own
+If you're taking the course in-person at Penn but were unable to attend today's lab, you can still get credit for attendance by completing the lab and turning in your work to the TAs via Discord.  Please complete the lab and use a conditional for-loop to selectively map only the subsetted fastq files even when they are in the same directory as the full fastq files from the course dataset.  Please turn in this conditional for-loop for full credit.
 
