@@ -10,7 +10,13 @@ No lecture slides for this class.  We'll spend the entire time working on scRNA-
 
 ## Overview
 
-Stay tuned for more info
+- Other considerations (no one-size-fits-all for filtering...eg. intestine vs mln, different clustering algos give different results)
+- enrichment analysis on scRNAseq
+- label transfer (maybe demo with MLN in lecture and then have them transfer labels to Ileum)
+- cell cycle regression
+- Subclustering
+- Pseudobulking
+- CellChat - cell/cell communication
 
 ## Learning objectives
 
