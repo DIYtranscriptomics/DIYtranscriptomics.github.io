@@ -37,7 +37,7 @@ If you're working through this lab on your own, you should be able to produce a 
 
 ### Solution
 
-To be posted by the start of lab next week.
+[Download this script](http://DIYtranscriptomics.github.io/Code/files/lab4_solution.R) to see how to solve the tasks above
 
 ## Discussion points
 
