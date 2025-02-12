@@ -30,13 +30,12 @@ Tx.ferret <- as_tibble(Tx.ferret)
 # check out the help documentation for the getSequence function.  
 ?getSequence #note that the example code in the help doc is executable!
 
-#get your ferret data from BiomaRt
-ferret.anno <- useMart(biomart="ENSEMBL_MART_ENSEMBL", dataset = "mpfuro_gene_ensembl")
-
-#get your promoter sequences from this annotation data
-seq <- getSequence(id = c("MX1", "IFIT2", "OAS2", "IRF1", "IFNAR1", "MX1"),
+#get your promoter sequences from your ferret annotation data from question 1.  
+# Starting with a single gene
+seq <- getSequence(id = c("IFNAR1", "IFIT2", "OAS2", "MX1", "IRF1"),
                   type = "hgnc_symbol",
                   seqType = "gene_flank",
                   upstream = 1000,
                   mart = ferret.anno)
+
 
