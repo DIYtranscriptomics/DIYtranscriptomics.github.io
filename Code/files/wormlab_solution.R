@@ -120,7 +120,7 @@ ggplot(pca.res.df) +
 pca.res.df <- pca.res$x[,1:6] %>%
   as_tibble() %>%
   add_column(sample = sampleLabels,
-             group = targets$sex)
+             group = targets$strain)
 
 pca.pivot <- pivot_longer(pca.res.df, # dataframe to be pivoted
                           cols = PC1:PC6, # column names to be stored as a SINGLE variable
@@ -148,8 +148,8 @@ ggplot(pca.res.df) +
   geom_point(size=4) +
   # geom_label() +
   # stat_ellipse() +
-  xlab(paste0("PC1 (",pc.per[2],"%",")")) +
-  ylab(paste0("PC2 (",pc.per[4],"%",")")) +
+  xlab(paste0("PC2 (",pc.per[2],"%",")")) +
+  ylab(paste0("PC4 (",pc.per[4],"%",")")) +
   labs(title="PCA plot",
        caption=paste0("produced on ", Sys.time())) +
   # coord_fixed() +

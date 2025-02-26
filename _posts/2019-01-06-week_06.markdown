@@ -56,3 +56,9 @@ Anything interesting stand out to you about the top genes on your list (requires
 ## On your own
 
 If you're working through this lab on your own, you should be able to complete all three parts above. **If you're an in-person learner and were unable to attend this lab, you should turn in answers to these three parts to the TAs before the start of class next week to get credit.**
+
+## Solution
+
+### script
+
+Download **[this script](https://DIYtranscriptomics.github.io/Code/files/wormlab_solution.R)** to see my answers to the questions above.

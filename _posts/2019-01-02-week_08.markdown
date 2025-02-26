@@ -12,4 +12,44 @@ featured_image: '/images/COVID.jpg'
 
 [Lecture 8 – Differential gene expression](https://diytranscriptomics.com/project/lecture-08)
 
-## Details of this lab will be made available on the day of the lab
+## Description
+
+You will explore the host response to SARS-CoV-2 and related viruses in different cell lines, tissues and time points – an incredible dataset from Benjamin TenOever's lab at Mt Sinai!  You should check out the Cell paper describing this work: [Imbalanced Host Response to SARS-CoV-2 Drives Development of COVID-19](https://doi.org/10.1016/j.cell.2020.04.026).
+
+This challenge certainly falls into the category of 'easier said than done'.
+
+Your challenge is to pull this large study from the ARCHS4 database and decide on a question **YOU** would like to ask using this highly multivariate dataset, and then carry out your analysis using code from the course.
+
+## Logistics
+
+**You have a full week to complete this lab**.  Use this time to work through the dataset either alone, or together with your classmates.
+
+In lab next week, you will have the first ~45min of class to put together the pieces of the figure that you spent the week working on.  The reminder of class will be devoted to presenting your figure to the class!
+
+## Learning objectives
+
+* Thinking about what you want to ask with a large dataset, learning to priortize questions when there are many possible things you *could* ask, and then constructing your analysis around one or a few key questions.
+* Flying solo on a data analysis project, then coming together with collaborators at different points in the project to see how colleagues differ in their approach and perspective, then incorporating these different perspectives in a final product is a key part of the research process when large datasets are involved.
+
+## What you'll need to get started
+
+* Take a minute to explore the GEO page for this study (Accession number **[GSE147507](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE147507)**).
+* Use the skills you learned in the last class to download pre-mapped data for this study directly from ARCHS4 and create a study design file from the metadata.
+
+## Extended learning
+
+ ARCHS4 only serves up human and mouse data, so you're missing all the ferret data from this study.  If you'd like to continue working on this dataset, try reading in the normalized expression data available from GEO, since this will give you access to both human and ferret data.  I've provided convenient links to these files below, as well as a cleaned up study design file and a script to get you started with reading these files into your R environment.  Take some time to explore the study design file.  You big picture goal here is to analyze the ferret data and compare (formally or informally) the immune response to SARS-CoV-2 in this animal model to either human patients or *in vitro* data from this study.
+
+[Human expression data](https://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Human.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
+
+[Ferret expression data](https://DIYtranscriptomics.github.io/Data/files/GSE147507_RawReadCounts_Ferret.tsv) - raw counts obtained as a table, obtained directly from the public GEO record.
+
+[Study design file](https://DIYtranscriptomics.github.io/Data/files/covid_metadata.txt) - Manually assembled and curated from sample descriptions in GEO.
+
+[Rscript](https://DIYtranscriptomics.github.io/Data/files/loadData.R) - to get you over the hump of importing the three files above into R.
+
+A few tips for this extended learning
+
+* You can ignore the step 1 script for this challenge since we didn't align the data, but rather got raw counts directly from the authors entry in the Gene Expression Omnibus repository (GEO).
+* Since the data is already in the form of a count table (genes as rows and samples as columns) you don't need to worry about annotations either.  Go straight to creating a DGEList object.
+* dplyr is going to be critical in this challenge, as you will need to wrangle the study design file and the raw count tables to get what you need to address your question(s).
