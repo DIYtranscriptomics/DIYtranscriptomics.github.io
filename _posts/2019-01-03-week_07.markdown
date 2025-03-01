@@ -28,4 +28,7 @@ In the first 1/2 of lab, we'll review the solution for last week's lab.  Then we
 
 * Probably the single most important thing to understand from this lab is that, with Copiot turned on, your comments in your scripts now become powerful prompts for generative AI.  In other words, your comments are no longer just for you or someone else that might look at your script...they are also helping Copilot understand what you hope to achieve at each point in your script.
 * Copilot has 'cross-tab' awareness.  This means that if you have open multiple scripts in RStudio, Copilot will be aware of the code in these other tabs and will use this information to provide better responses to your prompts.  So, in this class for example, if you were to open all the step scripts, this would be immensely helpful as you begin a new RNA-seq analysis project with a new analysis script.
+* Copilot (like all LLMs) *will* be wrong many times.  It is your responsibility to check the code provided by these AI tools for accuracy.  Code suggested by Copilot should be considered as a rough draft, not a polished final product.
+* ChatGPT is great at explaining code that you don't understand!  You can take advantage of this when you are presented with a script that has little or not comments/annotations.
+* One of my favorite uses of ChatGPT in coding is when I need to make a [regular expression](https://en.wikipedia.org/wiki/Regular_expression) for matching text
 
